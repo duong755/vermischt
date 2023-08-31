@@ -13,5 +13,5 @@
 
 - Yêu cầu thêm nội dung (tạo một pull request theo mẫu đã có)
 - Báo cáo lỗi tài liệu (tạo một github issue theo mẫu đã có)
-- Trực tiếp thay đổi mã nguồn thông qua pull request (vui lòng truy cập Wiki của repository để được hướng dẫn chi tiết hơn)
+- Trực tiếp thay đổi mã nguồn thông qua pull request (tạo pull request vào nhánh master, commit message theo quy ước từ [https://www.conventionalcommits.org/en/v1.0.0/](https://www.conventionalcommits.org/en/v1.0.0/))
 
