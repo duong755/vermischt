@@ -1,0 +1,685 @@
+\chapter{Ánh xạ và Quan hệ}\label{chapter2:relations-and-mappings}
+
+\section{Tích Descartes của hai tập hợp}
+
+Tích Descartes là một phép toán khác trên các tập hợp. Để định nghĩa tích Descartes của hai tập hợp, chúng ta cần định nghĩa cặp có thứ tự.
+
+\subsection*{Cặp có thứ tự}
+
+\noindent\textbf{Định nghĩa.} (Cặp có thứ tự) Một \textbf{cặp có thứ tự} là một cặp gồm hai đối tượng và xác định thứ tự là $a$ và $b$, kí hiệu là $(a, b)$. Hai cặp có thứ tự $(a, b)$ và $(c, d)$ được gọi là bằng nhau khi và chỉ khi $a = c$ và $b = d$. Khi hai cặp có thứ tự $(a, b)$ và $(c, d)$ bằng nhau, chúng ta kí hiệu $(a, b) = (c, d)$.
+
+\bigskip
+
+Định nghĩa trên cho cặp có thứ tự ổn và phù hợp với trực giác. Chúng ta hoàn toàn có thể tiếp tục với định nghĩa này. Tuy nhiên nhược điểm của định nghĩa này là việc chấp nhận nó đồng nghĩa với việc bổ sung một tiên đề nữa (điều kiện bằng nhau của hai cặp có thứ tự) vào hệ tiên đề mà chúng ta đang dùng. Để khắc phục nhược điểm này, chúng ta có thể định nghĩa cặp có thứ tự bằng tập hợp, như định nghĩa dưới đây, được đề xuất bởi nhà toán học Kuratowski. Định nghĩa này cho đến nay đã được sử dụng rộng rãi.
+
+\begin{definition}[Cặp có thứ tự]
+    Một \textbf{cặp có thứ tự} gồm hai đối tượng là $a$ và $b$ ($a$ và $b$ là hai phần tử của một tập hợp nào đó) là một tập hợp, được kí hiệu là $(a, b)$. Tập hợp đó là như sau:
+    \[
+        (a, b) = \{ \{ a \}, \{ a, b \} \}
+    \]
+\end{definition}
+
+Với định nghĩa này, điều kiện bằng nhau của hai cặp có thứ tự trở thành một định lý. Bạn đọc có thể bỏ qua chứng minh của định lý này.
+
+\begin{theorem}
+    $(a, b) = (c, d)$ khi và chỉ khi $a = c$ và $b = d$.
+\end{theorem}
+
+\begin{proof}
+    ($\Rightarrow$) $a = c$ và $b = d$.
+
+    Khi $a = c$ và $b = d$ thì $\{ a \} = \{ c \}$ và $\{ a, b \} = \{ c, d \}$. Do đó $(a, b) = (c, d)$.
+
+    ($\Leftarrow$) $(a, b) = (c, d)$.
+
+    Theo định nghĩa cặp có thứ tự, chúng ta có $\{ \{ a \}, \{ a, b \} \} = \{ \{ c \}, \{ c, d \} \}$. Để chứng minh $a = c$ và $b = d$, chúng ta xem xét các trường hợp sau.
+
+    \textbf{Trường hợp 1.} $a = b$.
+
+    Khi $a = b$, $(a, b) = \{ \{ a \}, \{ a, b \} \} = \{ \{ a \}, \{ a \} \} = \{ \{ a \} \}$. Như vậy tập hợp $(a, b)$ chỉ có một phần tử là tập hợp $\{ a \}$. Vì hai tập hợp $(a, b)$ và $(c, d)$ bằng nhau nên tập hợp $(c, d)$ cũng chỉ có một phần tử. Do đó $\{ c \} = \{ c, d \}$, dẫn đến $c = d$. Như vậy, $(a, b) = (c, d)$ kéo theo $\{\{ a \}\} = \{\{ c \}\}$; $\{ \{ a \} \} = \{ \{ b \} \}$ kéo theo $\{ a \} = \{ b \}$; $\{ a \} = \{ b \}$ kéo theo $a = b$. Cùng với việc $a = b$ và $c = d$, chúng ta kết luận $a = c$ và $b = d$.
+
+    \textbf{Trường hợp 2.} $a\ne b$.
+
+    Khi $a\ne b$ thì $\{ a \}$ là tập hợp con thực sự của $\{ a, b \}$, nên $(a, b)$ là một tập hợp có hai phần tử. Cùng với việc $(a, b) = (c, d)$, chúng ta có $(c, d)$ cũng là một tập hợp có hai phần tử, nên hai tập hợp $\{ c \}$ và $\{ c, d \}$ khác nhau, kéo theo $c\ne d$.
+
+    $(a, b) = (c, d)$ nên $\{ a \}$ là một phần tử của $\{ \{ c \}, \{ c, d \} \}$. Vì $\{ c \}$ gồm một phần tử, $\{ c, d \}$ gồm hai phần tử (vì $c\ne d$) nên $\{ a \} = \{ c \}$. Do đó $a = c$. Bằng lập luận tương tự, $\{ a, b \}$ là một phần tử của $\{ \{ c \}, \{ c, d \} \}$ và $\{ a, b \}$ với $\{ c, d \}$ là hai tập hợp có hai phần tử (vì $a\ne b$, $c\ne d$) còn $\{ c \}$ chỉ có một phần tử nên $\{ a, b \} = \{ c, d \}$. Cùng với việc $a = c$, chúng ta suy ra $b = d$.
+
+    Tóm lại, trong cả hai trường hợp, chúng ta đều có $a = c$ và $b = d$.
+
+    Vậy $(a, b) = (c, d)$ khi và chỉ khi $a = c$ và $b = d$.
+\end{proof}
+
+Từ Định lý trên, chúng ta thu được hệ quả: $(a, b) = (b, a)$ khi và chỉ khi $a = b$. Một lần nữa, tính thứ tự được nhấn mạnh.
+
+\subsection*{Tích Descartes của hai tập hợp}
+
+\begin{definition}[Tích Descartes của hai tập hợp]
+    Cho hai tập hợp $A$ và $B$. Tích Descartes của $A$ và $B$ là tập hợp gồm tất cả các cặp có thứ tự mà đối tượng thứ nhất là phần tử của $A$, đối tượng thứ hai là phần tử của $B$. Tích Descartes của $A$ và $B$ được kí hiệu là $A\times B$.
+    \[
+        A\times B = \{ (a, b) \mid a\in A \wedge b\in B \}.
+    \]
+\end{definition}
+
+Nói riêng, khi ít nhất một trong hai tập hợp $A$, $B$ là tập hợp rỗng thì tích Descartes $A\times B$ cũng là tập hợp rỗng.
+
+Không như phép toán hợp và giao hai tập hợp, tích Descartes nói chung không giao hoán, và cũng không có tính kết hợp. Chúng ta minh họa điều đó với ví dụ sau đây: $A = \{ 1, 2, 3 \}$, $B = \{ 2, 3 \}$, $C = \{ 3, 4 \}$.
+\[
+    \begin{split}
+        A\times B & = \{ (1, 2), (2, 2), (3, 2), (1, 3), (2, 3), (3, 3) \}, \\
+        B\times A & = \{ (2, 1), (3, 1), (2, 2), (3, 2), (2, 3), (3, 3) \}, \\
+        (A\times B)\times C & = \{ ((1, 2), 3), ((2, 2), 3), ((3, 2), 3), ((1, 3), 3), ((2, 3), 3), ((3, 3), 3), \\
+        & \phantom{==} ((1, 2), 4), ((2, 2), 4), ((3, 2), 4), ((1, 3), 4), ((2, 3), 4), ((3, 3), 4) \}, \\
+        A\times (B\times C) & = \{ (1, (2, 3)), (1, (2, 4)), (1, (3, 3)), (1, (3, 4)) \\
+        & \phantom{==} (2, (2, 3)), (2, (2, 4)), (2, (3, 3)), (2, (3, 4)) \\
+        & \phantom{==} (3, (2, 3)), (3, (2, 4)), (3, (3, 3)), (3, (3, 4)) \}.
+    \end{split}
+\]
+
+\subsection*{Bài tập}
+\setcounter{exercise}{0}
+
+\begin{exercise}\label{section6:exercise1}
+    Cho hai tập hợp khác rỗng $A$ và $B$. Tìm điều kiện để $A\times B = B\times A$. Nếu bỏ điều kiện $A$ và $B$ khác rỗng, khi nào $A\times B = B\times A$?
+\end{exercise}
+
+\begin{exercise}\label{section6:exercise2}
+    Cho hai tập hợp $A$ và $B$. Chứng minh rằng $A\times B$ và $B\times A$ rời nhau khi và chỉ khi $A$ và $B$ rời nhau.
+\end{exercise}
+
+\begin{exercise}\label{section6:exercise3}
+    Cho các tập hợp $A, B, C, D$. Chứng minh rằng $(A\cap B)\times (C\cap D) = (A\times C)\cap (B\times D)$.
+\end{exercise}
+
+\section{Ánh xạ}\label{section8:mappings}
+
+\subsection*{Định nghĩa}
+
+\begin{definition}[Ánh xạ]
+    Cho hai tập hợp $X$ và $Y$. Một \textbf{ánh xạ $f$ từ $X$ vào $Y$} là một \textit{quy tắc gán mỗi phần tử của $X$ với đúng một phần tử của $Y$}. Tập $X$ được gọi là \textbf{tập nguồn} (hay \textbf{miền}, \textbf{miền giá định}) của $f$, còn tập $Y$ được gọi là \textbf{tập đích} (hay \textbf{đối miền}) của $f$.
+
+    Để biểu thị rằng $f$ là một ánh xạ từ tập hợp $X$ vào tập hợp $Y$, chúng ta kí hiệu $f: X\to Y$. Nếu $x$ là một phần tử của $X$ thì theo định nghĩa ánh xạ, tồn tại duy nhất một phần tử $y$ của $Y$ sao cho $f$ gán $x$ với $y$. Khi đó, chúng ta kí hiệu $y = f(x)$ (hay $x\mapsto f(x)$, $f: x \mapsto y$) và nói $y$ là \textbf{ảnh của $x$ qua $f$}, hoặc $y$ là ảnh của $x$ nếu ngữ cảnh đã rõ là chúng ta đang sử dụng ánh xạ nào.
+\end{definition}
+
+Có những quy tắc gán là ánh xạ, nhưng cũng có những quy tắc gán không phải ánh xạ. Chúng ta đưa ra một số ví dụ và phản ví dụ về ánh xạ.
+
+\begin{example}
+    $f$ là quy tắc gán mỗi phần tử của một tập hợp $X$ với chính phần tử đó.
+
+    \noindent $f$ là một ánh xạ. Ánh xạ đặc biệt này được gọi là \textbf{ánh xạ đồng nhất} trên tập hợp $X$, và được kí hiệu là $\text{id}_{X}: X\to X$. Trên mỗi tập hợp, tồn tại duy nhất một ánh xạ đồng nhất.
+\end{example}
+
+\begin{example}
+    $f$ là một ánh xạ từ $X$ vào $Y$ khác rỗng, $y$ là một phần tử cố định thuộc $Y$ và với mọi $x\in X$, $f(x) = y$.
+
+    \noindent Ánh xạ $f$ được gọi là \textbf{ánh xạ hằng}.
+\end{example}
+
+\begin{example}
+    $f$ là quy tắc gán mỗi số thực $x$ với một số thực $x^{3}$.
+
+    \noindent Cùng với việc $x^{3}$ là một số thực hoàn toàn xác định với mỗi số thực $x$, câu trên cho biết $f$ là một ánh xạ với tập nguồn là tập hợp số thực, tập đích cũng là tập hợp số thực. Nói riêng, nếu $x\ne y$ thì $x^{3}\ne y^{3}$, và với mỗi số thực $a$ chúng ta có $f(\sqrt[3]{a}) = a$.
+\end{example}
+
+\begin{example}
+    $f$ là quy tắc gán mỗi số tự nhiên $n$ với số tự nhiên $2n$.
+
+    \noindent Với mỗi số tự nhiên $n$, $2n$ là một số tự nhiên hoàn toàn xác định. $f$ là một ánh xạ từ tập hợp số tự nhiên vào tập hợp số tự nhiên. Nói riêng, nếu $m\ne n$ thì $f(m)\ne f(n)$. Với mỗi số tự nhiên chẵn $m$, chúng ta có $f(m/2) = m$. Nhưng với mỗi số tự nhiên lẻ $p$, không tồn tại số tự nhiên $q$ nào sao cho $f(q) = p$.
+\end{example}
+
+\begin{counterexample}
+    $f$ là quy tắc gán mỗi số thực $x$ với một số thực $y$ mà $x = y^{2}$.
+
+    \noindent Nếu $x$ là một số thực âm thì không tồn tại số thực $y$ nào sao cho $x = y^{2}$. Do đó $f$ không phải một ánh xạ.
+\end{counterexample}
+
+\begin{counterexample}
+    $f$ là quy tắc gán mỗi số thực không âm $x$ với một số thực $y$ mà $x = y^{2}$.
+
+    \noindent Với số $1$, chúng ta có $1^{2} = {(-1)}^{2} = 1$. Như vậy, quy tắc $f$ không xác định duy nhất một số thực để gán với số $1$, nên $f$ không phải một ánh xạ.
+\end{counterexample}
+
+Bạn đọc có thể đã học qua khái niệm \textit{hàm số}. Ánh xạ chính là một tổng quát cho khái niệm hàm số. Khái niệm hàm số trong chương trình trung học cơ sở và trung học phổ thông tập trung vào quy tắc gán, thường xuất hiện dưới dạng một biểu thức; còn tập nguồn và tập đích được \textit{ngầm hiểu} là tập hợp số thực hoặc một tập hợp con của tập hợp số thực. Đến với khái niệm ánh xạ, chúng ta nhấn mạnh vào cả ba thành phần là \textbf{quy tắc gán}, \textbf{tập nguồn}, và \textbf{tập đích}.
+
+Khái niệm tích Descartes và ánh xạ cho chúng ta một góc nhìn khác về các phép toán quen thuộc (cộng, trừ, nhân, chia các số thực).
+
+\begin{example}
+    Phép toán cộng hai số thực là ánh xạ sau:
+    \begin{align*}
+        +:\quad & \mathbb{R}\times\mathbb{R} \to \mathbb{R}, \\
+                & (x, y) \mapsto x + y.
+    \end{align*}
+
+    Phép toán trừ hai số thực là ánh xạ sau:
+    \begin{align*}
+        -:\quad & \mathbb{R}\times\mathbb{R} \to \mathbb{R}, \\
+                & (x, y) \mapsto x - y.
+    \end{align*}
+
+    Phép toán nhân hai số thực là ánh xạ sau:
+    \begin{align*}
+        \cdot:\quad & \mathbb{R}\times\mathbb{R} \to \mathbb{R}, \\
+                    & (x, y) \mapsto x \cdot y.
+    \end{align*}
+
+    Chúng ta không định nghĩa phép chia cho số không, nên phép toán chia hai số thực là ánh xạ sau:
+    \begin{align*}
+        /:\quad & \mathbb{R}\times(\mathbb{R}-\{0\}) \to \mathbb{R}, \\
+                & (x, y) \mapsto x/y.
+    \end{align*}
+\end{example}
+
+Trừu tượng hơn, với một tập hợp $S$ cho trước, $*$ được gọi là một \textit{phép toán hai ngôi}, hay \textit{luật hợp thành} trên $S$ nếu $*$ gán mỗi cặp phần tử của $S$ với đúng một phần tử nữa của $S$. Bằng kí hiệu, chúng ta viết $*: S\times S \to S$, còn ảnh của phần tử $(x, y)\in S\times S$ dưới ánh xạ $*$ được kí hiệu là $x * y$. Các phép toán cộng, trừ, nhân hai số thực là các phép toán hai ngôi, còn phép chia một số thực cho một số thực khác không được gọi là một phép toán hai ngôi không toàn phần. Trong ngành Đại số (hay còn gọi là Đại số trừu tượng để phân biệt với Đại số sơ cấp được dạy trong chương trình phổ thông), người ta thường xuyên làm việc với những phép toán hai ngôi trừu tượng như vậy (những phép toán đó thường mang các tính chất đặc biệt nào đó, chẳng hạn như tính chất kết hợp và tính chất giao hoán, vân vân).
+
+Nói riêng, tập nguồn của một ánh xạ có thể là tập hợp rỗng. Nhưng nếu tập đích của một ánh xạ là tập rỗng thì tập nguồn của ánh xạ đó cũng phải là tập hợp rỗng. Vì nếu tập nguồn khác rỗng và tập đích rỗng thì ``ánh xạ'' sẽ không có phần tử nào để gán với phần tử của tập nguồn $-$ Điều này vi phạm định nghĩa ánh xạ. Chúng ta gọi ánh xạ có tập nguồn rỗng là một ánh xạ rỗng. Khi học và làm toán, chúng ta rất ít khi gặp ánh xạ rỗng và thường bỏ qua (việc này là chấp nhận được) trường hợp này.
+
+\subsection*{Ảnh và Nghịch ảnh}
+
+Ở mục trước, khi định nghĩa ánh xạ, chúng ta đã đề cập đến ảnh của một phần tử dưới một ánh xạ.
+
+\begin{definition}
+    Cho ánh xạ $f: X\to Y$, $S$ là một tập hợp con của $X$.
+    \begin{enumerate}[label={(\roman*)},topsep=0pt]
+        \item (Ảnh của một tập hợp) \textbf{Ảnh của $S$ dưới ánh xạ $f$} là một tập hợp gồm các phần tử của $Y$ sao cho với mỗi phần tử $y$ thuộc ảnh của $f$, tồn tại (không nhất thiết duy nhất) phần tử $x$ trong $S$ sao cho $f(x) = y$. Chúng ta kí hiệu ảnh của $S$ dưới ánh xạ $f$ bởi $f[S]$. Bằng kí hiệu, chúng ta viết
+              \[
+                  f[S] = \{ y \mid \exists x\in S: f(x) = y \} = \{ f(x) \mid x\in S \}
+              \]
+        \item (Ảnh của ánh xạ) \textbf{Ảnh của $f$} là tập hợp $f[X]$. Ngoài ra, chúng ta cũng kí hiệu ảnh của ánh xạ $f$ là $\text{Im}(f)$.
+    \end{enumerate}
+\end{definition}
+
+Trực tiếp từ định nghĩa trên, chúng ta có thể kết luận rằng ảnh của một tập hợp $S\subseteq X$ dưới $f$ là một tập hợp con của $Y$, và ảnh của tập hợp rỗng là tập hợp rỗng. Định nghĩa này có thể được trình bày một cách không hình thức như sau: tác động ánh xạ $f$ lên mọi phần tử của $S\subseteq X$, rồi gom tất cả ảnh thu được, chúng ta được ảnh của $S$ dưới $f$. Ngược chiều với khái niệm ảnh của ánh xạ, chúng ta có khái niệm nghịch ảnh.
+
+\begin{definition}[Nghịch ảnh]
+    Cho ánh xạ $f: X\to Y$.
+    \begin{enumerate}[label={(\roman*)},topsep=0pt]
+        \item (Nghịch ảnh của một tập hợp) $S$ là một tập hợp con của $Y$. Chúng ta định nghĩa \textbf{nghịch ảnh của $S$ dưới ánh xạ $f$} là tập hợp gồm những phần tử của $X$ mà ảnh của chúng thuộc $S$. Tập hợp này được kí hiệu là $f^{-1}[S]$. Bằng kí hiệu, chúng ta viết:
+              \[
+                  f^{-1}[S] = \{ x \mid x\in X \wedge f(x)\in S \}.
+              \]
+        \item (Nghịch ảnh của một phần tử) Cho phần tử $y\in Y$. Nghịch ảnh của $y$ dưới ánh xạ $f$ là tập hợp $f^{-1}[\{y\}]$.
+    \end{enumerate}
+\end{definition}
+
+Định nghĩa trên cho thấy khái niệm nghịch ảnh của một phần tử là trường hợp riêng của khái niệm nghịch ảnh của một tập hợp. Nói riêng, đối với ánh xạ $f: X\to Y$, nghịch ảnh của $Y$ dưới ánh xạ $f$ là $X$, nghịch ảnh của tập hợp rỗng là tập hợp rỗng.
+
+\begin{example}
+    $f$ là ánh xạ gán một số tự nhiên $n$ với số tự nhiên $2n$.
+
+    \noindent Ảnh của ánh xạ $f$ là tập hợp các số tự nhiên chẵn.
+
+    \noindent Nghịch ảnh của tập hợp các số tự nhiên chẵn dưới ánh xạ $f$ là tập hợp các số tự nhiên. Nghịch ảnh của tập hợp các số tự nhiên lẻ dưới ánh xạ $f$ là tập hợp rỗng.
+\end{example}
+
+\begin{example}
+    $f$ là ánh xạ gán một số thực $x$ với số thực $x^{2}$.
+
+    \noindent Nghịch ảnh của $0$ dưới $f$ là $\{ 0 \}$. Nghịch ảnh của $(-1)$ dưới $f$ là tập hợp rỗng. Nghịch ảnh của $\{ -2, -1, 0, 1, 2 \}$ là $\{ 0, 1, -1, \sqrt{2}, -\sqrt{2} \}$.
+\end{example}
+
+Tương tự với hàm số, chúng ta cũng có thể định nghĩa đồ thị của ánh xạ. Khi nhắc đến đồ thị của hàm số, chúng ta thường liên tưởng đến một hình vẽ trong mặt phẳng tọa độ. Đồ thị của hàm số (thực ra chỉ là một phần của đồ thị đó) có thể được đặt lên, được trực quan hóa trong mặt phẳng (hay không gian) tọa độ Descartes. Nhưng đồ thị của ánh xạ lại hoàn toàn trừu tượng, theo nghĩa là không có một cách trực quan hóa tương tự như vậy mà được chấp nhận rộng rãi.
+
+\begin{definition}
+    Cho hai ánh xạ $f: X\to Y$ và $g: A\to B$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item (Đồ thị của ánh xạ) Đồ thị của ánh xạ $f$ là tập hợp gồm tất cả các cặp có thứ tự mà thành phần thứ nhất là một phần tử của $X$, còn thành phần thứ hai là ảnh của phần tử đó dưới ánh xạ $f$. Bằng kí hiệu, đồ thị của ánh xạ $f$ được viết như sau:
+              \[
+                  \{ (x,f(x)) \mid x\in X \}.
+              \]
+        \item (Hai ánh xạ bằng nhau) Hai ánh xạ $f$ và $g$ được gọi là bằng nhau, hay trùng nhau nếu và chỉ nếu tập nguồn của chúng bằng nhau, tập đích của chúng bằng nhau, và đồ thị của chúng bằng nhau. Bằng kí hiệu, ta viết $f = g$ để biểu thị quan hệ bằng nhau của hai ánh xạ.
+    \end{enumerate}
+\end{definition}
+
+Định lý sau đây cho chúng ta một điều kiện cần và đủ để hai ánh xạ có cùng tập nguồn, cùng tập đích là bằng nhau. Định lý này phát biểu rằng hai ánh xạ có cùng tập nguồn và tập đích bằng nhau khi và chỉ khi ảnh của chúng tại mỗi phần tử của tập nguồn là bằng nhau. Đây cũng có thể được sử dụng làm định nghĩa cho hai ánh xạ bằng nhau thay cho định nghĩa trên.
+
+\begin{theorem}\label{theorem:identical-mappings}
+    Cho hai ánh xạ $f$ và $g$ với tập nguồn là $X$, tập đích là $Y$. $f = g$ khi và chỉ khi với mọi $x\in X$, có $f(x) = g(x)$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta bỏ qua trường hợp hiển nhiên là trường hợp ánh xạ rỗng, chỉ xét trường hợp $X$ và $Y$ khác rỗng.
+
+    ($\Rightarrow$) Chiều thuận. $f = g$.
+
+    $f = g$ nên đồ thị của hai ánh xạ này bằng nhau. Xét $x$ là một phần tử bất kì của $X$. $(x, f(x))$ thuộc đồ thị của $f$, $(x, g(x))$ thuộc đồ thị của $g$. Vì đồ thị của $f$ và $g$ bằng nhau nên $(x, f(x))$ thuộc đồ thị của $g$. Theo định nghĩa ánh xạ (mỗi phần tử của tập nguồn được gán với duy nhất một phần tử của tập đích) và định nghĩa đồ thị của ánh xạ, việc $(x, f(x))$ thuộc đồ thị của $g$ có nghĩa là $f(x)$ là ảnh của $x$ dưới ánh xạ $g$, nghĩa là $f(x) = g(x)$. Vì chúng ta đang xét phần tử $x$ bất kì của $X$, nên $f(x) = g(x)$ với mọi $x\in X$.
+
+    ($\Leftarrow$) Chiều đảo. Với mọi $x\in X$, có $f(x) = g(x)$.
+
+    Xét $x$ là một phần tử bất kì của $X$, khi đó $(x, f(x))$ là một phần tử bất kì trong đồ thị của $f$, và $(x, g(x))$ là một phần tử bất kì trong đồ thị của $g$. Vì $f(x) = g(x)$ với mọi $x\in X$ nên $(x, f(x)) = (x, g(x))$. Do đó $(x, f(x))$ thuộc đồ thị của $g$, và $(x, g(x))$ thuộc đồ thị của $f$. Như vậy, đồ thị của $f$ là tập hợp con của đồ thị của $g$ và đồ thị của $g$ là tập hợp con của đồ thị của $f$, nên đồ thị của $f$ và $g$ bằng nhau. Cùng với việc $f$ và $g$ có cùng tập nguồn và tập đích, chúng ta kết luận $f = g$.
+
+    Vậy hai ánh xạ $f$ và $g$ với chung tập nguồn $X$ và tập đích $Y$ bằng nhau khi và chỉ khi với mọi $x\in X$, có $f(x) = g(x)$.
+\end{proof}
+
+\subsection*{Ánh xạ hợp}
+
+Các ánh xạ có thể kết hợp với nhau để cho ra một ánh xạ nữa nếu tập nguồn của ánh xạ thứ nhất là tập đích của ánh xạ thứ hai, như trong định nghĩa sau đây.
+
+\begin{definition}[Phép toán hợp thành hai ánh xạ]
+    Cho hai ánh xạ $g: Y\to Z$ và $f: X\to Y$, \textbf{ánh xạ hợp} của hai ánh xạ $g$ và $f$ được kí hiệu là $g\circ f$, là một ánh xạ sao cho
+    \begin{align*}
+        g\circ f: & X\to Z            \\
+                  & x\mapsto g(f(x)).
+    \end{align*}
+\end{definition}
+
+Khi áp dụng một ánh xạ là hợp thành của ánh xạ khác, chẳng hạn $g\circ f$ lên một phần tử $x$ của tập nguồn, chúng ta áp dụng $f$ lên $x$ trước, sau đó áp dụng $g$ lên $f(x)$. Việc viết $g\circ f$ chỉ có nghĩa khi tập nguồn của $g$ cũng là tập đích của $f$.
+
+Định lý dưới đây khẳng định phép toán hợp thành ánh xạ có tính chất kết hợp.
+
+\begin{theorem}
+    Cho ba ánh xạ $f: Z\to W$, $g: Y\to Z$, và $h: X\to Y$. Khi đó
+    \[
+        (f\circ g)\circ h = f\circ (g\circ h).
+    \]
+\end{theorem}
+
+\begin{proof}
+    Hai ánh xạ $(f\circ g)\circ h$ và $f\circ (g\circ h)$ có cùng tập nguồn là $X$, cùng tập đích là $W$.
+
+    $x$ là một phần tử bất kì của $X$. Theo định nghĩa của phép toán hợp thành hai ánh xạ:
+    \begin{align*}
+        ((f\circ g)\circ h)(x) & = (f\circ g)(h(x)) = f(g(h(x))), \\
+        (f\circ (g\circ h))(x) & = f((g\circ h)(x)) = f(g(h(x))).
+    \end{align*}
+
+    Do đó $((f\circ g)\circ h)(x) = (f\circ (g\circ h))(x)$ với mọi $x$. Vậy hai ánh xạ $(f\circ g)\circ h$ và $f\circ (g\circ h)$.
+\end{proof}
+
+Nhờ định lý trên, chúng ta có thể viết $f\circ g\circ h$ thay vì $(f\circ g)\circ h$ hay $f\circ (g\circ h)$. Nói chung, phép toán hợp thành hai ánh xạ không giao hoán. Cụ thể hơn, với hai ánh xạ $f: X\to Y$ và $g: Y\to X$, không phải lúc nào chúng ta cũng có $f\circ g = g\circ f$.
+
+Chúng ta xem xét một số ví dụ tính toán với những ánh xạ cụ thể.
+
+\begin{example}
+    $f$ là ánh xạ gán một số thực $x$ khác không với số thực khác không $\frac{1}{x}$.
+
+    \noindent Tập nguồn và tập đích của $f$ bằng nhau (là tập hợp các số thực khác không), và $(f\circ f)(x) = x$. Lưu ý rằng tập nguồn của $f\circ f$ là tập các số thực khác không.
+\end{example}
+
+\begin{example}
+    $f$ là ánh xạ gán một số thực $x$ với số thực $x^{2} - 2x$. $g$ là ánh xạ gán một số thực $x$ với số thực $1 - 3x$.
+    \[
+        \begin{split}
+            (f\circ g)(x) &= f(g(x)) = f(1 - 3x) = {(1 - 3x)}^{2} - 2(1 - 3x) = 9{x}^{2} - 3x, \\
+            (g\circ f)(x) &= g(f(x)) = g(x^{2} - 2x) = 1 - 3(x^{2} - 2x) = 1 + 6x - 3{x}^{2}.
+        \end{split}
+    \]
+\end{example}
+
+\subsection*{Đơn ánh. Toàn ánh. Song ánh}
+
+\begin{definition}
+    Cho ánh xạ $f: X\to Y$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item (Đơn ánh) $f$ được gọi là đơn ánh nếu $f(a) = f(b)$ khi và chỉ khi $a = b$ ($a, b\in X$). Đơn ánh còn được gọi là ánh xạ $1-1$.
+        \item (Toàn ánh) $f$ được gọi là toàn ánh nếu với mỗi $y\in Y$, tồn tại (không nhất thiết duy nhất) $x\in X$ sao cho $f(x) = y$.
+        \item (Song ánh) $f$ được gọi là song ánh $f$ vừa là đơn ánh, vừa là toàn ánh.
+    \end{enumerate}
+\end{definition}
+
+Với định nghĩa trên, bạn đọc có thể kiểm tra xem những ánh xạ được đề cập trong các ví dụ ở mục trước là đơn ánh, toàn ánh, hay là cả hai (song ánh). Tuy chúng ta hầu như chỉ quan tâm tới ba loại ánh xạ là đơn ánh, toàn ánh, và song ánh, nhưng vẫn có những ánh xạ không thuộc về cả ba loại ánh xạ này. Hãy xem xét thêm các ví dụ bên dưới.
+
+\begin{example}
+    Ánh xạ $f$ từ tập hợp số thực vào tập hợp số thực không âm, được xác định bởi công thức $f(x) = x^{2}$ là một toàn ánh, nhưng không phải đơn ánh. Bởi vì với mỗi số thực không âm $y$, có $f(\sqrt{y}) = y$; với mọi số thực $x$, có $x^{2} = {(-x)}^{2}$.
+\end{example}
+
+\begin{example}
+    Ánh xạ $g$ từ tập hợp số thực vào tập hợp số thực, được xác định bởi công thức $g(x) = x^{2}$ không phải một đơn ánh, và cũng không phải một toàn ánh. Bởi vì với mỗi số thực $x$, có $x^{2} = {(-x)}^{2}$; với mỗi số thực âm $y$, không tồn tại số thực nào có bình phương bằng $y$.
+
+    \noindent Hãy đối chiếu với ví dụ liền trước, hai ví dụ này khẳng định sự quan trọng của việc xác định tập nguồn và tập đích của một ánh xạ.
+\end{example}
+
+\begin{example}
+    Ánh xạ $f$ từ tập hợp số tự nhiên vào tập hợp số tự nhiên, được xác định bởi công thức $f(n) = 2n$ là một đơn ánh, nhưng không phải toàn ánh.
+\end{example}
+
+\begin{example}
+    Một ánh xạ hằng với tập nguồn có nhiều hơn một phần tử là một toán ánh nhưng không phải đơn ánh. Mọi ánh xạ đồng nhất là song ánh.
+\end{example}
+
+Định lý khá hiển nhiên sau đây có thể được dùng để định nghĩa đơn ánh thay vì định nghĩa nêu trên.
+
+\begin{theorem}\label{theorem:one-to-one-mapping}
+    Ánh xạ $f: X\to Y$ là đơn ánh khi và chỉ khi với mỗi $x_{1}, x_{2}\in X$, có $x_{1}\ne x_{2}$ kéo theo $f(x_{1})\ne f(x_{2})$. Chúng ta còn nói: $f$ là đơn ánh khi và chỉ khi ảnh của hai phần tử khác nhau là khác nhau.
+\end{theorem}
+
+\begin{proof}
+    $(\Rightarrow)$ $f$ là đơn ánh.
+
+    Cho $x_{1}, x_{2}$ là hai phần tử khác nhau của $X$. Nếu $f(x_{1}) = f(x_{2})$ thì theo định nghĩa đơn ánh, có $x_{1} = x_{2}$ (mâu thuẫn với điều đã giả sử). Do đó $f(x_{1})\ne f(x_{2})$. Như vậy $x_{1}\ne x_{2}$ kéo theo $f(x_{1})\ne f(x_{2})$.
+
+    $(\Leftarrow)$ Với mỗi $x_{1}, x_{2}\in X$, có $x_{1}\ne x_{2}$ kéo theo $f(x_{1})\ne f(x_{2})$.
+
+    Giả sử $f(x_{1}) = f(x_{2})$. Nếu $x_{1}\ne x_{2}$ thì $f(x_{1})\ne f(x_{2})$ (mâu thuẫn với điều đã giả sử). Do đó $x_{1} = x_{2}$. Theo định nghĩa đơn ánh, $f$ là đơn ánh.
+
+    Tóm lại, $f: X\to Y$ là đơn ánh khi và chỉ khi với mỗi $x_{1}, x_{2}\in X$, có $x_{1}\ne x_{2}$ kéo theo $f(x_{1})\ne f(x_{2})$.
+\end{proof}
+
+\begin{definition}[Ánh xạ ngược]
+    Cho hai ánh xạ $f: X\to Y$ và $g: Y\to X$. $g$ được gọi là một \textbf{ánh xạ ngược} của $f$ nếu và chỉ nếu $f(g(y)) = y$ với mọi $y$ và $g(f(x)) = x$ với mọi $x$. Ngoài cách nói trên, chúng ta còn nói rằng $f$ \textbf{khả nghịch}.
+\end{definition}
+
+Không phải ánh xạ nào cũng có ánh xạ ngược. Định lý sau đây cung cấp điều kiện cần và đủ để một ánh xạ có ánh xạ ngược.
+
+\begin{theorem}
+    Ánh xạ $f: X\to Y$ có ánh xạ ngược khi và chỉ khi $f$ là song ánh.
+\end{theorem}
+
+\begin{proof}
+    Trong trường hợp $f$ là ánh xạ rỗng, $f$ là song ánh khi và chỉ khi tập nguồn và tập đích cùng là tập hợp rỗng, và khi đó $f$ có ánh xạ ngược (cũng là một ánh xạ giữa hai tập hợp rỗng). Dưới đây chúng ta xét trường hợp $f$ không phải ánh xạ rỗng.
+
+    ($\Rightarrow$) $f$ có ánh xạ ngược.
+
+    Chúng ta gọi $g: Y\to X$ là ánh xạ ngược của $f$. Theo định nghĩa ánh xạ ngược, với mọi $y\in Y$, có $f(g(y)) = y$. Điều này có nghĩa là ảnh của $g(y)$ là $y$, nên $f$ là một toàn ánh. Với $x_{1}, x_{2}\in X$, nếu $f(x_{1}) = f(x_{2})$ thì $x_{1} = g(f(x_{1})) = g(f(x_{2})) = x_{2}$. Do đó, $f$ là một đơn ánh. Vì $f$ vừa là đơn ánh, vừa là toàn ánh nên $f$ là một song ánh.
+
+    ($\Leftarrow$) $f$ là một song ánh.
+
+    Theo định nghĩa toàn ánh và Định lý~\ref{theorem:one-to-one-mapping}, vì $f$ vừa là đơn ánh, vừa là toàn ánh nên với mỗi phần tử $y\in Y$, tồn tại duy nhất $x\in X$ sao cho $f(x) = y$. Mệnh đề vừa phát biểu đã xác định một quy tắc gán mỗi phần tử $y\in Y$ với một phần tử duy nhất $x\in X$. Như vậy, chúng ta có một ánh xạ $g: Y\to X$ với công thức $g(y) = x$ sao cho $x$ là phần tử duy nhất của $X$ thỏa mãn $f(x) = y$. Từ định nghĩa của $f$ và $g$, nếu $f(x) = y$ thì $g(f(x)) = x$ và $f(g(y)) = y$. Do vậy $f$ là một song ánh.
+
+    Vậy $f$ có ánh xạ ngược khi và chỉ khi $f$ là song ánh.
+\end{proof}
+
+Từ định nghĩa ánh xạ ngược, chúng ta suy ra rằng nếu ánh xạ $f: X\to Y$ nhận ánh xạ $g: Y\to X$ làm ánh xạ ngược thì $f$ cũng là một ánh xạ ngược của $g$. Để biểu thị rằng hai ánh xạ $f$ và $g$ là ánh xạ ngược của nhau, chúng ta sử dụng phép toán hợp thành hai ánh xạ như sau:
+\[
+    g\circ f = \text{id}_{Y}\qquad\text{và}\qquad f\circ g = \text{id}_{X}.
+\]
+
+\begin{theorem}
+    Nếu một ánh xạ có ánh xạ ngược thì ánh xạ ngược đó là duy nhất. Nói cách khác, khi một ánh xạ có hai ánh xạ ngược thì hai ánh xạ ngược đó bằng nhau.
+\end{theorem}
+
+Chúng tôi nhường lại chứng minh định lý trên cho bạn đọc trong phần Bài tập.
+
+\subsection*{$\dagger$ Tích Descartes}
+
+Ngoại trừ mục hiện tại và Mục~\ref{section5:axiomatic-set-theory}, trong tài liệu này, chúng ta chỉ làm việc với tích Descartes của hai tập hợp. Mục tiêu của mục này là đưa ra một định nghĩa cho tích Descartes của một họ các tập hợp (có thể gồm vô hạn tập hợp).
+
+Tuy ngay bây giờ có thể định nghĩa tích Descartes của một họ các tập hợp, nhưng chúng ta bắt đầu với tích Descartes của hữu hạn tập hợp trước. Trước tiên, chúng ta định nghĩa bộ-$n$ có thứ tự. Một cách trực giác, chúng ta hiểu bộ-$n$ có thứ tự là một danh sách gồm $n$ đối tượng, và hai bộ-$n$ có thứ tự bằng nhau khi và chỉ khi các đối tượng thứ $i$ của chúng bằng nhau ($i$ là số tự nhiên không vượt quá $n$). Thực tế, đó là tất cả những gì chúng ta cần biết và dùng đến về bộ-$n$ có thứ tự trong tài liệu này.
+
+\begin{definition}[Bộ-$n$ có thứ tự]
+    Bộ-$0$ có thứ tự, kí hiệu bởi một cặp ngoặc tròn $()$ được định nghĩa là tập hợp rỗng.
+
+    Bộ-$1$ có thứ tự với đối tượng thứ nhất (và duy nhất) là $a_{1}$, kí hiệu là $(a_{1})$ được định nghĩa là cặp có thứ tự $((), a_{1}) = \{ \{ \varnothing \}, \{ \varnothing, a_{1} \} \}$.
+
+    Bộ-$2$ có thứ tự với đối tượng thứ nhất, thứ hai lần lượt là $a_{1}$, $a_{2}$ được định nghĩa là cặp có thứ tự $((a_{1}), a_{2})$.
+
+    Bộ-$n$ có thứ tự với đối tượng thứ nhất, thứ hai, \ldots, thứ $n$ lần lượt là $a_{1}$, $a_{2}$, \ldots, $a_{n}$ được định nghĩa là cặp có thứ tự $((a_{1}, a_{2}, \ldots, a_{n-1}), a_{n})$.
+
+    Bộ-$n$ có thứ tự được kí hiệu là $(a_{1}, a_{2}, \ldots, a_{n})$.
+\end{definition}
+
+Định nghĩa kiểu trên được gọi là định nghĩa bằng \textit{quan hệ hồi quy} (bạn đọc có thể liên tưởng đến phương pháp quy nạp toán học). Chúng ta bắt đầu bằng định nghĩa cho những trường hợp nhỏ gọi là \textit{trường hợp cơ sở}, còn với những trường hợp có ``kích thước'' lớn hơn, chúng ta quy về trường hợp nhỏ hơn, cứ như vậy cho đến khi đạt tới trường hợp cơ sở. (Một ví dụ khác cho định nghĩa bằng hồi quy là dãy số Fibonacci\footnote{Dãy Fibonacci bắt đầu bằng $0$ và $1$. Kể từ vị trí thứ ba trong dãy trở đi, mỗi số bằng tổng hai số liền trước trong dãy. Những số đầu tiên trong dãy Fibonacci là $0, 1, 1, 2, 3, 5, 8, 13, 21, 34,\ldots$}.) Với cách làm này, chúng ta định nghĩa được bộ-$n$ có thứ tự với bất cứ số nguyên không âm nào. Nhưng cách làm này nói chung không áp dụng được cho ý tưởng về một bộ có \textit{vô hạn} đối tượng, bởi không có điều gì đảm bảo rằng trường hợp cơ sở sẽ được đạt tới.
+
+\begin{definition}[Tích Descartes của hữu hạn tập hợp]
+    Cho $n$ tập hợp $X_{1}, X_{2}, \ldots, X_{n}$. Tích Descartes của $X_{1}, X_{2}, \ldots, X_{n}$ là một tập hợp gồm tất cả các bộ-$n$ có thứ tự mà trong đó, đối tượng thứ $i$ là phần tử của tập hợp $X_{i}$ (với mọi số tự nhiên $i$ không vượt quá $n$). Tích Descartes của $X_{1}, X_{2}, \ldots, X_{n}$ được kí hiệu là $X_{1}\times X_{2}\times \cdots \times X_{n}$. Bằng kí hiệu, chúng ta biểu thị tích Descartes này như sau:
+    \[
+        X_{1}\times X_{2}\times \cdots \times X_{n} = \{ (x_{1}, x_{2}, \ldots, x_{n}) \mid x_{1}\in X_{1} \wedge x_{2}\in X_{2}\wedge \cdots \wedge x_{n}\in X_{n} \}.
+    \]
+
+    Nói riêng, lũy thừa Descartes bậc $n$ của một tập hợp $X$ được kí hiệu là $X^{n}$, là tập hợp sau:
+    \[
+        X^{n} = \underbrace{X\times X\times \cdots \times X}_{\text{$n$ lần $X$}}
+    \]
+\end{definition}
+
+Bạn đọc có thể đã nhận ra rằng tích Descartes của hữu hạn tập hợp cũng có thể được định nghĩa bằng hồi quy. Nhưng dù làm vậy, chúng ta vẫn gặp khó khăn khi định nghĩa tích Descartes của một họ các tập hợp, tương tự như với ý tưởng bộ vô hạn có thứ tự.
+
+\begin{definition}[Tích Descartes của một họ các tập hợp]
+    Cho họ tập hợp $A_{i}$ ($i\in I$, tập hợp $I$ khác rỗng). Tích Descartes của họ tập hợp $A_{i}$ được kí hiệu là $\prod_{i\in I}A_{i}$ và xác định như sau:
+    \[
+        \prod_{i\in I} A_{i} = \left\{ f: I\to \bigcup_{i\in I} A_{i} \mid \forall i\in I: f(i)\in A_{i} \right\}.
+    \]
+\end{definition}
+
+Trong định nghĩa trên, tích Descartes là một tập hợp các ánh xạ với tập nguồn là tập chỉ số $I$, tập đích là hợp của họ các tập hợp đã cho. Để hiểu định nghĩa này hơn, bạn đọc có thể cần một chút thời gian, mặc dù ở thời điểm này các chi tiết trong định nghĩa đều rõ nghĩa $-$ Hãy thử xét trường hợp $I$ là hữu hạn, và liên tưởng tới Định lý~\ref{theorem:identical-mappings} về điều kiện để hai ánh xạ bằng nhau.
+
+Tích Descartes của hữu hạn tập hợp là khác rỗng nếu từng tập hợp trong tích Descartes là khác rỗng, điều này có thể được chứng minh bằng phương pháp quy nạp toán học. Tuy nhiên phương pháp quy nạp toán học mà chúng ta đã biết chỉ được áp dụng cho số tự nhiên, không áp dụng cho vô hạn. Nói thêm, nếu công nhận Tiên đề chọn, chúng ta khẳng định được tích Descartes của một họ các tập khác rỗng là khác rỗng. Nếu không công nhận tiên đề chọn, chưa thể trả lời được tích Descartes của họ vô hạn tập hợp là rỗng hay không.
+
+\subsection*{Bài tập}
+\setcounter{exercise}{0}
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$. Chứng minh rằng hai mệnh đề sau tương đương.
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item $f$ là toàn ánh.
+        \item $\text{Im}(f) = Y$.
+    \end{enumerate}
+\end{exercise}
+
+Định nghĩa của đơn ánh và song ánh làm chúng ta có cảm giác rằng song ánh là hiếm gặp, bởi vì song ánh là một trường hợp riêng của đơn ánh. Bài tập sau cho biết có thể tạo ra một song ánh từ một đơn ánh, theo một cách ``tự nhiên''.
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$ là đơn ánh. $\overline{f}$ là ánh xạ với tập nguồn là $X$, tập đích là $\text{Im}(f)$, cùng công thức là $\overline{f}(x) = f(x)$ với mọi $x\in X$. Chứng minh rằng $\overline{f}$ là song ánh.
+\end{exercise}
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$. Chứng minh rằng:
+    \begin{enumerate}[label={(\roman*)}]
+        \item $\text{id}_{X} \circ f = f$.
+        \item $f \circ \text{id}_{Y} = f$.
+        \item Nếu $f$ có ánh xạ ngược thì ánh xạ ngược đó là duy nhất. [Gợi ý: Giả sử $g$, $h$ là hai ánh xạ ngược của $f$, hãy xét ánh xạ $g\circ f\circ h$]
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Cho hai ánh xạ khả nghịch $g: Y\to Z$ và $f: X\to Y$. Chứng minh rằng $g\circ f$ cũng khả nghịch và ánh xạ ngược của $g\circ f$ là $f^{-1}\circ g^{-1}$.
+\end{exercise}
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$. $A, B$ là hai tập hợp con của $X$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item $f[A\cup B] = f[A]\cup f[B]$.
+        \item $f[A\cap B] \subseteq f[A]\cap f[B]$.
+        \item $f[A - B] \supseteq f[A] - f[B]$.
+    \end{enumerate}
+
+    Hãy tìm một ví dụ mà $f[A\cap B]\ne f[A]\cap f[B]$ và một ví dụ mà $f[A - B]\ne f[A] - f[B]$. [Gợi ý: Với ví dụ thứ nhất, chọn $A, B$ sao cho $A$ và $B$ là hai tập rời nhau. Với ví dụ thứ hai, chọn $A, B$ sao cho ảnh của $A$ và ảnh của $B$ bằng nhau.]
+\end{exercise}
+
+Nghịch ảnh là một khái niệm quan trọng trong topology. Một vài trong những lý do cho điều đó là kết quả trong hai bài tập sau.
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$. $A, B$ là hai tập hợp con của $Y$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item $f^{-1}[A\cup B] = f^{-1}[A]\cup f^{-1}[B]$.
+        \item $f^{-1}[A\cap B] = f^{-1}[A]\cap f^{-1}[B]$.
+        \item $f^{-1}[A - B] = f^{-1}[A] - f^{-1}[B]$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$. $A_{i}$ (với $i\in I$, tập hợp $I$ khác rỗng) là một họ tập hợp và đều là tập con của $Y$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item $f^{-1}[\bigcup_{i\in I}A_{i}] = \bigcup_{i\in I} f^{-1}[A_{i}]$.
+        \item $f^{-1}[\bigcap_{i\in I}A_{i}] = \bigcap_{i\in I} f^{-1}[A_{i}]$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng với mọi số nguyên dương $n$, hai bộ-$n$ có thứ tự $(a_{1}, a_{2}, \ldots, a_{n})$ và $(b_{1}, b_{2}, \ldots, b_{n})$ bằng nhau khi và chỉ khi $a_{i} = b_{i}$ với mọi số tự nhiên $i$ không vượt quá $n$.
+\end{exercise}
+
+\section{Quan hệ}
+
+\subsection*{Quan hệ hai ngôi}
+
+Cho đến mục này, bạn chắc hẳn đọc đã bắt gặp thuật ngữ quan hệ, hoặc sử dụng khái niệm đó (dù là theo cách tường minh hay ngầm định) trong tài liệu vài lần. Chúng ta đều đã biết \textit{quan hệ bằng nhau giữa các số thực}, \textit{quan hệ bao hàm giữa các tập hợp}, \textit{quan hệ so sánh giữa các số thức}\ldots Điểm chung trong những ví dụ trên về quan hệ là có hai đối tượng cùng thuộc tập hợp nào đấy và được đặt trong mối quan hệ đó $-$ \textit{hai số thực bằng nhau}, \textit{tập hợp này là tập hợp con của tập hợp kia}, \textit{số thực này nhỏ hơn hoặc bằng số thực kia}. Sự ghép cặp như vậy dẫn tới ý tưởng định nghĩa quan hệ bằng tích Descartes của hai tập hợp.
+
+\begin{definition}[Quan hệ hai ngôi]
+    Cho tập hợp $S$. Một quan hệ hai ngôi $\mathscr{R}$ trên tập hợp $S$ là một tập hợp con của $S\times S$. Chúng ta viết $\mathscr{R}\subseteq S$. Với hai phần tử $x, y\in S$, nếu $x$ có quan hệ $\mathscr{R}$ với $y$ thì chúng ta viết $x\mathscr{R}y$.
+\end{definition}
+
+Trong tài liệu này, chúng ta chỉ định nghĩa và quan tâm đến quan hệ hai ngôi. Nếu chúng ta chỉ nhìn nhận một quan hệ hai ngôi bằng định nghĩa trên thì sẽ không có thêm thông tin gì. Có những quan hệ có các tính chất đáng lưu ý. Hãy xem xét thêm một số ví dụ.
+
+\begin{example}
+    Trên tập hợp số thực, chúng ta có quan hệ nhỏ hơn hoặc bằng, với kí hiệu $\leq$. Chẳng hạn: $-1\leq 2$, $\sqrt{5}\leq 3$.
+
+    \noindent Quan hệ $\leq$ trên tập hợp số thực có các tính chất
+    \begin{itemize}
+        \item Phản xạ: với mọi số thực $x$, có $x\leq x$.
+        \item Phản đối xứng: nếu $x\leq y$ và $y\leq x$ thì $x = y$.
+        \item Bắc cầu: nếu $x\leq y$ và $y\leq z$ thì $x\leq z$.
+    \end{itemize}
+
+    Ngoài ra, với hai số thực $x, y$ khác nhau, chỉ có một trong hai mệnh đề sau là đúng: (1) $x\leq y$, (2) $y\leq x$.
+\end{example}
+
+\begin{example}
+    Trên tập hợp số tự nhiên, chúng ta có quan hệ chia hết. Chẳng hạn: $1$ chia hết $2$, $3$ chia hết $12$ (hay còn nói $1$ là ước của $2$, $3$ là ước của $12$).
+
+    Quan hệ chia hết trên tập hợp số tự nhiên có tính chất sau:
+    \begin{itemize}
+        \item Phản xạ: với mọi số tự nhiên $a$, $a$ chia hết $a$.
+        \item Phản đối xứng: nếu $a$ chia hết $b$ và $b$ chia hết $a$ thì $a = b$.
+        \item Bắc cầu: nếu $a$ chia hết $b$ và $b$ chia hết $c$ thì $a$ chia hết $c$.
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    Trên tập hợp số nguyên, chúng ta có quan hệ đồng dư modulo $n$ với $n$ là một số nguyên khác không (nghĩa là hai số nguyên có hiệu chia hết cho $n$). Để biểu thị hai số nguyên $a$ và $b$ đồng dư modulo $n$, chúng ta viết $a\equiv b\pmod{n}$.
+
+    \noindent Quan hệ đồng dư modulo $n$ trên tập hợp số nguyên có các tính chất
+    \begin{itemize}
+        \item Phản xạ: Với mọi số nguyên $a$, $a\equiv a\pmod{n}$.
+        \item Đối xứng: Với mọi số nguyên $a, b$, nếu $a\equiv b\pmod{n}$ thì $b\equiv a\pmod{n}$ và ngược lại.
+        \item Bắc cầu: Với mọi số nguyên $a, b, c$, nếu $a\equiv b\pmod{n}$ và $b\equiv c\pmod{n}$ thì $a\equiv c\pmod{n}$.
+    \end{itemize}
+
+    Với hai số nguyên $a$ và $b$ bất kỳ, có thể xảy ra trường hợp chúng không đồng dư modulo $n$.
+\end{example}
+
+Trong phần còn lại của chương này, chúng ta nói về hai loại quan hệ đặc biệt: quan hệ tương đương và quan hệ thứ tự. Mỗi \textit{loại quan hệ} được xác định bởi những tính chất mà chúng thỏa mãn.
+
+\subsection*{Trường hợp riêng: Quan hệ tương đương}
+
+\begin{definition}[Quan hệ tương đương]
+    Quan hệ tương đương trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ tương đương thỏa mãn ba tính chất: phản xạ, đối xứng, và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ tương đương trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn ba tính chất
+    \begin{enumerate}[label={(\roman*)}]
+        \item (Phản xạ) Với mọi $x\in S$, có $x\mathscr{R}x$.
+        \item (Đối xứng) Nếu $x\mathscr{R}y$ thì $y\mathscr{R}x$.
+        \item (Bắc cầu) Nếu $x\mathscr{R}y$ và $y\mathscr{R}z$ thì $x\mathscr{R}z$.
+    \end{enumerate}
+\end{definition}
+
+Chúng ta đã gặp nhiều quan hệ tương đương: \textit{quan hệ bằng nhau trên tập hợp số thực}, \textit{quan hệ bằng nhau giữa các tập hợp}, \textit{quan hệ đồng dư modulo $n$ trên tập hợp số nguyên}, \textit{quan hệ đồng dạng giữa các tam giác trong mặt phẳng}\ldots
+
+Quan hệ tương đương thường được kí hiệu là $\sim$.
+
+\begin{definition}[Lớp tương đương]
+    Cho tập hợp $S$ và một quan hệ tương đương $\sim$ trên tập hợp $S$, $x$ là một phần tử của $S$. \@\textbf{Lớp tương đương của $x$ theo $\sim$} là một tập hợp con của $S$, gồm tất cả các phần tử tương đương với $x$. Lớp tương đương của $x$ theo $\sim$ (hoặc chúng ta nói lớp tương đương của $x$ nếu đã rõ rằng đang sử dụng quan hệ tương đương nào) được kí hiệu là $[x]$, chúng ta viết:
+    \[
+        [x] = \{ y \mid y\in S \wedge x\sim y \}\subseteq S.
+    \]
+\end{definition}
+
+Các lớp tương đương của một quan hệ tương đương có tính chất sau.
+
+\begin{theorem}
+    Cho tập hợp $S$ và một quan hệ tương đương $\sim$ trên tập hợp $S$, $x$ và $y$ là các phần tử của $S$ (không nhất thiết phân biệt). Nếu $x$ và $y$ tương đương thì $[x] = [y]$. Nếu $x$ và $y$ không tương đương thì $[x]$ và $[y]$ rời nhau.
+\end{theorem}
+
+\begin{proof}
+    Nếu $x$ và $y$ tương đương. Chúng ta lấy $x'$ là một phần tử bất kì của $[x]$. Theo định nghĩa lớp tương đương, $x'\sim x$. Mà $x\sim y$ nên $x'\sim y$ theo tính chất bắc cầu của quan hệ tương đương, kéo theo $x'$ thuộc $[y]$. Do đó $[x]\subseteq [y]$. Ngược lại, chúng ta lấy $y'$ là một phần tử bất kì của $[y]$. Theo định nghĩa lớp tương đương, $y'\sim y$. Cùng với việc $y\sim x$, chúng ta suy ra $y'\sim x$ theo tính chất bắc cầu của quan hệ tương đương, dẫn đến $y'$ thuộc $[x]$. Do đó $[y]\subseteq [x]$. Vậy $[x] = [y]$.
+
+    Nếu $x$ và $y$ không tương đương. Giả sử phản chứng rằng $[x]$ và $[y]$ có chung một phần tử $z$. Theo định nghĩa lớp tương đương, $x\sim z$ và $y\sim z$. Theo tính chất đối xứng và bắc cầu của quan hệ tương đương, $x\sim y$, điều này mâu thuẫn với giả thiết. Do đó giả sử phản chứng là sai. Vậy chúng ta phải có $[x]$ và $[y]$ rời nhau.
+\end{proof}
+
+Định lý trên khẳng định rằng tất cả các lớp tương đương theo một quan hệ tương đương trên một tập hợp cho trước tạo thành một phân hoạch của tập hợp đó. Khi làm việc với một lớp tương đương, chúng ta có thể chọn bất cứ phần tử nào của lớp tương đương đó để làm \textit{đại diện} (chẳng hạn là $x$) và viết $[x]$.
+
+\begin{definition}
+    Cho tập hợp $S$ và một quan hệ tương đương $\sim$ trên tập hợp $S$. \@\textbf{Tập thương} của $\sim$ trên tập hợp $S$ tập là một tập hợp gồm tất cả các lớp tương đương theo $\sim$. Tập thương của $\sim$ trên tập hợp $S$ được kí hiệu là $S/_{\sim}$. Chúng ta viết
+    \[
+        S/_{\sim} = \{ [x] \mid x\in S \}.
+    \]
+\end{definition}
+
+Ngược lại, cho trước một phân hoạch của một tập hợp $S$ khác rỗng, chúng ta có thể định nghĩa một quan hệ tương đương tương ứng với phân hoạch đó. Giả sử họ các tập hợp $S_{i}$ (với $i\in I$ và tập hợp $I$ khác rỗng) tạo thành một phân hoạch của tập hợp $S$. Khi đó chúng ta định nghĩa một quan hệ $\mathscr{R}$ trên $S$ như sau: $x\mathscr{R}y$ nếu và chỉ nếu tồn tại $i\in I$ sao cho $x$ và $y$ là phần tử của $A_{i}$. Trong trường hợp này, $\mathscr{R}$ chính là một quan hệ tương đương. Phần kiểm chứng, chúng tôi xin nhường lại cho bạn đọc.
+
+\subsection*{Trường hợp riêng: Quan hệ thứ tự và Quan hệ tiền thứ tự}
+
+Trước mục này, chúng ta đã nhắc đến quan hệ nhỏ hơn hoặc bằng giữa các số thực và gọi đó là quan hệ so sánh. Thực ra, tên gọi chính thức của loại quan hệ này là quan hệ thứ tự.
+
+\begin{definition}[Quan hệ thứ tự]
+    \textbf{Quan hệ thứ tự} (hay còn gọi là \textbf{quan hệ thứ tự một phần}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ thứ tự thỏa mãn ba tính chất: phản xạ, phản đối xứng, và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn ba tính chất:
+    \begin{enumerate}[label={(\roman*)}]
+        \item (Phản xạ) Với mọi $x\in S$, có $x\mathscr{R}x$.
+        \item (Phản đối xứng) Với mọi $x, y\in S$, nếu $x\mathscr{R}y$ và $y\mathscr{R}x$ thì $x = y$.
+        \item (Bắc cầu) Vói mọi $x, y, z\in S$, nếu $x\mathscr{R}y$ và $y\mathscr{R}z$ thì $x\mathscr{R}z$.
+    \end{enumerate}
+
+    \noindent Một tập hợp với một quan hệ thứ tự trên đó được gọi là \textbf{tập được sắp}.
+\end{definition}
+
+Quan hệ thứ tự thường được kí hiệu là $\leq$ nếu như không có hiểu nhầm nào hoặc không có quy ước gì khác. Nếu $x\leq y$ thì chúng ta cũng viết $y\geq x$. Khi $x\leq y$ và $x\ne y$ thì chúng ta viết $x < y$ hoặc $y > x$. Khi $x\leq y$ thì thay vì nói ``$x$ nhỏ hơn $y$'' (áp dụng với phần tử của các tập hợp số), chúng ta nói ``$x$ đi trước $y$''.
+
+Chúng ta xem xét hai ví dụ tiêu biểu về quan hệ thứ tự.
+\begin{example}
+    Trên tập hợp số thực, chúng ta có quan hệ nhỏ hơn hoặc bằng, với kí hiệu $\leq$. Đây là một quan hệ thứ tự. Quan hệ nhỏ hơn (với kí hiệu $<$) trên tập số thực thỏa mãn tính chất bắc cầu nhưng không thỏa mãn tính chất phản xạ và phản đối xứng nên không phải là một quan hệ thứ tự.
+
+    Ngoài ra, với hai số thực $x, y$ khác nhau, chỉ có một trong hai mệnh đề sau là đúng: (1) $x\leq y$, (2) $y\leq x$. Nếu hai số thực bằng nhau thì giữa chúng có quan hệ thứ tự, theo tính chất phản xạ.
+\end{example}
+
+\begin{example}
+    Chúng ta xét tập lũy thừa của tập hợp gồm hai phần tử $\{ 1, 2 \}$. $\mathcal{P}(\{ 1, 2 \}) = \{ \varnothing, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \}$. Quan hệ bao hàm giữa các tập hợp là một quan hệ thứ tự trên tập lũy thừa này.
+
+    Tuy nhiên, mặc dù có những cặp tập hợp có thể đặt vào quan hệ bao hàm, chẳng hạn như
+    \[
+        \varnothing\subseteq \{ 1 \};\quad \varnothing\subseteq \{ 2 \};\quad \varnothing\subseteq\{ 1, 2 \};\quad \{ 1 \}\subseteq\{ 1, 2 \};\quad \{ 2 \}\subseteq\{ 1, 2 \}
+    \]
+
+    nhưng vẫn có cặp tập hợp không thể đặt vào quan hệ bao hàm, đó là: $\{ 1 \}$ không phải tập hợp con của $\{ 2 \}$ và $\{ 2 \}$ cũng không phải tập hợp con của $\{ 1 \}$. Đây là sự khác biệt mấu chốt giữa ví dụ này và ví dụ liền trước.
+\end{example}
+
+Từ sự khác biệt giữa hai ví dụ về quan hệ thứ tự, chúng ta đưa ra định nghĩa sau.
+\begin{definition}[Quan hệ thứ tự toàn phần]
+    Cho trước một tập hợp và một quan hệ thứ tự trên tập hợp đó. Nếu hai phần tử bất kì của tập hợp này luôn đặt được vào quan hệ thứ tự đã cho (chúng ta còn nói rằng hai phần tử như vậy so sánh được với nhau) thì chúng ta nói quan hệ thứ tự này là \textbf{quan hệ thứ tự toàn phần}.
+
+    \noindent Một tập hợp với một quan hệ thứ tự toàn phần được gọi là \textbf{tập được sắp toàn phần}.
+\end{definition}
+
+Quan hệ thứ tự toàn phần là trường hợp riêng của quan hệ thứ tự (quan hệ thứ tự một phần). Khi ngữ cảnh chỉ cho biết một quan hệ là quan hệ thứ tự thì chúng ta hiểu đó là quan hệ thứ tự một phần, cho đến khi chỉ ra được đó là quan hệ thứ tự toàn phần.
+
+Trong một tập được sắp, có thể tồn tại những phần tử được gọi là phần tử nhỏ nhất và phần tử lớn nhất.
+\begin{definition}[Phần tử nhỏ nhất và phần tử lớn nhất]
+    Cho tập $S$ là một tập được sắp với quan hệ thứ tự $\leq$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phần tử $x$ của $S$ được gọi là \textbf{phần tử nhỏ nhất} (theo quan hệ thứ tự $\leq$) nếu với mọi phần tử $y$ của $S$, có $x\leq y$.
+        \item Phần tử $x$ của $S$ được gọi là \textbf{phần tử lớn nhất} (theo quan hệ thứ tự $\leq$) nếu với mọi phần tử $y$ của $S$, có $y\leq x$.
+    \end{enumerate}
+\end{definition}
+
+Tuy một quan hệ thứ tự có thể không phải quan hệ thứ tự toàn phần, nhưng khi một tập được sắp có phần tử nhỏ nhất (hay lớn nhất) thì phần tử đó so sánh được với tất cả các phần tử khác trong tập hợp đã cho.
+
+\begin{theorem}
+    Nếu một tập được sắp có phần tử nhỏ nhất (hay lớn nhất) thì phần tử đó là duy nhất.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta gọi tập hợp được sắp đã cho là $S$, kí hiệu quan hệ thứ tự trên $S$ là $\leq$.
+
+    Nếu $x, y$ là các phần tử nhỏ nhất của $S$ thì theo định nghĩa phần tử nhỏ nhất, $x\leq y$ và $y\leq x$. Theo tính chất phản đối xứng, $x = y$. Do đó nếu $S$ có phần tử nhỏ nhất thì phần tử nhỏ nhất đó là duy nhất.
+
+    Nếu $a, b$ là các phần tử lớn nhất của $S$ thì theo định nghĩa phần tử lớn nhất, $a\leq b$ và $b\leq a$. Theo tính chất phản đối xứng, $a = b$. Do đó nếu $S$ có phần tử lớn nhất thì phần tử lớn nhất đó là duy nhất.
+\end{proof}
+
+Quan hệ thứ tự là một trường hợp riêng của quan hệ tiền thứ tự.
+
+\begin{definition}[Quan hệ tiền thứ tự]
+    \textbf{Quan hệ tiền thứ tự} (hay còn gọi là \textbf{quan hệ tiền thứ tự một phần}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ tiền thứ tự thỏa mãn hai tính chất: phản xạ và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ tiền thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn hai tính chất:
+    \begin{enumerate}[label={(\roman*)}]
+        \item (Phản xạ) Với mọi $x\in S$, có $x\mathscr{R}x$.
+        \item (Bắc cầu) Với mọi $x, y, z\in S$, nếu $x\mathscr{R}y$ và $y\mathscr{R}z$ thì $x\mathscr{R}z$.
+    \end{enumerate}
+
+    \noindent Nói riêng, trong một tập hợp với một quan hệ tiền thứ tự được định nghĩa trên đó, nếu hai phần tử bất kì luôn đặt được vào quan hệ tiền thứ tự thì chúng ta nóit đó là \textbf{quan hệ tiền thứ tự toàn phần}.
+\end{definition}
+
+Quan hệ tiền thứ tự được kí hiệu bởi $\lesssim$. Chúng ta xem xét một ví dụ về quan hệ tiền thứ tự nhưng lại không phải quan hệ thứ tự.
+
+\begin{example}
+    Trên tập hợp số nguyên cũng có quan hệ chia hết. Tuy nhiên quan hệ chia hết trên tập hợp số nguyên có tính chất phản xạ và bắc cầu, nhưng không có tính chất phản đối xứng (chẳng hạn, $2$ chia hết $-2$ và $-2$ chia hết $2$ nhưng $2\ne -2$).
+
+    \noindent Quan hệ chia hết trên tập hợp số nguyên là một quan hệ tiền thứ tự, nhưng không phải quan hệ thứ tự.
+\end{example}
+
+Ví dụ trên đây chỉ đơn thuần là ví dụ cho sự tồn tại của một quan hệ tiền thứ tự mà không phải quan hệ thứ tự, và dường như không cung cấp nhiều thông tin. Trong Chương~\ref{chapter5:real-numbers-and-complex-numbers}, chúng ta sẽ định nghĩa một quan hệ tiền thứ tự có ý nghĩa trong việc xây dựng tập hợp số thực.
+
+\subsection*{Bài tập}

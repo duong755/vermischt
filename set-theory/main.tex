@@ -1,0 +1,90 @@
+% chktex-file 44
+\documentclass[oneside]{book}
+\usepackage[a4paper,top=3cm,right=3cm,bottom=3cm,left=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{vietnam}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,amscdx,mathtools,mathrsfs}
+\usepackage{pxfonts}
+\usepackage{imakeidx}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{cases}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{placeins}
+\usepackage{caption,subcaption}
+\usepackage{epigraph}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\hypersetup{colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor=black,
+     urlcolor=cyan,
+}
+
+\addtolength\cftsecnumwidth{0.7em}
+\renewcommand\cftsecpresnum{\S}
+\counterwithout{section}{chapter}
+
+\newtheorem{theorem}{Định lý}
+\counterwithin{theorem}{section}
+\newtheorem{proposition}[theorem]{Mệnh đề}
+\newtheorem{corollary}[theorem]{Hệ quả}
+\newtheorem{axiom}[theorem]{Tiên đề}
+\newtheorem{lemma}[theorem]{Bổ đề}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Định nghĩa}
+\newtheorem{example}[theorem]{Ví dụ}
+\newtheorem{counterexample}[theorem]{Phản ví dụ}
+\newtheorem{exercise}{Bài tập}
+\counterwithin{exercise}{section}
+
+\newcommand{\card}[1]{\left\vert{#1}\right\vert} % cardinality
+
+\makeindex[columns=2]
+
+\captionsetup{labelsep={period},justification={centerlast},labelfont={bf,sc}}
+
+\title{Lý thuyết tập hợp và các tập hợp số}
+\author{random}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\input{preface.tex}
+
+\tableofcontents
+
+\part{Lý thuyết tập hợp}\label{part1}
+
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+
+\part{Các tập hợp số}\label{part2}
+
+\input{chapter4.tex}
+\input{chapter5.tex}
+\input{chapter6.tex}
+
+\appendix
+
+\chapter{Một số kết quả số học}
+
+\chapter{Các quy tắc đếm cơ bản}
+
+\chapter{Đọc thêm}
+
+\printindex
+
+\end{document}

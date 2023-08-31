@@ -1,0 +1,666 @@
+\chapter{Logic và Tập hợp}\label{chapter1:logic-and-set-theory}
+
+\section{Mệnh đề và các phép toán logic}
+
+\subsection*{Mệnh đề}
+
+Trong toán học cũng như đời sống, bạn đọc hẳn đã bắt gặp những câu có tính phát biểu. Chẳng hạn như:
+
+\begin{enumerate}[label={(\arabic*)}]
+    \item (Định lý Pythagoras) Trong một tam giác vuông, bình phương độ dài cạnh huyền bằng tổng bình phương độ dài hai góc vuông.
+    \item Tồn tại số hữu tỉ có bình phương bằng $2$.
+    \item Không tồn tại số tự nhiên $n > 4$ sao cho $2^{2^{n}} + 1$ là số nguyên tố.
+    \item Năm 1967, Alexander Grothendieck đến Việt Nam.
+\end{enumerate}
+
+Mỗi câu trên được gọi là một \textit{mệnh đề toán học}, hay nói ngắn gọn trong ngữ cảnh của tài liệu này là \textit{mệnh đề}, và \textit{có tính đúng sai}. Một mệnh đề hoặc đúng, hoặc sai, không thể vừa đúng vừa sai. Trong năm ví dụ nêu trên, bạn đọc có thể kiểm tra tính đúng sai của một số mệnh đề. Các mệnh đề 1, 5 là đúng. Mệnh đề 2 là sai. Mệnh đề 3 mặc dù có tính đúng sai, nhưng cho đến nay các nhà toán học vẫn chưa có câu trả lời. Mệnh đề chưa được kiểm chứng được gọi là giả thuyết.
+
+Với một mệnh đề đúng, chúng ta nói giá trị chân lý (hay chân trị) của mệnh đề đó là \textit{đúng}. Với một mệnh đề sai, chúng ta nói giá trị chân lý (hay chân trị) của mệnh đề đó là \textit{sai}.
+
+\subsection*{Các phép toán logic}
+
+Sẽ không phải bàn gì thêm nếu chúng ta chỉ xem xét các mệnh đề một cách riêng rẽ. Trong thực tế, người ta kết hợp các mệnh đề với nhau, tạo ra các mệnh đề mới, và \textit{lập luận}. Để cho ngắn gọn, sau đây chúng ta kí hiệu mệnh đề bằng các chữ cái $P, Q,\ldots$
+
+Từ một mệnh đề $P$, chúng ta đưa ra được mệnh đề phủ định, kí hiệu là $\neg P$. Nếu $P$ đúng thì $\neg P$ sai. Ngược lại, nếu $P$ sai thì $\neg P$ đúng.
+
+Từ hai mệnh đề $P$ và $Q$, người ta định nghĩa ra phép toán VÀ (hội) và HOẶC (tuyển). Hội của $P$ và $Q$ là đúng nếu cả hai mệnh đề đúng, là sai nếu ít nhất một trong hai mệnh đề sai. Tuyển của $P$ và $Q$ là đúng nếu ít nhất một trong hai mệnh đề đúng, là sai nếu cả hai mệnh đề sai. Hội của $P$ và $Q$ được kí hiệu là $P\wedge Q$. Tuyển của $P$ và $Q$ được kí hiệu là $P\vee Q$.
+
+Tính đúng sai của các mệnh đề được tạo ra từ ba phép toán phủ định, hội, tuyển được tổng kết trong Bảng~\ref{section1:truth-table-of-not-and-or} dưới đây.
+\begin{table}[htp]
+    \centering
+    \[
+        \begin{array}{cc|ccc}
+            P           & Q           & \neg P      & P\wedge Q   & P\vee Q     \\
+            \toprule
+            \bottomrule
+            \text{đúng} & \text{đúng} & \text{sai}  & \text{đúng} & \text{đúng} \\
+            \text{đúng} & \text{sai}  & \text{sai}  & \text{sai}  & \text{đúng} \\
+            \text{sai}  & \text{đúng} & \text{đúng} & \text{sai}  & \text{đúng} \\
+            \text{sai}  & \text{sai}  & \text{đúng} & \text{sai}  & \text{sai}
+        \end{array}
+    \]
+    \caption{Bảng chân trị của các mệnh đề được tạo ra từ ba phép toán phủ định ($\neg$), hội ($\wedge$) và tuyển ($\vee$).}\label{section1:truth-table-of-not-and-or}
+\end{table}
+
+Bên cạnh ba phép toán logic là phủ định, hội, và tuyển, chúng ta còn dành sự quan tâm tới quan hệ giữa các mệnh đề. Cụ thể hơn, chúng ta đặc biệt quan tâm đến \textit{quan hệ kéo theo} và \textit{quan hệ tương đương}.
+
+Để nêu lên quan hệ kéo theo giữa hai mệnh đề $P$ và $Q$, chúng ta nói ``$P$ kéo theo $Q$'' hay ``từ $P$ suy ra $Q$'', kí hiệu $P\implies Q$. Với quan hệ tương đương, chúng ta nói ``$P$ tương đương với $Q$'', ``$P$ và $Q$ tương đương'', ``$P$ nếu và chỉ nếu $Q$'', ``$P$ khi và chỉ khi $Q$'', hay ``$Q$ là điều kiện cần và đủ của $P$'', kí hiệu $P\Leftrightarrow Q$. Hai câu ``$P$ kéo theo $Q$'' và ``$P$ tương đương với $Q$'' cũng chính là các mệnh đề. Tính đúng sai của hai mệnh đề này được liệt kê trong Bảng~\ref{section1:truth-table-of-implication-and-equivalence}
+
+\begin{table}[htp]
+    \centering
+    \[
+        \begin{array}{cc|cc}
+            P           & Q           & P\implies Q & P\Leftrightarrow Q \\
+            \toprule
+            \bottomrule
+            \text{đúng} & \text{đúng} & \text{đúng} & \text{đúng}        \\
+            \text{đúng} & \text{sai}  & \text{sai}  & \text{sai}         \\
+            \text{sai}  & \text{đúng} & \text{đúng} & \text{sai}         \\
+            \text{sai}  & \text{sai}  & \text{đúng} & \text{đúng}
+        \end{array}
+    \]
+    \caption{Bảng chân trị của hai mệnh đề $P\implies Q$ và $P\Leftrightarrow Q$}\label{section1:truth-table-of-implication-and-equivalence}
+\end{table}
+
+Thay vì ghi nhớ Bảng~\ref{section1:truth-table-of-implication-and-equivalence}, chúng ta có thể tóm gọn nội dung bảng bằng vài nhận xét: $P\implies Q$ chỉ sai khi $P$ đúng và $Q$ sai; $P\Leftrightarrow Q$ đúng nếu $P$ và $Q$ cùng đúng, hoặc cùng sai; $P\Leftrightarrow Q$ sai nếu một trong hai mệnh đề đúng, mệnh đề còn lại sai.
+
+\subsection*{$\dagger$ Biểu thức logic}
+
+Với các toán tử và quan hệ logic đã nêu, chúng ta có thể kết hợp các mệnh đề với nhau để tạo ra những \textit{biểu thức logic}. Biểu thức logic có thể phức tạp như biểu thức số, và cũng có quy ước về thứ tự thực hiện các phép toán $-$ theo mức độ ưu tiên giảm dần, chúng ta lần lượt thực hiện phép phủ định, hội, và tuyển, trong đó biểu thức ở ngoặc trong cùng được thực hiện trước. Một số ví dụ về biểu thức logic là $(P\wedge Q)\wedge R$, $P\vee (Q\vee R)$, $P \implies (Q\vee \neg R)$, $(P\vee Q) \wedge (P\vee R)$.
+
+Một biểu thức logic thực ra cũng chính là mệnh đề, chúng chỉ khác ở hình thức thể hiện. Hai mệnh đề có thể tương đương hoặc không, hai biểu thức logic cũng vậy. Tuy nhiên, do biểu thức logic được cấu thành từ một hay nhiều mệnh đề, nên việc kiểm tra sự tương đương của hai biểu thức logic có phần khó khăn hơn. Chúng ta xem xét hai ví dụ sau đây.
+
+Theo Bảng~\ref{section1:truth-table-of-not-and-or}, hai biểu thức $P\wedge Q$ và $P\vee Q$ tương đương trong hai trường hợp (1) $P, Q$ cùng đúng và (2) $P, Q$ cùng sai. Còn khi $P, Q$ khác tính đúng-sai thì $P\wedge Q$ và $P\vee Q$ không tương đương. Chúng ta xét hai biểu thức $P\implies Q$ và $\neg P \vee Q$ (lưu ý thứ tự thực hiện phép toán). Để kiểm tra sự tương đương của hai biểu thức trong tất cả các trường hợp, chúng ta lập bảng chân trị (Bảng~\ref{section1:truth-table-of-implication-and-neg-vee}).
+\begin{table}[htp]
+    \centering
+    \[
+        \begin{array}{cc|cc}
+            P           & Q           & P\implies Q & \neg P\vee Q \\
+            \toprule
+            \bottomrule
+            \text{đúng} & \text{đúng} & \text{đúng} & \text{đúng}  \\
+            \text{đúng} & \text{sai}  & \text{sai}  & \text{sai}   \\
+            \text{sai}  & \text{đúng} & \text{đúng} & \text{đúng}  \\
+            \text{sai}  & \text{sai}  & \text{đúng} & \text{đúng}
+        \end{array}
+    \]
+    \caption{Bảng chân trị của hai mệnh đề $P\implies Q$ và $\neg P\vee Q$}\label{section1:truth-table-of-implication-and-neg-vee}
+\end{table}
+
+Bảng~\ref{section1:truth-table-of-implication-and-neg-vee} cho thấy hai biểu thức đang xét là tương đương, với bất kì giá trị nào của $P$ và $Q$. Đây là một ví dụ cho việc đưa ra một biểu thức logic tương đương với biểu thức đã cho, và chỉ sử dụng các phép toán ``quen thuộc hơn'' (phủ định và tuyển).
+
+Trên đây, chúng ta đã nhắc đến thứ tự thực hiện phép toán trong một biểu thức logic, tuy nhiên quy tắc đó chỉ bao gồm ba phép toán phủ định, hội, và tuyển. Vậy phải chăng quy tắc đã nêu là chưa đủ (vì còn có các phép toán khác như là kéo theo và tương đương chẳng hạn)?. Trong phần bài tập, chúng ta sẽ trả lời cho hai câu hỏi:
+\begin{itemize}[itemsep=0pt]
+    \item Có bao nhiêu phép toán logic có thể định nghĩa trên hai mệnh đề?
+    \item Có thể tạo ra một biểu thức logic mới, tương đương với biểu thức logic đã cho và chỉ sử dụng ba phép toán phủ định, hội, và tuyển hay không?
+\end{itemize}
+
+\subsection*{Bài tập}
+\setcounter{exercise}{0}
+
+\begin{exercise}\label{section1:exercise1}
+    Trong các câu dưới đây, câu nào là một mệnh đề? Nếu đó là một mệnh đề, hãy cho biết mệnh đề đó đúng, sai, hay không xác định.
+    \begin{enumerate}[label={(\alph*)},itemsep=0pt]
+        \item $\pi = 3.14159265358979$
+        \item Hôm nay có mưa.
+        \item Hai tam giác $ABC$ và $A'B'C'$ bằng nhau nếu và chỉ nếu $BC = B'C'$, $CA = C'A'$, $AB = A'B'$.
+        \item Làm bài tập đi!
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{section1:exercise2}
+    Cho trước mệnh đề $P$, có thể kết luận gì về tính đúng sai của các mệnh đề sau: $P\vee P$, $P\wedge P$, $P\vee \neg P$, $P\wedge \neg P$?
+\end{exercise}
+
+\begin{exercise}\label{section1:exercise3}
+    Cho trước ba mệnh đề $P$, $Q$, và $R$. Dùng bảng chân trị, hãy chứng minh
+    \begin{enumerate}[label={(\alph*)},itemsep=0pt]
+        \item $P\wedge Q$ và $Q\wedge P$ tương đương.
+        \item $P\vee Q$ và $Q\vee P$ tương đương.
+        \item $(P\wedge Q)\wedge R$ và $P\wedge (Q\wedge R)$ tương đương.
+        \item $(P\vee Q)\vee R$ và $P\vee (Q\vee R)$ tương đương.
+        \item $P\vee (Q\wedge R)$ và $(P\vee Q)\wedge (P\vee R)$ tương đương.
+        \item $P\wedge (Q\vee R)$ và $(P\wedge Q)\vee (P\wedge R)$ tương đương.
+    \end{enumerate}
+
+    \noindent Hãy đối chiếu hai mệnh đề sau cùng với tính chất phân phối của phép nhân với phép cộng.
+\end{exercise}
+
+Thứ tự thực hiện phép toán cho phép người sử dụng lược bỏ những cặp ngoặc không cần thiết. Tuy nhiên, khi biểu thức sử dụng các phép toán rất nhiều lần, việc sử dụng ngoặc ngay cả ở những vị trí không cần thiết lại tỏ ra dễ đọc và bớt gây nhầm lẫn hơn.
+
+\begin{exercise}\label{section1:exercise4}
+    Cho hai mệnh đề $P$ và $Q$, chứng minh rằng các cặp mệnh đề dưới đây tương đương.
+    \begin{enumerate}[label={(\alph*)},itemsep=0pt]
+        \item $\neg (P\vee Q)$ và $(\neg P) \wedge (\neg Q)$.
+        \item $\neg (P\wedge Q)$ và $(\neg P)\vee (\neg Q)$.
+        \item $\neg (P\implies Q)$ và $(\neg Q)\implies (\neg P)$.
+        \item $P\Leftrightarrow Q$ và $(P\implies Q) \wedge (Q\implies P)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{section1:exercise5}
+    Một phép toán logic hai ngôi $*$ thực hiện trên hai mệnh đề $P$ và $Q$ là một quy tắc gán mỗi cặp giá trị chân lý của $P$ và $Q$ với \textit{đúng một} giá trị chân lý nữa, kí hiệu là $P * Q$. Phép toán hội và tuyển là hai ví dụ về phép toán logic hai ngôi. Hai phép toán logic $*$ và $\#$ được gọi là trùng nhau (tương đương) nếu tại mỗi cặp giá trị chân lý của $P$ và $Q$ luôn có $P * Q = P\# Q$.
+
+    Có bao nhiêu phép toán logic hai ngôi (không tính thêm phép toán trùng với phép toán đã xét)? Tương tự, bạn có thể định nghĩa phép toán logic $n$ ngôi không? Và có bao nhiêu phép toán logic $n$ ngôi? [Gợi ý: Quan sát bảng chân trị của một phép toán logic hai ngôi, và đếm bằng quy tắc nhân.]
+\end{exercise}
+
+\begin{exercise}\label{section1:exercise6}
+    Dựa vào bảng chân trị của biểu thức $P\implies Q$, chứng minh quan hệ tương đương sau
+    \[
+        (P\implies Q) \Leftrightarrow (P\wedge Q)\vee (\neg P\wedge Q) \vee (\neg P\wedge \neg Q)
+    \]
+    [Gợi ý: Các biểu thức $P\wedge Q$, $\neg P\wedge Q$, $\neg P\wedge \neg Q$ tương ứng với các hàng nào trong bảng chân trị?]
+\end{exercise}
+
+\begin{exercise}\label{section1:exercise7}
+    Áp dụng cách tiếp cận của Bài tập~\ref{section1:exercise6}, chứng minh rằng với mỗi phép toán logic hai ngôi $*$, biểu thức $P * Q$ tương đương với một biểu thức chỉ gồm $P, Q$ và ba phép toán phủ định, hội, và tuyển.
+\end{exercise}
+
+\section{Tập hợp}
+
+\subsection*{Định nghĩa tập hợp}
+
+Tập hợp là một khái niệm nguyên thủy, không được định nghĩa về mặt toán học. Chúng ta chấp nhận và hiểu về tập hợp bằng định nghĩa trực giác ``Tập hợp là một bộ các đối tượng'' và các ví dụ: \textit{Tập hợp các sinh viên trong một lớp học}, \textit{Tập hợp các câu văn trong một cuốn sách}, \textit{Tập hợp các nghiệm thực của phương trình $x^{2} + 1 = 0$}, \textit{Tập hợp các số nguyên}\ldots Bạn đọc có thể đưa ra thêm nhiều ví dụ khác về tập hợp. Tựu chung lại, chúng ta thống nhất các thuật ngữ và các đặc điểm sau của tập hợp như sau:
+\begin{enumerate}[label={(\arabic*)},itemsep=0pt]
+    \item Một \textbf{tập hợp} được cấu thành từ các đối tượng được gọi là \textbf{phần tử}. Nếu đối tượng $x$ là phần tử của tập hợp $S$, chúng ta kí hiệu $x\in S$. Nếu đối tượng $x$ không là phần tử của tập hợp $S$, chúng ta kí hiệu $x\notin S$.
+    \item Chỉ có đúng một tập hợp không chứa phần tử nào. Tập hợp đó được gọi là \textbf{tập hợp rỗng}. Chúng ta kí hiệu tập hợp rỗng là $\varnothing$.
+    \item Cho trước một đối tượng $x$ và một tập hợp $S$. Khi đó chỉ đúng một trong hai mệnh đề sau là đúng: (1) $x\in S$, (2) $x\notin S$.
+\end{enumerate}
+
+Một tập hợp có thể không có phần tử nào (tập hợp rỗng), khác rỗng và có hữu hạn phần tử, hoặc có vô hạn phần tử. Để xác định một tập hợp, chúng ta có thể liệt kê tất cả các phần tử nếu tập hợp đó có hữu hạn phần tử, hoặc các phần tử đó tuân theo một quy luật dễ đoán nào đó, chẳng hạn
+\begin{itemize}
+    \item Tập hợp $S$ gồm các nghiệm thực của phương trình $x^{2} - 4x + 3 = 0$
+          \[
+              S = \{ 1, 3 \}.
+          \]
+    \item Tập hợp $E$ gồm các số nguyên chia hết cho $3$
+          \[
+              E = \{ \ldots, -6, -3, 0, 3, 6, \ldots \}.
+          \]
+\end{itemize}
+
+Trong toán học, chúng ta thường xuyên làm việc với các tập hợp số. Những tập hợp này được kí hiệu bằng các chữ cái rỗng: $\mathbb{N}$ (tập hợp các số tự nhiên), $\mathbb{Z}$ (tập hợp các số nguyên), $\mathbb{Z}_{\geq 0}$ (tập hợp các số nguyên không âm), $\mathbb{Q}$ (tập hợp các số hữu tỉ), $\mathbb{R}$ (tập hợp các số thực). Trong Chương~\ref{chapter3:cardinality} và Phần~\ref{part2}, chúng ta sẽ tìm hiểu chi tiết hơn về các tập hợp này.
+
+Bên cạnh đó, để xác định tập hợp, thay vì liệt kê các phần tử, chúng ta có thể đưa ra một \textit{mô tả chính xác} cho các phần tử của tập hợp đó. Lưu ý rằng mô tả này cần rõ ràng, khách quan (được thống nhất giữa những người học và làm toán), không nhập nhằng hay đa nghĩa.
+\begin{itemize}
+    \item $S = \{ x \mid \text{$x$ là nghiệm thực của phương trình $x^{5} - x - 1 = 0$} \}$ là một tập hợp.
+    \item $S = \{ n \mid \text{$n$ là một số tự nhiên rất lớn} \}$ không phải một tập hợp, vì khái niệm \textit{số tự nhiên rất lớn} không được định nghĩa.
+\end{itemize}
+
+Để cho ngắn gọn, chúng ta có thể dùng từ tập thay vì tập hợp. Ở Chương~\ref{chapter3:cardinality}, chúng ta sẽ bàn thêm về tập hợp có vô hạn phần tử.
+
+\subsection*{Quan hệ bao hàm giữa các tập hợp}
+
+Cho trước một đối tượng và một tập hợp, chúng ta đặt câu hỏi đối tượng này có thuộc tập hợp đó hay không? Với hai tập hợp, chúng ta có câu hỏi: phần tử của tập hợp này có là phần tử của tập hợp kia hay không? Với câu hỏi này, chúng ta đi đến định nghĩa sau.
+
+\begin{definition}
+    (Tập hợp) $A$ là tập hợp con của (tập hợp) $B$ nếu và chỉ nếu mỗi phần tử của $A$ cũng là phần tử của $B$.
+
+    Nói riêng, hai tập hợp $A$ và $B$ bằng nhau khi và chỉ khi mỗi phần tử của $A$ là phần tử của $B$ và mỗi phần tử của $B$ là phần tử của $A$.
+\end{definition}
+
+Khi $A$ là tập hợp con của $B$, chúng ta còn nói, $A$ là bộ phận của $B$ (hay $B$ chứa $A$), và kí hiệu $A\subseteq B$ (còn có thể viết là $B\supseteq A$). Khi hai tập hợp $A$ và $B$ bằng nhau, chúng ta kí hiệu $A = B$.
+
+Có những trường hợp mà $A$ là tập hợp con của $B$ nhưng $A$ không bằng $B$, nói cách khác, có phần tử của $B$ lại không là phần tử của $A$. Khi đó, chúng ta nói $A$ \textit{là tập hợp con thực sự của} $B$ và kí hiệu $A\subset B$ (còn có thể viết là $B\supset A$). Chúng ta quy ước tập hợp rỗng là tập hợp con của mọi tập hợp.
+
+Dưới đây là một số ví dụ và phản ví dụ về quan hệ bao hàm giữa các tập hợp.
+
+\begin{example}
+    $\{ -1, 1 \}$ là tập hợp con thực sự của $\{ -1, 0, 1 \}$.
+\end{example}
+
+\begin{counterexample}
+    $\{ -1, 1 \}$ không phải tập hợp con của $\{ 1, 2, 3 \}$; $\{ 1, 2, 3 \}$ cũng không phải tập hợp con của $\{ -1, 1 \}$.
+\end{counterexample}
+
+\begin{example}
+    Trong mặt phẳng, tập hợp các tam giác đều là tập hợp con thực sự của tập hợp các tam giác cân. Khi không dùng các thuật ngữ của lý thuyết tập hợp, phát biểu vừa rồi sẽ là: mọi tam giác đều là tam giác cân, nhưng một tam giác cân không nhất thiết là tam giác đều.
+\end{example}
+
+\begin{counterexample}
+    Trong mặt phẳng, tập hợp các tam giác vuông không phải là tập hợp con của tập hợp các tam giác cân, và ngược lại. Nếu không dùng thuật ngữ của lý thuyết tập hợp, chúng ta nói: không phải tam giác vuông nào cũng là tam giác cân, và không phải tam giác cân nào cũng là tam giác vuông.
+\end{counterexample}
+
+Định lý sau cho thấy quan hệ bao hàm giữa các tập hợp có tính chất bắc cầu. Chứng tôi để lại chứng minh định lý này cho bạn đọc trong phần bài tập.
+
+\begin{theorem}
+    Cho các tập hợp $A, B, C$. Nếu $A\subseteq B$, $B\subseteq C$ thì $A\subseteq C$.
+\end{theorem}
+
+Chúng ta kết thúc mục này bằng định nghĩa tập hợp lũy thừa, và sẽ quay trở lại với khái niệm này trong Chương~\ref{chapter3:cardinality}.
+
+\begin{definition}[Tập hợp lũy thừa]
+    Tập hợp lũy thừa của một tập hợp $S$ là một tập hợp với các phần tử là tất cả các tập hợp con của $S$. Chúng ta kí hiệu tập hợp lũy thừa của $S$ là $\mathcal{P}(S)$.
+\end{definition}
+
+Dưới đây là một số ví dụ về tập lũy thừa.
+
+\begin{example}
+    \begin{equation*}
+        \begin{split}
+            \mathcal{P}(\varnothing) = \{ \varnothing \}, \\
+            \mathcal{P}(\{ 1 \}) = \{ \varnothing, \{ 1 \} \}, \\
+            \mathcal{P}(\{ 1, 2 \}) = \{ \varnothing, \{ 1 \}, \{ 2 \}, \{ 1, 2 \} \}.
+        \end{split}
+    \end{equation*}
+\end{example}
+
+Trong nhiều tài liệu khác, các tác giả còn dùng kí hiệu $\subset$ để chỉ quan hệ là tập hợp con, và dùng kí hiệu $\subsetneq$ để chỉ quan hệ là tập hợp con thực sự. Còn ở tài liệu này, chúng ta quy ước dùng kí hiệu $\subseteq$ để chỉ quan hệ là tập hợp con, và dùng kí hiệu $\subset$ để chỉ quan hệ là tập hợp con thực sự, gợi sự tương tự với cặp kí hiệu $\leq$ và $<$.
+
+\subsection*{Bài tập}
+\setcounter{exercise}{0}
+
+\begin{exercise}\label{section2:exercise1}
+    Trong các trường hợp dưới đây, đâu là tập hợp? Nếu đó là tập hợp, hãy thử liệt kê các phần tử của tập hợp đó.
+    \begin{enumerate}[label={(\alph*)},itemsep=0pt]
+        \item $\{ n \mid n \text{ là ước nguyên dương của 27 } \}$.
+        \item $\{ x \mid x \text{ là nghiệm thực của phương trình } 2x^{2} + 2x + 1 = 0 \}$.
+        \item $\{ n \mid n \text{ có phân tích nguyên tố đơn giản } \}$.
+        \item $\{ x \mid x \text{ là nghiệm thực của một phương trình có hệ số nguyên với bậc không quá hai } \}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{section2:exercise2}
+    Cho tập hợp $S$ gồm ba phần tử $x, y, z$. Hãy liệt kê tất cả các tập hợp con của $S$ và quan hệ bao hàm giữa các tập hợp con đó.
+\end{exercise}
+
+\begin{exercise}\label{section2:exercise3}
+    Cho tập hợp $S$ gồm các chuỗi nhị phân có độ dài $n$. $S$ có bao nhiêu phần tử?
+\end{exercise}
+
+\begin{exercise}\label{section2:exercise4}
+    Cho các tập hợp $A, B, C$. Nếu $A\subseteq B$, $B\subseteq C$ thì $A\subseteq C$.
+
+    Nếu $A\subseteq B$ và $B\subset C$, hoặc $A\subset B$ và $B\subseteq C$, hoặc $A\subset B$ và $B\subset C$, có thể kết luận gì về mối quan hệ giữa $A$ và $C$?
+\end{exercise}
+
+\section{Vị từ và lượng hóa}
+
+\subsection*{Vị từ}
+
+Mục này giới thiệu khái niệm vị từ. Chúng ta bắt đầu bằng hai ví dụ thực tế.
+
+Một người đi chơi xa về hỏi hàng xóm về thời tiết trong hai ngày vừa rồi, ngày nào có mưa. Câu trả lời mà người đó nhận được là: \textbf{Ngày hôm qua} \textit{có mưa} và  \textbf{Ngày hôm kia} \textit{có mưa}. Ở ví dụ này, câu trả lời (hay mệnh đề) có dạng ``(ngày) có mưa''.
+
+Một giáo viên hỏi đồng nghiệp của mình về điểm thi Toán của các học sinh trong lớp mà người đồng nghiệp đó làm chủ nhiệm. Người đồng nghiệp đó có thể trả lời theo lối liệt kê (bằng trả lời miệng hoặc đưa ra một danh sách): \textbf{An} \textit{được điểm 9}, \textbf{Bình} \textit{được điểm 8}\ldots Trong ví dụ này, câu trả lời của người đồng nghiệp là các câu (hay mệnh đề) có dạng ``(Tên học sinh) được (điểm thi)''.
+
+Trong hai ví dụ vừa xét, chúng ta có những mệnh đề có cú pháp giống nhau, chỉ khác nhau về đối tương được nhắc đến (in đậm) và thông tin về đối tượng đó (in nghiêng). Về mặt hình thức, chúng ta có thể định nghĩa biểu thức $A(x)$ có nghĩa là \textit{Ngày $x$ có mưa}, và $B(x, y)$ có nghĩa là \textit{$x$ được điểm $y$}. Khi đó, $A$, $B$ được gọi là các \textit{vị từ}. Nói theo cách \textit{không chính thức}, vị từ là một ``mệnh đề chứa biến''. Vì mệnh đề là một phát biểu có tính đúng sai, nên chúng ta không coi vị từ $A$, vị từ $B$ là các mệnh đề. Chúng tạo ra mệnh đề khi áp dụng vị từ lên các đối tượng, chẳng hạn: Trong mệnh đề \textit{Ngày hôm qua có mưa}, vị từ $A$ áp dụng cho đối tượng \textbf{Ngày hôm qua}; Trong mệnh đề \textit{An được điểm 9}, vị từ $B$ áp dụng cho đối tượng \textbf{An}. $A(x)$, $B(x, y)$ còn được gọi là \textit{điều kiện của các biến $x, y$}.
+
+\subsection*{Lượng hóa}
+
+Quay trở lại với hai ví dụ được xét ở mục trước. Ở ví dụ đầu tiên, vì ngày hôm qua và ngày hôm kia có mưa, nên người hàng xóm có thể trả lời \textit{cả hai ngày vừa qua đều có mưa} thay vì nói về từng ngày một. Ở ví dụ thứ hai, người giáo viên có thể hỏi tiếp người đồng nghiệp của mình rằng: ``Trong lớp có học sinh nào được điểm 10 không?\@'', hay là ``Tất cả học sinh nào đều được điểm trên trung bình chứ?\@''. Người đồng nghiệp có thể trả lời rằng ``Có học sinh được điểm 10'' và ``Mọi học sinh đều được điểm lớn hơn hoặc bằng 5.\@''
+
+Tình huống tương tự cũng xảy ra khi chúng ta cần đưa ra lớp các mệnh đề về một tập hợp các đối tượng: Cho trước tập hợp $S$ và một vị từ $p$ (áp dụng lên các phần tử của $x$), chúng ta muốn biết liệu $p(x)$ đúng hay sai, với $x$ là phần tử của $S$. Khi trả lời câu hỏi đó, chúng ta thường gặp các trường hợp sau đây:
+\begin{enumerate}
+    \item Có ít nhất một phần tử $x$ của $S$ sao cho có $p(x)$. Khi đó chúng ta kí hiệu
+          \[
+              \exists x\in S (p(x))\qquad\text{hay}\qquad \exists x\in S: p(x)
+          \]
+
+          hoặc chỉ ngắn gọn là $\exists x (p(x))$ nếu ngữ cảnh đã nêu rõ $x$ thuộc tập hợp nào. Thay vì kí hiệu trên, chúng ta nói \textbf{tồn tại $x$ thuộc $S$ sao cho có $p(x)$}. Nói riêng, khi tồn tại $x\in S$ thỏa mãn $p(x)$, chúng ta thường đặt ra thêm câu hỏi về tính duy nhất của phần tử như vậy. Nếu đó là phần tử duy nhất thỏa mãn điều kiện đó, chúng ta kí hiệu
+          \[
+              \exists! x\in S (p(x))\qquad\text{hay}\qquad \exists! x\in S: p(x)
+          \]
+    \item Mọi phần tử $x$ của $S$ đều làm cho $p(x)$ đúng. Khi đó chúng ta kí hiệu
+          \[
+              \forall x\in S (p(x))\qquad\text{hay}\qquad \forall x\in S: p(x)
+          \]
+
+          hoặc chỉ ngắn gọn là $\forall x (p(x))$ nếu ngữ cảnh đã nêu rõ $x$ thuộc tập hợp nào. Thay cho kí hiệu, chúng ta còn nói \textbf{với mọi $x$ thuộc $S$, có $p(x)$}, hay \textbf{với mỗi $x$ thuộc $S$, có $p(x)$}.
+\end{enumerate}
+
+Hành động đưa ra các mệnh đề như trên được gọi là \textit{lượng hóa}. $\exists, \forall$ được gọi là những lượng hóa, hay lượng từ. $\exists$ được gọi là lượng hóa tồn tại, $\forall$ được gọi là lượng hóa phổ cập. Về mặt kí hiệu, chúng ta sẽ linh hoạt kí hiệu lượng hóa theo một trong hai lối viết là $\exists x\in S (p(x))$ và $\exists x\in S: p(x)$. Lối viết thứ hai đơn giản nhưng phù hợp hơn với mệnh đề chỉ gồm một lượng từ. Trong khi đó, lối viết thứ nhất tuy phức tạp hơn nhưng giúp kí hiệu không nhập nhằng khi mệnh đề có nhiều lượng từ. Trong tài liệu này, trừ chương hiện tại, khi áp dụng lượng hóa, chúng ta ưu tiên dùng các câu văn hoàn chỉnh.
+
+Từ định nghĩa của hai lượng hóa, chúng ta rút ra hai nguyên lý sau đây.
+
+\begin{enumerate}
+    \item \textbf{Phủ định của $\exists x\in S : p(x)$} là $\forall x\in S: \neg p(x)$. Viết thành câu, điều này có nghĩa là: \textbf{phủ định của mệnh đề  ``tồn tại $x$ thuộc $S$ sao cho có $p(x)$''} tương đương với \textbf{mệnh đề ``với mọi $x$ thuộc $S$, không có $p(x)$''}.
+    \item \textbf{Phủ định của $\forall x\in S : p(x)$} là $\exists x\in S: \neg p(x)$. Viết thành câu, điều này có nghĩa là: phủ định của mệnh đề  ``với mọi $x$ thuộc $S$ sao cho có $p(x)$'' tương đương với mệnh đề ``tồn tại $x$ thuộc $S$ sao cho không có $p(x)$''.
+\end{enumerate}
+
+Để khép lại phần này, chúng ta bàn về trường hợp mệnh đề sử dụng nhiều lượng từ. Xét một vị từ $p$ sử dụng hai biến $x, y$, và chúng ta chỉ xét các giá trị của $x, y$ lần lượt thuộc hai tập hợp $A, B$ nào đó.
+
+Thay cho câu ``với mọi $x$, với mọi $y$, có $p(x, y)$'', chúng ta kí hiệu $\forall x\forall y : p(x, y)$. Thay cho câu ``với mọi $x$, tồn tại $y$ sao cho có $p(x, y)$'', chúng ta kí hiệu $\forall x \exists y : p(x,y)$. Thay cho câu ``tồn tại $x$ sao cho với mọi $y$, có $p(x, y)$'', chúng ta kí hiệu $\exists x \forall y : p(x, y)$. Bây giờ, chúng ta quan tâm tới việc phát biểu mệnh đề phủ định ở ba ví dụ trên. Bằng cách áp dụng liên tiếp hai nguyên lý nêu trên hai lần, chúng ta thu được
+\begin{align*}
+    \neg(\forall x \forall y (p(x, y))) & \Leftrightarrow \exists x (\neg(\forall y (p(x, y))))  \\
+                                        & \Leftrightarrow \exists x (\exists y (\neg p(x, y))),  \\
+    \neg(\forall x\exists y (p(x, y)))  & \Leftrightarrow \exists x (\neg(\exists y (p(x, y))))  \\
+                                        & \Leftrightarrow \exists x (\forall y (\neg p(x, y))),  \\
+    \neg(\exists x\forall y (p(x, y)))  & \Leftrightarrow \forall x (\neg(\forall y( p(x, y))))  \\
+                                        & \Leftrightarrow \forall x (\exists y (\neg (p(x, y))))
+\end{align*}
+
+Qua ba ví dụ trên đây, chúng ta rút ra quy tắc khi viết phủ định của một mệnh đề gồm nhiều lượng hóa: đổi lượng hóa phổ cập sang lượng hóa tồn tại và ngược lại, rồi phủ định điều kiện giữa các biến.
+
+Trong toán học, việc sử dụng lượng hóa trong các mệnh đề là rất phổ biến, đặc biệt là trong Giải tích (điều này sẽ được thể hiện ở Chương~\ref{chapter5:real-numbers-and-complex-numbers}). Việc sử dụng kí hiệu lượng hóa thay cho một câu văn hoàn chỉnh có thể khá ngắn gọn nhưng lại đánh đổi với tính dễ đọc của mệnh đề cũng như khả năng giao tiếp với người khác. Trong thực tế, cách phát biểu bằng một câu văn được ưa chuộng hơn. Nói riêng đối với bạn đọc là học sinh, sinh viên: Khi mới học, không nên lạm dụng kí hiệu, hãy dùng lời văn nhiều hơn, vì việc lạm dụng kí hiệu có thể làm thui chột khả năng diễn đạt và suy nghĩ mạch lạc.
+
+\subsection*{Phương pháp quy nạp toán học}
+
+Trong mục này, chúng ta xem xét một trường hợp riêng của vị từ: vị từ sử dụng biến là số nguyên dương. Chúng ta quan tâm tới trường hợp này vì khi học và làm toán, chúng ta thường cần chứng minh các mệnh đề có dạng $p(n)$ (với $n$ là số nguyên dương) cho \textit{tất cả} các trường hợp của $n$. Để chứng minh một lớp các mệnh đề như vậy, phương pháp quy nạp toán học thường được sử dụng. Phương pháp này được phát biểu thành định lý sau.
+
+\bigskip
+
+\begin{theorem}[Nguyên lý quy nạp toán học]
+    Cho $p(n)$ là một mệnh đề với $p$ là vị từ, $n$ là số tự nhiên. Nếu
+    \begin{itemize}
+        \item Có $p(1)$.
+        \item Với mọi số tự nhiên $k$, có $p(k)$ kéo theo $p(k + 1)$
+    \end{itemize}
+
+    thì có $p(n)$ với mọi số tự nhiên $n$.
+\end{theorem}
+
+Khi chứng minh có $p(n)$ với mọi $n$ là số nguyên dương bằng phương pháp quy nạp toán học, chúng ta thực hiện các bước sau:
+
+\begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
+    \item (Bước cơ sở) Chúng ta chứng minh có $p(1)$.
+    \item (Bước quy nạp) Chúng ta chứng minh rằng với mỗi $k\geq 1$, $p(k)$ kéo theo $p(k+1)$. Ở bước này, mệnh đề $p(k)$ được gọi là \textit{giả thiết quy nạp}.
+    \item Kết luận rằng có $p(n)$ với mọi số nguyên dương $n$.
+\end{enumerate}
+
+Từ tổng kết trên của phương pháp chứng minh bằng quy nạp toán học, bạn đọc có thể kiểm tra nhận xét sau: phương pháp trên vẫn áp dụng được cho trường hợp $n$ là số nguyên dương lớn hơn hoặc bằng một số nguyên dương $n_{0}$ cho trước, hoặc trường hợp $n$ là số nguyên lớn hơn hoặc bằng một số nguyên cho trước bằng cách thay đổi một chút ở Bước cơ sở.
+
+Chúng ta đưa ra hai ví dụ về chứng minh bằng phương pháp quy nạp toán học.
+
+\begin{example}
+    Chứng minh rằng tổng của các số tự nhiên lẻ liên tiếp bắt đầu từ $1$ là bình phương của một số tự nhiên.
+\end{example}
+
+Phát biểu của bài toán này không chứa biến. Trước hết, chúng ta khảo sát một số trường hợp đầu tiên, với nhận xét rằng số tự nhiên lẻ thứ $n$ là $(2n - 1)$.
+\begin{align*}
+    \sum^{1}_{i=1}(2i - 1) & = 1 = 1^{2},             \\
+    \sum^{2}_{i=1}(2i - 1) & = 1 + 3 = 4 = 2^{2},     \\
+    \sum^{3}_{i=1}(2i - 1) & = 1 + 3 + 5 = 9 = 3^{2}.
+\end{align*}
+
+Từ khảo sát trên, chúng ta dự đoán (cuối mục này, chúng ta sẽ bàn thêm về sự dự đoán này) rằng
+\[
+    \sum^{n}_{i=1}(2i - 1) = 1 + 3 + \cdots + (2n - 1) = n^{2}.
+\]
+
+Đây là điều mà chúng ta sẽ chứng minh.
+
+\begin{proof}
+    Chúng ta chứng minh rằng với mọi số nguyên dương $n$, có $\sum^{n}_{i=1}(2i - 1) = n^{2}$.
+
+    Với trường hợp $n = 1$, mệnh đề đúng, bởi vì $1 = 1^{2}$.
+
+    Giả sử mệnh đề đúng với $n = k$ ($k\geq 1$).
+    \[
+        \sum^{k+1}_{i=1}(2i - 1) = \sum^{k}_{i=1}(2i - 1) + (2k + 1).
+    \]
+
+    Theo giả thiết quy nạp, $\sum^{k}_{i=1}(2i - 1) = k^{2}$. Do đó
+    \[
+        \sum^{k+1}_{i=1}(2i - 1) = k^{2} + 2k + 1 = {(k+1)}^{2}.
+    \]
+
+    Theo nguyên lý quy nạp toán học, với mọi số nguyên dương $n$, có $\sum^{n}_{i=1}(2i - 1) = n^{2}$. Do đó, tổng của các số tự nhiên lẻ liên tiếp bắt đầu từ $1$ là bình phương của một số tự nhiên.
+\end{proof}
+
+\begin{example}
+    Chứng minh rằng mỗi đa thức bậc $n$ với hệ số thực có không quá $n$ nghiệm.
+\end{example}
+
+\begin{proof}
+    Với trường hợp $n = 1$, chúng ta xét đa thức $aX + b$ (trong đó $a\ne 0$). Phương trình $aX + b = 0$ chỉ có một nghiệm là $X = \frac{-b}{a}$. Do đó, mệnh đề đúng với $n = 1$.
+
+    Giả sử rằng đa thức bậc $k$ có không quá $k$ nghiệm ($k\geq 1$). Chúng ta xét đa thức $f(X)$ có bậc $(k + 1)$.
+
+    Nếu $f(X)$ không có nghiệm, chúng ta kết luận $f(X)$ có không quá $(k + 1)$ nghiệm (vì $0 \leq k + 1$).
+
+    Nếu $f(X)$ có ít nhất một nghiệm là $X = a$, chúng ta thực hiện phép chia đa thức và lấy dư. Sau khi thực hiện phép chia, chúng ta thu được một đa thức $g(X)$ bậc $k$ (bậc của $g(X)$ = bậc của $f(X)$ trừ $1$) nào đó và số dư là một số thực $r$, chúng ta viết $f(X) = (X - a)g(x) + r$. Vì $f(a) = 0$ nên $r = 0$, dẫn đến $f(X) = (X - a)g(X)$. Theo giả thiết quy nạp, $g(X)$ có không quá $k$ nghiệm. Cùng với đẳng thức vừa thu được, chúng ta kết luận $f(X)$ có không quá $(k + 1)$ nghiệm.
+
+    Theo nguyên lý quy nạp, mỗi đa thức bậc $n$ có không quá $n$ nghiệm.
+\end{proof}
+
+Khi chứng minh bằng phương pháp quy nạp toán học, bước cơ sở và bước quy nạp đều là bắt buộc. Khi thiếu một trong hai bước, chúng ta gọi đó là \textit{quy nạp không hoàn toàn}. Việc bỏ qua một trong hai bước có thể dẫn đến một kết luận sai. Nhà toán học Fermat khi xem xét các số tự nhiên có dạng $2^{2^{n}} + 1$ đã nhận thấy rằng khi $n = 0, 1, 2, 3, 4$ thì số có dạng như vậy là số nguyên tố, và đi thẳng tới kết luận rằng mọi số tự nhiên có dạng đó là số nguyên tố. Về sau, nhà toán học Euler đã bác bỏ kết luận này sau khi chỉ ra $2^{2^{5}} + 1$ là hợp số với ước số là $641$.
+
+Cũng có khi việc sử dụng giả thiết quy nạp mà chỉ gồm đúng mệnh đề ``liền trước'' là không đủ. Khi đó, người ta có thể áp dụng một dạng khác của phương pháp quy nạp toán học, gọi là phương pháp quy nạp mạnh. Với phương pháp này, giả thuyết quy nạp bao gồm toàn bộ các mệnh đề đi trước.
+
+Nếu chứng minh có $p(n)$ với mọi $n$ là số nguyên dương bằng phương pháp quy nạp mạnh, chúng ta thực hiện các bước sau:
+\begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
+    \item (Bước cơ sở) Chúng ta chứng minh có $p(1)$.
+    \item (Bước quy nạp) Chúng ta chứng minh rằng với mỗi số nguyên dương $k\geq 1$, nếu có $p(n)$ \textit{với mọi} $1\leq n\leq k$ thì có $p(k+1)$. Ở bước này, các mệnh đề $p(1), p(2), \ldots, p(k)$ được gọi là \textit{giả thiết quy nạp}.
+    \item Kết luận rằng có $p(n)$ với mọi số nguyên dương $n$.
+\end{enumerate}
+
+Sau đây là một ví dụ điển hình cho việc chứng minh bằng phương pháp quy nạp mạnh.
+
+\begin{example}[Định lý cơ bản của số học]
+    Mỗi số tự nhiên lớn hơn $1$ đều là tích của các số nguyên tố, và phân tích nguyên tố đó là duy nhất, không tính đến thứ tự.
+\end{example}
+
+\begin{proof}
+    Khi $n = 2$, $n$ là một số nguyên tố, mệnh đề đúng.
+
+    Giả sử mỗi số tự nhiên $n$ lớn hơn $1$ và không vượt quá $m - 1$ đều là tích của các số nguyên tố và phân tích nguyên tố đó là duy nhất. Xét số tự nhiên $m$.
+
+    Nếu $m$ là số nguyên tố, mệnh đề đúng.
+
+    Nếu $m$ là hợp số thì $m$ chia hết cho một số nguyên tố $p$ nào đó và $1 < m/p < m$. Chúng ta có phân tích $m = p\cdot (m/p)$. Theo giả thiết quy nạp, $m/p$ là tích của các số nguyên tố. Do đó $m$ là tích của các số nguyên tố. Chúng ta cần chứng minh tính duy nhất của phân tích nguyên tố. Giả sử phân tích nguyên tố của $m$ là
+    \[
+        m = {(p_{1})}^{m_{1}}{(p_{2})}^{m_{2}}\cdots {(p_{r})}^{m_{r}} = {(q_{1})}^{t_{1}}{(q_{2})}^{t_{2}}\cdots {(q_{s})}^{t_{s}}
+    \]
+
+    trong đó $p_{1}, \ldots, p_{r}, q_{1}, \ldots, q_{s}$ là các số nguyên tố, còn $m_{1}, \ldots, m_{r}$, $t_{1}, \ldots, t_{s}$ là các số tự nhiên.
+
+    $p_{1}$ là ước của $m = {(p_{1})}^{m_{1}}{(p_{2})}^{m_{2}}\cdots {(p_{r})}^{m_{r}}$ nên $p_{1}$ cũng là ước của ${(q_{1})}^{t_{1}}{(q_{2})}^{t_{2}}\cdots {(q_{s})}^{t_{s}}$. Theo Bổ đề Euclid\footnote{Bổ đề Euclid được phát biểu rằng: Nếu một số nguyên tố $p$ là ước của tích $ab$ thì $p$ là ước của ít nhất một trong hai số $a$ và $b$.}, tồn tại chỉ số $i$ (mà $1\leq i\leq s$) sao cho $p_{1}$ là ước của ${(q_{i})}^{t_{i}}$. Do tính giao hoán của phép nhân nên không mất tính tổng quát, chúng ta có thể giả sử chỉ số đó chính là $1$. Việc $p_{1}$ là ước của ${(q_{1})}^{t_{1}}$ kéo theo $p_{1} = q_{1}$ (điều này cũng được rút ra từ Bổ đề Euclid). Như vậy, chúng ta có hai phân tích nguyên tố của số tự nhiên $m/p_{1}$. Theo giả thiết quy nạp, phân tích nguyên tố của $m/p_{1}$ là duy nhất. Do đó phân tích nguyên tố của $m$ cũng là duy nhất.
+
+    Theo nguyên lý quy nạp mạnh, mỗi số tự nhiên lớn hơn $1$ đều là tích của các số nguyên tố và phân tích nguyên tố đó là duy nhất.
+\end{proof}
+
+Dù mang tên gọi ``Nguyên lý quy nạp mạnh'' nhưng nguyên lý này và nguyên lý quy nạp toán học là tương đương nhau.
+
+Không phải mệnh đề nào với lượng hóa cho số tự nhiên, hay số nguyên dương cũng được chứng minh bằng phương pháp quy nạp toán học.  Tuy vậy, phương pháp quy nạp toán học tỏ ra hiệu quả trong việc chứng minh nhiều kết quả. Tuy nhiên lúc này chúng ta chưa khẳng định được tính đúng đắn của phương pháp này mà mới chỉ được thuyết phục bằng các bước chứng minh nghe hợp lý cũng như các ví dụ. Thực ra, nguyên lý quy nạp toán học thường được phát biểu như một tiên đề. Chúng ta sẽ quay lại với nguyên lý quy nạp toán học trong Chương~\ref{chapter4:natural-numbers-integers-and-rationals}.
+
+Như đã đề cập từ trước, chúng ta nói thêm về sự dự đoán trong chứng minh bằng phương pháp quy nạp toán học. Bạn đọc khi theo dõi đến ví dụ về tổng các số tự nhiên lẻ liên tiếp có thể thấy điều dự đoán là không tự nhiên, và đặt ra các câu hỏi như: ``Dự đoán đó đến từ đâu?\@'' thậm chí là ``Nếu gặp trường hợp quá khó dự đoán thì sao?\@'' Đây là một nhược điểm lớn của phương pháp chứng minh quy nạp $-$ Đó là \textit{người sử dụng phương pháp quy nạp phải biết mình đang chứng minh điều gì, một cách cụ thể}, và chứng minh bằng phương pháp quy nạp \textit{không cung cấp thêm thông tin gì về bài toán} ngoại trừ chính kết quả được chứng minh. Điểm yếu này không thể khắc phục hoàn toàn vì tính chủ quan của nó. Những người học và làm toán chỉ còn cách phát triển kinh nghiệm để cải thiện kĩ năng dự đoán đó, hoặc không dùng những phương pháp chứng minh khác.
+
+\subsection*{Bài tập}
+\setcounter{exercise}{0}
+
+\begin{exercise}
+    Chỉ ra rằng nguyên lý quy nạp mạnh là hệ quả của nguyên lý quy nạp toán học.
+\end{exercise}
+
+\begin{exercise}
+    Hãy dự đoán một tập hợp có $n$ phần tử ($n\geq 0$) thì tập lũy thừa của tập hợp đó có bao nhiêu phần tử. Chứng minh dự đoán đó.
+\end{exercise}
+
+\section{Các phép toán trên tập hợp}
+
+Với các tập hợp cho trước, chúng ta có thể kết hợp các phần tử từ các tập hợp này để cho ra một tập hợp khác.
+
+\subsection*{Hợp và giao của các tập hợp}
+
+\begin{definition}[Hợp của hai tập hợp]
+    Cho hai tập hợp $A$ và $B$. Hợp của $A$ và $B$ là tập hợp gồm các phần tử của $A$ và các phần tử của $B$, được kí hiệu là $A\cup B$.
+    \[
+        A\cup B = \{ x \mid x\in A \vee x\in B \}.
+    \]
+\end{definition}
+
+\begin{definition}[Giao của hai tập hợp]
+    Cho hai tập hợp $A$ và $B$. Giao của $A$ và $B$ là tập hợp gồm các phần tử đồng thời thuộc $A$ và $B$, được kí hiệu là $A\cap B$.
+    \[
+        A\cap B = \{ x \mid x\in A \wedge x\in B \}.
+    \]
+\end{definition}
+
+Phép toán hợp và phép toán giao của hai tập hợp có những tính chất tương tự như hai phép toán logic là tuyển và hội (tính chất giao hoán, kết hợp, và phân phối). Điều này được thể hiện qua định lý sau.
+
+\begin{theorem}
+    Cho ba tập hợp $A, B, C$. Khi đó
+    \begin{enumerate}[label={(\roman*)}]
+        \item $A\cup B = A\cup B$.
+        \item $A\cap B = B\cap A$.
+        \item $(A\cup B)\cup C = A\cup (B\cup C)$.
+        \item $(A\cap B)\cap C = A\cap (B\cap C)$.
+        \item $A\cap (B\cup C) = (A\cap B) \cup (A\cap C)$.
+        \item $A\cup (B\cap C) = (A\cup B) \cap (A\cup C)$.
+    \end{enumerate}
+\end{theorem}
+
+Chứng minh cho định lý trên có thể được thực hiện bằng các tính chất giao hoán, kết hợp, và phân phối của hai phép toán tuyển và hội. Trong định lý trên, nhờ tính chất kết hợp mà chúng ta có thể bỏ qua dấu ngoặc để viết $A\cup B\cup C$ và $A\cap B\cap C$ mà không lo ngại có hiểu lầm nào.
+
+\subsection*{Phần bù và hiệu hai tập hợp}
+
+Khi học hay làm toán và làm việc với tập hợp, chúng ta thường xuyên gặp trường hợp các tập hợp đang xét đều là tập hợp con của một tập hợp nào đó. Chẳng hạn: Khi học hình học phẳng, chúng ta làm việc trong một mặt phẳng (mặt phẳng này chứa tất cả các điểm, đường thẳng, tam giác, đường tròn mà chúng ta đang xét); Khi xem xét một đồ thị, chúng ta quan tâm tới các đỉnh, cạnh của đồ thị, và có thể cả các đồ thị con của đồ thị đó;\ldots Tập hợp chứa tất cả các đối tượng đang xét (việc tập hợp này là gì phụ thuộc vào ngữ cảnh của môn học, chuyên ngành, và đặc biệt là vấn đề đang tìm hiểu) được gọi là \textit{không gian}, hay \textit{tập vũ trụ}. Ở các phân ngành khác của toán học nói riêng và khoa học nói chung, thuật ngữ không gian được sử dụng như vậy, thường xuyên (không gian vector, không gian topology, không gian mẫu, không gian affine, không gian xạ ảnh, không gian tìm kiếm,\ldots). Trong mục này, chúng ta kí hiệu không gian là $X$.
+
+\begin{definition}[Phần bù]
+    Cho tập hợp $A$ trong không gian $X$. Phần bù của $A$ (trong $X$) là tập hợp gồm các phần tử thuộc $X$ nhưng không thuộc $A$. Phần bù của $A$ trong $X$ được kí hiệu là $A^{c}$.
+\end{definition}
+
+Khi không gian $X$ đã được xác định qua ngữ cảnh, chúng ta chỉ cần nói ``phần bù của $A$'' thay cho ``phần bù của $A$ trong $X$''. Gần giống với khái niệm phần bù, chúng ta có khái niệm hiệu của hai tập hợp.
+
+\begin{definition}[Hiệu của hai tập hợp]
+    Cho tập hợp $A$ và $B$. Hiệu của $A$ và $B$ là tập hợp gồm các phần tử thuộc $A$ nhưng không thuộc $B$. Chúng ta kí hiệu hiệu của $A$ và $B$ là $A - B$ hoặc $A\setminus B$.
+    \[
+        A - B = \{ x \mid x\in A \wedge x\notin B \}.
+    \]
+\end{definition}
+
+Khái niệm phần bù là một trường hợp riêng của khái niệm hiệu hai tập hợp. Khác với phần bù, để định nghĩa hiệu của hai tập hợp $A$ và $B$, chúng ta không nhất thiết phải có $A\supseteq B$.
+
+\subsection*{Công thức De Morgan}
+
+Để có thể phát biểu hình thức cho công thức De Morgan, chúng ta cần định nghĩa hợp và giao của một lượng tùy ý các tập hợp (có thể là vô hạn các tập hợp). Cho đến thời điểm hiện tại, chúng ta chỉ có một cách để thể hiện ``số lượng'' tùy ý như vậy, đó là sử dụng chính tập hợp. Chúng ta áp dụng điều này trong định nghĩa dưới đây.
+
+\begin{definition}[Hợp và giao của các (nhiều tùy ý) tập hợp]
+    Cho trước một tập hợp $I$ khác tập hợp rỗng. Hợp của \textit{họ các tập hợp $A_{i}$}, trong đó $i\in I$ là tập hợp gồm tất cả các phần tử của các tập hợp $A_{i}$, với $i\in I$. Nói cách khác, tập hợp này gồm các phần tử sao cho phần tử đó thuộc $A_{i}$ với $i\in I$ nào đó. Chúng ta kí hiệu
+    \[
+        \bigcup_{i\in I}A_{i} = \{ x \mid \exists i\in I: x\in A_{i} \}.
+    \]
+
+    Giao của \textit{họ các tập hợp $A_{i}$}, trong đó $i\in I$ là tập hợp gồm tất cả các phần tử đồng thời thuộc tất cả các tập hợp $A_{i}$, với $i\in I$. Chúng ta kí hiệu
+    \[
+        \bigcap_{i\in I}A_{i} = \{ x \mid \forall i\in I: x\in A_{i} \}.
+    \]
+\end{definition}
+
+Tập hợp $I$ được sử dụng trong định nghĩa trên được gọi là \textbf{tập hợp chỉ số}. Bạn đọc hãy thử trường hợp tập hợp $I$ gồm $2$ phần tử để kiểm tra định nghĩa trên có phù hợp với định nghĩa hợp và giao của hai tập hợp không.
+
+Lúc này, chúng ta có thể phát biểu công thức De Morgan.
+
+\begin{theorem}[Công thức De Morgan]\label{theorem:de-morgan-formula}
+    \begin{equation*}
+        \begin{split}
+            {\left(\bigcup_{i\in I}A_{i}\right)}^{c} = \bigcap_{i\in I}{A_{i}}^{c}, \\
+            {\left(\bigcap_{i\in I}A_{i}\right)}^{c} = \bigcup_{i\in I}{A_{i}}^{c}.
+        \end{split}
+    \end{equation*}
+\end{theorem}
+
+\noindent Chúng ta đưa ra một chứng minh cho công thức De Morgan bằng nguyên lý lượng hóa. Chứng minh này cũng minh họa cho cách chứng minh hai tập hợp bằng nhau.
+
+\begin{proof}
+    Với công thức đầu tiên, chúng ta giả sử $x \in {\left(\bigcup_{i\in I}A_{i}\right)}^{c}$. Điều này tương đương với việc $x\notin A_{i}$ với mọi $i\in I$, hay $x\in {A_{i}}^{c}$ với mọi $i\in I$ (theo định nghĩa phần bù). Theo định nghĩa của phép giao các tập hợp, $x\in \bigcap_{i\in I}{A_{i}}^{c}$. Do đó $x\in \bigcap_{i\in I}{A_{i}}^{c}$, kéo theo
+    \[
+        {\left(\bigcup_{i\in I}A_{i}\right)}^{c} \subseteq \bigcap_{i\in I}{A_{i}}^{c}
+    \]
+
+    Ngược lại, giả sử $x\in \bigcap_{i\in I}{A_{i}}^{c}$. Theo định nghĩa của phép giao các tập hợp, chúng ta suy ra $x\in {A_{i}}^{c}$ với mọi $i\in I$, hay $x\notin A_{i}$ với mọi $i\in I$ (theo định nghĩa phần bù). Theo nguyên lý lượng hóa, mệnh đề vừa thu được tương đương với phủ định của mệnh đề ``tồn tại $i\in I$ sao cho $x\in A_{i}$''. Do đó $x\in {\left(\bigcup_{i\in I}A_{i}\right)}^{c}$, kéo theo
+    \[
+        \bigcap_{i\in I}{A_{i}}^{c} \subseteq {\left(\bigcup_{i\in I}A_{i}\right)}^{c}
+    \]
+
+    Do vậy
+    \[
+        {\left(\bigcup_{i\in I}A_{i}\right)}^{c} = \bigcap_{i\in I}{A_{i}}^{c}.
+    \]
+
+    Cuối cùng, bằng phép toán lấy phần bù, chúng ta chỉ ra được công thức thứ hai là hệ quả của công thức đầu tiên.
+\end{proof}
+
+Ngay ở thời điểm chưa chứng minh, chúng ta có thể chỉ ra hai công thức là hệ quả của nhau. Ngoài ra, công thức thứ hai hoàn toàn có thể được chứng minh một cách độc lập với công thức thứ nhất.
+
+Bằng lời, công thức De Morgan được phát biểu là: Phần bù của hợp của một họ các tập hợp là giao của các phần bù, phần bù của giao của một họ các tập hợp là hợp của các phần bù.
+
+\subsection*{Phân hoạch của một tập hợp}
+
+\begin{definition}[Hai tập hợp rời nhau]
+    Hai tập hợp được gọi là rời nhau nếu giao của chúng là tập hợp rỗng.
+\end{definition}
+
+Cùng với định nghĩa trên và định nghĩa hợp của nhiều tùy ý các tập hợp, chúng ta đưa ra định nghĩa phân hoạch của một tập hợp khác rỗng.
+
+\begin{definition}[Phân hoạch của tập hợp khác rỗng]
+    Cho tập hợp $S$ khác tập hợp rỗng. Một họ tập hợp $A_{i}$, với $i\in I$ (tập hợp $I$ khác tập hợp rỗng) được gọi là một phân hoạch của tập hợp $S$ nếu và chỉ nếu các tập hợp của họ trên rời nhau từng đôi một và hợp thành của tất cả các tập hợp này là $S$. Bằng kí hiệu, chúng ta viết
+    \[
+        \forall i\in I\forall j\in I (i\ne j \implies A_{i}\cap A_{j} = \varnothing) \qquad\text{và}\qquad\bigcup_{i\in I}A_{i} = S.
+    \]
+\end{definition}
+
+Dĩ nhiên, mỗi tập hợp trong một phân hoạch của một tập hợp $S$ khác rỗng đều là tập hợp con của $S$. Thay cho cách phát biểu như trên, chúng ta còn nói: $S$ được phân hoạch bởi (thành) họ tập hợp $A_{i}$ với $i\in I$. Khi áp dụng phép toán hợp trên một họ các tập hợp đôi một rời nhau, chúng ta nói phép hợp đó là phép hợp rời, và kí hiệu là:
+\[
+    \bigsqcup_{i\in I}A_{i}.
+\]
+
+Khi đó, chúng ta còn nói $S$ là \textit{hợp rời} của họ tập hợp $A_{i}$ với $i\in I$. Hãy xem xét một số ví dụ về phân hoạch.
+\begin{itemize}
+    \item Tập hợp $S = \{ 1 \}$ gồm một phần tử có đúng một phân hoạch là $\{ 1 \}$. Tổng quát hơn, mọi tập hợp khác rỗng đều nhận chính nó làm một phân hoạch với họ gồm đúng một tập hợp.
+    \item Tập hợp $S = \{ 1, 2, 3, 4, 5 \}$ được phân hoạch thành họ gồm năm tập hợp $\{ 1 \}, \{ 2 \}, \{ 3 \}, \{ 4 \}, \{ 5 \}$, hoặc thành họ gồm hai tập hợp $\{ 1, 2 \}, \{ 3, 4, 5 \}$. Ví dụ này cho thấy phân hoạch của một tập hợp khác rỗng có thể là không duy nhất. Bạn đọc có thể chứng minh một tập hợp khác rỗng với nhiều hơn một phần tử sẽ có nhiều hơn một phân hoạch.
+    \item Tập hợp các số nguyên có thể được phân hoạch thành họ gồm hai tập hợp: tập hợp gồm các số nguyên chẵn và tập hợp gồm các số nguyên lẻ.
+\end{itemize}
+
+Trong Chương~\ref{chapter2:relations-and-mappings}, chúng ta sẽ quay trở lại với khái niệm phân hoạch khi bàn về quan hệ tương đương.
+
+\subsection*{Bài tập}
+\setcounter{exercise}{0}
+
+\begin{exercise}\label{section4:exercise1}
+    Cho ba tập hợp $A, B, C$ gồm hữu hạn phần tử. Kí hiệu $\card{A}$ là số lượng phần tử của tập hợp $A$. Chứng minh rằng
+    \begin{enumerate}[label={(\alph*)}]
+        \item $\card{A\cup B} = \card{A} + \card{B} - \card{A\cap B}$.
+        \item $\card{A\cup B\cup C} = \card{A} + \card{B} + \card{C} - \card{A\cap B} - \card{B\cap C} - \card{C\cap A} + \card{A\cap B\cap C}$ [Gợi ý: Áp dụng phần (a)]
+    \end{enumerate}
+
+    Bạn đọc hãy đưa ra một tổng quát (không cần chứng minh) cho hai công thức trên (cho nhiều tập hợp thay vì hai, hay ba tập hợp).
+\end{exercise}
+
+\begin{exercise}\label{section4:exercise2}
+    Cho ba tập hợp $A, B, C$. Chứng minh rằng
+    \begin{equation*}
+        \begin{split}
+            A - (B\cup C) = (A - B) \cap (A - C), \\
+            A - (B\cap C) = (A - B) \cup (A - C).
+        \end{split}
+    \end{equation*}
+\end{exercise}
+
+\begin{exercise}\label{section4:exercise3}
+    Hãy đưa ra một chứng minh trực tiếp cho công thức thứ hai trong Định lý~\ref{theorem:de-morgan-formula}.
+\end{exercise}
+
+\begin{exercise}\label{section4:exercise4}
+    Công thức De Morgan có thể được viết dưới dạng khác, sử dụng phép toán hiệu hai tập hợp thay vì lấy phần bù. Cụ thể là
+    \begin{equation*}
+        \begin{split}
+            A - \bigcup_{i\in I}A_{i} = \bigcap_{i\in I}{(A - A_{i})}, \\
+            A - \bigcap_{i\in I}A_{i} = \bigcup_{i\in I}{(A - A_{i})}.
+        \end{split}
+    \end{equation*}
+
+    Chứng minh hai công thức trên. [Gợi ý: Tham khảo cách chứng minh của công thức De Morgan ban đầu và Bài tập~\ref{section4:exercise2}]
+\end{exercise}
+
+\begin{exercise}\label{section4:exercise5}
+    Trong ví dụ, chúng ta đã phân hoạch tập hợp các số nguyên thành một họ gồm tập hợp các số nguyên lẻ và tập hợp gồm các số nguyên chẵn. Hãy đưa ra một phân hoạch là một họ 3 tập hợp cho tập hợp số nguyên. Tương tự, hãy phân hoạch tập hợp số nguyên thành một họ $n$ tập hợp với $n\geq 2$.
+\end{exercise}
+
+\begin{exercise}\label{section4:exercise6}
+    Chứng minh rằng mọi tập hợp khác rỗng đều có thể được phân hoạch bởi một họ các tập hợp mà mỗi tập hợp trong họ đó gồm đúng một phần tử. [Gợi ý: Lưu ý rằng tập hợp đã cho có thể có vô hạn phần tử. Hãy chọn tập hợp chỉ số là chính tập hợp khác rỗng được cho ban đầu.]
+\end{exercise}
+
+Kết quả từ Bài tập~\ref{section4:exercise6} khá đơn giản, thậm chí có thể xem là hiển nhiên, nhưng lại tỏ ra hữu ích trong một số bài toán. Bản thân tác giả đã dùng đến kết quả này khi học topology điểm và lý thuyết nhóm.
+
+\begin{exercise}\label{section4:exercise7}
+    Cho tập hợp $S$ khác rỗng được phân hoạch thành họ các tập hợp $A_{i}$ với $i\in I$ (tập hợp $I$ khác rỗng). Chứng minh rằng với mỗi phần tử thuộc $S$, tồn tại duy nhất $i\in I$ sao cho phần tử đó thuộc $A_{i}$. [Gợi ý: Chứng minh bằng phản chứng.]
+\end{exercise}
+
+
+\section{$\dagger$ Lý thuyết tập hợp theo tiên đề}\label{section5:axiomatic-set-theory}
+
+\subsection*{Nghịch lý Russell}
+
+\subsection*{Lý thuyết tập hợp ZFC}
