@@ -6,7 +6,7 @@
 
 \noindent \textit{Leopold Kronecker ($1823-1891$)}
 
-\section{Hệ tiên đề Peano về các số tự nhiên}
+\section{Hệ tiên đề Peano về các số tự nhiên}\label{section:peano-axioms}
 
 \subsection*{Hệ tiên đề Peano}
 
@@ -98,7 +98,7 @@ Hệ quả của định lý trên là tập hợp số tự nhiên bao gồm c�
 		\node[label={[black]above:$4$},label={[black]below:$S(S(S(S(0))))$}] at (number4) {};
 		\node[label={[black]above:$\cdots$},label={[black]below:$\ldots$}] at (etc) {};
 	\end{tikzpicture}
-    \caption{Năm phần tử đầu tiên của tập hợp số tự nhiên theo hệ tiên đề Peano.}\label{fig:first-five-natural-numbers}
+	\caption{Năm phần tử đầu tiên của tập hợp số tự nhiên theo hệ tiên đề Peano.}\label{fig:first-five-natural-numbers}
 \end{figure}
 
 Ý niệm và kí hiệu cho các số tự nhiên được xuất hiện trước hệ tiên đề của Peano hàng nghìn năm. Các kí hiệu (các số) $1, 2, 3,\ldots$ lần lượt chính là $S(0), S(S(0)), S(S(S(0))),\ldots$
@@ -114,7 +114,7 @@ Hai phép toán cơ bản với số tự nhiên là phép cộng và phép nhâ
 Phép cộng hai số tự nhiên được định nghĩa bằng đệ quy như sau.
 
 \begin{definition}[Phép cộng]
-	Cho $x$ và $y$ là hai số tự nhiên. Phép cộng hai số tự nhiên là một phép toán hai ngôi trên $\mathbb{N}$, kí hiệu là $+$. Chúng ta định nghĩa
+	Cho $x$ và $y$ là hai số tự nhiên. Phép cộng hai số tự nhiên là một phép toán hai ngôi trên $\mathbb{N}$, kí hiệu là $+$. Phép cộng hai số tự nhiên $a$ và $b$ cho ra kết quả là một số tự nhiên, được kí hiệu là $a + b$, được gọi là \textbf{tổng} của $a$ và $b$. Chúng ta định nghĩa
 	\[
 		x + 0 = x\qquad\text{và}\qquad x + S(y) = S(x + y).
 	\]
@@ -131,7 +131,7 @@ Nhằm minh họa cho định nghĩa này, chúng ta làm một vài phép cộn
 \end{example}
 
 Chúng ta sử dụng nguyên lý quy nạp toán học để chứng minh hai tính chất kết hợp và tính chất giao hoán của phép cộng hai số tự nhiên.
-\begin{theorem}
+\begin{theorem}\label{theorem:property-of-natural-numbers-addition}
 	Trên tập hợp số tự nhiên
 	\begin{enumerate}[label={(\roman*)}]
 		\item Phép cộng có tính chất kết hợp. Tức là, với mọi số tự nhiên $x, y, z$, chúng ta có $(x + y) + z = x + (y + z)$. Bằng kí hiệu logic hình thức, chúng ta viết
@@ -205,9 +205,46 @@ Chúng ta sử dụng nguyên lý quy nạp toán học để chứng minh hai t
 	\end{enumerate}
 \end{proof}
 
+Sư góp mặt của số $0$ trong phép toán cộng các số tự nhiên dẫn tới những trường hợp  đặc biệt.
+\begin{theorem}\label{theorem:addition-and-zero}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mọi số tự nhiên $x$, $x + y = x$ kéo theo $y = 0$.
+		\item Hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mọi số tự nhiên $x$, $x + y = x$ kéo theo $y = 0$.
+
+		      Khi $x = 0$ thì $y = 0 + y = 0$. Giả sử với $x = n$, chúng ta có ``$n + y = n$ kéo theo $y = 0$''. Khi đó, nếu $S(n) + y = S(n)$ thì
+		      \begin{align*}
+			      S(n + y) & = S(y + n) & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+			               & = y + S(n) & \text{(theo định nghĩa phép cộng trên $\mathbb{N}$)}              \\
+			               & = S(n) + y & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+			               & = S(n).
+		      \end{align*}
+
+		      Từ đẳng thức $S(n + y) = S(n)$, theo tiên đề 7, chúng ta có $n + y = n$. Theo giả thiết quy nạp, $y = 0$. Do đó $S(n) + y = S(n)$ kéo theo $y = 0$. Như vậy, theo nguyên lý quy nạp, với mọi số tự nhiên $x$, $x + y = x$ kéo theo $y = 0$.
+
+		      Vậy khi hai số tự nhiên $x, y$ thỏa mãn $x + y = x$ thì $y = 0$.
+		\item ($\Rightarrow$) $a = b = 0$.
+
+		      Theo định nghĩa phép cộng trên tập hợp số tự nhiên, $a + b = 0 + 0 = 0$.
+
+		      ($\Leftarrow$) $a + b = 0$.
+
+		      Giả sử phản chứng rằng $a\ne 0$. Khi đó tồn tại số tự nhiên $c$ sao cho $S(c) = a$. Theo định nghĩa phép cộng hai số tự nhiên và tính chất giao hoán của phép cộng hai số tự nhiên, chúng ta có $0 = b + a = b + S(c) = S(b + c)$. Điều này mâu thuẫn với tiên đề 8. Do đó $a = 0$.
+
+		      Tương tự, cũng bằng phương pháp phản chứng, chúng ta chỉ ra được $b = 0$.
+
+		      Vậy hai số tự nhiên $a, b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
+	\end{enumerate}
+\end{proof}
+
 Phép nhân cũng được định nghĩa bằng đệ quy.
 \begin{definition}[Phép nhân]
-	Cho $x$ và $y$ là hai số tự nhiên. Phép nhân hai số tự nhiên là một phép toán hai ngôi trên $\mathbb{N}$, kí hiệu là $\cdot$. Chúng ta định nghĩa
+	Cho $x$ và $y$ là hai số tự nhiên. Phép nhân hai số tự nhiên là một phép toán hai ngôi trên $\mathbb{N}$, kí hiệu là $\cdot$. Phép nhân hai số tự nhiên $a$ và $b$ cho ra kết quả là một số tự nhiên, được kí hiệu là $a\cdot b$, được gọi là \textbf{tích} của $a$ và $b$. Chúng ta định nghĩa
 	\[
 		x\cdot 0 = 0\qquad\text{và}\qquad x\cdot S(y) = x + (x\cdot y).
 	\]
@@ -226,7 +263,7 @@ Tương tự, chúng ta làm một vài phép nhân với định nghĩa này.
 
 Chúng ta nhắc lại và chứng minh các tính chất sau của phép nhân hai số tự nhiên.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:property-of-natural-numbers-multiplication}
 	Trên tập hợp số tự nhiên
 	\begin{enumerate}[label={(\roman*)}]
 		\item Phép nhân có tính chất phân phối (từ bên phải) với phép cộng. Tức là, với mọi số tự nhiên $x, y, z$, chúng ta có $(x + y)\cdot z = (x\cdot z) + (y\cdot z)$.
@@ -325,6 +362,63 @@ Với những tính chất đã chứng minh của phép cộng và phép nhân 
 	\]
 \end{corollary}
 
+Tương tự với phép cộng, phép nhân với $0$ cũng là một trường hợp đặc biệt.
+\begin{theorem}\label{theorem:zero-one-and-natural-numbers-multiplication}
+	Cho hai số tự nhiên $x$ và $y$, khi đó
+	\begin{enumerate}[label={(\roman*)}]
+		\item $x\cdot y = 0$ khi và chỉ khi $x = 0$ hoặc $y = 0$.
+		\item $x\cdot y = 1$ khi và chỉ khi $x = y = 1$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item ($\Rightarrow$) $x = 0$ hoặc $y = 0$.
+
+		      Theo định nghĩa phép nhân hai số tự nhiên và phần (iii) của Định lý~\ref{theorem:property-of-natural-numbers-multiplication}, chúng ta suy ra $x\cdot y = 0$.
+
+		      ($\Leftarrow$) $x\cdot y = 0$.
+
+		      Nếu $x\ne 0$ thì theo Định lý~\ref{theorem:successor}, tồn tại số tự nhiên $a$ sao cho $S(a) = x$.
+		      \begin{align*}
+			      0 & = x\cdot y = S(a)\cdot y                                                                \\
+			        & = y\cdot S(a)            & \text{(tính chất giao hoán của phép nhân trên $\mathbb{N}$)} \\
+			        & = y + y\cdot a           & \text{(theo định nghĩa của phép nhân trên $\mathbb{N}$)}
+		      \end{align*}
+
+		      Theo phần (ii) của Định lý~\ref{theorem:addition-and-zero}, $y = 0$.
+
+		      Nếu $y\ne 0$ thì theo Định lý~\ref{theorem:successor}, tồn tại số tự nhiên $b$ sao cho $S(b) = y$.
+		      \begin{align*}
+			      0 & = x\cdot y = x\cdot S(b)                                                            \\
+			        & = x + x\cdot b           & \text{(theo định nghĩa của phép nhân trên $\mathbb{N}$)}
+		      \end{align*}
+
+		      Theo phần (ii) của Định lý~\ref{theorem:addition-and-zero}, $x = 0$.
+
+		      Do đó $x\cdot y = 0$ kéo theo $x = 0$ hoặc $y = 0$.
+
+		      Vậy với hai số tự nhiên $x$ và $y$, $x\cdot y = 0$ khi và chỉ khi $x = 0$ hoặc $y = 0$.
+		\item ($\Rightarrow$) $x = 1$ và $y = 1$.
+
+		      Theo Định lý~\ref{theorem:property-of-natural-numbers-multiplication}, $1\cdot 1 = S(0)\cdot S(0) = S(0) = 1$.
+
+			  ($\Leftarrow$) $x\cdot y = 1$.
+
+			  Theo phần (i), $x\ne 0$ và $y\ne 0$. Theo Định lý~\ref{theorem:successor}, tồn tại hai số tự nhiên $a$ và $b$ sao cho $S(a) = x$ và $S(b) = y$. Theo định nghĩa phép cộng, phép nhân hai số tự nhiên, và tính chất giao hoán của phép cộng hai số tự nhiên
+			  \begin{align*}
+				  S(0) & = 1 = x\cdot y \\
+				       & = x\cdot S(b) = x + (x\cdot b) \\
+					   & = (x\cdot b) + x = (x\cdot b) + S(a) \\
+					   & = S((x\cdot b) + a).
+			  \end{align*}
+
+			  Theo tiên đề 7, $(x\cdot b) + a = 0$. Theo Định lý~\ref{theorem:addition-and-zero}, $x\cdot b = a = 0$. Mà $x\ne 0$ nên theo phần (i), chúng ta có $b = 0$. Vì $a = b = 0$ nên $x = y = S(0) = 1$.
+
+			  Vậy với hai số tự nhiên $x$ và $y$, $x\cdot y = 1$ khi và chỉ khi $x = 1$ hoặc $y = 1$.
+	\end{enumerate}
+\end{proof}
+
 Chúng ta khép lại nội dung về phép cộng và phép nhân trên tập số tự nhiên bằng một lưu ý. Thói quen học tập, tính toán, và cả các chứng minh trong mục này có thể gây ra một ấn tượng \textit{không chính xác} rằng tính chất kết hợp và tính chất giao hoán luôn song hành. Thực tế, khi học và làm toán, chúng ta sẽ bắt gặp những phép toán trên những tập hợp nhất định mà \textit{không có tính chất kết hợp lẫn giao hoán}, hoặc \textit{có tính chất giao hoán nhưng không có tính chất kết hợp}, hoặc \textit{có tính chất kết hợp mà không có tính chất giao hoán} (chẳng hạn như phép toán hợp thành hai ánh xạ).
 
 \subsection*{Quan hệ thứ tự trên tập hợp số tự nhiên}
@@ -335,15 +429,13 @@ Số tự nhiên đã trở nên quá quen thuộc với chúng ta, đến nỗi
 	Số tự nhiên $x$ được gọi là nhỏ hơn hoặc bằng số tự nhiên $y$ nếu và chỉ nếu tồn tại số tự nhiên $z$ sao cho $x + z = y$. Khi đó, chúng ta kí hiệu $x\leq y$. Nếu $x\leq y$ và $x\ne y$ thì chúng ta nói $x$ nhỏ hơn $y$ và kí hiệu $x < y$.
 \end{definition}
 
-Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nhỏ hơn hoặc bằng trên tập hợp số tự nhiên có thỏa mãn ba tính chất của quan hệ thứ tự hay không. Tuy nhiên, việc chứng minh tính chất phản đối xứng tỏ ra khó khăn hơn cả.
+Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nhỏ hơn hoặc bằng trên tập hợp số tự nhiên có thỏa mãn ba tính chất của quan hệ thứ tự hay không. Việc chứng minh tính chất phản đối xứng tỏ ra khó khăn hơn cả.
 
 \begin{proposition}
 	Chứng minh rằng
 	\begin{enumerate}[label={(\roman*)}]
 		\item Quan hệ $\leq$ trên tập hợp số tự nhiên thỏa mãn tính chất phản xạ và bắc cầu.
 		\item Với mọi số tự nhiên $x$, có $x\ne S(x)$.
-		\item Nếu hai số tự nhiên $x$ và $y$ thỏa mãn $x + y = x$ thì $y = 0$.
-		\item Hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
 		\item Quan hệ $\leq$ trên tập hợp số tự nhiên thỏa mãn tính chất phản đối xứng.
 		\item Quan hệ $\leq$ trên tập hợp số tự nhiên là một quan hệ thứ tự toàn phần.
 	\end{enumerate}
@@ -366,30 +458,6 @@ Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nh�
 		      Giả sử với số tự nhiên $x = n$, có $n\ne S(n)$. Theo giả thiết quy nạp và tiên đề 7, $S(n)\ne S(S(n))$.
 
 		      Vậy theo nguyên lý quy nạp toán học, $x\ne S(x)$ với mọi số tự nhiên $x$.
-		\item Chúng ta nhìn mệnh đề cần chứng minh theo quan điểm khác để chứng minh bằng quy nạp toán học: Với mọi số tự nhiên $x$, $x + y = x$ kéo theo $y = 0$.
-
-		      Khi $x = 0$ thì $y = 0 + y = 0$. Giả sử với $x = n$, chúng ta có ``$n + y = n$ kéo theo $y = 0$''. Khi đó, nếu $S(n) + y = S(n)$ thì
-		      \begin{align*}
-			      S(n + y) & = S(y + n) & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
-			               & = y + S(n) & \text{(theo định nghĩa phép cộng trên $\mathbb{N}$)}              \\
-			               & = S(n) + y & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
-			               & = S(n).
-		      \end{align*}
-
-		      Từ đẳng thức $S(n + y) = S(n)$, theo tiên đề 7, chúng ta có $n + y = n$. Theo giả thiết quy nạp, $y = 0$. Do đó $S(n) + y = S(n)$ kéo theo $y = 0$. Như vậy, theo nguyên lý quy nạp, với mọi số tự nhiên $x$, $x + y = x$ kéo theo $y = 0$.
-
-		      Vậy khi hai số tự nhiên $x, y$ thỏa mãn $x + y = x$ thì $y = 0$.
-		\item ($\Rightarrow$) $a = b = 0$.
-
-		      Theo định nghĩa phép cộng trên tập hợp số tự nhiên, $a + b = 0 + 0 = 0$.
-
-		      ($\Leftarrow$) $a + b = 0$.
-
-		      Giả sử phản chứng rằng $a\ne 0$. Khi đó tồn tại số tự nhiên $c$ sao cho $S(c) = a$. Theo định nghĩa phép cộng hai số tự nhiên và tính chất giao hoán của phép cộng hai số tự nhiên, chúng ta có $0 = b + a = b + S(c) = S(b + c)$. Điều này mâu thuẫn với tiên đề 8. Do đó $a = 0$.
-
-		      Tương tự, cũng bằng phương pháp phản chứng, chúng ta chỉ ra được $b = 0$.
-
-		      Vậy hai số tự nhiên $a, b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
 		\item Nếu hai số tự nhiên $x$ và $y$ thỏa mãn $x\leq y$ và $y\leq x$ thì theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, tồn tại hai số tự nhiên $a$ và $b$ sao cho $x + a = y$ và $y + b = x$. Khi đó
 		      \begin{align*}
 			      x & = y + b                                                                         \\
@@ -397,45 +465,561 @@ Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nh�
 			        & = x + (a + b) & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}
 		      \end{align*}
 
-		      Theo phần (iii) và (iv), chúng ta kết luận $a = b = 0$, dẫn tới $x = y$. Như vậy, quan hệ $\leq$ trên tập hợp số tự nhiên có tính chất phản đối xứng.
-		\item Phần (i) và (v) khẳng định rằng quan hệ $\leq$ trên tập hợp số tự nhiên là một quan hệ thứ tự.
+		      Theo phần (i) và (ii) của Định lý~\ref{theorem:addition-and-zero}, chúng ta kết luận $a = b = 0$, dẫn tới $x = y$. Như vậy, quan hệ $\leq$ trên tập hợp số tự nhiên có tính chất phản đối xứng.
+		\item Phần (i) và (iii) khẳng định rằng quan hệ $\leq$ trên tập hợp số tự nhiên là một quan hệ thứ tự.
 
 		      Để chứng minh quan hệ $\leq$ trên tập hợp số tự nhiên là quan hệ thứ tự toàn phần, chúng ta chứng minh: Với mọi số tự nhiên $x, y$, có $x\leq y$ hoặc $y\leq x$.
 
 		      Đầu tiên, với mọi số tự nhiên $x$, có $0\leq x$ hoặc $x\leq 0$. Giả sử với số tự nhiên $y = n$, với mọi số tự nhiên $x$, có $n\leq x$ hoặc $x\leq n$. Sử dụng giả thiết quy nạp, chúng ta xem xét hai trường hợp sau.
 
-              Trường hợp $x\leq n$. Theo định nghĩa phép cộng hai số tự nhiên, $n + S(0) = S(n)$ nên $n\leq S(n)$ theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên. Từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta suy ra $x\leq S(n)$.
+		      Trường hợp $x\leq n$. Theo định nghĩa phép cộng hai số tự nhiên, $n + S(0) = S(n)$ nên $n\leq S(n)$ theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên. Từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta suy ra $x\leq S(n)$.
 
-              Trường hợp $n\leq x$. Theo định nghĩa quan hệ thứ tự trên tập hợp số tự nhiên, tồn tại số tự nhiên $a$ sao cho $n + a = x$. Nếu $x = n$ thì $x\leq S(n)$ vì $n\leq S(n)$ (rút ra từ phần chứng minh của trường hợp trên). Còn nếu $n < x$ thì $a$ khác không (theo phần (ii)). Theo Định lý~\ref{theorem:successor}, vì $a$ khác không nên tồn tại số tự nhiên $b$ sao cho $a = S(b)$. Theo định nghĩa phép cộng hai số tự nhiên, $x = n + a = n + S(b) = S(n + b)$. Bên cạnh đó, $S(n) + b = b + S(n) = S(b + n) = S(n + b) = x$, nên theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta có $S(n)\leq x$.
+		      Trường hợp $n\leq x$. Theo định nghĩa quan hệ thứ tự trên tập hợp số tự nhiên, tồn tại số tự nhiên $a$ sao cho $n + a = x$. Nếu $x = n$ thì $x\leq S(n)$ vì $n\leq S(n)$ (rút ra từ phần chứng minh của trường hợp trên). Còn nếu $n < x$ thì $a$ khác không (theo Định lý~\ref{theorem:addition-and-zero}). Theo Định lý~\ref{theorem:successor}, vì $a$ khác không nên tồn tại số tự nhiên $b$ sao cho $a = S(b)$. Theo định nghĩa phép cộng hai số tự nhiên, $x = n + a = n + S(b) = S(n + b)$. Bên cạnh đó, $S(n) + b = b + S(n) = S(b + n) = S(n + b) = x$, nên theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta có $S(n)\leq x$.
 
-              Tóm lại, từ cả hai trường hợp, chúng ta kết luận: với mọi số tự nhiên $x$, $x\leq S(n)$ hoặc $S(n)\leq x$. Theo nguyên lý quy nạp, với mọi cặp số tự nhiên $x$ và $y$, có $x\leq y$ hoặc $y\leq x$.
+		      Tóm lại, từ cả hai trường hợp, chúng ta kết luận: với mọi số tự nhiên $x$, $x\leq S(n)$ hoặc $S(n)\leq x$. Theo nguyên lý quy nạp, với mọi cặp số tự nhiên $x$ và $y$, có $x\leq y$ hoặc $y\leq x$.
 
-              Vậy quan hệ $\leq$ trên tập hợp số tự nhiên là một quan hệ thứ tự toàn phần.\qedhere
+		      Vậy quan hệ $\leq$ trên tập hợp số tự nhiên là một quan hệ thứ tự toàn phần.\qedhere
 	\end{enumerate}
 \end{proof}
 
-\section{Số nguyên}
+\section{Số nguyên}\label{section:integers}
 
-\subsection*{Phép trừ hai số tự nhiên}
+\subsection*{Từ phép trừ hai số tự nhiên đến tập hợp số nguyên}
 
-\subsection*{Tập hợp số nguyên}
+\begin{proposition}\label{proposition:addition-cancellation}
+	Với mọi số tự nhiên $x, y, z$, nếu $x + z = y + z$ thì $x = y$.
+\end{proposition}
 
-\subsection*{Các phép toán và quan hệ trên tập số nguyên}
+\begin{proof}
+	Với mọi số tự nhiên $x, y$:
 
-\section{Nguyên lý quy nạp toán học}
+	Khi $z = 0$, nếu $x + 0 = y + 0$ thì $x = y$ (theo định nghĩa phép cộng hai số tự nhiên).
+
+	Giả sử với số tự nhiên $z = n$, $x + n = y + n$ kéo theo $x = y$. Khi đó chúng ta chứng minh rằng $x + S(n) = y + S(n)$ kéo theo $x = y$. Nếu $x + S(n) = y + S(n)$ thì theo định nghĩa phép cộng hai số tự nhiên, chúng ta có $S(x + n) = S(y + n)$. Theo tiên đề 7 thì $x + n = y + n$. Theo giả thiết quy nạp, $x = y$. Do đó $x + S(n) = y + S(n)$ kéo theo $x = y$.
+
+	Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $x, y, z$, nếu $x + z = y + z$ thì $x = y$.
+\end{proof}
+
+Từ mệnh đề vừa chứng minh, chúng ta rút ra một hệ quả: Nếu $x\leq y$ thì \textit{tồn tại duy nhất} số tự nhiên $z$ sao cho $x + z = y$. Đây là cơ sở để chúng ta định nghĩa phép trừ hai số tự nhiên.
+
+\begin{definition}[Phép trừ hai số tự nhiên]
+	Cho hai số tự nhiên $x, y$ sao cho $x\leq y$. Số tự nhiên $z$ duy nhất thỏa mãn $x + z = y$ được gọi là \textbf{hiệu} của $y$ và $x$. Chúng ta kí hiệu $z = y - x$.
+\end{definition}
+
+Nếu hai số tự nhiên $x$ và $y$ không thỏa mãn $x\leq y$ thì $y < x$ (có được lập luận này là nhờ $\leq$ là một quan hệ thứ tự toàn phần trên tập hợp số tự nhiên). Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, phủ định của $x\leq y$ tương đương với việc không tồn tại số tự nhiên $z$ nào sao cho $x + z = y$. Như vậy, có những trường hợp mà chúng ta không thực hiện được phép trừ hai số tự nhiên theo định nghĩa trên. Để định nghĩa được phép trừ hai số tự nhiên bất kì, chúng ta cần bổ sung các đối tượng mới vào tập hợp số tự nhiên $-$ Bởi vì khi đó, hiệu $y - x$ với $y < x$ không phải là một số tự nhiên.
+
+Trước khi đưa ra một định nghĩa như vậy, chúng tôi có một nhận xét: Nếu các số tự nhiên $x, y, z$ thỏa mãn $x + z = y$ thì
+\[
+	z = z - 0 = y - x = S(y) - S(x) = S(S(y)) - S(S(x)) = \cdots
+\]
+
+Các đẳng thức trên cho thấy một quan hệ tương đương trên tập hợp $\mathbb{N}\times\mathbb{N}$.
+\begin{theorem}[Quan hệ tương đương giữa các cặp (có thứ tự) số tự nhiên]
+	Hai cặp (có thứ tự) số tự nhiên $(a, b)$ và $(c, d)$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a + d = b + c$. Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ là một quan hệ tương đương
+\end{theorem}
+
+\begin{proof}
+	Với một cặp hai số tự nhiên $(a, b)$ bất kì, chúng ta có $(a, b)\sim (a, b)$ vì $a + b = b + a$, theo tính chất giao hoán của phép cộng hai số tự nhiên. Như vậy quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ có tính chất phản xạ.
+
+	Với hai cặp hai số tự nhiên $(a, b)$ và $(c, d)$, $(a, b)\sim (c, d)$ khi và chỉ khi $a + d = b + c$. Theo tính chất giao hoán của phép cộng hai số tự nhiên, $a + d = b + c$ khi và chỉ khi $c + b = d + a$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $c + b = d + a$ khi và chỉ khi $(c, d)\sim (a, b)$. Như vậy quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ có tính chất đối xứng.
+
+	Với các cặp số tự nhiên $(a, b), (c, d)$, và $(x, y)$, nếu $(a, b)\sim (c, d)$ và $(c, d)\sim (x, y)$ thì theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta có $a + d = b + c$ và $c + y = d + x$. Chúng ta cần chỉ ra $a + y = b + x$. Áp dụng liên tiếp tính chất kết hợp và tính chất giao hoán của phép cộng số tự nhiên:
+	\begin{align*}
+		(a + y) + (c + d) & = ((a + y) + c) + d  & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                  & = (a + (y + c)) + d  & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                  & = a + ((c + y) + d)  & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		                  & = a + (d + (c + y))  & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		                  & = (a + d) + (c + y)  & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                  & = (b + c) + (d + x)  & \text{(vì $a + d = b + c$ và $c  + y = d + x$)}                   \\
+		                  & = b + (c + (d + x))  & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                  & = b + ((c + d) + x)  & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                  & = b + (x + (c + d))  & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		                  & = (b + x) + (c + d). & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}
+	\end{align*}
+
+	Theo Mệnh đề~\ref{proposition:addition-cancellation}, chúng ta suy ra $a + y = b + x$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta có $(a, b)\sim (x, y)$, tức là quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ có tính chất bắc cầu.
+
+	Vậy quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ là một quan hệ tương đương.
+\end{proof}
+
+Chúng ta tiến hành định nghĩa tập hợp số mới.
+\begin{definition}
+	Một số nguyên là một lớp tương đương theo quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$. Chúng ta kí hiệu một số tự nhiên là $[(a, b)]$, trong đó $a$ và $b$ là hai số tự nhiên. Tập hợp số nguyên được kí hiệu là $\mathbb{Z}$.
+\end{definition}
+
+Đó là một định nghĩa khá lạ so với những gì trước đây chúng ta học về hiểu về số nguyên. Để quen hơn với định nghĩa này, chúng ta xem một ví dụ.
+\begin{example}
+	Với $n$ là số tự nhiên, chúng ta có
+	\begin{align*}
+		(1, 0) & \sim (2, 1) \sim (3, 2) \sim \cdots \sim (n+1, n) \in [(1, 0)]; \\
+		(2, 0) & \sim (3, 1) \sim (4, 2) \sim \cdots \sim (n+2, n) \in [(2, 0)]; \\
+		\ldots                                                                   \\
+		(0, 1) & \sim (1, 2) \sim (2, 3) \sim \cdots \sim (n, n+1) \in [(0, 1)]; \\
+		(0, 2) & \sim (1, 3) \sim (2, 4) \sim \cdots \sim (n, n+2) \in [(0, 2)];
+	\end{align*}
+\end{example}
+
+\subsection*{Các phép toán trên tập hợp số nguyên}
+
+Chúng ta định nghĩa phép cộng hai số nguyên.
+\begin{definition}
+	Phép cộng hai số nguyên là một phép toán hai ngôi trên tập hợp số nguyên, kí hiệu là $+$. Với hai số nguyên $[(a, b)]$ và $[(c, d)]$, chúng ta kí hiệu kết quả của phép cộng hai số nguyên này là $[(a, b)] + [(c, d)]$ và
+	\[
+		[(a, b)] + [(c, d)] = [(a+c, b+d)].
+	\]
+\end{definition}
+
+Với định nghĩa phép cộng hai số nguyên, chúng ta có nhận xét: $[(a, 0)] + [(b, 0)] = [(a+b, 0)]$. Phép cộng hai số nguyên vừa thể hiện hai ý tưởng rằng (1) $[(a, 0)]$ \textit{tương ứng} với số tự nhiên $a$, và (2) phép cộng hai số nguyên là một \textit{mở rộng} của phép cộng hai số tự nhiên. Phép cộng hai số nguyên tháo gỡ hạn chế của phép trừ hai số tự nhiên, bởi vì
+
+\begin{proposition}
+	Với mọi số nguyên $[(a, b)], [(c, d)]$, có $[(a, b)] + [(b+c, a+d)] = [(c, d)]$.
+\end{proposition}
+
+\begin{proof}
+	\begin{align*}
+		  & [(a, b)] + [(b+c, a+d)]                                                                     \\
+		= & [(a+(b+c), b+(a+d))]    & \text{(theo định nghĩa phép cộng hai số nguyên)}                  \\
+		= & [((a+b)+c, (b+a)+d)]    & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		= & [((a+b)+c), (a+b)+d]    & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		= & [(c+(a+b), d+(a+b))]    & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		= & [(c, d)].               & \text{(vì $(c+(a+b))+d = (d+(a+b))+c$)}
+	\end{align*}
+\end{proof}
+
+Nói riêng, theo Mệnh đề trên, chúng ta có $[(x, 0)] + [(y, x)] = [(y, 0)]$. Ý tưởng rằng $[(x, 0)]$ tương ứng với số tự nhiên $x$ cho phép chúng ta nghĩ rằng: cuối cùng cũng có thể trừ hai số tự nhiên $y$ và $x$ (lúc này là hai số nguyên $[(y, 0)]$ và $[(x, 0)]$).
+
+Việc mở rộng tập số tự nhiên thành tập hợp số nguyên cho phép trừ hai số tự nhiên bất kì. Không những vậy, các tính chất của phép cộng hai tự nhiên vẫn được bảo toàn.
+\begin{theorem}\label{theorem:group-of-integers}
+	Trong tập hợp số nguyên,
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép cộng hai số nguyên có tính chất kết hợp. Tức là, với các số nguyên $[(a, b)], [(c, d)], [(x, y)]$, chúng ta có
+		      \[
+			      ([(a, b)] + [(c, d)]) + [(x, y)] = [(a, b)] + ([(c, d)] + [(x, y)]).
+		      \]
+		\item Với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(0, 0)] = [(0, 0)] + [(a, b)] = [(a, b)]$.
+		\item Với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(b, a)] = [(b, a)] + [(a, b)] = [(0, 0)]$.
+		\item Phép cộng hai số nguyên có tính chất giao hoán. Tức là, với mọi số nguyên $[(a, b)], [(c, d)]$, chúng ta có
+		      \[
+			      [(a, b)] + [(c, d)] = [(c, d)] + [(a, b)].
+		      \]
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item \begin{align*}
+			        & ([(a, b)] + [(c, d)]) + [(x, y)]                                                                   \\
+			      = & [(a+c, b+d)] + [(x, y)]          & \text{(theo định nghĩa phép cộng hai số nguyên)}                \\
+			      = & [((a+c)+x, (b+d)+y)]             & \text{(theo định nghĩa phép cộng hai số nguyên)}                \\
+			      = & [(a+(c+x), b+(d+y))]             & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)} \\
+			      = & [(a, b)] + [(c+x, d+y)]          & \text{(theo định nghĩa phép cộng hai số nguyên)}                \\
+			      = & [(a, b)] + ([(c, d)] + [(x, y)]) & \text{(theo định nghĩa phép cộng hai số nguyên)}
+		      \end{align*}
+
+		      Vậy phép cộng hai số nguyên có tính chất kết hợp.
+		\item \begin{align*}
+			      [(a, b)] + [(0, 0)] & = [(a+0, b+0)]        & \text{(theo định nghĩa phép cộng hai số nguyên)}                         \\
+			                          & = [(a, b)]            & \text{(theo định nghĩa phép cộng hai số tự nhiên)}                       \\
+			                          & = [(0+a, 0+b)]        & \text{(theo Định lý~\ref{theorem:property-of-natural-numbers-addition})} \\
+			                          & = [(0, 0)] + [(a, b)] & \text{(theo định nghĩa phép cộng hai số nguyên)}
+		      \end{align*}
+
+		      Vậy với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(0, 0)] = [(0, 0)] + [(a, b)] = [(a, b)]$.
+		\item Theo định nghĩa phép cộng hai số nguyên và tính chất giao hoán của phép cộng hai số tự nhiên, chúng ta có
+		      \[
+			      \begin{split}
+				      [(a, b)] + [(b, a)] = [(a+b, b+a)] = [(a+b, a+b)], \\
+				      [(b, a)] + [(a, b)] = [(b+a, a+b)] = [(a+b, a+b)].
+			      \end{split}
+		      \]
+
+		      Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(a+b, a+b)\sim (0, 0)$ vì
+		      \[
+			      (a+b) + 0 = 0 + (a+b) = a+b.
+		      \]
+
+		      Vậy với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(b, a)] = [(b, a)] + [(a, b)] = [(0, 0)]$.
+		\item \begin{align*}
+			      [(a, b)] + [(c, d)] & = [(a+c, b+d)]        & \text{(theo định nghĩa phép cộng hai số nguyên)}                  \\
+			                          & = [(c+a, d+b)]        & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+			                          & = [(c, d)] + [(a, b)] & \text{(theo định nghĩa phép cộng hai số nguyên)}
+		      \end{align*}
+
+		      Vậy phép cộng hai số nguyên có tính chất giao hoán.
+	\end{enumerate}
+\end{proof}
+
+\begin{theorem}\label{theorem:uniqueness-of-additive-identity-and-additive-inverse}
+	Trong tập hợp số nguyên,
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tồn tại duy nhất số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+		\item Với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0,0)]$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Theo phần (ii) của Định lý~\ref{theorem:group-of-integers}, với mọi số nguyên $\alpha$, chúng ta có $\alpha + [(0,0)] = [(0,0)] + \alpha = \alpha$. Như vậy, tồn tại số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+
+		      Giả sử $\theta$ là một số nguyên thỏa mãn: Với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$. Khi đó
+		      \begin{align*}
+			      \theta & = \theta + [(0, 0)] & \text{(theo phần (ii) của Định lý~\ref{theorem:group-of-integers})} \\
+			             & = [(0, 0)]          & \text{(theo định nghĩa của số nguyên $\theta$)}.
+		      \end{align*}
+
+		      Do đó $\theta = [(0, 0)]$. Như vậy, tồn tại duy nhất số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+		\item Phần (iii) của Định lý~\ref{theorem:group-of-integers} khẳng định rằng với mỗi số nguyên $\alpha$, tồn tại số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0, 0)]$.
+
+		      Giả sử $\gamma$ là một số nguyên thỏa mãn $\alpha + \gamma = \gamma + \alpha = \alpha$. Khi đó
+		      \begin{align*}
+			      \gamma & = \gamma + [(0,0)]          & \text{(theo phần (ii) của Định lý~\ref{theorem:group-of-integers})} \\
+			             & = \gamma + (\alpha + \beta)                                                                       \\
+			             & = (\gamma + \alpha) + \beta & \text{(theo tính chất kết hợp của phép cộng các số nguyên)}         \\
+			             & = [(0, 0)] + \beta          & \text{(theo định nghĩa của số nguyên $\gamma$)}                     \\
+			             & = \beta.                    & \text{(theo phần (ii) của Định lý~\ref{theorem:group-of-integers})}
+		      \end{align*}
+
+		      Do đó $\gamma = \beta$. Như vậy, với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0, 0)]$.
+	\end{enumerate}
+\end{proof}
+
+Phần (ii) của Định lý~\ref{theorem:uniqueness-of-additive-identity-and-additive-inverse} là cơ sở cho định nghĩa sau đây.
+\begin{definition}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mỗi số nguyên $\alpha$, số nguyên $\alpha'$ duy nhất thỏa mãn $\alpha + \alpha' = \alpha' + \alpha = [(0, 0)]$ được gọi là số nguyên đối của $\alpha$, hay số đối của $\alpha$. Số đối của $\alpha$ được kí hiệu là $-\alpha$.
+		\item Phép trừ hai số nguyên là một phép toán hai ngôi trên tập hợp số nguyên. Kết quả của phép trừ hai số nguyên $\alpha$ và $\beta$ là tổng của $\alpha$ và $(-\beta)$. Chúng ta kí hiệu $\alpha - \beta = \alpha + (-\beta)$.
+	\end{enumerate}
+\end{definition}
+
+Khác với phép trừ trên tập hợp số tự nhiên, phép trừ trên tập hợp số nguyên thực hiện được với hai số nguyên bất kì.
+
+\begin{theorem}
+	Với mỗi cặp số nguyên $\alpha$ và $\beta$, tồn tại duy nhất số nguyên $\gamma$ sao cho $\alpha + \gamma = \beta$.
+\end{theorem}
+
+\begin{proof}
+	Trước hết chúng ta chỉ ra sử tồn tại của một số nguyên như vậy.
+	\begin{align*}
+		\alpha + (\beta - \alpha) & = \alpha + (\beta + (-\alpha)) & \text{(theo định nghĩa phép trừ hai số nguyên)}                      \\
+		                          & = \alpha + ((-\alpha) + \beta) & \text{(theo tính chất giao hoán của phép cộng hai số nguyên)}        \\
+		                          & = (\alpha + (-\alpha)) + \beta & \text{(theo tính chất kết hợp của phép cộng hai số nguyên)}          \\
+		                          & = [(0, 0)] + \beta             & \text{(theo phần (iii) của Định lý~\ref{theorem:group-of-integers})} \\
+		                          & = \beta                        & \text{(theo phần (ii) của Định lý~\ref{theorem:group-of-integers})}
+	\end{align*}
+
+	Đẳng thức trên cho thấy tồn tại số nguyên $\gamma$ sao cho $\alpha + \gamma = \beta$.
+
+	Chúng ta tiếp tục chứng minh tính duy nhất của một số nguyên như vậy. Nếu số nguyên $\gamma$ thỏa mãn $\alpha + \gamma = \beta$ thì
+	\begin{align*}
+		\gamma & = [(0,0)] + \gamma              & \text{(theo phần (ii) của Định lý~\ref{theorem:group-of-integers})}  \\
+		       & = ((-\alpha) + \alpha) + \gamma & \text{(theo phần (iii) của Định lý~\ref{theorem:group-of-integers})} \\
+		       & = (-\alpha) + (\alpha + \gamma) & \text{(theo tính chất kết hợp của phép cộng các số nguyên)}          \\
+		       & = (-\alpha) + \beta             & \text{(theo định nghĩa của số nguyên $\gamma$)}                      \\
+		       & = \beta + (-\alpha)             & \text{(theo tính chất gioa hoán của phép cộng hai số nguyên)}        \\
+		       & = \beta - \alpha                & \text{(theo định nghĩa phép trừ hai số nguyên)}
+	\end{align*}
+
+	Vậy với mỗi cặp số nguyên $\alpha$ và $\beta$, tồn tại duy nhất số nguyên $\gamma$ sao cho $\alpha + \gamma = \beta$.
+\end{proof}
+
+Chúng ta khép lại nội dung về phép cộng và phép trừ hai số nguyên bằng việc phát biểu quy tắc mở dấu ngoặc. Chúng tôi nhường lại chứng minh định lý sau cho bạn đọc.
+
+\begin{theorem}[Quy tắc mở dấu ngoặc]
+	Với mọi số nguyên $\alpha, \beta, \gamma$, có
+	\begin{enumerate}[label={(\roman*)}]
+		\item $-(-\alpha) = \alpha$.
+		\item $-(\alpha + \beta) = (-\beta) + (-\alpha) = (-\alpha) + (-\beta)$.
+		\item $-(\alpha - \beta) = \beta - \alpha$.
+		\item $\alpha - (\beta + \gamma) = (\alpha - \beta) - \gamma$.
+		\item $\alpha - (\beta - \gamma) = (\alpha - \beta) + \gamma$.
+	\end{enumerate}
+\end{theorem}
+
+Để thuận tiện trong việc định nghĩa phép nhân hai số nguyên, chúng ta định nghĩa số nguyên dương và số nguyên âm.
+\begin{definition}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Một số nguyên $\alpha = [(x, y)]$ được gọi là một \textbf{số nguyên dương} nếu tồn tại số tự nhiên $n\ne 0$ sao cho $(n, 0)\sim (x, y)$ (nói cách khác là $(n, 0)\in \alpha$, $(n, 0)$ thuộc lớp tương đương $[(x, y)]$).
+		\item Một số nguyên $\alpha = [(x, y)]$ được gọi là một \textbf{số nguyên âm} nếu không tồn tại số tự nhiên $n$ nào sao cho $(n, 0)\sim (x, y)$ (nói cách khác là $(n, 0)\in \alpha$, hay $(n, 0)$ thuộc lớp tương đương $[(x, y)]$).
+		\item Một số nguyên được gọi là \textbf{số nguyên không âm} nếu số nguyên đó bằng $[(0, 0)]$ hoặc số nguyên đó là số nguyên dương.
+	\end{enumerate}
+\end{definition}
+
+Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn nhắc lại: Tập hợp số nguyên có thể được phân hoạch thành
+\begin{itemize}
+	\item một họ gồm ba tập hợp: tập hợp các số nguyên dương, tập hợp các số nguyên âm, và tập hợp gồm một phần tử $[(0,0)]$.
+	\item một họ gồm hai tập hợp: tập hợp các số nguyên không âm và tập hợp các số nguyên âm.
+\end{itemize}
+
+\begin{example}
+	$[(1, 0)], [(2, 0)], [(3, 0)], \ldots$ là các số nguyên dương.
+
+	$[(0,0)]$ không phải số nguyên dương, cũng không phải số nguyên âm.
+
+	$[(0, 1)], [(0, 2)], [(0, 3)] \ldots$ là các số nguyên âm.
+\end{example}
+
+\noindent Thực ra, ví dụ trên cần được khẳng định bằng định lý sau.
+
+\begin{theorem}\label{theorem:positive-negative-nonnegative-integers}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Số nguyên $\alpha$ là số nguyên không âm khi và chỉ khi tồn tại số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
+		\item Số nguyên $\alpha$ là số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+		\item Số nguyên $\alpha$ là số nguyên dương khi và chỉ khi $(-\alpha)$ là số nguyên âm.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Mệnh đề này được suy ra trực tiếp từ định nghĩa.
+		\item ($\Rightarrow$) $\alpha$ là số nguyên âm.
+
+		      Theo định nghĩa số nguyên, tồn tại hai số tự nhiên $a, b$ sao cho $[(a, b)] = \alpha$. Theo định nghĩa số nguyên âm, \textit{không tồn tại số tự nhiên $n$ sao cho $(a, b)\sim (n, 0)$} $-$ Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, điều này tương đương với việc không tồn tại số tự nhiên $n$ sao cho $a = b + n$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta có $a\leq b$, và tồn tại số tự nhiên $c$ sao cho $a + c = b$. Khi đó $[(a, b)] = [(a, a+c)] = [(0, c)]$, đây là điều cần chứng minh.
+
+		      ($\Leftarrow$) Tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+
+		      Giả sử phản chứng rằng $\alpha$ là một số nguyên không âm. Theo phần (i), tồn tại số tự nhiên $m$ sao cho $[(m, 0)] = [(0, n)]$, tức là $(m, 0)\sim (0, n)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $m + n = 0 + 0 = 0$. Theo Định lý~\ref{theorem:addition-and-zero}, $m = n = 0$. Điều này mâu thuẫn với giả thiết $n\ne 0$ nên giả sử phản chứng là sai. Do vậy $\alpha$ là một số nguyên âm.
+
+		      Vậy $\alpha$ là một số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+		\item ($\Rightarrow$) $\alpha$ là số nguyên dương.
+
+		      Theo định nghĩa số nguyên dương, tồn tại số tự nhiên $n$ khác không sao cho $[(n, 0)] = \alpha$. Khi đó, $-\alpha = [(0, n)]$. Vì $n\ne 0$ nên theo phần (ii), $(-\alpha)$ là số nguyên âm.
+
+		      ($\Leftarrow$) $(-\alpha)$ là số nguyên âm.
+
+		      Theo phần (ii), tồn tại số tự nhiên $n$ khác không sao cho $[(0, n)] = -\alpha$. Khi đó, $\alpha = [(n, 0)]$. Vì $n\ne 0$ nên theo định nghĩa số nguyên dương, $\alpha$ là số nguyên dương.
+
+		      Vậy $\alpha$ là số nguyên dương khi và chỉ khi $(-\alpha)$ là số nguyên âm.
+	\end{enumerate}
+\end{proof}
+
+Kết hợp định lý trên với quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, chúng ta thu được hệ quả sau.
+
+\begin{corollary}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tổng hai số nguyên dương là một số nguyên dương.
+		\item Tổng hai số nguyên không âm là một số nguyên không âm.
+		\item Tổng hai số nguyên âm là một số nguyên âm.
+	\end{enumerate}
+\end{corollary}
+
+Tiếp theo, chúng ta định nghĩa phép nhân hai số nguyên. Bạn đọc hãy lưu ý rằng, chúng ta thực hiện các phép tính theo thứ tự: nhân rồi đến cộng trừ.
+\begin{definition}
+	Phép nhân hai số nguyên là một phép toán hai nôi trên tập hợp số nguyên. Kết quả của phép nhân hai số nguyên $\alpha, \beta$ được kí hiệu là $\alpha\cdot\beta$, được gọi là tích hai số nguyên $\alpha, \beta$ và được định nghĩa cho đủ bốn trường hợp như sau:
+	\begin{itemize}[itemsep=0pt]
+		\item Nếu $\alpha$ và $\beta$ là các số nguyên không âm thì tồn tại số tự nhiên $m, n$ sao cho $\alpha = [(m, 0)]$ và $\beta = [(n, 0)]$. Chúng ta định nghĩa
+		      \[
+			      \alpha\cdot\beta = [(m\cdot n, 0)].
+		      \]
+		\item Nếu $\alpha$ là số nguyên không âm, $\beta$ là số nguyên âm thì chúng ta định nghĩa
+		      \[
+			      \alpha\cdot\beta = -\alpha\cdot(-\beta).
+		      \]
+		\item Nếu $\alpha$ là số nguyên âm, $\beta$ là số nguyên không âm thì chúng ta định nghĩa
+		      \[
+			      \alpha\cdot\beta = -(-\alpha)\cdot \beta.
+		      \]
+		\item Nếu $\alpha$ là số nguyên không âm, $\beta$ là số nguyên không âm thì chúng ta định nghĩa
+		      \[
+			      \alpha\cdot\beta = (-\alpha)\cdot(-\beta).
+		      \]
+	\end{itemize}
+\end{definition}
+
+Định nghĩa trên đưa tích hai số nguyên về tích hai số tự nhiên. Do đây là một định nghĩa khá dài và không tự nhiên, chúng tôi đề nghị bạn đọc đối chiếu định nghĩa trên với định nghĩa phép nhân hai số nguyên đã học trong chương trình giáo dục phổ thông.
+
+Phép nhân các số nguyên cũng có tính chất kết hợp, giao hoán, phân phối với phép cộng hai số nguyên. Tuy nhiên, để chứng minh những tính chất đó từ định nghĩa phép nhân hai số nguyên như trên rất tốn công sức và nhàm chán vì cần xem xét từng trường hợp. Chẳng hạn, vì tính chất kết hợp có sự xuất hiện của ba số nguyên nên chúng ta cần chứng minh tính chất kết hợp đúng cho 8 trường hợp, vì tính chất giao hoán có sự xuất hiện của hai số nguyên nên chúng ta cần chứng minh tính chất giao hoán đúng cho 4 trường hợp. Để chứng minh cho các tính chất đó trở nên đơn giản hơn, chúng ta sử dụng mệnh đề sau.
+\begin{proposition}\label{proposition:sign}
+	Với mọi số nguyên $\alpha, \beta$, có
+	\begin{enumerate}[label={(\roman*)}]
+		\item $[(0, 0)]\cdot\alpha = \alpha\cdot[(0,0)] = [(0,0)]$.
+		\item $(-\alpha)\cdot\beta = \alpha\cdot(-\beta) = -\alpha\cdot\beta$.
+		\item $\alpha\cdot\beta = (-\alpha)\cdot(-\beta)$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chúng ta xét hai trường hợp.
+
+		      Nếu $\alpha$ là số nguyên không âm thì theo định nghĩa phép nhân hai số nguyên, $[(0, 0)]\cdot\alpha = [(0, 0)]$.
+
+		      Nếu $\alpha$ là số nguyên âm thì $(-\alpha)$ là số nguyên dương thì theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $[(0, 0)]\cdot (-\alpha) = (-\alpha)\cdot [(0, 0)] = [(0, 0)]$. Theo định nghĩa phép nhân hai số nguyên
+		      \[
+			      \begin{split}
+				      [(0, 0)]\cdot\alpha = -([(0, 0)]\cdot (-\alpha)) = -[(0,0)] = [(0, 0)], \\
+				      \alpha\cdot[(0, 0)] = -((-\alpha)\cdot [(0, 0)]) = -[(0,0)] = [(0, 0)].
+			      \end{split}
+		      \]
+
+		      Do vậy với mọi số nguyên $\alpha$, có $[(0, 0)]\cdot\alpha = \alpha\cdot[(0,0)] = [(0,0)]$.
+		\item Chúng ta xét bốn trường hợp sau.
+		      \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1.5cm]
+			      \item $\alpha$ và $\beta$ là hai số nguyên không âm. Theo định nghĩa phép nhân hai số nguyên (trường hợp 2 và 3) và quy tắc mở dấu ngoặc
+			            \begin{align*}
+				            (-\alpha)\cdot\beta & = -(-(-\alpha))\cdot \beta = -\alpha\cdot\beta, \\
+				            \alpha\cdot(-\beta) & = -\alpha\cdot (-(-\beta)) = -\alpha\cdot\beta.
+			            \end{align*}
+			      \item $\alpha$ là số nguyên không âm, $\beta$ là số nguyên âm. Theo định nghĩa phép nhân hai số nguyên (trường hợp 2) và quy tắc mở dấu ngoặc
+			            \begin{align*}
+				            (-\alpha)\cdot\beta  & = \alpha\cdot (-\beta),                          \\
+				            \alpha\cdot (-\beta) & = -(\alpha\cdot(-(-\beta))) = -\alpha\cdot\beta.
+			            \end{align*}
+			      \item $\alpha$ là số nguyên âm, $\beta$ là số nguyên không âm. Theo định nghĩa phép nhân hai số nguyên (trường hợp 3 và 4) và quy tắc mở dấu ngoặc
+			            \begin{align*}
+				            (-\alpha)\cdot\beta & = -(-(-\alpha))\cdot\beta = -\alpha\cdot\beta, \\
+				            \alpha\cdot(-\beta) & = (-\alpha)\cdot\beta.
+			            \end{align*}
+			      \item $\alpha$ và $\beta$ là hai số nguyên âm. Theo định nghĩa phép nhân hai số nguyên (trường hợp 2, 3, và 4) và quy tắc mở dấu ngoặc
+			            \begin{align*}
+				            (-\alpha)\cdot\beta & = -(-\alpha)\cdot(-\beta) = -\alpha\cdot\beta, \\
+				            \alpha\cdot(-\beta) & = -(-\alpha)\cdot(-\beta) = -\alpha\cdot\beta.
+			            \end{align*}
+		      \end{enumerate}
+
+		      Như vậy trong mọi trường hợp, chúng ta có $(-\alpha)\cdot\beta = \alpha\cdot(-\beta) = -\alpha\cdot\beta$.
+		\item Phần (iii) là một hệ quả của phần (ii). Theo kết quả của phần (ii) và quy tắc mở dấu ngoặc
+		      \[
+			      (-\alpha)\cdot (-\beta) = -(\alpha\cdot(-\beta)) = -(-(\alpha\cdot\beta)) = \alpha\cdot\beta.
+		      \]
+	\end{enumerate}
+\end{proof}
+
+\begin{theorem}\label{theorem:property-of-integers-multiplication}
+	Trong tập hợp số nguyên,
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép nhân các số nguyên có tính chất kết hợp. Tức là với mọi số nguyên $\alpha, \beta, \gamma$, chúng ta có $(\alpha\cdot\beta)\cdot\gamma = \alpha\cdot(\beta\cdot\gamma)$.
+		\item Với mọi số nguyên $\alpha$, chúng ta có $\alpha\cdot [(1, 0)] = [(1, 0)]\cdot\alpha = \alpha$.
+		\item Phép nhân các số nguyên có tính chất giao hoán. Tức là với mọi số nguyên $\alpha, \beta$, chúng ta có $\alpha\cdot\beta = \beta\cdot\alpha$.
+		\item Phép nhân các số nguyên có tính chất phân phối với phép cộng hai số nguyên. Tức là với mọi số nguyên $\alpha, \beta, \gamma$, chúng ta có $(\alpha + \beta)\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma$ và $\gamma\cdot(\alpha + \beta) = \gamma\cdot\alpha + \gamma\cdot\beta$.
+	\end{enumerate}
+\end{theorem}
+
+Như đã nói, việc chứng minh các tính chất này cần được xem xét từng trường hợp. Chúng tôi nhường lại chứng minh các phần (i), (ii), (iii) của định lý trên cho bạn đọc (riêng phần (ii) và (iii), cần sử dụng định nghĩa số nguyên), và chỉ đưa ra một chứng minh chi tiết cho phần (iv). Chứng minh sau sử dụng tính chất giao hoán của phép nhân hai số nguyên (trong lập luận cuối cùng). Vì tính chất phân phối của phép nhân với phép cộng hai số nguyên có thể được chứng minh riêng rẽ với tính chất giao hoán của phép nhân hai số nguyên, nên chúng tôi sử dụng tính chất này để làm gọn chứng minh.
+
+\begin{proof}[Chứng minh tính chất phân phối của phép nhân với phép cộng hai số nguyên] Chúng ta xem xét 5 trường hợp.
+	\begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1.7cm]
+		\item $\alpha$ là số nguyên không âm, $\beta$ là số nguyên không âm, $\gamma$ là số nguyên không âm.
+
+		      Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại các số tự nhiên $a, b, c$ sao cho $\alpha = [(a, 0)]$, $\beta = [(b, 0)]$, $\gamma = [(c, 0)]$. Theo định nghĩa phép nhân và phép cộng hai số nguyên, và tính chất phân phối của phép nhân hai số tự nhiên với phép cộng hai số tự nhiên,
+		      \begin{align*}
+			      (\alpha + \beta)\cdot\gamma & = ([(a, 0)] + [(b, 0)])\cdot [(c, 0)]                 \\
+			                                  & = [(a+b, 0)]\cdot [(c, 0)]                            \\
+			                                  & = [((a+b)\cdot c, 0)]                                 \\
+			                                  & = [((a\cdot c) + (b\cdot c), 0)]                      \\
+			                                  & = [(a\cdot c, 0)] + [(b\cdot c, 0)]                   \\
+			                                  & = ([(a, 0)]\cdot [(c, 0)]) + ([(b, 0)]\cdot [(c, 0)]) \\
+			                                  & = (\alpha\cdot\gamma) + (\beta\cdot\gamma).
+		      \end{align*}
+		\item $\alpha$ là số nguyên không âm, $\beta$ là số nguyên âm, $\gamma$ là số nguyên không âm. Chúng ta xét hai trường hợp con.
+		      \begin{enumerate}[label={\textbf{\alph*.}}]
+			      \item $\alpha + \beta$ là số nguyên không âm.
+			            \begin{align*}
+				            \alpha\cdot\gamma & = (\alpha + [(0,0)])\cdot\gamma                     & \text{(theo phần (ii) Định lý~\ref{theorem:group-of-integers})} \\
+				                              & = (\alpha + (\beta + (-\beta)))\cdot\gamma                                                                            \\
+				                              & = ((\alpha + \beta) + (-\beta))\cdot\gamma          & \text{(theo tính chất kết hợp của phép cộng các số nguyên)}     \\
+				                              & = (\alpha + \beta)\cdot\gamma + (-\beta)\cdot\gamma & \text{(theo \textbf{Trường hợp 1})}                             \\
+				                              & = (\alpha + \beta)\cdot\gamma + (-\beta\cdot\gamma) & \text{(theo Mệnh đề~\ref{proposition:sign})}
+			            \end{align*}
+
+			            Do đó
+			            \begin{align*}
+				            (\alpha\cdot\gamma) + (\beta\cdot\gamma) & = ((\alpha + \beta)\cdot\gamma + (-\beta\cdot\gamma)) + \beta\cdot\gamma \\
+				                                                     & = (\alpha + \beta)\cdot\gamma + ((-\beta\cdot\gamma) + \beta\cdot\gamma) \\
+				                                                     & = (\alpha + \beta)\cdot\gamma + [(0,0)]                                  \\
+				                                                     & = (\alpha + \beta)\cdot\gamma.
+			            \end{align*}
+			      \item $\alpha + \beta$ là số nguyên âm. Số đối của $\alpha + \beta$ là $(-\beta) + (-\alpha)$, một số nguyên dương.
+
+			            Theo \textbf{Trường hợp 1}
+			            \begin{align*}
+				            (-(\alpha + \beta))\cdot\gamma + \alpha\cdot\gamma & = ((-\beta) + (-\alpha))\cdot\gamma + \alpha\cdot\gamma \\
+				                                                               & = (((-\beta) + (-\alpha)) + \alpha)\cdot\gamma          \\
+				                                                               & = ((-\beta) + ((-\alpha) + \alpha))\cdot\gamma          \\
+				                                                               & = ((-\beta) + [(0, 0)])\cdot\gamma                      \\
+				                                                               & = (-\beta)\cdot\gamma                                   \\
+				                                                               & = -\beta\cdot\gamma
+			            \end{align*}
+
+			            Do đó
+			            \[
+				            (\alpha + \beta)\cdot\gamma + ((-(\alpha + \beta))\cdot\gamma + \alpha\cdot\gamma) + \beta\cdot\gamma = (\alpha + \beta)\cdot\gamma + (-\beta\cdot\gamma) + \beta\cdot\gamma
+			            \]
+
+			            Theo tính chất kết hợp của phép cộng hai số nguyên, từ đẳng thức trên, chúng ta thu được
+			            \[
+				            \alpha\cdot\gamma + \beta\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma.
+			            \]
+		      \end{enumerate}
+		\item $\alpha$ là số nguyên âm, $\beta$ là số nguyên không âm, $\gamma$ là số nguyên không âm.
+		      \begin{align*}
+			      (\alpha + \beta)\cdot\gamma & = (\beta + \alpha)\cdot\gamma          & \text{(theo tính chất giao hoán của phép cộng hai số nguyên)} \\
+			                                  & = \beta\cdot\gamma + \alpha\cdot\gamma & \text{(theo \textbf{Trường hợp 2})}                           \\
+			                                  & = \alpha\cdot\gamma + \beta\cdot\gamma & \text{(theo tính chất giao hoán của phép cộng hai số nguyên)}
+		      \end{align*}
+		\item $\alpha$ là số nguyên âm, $\beta$ là số nguyên âm, $\gamma$ là số nguyên không âm.
+
+		      Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $(-\alpha)$ và $(-\beta)$ là các số nguyên dương.
+		      \begin{align*}
+			      -(\alpha + \beta)\cdot\gamma & = (-(\alpha + \beta))\cdot\gamma             & \text{(theo Mệnh đề~\ref{proposition:sign})} \\
+			                                   & = ((-\alpha) + (-\beta))\cdot\gamma          & \text{(theo quy tắc mở dấu ngoặc)}           \\
+			                                   & = (-\alpha)\cdot\gamma + (-\beta)\cdot\gamma & \text{(theo \textbf{Trường hợp 1})}          \\
+			                                   & = (-\alpha\cdot\gamma) + (-\beta\cdot\gamma) & \text{(theo Mệnh đề~\ref{proposition:sign})} \\
+			                                   & = -(\alpha\cdot\gamma + \beta\cdot\gamma)    & \text{(theo quy tắc mở dấu ngoặc)}
+		      \end{align*}
+
+		      Do đó $(\alpha + \beta)\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma$.
+		\item $\gamma$ là số nguyên âm.
+
+		      Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $(-\gamma)$ là số nguyên dương. Theo bốn trường hợp trên và Mệnh đề~\ref{proposition:sign}
+		      \begin{align*}
+			      (\alpha + \beta)\cdot\gamma & = -(\alpha+\beta)\cdot(-\gamma)                                                         \\
+			                                  & = -(\alpha\cdot(-\gamma) + \beta\cdot(-\gamma))                                         \\
+			                                  & = (-\alpha\cdot(-\gamma)) + (-\beta\cdot(-\gamma)) & \text{(theo quy tắc mở dấu ngoặc)} \\
+			                                  & = \alpha\cdot\gamma + \beta\cdot\gamma.
+		      \end{align*}
+	\end{enumerate}
+
+	Như vậy, trong tất cả các trường hợp, chúng ta đều có $(\alpha + \beta)\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma$. Theo tính chất giao hoán của phép nhân hai số nguyên, chúng ta suy ra $\gamma\cdot(\alpha+\beta) = \gamma\cdot\alpha + \gamma\cdot\beta$.
+\end{proof}
+
+\subsection*{Các quan hệ trên tập hợp số nguyên}
+
+\begin{definition}[Quan hệ thứ tự trên tập hợp số nguyên]
+	Cho hai số nguyên $x$ và $y$. Chúng ta nói $x$ nhỏ hơn hoặc bằng $y$, và kí hiệu $x\leq y$ nếu và chỉ nếu tồn tại \textit{số nguyên không âm} $z$ sao cho $x + z = y$.
+\end{definition}
+
+\begin{definition}[Quan hệ đồng dư trên tập hợp số nguyên]
+	Cho các số nguyên $x, y$ và $n$, trong đó $n\ne 0$. Chúng ta nói \textbf{$x$ đồng dư $y$ modulo $n$} nếu và chỉ nếu $x - y$ chia hết cho $n$. Khi đó, chúng ta kí hiệu $x\equiv y\pmod{n}$ hoặc $x\equiv_{n}y$.
+\end{definition}
+
+\section{Số hữu tỉ}\label{section:rationals}
+
+\subsection*{Phép chia hai số tự nhiên, hai số nguyên}
+
+\subsection*{Tập hợp số hữu tỉ}
+
+\subsection*{Các phép toán tập hợp số hữu tỉ}
+
+\subsection*{Quan hệ thứ tự trên tập hợp số hữu tỉ}
+
+\section{Nguyên lý quy nạp toán học}\label{section:principle-of-mathematical-induction}
 
 \subsection*{Nguyên lý quy nạp toán học và nguyên lý quy nạp mạnh}
+
+\begin{theorem}[Dạng khác của nguyên lý quy nạp toán học]
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{theorem}[Nguyên lý quy nạp mạnh]
+\end{theorem}
+
+\begin{proof}
+\end{proof}
 
 \subsection*{Nguyên lý thứ tự tốt}
 
 \subsection*{$\dagger$ Nguyên lý quy nạp Cauchy}
 
 \subsection*{$\dagger$ Giảm vô hạn}
-
-\section{Số hữu tỉ}
-
-\subsection*{Phép chia hai số tự nhiên, hai số nguyên}
-
-\subsection*{Tập hợp số hữu tỉ}
-
-\subsection*{Các phép toán và quan hệ trên tập số hữu tỉ}
