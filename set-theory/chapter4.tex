@@ -620,19 +620,6 @@ Chúng ta tiến hành định nghĩa tập hợp số mới.
 	\end{align*}
 \end{example}
 
-Định lý sau phát biểu rằng tập hợp số tự nhiên có thể nhúng được vào tập hợp số nguyên.
-\begin{theorem}\label{theorem:embed-N-into-Z}
-	Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh.
-\end{theorem}
-
-\begin{proof}
-	Với hai số tự nhiên $m, n$, $[(m, 0)] = [(n, 0)]$ kéo theo $(m, 0)\sim (n, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(m, 0)\sim (n, 0)$ khi và chỉ khi $m + 0 = 0 + n$, tức là $m = n$. Do đó $\iota$ là một đơn ánh.
-
-	Giả sử phản chứng rằng tồn tại số tự nhiên $n$ sao cho $\iota(n) = [(0, 1)]$. Theo định nghĩa của $\iota$ và định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $(n, 0)\sim (0, 1)$, tức là $n + 1 = 0$, hay $S(n) = 0$, điều này mâu thuẫn với tiên đề Peano thứ 8. Do đó không tồn tại số tự nhiên $n$ nào sao cho $\iota(n) = [(0, 1)]$, nên $\iota$ không phải toàn ánh.
-
-	Vậy $\iota$ là đơn ánh nhưng không phải song ánh.
-\end{proof}
-
 \subsection*{Các phép toán trên tập hợp số nguyên}
 
 Chúng ta định nghĩa phép cộng hai số nguyên.
@@ -1308,23 +1295,83 @@ Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự 
 	\end{enumerate}
 \end{proof}
 
-\subsection*{Kí hiệu cho số nguyên}
+\subsection*{Số nguyên và Số tự nhiên}
 
 Cho đến lúc này, chúng ta vẫn sử dụng định nghĩa ``số nguyên là một lớp tương đương theo quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$'' và sử dụng kí hiệu $[(a, b)]$ để biểu thị số nguyên, trong đó $a$ và $b$ là hai số tự nhiên theo hệ tiên đề Peano. Cách kí hiệu như vậy cho phép chúng ta nhìn nhận số nguyên như một đối tượng được xây dựng từ số tự nhiên và quy việc định nghĩa các phép toán, quan hệ, và chứng minh các định lý về số nguyên về các định nghĩa và định lý với số tự nhiên. Rõ ràng là cách kí hiệu này không hề giống với kí hiệu mà chúng ta được tiếp cận khi học phổ thông. Câu hỏi được đặt ra là chúng ta có nhất định phải kí hiệu số nguyên dưới dạng $[(a, b)]$ hay không?
 
 Câu trả lời là không. Tác dụng của kí hiệu đó đã được giải thích trong đoạn văn trên. Tuy nhiên, vì đến mục này, chúng ta đã chứng minh các tính chất cơ bản nhất của số nguyên cùng với các phép toán và quan hệ thứ tự trên tập hợp số nguyên, nên việc sử dụng kí hiệu $[(a, b)]$ không còn cần thiết. Chúng ta có thể kí hiệu các số nguyên không âm là $0, 1, 2, 3,\ldots$ và các số nguyên âm là $\ldots, -3, -2, -1$ như đã từng tiếp cận trước đây.
 
-Chúng tôi muốn nói thêm về việc tại sao cách kí hiệu quen biết lại phù hợp. Định lý~\ref{theorem:embed-N-into-Z} chỉ ra một đơn ánh từ tập hợp số tự nhiên vào tập hợp số nguyên. Ảnh của đơn ánh này chính là tập hợp các số nguyên không âm. Chúng ta có thể kiểm tra rằng số nguyên $[(0,0)]$ và ánh xạ $S: \mathbb{Z}\to\mathbb{Z}$ được định nghĩa bởi $S: [(a,b)] \mapsto [(a+1,b)]$ cùng với tập hợp số nguyên âm thỏa mãn hệ tiên đề Peano. Một đối tượng thỏa mãn hệ tiên đề Peano thì cũng có mọi đặc điểm của \textit{số tự nhiên theo tiên đề Peano}. Vì vậy, chúng ta có thể coi các số nguyên âm như các \textit{số tự nhiên theo tiên đề Peano}. Do đó việc kí hiệu các số nguyên không âm bởi $0, 1, 2, 3,\ldots$ và các số nguyên âm bởi $\ldots, -3, -2, -1$ là hợp lý.
+Định lý sau phát biểu rằng tập hợp số tự nhiên có thể nhúng được vào tập hợp số nguyên.
+\begin{theorem}\label{theorem:embed-N-into-Z}
+	Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh.
+\end{theorem}
+
+\begin{proof}
+	Với hai số tự nhiên $m, n$, $[(m, 0)] = [(n, 0)]$ kéo theo $(m, 0)\sim (n, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(m, 0)\sim (n, 0)$ khi và chỉ khi $m + 0 = 0 + n$, tức là $m = n$. Do đó $\iota$ là một đơn ánh.
+
+	Giả sử phản chứng rằng tồn tại số tự nhiên $n$ sao cho $\iota(n) = [(0, 1)]$. Theo định nghĩa của $\iota$ và định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $(n, 0)\sim (0, 1)$, tức là $n + 1 = 0$, hay $S(n) = 0$, điều này mâu thuẫn với tiên đề Peano thứ 8. Do đó không tồn tại số tự nhiên $n$ nào sao cho $\iota(n) = [(0, 1)]$, nên $\iota$ không phải toàn ánh.
+
+	Vậy $\iota$ là đơn ánh nhưng không phải song ánh.
+\end{proof}
+
+Đơn ánh $\iota: \mathbb{N}\to \mathbb{Z}$ trong định lý trên bảo toàn phép toán cộng, nhân, và quan hệ thứ tự.
+
+\begin{theorem}\label{theorem:monomorphism-N-to-Z}
+	$\iota$ là ánh xạ trong Định lý~\ref{theorem:embed-N-into-Z} thì với mọi số tự nhiên $m, n$
+	\[
+		\begin{split}
+			\iota(m + n) = \iota(m) + \iota(n), \\
+			\iota(m\cdot n) = \iota(m)\cdot\iota(n), \\
+			m\leq n \implies \iota(m)\leq \iota(n).
+		\end{split}
+	\]
+
+	(Trong đó, phép cộng ở $\iota(m + n)$ là phép cộng hai số tự nhiên, phép cộng ở $\iota(m) + \iota(n)$ là phép cộng hai số nguyên; phép nhân ở $\iota(m\cdot n)$ là phép nhân hai số tự nhiên, phép nhân ở $\iota(m)\cdot\iota(n)$ là phép nhân hai số nguyên; quan hệ $\leq$ ở $m\leq n$ là quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, quan hệ $\leq$ ở $\iota(m)\leq \iota(n)$ là quan hệ thứ tự $\leq$ trên tập hợp số nguyên.)
+\end{theorem}
+
+Chúng tôi muốn nói thêm về việc tại sao cách kí hiệu quen biết cho số nguyên lại phù hợp. Định lý~\ref{theorem:embed-N-into-Z} chỉ ra một đơn ánh từ tập hợp số tự nhiên vào tập hợp số nguyên. Ảnh của đơn ánh này chính là tập hợp các số nguyên không âm. Chúng ta có thể kiểm tra rằng số nguyên $[(0,0)]$ và ánh xạ $S$ với tập nguồn và tập đích là tập hợp số nguyên không âm, $S$ được định nghĩa bởi $S: [(n,0)] \mapsto [(n+1,0)]$ cùng với tập hợp số nguyên không âm thỏa mãn hệ tiên đề Peano. Một đối tượng thỏa mãn hệ tiên đề Peano thì cũng có mọi đặc điểm của \textit{số tự nhiên theo tiên đề Peano}. Vì vậy, chúng ta có thể coi các số nguyên không âm như các \textit{số tự nhiên theo tiên đề Peano}. Do đó việc kí hiệu các số nguyên không âm bởi $0, 1, 2, 3,\ldots$ và các số nguyên âm bởi $\ldots, -3, -2, -1$ là hợp lý.
+
+\section*{Bài tập}
 
 \section{Số hữu tỉ}\label{section:rationals}
 
-\subsection*{Phép chia hết và phép chia lấy dư}
+\subsection*{Tính chia hết và phép chia có dư}
+
+\begin{definition}[Tính chia hết]
+	\begin{enumerate}[label={(\roman*)}]
+		\item Số tự nhiên $a$ được gọi là \textit{chia hết} số tự nhiên $b$ nếu tồn tại số tự nhiên $k$ sao cho $k\cdot a = b$. Chúng ta còn nói số tự nhiên $b$ \textit{chia hết cho} số tự nhiên $a$, hay $a$ là ước của $b$, $b$ là bội của $a$, và kí hiệu là $a\mid b$.
+		\item Số nguyên $a$ được gọi là \textit{chia hết} số nguyên $b$ nếu tồn tại số nguyên $k$ sao cho $k\cdot a = b$. Chúng ta còn nói số nguyên $b$ \textit{chia hết cho} số nguyên $a$, hay $a$ là ước của $b$, $b$ là bội của $a$ và kí hiệu là $a\mid b$.
+	\end{enumerate}
+\end{definition}
+
+Từ định nghĩa tính chia hết và các tính chất của số tự nhiên và số nguyên, chúng ta rút ra các nhận xét sau.
+\begin{itemize}
+	\item Số $0$ chia hết cho mọi số nguyên.
+	\item Số $0$ không phải ước của bất cứ số nguyên khác $0$ nào.
+	\item Số $1$ và $(-1)$ là ước của mọi số nguyên.
+	\item Nếu số tự nhiên $a$ là ước của số tự nhiên $b$ và $a\ne 0$ thì tồn tại duy nhất số tự nhiên $k$ sao cho $k\cdot a = b$.
+	\item Nếu số nguyên $a$ là ước của số nguyên $b$ và $a\ne 0$ thì tồn tại duy nhất số tự nhiên $k$ sao cho $k\cdot a = b$.
+	\item Bội số tự nhiên khác $0$ nhỏ nhất của số tự nhiên $a\ne 0$ là $a$.
+\end{itemize}
+
+Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $1$ thì các số tự nhiên $1, 2, \ldots, a - 1$ không chia hết cho $a$.
+
+\begin{theorem}[Thuật toán chia Euclid]
+	Cho số nguyên dương $a$ và một số nguyên $b$. Tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $b = a\cdot q + r$ và $0\leq r < a$.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+Từ giờ trở đi, chúng ta chỉ sử dụng ước nguyên, bội nguyên (và dùng thuật ngữ ước, bội) trừ khi nêu khác đi.
 
 \subsection*{Tập hợp số hữu tỉ}
 
 \subsection*{Các phép toán trên tập hợp số hữu tỉ}
 
 \subsection*{Quan hệ thứ tự trên tập hợp số hữu tỉ}
+
+\section*{Bài tập}
 
 \section{Nguyên lý quy nạp toán học}\label{section:principle-of-mathematical-induction}
 
@@ -1344,6 +1391,19 @@ Chúng tôi muốn nói thêm về việc tại sao cách kí hiệu quen biết
 
 \subsection*{Nguyên lý thứ tự tốt}
 
+\begin{theorem}[Nguyên lý thứ tự tốt]
+	Tập hợp con khác rỗng của tập hợp số nguyên dương có phần tử nhỏ nhất.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{corollary}
+	Tập hợp con khác rỗng của tập hợp số nguyên lớn hơn hoặc bằng số nguyên $x$ nào đó có phần tử nhỏ nhất.
+\end{corollary}
+
 \subsection*{$\dagger$ Nguyên lý quy nạp Cauchy}
 
 \subsection*{$\dagger$ Giảm vô hạn}
+
+\section*{Bài tập}
