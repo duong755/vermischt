@@ -1,4 +1,4 @@
-\chapter{Số tự nhiên, Số nguyên và Số hữu tỉ}\label{chapter4:natural-numbers-integers-and-rationals}
+\chapter[Số tự nhiên, Số nguyên và Số hữu tỉ]{Số tự nhiên, Số nguyên và Số hữu tỉ\footnote{Nội dung chương này được sắp xếp theo tinh thần của phương pháp tiên đề. Bạn đọc nên tập trung vào các kết quả và trình tự của tất cả trước thay vì đọc các chứng minh chi tiết ngay từ đầu.}}\label{chapter4:natural-numbers-integers-and-rationals}
 
 \noindent ``God made the natural numbers; all else is the work of man.\@''
 
@@ -6,7 +6,7 @@
 
 \noindent \textit{Leopold Kronecker ($1823-1891$)}
 
-\section{Hệ tiên đề Peano về các số tự nhiên}\label{section:peano-axioms}
+\section{Số tự nhiên}\label{section:natural-numbers}
 
 \subsection*{Hệ tiên đề Peano}
 
@@ -403,19 +403,19 @@ Tương tự với phép cộng, phép nhân với $0$ cũng là một trường
 
 		      Theo Định lý~\ref{theorem:property-of-natural-numbers-multiplication}, $1\cdot 1 = S(0)\cdot S(0) = S(0) = 1$.
 
-			  ($\Leftarrow$) $x\cdot y = 1$.
+		      ($\Leftarrow$) $x\cdot y = 1$.
 
-			  Theo phần (i), $x\ne 0$ và $y\ne 0$. Theo Định lý~\ref{theorem:successor}, tồn tại hai số tự nhiên $a$ và $b$ sao cho $S(a) = x$ và $S(b) = y$. Theo định nghĩa phép cộng, phép nhân hai số tự nhiên, và tính chất giao hoán của phép cộng hai số tự nhiên
-			  \begin{align*}
-				  S(0) & = 1 = x\cdot y \\
-				       & = x\cdot S(b) = x + (x\cdot b) \\
-					   & = (x\cdot b) + x = (x\cdot b) + S(a) \\
-					   & = S((x\cdot b) + a).
-			  \end{align*}
+		      Theo phần (i), $x\ne 0$ và $y\ne 0$. Theo Định lý~\ref{theorem:successor}, tồn tại hai số tự nhiên $a$ và $b$ sao cho $S(a) = x$ và $S(b) = y$. Theo định nghĩa phép cộng, phép nhân hai số tự nhiên, và tính chất giao hoán của phép cộng hai số tự nhiên
+		      \begin{align*}
+			      S(0) & = 1 = x\cdot y                       \\
+			           & = x\cdot S(b) = x + (x\cdot b)       \\
+			           & = (x\cdot b) + x = (x\cdot b) + S(a) \\
+			           & = S((x\cdot b) + a).
+		      \end{align*}
 
-			  Theo tiên đề 7, $(x\cdot b) + a = 0$. Theo Định lý~\ref{theorem:addition-and-zero}, $x\cdot b = a = 0$. Mà $x\ne 0$ nên theo phần (i), chúng ta có $b = 0$. Vì $a = b = 0$ nên $x = y = S(0) = 1$.
+		      Theo tiên đề 7, $(x\cdot b) + a = 0$. Theo Định lý~\ref{theorem:addition-and-zero}, $x\cdot b = a = 0$. Mà $x\ne 0$ nên theo phần (i), chúng ta có $b = 0$. Vì $a = b = 0$ nên $x = y = S(0) = 1$.
 
-			  Vậy với hai số tự nhiên $x$ và $y$, $x\cdot y = 1$ khi và chỉ khi $x = 1$ hoặc $y = 1$.
+		      Vậy với hai số tự nhiên $x$ và $y$, $x\cdot y = 1$ khi và chỉ khi $x = 1$ hoặc $y = 1$.
 	\end{enumerate}
 \end{proof}
 
@@ -482,9 +482,16 @@ Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nh�
 	\end{enumerate}
 \end{proof}
 
-\section{Số nguyên}\label{section:integers}
+Sự liên hệ giữa quan hệ $\leq$ và hai phép toán cộng và nhân trên tập hợp số tự nhiên được trình bày trong định lý sau.
+\begin{theorem}\label{theorem:natural-numbers-order}
+	Với mọi số tự nhiên $x, y, z$
+	\begin{enumerate}[label={(\roman*)}]
+		\item $x\leq y$ khi và chỉ khi $x + z\leq y + z$.
+		\item $x\leq y$ kéo theo $x\cdot z\leq y\cdot z$.
+	\end{enumerate}
+\end{theorem}
 
-\subsection*{Từ phép trừ hai số tự nhiên đến tập hợp số nguyên}
+\noindent Chúng ta sử dụng mệnh đề sau để chứng minh định lý trên.
 
 \begin{proposition}\label{proposition:addition-cancellation}
 	Với mọi số tự nhiên $x, y, z$, nếu $x + z = y + z$ thì $x = y$.
@@ -500,7 +507,61 @@ Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nh�
 	Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $x, y, z$, nếu $x + z = y + z$ thì $x = y$.
 \end{proof}
 
-Từ mệnh đề vừa chứng minh, chúng ta rút ra một hệ quả: Nếu $x\leq y$ thì \textit{tồn tại duy nhất} số tự nhiên $z$ sao cho $x + z = y$. Đây là cơ sở để chúng ta định nghĩa phép trừ hai số tự nhiên.
+\begin{proof}[Chứng minh Định lý~\ref{theorem:natural-numbers-order}]
+	\begin{enumerate}[label={(\roman*)}]
+		\item ($\Rightarrow$) $x\leq y$.
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, tồn tại số tự nhiên $a$ sao cho $x + a = y$. Khi đó
+		      \begin{align*}
+			      (x + z) + a & = x + (z + a) & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+			                  & = x + (a + z) & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+			                  & = (x + a) + z & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+			                  & = y + z.
+		      \end{align*}
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta suy ra $x + z\leq y + z$.
+
+		      ($\Leftarrow$) $x + z\leq y + z$.
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, tồn tại số tự nhiên $a$ sao cho $(x + z) + a = y + z$. Bên cạnh đó
+		      \begin{align*}
+			      (x + z) + a & = x + (z + a)  & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+			                  & = x + (a + z)  & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+			                  & = (x + a) + z. & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}
+		      \end{align*}
+
+		      Từ hai đẳng thức $(x + z) + a = y + z$ và $(x + z) + a = (x + a) + z$, chúng ta suy ra $(x + a) + z = y + z$. Theo Mệnh đề~\ref{proposition:addition-cancellation}, chúng ta suy ra $x + a = y$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, $x\leq y$.
+
+		      Vậy với mọi số tự nhiên $x, y, z$, $x\leq y$ khi và chỉ khi $x + z \leq y + z$.
+		\item Với mọi số tự nhiên $x, y$:
+
+		      Khi $z = 0$, nếu $x\leq y$ thì $x\cdot 0\leq y\cdot 0$, vì $x\cdot 0 = y\cdot 0 = 0$.
+
+		      Giả sử với số tự nhiên $z = n$, chúng ta có $x\leq y$ kéo theo $x\cdot n\leq y\cdot n$. Khi đó, theo định nghĩa phép nhân hai số tự nhiên
+		      \[
+			      \begin{split}
+				      x\cdot S(n) = x + (x\cdot n) \\
+				      y\cdot S(n) = y + (y\cdot n)
+			      \end{split}
+		      \]
+
+		      Theo giả thiết quy nạp, tính chất giao hoán của phép cộng hai số tự nhiên, phần (i), tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số tự nhiên, và định nghĩa phép nhân hai số tự nhiên, chúng ta suy ra
+		      \begin{align*}
+			      x\cdot S(n) & = x + (x\cdot n) = (x\cdot n) + x    \\
+			                  & \leq (y\cdot n) + x = x + (y\cdot n) \\
+			                  & \leq y + (y\cdot n)                  \\
+			                  & \leq y\cdot S(n)
+		      \end{align*}
+
+		      Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $x, y, z$, nếu $x\leq y$ thì $x\cdot z\leq y\cdot z$.
+	\end{enumerate}
+\end{proof}
+
+\section{Số nguyên}\label{section:integers}
+
+\subsection*{Từ phép trừ hai số tự nhiên đến tập hợp số nguyên}
+
+Từ Mệnh đề~\ref{proposition:addition-cancellation}, chúng ta rút ra một hệ quả: Nếu $x\leq y$ thì \textit{tồn tại duy nhất} số tự nhiên $z$ sao cho $x + z = y$. Đây là cơ sở để chúng ta định nghĩa phép trừ hai số tự nhiên.
 
 \begin{definition}[Phép trừ hai số tự nhiên]
 	Cho hai số tự nhiên $x, y$ sao cho $x\leq y$. Số tự nhiên $z$ duy nhất thỏa mãn $x + z = y$ được gọi là \textbf{hiệu} của $y$ và $x$. Chúng ta kí hiệu $z = y - x$.
@@ -558,6 +619,19 @@ Chúng ta tiến hành định nghĩa tập hợp số mới.
 		(0, 2) & \sim (1, 3) \sim (2, 4) \sim \cdots \sim (n, n+2) \in [(0, 2)];
 	\end{align*}
 \end{example}
+
+Định lý sau phát biểu rằng tập hợp số tự nhiên có thể nhúng được vào tập hợp số nguyên.
+\begin{theorem}
+	Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh.
+\end{theorem}
+
+\begin{proof}
+	Với hai số tự nhiên $m, n$, $[(m, 0)] = [(n, 0)]$ kéo theo $(m, 0)\sim (n, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(m, 0)\sim (n, 0)$ khi và chỉ khi $m + 0 = 0 + n$, tức là $m = n$. Do đó $\iota$ là một đơn ánh.
+
+	Giả sử phản chứng rằng tồn tại số tự nhiên $n$ sao cho $\iota(n) = [(0, 1)]$. Theo định nghĩa của $\iota$ và định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $(n, 0)\sim (0, 1)$, tức là $n + 1 = 0$, hay $S(n) = 0$, điều này mâu thuẫn với tiên đề Peano thứ 8. Do đó không tồn tại số tự nhiên $n$ nào sao cho $\iota(n) = [(0, 1)]$, nên $\iota$ không phải toàn ánh.
+
+	Vậy $\iota$ là đơn ánh nhưng không phải song ánh.
+\end{proof}
 
 \subsection*{Các phép toán trên tập hợp số nguyên}
 
@@ -693,7 +767,7 @@ Phần (ii) của Định lý~\ref{theorem:uniqueness-of-additive-identity-and-a
 
 Khác với phép trừ trên tập hợp số tự nhiên, phép trừ trên tập hợp số nguyên thực hiện được với hai số nguyên bất kì.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:foundation-of-integer-subtraction}
 	Với mỗi cặp số nguyên $\alpha$ và $\beta$, tồn tại duy nhất số nguyên $\gamma$ sao cho $\alpha + \gamma = \beta$.
 \end{theorem}
 
@@ -794,7 +868,7 @@ Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn 
 
 Kết hợp định lý trên với quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, chúng ta thu được hệ quả sau.
 
-\begin{corollary}
+\begin{corollary}\label{corollary:positivity-negativity-nonnegativity-of-sum-of-integers}
 	\begin{enumerate}[label={(\roman*)}]
 		\item Tổng hai số nguyên dương là một số nguyên dương.
 		\item Tổng hai số nguyên không âm là một số nguyên không âm.
@@ -982,23 +1056,267 @@ Như đã nói, việc chứng minh các tính chất này cần được xem x�
 	Như vậy, trong tất cả các trường hợp, chúng ta đều có $(\alpha + \beta)\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma$. Theo tính chất giao hoán của phép nhân hai số nguyên, chúng ta suy ra $\gamma\cdot(\alpha+\beta) = \gamma\cdot\alpha + \gamma\cdot\beta$.
 \end{proof}
 
-\subsection*{Các quan hệ trên tập hợp số nguyên}
+Tương tự Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, chúng ta có định lý sau.
+\begin{theorem}\label{theorem:product-of-integers-are-zero-or-one}
+	Cho hai số nguyên $\alpha, \beta$.
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\alpha\cdot\beta = [(0,0)]$ khi và chỉ khi $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$.
+		\item $\alpha\cdot\beta = [(1,0)]$ khi và chỉ khi $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
+	\end{enumerate}
+\end{theorem}
+
+\noindent Chúng ta đơn giản hóa chứng minh cho định lý trên bằng cách sử dụng định lý sau.
+
+\begin{theorem}\label{theorem:sign-of-product-of-integers}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tích hai số nguyên dương là một số nguyên dương.
+		\item Tích hai số nguyên âm là một số nguyên dương.
+		\item Tích hai số nguyên, trong đó một số là số nguyên dương, số còn lại là số nguyên âm, là một số nguyên âm.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chúng ta lấy hai số nguyên dương $\alpha$ và $\beta$.
+
+		      Theo định nghĩa số nguyên dương, tồn tại hai số tự nhiên $a\ne 0$ và $b\ne 0$ sao cho $\alpha = [(a,0)]$ và $\beta = [(b,0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(a\cdot b, 0)]$.
+
+			  Vì $a\ne 0$ và $b\ne 0$ nên theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $a\cdot b\ne 0$. Theo định nghĩa số nguyên dương, $\alpha\cdot\beta$ là một số nguyên dương.
+		\item Chúng ta lấy hai số nguyên âm $\alpha$ và $\beta$.
+
+		      Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot\beta = (-\alpha)\cdot(-\beta)$. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $-\alpha$ là số nguyên dương và $-\beta$ là số nguyên dương. Theo phần (i), $(-\alpha)\cdot(-\beta)$ là một số nguyên dương. Do đó $\alpha\cdot\beta$ là một số nguyên dương.
+		\item Chúng ta lấy hai số nguyên $\alpha$ và $\beta$ sao cho một số là số nguyên dương, một số là số nguyên âm. Do tính giao hoán của phép nhân hai số nguyên, chúng ta chỉ cần chứng minh cho trường hợp $\alpha$ là số nguyên dương, còn $\beta$ là số nguyên âm.
+
+		      Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $-\beta$ là một số nguyên dương. Theo phần (i), $\alpha\cdot(-\beta)$ là một số nguyên dương. Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot(-\beta) = -\alpha\cdot\beta$. Kết hợp hai điều trên và Định lý~\ref{theorem:positive-negative-nonnegative-integers}, chúng ta suy ra $\alpha\cdot\beta$ là một số nguyên âm.
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}[Chứng minh Định lý~\ref{theorem:product-of-integers-are-zero-or-one}]
+	\begin{enumerate}[label={(\roman*)}]
+		\item ($\Rightarrow$) $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$.
+
+		      Theo Định lý~\ref{theorem:property-of-integers-multiplication}, $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$ kéo theo $\alpha\cdot\beta = [(0,0)]$.
+
+		      ($\Leftarrow$) $\alpha\cdot\beta = [(0,0)]$.
+
+			  Giả sử phản chứng rằng cả hai số nguyên $\alpha$ và $\beta$ khác $[(0,0)]$. Khi đó, theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha\cdot\beta$ là số nguyên dương hoặc số nguyên âm, tức là $\alpha\cdot\beta \ne [(0,0)]$. Do đó giả sử phản chứng là sai. Vậy $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$.
+		\item ($\Rightarrow$) $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
+
+		      Nếu $\alpha = \beta = [(1, 0)]$, theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(1\cdot 1, 0)] = [(1, 0)]$.
+
+			  Nếu $\alpha = \beta = [(0, 1)]$, theo định nghĩa phép nhân hai số nguyên (trường hợp 4), $\alpha\cdot\beta = (-\alpha)\cdot(-\beta) = [(1,0)]\cdot [(1,0)] = [(1\cdot 1, 0)] = [(1, 0)]$.
+
+			  ($\Leftarrow$) $\alpha\cdot\beta = [(1,0)]$.
+
+			  $[(1,0)]$ là một số nguyên dương, nên theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha$ và $\beta$ là hai số nguyên dương hoặc $\alpha$ và $\beta$ là hai số nguyên âm.
+
+			  Nếu $\alpha$ và $\beta$ là hai số nguyên dương thì theo định nghĩa số nguyên dương, tồn tại hai số tự nhiên $a\ne 0$ và $b\ne 0$ sao cho $\alpha = [(a,0)]$ và $\beta = [(b,0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(a\cdot b, 0)]$. $[(a\cdot b, 0)] = [(1, 0)]$ khi và chỉ khi $a\cdot b = 1$. Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $a\cdot b = 1$ kéo theo $a = b = 1$, dẫn đến $\alpha = \beta = [(1,0)]$.
+
+			  Nếu $\alpha$ và $\beta$ là hai số nguyên âm thì theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $-\alpha$ và $-\beta$ là hai số nguyên dương. Theo định nghĩa phép nhân hai số nguyên (trường hợp 4), $\alpha\cdot\beta = (-\alpha)\cdot(-\beta) = [(1, 0)]$. Theo trường hợp trên, $-\alpha = -\beta = [(1, 0)]$. Do đó $\alpha = \beta = [(0, 1)]$.
+
+			  Vậy với mọi số nguyên $\alpha, \beta$, $\alpha\cdot\beta = 1$ khi và chỉ khi $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
+	\end{enumerate}
+\end{proof}
+
+\subsection*{Quan hệ thứ tự trên tập hợp số nguyên}
+
+Khi mở rộng tập hợp các số tự nhiên thành tập hợp số nguyên, chúng ta vẫn bảo toàn được quan hệ thứ tự.
 
 \begin{definition}[Quan hệ thứ tự trên tập hợp số nguyên]
-	Cho hai số nguyên $x$ và $y$. Chúng ta nói $x$ nhỏ hơn hoặc bằng $y$, và kí hiệu $x\leq y$ nếu và chỉ nếu tồn tại \textit{số nguyên không âm} $z$ sao cho $x + z = y$.
+	Cho hai số nguyên $\alpha$ và $\beta$. Chúng ta nói $\alpha$ nhỏ hơn hoặc bằng $\beta$, và kí hiệu $\alpha\leq \beta$ nếu và chỉ nếu tồn tại \textit{số nguyên không âm} $\gamma$ sao cho $\alpha + \gamma = \beta$. Nếu $\alpha\leq \beta$ và $\alpha\ne \beta$ thì chúng ta kí hiệu $\alpha < \beta$.
 \end{definition}
 
-\begin{definition}[Quan hệ đồng dư trên tập hợp số nguyên]
-	Cho các số nguyên $x, y$ và $n$, trong đó $n\ne 0$. Chúng ta nói \textbf{$x$ đồng dư $y$ modulo $n$} nếu và chỉ nếu $x - y$ chia hết cho $n$. Khi đó, chúng ta kí hiệu $x\equiv y\pmod{n}$ hoặc $x\equiv_{n}y$.
-\end{definition}
+\begin{theorem}
+	Quan hệ $\leq$ trên tập hợp số nguyên là một quan hệ thứ tự toàn phần.
+\end{theorem}
+
+\begin{proof}
+	Với mỗi số nguyên $\alpha$, chúng ta có $\alpha + [(0,0)] = \alpha$. Vì $[(0,0)]$ là một số nguyên không âm nên theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta có $\alpha\leq \alpha$. Như vậy quan hệ $\leq$ trên tập hợp số nguyên có tính chất phản xạ.
+
+	Nếu các số nguyên $\alpha, \beta, \gamma$ thỏa mãn $\alpha\leq \beta, \beta\leq\gamma$ thì theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên và Định lý~\ref{theorem:foundation-of-integer-subtraction}, chúng ta suy ra $\beta - \alpha$ và $\gamma - \beta$ là các số nguyên không âm. Bên cạnh đó
+	\begin{align*}
+		(\beta - \alpha) + (\gamma - \beta) & = (\beta + (-\alpha)) + (\gamma + (-\beta)) & \text{(theo định nghĩa phép trừ trên tập hợp số nguyên)}  \\
+		                                    & = ((-\alpha) + \beta) + ((-\beta) + \gamma) & \text{(theo tính chất giao hoán của phép cộng số nguyên)} \\
+		                                    & = (((-\alpha) + \beta) + (-\beta)) + \gamma & \text{(theo tính chất kết hợp của phép cộng số nguyên)}   \\
+		                                    & = ((-\alpha) + (\beta + (-\beta))) + \gamma & \text{(theo tính chất kết hợp của phép cộng số nguyên)}   \\
+		                                    & = ((-\alpha) + [(0,0)]) + \gamma                                                                        \\
+		                                    & = (-\alpha) + \gamma                                                                                    \\
+		                                    & = \gamma + (-\alpha)                        & \text{(theo tính chất giao hoán của phép cộng số nguyên)} \\
+		                                    & = \gamma - \alpha.                          & \text{(theo định nghĩa phép trừ trên tập hợp số nguyên)}
+	\end{align*}
+
+	Theo Hệ quả~\ref{corollary:positivity-negativity-nonnegativity-of-sum-of-integers}, $\gamma - \alpha$ là một số nguyên không âm. Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\alpha + (\gamma - \alpha) = \gamma$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $\alpha\leq\gamma$. Do đó, với mọi số nguyên $\alpha,\beta,\gamma$, nếu $\alpha\leq\beta$ và $\beta\leq\gamma$ thì $\alpha\leq\gamma$. Do đó quan hệ $\leq$ trên tập hợp số nguyên có tính chất bắc cầu.
+
+	Nếu các số nguyên $\alpha, \beta$ thỏa mãn $\alpha\leq\beta$ và $\beta\leq\alpha$ thì theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, tồn tại các số nguyên không âm $\alpha', \beta'$ sao cho $\alpha + \alpha' = \beta$ và $\beta + \beta' = \alpha$. Khi đó
+	\begin{align*}
+		\alpha & = \beta + \beta' = (\alpha + \alpha') + \beta'                                                           \\
+		       & = \alpha + (\alpha' + \beta').                 & \text{(theo tính chất kết hợp của phép cộng số nguyên)}
+	\end{align*}
+
+	Mặt khác, vì $\alpha = \alpha + [(0,0)]$ nên theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, chúng ta suy ra $\alpha' + \beta' = [(0,0)]$. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại hai số tự nhiên $a$ và $b$ sao cho $\alpha' = [(a, 0)]$ và $\beta' = [(b, 0)]$. Theo định nghĩa phép cộng hai số nguyên, $[(0, 0)] = \alpha' + \beta' = [(a, 0)] + [(b, 0)] = [(a+b, 0)]$. Việc $[(a+b, 0)] = [(0,0)]$ kéo theo $(a+b, 0)\sim (0,0)$, và tiếp tục kéo theo $a + b = 0$ theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathbb{N}\times\mathbb{N}$. Theo Định lý~\ref{theorem:addition-and-zero}, vì $a + b = 0$ và $a, b$ là các số tự nhiên nên $a = b = 0$. Do đó $\alpha' = \beta' = [(0, 0)]$, và kéo theo $\alpha = \beta$. Như vậy, quan hệ $\leq$ trên tập hợp số nguyên có tính chất phản đối xứng.
+
+	Nội dung chứng minh trên cho thấy quan hệ $\leq$ trên tập hợp số nguyên là một quan hệ thứ tự. Để chứng minh quan hệ thứ tự này là toàn phần, chúng ta xét cặp số nguyên $\alpha$ và $\beta$ bất kì. Theo định nghĩa các số nguyên âm, số nguyên dương, và số nguyên không âm, chúng ta xem xét các trường hợp dưới đây.
+	\begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+		\item $\beta - \alpha = [(0,0)]$.
+
+		      Trong trường hợp này, $\alpha = \beta$ và $\alpha + [(0,0)] = \beta, \beta + [(0, 0)] = \alpha$. Do đó theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $\alpha\leq\beta$ hoặc $\beta\leq\alpha$.
+		\item $\beta - \alpha$ là số nguyên dương.
+
+		      $\beta - \alpha$ là số nguyên dương thì cũng là số nguyên không âm. Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\alpha + (\beta - \alpha) = \beta$. Do đó theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $\alpha\leq\beta$.
+		\item $\beta - \alpha$ là số nguyên âm.
+
+		      Theo quy tắc mở dấu ngoặc, $-(\beta - \alpha) = \alpha - \beta$. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $\alpha - \beta$ là một số nguyên dương.
+
+		      $\alpha - \beta$ là số nguyên dương thì cũng là số nguyên không âm. Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\beta + (\alpha - \beta) = \alpha$. Do đó theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $\beta\leq\alpha$.
+	\end{enumerate}
+
+	Tóm lại, trong tất cả các trường hợp, $\alpha\leq\beta$ hoặc $\beta\leq\alpha$. Do đó quan hệ $\leq$ trên tập hợp số nguyên là một quan hệ thứ tự toàn phần.
+\end{proof}
+
+\begin{theorem}
+	Trong tập hợp số nguyên
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\alpha$ là một số nguyên dương kéo theo $[(0,0)] < \alpha$.
+		\item $\alpha$ là một số nguyên không âm kéo theo $[(0,0)] \leq \alpha$.
+		\item $\alpha$ là một số nguyên âm kéo theo $\alpha < [(0,0)]$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Theo định nghĩa số nguyên dương, tồn tại số tự nhiên $a\ne 0$ sao cho $\alpha = [(a, 0)]$. Vì $[(0,0)] + \alpha = \alpha$ và $\alpha$ là một số nguyên không âm nên $[(0,0)]\leq \alpha$ theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên.
+
+		      Mà $a\ne 0$ nên $[(a, 0)]\ne [(0, 0)]$ (do $(a, 0)\sim (0, 0)$ nếu và chỉ nếu $a = 0$).
+
+		      Vì $[(0,0)]\leq\alpha$ và $[(a, 0)]\ne [(0,0)]$ nên $[(0,0)] < \alpha$.
+		\item Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại số tự nhiên $a$ sao cho $\alpha = [(a, 0)]$. Vì $[(0,0)] + \alpha = \alpha$ và $\alpha$ là một số nguyên không âm nên $[(0,0)]\leq \alpha$ theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên.
+		\item Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại số tự nhiên $a\ne 0$ sao cho $\alpha = [(0, a)]$. Vì $[(0,a)] + [(a,0)] = [(0,0)]$ và $[(a, 0)]$ là một số nguyên không âm nên $[(0,a)]\leq [(0,0)]$ theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên.
+
+		      Mà $a\ne 0$ nên $[(0, a)]\ne [(0, 0)]$ (do $(0, a)\sim (0, 0)$ nếu và chỉ nếu $a = 0$).
+
+		      Vì $\alpha\leq[(0,0)]$ và $[(0, a)]\ne [(0,0)]$ nên $\alpha < [(0,0)]$.
+	\end{enumerate}
+\end{proof}
+
+Từ định lý trên, chúng ta rút ra hệ quả sau.
+\begin{corollary}\label{corollary:positive-nonnegative-negative-precise-condition}
+	Trong tập hợp số nguyên
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\alpha$ là một số nguyên dương khi và chỉ khi $[(0,0)] < \alpha$.
+		\item $\alpha$ là một số nguyên không âm khi và chỉ khi $[(0,0)] \leq \alpha$.
+		\item $\alpha$ là một số nguyên âm khi và chỉ khi $\alpha < [(0,0)]$.
+	\end{enumerate}
+\end{corollary}
+
+Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự với số nguyên bằng định lý sau.
+
+\begin{theorem}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ khi và chỉ khi $\alpha + \gamma\leq \beta + \gamma$.
+		\item Với mọi số nguyên $\alpha, \beta$, $\alpha\leq \beta$ khi và chỉ khi $-\beta\leq-\alpha$.
+		\item Với mọi số nguyên $\alpha, \beta$, $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
+		\item Với mọi số nguyên $\alpha, \beta$, nếu $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$ thì $[(0,0)]\leq \alpha\cdot \beta$.
+		\item Với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item ($\Rightarrow$) $\alpha\leq\beta$.
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên và Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại số nguyên không âm $[(c,0)]$ (trong đó $c$ là một số tự nhiên) sao cho $\alpha + [(c, 0)] = \beta$. Khi đó
+		      \begin{align*}
+			      (\alpha + \gamma) + [(c, 0)] & = \alpha + (\gamma + [(c, 0)]) & \text{(theo tính chất kết hợp của phép cộng số nguyên)}   \\
+			                                   & = \alpha + ([(c, 0)] + \gamma) & \text{(theo tính chất giao hoán của phép cộng số nguyên)} \\
+			                                   & = (\alpha + [(c, 0)]) + \gamma & \text{(theo tính chất kết hợp của phép cộng số nguyên)}   \\
+			                                   & = \beta + \gamma.
+		      \end{align*}
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $\alpha + \gamma\leq \beta + \gamma$.
+
+		      ($\Leftarrow$) $\alpha + \gamma\leq \beta + \gamma$.
+
+		      Theo phần chứng minh trước, $\alpha + \gamma\leq \beta + \gamma$ kéo theo $(\alpha + \gamma) + (-\gamma)\leq (\beta + \gamma) + (-\gamma)$. Bên cạnh đó
+		      \[
+			      \begin{split}
+				      (\alpha + \gamma) + (-\gamma) = \alpha + (\gamma + (-\gamma)) = \alpha + [(0,0)] = \alpha, \\
+				      (\beta + \gamma) + (-\gamma) = \beta + (\gamma + (-\gamma)) = \beta + [(0,0)] = \beta.
+			      \end{split}
+		      \]
+
+		      Do đó $\alpha + \gamma\leq \beta + \gamma$ kéo theo $\alpha\leq\beta$.
+
+		      Vậy với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ khi và chỉ khi $\alpha + \gamma\leq \beta + \gamma$.
+		\item ($\Rightarrow$) $\alpha\leq\beta$.
+
+		      Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\alpha + (\beta - \alpha)\leq\beta$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $\beta - \alpha$ là một số nguyên không âm. Mặt khác
+		      \begin{align*}
+			      (-\beta) + (\beta - \alpha) & = (-\beta) + (\beta + (-\alpha)) & \text{(theo định nghĩa phép trừ hai số nguyên)}         \\
+			                                  & = ((-\beta) + \beta) + (-\alpha) & \text{(theo tính chất kết hợp của phép cộng số nguyên)} \\
+			                                  & = [(0,0)] + (-\alpha)                                                                      \\
+			                                  & = -\alpha.
+		      \end{align*}
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $-\beta\leq -\alpha$.
+
+		      ($\Leftarrow$) $-\beta\leq -\alpha$.
+
+		      Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $(-\beta) + ((-\alpha) - (-\beta)) = (-\alpha)$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $(-\alpha) -(-\beta)$ là một số nguyên không âm. Theo quy tắc mở dấu ngoặc, $(-\alpha) - (-\beta) = (-\alpha) + \beta$. Mặt khác
+		      \begin{align*}
+			      \alpha + ((-\alpha) + \beta) & = (\alpha + (-\alpha)) + \beta & \text{(theo tính chất kết hợp của phép cộng hai số nguyên)} \\
+			                                   & = [(0,0)] + \beta = \beta.
+		      \end{align*}
+
+		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $\alpha\leq -\beta$.
+
+		      Vậy với mọi số nguyên $\alpha, \beta$, $\alpha\leq \beta$ khi và chỉ khi $-\beta\leq-\alpha$.
+		\item Chúng ta sử dụng tính sắp thứ tự toàn phần của quan hệ $\leq$ trên tập hợp số nguyên.
+
+		      $\alpha < \beta$ tương đương với phủ định của $\beta\leq\alpha$.
+
+			  $\beta\leq\alpha$ tương đương với $-\alpha\leq-\beta$, theo phần (ii).
+
+			  $-\beta < -\alpha$ tương đương với phủ định của $-\alpha\leq-\beta$.
+
+			  Do đó $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
+		\item Vì $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ nên theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, $\alpha$ và $\beta$ là hai số nguyên không âm. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại hai số tự nhiên $a$ và $b$ sao cho $\alpha = [(a, 0)]$ và $\beta = [(b, 0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), chúng ta có $\alpha\cdot\beta = [(a\cdot b, 0)]$. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $[(a\cdot b, 0)]$ là một số nguyên không âm. Do đó $[(0, 0)]\leq\alpha\cdot\beta$.
+
+		      Vậy với mọi số nguyên $\alpha, \beta$, nếu $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$ thì $[(0,0)]\leq \alpha\cdot \beta$.
+		\item ($\Rightarrow$) $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ hoặc $\alpha < [(0,0)]$ và $\beta < [(0,0)]$.
+
+		      Nếu $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ thì $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$. Theo phần (iii), $[(0,0)] \leq \alpha\cdot\beta$.
+
+			  Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, vì $\alpha\ne [(0,0)]$ và $\beta\ne[(0,0)]$ nên $\alpha\cdot\beta \ne [(0,0)]$.
+
+			  Nếu $\alpha < [(0,0)]$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$, $[(0,0)] < -\beta$. Theo trường hợp vừa xét, cùng với Mệnh đề~\ref{proposition:sign}, chúng ta suy ra $[(0, 0)] < (-\alpha)\cdot(-\beta) = \alpha\cdot\beta$.
+
+			  Do đó $[(0,0)] < \alpha\cdot\beta$.
+
+		      ($\Leftarrow$) $[(0,0)] < \alpha\cdot\beta$.
+
+			  $[(0,0)] < \alpha\cdot\beta$ kéo theo $\alpha\cdot\beta \ne [(0,0)]$. Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $\alpha\ne [(0,0)]$ và $\beta\ne [(0,0)]$.
+
+			  Giả sử phản chứng rằng $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ hoặc $\alpha < [(0,0)]$ và $[(0,0)] < \beta$.
+			  
+			  Nếu $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\beta$ và $[(0,0)] < \alpha$. Theo phần chứng minh trước, $[(0,0)] < \alpha\cdot(-\beta)$. Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot(-\beta) = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
+
+			  Nếu $\alpha < [(0,0)]$ và $[(0,0)] < \beta$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$ và $[(0,0)] < \beta$. Theo phần chứng minh trước, $[(0,0)] < (-\alpha)\cdot\beta$. Theo Mệnh đề~\ref{proposition:sign}, $(-\alpha)\cdot\beta = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
+
+			  Như vậy giả sử phản chứng là sai, chúng ta kết luận $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ hoặc $\alpha < [(0,0)]$ và $\beta < [(0,0)]$.
+
+			  Vậy với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
+	\end{enumerate}
+\end{proof}
 
 \section{Số hữu tỉ}\label{section:rationals}
 
-\subsection*{Phép chia hai số tự nhiên, hai số nguyên}
+\subsection*{Kí hiệu cho số nguyên}
+
+\subsection*{Phép chia hết và phép chia lấy dư}
 
 \subsection*{Tập hợp số hữu tỉ}
 
-\subsection*{Các phép toán tập hợp số hữu tỉ}
+\subsection*{Các phép toán trên tập hợp số hữu tỉ}
 
 \subsection*{Quan hệ thứ tự trên tập hợp số hữu tỉ}
 
