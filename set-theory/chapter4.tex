@@ -621,7 +621,7 @@ Chúng ta tiến hành định nghĩa tập hợp số mới.
 \end{example}
 
 Định lý sau phát biểu rằng tập hợp số tự nhiên có thể nhúng được vào tập hợp số nguyên.
-\begin{theorem}
+\begin{theorem}\label{theorem:embed-N-into-Z}
 	Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh.
 \end{theorem}
 
@@ -1081,7 +1081,7 @@ Tương tự Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplicatio
 
 		      Theo định nghĩa số nguyên dương, tồn tại hai số tự nhiên $a\ne 0$ và $b\ne 0$ sao cho $\alpha = [(a,0)]$ và $\beta = [(b,0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(a\cdot b, 0)]$.
 
-			  Vì $a\ne 0$ và $b\ne 0$ nên theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $a\cdot b\ne 0$. Theo định nghĩa số nguyên dương, $\alpha\cdot\beta$ là một số nguyên dương.
+		      Vì $a\ne 0$ và $b\ne 0$ nên theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $a\cdot b\ne 0$. Theo định nghĩa số nguyên dương, $\alpha\cdot\beta$ là một số nguyên dương.
 		\item Chúng ta lấy hai số nguyên âm $\alpha$ và $\beta$.
 
 		      Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot\beta = (-\alpha)\cdot(-\beta)$. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $-\alpha$ là số nguyên dương và $-\beta$ là số nguyên dương. Theo phần (i), $(-\alpha)\cdot(-\beta)$ là một số nguyên dương. Do đó $\alpha\cdot\beta$ là một số nguyên dương.
@@ -1099,22 +1099,22 @@ Tương tự Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplicatio
 
 		      ($\Leftarrow$) $\alpha\cdot\beta = [(0,0)]$.
 
-			  Giả sử phản chứng rằng cả hai số nguyên $\alpha$ và $\beta$ khác $[(0,0)]$. Khi đó, theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha\cdot\beta$ là số nguyên dương hoặc số nguyên âm, tức là $\alpha\cdot\beta \ne [(0,0)]$. Do đó giả sử phản chứng là sai. Vậy $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$.
+		      Giả sử phản chứng rằng cả hai số nguyên $\alpha$ và $\beta$ khác $[(0,0)]$. Khi đó, theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha\cdot\beta$ là số nguyên dương hoặc số nguyên âm, tức là $\alpha\cdot\beta \ne [(0,0)]$. Do đó giả sử phản chứng là sai. Vậy $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$.
 		\item ($\Rightarrow$) $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
 
 		      Nếu $\alpha = \beta = [(1, 0)]$, theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(1\cdot 1, 0)] = [(1, 0)]$.
 
-			  Nếu $\alpha = \beta = [(0, 1)]$, theo định nghĩa phép nhân hai số nguyên (trường hợp 4), $\alpha\cdot\beta = (-\alpha)\cdot(-\beta) = [(1,0)]\cdot [(1,0)] = [(1\cdot 1, 0)] = [(1, 0)]$.
+		      Nếu $\alpha = \beta = [(0, 1)]$, theo định nghĩa phép nhân hai số nguyên (trường hợp 4), $\alpha\cdot\beta = (-\alpha)\cdot(-\beta) = [(1,0)]\cdot [(1,0)] = [(1\cdot 1, 0)] = [(1, 0)]$.
 
-			  ($\Leftarrow$) $\alpha\cdot\beta = [(1,0)]$.
+		      ($\Leftarrow$) $\alpha\cdot\beta = [(1,0)]$.
 
-			  $[(1,0)]$ là một số nguyên dương, nên theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha$ và $\beta$ là hai số nguyên dương hoặc $\alpha$ và $\beta$ là hai số nguyên âm.
+		      $[(1,0)]$ là một số nguyên dương, nên theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha$ và $\beta$ là hai số nguyên dương hoặc $\alpha$ và $\beta$ là hai số nguyên âm.
 
-			  Nếu $\alpha$ và $\beta$ là hai số nguyên dương thì theo định nghĩa số nguyên dương, tồn tại hai số tự nhiên $a\ne 0$ và $b\ne 0$ sao cho $\alpha = [(a,0)]$ và $\beta = [(b,0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(a\cdot b, 0)]$. $[(a\cdot b, 0)] = [(1, 0)]$ khi và chỉ khi $a\cdot b = 1$. Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $a\cdot b = 1$ kéo theo $a = b = 1$, dẫn đến $\alpha = \beta = [(1,0)]$.
+		      Nếu $\alpha$ và $\beta$ là hai số nguyên dương thì theo định nghĩa số nguyên dương, tồn tại hai số tự nhiên $a\ne 0$ và $b\ne 0$ sao cho $\alpha = [(a,0)]$ và $\beta = [(b,0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $\alpha\cdot\beta = [(a\cdot b, 0)]$. $[(a\cdot b, 0)] = [(1, 0)]$ khi và chỉ khi $a\cdot b = 1$. Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $a\cdot b = 1$ kéo theo $a = b = 1$, dẫn đến $\alpha = \beta = [(1,0)]$.
 
-			  Nếu $\alpha$ và $\beta$ là hai số nguyên âm thì theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $-\alpha$ và $-\beta$ là hai số nguyên dương. Theo định nghĩa phép nhân hai số nguyên (trường hợp 4), $\alpha\cdot\beta = (-\alpha)\cdot(-\beta) = [(1, 0)]$. Theo trường hợp trên, $-\alpha = -\beta = [(1, 0)]$. Do đó $\alpha = \beta = [(0, 1)]$.
+		      Nếu $\alpha$ và $\beta$ là hai số nguyên âm thì theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $-\alpha$ và $-\beta$ là hai số nguyên dương. Theo định nghĩa phép nhân hai số nguyên (trường hợp 4), $\alpha\cdot\beta = (-\alpha)\cdot(-\beta) = [(1, 0)]$. Theo trường hợp trên, $-\alpha = -\beta = [(1, 0)]$. Do đó $\alpha = \beta = [(0, 1)]$.
 
-			  Vậy với mọi số nguyên $\alpha, \beta$, $\alpha\cdot\beta = 1$ khi và chỉ khi $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
+		      Vậy với mọi số nguyên $\alpha, \beta$, $\alpha\cdot\beta = 1$ khi và chỉ khi $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
 	\end{enumerate}
 \end{proof}
 
@@ -1274,11 +1274,11 @@ Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự 
 
 		      $\alpha < \beta$ tương đương với phủ định của $\beta\leq\alpha$.
 
-			  $\beta\leq\alpha$ tương đương với $-\alpha\leq-\beta$, theo phần (ii).
+		      $\beta\leq\alpha$ tương đương với $-\alpha\leq-\beta$, theo phần (ii).
 
-			  $-\beta < -\alpha$ tương đương với phủ định của $-\alpha\leq-\beta$.
+		      $-\beta < -\alpha$ tương đương với phủ định của $-\alpha\leq-\beta$.
 
-			  Do đó $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
+		      Do đó $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
 		\item Vì $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ nên theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, $\alpha$ và $\beta$ là hai số nguyên không âm. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, tồn tại hai số tự nhiên $a$ và $b$ sao cho $\alpha = [(a, 0)]$ và $\beta = [(b, 0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), chúng ta có $\alpha\cdot\beta = [(a\cdot b, 0)]$. Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}, $[(a\cdot b, 0)]$ là một số nguyên không âm. Do đó $[(0, 0)]\leq\alpha\cdot\beta$.
 
 		      Vậy với mọi số nguyên $\alpha, \beta$, nếu $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$ thì $[(0,0)]\leq \alpha\cdot \beta$.
@@ -1286,31 +1286,37 @@ Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự 
 
 		      Nếu $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ thì $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$. Theo phần (iii), $[(0,0)] \leq \alpha\cdot\beta$.
 
-			  Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, vì $\alpha\ne [(0,0)]$ và $\beta\ne[(0,0)]$ nên $\alpha\cdot\beta \ne [(0,0)]$.
+		      Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, vì $\alpha\ne [(0,0)]$ và $\beta\ne[(0,0)]$ nên $\alpha\cdot\beta \ne [(0,0)]$.
 
-			  Nếu $\alpha < [(0,0)]$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$, $[(0,0)] < -\beta$. Theo trường hợp vừa xét, cùng với Mệnh đề~\ref{proposition:sign}, chúng ta suy ra $[(0, 0)] < (-\alpha)\cdot(-\beta) = \alpha\cdot\beta$.
+		      Nếu $\alpha < [(0,0)]$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$, $[(0,0)] < -\beta$. Theo trường hợp vừa xét, cùng với Mệnh đề~\ref{proposition:sign}, chúng ta suy ra $[(0, 0)] < (-\alpha)\cdot(-\beta) = \alpha\cdot\beta$.
 
-			  Do đó $[(0,0)] < \alpha\cdot\beta$.
+		      Do đó $[(0,0)] < \alpha\cdot\beta$.
 
 		      ($\Leftarrow$) $[(0,0)] < \alpha\cdot\beta$.
 
-			  $[(0,0)] < \alpha\cdot\beta$ kéo theo $\alpha\cdot\beta \ne [(0,0)]$. Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $\alpha\ne [(0,0)]$ và $\beta\ne [(0,0)]$.
+		      $[(0,0)] < \alpha\cdot\beta$ kéo theo $\alpha\cdot\beta \ne [(0,0)]$. Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, $\alpha\ne [(0,0)]$ và $\beta\ne [(0,0)]$.
 
-			  Giả sử phản chứng rằng $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ hoặc $\alpha < [(0,0)]$ và $[(0,0)] < \beta$.
-			  
-			  Nếu $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\beta$ và $[(0,0)] < \alpha$. Theo phần chứng minh trước, $[(0,0)] < \alpha\cdot(-\beta)$. Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot(-\beta) = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
+		      Giả sử phản chứng rằng $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ hoặc $\alpha < [(0,0)]$ và $[(0,0)] < \beta$.
 
-			  Nếu $\alpha < [(0,0)]$ và $[(0,0)] < \beta$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$ và $[(0,0)] < \beta$. Theo phần chứng minh trước, $[(0,0)] < (-\alpha)\cdot\beta$. Theo Mệnh đề~\ref{proposition:sign}, $(-\alpha)\cdot\beta = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
+		      Nếu $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\beta$ và $[(0,0)] < \alpha$. Theo phần chứng minh trước, $[(0,0)] < \alpha\cdot(-\beta)$. Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot(-\beta) = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
 
-			  Như vậy giả sử phản chứng là sai, chúng ta kết luận $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ hoặc $\alpha < [(0,0)]$ và $\beta < [(0,0)]$.
+		      Nếu $\alpha < [(0,0)]$ và $[(0,0)] < \beta$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$ và $[(0,0)] < \beta$. Theo phần chứng minh trước, $[(0,0)] < (-\alpha)\cdot\beta$. Theo Mệnh đề~\ref{proposition:sign}, $(-\alpha)\cdot\beta = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
 
-			  Vậy với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
+		      Như vậy giả sử phản chứng là sai, chúng ta kết luận $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ hoặc $\alpha < [(0,0)]$ và $\beta < [(0,0)]$.
+
+		      Vậy với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
 	\end{enumerate}
 \end{proof}
 
-\section{Số hữu tỉ}\label{section:rationals}
-
 \subsection*{Kí hiệu cho số nguyên}
+
+Cho đến lúc này, chúng ta vẫn sử dụng định nghĩa ``số nguyên là một lớp tương đương theo quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$'' và sử dụng kí hiệu $[(a, b)]$ để biểu thị số nguyên, trong đó $a$ và $b$ là hai số tự nhiên theo hệ tiên đề Peano. Cách kí hiệu như vậy cho phép chúng ta nhìn nhận số nguyên như một đối tượng được xây dựng từ số tự nhiên và quy việc định nghĩa các phép toán, quan hệ, và chứng minh các định lý về số nguyên về các định nghĩa và định lý với số tự nhiên. Rõ ràng là cách kí hiệu này không hề giống với kí hiệu mà chúng ta được tiếp cận khi học phổ thông. Câu hỏi được đặt ra là chúng ta có nhất định phải kí hiệu số nguyên dưới dạng $[(a, b)]$ hay không?
+
+Câu trả lời là không. Tác dụng của kí hiệu đó đã được giải thích trong đoạn văn trên. Tuy nhiên, vì đến mục này, chúng ta đã chứng minh các tính chất cơ bản nhất của số nguyên cùng với các phép toán và quan hệ thứ tự trên tập hợp số nguyên, nên việc sử dụng kí hiệu $[(a, b)]$ không còn cần thiết. Chúng ta có thể kí hiệu các số nguyên không âm là $0, 1, 2, 3,\ldots$ và các số nguyên âm là $\ldots, -3, -2, -1$ như đã từng tiếp cận trước đây.
+
+Chúng tôi muốn nói thêm về việc tại sao cách kí hiệu quen biết lại phù hợp. Định lý~\ref{theorem:embed-N-into-Z} chỉ ra một đơn ánh từ tập hợp số tự nhiên vào tập hợp số nguyên. Ảnh của đơn ánh này chính là tập hợp các số nguyên không âm. Chúng ta có thể kiểm tra rằng số nguyên $[(0,0)]$ và ánh xạ $S: \mathbb{Z}\to\mathbb{Z}$ được định nghĩa bởi $S: [(a,b)] \mapsto [(a+1,b)]$ cùng với tập hợp số nguyên âm thỏa mãn hệ tiên đề Peano. Một đối tượng thỏa mãn hệ tiên đề Peano thì cũng có mọi đặc điểm của \textit{số tự nhiên theo tiên đề Peano}. Vì vậy, chúng ta có thể coi các số nguyên âm như các \textit{số tự nhiên theo tiên đề Peano}. Do đó việc kí hiệu các số nguyên không âm bởi $0, 1, 2, 3,\ldots$ và các số nguyên âm bởi $\ldots, -3, -2, -1$ là hợp lý.
+
+\section{Số hữu tỉ}\label{section:rationals}
 
 \subsection*{Phép chia hết và phép chia lấy dư}
 
