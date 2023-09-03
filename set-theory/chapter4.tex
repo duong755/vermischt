@@ -1197,7 +1197,7 @@ Từ định lý trên, chúng ta rút ra hệ quả sau.
 
 Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự với số nguyên bằng định lý sau.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:integers-order-and-operations}
 	\begin{enumerate}[label={(\roman*)}]
 		\item Với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ khi và chỉ khi $\alpha + \gamma\leq \beta + \gamma$.
 		\item Với mọi số nguyên $\alpha, \beta$, $\alpha\leq \beta$ khi và chỉ khi $-\beta\leq-\alpha$.
@@ -1236,7 +1236,7 @@ Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự 
 		      Vậy với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ khi và chỉ khi $\alpha + \gamma\leq \beta + \gamma$.
 		\item ($\Rightarrow$) $\alpha\leq\beta$.
 
-		      Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\alpha + (\beta - \alpha)\leq\beta$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $\beta - \alpha$ là một số nguyên không âm. Mặt khác
+		      Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\alpha + (\beta - \alpha) = \beta$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $\beta - \alpha$ là một số nguyên không âm. Mặt khác
 		      \begin{align*}
 			      (-\beta) + (\beta - \alpha) & = (-\beta) + (\beta + (-\alpha)) & \text{(theo định nghĩa phép trừ hai số nguyên)}         \\
 			                                  & = ((-\beta) + \beta) + (-\alpha) & \text{(theo tính chất kết hợp của phép cộng số nguyên)} \\
@@ -1295,6 +1295,23 @@ Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự 
 	\end{enumerate}
 \end{proof}
 
+Phần (iv) của định lý trên tương đương với định lý sau. Sử dụng định lý này có phần thuận tiện hơn phần (iv) của định lý trên.
+
+\begin{theorem}
+	Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
+\end{theorem}
+
+\begin{proof}
+	Theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $\alpha + (\beta - \alpha) = \beta$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $[(0,0)] \leq \beta - \alpha$. Theo Định lý~\ref{corollary:positive-nonnegative-negative-precise-condition}, $\beta - \alpha$ là một số nguyên không âm, $\gamma$ là một số nguyên không âm. Theo định nghĩa số nguyên không âm, tồn tại hai số tự nhiên $x, y$ sao cho $\beta - \alpha = [(x, 0)]$ và $\gamma = [(y, 0)]$. Theo định nghĩa phép nhân hai số nguyên (trường hợp 1), $(\beta - \alpha)\cdot\gamma = [(x\cdot y, 0)]$, do đó $(\beta - \alpha)\cdot\gamma$ là một số nguyên không âm, và $[(0,0)]\leq (\beta - \alpha)\cdot\gamma$. Theo phần (i) của Định lý~\ref{theorem:integers-order-and-operations} và tính chất phân phối của phép nhân với phép cộng số nguyên, từ việc $[(0,0)]\leq (\beta - \alpha)\cdot\gamma$ chúng ta có
+	\begin{align*}
+		\alpha\cdot\gamma & \leq \alpha\cdot\gamma + (\beta - \alpha)\cdot\gamma \\
+		                  & = (\alpha + (\beta - \alpha))\cdot\gamma             \\
+		                  & = \beta\cdot\gamma.
+	\end{align*}
+
+	Vậy với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
+\end{proof}
+
 \subsection*{Số nguyên và Số tự nhiên}
 
 Cho đến lúc này, chúng ta vẫn sử dụng định nghĩa ``số nguyên là một lớp tương đương theo quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$'' và sử dụng kí hiệu $[(a, b)]$ để biểu thị số nguyên, trong đó $a$ và $b$ là hai số tự nhiên theo hệ tiên đề Peano. Cách kí hiệu như vậy cho phép chúng ta nhìn nhận số nguyên như một đối tượng được xây dựng từ số tự nhiên và quy việc định nghĩa các phép toán, quan hệ, và chứng minh các định lý về số nguyên về các định nghĩa và định lý với số tự nhiên. Rõ ràng là cách kí hiệu này không hề giống với kí hiệu mà chúng ta được tiếp cận khi học phổ thông. Câu hỏi được đặt ra là chúng ta có nhất định phải kí hiệu số nguyên dưới dạng $[(a, b)]$ hay không?
@@ -1331,63 +1348,70 @@ Câu trả lời là không. Tác dụng của kí hiệu đó đã được gi�
 
 Chúng tôi muốn nói thêm về việc tại sao cách kí hiệu quen biết cho số nguyên lại phù hợp. Định lý~\ref{theorem:embed-N-into-Z} chỉ ra một đơn ánh từ tập hợp số tự nhiên vào tập hợp số nguyên. Ảnh của đơn ánh này chính là tập hợp các số nguyên không âm. Chúng ta có thể kiểm tra rằng số nguyên $[(0,0)]$ và ánh xạ $S$ với tập nguồn và tập đích là tập hợp số nguyên không âm, $S$ được định nghĩa bởi $S: [(n,0)] \mapsto [(n+1,0)]$ cùng với tập hợp số nguyên không âm thỏa mãn hệ tiên đề Peano. Một đối tượng thỏa mãn hệ tiên đề Peano thì cũng có mọi đặc điểm của \textit{số tự nhiên theo tiên đề Peano}. Vì vậy, chúng ta có thể coi các số nguyên không âm như các \textit{số tự nhiên theo tiên đề Peano}. Do đó việc kí hiệu các số nguyên không âm bởi $0, 1, 2, 3,\ldots$ và các số nguyên âm bởi $\ldots, -3, -2, -1$ là hợp lý.
 
-\section*{Bài tập}
-
-\section{Số hữu tỉ}\label{section:rationals}
-
-\subsection*{Tính chia hết và phép chia có dư}
-
-\begin{definition}[Tính chia hết]
-	\begin{enumerate}[label={(\roman*)}]
-		\item Số tự nhiên $a$ được gọi là \textit{chia hết} số tự nhiên $b$ nếu tồn tại số tự nhiên $k$ sao cho $k\cdot a = b$. Chúng ta còn nói số tự nhiên $b$ \textit{chia hết cho} số tự nhiên $a$, hay $a$ là ước của $b$, $b$ là bội của $a$, và kí hiệu là $a\mid b$.
-		\item Số nguyên $a$ được gọi là \textit{chia hết} số nguyên $b$ nếu tồn tại số nguyên $k$ sao cho $k\cdot a = b$. Chúng ta còn nói số nguyên $b$ \textit{chia hết cho} số nguyên $a$, hay $a$ là ước của $b$, $b$ là bội của $a$ và kí hiệu là $a\mid b$.
-	\end{enumerate}
-\end{definition}
-
-Từ định nghĩa tính chia hết và các tính chất của số tự nhiên và số nguyên, chúng ta rút ra các nhận xét sau.
-\begin{itemize}
-	\item Số $0$ chia hết cho mọi số nguyên.
-	\item Số $0$ không phải ước của bất cứ số nguyên khác $0$ nào.
-	\item Số $1$ và $(-1)$ là ước của mọi số nguyên.
-	\item Nếu số tự nhiên $a$ là ước của số tự nhiên $b$ và $a\ne 0$ thì tồn tại duy nhất số tự nhiên $k$ sao cho $k\cdot a = b$.
-	\item Nếu số nguyên $a$ là ước của số nguyên $b$ và $a\ne 0$ thì tồn tại duy nhất số tự nhiên $k$ sao cho $k\cdot a = b$.
-	\item Bội số tự nhiên khác $0$ nhỏ nhất của số tự nhiên $a\ne 0$ là $a$.
-\end{itemize}
-
-Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $1$ thì các số tự nhiên $1, 2, \ldots, a - 1$ không chia hết cho $a$.
-
-\begin{theorem}[Thuật toán chia Euclid]
-	Cho số nguyên dương $a$ và một số nguyên $b$. Tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $b = a\cdot q + r$ và $0\leq r < a$.
-\end{theorem}
-
-\begin{proof}
-\end{proof}
-
-Từ giờ trở đi, chúng ta chỉ sử dụng ước nguyên, bội nguyên (và dùng thuật ngữ ước, bội) trừ khi nêu khác đi.
-
-\subsection*{Tập hợp số hữu tỉ}
-
-\subsection*{Các phép toán trên tập hợp số hữu tỉ}
-
-\subsection*{Quan hệ thứ tự trên tập hợp số hữu tỉ}
-
-\section*{Bài tập}
+\subsection*{Bài tập}
 
 \section{Nguyên lý quy nạp toán học}\label{section:principle-of-mathematical-induction}
 
-\subsection*{Nguyên lý quy nạp toán học và nguyên lý quy nạp mạnh}
+Mục này bàn nhiều hơn về nguyên lý quy nạp toán học cùng các biến thể và nguyên lý thứ tự tốt. Kết quả quan trọng nhất của mục này là nguyên lý thứ tự tốt.
 
-\begin{theorem}[Dạng khác của nguyên lý quy nạp toán học]
+\subsection*{Nguyên lý quy nạp toán học và các biến thể}
+
+Với số nguyên, chúng ta có một mở rộng đơn giản cho nguyên lý quy nạp toán học, và cũng tương đương với nguyên lý quy nạp toán học.
+
+\begin{theorem}[Nguyên lý quy nạp toán học (trường hợp cơ sở là một số nguyên)]
+	Nếu hai điều kiện sau thỏa mãn
+	\begin{enumerate}[label={(\roman*)}]
+		\item Mệnh đề $p(n)$ đúng với số nguyên $n_{0}$.
+		\item Với mọi số nguyên $n\geq n_{0}$, $p(n)$ kéo theo $p(n + 1)$.
+	\end{enumerate}
+
+	thì $p(n)$ đúng với mọi số nguyên lớn hơn hoặc bằng $n_{0}$.
 \end{theorem}
 
 \begin{proof}
+	Chúng ta định nghĩa vị từ $q$ áp dụng cho số tự nhiên $n$ như sau: $q(n)$ là mệnh đề $p(n + n_{0})$.
+
+	Như vậy
+	\begin{enumerate}[label={(\roman*)}]
+		\item Mệnh đề $q(0)$ đúng.
+		\item Với mọi số tự nhiên $n$, $q(n)$ kéo theo $q(n + 1)$.
+	\end{enumerate}
+
+	Theo nguyên lý quy nạp toán học, có $q(n)$ với mọi số tự nhiên $n$. Theo định nghĩa của $q(n)$ thì có $p(n)$ với mọi số nguyên $n$ lớn hơn hoặc bằng $n_{0}$.
 \end{proof}
 
 \begin{theorem}[Nguyên lý quy nạp mạnh]
+	Nếu hai điều kiện sau thỏa mãn
+	\begin{enumerate}[label={(\roman*)}]
+		\item Mệnh đề $p(0)$ đúng.
+		\item Với mọi số tự nhiên $k$, $p(n)$ đúng với mọi số tự nhiên $n\leq k$ kéo theo $p(k+1)$.
+	\end{enumerate}
+
+	thì $p(n)$ đúng với mọi số tự nhiên.
 \end{theorem}
 
 \begin{proof}
+	Chúng ta định nghĩa vị từ $c$ áp dụng cho số tự nhiên $n$ bằng đệ quy:
+	\begin{itemize}
+		\item $c(0)$ là mệnh đề $p(0)$.
+		\item Với mỗi số tự nhiên $n$, $c(n+1)$ là mệnh đề $c(n)\wedge p(n+1)$.
+	\end{itemize}
+
+	Mệnh đề $p(0)$ tương đương với mệnh đề $c(0)$.
+
+	Mệnh đề ``với mọi số tự nhiên $k$, $p(n)$ đúng với mọi số tự nhiên $n\leq k$ kéo theo $p(k+1)$'' tương đương với mệnh đề ``với mọi số tự nhiên $k$, $c(k)$ kéo theo $c(k+1)$''.
+
+	Theo nguyên lý quy nạp toán học, $c(n)$ đúng với mọi số tự nhiên $n$. Theo định nghĩa của mệnh đề $c(n)$, chúng ta suy ra $p(n)$ đúng với mọi số tự nhiên $n$.
 \end{proof}
+
+\begin{theorem}[Nguyên lý quy nạp toán học hữu hạn]
+\end{theorem}
+
+\begin{theorem}[Nguyên lý giảm vô hạn]
+\end{theorem}
+
+\begin{theorem}[Nguyên lý quy nạp Cauchy]
+\end{theorem}
 
 \subsection*{Nguyên lý thứ tự tốt}
 
@@ -1396,14 +1420,75 @@ Từ giờ trở đi, chúng ta chỉ sử dụng ước nguyên, bội nguyên 
 \end{theorem}
 
 \begin{proof}
+	Chúng ta kí hiệu $S$ là tập hợp con khác rỗng của tập hợp số nguyên dương.
+
+	Giả sử phản chứng rằng $S$ không có phần tử nhỏ nhất. $1$ không thuộc $S$ vì $1$ là số nguyên dương nhỏ nhất.
+
+	Với mỗi số nguyên dương $k$, nếu các số nguyên dương $n$ không vượt quá $k$ không thuộc $S$ thì $(k+1)$ không thuộc $S$ (vì nếu $(k+1)$ thuộc $S$ thì $(k+1)$ là phần tử nhỏ nhất của $S$, trái với giả sử phản chứng).
+
+	Theo nguyên lý quy nạp mạnh, mọi số nguyên dương đều không thuộc $S$. Do đó $S$ là tập hợp rỗng, mâu thuẫn với giả thiết. Do vậy giả sử phản chứng là sai. Vậy tập hợp $S$ có phần tử nhỏ nhất.
 \end{proof}
 
+Tương tự với ``dạng số nguyên'' của nguyên lý quy nạp toán học, chúng ta có hệ quả sau. Hệ quả này cho phép chúng ta áp dụng nguyên lý thứ tự tốt linh hoạt hơn.
+
 \begin{corollary}
-	Tập hợp con khác rỗng của tập hợp số nguyên lớn hơn hoặc bằng số nguyên $x$ nào đó có phần tử nhỏ nhất.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{lớn hơn hoặc bằng} (hoặc \textbf{lớn hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử nhỏ nhất}.
+		\item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{nhỏ hơn hoặc bằng} (hoặc \textbf{nhỏ hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử lớn nhất}.
+	\end{enumerate}
 \end{corollary}
 
-\subsection*{$\dagger$ Nguyên lý quy nạp Cauchy}
+Một nhược điểm của nguyên lý thứ tự tốt và chứng minh của nguyên lý này là \textit{không có tính xây dựng}. Chúng ta chỉ ra sự tồn tại của số nguyên dương nhỏ nhất trong một tập hợp con khác rỗng của tập hợp số nguyên dương, nhưng không biết đó là số nào, hay cách tìm số đó. Có một tư tưởng trong toán học được gọi là \textit{tư tưởng xây dựng} (constructivism). Tư tưởng này khẳng định rằng để chứng minh sự tồn tại của một đối tượng toán học, cần phải đưa ra một ví dụ, hoặc thuật toán (cách) tìm ra ví dụ. Trái với tư tưởng xây dựng, chứng minh bằng phương pháp phản chứng giả sử rằng một đối tượng như vậy không tồn tại và tiếp tục lập luận để đi tới một mâu thuẫn. Tư tưởng xây dựng rất có ích trong việc học và làm toán, bởi quá trình tìm ví dụ và việc có một ví dụ cụ thể là rất giá trị trong việc hiểu một đối tượng toán học. Kĩ năng xây dựng ví dụ là một trong những kĩ năng tối quan trọng trong việc học và làm toán. Tuy vậy, phương pháp phản chứng vẫn luôn tỏ ra là một công cụ mạnh và dễ dàng, thậm chí đối khi được coi là duy nhất để chứng minh nhiều định lý quan trọng về tính tồn tại.
 
-\subsection*{$\dagger$ Giảm vô hạn}
+\section{Số hữu tỉ}\label{section:rationals}
 
-\section*{Bài tập}
+\subsection*{Tính chia hết và phép chia có dư}
+
+\begin{definition}[Tính chia hết]
+	\begin{enumerate}[label={(\roman*)}]
+		\item Số tự nhiên $b$ được gọi là \textit{chia hết} số tự nhiên $a$ nếu tồn tại số tự nhiên $k$ sao cho $a = k\cdot b$. Chúng ta còn nói số tự nhiên $a$ \textit{chia hết cho} số tự nhiên $b$, hay $b$ là ước của $a$, $a$ là bội của $b$, và kí hiệu là $b\mid a$.
+		\item Số nguyên $b$ được gọi là \textit{chia hết} số nguyên $a$ nếu tồn tại số nguyên $k$ sao cho $a = k\cdot b$. Chúng ta còn nói số nguyên $a$ \textit{chia hết cho} số nguyên $b$, hay $b$ là ước của $a$, $a$ là bội của $b$ và kí hiệu là $b\mid a$.
+	\end{enumerate}
+\end{definition}
+
+Từ định nghĩa tính chia hết và các tính chất của số tự nhiên và số nguyên, chúng ta rút ra các nhận xét sau.
+\begin{itemize}
+	\item Số $0$ chia hết cho mọi số nguyên, nhưng không phải ước của bất cứ số nguyên khác $0$ nào.
+	\item Số $1$ và $(-1)$ là ước của mọi số nguyên.
+	\item Bội số nguyên dương nhỏ nhất của số nguyên $a\ne 0$ là $a$ nếu $a$ là số nguyên dương, là $-a$ nếu $a$ là số nguyên âm.
+\end{itemize}
+
+Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $1$ thì các số tự nhiên $1, 2, \ldots, a - 1$ không chia hết cho $a$. Sau đây chúng ta phát biểu và chứng minh thuật toán chia Euclid. Nhưng trước tiên, chúng ta cần một định nghĩa.
+
+\begin{definition}[Giá trị tuyệt đối của số nguyên]
+	Ánh xạ $\abs{\cdot}: \mathbb{Z}\to \mathbb{Z}_{\geq 0}$, được định nghĩa bởi
+	\[
+		\abs{x} = \begin{cases}
+			x  & \text{nếu $x\geq 0$}, \\
+			-x & \text{nếu $x < 0$}.
+		\end{cases}
+	\]
+
+	được gọi là \textbf{ánh xạ giá trị tuyệt đối}, hay \textbf{hàm giá trị tuyệt đối} của số nguyên. $\abs{x}$ được gọi là giá trị tuyệt đối của số nguyên $x$.
+\end{definition}
+
+\begin{theorem}[Thuật toán chia Euclid]
+	Cho số nguyên $a$ và một số nguyên $b\ne 0$. Tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = b\cdot q + r$ và $0\leq r < \abs{b}$.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{definition}[Thương và Dư]
+	Theo thuật toán chia Euclid, với mỗi số nguyên $a$ và số nguyên $b\ne 0$, tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = b\cdot q + r$ và $0\leq r < \abs{b}$. Số nguyên $q$ được gọi là \textbf{thương} của phép chia $a$ cho $b$, số nguyên không âm $r$ được gọi là \textbf{dư} của phép chia $a$ cho $b$.
+\end{definition}
+
+\subsection*{Tập hợp số hữu tỉ}
+
+\subsection*{Các phép toán trên tập hợp số hữu tỉ}
+
+\subsection*{Quan hệ thứ tự trên tập hợp số hữu tỉ}
+
+\subsection*{Số hữu tỉ và Số nguyên}
+
+\subsection*{Bài tập}
