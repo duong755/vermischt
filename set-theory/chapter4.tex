@@ -210,6 +210,7 @@ Sư góp mặt của số $0$ trong phép toán cộng các số tự nhiên d�
 	\begin{enumerate}[label={(\roman*)}]
 		\item Với mọi số tự nhiên $x$, $x + y = x$ kéo theo $y = 0$.
 		\item Hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
+		\item Hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 1$ khi và chỉ khi $a = 0, b = 1$ hoặc $a = 1, b = 0$.
 	\end{enumerate}
 \end{theorem}
 
@@ -239,6 +240,19 @@ Sư góp mặt của số $0$ trong phép toán cộng các số tự nhiên d�
 		      Tương tự, cũng bằng phương pháp phản chứng, chúng ta chỉ ra được $b = 0$.
 
 		      Vậy hai số tự nhiên $a, b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
+		\item ($\Rightarrow$) $a = 1, b = 0$ hoặc $a = 0, b = 1$.
+
+		      Vì với mọi số tự nhiên $x$, có $x + 0 = 0 + x = x$ nên trong cả hai trường hợp $a = 1, b = 0$ hay $a = 0, b = 1$, chúng ta đều có $a + b = 1$.
+
+			  ($\Leftarrow$) $a + b = 1$.
+
+			  $a$ và $b$ không thể đồng thời bằng $0$ (vì khi đó $a + b = 0$, điều này mâu thuẫn với việc $a + b = 1$). Do đó ít nhất một trong hai số tự nhiên $a$ và $b$ khác $0$.
+
+			  Nếu $b\ne 0$ thì theo Định lý~\ref{theorem:successor}, tồn tại số tự nhiên $n$ sao cho $b = S(n)$. Theo định nghĩa phép cộng hai số tự nhiên, $S(0) = 1 = a + b = a + S(n) = S(a + n)$. Theo tiên đề 7, chúng ta có $a + n = 0$. Theo phần (ii), $a = n = 0$, kéo theo $b = 1$.
+
+			  Nếu $a\ne 0$ thì theo Định lý~\ref{theorem:successor}, tồn tại số tự nhiên $m$ sao cho $a = S(m)$. Theo tính chất giao hoán của phép cộng số tự nhiên và định nghĩa phép cộng hai số tự nhiên, $S(0) = 1 = a + b = b + a = b + S(m) = S(b + m)$. Theo tiên đề 7, chúng ta có $b + m = 0$. Theo phần (ii), $b = m = 0$, kéo theo $a = 1$.
+
+			  Vậy hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 1$ khi và chỉ khi $a = 0, b = 1$ hoặc $a = 1, b = 0$.
 	\end{enumerate}
 \end{proof}
 
@@ -427,6 +441,8 @@ Số tự nhiên đã trở nên quá quen thuộc với chúng ta, đến nỗi
 
 \begin{definition}[Quan hệ thứ tự trên tập hợp số tự nhiên]
 	Số tự nhiên $x$ được gọi là nhỏ hơn hoặc bằng số tự nhiên $y$ nếu và chỉ nếu tồn tại số tự nhiên $z$ sao cho $x + z = y$. Khi đó, chúng ta kí hiệu $x\leq y$. Nếu $x\leq y$ và $x\ne y$ thì chúng ta nói $x$ nhỏ hơn $y$ và kí hiệu $x < y$.
+
+	Nói riêng, nếu $x + 1 = y$ hoặc $y + 1 = x$ thì chúng ta nói $x$ và $y$ là hai số tự nhiên liên tiếp.
 \end{definition}
 
 Dựa trên định nghĩa này, chúng ta vẫn phải kiểm tra quan hệ nhỏ hơn hoặc bằng trên tập hợp số tự nhiên có thỏa mãn ba tính chất của quan hệ thứ tự hay không. Việc chứng minh tính chất phản đối xứng tỏ ra khó khăn hơn cả.
@@ -555,6 +571,22 @@ Sự liên hệ giữa quan hệ $\leq$ và hai phép toán cộng và nhân tr�
 
 		      Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $x, y, z$, nếu $x\leq y$ thì $x\cdot z\leq y\cdot z$.
 	\end{enumerate}
+\end{proof}
+
+Định lý sau đây còn được phát biểu rằng ``Giữa hai số tự nhiên liên tiếp, không còn số tự nhiên nào khác.''
+\begin{theorem}
+	Với mọi số tự nhiên $m, n$, nếu $n\leq m$ và $m \leq S(n)$ thì $m = n$ hoặc $m = S(n)$. 
+\end{theorem}
+
+\begin{proof}
+	Vì $n\leq m$ nên tồn tại số tự nhiên $x$ sao cho $n + x = m$. Vì $m\leq S(n)$ nên tồn tại số tự nhiên $y$ sao cho $m + y = S(n)$. Vì $n\ne S(n)$ nên $m$ không thể đồng thời bằng $n$ và $S(n)$. Theo tính chất kết hợp của phép cộng số tự nhiên
+	\[
+		S(n) = m + y = (n + x) + y = n + (x + y).
+	\]
+
+	Mặt khác, $S(n) = n + S(0) = n + 1$. Theo Mệnh đề~\ref{proposition:addition-cancellation}, $x + y = 1$. Theo Định lý~\ref{theorem:addition-and-zero}, chúng ta suy ra $x = 1, y = 0$ hoặc $x = 0, y = 1$. Nếu $x = 1, y = 0$ thì $m = S(n)$. Còn nếu $x = 0, y = 1$ thì $m = n$.
+
+	Vậy với mọi số tự nhiên $m, n$, nếu $n\leq m$ và $m \leq S(n)$ thì $m = n$ hoặc $m = S(n)$. 
 \end{proof}
 
 \section{Số nguyên}\label{section:integers}
@@ -1043,6 +1075,17 @@ Như đã nói, việc chứng minh các tính chất này cần được xem x�
 	Như vậy, trong tất cả các trường hợp, chúng ta đều có $(\alpha + \beta)\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma$. Theo tính chất giao hoán của phép nhân hai số nguyên, chúng ta suy ra $\gamma\cdot(\alpha+\beta) = \gamma\cdot\alpha + \gamma\cdot\beta$.
 \end{proof}
 
+Cùng với định nghĩa phép trừ số nguyên, chúng ta thu được hệ quả sau.
+\begin{corollary}
+	Với mọi số nguyên $\alpha, \beta, \gamma$, có
+	\[
+		\begin{split}
+			(\alpha - \beta)\cdot\gamma = \alpha\cdot\gamma - \beta\cdot\gamma, \\
+			\gamma\cdot(\alpha - \beta) = \gamma\cdot\alpha - \gamma\cdot\beta.
+		\end{split}
+	\]
+\end{corollary}
+
 Tương tự Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, chúng ta có định lý sau.
 \begin{theorem}\label{theorem:product-of-integers-are-zero-or-one}
 	Cho hai số nguyên $\alpha, \beta$.
@@ -1111,6 +1154,8 @@ Khi mở rộng tập hợp các số tự nhiên thành tập hợp số nguyê
 
 \begin{definition}[Quan hệ thứ tự trên tập hợp số nguyên]
 	Cho hai số nguyên $\alpha$ và $\beta$. Chúng ta nói $\alpha$ nhỏ hơn hoặc bằng $\beta$, và kí hiệu $\alpha\leq \beta$ nếu và chỉ nếu tồn tại \textit{số nguyên không âm} $\gamma$ sao cho $\alpha + \gamma = \beta$. Nếu $\alpha\leq \beta$ và $\alpha\ne \beta$ thì chúng ta kí hiệu $\alpha < \beta$.
+
+	Đặc biệt, nếu $\alpha + [(1, 0)] = \beta$ hoặc $\beta + [(1, 0)] = \alpha$ thì chúng ta nói $\alpha$ và $\beta$ là hai số nguyên liên tiếp.
 \end{definition}
 
 \begin{theorem}
@@ -1312,6 +1357,30 @@ Phần (iv) của định lý trên tương đương với định lý sau. Sử
 	Vậy với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
 \end{proof}
 
+\begin{corollary}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha < \beta$ và $[(0,0)] < \gamma$ thì $\alpha\cdot\gamma < \beta\cdot\gamma$.
+		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha \leq \beta$ và $[(0,0)] < \gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
+		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha < \beta$ và $[(0,0)] \leq \gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
+	\end{enumerate}
+\end{corollary}
+
+Tương tự với số tự nhiên, giữa hai số nguyên liên tiếp không còn số nguyên nào khác.
+\begin{theorem}
+	Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha + [(1,0)] = \gamma$ và $\alpha \leq \beta \leq \gamma$ thì $\beta = \alpha$ hoặc $\beta = \gamma$.
+\end{theorem}
+
+\begin{proof}
+	Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $\alpha \leq \beta$ kéo theo tồn tại số nguyên không âm $[(n,0)]$ sao cho $\alpha + [(n, 0)] = \beta$, $\beta \leq \gamma$ kéo theo tồn tại số nguyên không âm $[(m, 0)]$ sao cho $\beta + [(m, 0)] = \gamma$. Theo tính chất kết hợp của phép cộng số nguyên và định nghĩa phép cộng số nguyên
+	\[
+		\gamma = \beta + [(m, 0)] = (\alpha + [(n, 0)]) + [(m, 0)] = \alpha + ([(n, 0)] + [(m, 0)]) = \alpha + [(n+m, 0)]
+	\]
+
+	Mặt khác, $\alpha + [(1, 0)] = \gamma$ nên theo Định lý~\ref{theorem:foundation-of-integer-subtraction}, $[(1, 0)] = [(n+m, 0)]$, kéo theo $(1, 0)\sim (n+m, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $n + m = 1$. Theo Định lý~\ref{theorem:addition-and-zero}, $n + m = 1$ kéo theo $n = 1, m = 0$ hoặc $n = 0, m = 1$. Nếu $n = 1, m = 0$ thì $\alpha + [(1, 0)] = \beta$, dẫn đến $\beta = \gamma$. Còn nếu $n = 0, m = 1$ thì $\beta + [(1, 0)] = \gamma$, dẫn đến $\beta = \alpha$.
+
+	Vậy với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha + [(1,0)] = \gamma$ và $\alpha \leq \beta \leq \gamma$ thì $\beta = \alpha$ hoặc $\beta = \gamma$.
+\end{proof}
+
 \subsection*{Số nguyên và Số tự nhiên}
 
 Cho đến lúc này, chúng ta vẫn sử dụng định nghĩa ``số nguyên là một lớp tương đương theo quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$'' và sử dụng kí hiệu $[(a, b)]$ để biểu thị số nguyên, trong đó $a$ và $b$ là hai số tự nhiên theo hệ tiên đề Peano. Cách kí hiệu như vậy cho phép chúng ta nhìn nhận số nguyên như một đối tượng được xây dựng từ số tự nhiên và quy việc định nghĩa các phép toán, quan hệ, và chứng minh các định lý về số nguyên về các định nghĩa và định lý với số tự nhiên. Rõ ràng là cách kí hiệu này không hề giống với kí hiệu mà chúng ta được tiếp cận khi học phổ thông. Câu hỏi được đặt ra là chúng ta có nhất định phải kí hiệu số nguyên dưới dạng $[(a, b)]$ hay không?
@@ -1458,7 +1527,7 @@ Từ định nghĩa tính chia hết và các tính chất của số tự nhiê
 	\item Bội số nguyên dương nhỏ nhất của số nguyên $a\ne 0$ là $a$ nếu $a$ là số nguyên dương, là $-a$ nếu $a$ là số nguyên âm.
 \end{itemize}
 
-Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $1$ thì các số tự nhiên $1, 2, \ldots, a - 1$ không chia hết cho $a$. Sau đây chúng ta phát biểu và chứng minh thuật toán chia Euclid. Nhưng trước tiên, chúng ta cần một định nghĩa.
+Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $1$ thì các số tự nhiên $1, 2, \ldots, a - 1$ không chia hết cho $a$. Sau đây chúng ta phát biểu và chứng minh thuật toán chia Euclid để cung cấp thêm thông tin về tính chia hết và tính không chia hết. Nhưng trước tiên, chúng ta cần một định nghĩa.
 
 \begin{definition}[Giá trị tuyệt đối của số nguyên]
 	Ánh xạ $\abs{\cdot}: \mathbb{Z}\to \mathbb{Z}_{\geq 0}$, được định nghĩa bởi
@@ -1469,7 +1538,7 @@ Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $
 		\end{cases}
 	\]
 
-	được gọi là \textbf{ánh xạ giá trị tuyệt đối}, hay \textbf{hàm giá trị tuyệt đối} của số nguyên. $\abs{x}$ được gọi là giá trị tuyệt đối của số nguyên $x$.
+	được gọi là \textbf{ánh xạ giá trị tuyệt đối}, hay \textbf{hàm giá trị tuyệt đối} của số nguyên. Số nguyên không âm $\abs{x}$ được gọi là giá trị tuyệt đối của số nguyên $x$.
 \end{definition}
 
 \begin{theorem}[Thuật toán chia Euclid]
@@ -1477,6 +1546,17 @@ Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $
 \end{theorem}
 
 \begin{proof}
+	Chúng ta chứng minh tính tồn tại của cặp số nguyên như vậy. Hãy xem xét hai trường hợp.
+
+	\textbf{Trường hợp 1.} $b > 0$.
+
+	% ..., -3b, -2b, -b, 0, b, 2b, 3b, ...
+	% bq\leq a < b(q+1)
+
+	\textbf{Trường hợp 2.} $b < 0$.
+
+
+	Cuối cùng, chúng ta chứng minh tính duy nhất.
 \end{proof}
 
 \begin{definition}[Thương và Dư]
