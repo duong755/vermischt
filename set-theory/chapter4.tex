@@ -589,6 +589,13 @@ Sự liên hệ giữa quan hệ $\leq$ và hai phép toán cộng và nhân tr�
 	Vậy với mọi số tự nhiên $m, n$, nếu $n\leq m$ và $m \leq S(n)$ thì $m = n$ hoặc $m = S(n)$. 
 \end{proof}
 
+\begin{corollary}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mọi số tự nhiên $x, y$, $x < y$ khi và chỉ khi $x + 1\leq y$.
+		\item Với mọi số tự nhiên $x, y$, $x\leq y$ khi và chỉ khi $x < y + 1$.
+	\end{enumerate}
+\end{corollary}
+
 \section{Số nguyên}\label{section:integers}
 
 \subsection*{Từ phép trừ hai số tự nhiên đến tập hợp số nguyên}
@@ -1240,7 +1247,7 @@ Từ định lý trên, chúng ta rút ra hệ quả sau.
 	\end{enumerate}
 \end{corollary}
 
-Chúng ta khép lại nội dung về các phép toán và quan hệ thứ tự với số nguyên bằng định lý sau.
+Các kết quả dưới đây là cơ bản và cần thiết trong việc chứng minh tính thứ tự giữa các số nguyên.
 
 \begin{theorem}\label{theorem:integers-order-and-operations}
 	\begin{enumerate}[label={(\roman*)}]
@@ -1380,6 +1387,14 @@ Tương tự với số tự nhiên, giữa hai số nguyên liên tiếp không
 
 	Vậy với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha + [(1,0)] = \gamma$ và $\alpha \leq \beta \leq \gamma$ thì $\beta = \alpha$ hoặc $\beta = \gamma$.
 \end{proof}
+
+Định lý trên kéo theo hệ quả sau.
+\begin{corollary}
+	\begin{enumerate}
+		\item Với mọi số nguyên $\alpha, \beta$, $\alpha < \beta$ khi và chỉ khi $\alpha + [(1, 0)]\leq \beta$.
+		\item Với mọi số nguyên $\alpha, \beta$, $\alpha\leq \beta$ khi và chỉ khi $\alpha < \beta + [(1,0)]$.
+	\end{enumerate}
+\end{corollary}
 
 \subsection*{Số nguyên và Số tự nhiên}
 
@@ -1546,15 +1561,19 @@ Nhận xét cuối cùng ngụ ý rằng nếu số tự nhiên $a$ lớn hơn $
 \end{theorem}
 
 \begin{proof}
-	Chúng ta chứng minh tính tồn tại của cặp số nguyên như vậy. Hãy xem xét hai trường hợp.
+	Chúng ta chứng minh tính tồn tại của cặp số nguyên như vậy. Hãy xem xét hai trường hợp. Bội của $b$ là số nguyên có dạng $b\cdot k$, trong đó $k$ là một số nguyên.
 
 	\textbf{Trường hợp 1.} $b > 0$.
 
-	% ..., -3b, -2b, -b, 0, b, 2b, 3b, ...
-	% bq\leq a < b(q+1)
+	Nếu hai số nguyên $x, y$ thỏa mãn $x < y$ thì $b\cdot x < b\cdot y$.
+
+	Nếu $a\geq 0$ thì $a\leq 1$ ()
 
 	\textbf{Trường hợp 2.} $b < 0$.
 
+	Nếu hai số nguyên $x, y$ thỏa mãn $x < y$ thì $(-b)\cdot x < (-b)\cdot y$, kéo theo $b\cdot x > b\cdot y$.
+
+	\bigskip
 
 	Cuối cùng, chúng ta chứng minh tính duy nhất.
 \end{proof}
