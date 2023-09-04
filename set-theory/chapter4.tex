@@ -1635,7 +1635,7 @@ Chứng minh dưới đây cho thuật toán chia Euclid sử dụng nguyên lý
 Một số nguyên $d$ được gọi là ước chung của hai số nguyên $a$ và $b$ nếu $d$ là ước của $a$ và $d$ là ước của $b$. Hai số nguyên bất kì luôn có ít nhất hai ước chung, đó là $1$ và $(-1)$. Ước chung của hai số nguyên có tính chất sau.
 
 \begin{theorem}\label{theorem:linear-combination-and-common-divisor}
-	Nếu số nguyên $d$ là ước chung của hai số nguyên $a$ và $b$ thì với mọi số nguyên $x, y$, $d$ là ước của $a\cdot x + b\cdot y$. (Chúng ta gọi số nguyên viết được dưới dạng $a\cdot x + b\cdot y$ là một \textbf{tổ hợp tuyến tính} của $a$ và $b$)
+	Nếu số nguyên $d$ là ước chung của hai số nguyên $a$ và $b$ thì với mọi số nguyên $x, y$, $d$ là ước của $a\cdot x + b\cdot y$. (Chúng ta gọi số nguyên viết được dưới dạng $a\cdot x + b\cdot y$ là một \textbf{tổ hợp tuyến tính} của $a$ và $b$, trong đó $x, y$ là các số nguyên).
 \end{theorem}
 
 \begin{proof}
@@ -1660,22 +1660,23 @@ Tổng của hai tổ hợp tuyến tính của hai số nguyên $a$ và $b$ v�
 	Do vậy $\abs{a}\leq \abs{q}\cdot\abs{a} = \abs{b}$.
 \end{proof}
 
+Định lý sau đây khẳng định rằng nếu hai số nguyên không đồng thời bằng $0$ thì chúng có ước chung lớn nhất (lớn hơn các ước chung khác ngoài chính nó).
 \begin{theorem}[Ước chung lớn nhất]
 	Cho hai số nguyên $a, b$ không đồng thời bằng $0$. Tồn tại một số nguyên là ước chung lớn nhất của $a$ và $b$.
 \end{theorem}
 
 \begin{proof}
-	Theo Định lý~\ref{theorem:bound-of-divisors}, nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}$ không vượt quá số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$.
-
-	Kí hiệu số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$ là $c$. Bằng kí hiệu, phát biểu trên có nghĩa là: Nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}\leq c$. Mà $-\abs{d}\leq d \leq \abs{d}$ nên $-c\leq d\leq c$. Theo nguyên lý thứ tự tốt, tập hợp các ước chung của $a$ và $b$ có một số nguyên lớn nhất.
+	Kí hiệu số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$ là $c$. Theo Định lý~\ref{theorem:bound-of-divisors}, nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}$ không vượt quá số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$.
+	
+	Bằng kí hiệu, phát biểu trên có nghĩa là: Nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}\leq c$. Mà $-\abs{d}\leq d \leq \abs{d}$ nên $-c\leq d\leq c$. Vì chỉ có hữu hạn số nguyên lớn hơn hoặc bằng $-c$ và nhỏ hơn hoặc bằng $c$ và các ước chung $d$ của $a$ và $b$ thỏa mãn $-c\leq d\leq c$ nên tập hợp ước chung của $a$ và $b$ chỉ có hữu hạn phần tử. Do đó, tập hợp ước chung của $a$ và $b$ có phần tử lớn nhất, tức là $a$ và $b$ có ước chung lớn nhất.
 \end{proof}
 
 Ước chung lớn nhất của hai số nguyên $a$ và $b$ được kí hiệu là $\text{gcd}(a, b)$ (gcd là viết tắt của \textit{greatest common divisor}).
 
-Qua chứng minh trên, cùng với việc $1$ là ước của mọi số nguyên, chúng ta rút ra hệ quả: ước chung lớn nhất của hai số nguyên (mà hai số nguyên đó không đồng thời bằng $0$) là một số nguyên dương. Trên đây, chúng ta đã sử dụng nguyên lý thứ tự tốt để chứng minh sự tồn tại của ước chung lớn nhất. Tuy nhiên, với cách này, chúng ta không có thêm thông tin gì về ước chung lớn nhất, cũng như cách tìm ước chung lớn nhất. Thuật toán Euclid mở rộng dưới đây cung cấp một cách tìm ước chung lớn nhất hiệu quả.
+Qua chứng minh trên, cùng với việc $1$ là ước của mọi số nguyên, chúng ta rút ra hệ quả: ước chung lớn nhất của hai số nguyên (mà hai số nguyên đó không đồng thời bằng $0$) là một số nguyên dương. Trong chứng minh trên, chúng ta không có thêm thông tin gì về ước chung lớn nhất, cũng như cách tìm ước chung lớn nhất. Thuật toán Euclid mở rộng dưới đây cung cấp một cách tìm ước chung lớn nhất hiệu quả.
 
 \begin{theorem}[Thuật toán Euclid mở rộng]
-	Cho hai số nguyên $a$ và $b$, trong đó $b\ne 0$. Áp dụng thuật toán chia Euclid để thu được thương $q_{0}$ và dư $r_{0}$: $a = b\cdot q_{0} + r_{0}$.
+	Cho hai số nguyên $a$ và $b$, trong đó $b\ne 0$. Áp dụng thuật toán chia Euclid để thu được thương $q_{0}$ và dư $r_{0}$.
 
 	\begin{enumerate}[label={(\roman*)}]
 		\item Nếu $r_{0} = 0$, thì $\abs{b}$ là ước chung lớn nhất của $a$ và $b$.
@@ -1732,7 +1733,9 @@ Chúng ta sử dụng bổ đề sau ở những lập luận cuối cùng của
 	\begin{enumerate}[label={(\roman*)}]
 		\item $a = b\cdot q_{0}$ thì theo bổ đề trên, $\abs{b}$ là ước chung lớn nhất của $a$ và $b$.
 
-		\item Nếu $r_{0}\ne 0$ thì thuật toán Euclid được áp dụng ít nhất hai lần.
+		\item Có hai điều chúng ta cần chứng minh: (1) Quy trình áp dụng thuật toán chia Euclid chỉ áp dụng được hữu hạn lần (nói cách khác, đến một lúc nào đó chúng ta sẽ nhận được số dư bằng $0$); (2) $\abs{b_{k}}$ là ước chung lớn nhất của $a$ và $b$.
+
+		      Vì $r_{0}\ne 0$ nên thuật toán Euclid được áp dụng ít nhất hai lần.
 
 		      Nếu chúng ta áp dụng thuật toán chia Euclid được $(n+1)$ lần ($n$ là một số nguyên dương) với thương và dư ở lần thứ $(i+1)$ ($i$ là một số nguyên không âm không vượt quá $n$) lần lượt là $q_{i}, r_{i}$. Theo thuật toán chia Euclid, $r_{j} > r_{j+1}$ ($j$ là số nguyên không âm nhỏ hơn $n$). Do đó, sau mỗi lần áp dụng thuật toán chia Euclid, số dư chúng ta thu được sẽ nhỏ hơn số dư ở lần áp dụng trước (nói riêng, ở lần áp dụng đầu tiên, số dư nhỏ hơn $\abs{b}$).
 
@@ -1751,7 +1754,7 @@ Chúng ta sử dụng bổ đề sau ở những lập luận cuối cùng của
 Một trong những kết quả sơ cấp sâu sắc nhất về ước chung lớn nhất là đồng nhất thức B\'{e}zout, hay bổ đề B\'{e}zout.
 
 \begin{theorem}[Đồng nhất thức B\'{e}zout]
-	Nếu $d$ là ước chung lớn nhất của hai số nguyên $a$ và $b$ thì tồn tại các số nguyên $x$ và $y$ sao cho $d = a\cdot x + b\cdot y$. Nói cách khác, ước chung lớn nhất của hai số nguyên là một tổ hợp tuyến tính của hai số nguyên đó.
+	Nếu $g$ là ước chung lớn nhất của hai số nguyên $a$ và $b$ thì tồn tại các số nguyên $x$ và $y$ sao cho $g = a\cdot x + b\cdot y$. Nói cách khác, ước chung lớn nhất của hai số nguyên là một tổ hợp tuyến tính của hai số nguyên đó.
 \end{theorem}
 
 Đồng nhất thức B\'{e}zout có thể được chứng minh theo lối không xây dựng (sử dụng nguyên lý thứ tự tốt) hoặc chứng minh xây dựng (sử dụng thuật toán Euclid mở rộng). Dưới đây chúng tôi trình bày cả hai cách chứng minh.
@@ -1762,9 +1765,9 @@ Một trong những kết quả sơ cấp sâu sắc nhất về ước chung l�
 		S = \{ a\cdot x + b\cdot y \mid \text{$x, y$ là các số nguyên và $a\cdot x + b\cdot y > 0$} \}.
 	\]
 
-	$a$ và $b$ không đồng thời bằng $0$. Không mất tính tổng quát, chúng ta giả sử $b\ne 0$. Khi đó $a\cdot 0 + b\cdot b = b^{2} > 0$ là một phần tử của $S$. Do đó tập hợp $S$ khác rỗng. $S$ là tập hợp con của tập hợp các số nguyên dương nên theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Kí hiệu phần tử nhỏ nhất của $S$ là $d$. Như vậy tồn tại các số nguyên $x, y$ sao cho $d = a\cdot x + b\cdot y$. Chúng ta chứng minh rằng $d$ chính là ước chung lớn nhất của $a$ và $b$.
+	$a$ và $b$ không đồng thời bằng $0$. Không mất tính tổng quát, chúng ta giả sử $b\ne 0$. Khi đó $a\cdot 0 + b\cdot b = b^{2} > 0$ là một phần tử của $S$. Do đó tập hợp $S$ khác rỗng. $S$ là tập hợp con của tập hợp các số nguyên dương nên theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Kí hiệu phần tử nhỏ nhất của $S$ là $g$. Như vậy tồn tại các số nguyên $x, y$ sao cho $g = a\cdot x + b\cdot y$. Chúng ta chứng minh rằng $g$ chính là ước chung lớn nhất của $a$ và $b$.
 
-	Giả sử $c$ là ước chung của $a$ và $b$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $c$ là ước của $a\cdot x + b\cdot y = d$. Theo Định lý~\ref{theorem:bound-of-divisors}, $\abs{c}\leq d$. Mà $c\leq \abs{c}$ nên theo tính chất bắc cầu, $c\leq d$. Do đó $d$ là ước chung lớn nhất của $a$ và $b$.
+	Giả sử $d$ là ước chung của $a$ và $b$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $c$ là ước của $a\cdot x + b\cdot y = g$. Theo Định lý~\ref{theorem:bound-of-divisors}, $\abs{d}\leq g$. Mà $d\leq \abs{d}$ nên theo tính chất bắc cầu, $d\leq g$. Do đó $d$ là ước chung lớn nhất của $a$ và $b$.
 \end{proof}
 
 Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B\'{e}zout cung cấp một thuật toán để tìm hai số nguyên $x$ và $y$ như vậy. Để hiểu rõ chứng minh hơn, chúng ta quay lại với ví dụ tìm ước chung lớn nhất của $1597$ và $986$.
@@ -1813,7 +1816,31 @@ Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B
 
 	Điều này kéo theo $b_{k-i}$ là một tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$. Bên cạnh đó, $a_{k-i} = b_{k-i-1}$ nên $a_{k-i}$ cũng là một tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$. Theo giả thiết quy nạp, $b_{k}$ là một tổ hợp tuyến tính của $a_{k-i}$ và $b_{k-i}$. Cùng với việc cả hai số nguyên $a_{k-i}$ và $b_{k-i}$ đều là các tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$, chúng ta suy ra $b_{k}$ cũng là một tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$.
 
-	Theo nguyên lý quy nạp toán học, $b_{k}$ cũng là một tổ hợp tuyến tính của $a_{k-n}$ và $b_{k-n}$, với mọi số tự nhiên $n$ không vượt quá $k$. Như vậy $b_{k}$ là tổ hợp tuyến tính của $a_{0}$ và $b_{0}$, kéo theo $-b_{k}$ cũng là tổ hợp tuyến tính của $a_{0}$ và $b_{0}$. Do đó $\abs{b_{k}}$ là một tổ hợp tuyến tính của $a_{0}$ và $b_{0}$, tức là $\text{gcd}(a, b)$ là một tổ hợp tuyến tính của $a$ và $b$
+	Theo nguyên lý quy nạp toán học, $b_{k}$ cũng là một tổ hợp tuyến tính của $a_{k-n}$ và $b_{k-n}$, với mọi số tự nhiên $n$ không vượt quá $k$. Như vậy $b_{k}$ là tổ hợp tuyến tính của $a_{0}$ và $b_{0}$, kéo theo $-b_{k}$ cũng là tổ hợp tuyến tính của $a_{0}$ và $b_{0}$. Do đó $\abs{b_{k}}$ là một tổ hợp tuyến tính của $a_{0}$ và $b_{0}$, tức là $\text{gcd}(a, b)$ là một tổ hợp tuyến tính của $a$ và $b$.
+\end{proof}
+
+Chúng ta dành sự quan tâm đặc biệt cho trường hợp ước chung lớn nhất của hai số nguyên bằng $1$.
+\begin{definition}[Nguyên tố cùng nhau]
+	Hai số nguyên được gọi là \textbf{nguyên tố cùng nhau} nếu ước chung lớn nhất của chúng bằng $1$.
+\end{definition}
+
+Với đồng nhất thức B\'{e}zout, chúng ta thu được chứng minh ngắn gọn cho hai định lý sau.
+\begin{theorem}
+	Nếu số nguyên $g$ là ước chung lớn nhất của hai số nguyên $a$ và $b$ thì $a/g$ và $b/g$ nguyên tố cùng nhau.
+\end{theorem}
+
+\begin{proof}
+	Theo đồng nhất thức B\'{e}zout, tồn tại hai số nguyên $x, y$ sao cho $g = a\cdot x + b\cdot y$. Từ đẳng thức trên, cùng với việc $g$ là ước chung của $a$ và $b$, chúng ta suy ra $g = g\cdot ((a/g)\cdot x + (b/g)\cdot y)$, kéo theo $g((a/g)\cdot x + (b/g)\cdot y - 1) = 0$. Vì $g$ là một số nguyên dương nên $(a/g)\cdot x + (b/g)\cdot y = 1$.
+
+	Nếu $d$ là ước chung của $a/g$ và $b/g$ thì theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $d$ là ước của $1 = (a/g)\cdot x + (b/g)\cdot y$. Do đó $d = 1$ hoặc $d = -1$. Vậy $a/g$ và $b/g$ nguyên tố cùng nhau.
+\end{proof}
+
+\begin{theorem}[Bổ đề Euclid]
+	Với ba số nguyên $a, b, c$, nếu $a$ là ước của $b\cdot c$ và $a, b$ nguyên tố cùng nhau thì $a$ là ước của $c$.
+\end{theorem}
+
+\begin{proof}
+	$a$ và $b$ nguyên tố cùng nhau, nên theo đồng nhất thức B\'{e}zout, tồn tại hai số nguyên $x, y$ sao cho $a\cdot x + b\cdot y = 1$. Từ đẳng thức này, chúng ta suy ra $c\cdot (a\cdot x + b\cdot y) = c$, kéo theo $a\cdot (c\cdot x) + (b\cdot c)\cdot y = c$. Do đó $c$ là một tổ hợp tuyến tính của $a$ và $b\cdot c$. Cùng với việc $a$ là ước chung của $a$ và $b\cdot c$, chúng ta suy ra $a$ là ước của $c$.
 \end{proof}
 
 \subsection*{Tập hợp số hữu tỉ}
@@ -1863,6 +1890,25 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 \end{theorem}
 
 \begin{proof}
+	$\frac{a}{b}$ là một số hữu tỉ. Không mất tính tổng quát, chúng ta có thể giả sử $b$ là số nguyên dương. Chúng ta kí hiệu $g$ là ước chung lớn nhất của $a$ và $b$. Chọn $x = a/g$ và $y = b/g$ thì $x, y$ nguyên tố cùng nhau và $\frac{a}{b} = \frac{x}{y}$.
+
+	Giả sử $\frac{m}{n}$ là một phân số tối giản sao cho $\frac{m}{n} = \frac{a}{b}$. Khi đó $\frac{m}{n} = \frac{x}{y}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta suy ra $m\cdot y = n\cdot x$.
+
+	Chúng ta xét hai trường hợp.
+	
+	\textbf{Trường hợp $a = 0$.} $a = 0$ thì $x = 0, y = 1, m = 0, n = 1$. Do đó $x = m$ và $y = n$.
+	
+	\textbf{Trường hợp $a\ne 0$.} $a\ne 0$ thì $x\ne 0$ và $m\ne 0$. Chúng ta áp dụng bổ đề Euclid bốn lần
+	\begin{itemize}
+		\item $m$ là ước của $n\cdot x$ và $m, n$ nguyên tố cùng nhau nên $m$ là ước của $x$.
+		\item $x$ là ước của $m\cdot y$ và $x, y$ nguyên tố cùng nhau nên $x$ là ước của $m$.
+		\item $n$ là ước của $m\cdot y$ và $m, n$ nguyên tố cùng nhau nên $n$ là ước của $y$.
+		\item $y$ là ước của $n\cdot x$ và $x, y$ nguyên tố cùng nhau nên $y$ là ước của $n$.
+	\end{itemize}
+
+	Theo Đinh lý~\ref{theorem:bound-of-divisors}, $\abs{m} \leq \abs{x}, \abs{x} \leq \abs{m}$ và $\abs{n} \leq \abs{y}, \abs{y} \leq \abs{n}$. Theo tính chất phản đối xứng, chúng ta suy ra $\abs{x} = \abs{m}$ và $\abs{y} = \abs{n}$. Vì $y$ và $n$ là hai số nguyên dương nên $\abs{y} = \abs{n}$ kéo theo $y = n$. Bên cạnh đó, $m\cdot y = n\cdot x$ nên $(m - x)\cdot n = 0$, kéo theo $x = m$.
+
+	Vậy với mỗi số hữu tỉ $\frac{a}{b}$, tồn tại duy nhất phân số tối giản $\frac{x}{y}$ sao cho $\frac{a}{b} = \frac{x}{y}$.
 \end{proof}
 
 \subsection*{Các phép toán trên tập hợp số hữu tỉ}
