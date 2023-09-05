@@ -240,7 +240,7 @@ indentAfterHeadings:
     subsection:
         indentAfterThisHeading: 0
         level: 4
-    subsection:
+    subsection*:
         indentAfterThisHeading: 0
         level: 4
     subsubsection:
