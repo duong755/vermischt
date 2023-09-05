@@ -663,7 +663,55 @@ Chúng ta tiến hành định nghĩa tập hợp số mới.
 
 \subsection*{$\dagger$ Các phép toán trên tập hợp số nguyên}
 
-Chúng ta định nghĩa phép cộng hai số nguyên.
+Đầu tiên, chúng ta định nghĩa phép cộng hai phần tử của tập hợp $\mathbb{N}\times\mathbb{N}$.
+\begin{proposition}
+	Phép cộng hai phần tử của tập hợp $\mathbb{N}\times\mathbb{N}$ là một phép toán hai ngôi trên tập hợp $\mathbb{N}\times\mathbb{N}$, được kí hiệu là $+$. Kết quả của phép cộng hai phần tử $(a, b)$ và $(c, d)$ được kí hiệu là $(a, b) + (c, d)$ và được định nghĩa là $(a, b) + (c, d) = (a+c, b+d)$. Nếu $(a_{1}, b_{1}) \sim (a_{2}, b_{2})$ và $(c_{1}, d_{1})\sim (c_{2}, d_{2})$, trong đó $(a_{1}, b_{1})$, $(a_{2}, b_{2})$, $(c_{1}, d_{1})$, $(c_{2}, d_{2})$ là các phần tử của tập hợp $\mathbb{N}\times\mathbb{N}$ thì
+	\[
+		[(a_{1}, b_{1})] + [(c_{1}, d_{1})] = [(a_{2}, b_{2})] + [(c_{2}, d_{2})].
+	\]
+\end{proposition}
+
+\begin{proof}
+	Theo định nghĩa phép cộng hai số nguyên
+	\[
+		\begin{split}
+			[(a_{1}, b_{1})] + [(c_{1}, d_{1})] = [(a_{1}+c_{1}, b_{1}+d_{1})], \\
+			[(a_{2}, b_{2})] + [(c_{2}, d_{2})] = [(a_{2}+c_{2}, b_{2}+d_{2})].
+		\end{split}
+	\]
+
+	Vì $(a_{1}, b_{1}) \sim (a_{2}, b_{2})$ và $(c_{1}, d_{1})\sim (c_{2}, d_{2})$ nên theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta có
+	\[
+		\begin{split}
+			a_{1} + b_{2} = b_{1} + a_{2} \\
+			c_{1} + d_{2} = d_{1} + c_{2}
+		\end{split}
+	\]
+
+	Do đó
+	\begin{align*}
+		(a_{1} + c_{1}) + (b_{2} + d_{2}) & = ((a_{1} + c_{1}) + b_{2}) + d_{2} & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (a_{1} + (c_{1} + b_{2})) + d_{2} & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (a_{1} + (b_{2} + c_{1})) + d_{2} & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		                                  & = ((a_{1} + b_{2}) + c_{1}) + d_{2} & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (a_{1} + b_{2}) + (c_{1} + d_{2}) & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (b_{1} + a_{2}) + (d_{1} + c_{2}) & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		                                  & = ((b_{1} + a_{2}) + d_{1}) + c_{2} & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (b_{1} + (a_{2} + d_{1})) + c_{2} & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (b_{1} + (d_{1}) + a_{2}) + c_{2} & \text{(theo tính chất giao hoán của phép cộng trên $\mathbb{N}$)} \\
+		                                  & = ((b_{1} + d_{1}) + a_{2}) + c_{2} & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}   \\
+		                                  & = (b_{1} + d_{1}) + (a_{2} + c_{2}) & \text{(theo tính chất kết hợp của phép cộng trên $\mathbb{N}$)}
+	\end{align*}
+
+	Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(a_{1}+c_{1}, b_{1}+d_{1}) \sim (a_{2}+c_{2}, b_{2}+d_{2})$, kéo theo
+	\[
+		[(a_{1}+c_{1}, b_{1}+d_{1})] = [(a_{2}+c_{2}, b_{2}+d_{2})].
+	\]
+
+	Do vậy $[(a_{1}, b_{1})] + [(c_{1}, d_{1})] = [(a_{2}, b_{2})] + [(c_{2}, d_{2})]$.
+\end{proof}
+
+Mệnh đề trên là cơ sở để chúng ta định nghĩa phép cộng hai số nguyên.
 \begin{definition}
 	Phép cộng hai số nguyên là một phép toán hai ngôi trên tập hợp số nguyên, kí hiệu là $+$. Với hai số nguyên $[(a, b)]$ và $[(c, d)]$, chúng ta kí hiệu kết quả của phép cộng hai số nguyên này là $[(a, b)] + [(c, d)]$ và
 	\[
@@ -671,8 +719,9 @@ Chúng ta định nghĩa phép cộng hai số nguyên.
 	\]
 \end{definition}
 
-Với định nghĩa phép cộng hai số nguyên, chúng ta có nhận xét: $[(a, 0)] + [(b, 0)] = [(a+b, 0)]$. Phép cộng hai số nguyên vừa thể hiện hai ý tưởng rằng (1) $[(a, 0)]$ \textit{tương ứng} với số tự nhiên $a$, và (2) phép cộng hai số nguyên là một \textit{mở rộng} của phép cộng hai số tự nhiên. Phép cộng hai số nguyên tháo gỡ hạn chế của phép trừ hai số tự nhiên, bởi vì
+Chúng ta cần mệnh đề trên để phép cộng hai số nguyên (được định nghĩa là một lớp tương đương) không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương.
 
+Phép cộng hai số nguyên tháo gỡ hạn chế của phép trừ hai số tự nhiên, bởi vì.
 \begin{proposition}
 	Với mọi số nguyên $[(a, b)], [(c, d)]$, có $[(a, b)] + [(b+c, a+d)] = [(c, d)]$.
 \end{proposition}
@@ -864,15 +913,17 @@ Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn 
 
 \begin{theorem}\label{theorem:positive-negative-nonnegative-integers}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Số nguyên $\alpha$ là số nguyên không âm khi và chỉ khi tồn tại số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
-		\item Số nguyên $\alpha$ là số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+		\item Số nguyên $\alpha$ là số nguyên không âm khi và chỉ khi tồn tại số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$. Ngoài ra, nếu $\alpha$ là số nguyên không âm thì tồn tại duy nhất số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
+		\item Số nguyên $\alpha$ là số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$. Ngoài ra, nếu $\alpha$ là số nguyên âm thì tồn tại duy nhất số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
 		\item Số nguyên $\alpha$ là số nguyên dương khi và chỉ khi $(-\alpha)$ là số nguyên âm.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Mệnh đề này được suy ra trực tiếp từ định nghĩa.
+		\item Mệnh đề ``Số nguyên $\alpha$ là số nguyên không âm khi và chỉ khi tồn tại số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$'' được suy ra trực tiếp từ định nghĩa.
+
+			  Giả sử tồn tại hai số tự nhiên $n, m$ sao cho $\alpha = [(n, 0)] = [(m, 0)]$. $[(n, 0)] = [(m, 0)]$ kéo theo $(n, 0)\sim (m, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $n = m$. Do đó nếu $\alpha$ là số nguyên không âm thì tồn tại duy nhất số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
 		\item ($\Rightarrow$) $\alpha$ là số nguyên âm.
 
 		      Theo định nghĩa số nguyên, tồn tại hai số tự nhiên $a, b$ sao cho $[(a, b)] = \alpha$. Theo định nghĩa số nguyên âm, \textit{không tồn tại số tự nhiên $n$ sao cho $(a, b)\sim (n, 0)$} $-$ Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, điều này tương đương với việc không tồn tại số tự nhiên $n$ sao cho $a = b + n$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta có $a\leq b$, và tồn tại số tự nhiên $c$ sao cho $a + c = b$. Khi đó $[(a, b)] = [(a, a+c)] = [(0, c)]$, đây là điều cần chứng minh.
@@ -882,6 +933,8 @@ Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn 
 		      Giả sử phản chứng rằng $\alpha$ là một số nguyên không âm. Theo phần (i), tồn tại số tự nhiên $m$ sao cho $[(m, 0)] = [(0, n)]$, tức là $(m, 0)\sim (0, n)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $m + n = 0 + 0 = 0$. Theo Định lý~\ref{theorem:addition-and-zero}, $m = n = 0$. Điều này mâu thuẫn với giả thiết $n\ne 0$ nên giả sử phản chứng là sai. Do vậy $\alpha$ là một số nguyên âm.
 
 		      Vậy $\alpha$ là một số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+
+			  Giả sử tồn tại hai số tự nhiên $n, m$ cùng khác $0$ sao cho $\alpha = [(0, n)] = [(0, m)]$. $[(0, n)] = [(0, m)]$ kéo theo $(0, n)\sim (0, m)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $m = n$. Do đó nếu $\alpha$ là số nguyên âm thì tồn tại duy nhất số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
 		\item ($\Rightarrow$) $\alpha$ là số nguyên dương.
 
 		      Theo định nghĩa số nguyên dương, tồn tại số tự nhiên $n$ khác không sao cho $[(n, 0)] = \alpha$. Khi đó, $-\alpha = [(0, n)]$. Vì $n\ne 0$ nên theo phần (ii), $(-\alpha)$ là số nguyên âm.
@@ -894,7 +947,20 @@ Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn 
 	\end{enumerate}
 \end{proof}
 
-Kết hợp định lý trên với quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, chúng ta thu được hệ quả sau.
+Để thuận tiện trong việc phát biểu một số nhận xét, cũng như liên hệ với cách mà chúng ta đã được học về số nguyên trước đây, chúng tôi đưa ra định nghĩa biểu diễn chính tắc.
+\begin{proposition}
+	Theo Định lý~\ref{theorem:positive-negative-nonnegative-integers}
+	\begin{itemize}
+		\item Nếu $\alpha$ là số nguyên không âm thì tồn tại duy nhất số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$. $[(n, 0)]$ được gọi là \textbf{biểu diễn chính tắc} của số nguyên không âm $\alpha$.
+		\item Nếu $\alpha$ là số nguyên âm thì tồn tại duy nhất số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$. $[(0, n)]$ được gọi là \textbf{biểu diễn chính tắc} của số nguyên âm $\alpha$.
+	\end{itemize}
+
+	Hai số nguyên bằng nhau thì có cùng biểu diễn chính tắc.
+\end{proposition}
+
+Việc hai số nguyên bằng nhau thì có cùng biểu diễn chính tắc được rút ra trực tiếp từ định nghĩa số nguyên và định nghĩa biểu diễn chính tắc.
+
+Kết hợp Định lý~\ref{theorem:positive-negative-nonnegative-integers} với quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, chúng ta thu được hệ quả sau.
 
 \begin{corollary}\label{corollary:positivity-negativity-nonnegativity-of-sum-of-integers}
 	\begin{enumerate}[label={(\roman*)}]
@@ -926,6 +992,8 @@ Tiếp theo, chúng ta định nghĩa phép nhân hai số nguyên. Bạn đọc
 		      \]
 	\end{itemize}
 \end{definition}
+
+Phép nhân được định nghĩa như trên không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương vì chúng ta đã sử dụng biểu diễn chính tắc của số nguyên (hai số nguyên bằng nhau thì có cùng biểu diễn chính tắc, và mỗi số nguyên có đúng một biểu diễn chính tắc).
 
 Định nghĩa trên đưa tích hai số nguyên về tích hai số tự nhiên. Do đây là một định nghĩa khá dài và không tự nhiên, chúng tôi đề nghị bạn đọc đối chiếu định nghĩa trên với định nghĩa phép nhân hai số nguyên đã học trong chương trình giáo dục phổ thông.
 
@@ -1667,7 +1735,7 @@ Tổng của hai tổ hợp tuyến tính của hai số nguyên $a$ và $b$ v�
 
 \begin{proof}
 	Kí hiệu số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$ là $c$. Theo Định lý~\ref{theorem:bound-of-divisors}, nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}$ không vượt quá số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$.
-	
+
 	Bằng kí hiệu, phát biểu trên có nghĩa là: Nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}\leq c$. Mà $-\abs{d}\leq d \leq \abs{d}$ nên $-c\leq d\leq c$. Vì chỉ có hữu hạn số nguyên lớn hơn hoặc bằng $-c$ và nhỏ hơn hoặc bằng $c$ và các ước chung $d$ của $a$ và $b$ thỏa mãn $-c\leq d\leq c$ nên tập hợp ước chung của $a$ và $b$ chỉ có hữu hạn phần tử. Do đó, tập hợp ước chung của $a$ và $b$ có phần tử lớn nhất, tức là $a$ và $b$ có ước chung lớn nhất.
 \end{proof}
 
@@ -1845,7 +1913,7 @@ Với đồng nhất thức B\'{e}zout, chúng ta thu được chứng minh ng�
 
 \subsection*{Tập hợp số hữu tỉ}
 
-Thuật toán chia Euclid cho chúng ta một khẳng định chặt chẽ rằng hiện tượng chia hết không phải lúc nào cũng xảy ra. Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ thì tồn tại duy nhất số nguyên $q$ sao cho $a = b\cdot q$. Khi đó chúng ta nói $a$ chia $b$ được $q$, và kí hiệu $a/b = q$. Ngược lại, chúng ta không có được điều tương tự nếu số nguyên $a$ không chia hết cho số nguyên $b\ne 0$. Hiện tượng này giống với việc ban đầu, chúng ta không định nghĩa được phép trừ hai số tự nhiên. Tương tự, chúng ta cũng muốn thực hiện được phép chia hai số nguyên, và để làm điều này, chúng ta xây dựng một tập hợp số mới.
+Thuật toán chia Euclid cho chúng ta một khẳng định chặt chẽ rằng hiện tượng chia hết không phải lúc nào cũng xảy ra. Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ thì tồn tại duy nhất số nguyên $q$ sao cho $a = b\cdot q$. Khi đó chúng ta nói $a$ chia $b$ được $q$, và kí hiệu $a/b = q$. Ngược lại, chúng ta không có được điều tương tự nếu số nguyên $a$ không chia hết cho số nguyên $b\ne 0$. Hiện tượng này giống với việc ban đầu chúng ta không định nghĩa được phép trừ hai số tự nhiên. Tương tự, chúng ta cũng muốn thực hiện được phép chia hai số nguyên, và để làm điều này, chúng ta xây dựng một tập hợp số mới.
 
 Chúng ta cũng định nghĩa tập hợp số mới bằng một quan hệ tương đương. Định nghĩa trong định lý sau đây xuất phát từ nhận xét: Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ và được thương $q$ thì $k\cdot a = (k\cdot b)\cdot q$ với mọi số nguyên $k$.
 
@@ -1866,7 +1934,7 @@ Chúng ta cũng định nghĩa tập hợp số mới bằng một quan hệ tư
 
 	Do đó $(a\cdot y)\cdot (c\cdot d) = (b\cdot x)\cdot (c\cdot d)$, kéo theo $(a\cdot y - b\cdot x)\cdot (c\cdot d) = 0$.
 
-	Nếu $c = 0$ thì $a\cdot d = d\cdot x = 0$. Còn nếu $c\ne 0$ thì $c\cdot d\ne 0$, kéo theo $a\cdot y - b\cdot x = 0$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất bắc cầu.
+	Nếu $c = 0$ thì $a\cdot d = d\cdot x = 0$, kéo theo $a = 0, x = 0$ và $a\cdot y = b\cdot x = 0$. Còn nếu $c\ne 0$ thì $c\cdot d\ne 0$, kéo theo $a\cdot y - b\cdot x = 0$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a, b)\sim (x, y)$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất bắc cầu.
 
 	Như vậy quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ là một quan hệ tương đương.
 \end{proof}
@@ -1895,9 +1963,9 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 	Giả sử $\frac{m}{n}$ là một phân số tối giản sao cho $\frac{m}{n} = \frac{a}{b}$. Khi đó $\frac{m}{n} = \frac{x}{y}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta suy ra $m\cdot y = n\cdot x$.
 
 	Chúng ta xét hai trường hợp.
-	
+
 	\textbf{Trường hợp $a = 0$.} Nếu $a = 0$ thì $x = 0, y = 1, m = 0, n = 1$. Do đó $x = m$ và $y = n$.
-	
+
 	\textbf{Trường hợp $a\ne 0$.} Nếu $a\ne 0$ thì $x\ne 0$ và $m\ne 0$. Chúng ta áp dụng bổ đề Euclid bốn lần
 	\begin{itemize}
 		\item $m$ là ước của $n\cdot x$ và $m, n$ nguyên tố cùng nhau nên $m$ là ước của $x$.
@@ -1914,10 +1982,39 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 \subsection*{$\dagger$ Các phép toán trên tập hợp số hữu tỉ}
 
 \begin{definition}[Phép cộng hai số hữu tỉ]
+	Phép cộng hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $+$. Với hai số hữu tỉ $\frac{a}{b}$ và $\frac{c}{d}$, chúng ta kí hiệu kết quả của phép cộng hai số nguyên này là $\frac{a}{b} + \frac{c}{d}$ và
+	\[
+		\frac{a}{b} + \frac{c}{d} = \frac{a\cdot d + c\cdot b}{b\cdot d}.
+	\]
 \end{definition}
 
 \begin{theorem}
+	Phép cộng số hữu tỉ có các tính chất sau.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép cộng số hữu tỉ có tính chất kết hợp. Tức là, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$, chúng ta có
+		      \[
+			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
+		      \]
+		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có $\frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}$.
+		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có $\frac{a}{b} + \frac{-a}{b} = \frac{-a}{b} + \frac{a}{b} = \frac{0}{1}$.
+		\item Phép cộng số hữu tỉ có tính chất giao hoán. Tức là, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}$, chúng ta có
+		      \[
+			      \frac{a}{b} + \frac{c}{d} = \frac{c}{d} + \frac{a}{b}.
+		      \]
+	\end{enumerate}
 \end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Theo định nghĩa phép cộng số hữu tỉ
+		      \begin{align*}
+			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y}
+		      \end{align*}
+		\item
+		\item
+		\item
+	\end{enumerate}
+\end{proof}
 
 \begin{definition}[Phép trừ hai số hữu tỉ]
 \end{definition}
