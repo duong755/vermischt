@@ -923,7 +923,7 @@ Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn 
 	\begin{enumerate}[label={(\roman*)}]
 		\item Mệnh đề ``Số nguyên $\alpha$ là số nguyên không âm khi và chỉ khi tồn tại số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$'' được suy ra trực tiếp từ định nghĩa.
 
-			  Giả sử tồn tại hai số tự nhiên $n, m$ sao cho $\alpha = [(n, 0)] = [(m, 0)]$. $[(n, 0)] = [(m, 0)]$ kéo theo $(n, 0)\sim (m, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $n = m$. Do đó nếu $\alpha$ là số nguyên không âm thì tồn tại duy nhất số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
+		      Giả sử tồn tại hai số tự nhiên $n, m$ sao cho $\alpha = [(n, 0)] = [(m, 0)]$. $[(n, 0)] = [(m, 0)]$ kéo theo $(n, 0)\sim (m, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $n = m$. Do đó nếu $\alpha$ là số nguyên không âm thì tồn tại duy nhất số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
 		\item ($\Rightarrow$) $\alpha$ là số nguyên âm.
 
 		      Theo định nghĩa số nguyên, tồn tại hai số tự nhiên $a, b$ sao cho $[(a, b)] = \alpha$. Theo định nghĩa số nguyên âm, \textit{không tồn tại số tự nhiên $n$ sao cho $(a, b)\sim (n, 0)$} $-$ Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, điều này tương đương với việc không tồn tại số tự nhiên $n$ sao cho $a = b + n$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta có $a\leq b$, và tồn tại số tự nhiên $c$ sao cho $a + c = b$. Khi đó $[(a, b)] = [(a, a+c)] = [(0, c)]$, đây là điều cần chứng minh.
@@ -934,7 +934,7 @@ Mặc dù hiển nhiên theo định nghĩa hay trực giác, chúng tôi vẫn 
 
 		      Vậy $\alpha$ là một số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
 
-			  Giả sử tồn tại hai số tự nhiên $n, m$ cùng khác $0$ sao cho $\alpha = [(0, n)] = [(0, m)]$. $[(0, n)] = [(0, m)]$ kéo theo $(0, n)\sim (0, m)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $m = n$. Do đó nếu $\alpha$ là số nguyên âm thì tồn tại duy nhất số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+		      Giả sử tồn tại hai số tự nhiên $n, m$ cùng khác $0$ sao cho $\alpha = [(0, n)] = [(0, m)]$. $[(0, n)] = [(0, m)]$ kéo theo $(0, n)\sim (0, m)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $m = n$. Do đó nếu $\alpha$ là số nguyên âm thì tồn tại duy nhất số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
 		\item ($\Rightarrow$) $\alpha$ là số nguyên dương.
 
 		      Theo định nghĩa số nguyên dương, tồn tại số tự nhiên $n$ khác không sao cho $[(n, 0)] = \alpha$. Khi đó, $-\alpha = [(0, n)]$. Vì $n\ne 0$ nên theo phần (ii), $(-\alpha)$ là số nguyên âm.
@@ -1596,14 +1596,16 @@ Một nhược điểm của nguyên lý thứ tự tốt và chứng minh của
 
 \section{Số hữu tỉ}\label{section:rationals}
 
+Để kí hiệu tích hai số nguyên $a$ và $b$ một cách ngắn gọn, thay vì viết $a\cdot b$, chúng ta viết $ab$.
+
 \subsection*{Tính chia hết và phép chia có dư}
 
 Phép nhân hai số tự nhiên và phép nhân hai số nguyên trực tiếp dẫn đến khái niệm chia hết.
 
 \begin{definition}[Tính chia hết]
 	\begin{enumerate}[label={(\roman*)}]
-		\item Số tự nhiên $b$ được gọi là \textit{chia hết} số tự nhiên $a$ nếu tồn tại số tự nhiên $k$ sao cho $a = k\cdot b$. Chúng ta còn nói số tự nhiên $a$ \textit{chia hết cho} số tự nhiên $b$, hay $b$ là ước của $a$, $a$ là bội của $b$, và kí hiệu là $b\mid a$.
-		\item Số nguyên $b$ được gọi là \textit{chia hết} số nguyên $a$ nếu tồn tại số nguyên $k$ sao cho $a = k\cdot b$. Chúng ta còn nói số nguyên $a$ \textit{chia hết cho} số nguyên $b$, hay $b$ là ước của $a$, $a$ là bội của $b$ và kí hiệu là $b\mid a$.
+		\item Số tự nhiên $b$ được gọi là \textit{chia hết} số tự nhiên $a$ nếu tồn tại số tự nhiên $k$ sao cho $a = kb$. Chúng ta còn nói số tự nhiên $a$ \textit{chia hết cho} số tự nhiên $b$, hay $b$ là ước của $a$, $a$ là bội của $b$, và kí hiệu là $b\mid a$.
+		\item Số nguyên $b$ được gọi là \textit{chia hết} số nguyên $a$ nếu tồn tại số nguyên $k$ sao cho $a = kb$. Chúng ta còn nói số nguyên $a$ \textit{chia hết cho} số nguyên $b$, hay $b$ là ước của $a$, $a$ là bội của $b$ và kí hiệu là $b\mid a$.
 	\end{enumerate}
 \end{definition}
 
@@ -1611,7 +1613,7 @@ Từ định nghĩa tính chia hết và các tính chất của số tự nhiê
 \begin{itemize}
 	\item Số $0$ chia hết cho mọi số nguyên, nhưng không phải ước của bất cứ số nguyên khác $0$ nào.
 	\item Số $1$ và $(-1)$ là ước của mọi số nguyên.
-	\item Tập hợp bội của một số nguyên $a$ là tập hợp $\{ b\cdot x \mid \text{với mọi $x$ là số nguyên} \}$.
+	\item Tập hợp bội của một số nguyên $a$ là tập hợp $\{ bx \mid \text{với mọi $x$ là số nguyên} \}$.
 	\item Bội số nguyên dương nhỏ nhất của số nguyên $a\ne 0$ là $a$ nếu $a$ là số nguyên dương, là $-a$ nếu $a$ là số nguyên âm.
 \end{itemize}
 
@@ -1636,7 +1638,7 @@ Một vài tính chất của hàm giá trị tuyệt đối được đưa ra t
 		\item $-\abs{a}\leq a \leq \abs{a}$.
 		\item $\abs{a + b}\leq \abs{a} + \abs{b}$.
 		\item $\abs{a + b} = \abs{a} + \abs{b}$ khi và chỉ khi $a\cdot b\geq 0$.
-		\item $\abs{a\cdot b} = \abs{a}\cdot\abs{b}$.
+		\item $\abs{ab} = \abs{a}\cdot\abs{b}$.
 	\end{enumerate}
 \end{theorem}
 
@@ -1644,7 +1646,7 @@ Các tính chất trên được chứng minh bằng cách chia trường hợp 
 
 Thuật toán chia Euclid là kết quả quan trọng nhất trong mục này.
 \begin{theorem}[Thuật toán chia Euclid]
-	Cho số nguyên $a$ và một số nguyên $b\ne 0$. Tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = b\cdot q + r$ và $0\leq r < \abs{b}$.
+	Cho số nguyên $a$ và một số nguyên $b\ne 0$. Tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = bq + r$ và $0\leq r < \abs{b}$.
 \end{theorem}
 
 Chứng minh dưới đây cho thuật toán chia Euclid sử dụng nguyên lý thứ tự tốt. Ý tưởng là chỉ ra rằng $a$ sẽ nằm giữa hai bội ``liên tiếp'' nào đó của $b$.
@@ -1656,46 +1658,46 @@ Chứng minh dưới đây cho thuật toán chia Euclid sử dụng nguyên lý
 
 	Xét tập hợp $S = \{ x \mid \text{với mọi $x$ là số nguyên sao cho $b\cdot x\leq a$} \}$.
 
-	Chúng ta có nhận xét sau: Với hai số nguyên $x, y$, nếu $x\leq y$ thì $b\cdot x \leq b\cdot y$.
+	Chúng ta có nhận xét sau: Với hai số nguyên $x, y$, nếu $xy$ thì $bx \leq by$.
 	\bigskip
 
-	Nếu $a\geq 0$ thì $S$ khác rỗng, bởi vì $b\cdot (-1) = -b < 0 \leq a$. Bên cạnh đó, nếu $x\in S$ thì $b\cdot x \leq b\cdot a$ (bởi vì $a\leq b\cdot a$). Việc $b\cdot x \leq b\cdot a$ kéo theo $x\leq a$ (bởi nếu ngược lại, chúng ta có $x > a$ thì $b\cdot x > b\cdot a$).
+	Nếu $a\geq 0$ thì $S$ khác rỗng, bởi vì $b\cdot (-1) = -b < 0 \leq a$. Bên cạnh đó, nếu $x\in S$ thì $bx \leq ba$ (bởi vì $a\leq b\cdot a$). Việc $bx \leq ba$ kéo theo $x\leq a$ (bởi nếu ngược lại, chúng ta có $x > a$ thì $bx > ba$).
 
-	Còn nếu $a < 0$ thì $(-a) > 0$. Cùng với việc $-b\leq -1$, chúng ta suy ra $b\cdot a = (-b)\cdot (-a)\leq (-1)\cdot(-a) = a$. Do đó $S$ khác rỗng. Bên cạnh đó, nếu $x\in S$ thì $b\cdot x \leq a\leq b\cdot (-a)$ (vì $(-a) > 0$ và $-1\leq b$). Việc $b\cdot x\leq b\cdot (-a)$ kéo theo $x\leq -a$ (bởi nếu ngược lại, chúng ta có $x > -a$ thì $b\cdot x > b\cdot (-a)$).
+	Còn nếu $a < 0$ thì $(-a) > 0$. Cùng với việc $-b\leq -1$, chúng ta suy ra $ba = (-b)(-a)\leq (-1)(-a) = a$. Do đó $S$ khác rỗng. Bên cạnh đó, nếu $x\in S$ thì $bx \leq a\leq b(-a)$ (vì $(-a) > 0$ và $-1\leq b$). Việc $bx\leq b(-a)$ kéo theo $x\leq -a$ (bởi nếu ngược lại, chúng ta có $x > -a$ thì $bx > b(-a)$).
 
-	Như vậy trong hai tình huống, tập hợp $S$ đều thỏa mãn giả thiết của nguyên lý thứ tự tốt. Theo nguyên lý thứ tự tốt, $S$ chứa phần tử lớn nhất. Chúng ta kí hiệu phần tử lớn nhất đó là $q$. Theo định nghĩa của $q$ thì $q+1$ không phải phần tử của $S$, kéo theo $a < b\cdot (q + 1)$. Do đó
+	Như vậy trong hai tình huống, tập hợp $S$ đều thỏa mãn giả thiết của nguyên lý thứ tự tốt. Theo nguyên lý thứ tự tốt, $S$ chứa phần tử lớn nhất. Chúng ta kí hiệu phần tử lớn nhất đó là $q$. Theo định nghĩa của $q$ thì $q+1$ không phải phần tử của $S$, kéo theo $a < b(q + 1)$. Do đó
 	\[
-		b\cdot q\leq a < b\cdot (q + 1)
+		bq\leq a < b(q + 1)
 	\]
 
-	Vì $b\cdot q\leq a$ nên tồn tại duy nhất số nguyên không âm $r$ sao cho $b\cdot q + r = a$. Vì $a < b\cdot (q + 1)$ nên
+	Vì $bq\leq a$ nên tồn tại duy nhất số nguyên không âm $r$ sao cho $bq + r = a$. Vì $a < b(q + 1)$ nên
 	\[
-		b\cdot q + r < b\cdot (q + 1) + r
+		bq + r < b(q + 1) + r.
 	\]
 
-	Cộng cả hai vế của bất đẳng thức trên với $-b\cdot r$ và $-r$, rồi áp dụng tính chất phân phối của phép nhân với phép cộng số nguyên, chúng ta thu được $r < b$. Cùng với việc $r$ là số nguyên không âm, chúng ta có $0\leq r < b = \abs{b}$.
+	Cộng cả hai vế của bất đẳng thức trên với $(-b)r$ và $(-r)$, rồi áp dụng tính chất phân phối của phép nhân với phép cộng số nguyên, chúng ta thu được $r < b$. Cùng với việc $r$ là số nguyên không âm, chúng ta có $0\leq r < b = \abs{b}$.
 
 	\textbf{Trường hợp 2.} $b < 0$.
 
-	$b < 0$ thì $-b > 0$. Áp dụng trường hợp 1, chúng ta kết luận được rằng tồn tại hai số nguyên $p$ và $r$ sao cho $a = (-b)\cdot p + r$ và $0\leq r < -b$. Chọn $q = -p$, chúng ta có $a = b\cdot q + r$ và $0\leq r < -b = \abs{b}$.
+	$b < 0$ thì $-b > 0$. Áp dụng trường hợp 1, chúng ta kết luận được rằng tồn tại hai số nguyên $p$ và $r$ sao cho $a = (-b)p + r$ và $0\leq r < -b$. Chọn $q = -p$, chúng ta có $a = bq + r$ và $0\leq r < -b = \abs{b}$.
 
 	\bigskip
 
 	Cuối cùng, chúng ta chứng minh tính duy nhất.
 
-	Giả sử tồn tại hai cặp số nguyên $q, r$ và $q', r'$ sao cho $a = b\cdot q + r = b\cdot q' + r'$ và $0\leq r, r' < \abs{b}$. Chúng ta cần chỉ ra $q = q'$ và $r = r'$. Không mất tính tổng quát, chúng ta giả sử $r\leq r'$. Chúng ta có
+	Giả sử tồn tại hai cặp số nguyên $q, r$ và $q', r'$ sao cho $a = bq + r = bq' + r'$ và $0\leq r, r' < \abs{b}$. Chúng ta cần chỉ ra $q = q'$ và $r = r'$. Không mất tính tổng quát, chúng ta giả sử $r\leq r'$. Chúng ta có
 	\begin{align*}
-		0 & = a - a = (b\cdot q' + r') - (b\cdot q + r) \\
-		  & = b\cdot (q' - q) + (r' - r).
+		0 & = a - a = (bq' + r') - (bq + r) \\
+		  & = b(q' - q) + (r' - r).
 	\end{align*}
 
-	Từ đẳng thức trên, chúng ta suy ra $b\cdot (q - q') = r' - r$. Do đó $r' - r$ là bội của $b$. Mà $r' - r$ là một số nguyên không âm và $r' - r\leq r' < \abs{b}$ nên $r' - r = 0$, kéo theo $r = r'$. Vì $r = r'$ nên $b\cdot (q - q') = 0$. Vì $b\ne 0$ nên $q - q' = 0$, kéo theo $q = q'$.
+	Từ đẳng thức trên, chúng ta suy ra $b(q - q') = r' - r$. Do đó $r' - r$ là bội của $b$. Mà $r' - r$ là một số nguyên không âm và $r' - r\leq r' < \abs{b}$ nên $r' - r = 0$, kéo theo $r = r'$. Vì $r = r'$ nên $b(q - q') = 0$. Vì $b\ne 0$ nên $q - q' = 0$, kéo theo $q = q'$.
 
-	Vậy tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = b\cdot q + r$ và $0\leq r < \abs{b}$.
+	Vậy tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = bq + r$ và $0\leq r < \abs{b}$.
 \end{proof}
 
 \begin{definition}[Thương và Dư]
-	Theo thuật toán chia Euclid, với mỗi số nguyên $a$ và số nguyên $b\ne 0$, tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = b\cdot q + r$ và $0\leq r < \abs{b}$. Số nguyên $q$ được gọi là \textbf{thương} của phép chia $a$ cho $b$, số nguyên không âm $r$ được gọi là \textbf{dư} của phép chia $a$ cho $b$.
+	Theo thuật toán chia Euclid, với mỗi số nguyên $a$ và số nguyên $b\ne 0$, tồn tại duy nhất cặp số nguyên $q$ và $r$ sao cho $a = bq + r$ và $0\leq r < \abs{b}$. Số nguyên $q$ được gọi là \textbf{thương} của phép chia $a$ cho $b$, số nguyên không âm $r$ được gọi là \textbf{dư} của phép chia $a$ cho $b$.
 \end{definition}
 
 \subsection*{Ước chung lớn nhất}
@@ -1703,16 +1705,16 @@ Chứng minh dưới đây cho thuật toán chia Euclid sử dụng nguyên lý
 Một số nguyên $d$ được gọi là ước chung của hai số nguyên $a$ và $b$ nếu $d$ là ước của $a$ và $d$ là ước của $b$. Hai số nguyên bất kì luôn có ít nhất hai ước chung, đó là $1$ và $(-1)$. Ước chung của hai số nguyên có tính chất sau.
 
 \begin{theorem}\label{theorem:linear-combination-and-common-divisor}
-	Nếu số nguyên $d$ là ước chung của hai số nguyên $a$ và $b$ thì với mọi số nguyên $x, y$, $d$ là ước của $a\cdot x + b\cdot y$. (Chúng ta gọi số nguyên viết được dưới dạng $a\cdot x + b\cdot y$ là một \textbf{tổ hợp tuyến tính} của $a$ và $b$, trong đó $x, y$ là các số nguyên).
+	Nếu số nguyên $d$ là ước chung của hai số nguyên $a$ và $b$ thì với mọi số nguyên $x, y$, $d$ là ước của $ax + by$. (Chúng ta gọi số nguyên viết được dưới dạng $ax + by$ là một \textbf{tổ hợp tuyến tính} của $a$ và $b$, trong đó $x, y$ là các số nguyên).
 \end{theorem}
 
 \begin{proof}
-	$d$ là ước chung của hai số nguyên $a$ và $b$ thì tồn tại hai số nguyên $m, n$ sao cho $a = d\cdot m$ và $b = d\cdot n$. Theo tính chất kết hợp của phép nhân số nguyên và tính chất phân phối của phép nhân với phép cộng số nguyên
+	$d$ là ước chung của hai số nguyên $a$ và $b$ thì tồn tại hai số nguyên $m, n$ sao cho $a = dm$ và $b = dn$. Theo tính chất kết hợp của phép nhân số nguyên và tính chất phân phối của phép nhân với phép cộng số nguyên
 	\[
-		a\cdot x + b\cdot y = (d\cdot m)\cdot x + (d\cdot n)\cdot y = d\cdot (m\cdot x) + d\cdot (n\cdot y) = d\cdot (m\cdot x + n\cdot y)
+		ax + by = (dm)x + (dn)y = d(mx) + d(ny) = d(mx + ny)
 	\]
 
-	Theo định nghĩa ước, $d$ là ước của $a\cdot x + b\cdot y$.
+	Theo định nghĩa ước, $d$ là ước của $ax + by$.
 \end{proof}
 
 Tổng của hai tổ hợp tuyến tính của hai số nguyên $a$ và $b$ vẫn là một tổ hợp tuyến tính của $a$ và $b$.
@@ -1723,7 +1725,7 @@ Tổng của hai tổ hợp tuyến tính của hai số nguyên $a$ và $b$ v�
 \end{theorem}
 
 \begin{proof}
-	Vì số nguyên $a$ là ước của số nguyên $b\ne 0$ nên theo thuật toán chia Euclid, tồn tại duy nhất số nguyên $q$ sao cho $b = q\cdot a$. Vì $b\ne 0$ nên $a\ne 0$ và $q\ne 0$. Bên cạnh đó, $\abs{b} = \abs{q}\cdot\abs{a}$. Vì $q\ne 0, a\ne 0$ nên $\abs{q}, \abs{a}$ là một số nguyên dương, kéo theo $\abs{q}\geq 1$ và $\abs{q}\cdot\abs{a} \geq \abs{a}$.
+	Vì số nguyên $a$ là ước của số nguyên $b\ne 0$ nên theo thuật toán chia Euclid, tồn tại duy nhất số nguyên $q$ sao cho $b = qa$. Vì $b\ne 0$ nên $a\ne 0$ và $q\ne 0$. Bên cạnh đó, $\abs{b} = \abs{q}\cdot\abs{a}$. Vì $q\ne 0, a\ne 0$ nên $\abs{q}, \abs{a}$ là một số nguyên dương, kéo theo $\abs{q}\geq 1$ và $\abs{q}\cdot\abs{a} \geq \abs{a}$.
 
 	Do vậy $\abs{a}\leq \abs{q}\cdot\abs{a} = \abs{b}$.
 \end{proof}
@@ -1776,7 +1778,7 @@ Chúng ta sử dụng bổ đề sau ở những lập luận cuối cùng của
 \begin{lemma}
 	Cho hai số nguyên $a$ và $b$, trong đó $b\ne 0$. Áp dụng thuật toán chia Euclid để thu được thương $q$ và dư $r$
 	\[
-		a = b\cdot q + r.
+		a = b q + r.
 	\]
 
 	\noindent Khi đó, nếu $b$ và $r$ không đồng thời bằng $0$ thì
@@ -1788,18 +1790,18 @@ Chúng ta sử dụng bổ đề sau ở những lập luận cuối cùng của
 \begin{proof}[Chứng minh bổ đề]
 	Chúng ta xét hai trường hợp.
 
-	\textbf{Trường hợp $r = 0$.} Khi đó $a = b\cdot q$. $b\ne 0$ thì $\abs{b}$ là ước lớn nhất của $b$, và $\abs{b}$ là một ước chung của $a$ và $b$. Do đó, nếu $r = 0$ thì $\abs{b}$ là ước chung lớn nhất của $a$ và $b$. Bên cạnh đó, ước chung lớn nhất của $b$ và $r = 0$ là $\abs{b}$. Như vậy, $\text{gcd}(a, b) = \text{gcd}(b, r) = \abs{b}$.
+	\textbf{Trường hợp $r = 0$.} Khi đó $a = b q$. $b\ne 0$ thì $\abs{b}$ là ước lớn nhất của $b$, và $\abs{b}$ là một ước chung của $a$ và $b$. Do đó, nếu $r = 0$ thì $\abs{b}$ là ước chung lớn nhất của $a$ và $b$. Bên cạnh đó, ước chung lớn nhất của $b$ và $r = 0$ là $\abs{b}$. Như vậy, $\text{gcd}(a, b) = \text{gcd}(b, r) = \abs{b}$.
 
-	\textbf{Trường hợp $r > 0$.} Kí hiệu $g = \text{gcd}(a, b)$. Vì $g$ là ước chung của $a$ và $b$ nên tồn tại hai số nguyên $m, n$ sao cho $a = g\cdot m, b = g\cdot n$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $g$ là ước của $r = a - b\cdot q$. Do đó $g$ là ước chung của $b$ và $r$.
+	\textbf{Trường hợp $r > 0$.} Kí hiệu $g = \text{gcd}(a, b)$. Vì $g$ là ước chung của $a$ và $b$ nên tồn tại hai số nguyên $m, n$ sao cho $a = g m, b = g n$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $g$ là ước của $r = a - b q$. Do đó $g$ là ước chung của $b$ và $r$.
 
-	Giả sử phản chứng rằng $g$ không phải ước chung lớn nhất của $b$ và $r$. Vì $g$ không phải ước chung lớn nhất của $b$ và $r$ nên $\text{gcd}(b, r) = g' > g$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $g'$ là ước của $a = b\cdot q + r$.  Do đó $g'$ là ước chung của $a$ và $b$. Nhưng $g'$ lớn hơn ước chung lớn nhất của $a$ và $b$, đây là một mâu thuẫn với định nghĩa ước chung lớn nhất. Do đó giả sử phản chứng là sai, kéo theo $g = \text{gcd}(b, r)$.
+	Giả sử phản chứng rằng $g$ không phải ước chung lớn nhất của $b$ và $r$. Vì $g$ không phải ước chung lớn nhất của $b$ và $r$ nên $\text{gcd}(b, r) = g' > g$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $g'$ là ước của $a = b q + r$.  Do đó $g'$ là ước chung của $a$ và $b$. Nhưng $g'$ lớn hơn ước chung lớn nhất của $a$ và $b$, đây là một mâu thuẫn với định nghĩa ước chung lớn nhất. Do đó giả sử phản chứng là sai, kéo theo $g = \text{gcd}(b, r)$.
 
 	Như vậy, trong tất cả các trường hợp trên, chúng ta đều có $\text{gcd}(a, b) = \text{gcd}(b, r)$.
 \end{proof}
 
 \begin{proof}[Chứng minh thuật toán Euclid mở rộng]
 	\begin{enumerate}[label={(\roman*)}]
-		\item $a = b\cdot q_{0}$ thì theo bổ đề trên, $\abs{b}$ là ước chung lớn nhất của $a$ và $b$.
+		\item $a = b q_{0}$ thì theo bổ đề trên, $\abs{b}$ là ước chung lớn nhất của $a$ và $b$.
 
 		\item Có hai điều chúng ta cần chứng minh: (1) Quy trình áp dụng thuật toán chia Euclid chỉ áp dụng được hữu hạn lần (nói cách khác, đến một lúc nào đó chúng ta sẽ nhận được số dư bằng $0$); (2) $\abs{b_{k}}$ là ước chung lớn nhất của $a$ và $b$.
 
@@ -1822,7 +1824,7 @@ Chúng ta sử dụng bổ đề sau ở những lập luận cuối cùng của
 Một trong những kết quả sơ cấp sâu sắc nhất về ước chung lớn nhất là đồng nhất thức B\'{e}zout, hay bổ đề B\'{e}zout.
 
 \begin{theorem}[Đồng nhất thức B\'{e}zout]
-	Nếu $g$ là ước chung lớn nhất của hai số nguyên $a$ và $b$ thì tồn tại các số nguyên $x$ và $y$ sao cho $g = a\cdot x + b\cdot y$. Nói cách khác, ước chung lớn nhất của hai số nguyên là một tổ hợp tuyến tính của hai số nguyên đó.
+	Nếu $g$ là ước chung lớn nhất của hai số nguyên $a$ và $b$ thì tồn tại các số nguyên $x$ và $y$ sao cho $g = a x + b y$. Nói cách khác, ước chung lớn nhất của hai số nguyên là một tổ hợp tuyến tính của hai số nguyên đó.
 \end{theorem}
 
 Đồng nhất thức B\'{e}zout có thể được chứng minh theo lối không xây dựng (sử dụng nguyên lý thứ tự tốt) hoặc chứng minh xây dựng (sử dụng thuật toán Euclid mở rộng). Dưới đây chúng tôi trình bày cả hai cách chứng minh.
@@ -1830,18 +1832,18 @@ Một trong những kết quả sơ cấp sâu sắc nhất về ước chung l�
 \begin{proof}[Chứng minh đồng nhất thức B\'{e}zout với nguyên lý thứ tự tốt]
 	Chúng ta xét tập hợp sau
 	\[
-		S = \{ a\cdot x + b\cdot y \mid \text{$x, y$ là các số nguyên và $a\cdot x + b\cdot y > 0$} \}.
+		S = \{ a x + b y \mid \text{$x, y$ là các số nguyên và $a x + b y > 0$} \}.
 	\]
 
-	$a$ và $b$ không đồng thời bằng $0$. Không mất tính tổng quát, chúng ta giả sử $b\ne 0$. Khi đó $a\cdot 0 + b\cdot b = b^{2} > 0$ là một phần tử của $S$. Do đó tập hợp $S$ khác rỗng. $S$ là tập hợp con của tập hợp các số nguyên dương nên theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Kí hiệu phần tử nhỏ nhất của $S$ là $g$. Như vậy tồn tại các số nguyên $x, y$ sao cho $g = a\cdot x + b\cdot y$. Chúng ta chứng minh rằng $g$ chính là ước chung lớn nhất của $a$ và $b$.
+	$a$ và $b$ không đồng thời bằng $0$. Không mất tính tổng quát, chúng ta giả sử $b\ne 0$. Khi đó $a\cdot 0 + b\cdot b = b\cdot b > 0$ là một phần tử của $S$. Do đó tập hợp $S$ khác rỗng. $S$ là tập hợp con của tập hợp các số nguyên dương nên theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Kí hiệu phần tử nhỏ nhất của $S$ là $g$. Như vậy tồn tại các số nguyên $x, y$ sao cho $g = a x + b y$. Chúng ta chứng minh rằng $g$ chính là ước chung lớn nhất của $a$ và $b$.
 
-	Giả sử $d$ là ước chung của $a$ và $b$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $c$ là ước của $a\cdot x + b\cdot y = g$. Theo Định lý~\ref{theorem:bound-of-divisors}, $\abs{d}\leq g$. Mà $d\leq \abs{d}$ nên theo tính chất bắc cầu, $d\leq g$. Do đó $d$ là ước chung lớn nhất của $a$ và $b$.
+	Giả sử $d$ là ước chung của $a$ và $b$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $c$ là ước của $a x + b y = g$. Theo Định lý~\ref{theorem:bound-of-divisors}, $\abs{d}\leq g$. Mà $d\leq \abs{d}$ nên theo tính chất bắc cầu, $d\leq g$. Do đó $d$ là ước chung lớn nhất của $a$ và $b$.
 \end{proof}
 
 Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B\'{e}zout cung cấp một thuật toán để tìm hai số nguyên $x$ và $y$ như vậy. Để hiểu rõ chứng minh hơn, chúng ta quay lại với ví dụ tìm ước chung lớn nhất của $1597$ và $986$.
 
 \begin{example}
-	Để tìm hai số nguyên $x$ và $y$ sao cho $1597\cdot x + 986\cdot y = \text{gcd}(1597, 986)$, chúng ta lần ngược theo quy trình áp dụng thuật toán Euclid mở rộng.
+	Để tìm hai số nguyên $x$ và $y$ sao cho $1597 x + 986 y = \text{gcd}(1597, 986)$, chúng ta lần ngược theo quy trình áp dụng thuật toán Euclid mở rộng.
 	\begin{align*}
 		\text{gcd}(1597, 986) & = 1 = 13 + (-4)\cdot 3                                                               \\
 		                      & = 13 + (-4)\cdot (42 + (-3)\cdot 13) = (-4)\cdot 42 + 13\cdot 13                     \\
@@ -1865,21 +1867,21 @@ Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B
 
 	Để thuận tiện cho việc theo dõi chứng minh, chúng tôi liệt kê một cách tượng trưng các bước áp dụng thuật toán Euclid mở rộng.
 	\begin{align*}
-		a_{0}   & = b_{0}\cdot q_{0} + r_{0}       & a_{1} = b_{0}, b_{1} = r_{0}     \\
-		a_{1}   & = b_{1}\cdot q_{1} + r_{1}       & a_{2} = b_{1}, b_{2} = r_{1}     \\
-		a_{2}   & = b_{2}\cdot q_{2} + r_{2}       & a_{3} = b_{2}, b_{3} = r_{2}     \\
+		a_{0}   & = b_{0} q_{0} + r_{0}       & a_{1} = b_{0}, b_{1} = r_{0}     \\
+		a_{1}   & = b_{1} q_{1} + r_{1}       & a_{2} = b_{1}, b_{2} = r_{1}     \\
+		a_{2}   & = b_{2} q_{2} + r_{2}       & a_{3} = b_{2}, b_{3} = r_{2}     \\
 		        & \ldots                                                              \\
-		a_{k-1} & = b_{k-1}\cdot q_{k-1} + r_{k-1} & a_{k} = b_{k-1}, b_{k} = r_{k-1} \\
-		a_{k}   & = b_{k}\cdot q_{k}.
+		a_{k-1} & = b_{k-1} q_{k-1} + r_{k-1} & a_{k} = b_{k-1}, b_{k} = r_{k-1} \\
+		a_{k}   & = b_{k} q_{k}.
 	\end{align*}
 
 	Chúng ta sẽ chứng minh bằng nguyên lý quy nạp toán học (hữu hạn) rằng $b_{k}$ là một tổ hợp tuyến tính của $a_{k-n}$ và $b_{k-n}$, trong đó $n$ là số tự nhiên không vượt quá $n$.
 
-	Khi $n = 0$, vì $a_{k} = b_{k}\cdot q_{k}$ nên $b_{k} = a_{k}\cdot 1 + b_{k}\cdot (1 - q_{k})$.  Do đó $b_{k}$ là một tổ hợp tuyến tính của $a_{k}$ và $b_{k}$. Nếu $k = 0$ thì chứng minh quy nạp hữu hạn đã hoàn tất vì chỉ có một trường hợp. Còn nếu $k > 0$, chúng ta tiếp tục với bước quy nạp.
+	Khi $n = 0$, vì $a_{k} = b_{k} q_{k}$ nên $b_{k} = a_{k} 1 + b_{k} (1 - q_{k})$.  Do đó $b_{k}$ là một tổ hợp tuyến tính của $a_{k}$ và $b_{k}$. Nếu $k = 0$ thì chứng minh quy nạp hữu hạn đã hoàn tất vì chỉ có một trường hợp. Còn nếu $k > 0$, chúng ta tiếp tục với bước quy nạp.
 
 	Giả sử với $n = i$ (trong đó $i$ là số tự nhiên \textit{nhỏ hơn} $k$) có $b_{k}$ là tổ hợp tuyến tính của $a_{k-i}$ và $b_{k-i}$. Theo thuật toán chia Euclid, chúng ta có
 	\[
-		b_{k-i} = r_{k-i-1} = a_{k-i-1}\cdot 1 - b_{k-i-1}\cdot q_{k-i-1}.
+		b_{k-i} = r_{k-i-1} = a_{k-i-1} 1 - b_{k-i-1} q_{k-i-1}.
 	\]
 
 	Điều này kéo theo $b_{k-i}$ là một tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$. Bên cạnh đó, $a_{k-i} = b_{k-i-1}$ nên $a_{k-i}$ cũng là một tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$. Theo giả thiết quy nạp, $b_{k}$ là một tổ hợp tuyến tính của $a_{k-i}$ và $b_{k-i}$. Cùng với việc cả hai số nguyên $a_{k-i}$ và $b_{k-i}$ đều là các tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$, chúng ta suy ra $b_{k}$ cũng là một tổ hợp tuyến tính của $a_{k-i-1}$ và $b_{k-i-1}$.
@@ -1898,43 +1900,43 @@ Với đồng nhất thức B\'{e}zout, chúng ta thu được chứng minh ng�
 \end{theorem}
 
 \begin{proof}
-	Theo đồng nhất thức B\'{e}zout, tồn tại hai số nguyên $x, y$ sao cho $g = a\cdot x + b\cdot y$. Từ đẳng thức trên, cùng với việc $g$ là ước chung của $a$ và $b$, chúng ta suy ra $g = g\cdot ((a/g)\cdot x + (b/g)\cdot y)$, kéo theo $g((a/g)\cdot x + (b/g)\cdot y - 1) = 0$. Vì $g$ là một số nguyên dương nên $(a/g)\cdot x + (b/g)\cdot y = 1$.
+	Theo đồng nhất thức B\'{e}zout, tồn tại hai số nguyên $x, y$ sao cho $g = a x + b y$. Từ đẳng thức trên, cùng với việc $g$ là ước chung của $a$ và $b$, chúng ta suy ra $g = g ((a/g) x + (b/g) y)$, kéo theo $g((a/g) x + (b/g) y - 1) = 0$. Vì $g$ là một số nguyên dương nên $(a/g) x + (b/g) y = 1$.
 
-	Nếu $d$ là ước chung của $a/g$ và $b/g$ thì theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $d$ là ước của $1 = (a/g)\cdot x + (b/g)\cdot y$. Do đó $d = 1$ hoặc $d = -1$. Vậy $a/g$ và $b/g$ nguyên tố cùng nhau.
+	Nếu $d$ là ước chung của $a/g$ và $b/g$ thì theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $d$ là ước của $1 = (a/g) x + (b/g) y$. Do đó $d = 1$ hoặc $d = -1$. Vậy $a/g$ và $b/g$ nguyên tố cùng nhau.
 \end{proof}
 
 \begin{theorem}[Bổ đề Euclid]
-	Với ba số nguyên $a, b, c$, nếu $a$ là ước của $b\cdot c$ và $a, b$ nguyên tố cùng nhau thì $a$ là ước của $c$.
+	Với ba số nguyên $a, b, c$, nếu $a$ là ước của $b c$ và $a, b$ nguyên tố cùng nhau thì $a$ là ước của $c$.
 \end{theorem}
 
 \begin{proof}
-	$a$ và $b$ nguyên tố cùng nhau, nên theo đồng nhất thức B\'{e}zout, tồn tại hai số nguyên $x, y$ sao cho $a\cdot x + b\cdot y = 1$. Từ đẳng thức này, chúng ta suy ra $c\cdot (a\cdot x + b\cdot y) = c$, kéo theo $a\cdot (c\cdot x) + (b\cdot c)\cdot y = c$. Do đó $c$ là một tổ hợp tuyến tính của $a$ và $b\cdot c$. Cùng với việc $a$ là ước chung của $a$ và $b\cdot c$, chúng ta suy ra $a$ là ước của $c$.
+	$a$ và $b$ nguyên tố cùng nhau, nên theo đồng nhất thức B\'{e}zout, tồn tại hai số nguyên $x, y$ sao cho $a x + b y = 1$. Từ đẳng thức này, chúng ta suy ra $c (a x + b y) = c$, kéo theo $a (c x) + (b c) y = c$. Do đó $c$ là một tổ hợp tuyến tính của $a$ và $b c$. Cùng với việc $a$ là ước chung của $a$ và $b c$, chúng ta suy ra $a$ là ước của $c$.
 \end{proof}
 
 \subsection*{Tập hợp số hữu tỉ}
 
-Thuật toán chia Euclid cho chúng ta một khẳng định chặt chẽ rằng hiện tượng chia hết không phải lúc nào cũng xảy ra. Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ thì tồn tại duy nhất số nguyên $q$ sao cho $a = b\cdot q$. Khi đó chúng ta nói $a$ chia $b$ được $q$, và kí hiệu $a/b = q$. Ngược lại, chúng ta không có được điều tương tự nếu số nguyên $a$ không chia hết cho số nguyên $b\ne 0$. Hiện tượng này giống với việc ban đầu chúng ta không định nghĩa được phép trừ hai số tự nhiên. Tương tự, chúng ta cũng muốn thực hiện được phép chia hai số nguyên, và để làm điều này, chúng ta xây dựng một tập hợp số mới.
+Thuật toán chia Euclid cho chúng ta một khẳng định chặt chẽ rằng hiện tượng chia hết không phải lúc nào cũng xảy ra. Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ thì tồn tại duy nhất số nguyên $q$ sao cho $a = b q$. Khi đó chúng ta nói $a$ chia $b$ được $q$, và kí hiệu $a/b = q$. Ngược lại, chúng ta không có được điều tương tự nếu số nguyên $a$ không chia hết cho số nguyên $b\ne 0$. Hiện tượng này giống với việc ban đầu chúng ta không định nghĩa được phép trừ hai số tự nhiên. Tương tự, chúng ta cũng muốn thực hiện được phép chia hai số nguyên, và để làm điều này, chúng ta xây dựng một tập hợp số mới.
 
-Chúng ta cũng định nghĩa tập hợp số mới bằng một quan hệ tương đương. Định nghĩa trong định lý sau đây xuất phát từ nhận xét: Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ và được thương $q$ thì $k\cdot a = (k\cdot b)\cdot q$ với mọi số nguyên $k$.
+Chúng ta cũng định nghĩa tập hợp số mới bằng một quan hệ tương đương. Định nghĩa trong định lý sau đây xuất phát từ nhận xét: Nếu số nguyên $a$ chia hết cho số nguyên $b\ne 0$ và được thương $q$ thì $k a = (k b) q$ với mọi số nguyên $k$.
 
 \begin{theorem}
-	Hai phần tử $(a, b)$ và $(c, d)$ của tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a\cdot d - b\cdot c = 0$ (hay $a\cdot d = b\cdot c$). Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ là một quan hệ tương đương.
+	Hai phần tử $(a, b)$ và $(c, d)$ của tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a d - b c = 0$ (hay $a d = b c$). Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ là một quan hệ tương đương.
 \end{theorem}
 
 \begin{proof}
-	Với mỗi phần tử $(a, b)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, chúng ta luôn có $a\cdot b = b\cdot a$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, chúng ta suy ra $(a, b)\sim (a, b)$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất phản xạ.
+	Với mỗi phần tử $(a, b)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, chúng ta luôn có $a b = b a$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, chúng ta suy ra $(a, b)\sim (a, b)$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất phản xạ.
 
-	Với mỗi cặp phần tử $(a, b)$ và $(c, d)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a, b)\sim (c, d)$ khi và chỉ khi $a\cdot d = b\cdot c$. Theo tính chất giao hoán của phép nhân hai số nguyên, $a\cdot d = b\cdot c$ khi và chỉ khi $c\cdot b = d\cdot a$.  Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(c, d)\sim (a, b)$ khi và chỉ khi $c\cdot b = d\cdot a$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất đối xứng.
+	Với mỗi cặp phần tử $(a, b)$ và $(c, d)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a, b)\sim (c, d)$ khi và chỉ khi $a d = b c$. Theo tính chất giao hoán của phép nhân hai số nguyên, $a d = b c$ khi và chỉ khi $c b = d a$.  Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(c, d)\sim (a, b)$ khi và chỉ khi $c b = d a$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất đối xứng.
 
-	Nếu các phần tử $(a, b), (c, d)$, và $(x, y)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ thỏa mãn $(a, b)\sim (c, d)$ và $(c, d)\sim (x, y)$ thì $a\cdot d = b\cdot c$ và $c\cdot y = d\cdot x$. Từ hai đẳng thức này, cùng tính chất kết hợp và giao hoán của phép nhân số nguyên, chúng ta suy ra
+	Nếu các phần tử $(a, b), (c, d)$, và $(x, y)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ thỏa mãn $(a, b)\sim (c, d)$ và $(c, d)\sim (x, y)$ thì $a d = b c$ và $c y = d x$. Từ hai đẳng thức này, cùng tính chất kết hợp và giao hoán của phép nhân số nguyên, chúng ta suy ra
 	\begin{align*}
-		(a\cdot y)\cdot (c\cdot d) & = (a\cdot d)\cdot (c\cdot y)                              \\
-		(b\cdot x)\cdot (c\cdot d) & = (b\cdot c)\cdot (d\cdot x) = (a\cdot d)\cdot (c\cdot y)
+		(a y) (c d) & = (a d) (c y)                              \\
+		(b x) (c d) & = (b c) (d x) = (a d) (c y)
 	\end{align*}
 
-	Do đó $(a\cdot y)\cdot (c\cdot d) = (b\cdot x)\cdot (c\cdot d)$, kéo theo $(a\cdot y - b\cdot x)\cdot (c\cdot d) = 0$.
+	Do đó $(a y) (c d) = (b x) (c d)$, kéo theo $(a y - b x) (c d) = 0$.
 
-	Nếu $c = 0$ thì $a\cdot d = d\cdot x = 0$, kéo theo $a = 0, x = 0$ và $a\cdot y = b\cdot x = 0$. Còn nếu $c\ne 0$ thì $c\cdot d\ne 0$, kéo theo $a\cdot y - b\cdot x = 0$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a, b)\sim (x, y)$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất bắc cầu.
+	Nếu $c = 0$ thì $a d = d x = 0$, kéo theo $a = 0, x = 0$ và $a y = b x = 0$. Còn nếu $c\ne 0$ thì $c d\ne 0$, kéo theo $a y - b x = 0$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a, b)\sim (x, y)$. Do đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ có tính chất bắc cầu.
 
 	Như vậy quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ là một quan hệ tương đương.
 \end{proof}
@@ -1953,14 +1955,19 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 	\end{align*}
 \end{example}
 
+Từ định nghĩa số hữu tỉ, chúng ta có định lý sau, thường được gọi là tính chất cơ bản của phân số.
+\begin{theorem}
+	Nếu $a, b, c$ là các số nguyên và $b, c$ khác $0$ thì $\frac{a}{b} = \frac{ac}{bc}$.
+\end{theorem}
+
 \begin{theorem}[Phân số tối giản]
-	Một phân số được gọi là \textbf{phân số tối giản} khi và chỉ khi tử số và mẫu số nguyên tố cùng nhau và mẫu số là một số nguyên dương. Với mỗi số hữu tỉ $\frac{a}{b}$, tồn tại duy nhất phân số tối giản $\frac{x}{y}$ sao cho $\frac{a}{b} = \frac{x}{y}$.
+	Một phân số được gọi là \textbf{phân số tối giản} khi và chỉ khi tử số và mẫu số là nguyên tố cùng nhau và mẫu số là một số nguyên dương. Với mỗi số hữu tỉ $\frac{a}{b}$, tồn tại duy nhất phân số tối giản $\frac{x}{y}$ sao cho $\frac{a}{b} = \frac{x}{y}$.
 \end{theorem}
 
 \begin{proof}
 	$\frac{a}{b}$ là một số hữu tỉ. Không mất tính tổng quát, chúng ta có thể giả sử $b$ là số nguyên dương. Chúng ta kí hiệu $g$ là ước chung lớn nhất của $a$ và $b$. Chọn $x = a/g$ và $y = b/g$ thì $x, y$ nguyên tố cùng nhau và $\frac{a}{b} = \frac{x}{y}$.
 
-	Giả sử $\frac{m}{n}$ là một phân số tối giản sao cho $\frac{m}{n} = \frac{a}{b}$. Khi đó $\frac{m}{n} = \frac{x}{y}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta suy ra $m\cdot y = n\cdot x$.
+	Giả sử $\frac{m}{n}$ là một phân số tối giản sao cho $\frac{m}{n} = \frac{a}{b}$. Khi đó $\frac{m}{n} = \frac{x}{y}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta suy ra $m y = n x$.
 
 	Chúng ta xét hai trường hợp.
 
@@ -1968,13 +1975,13 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 
 	\textbf{Trường hợp $a\ne 0$.} Nếu $a\ne 0$ thì $x\ne 0$ và $m\ne 0$. Chúng ta áp dụng bổ đề Euclid bốn lần
 	\begin{itemize}
-		\item $m$ là ước của $n\cdot x$ và $m, n$ nguyên tố cùng nhau nên $m$ là ước của $x$.
-		\item $x$ là ước của $m\cdot y$ và $x, y$ nguyên tố cùng nhau nên $x$ là ước của $m$.
-		\item $n$ là ước của $m\cdot y$ và $m, n$ nguyên tố cùng nhau nên $n$ là ước của $y$.
-		\item $y$ là ước của $n\cdot x$ và $x, y$ nguyên tố cùng nhau nên $y$ là ước của $n$.
+		\item $m$ là ước của $n x$ và $m, n$ nguyên tố cùng nhau nên $m$ là ước của $x$.
+		\item $x$ là ước của $m y$ và $x, y$ nguyên tố cùng nhau nên $x$ là ước của $m$.
+		\item $n$ là ước của $m y$ và $m, n$ nguyên tố cùng nhau nên $n$ là ước của $y$.
+		\item $y$ là ước của $n x$ và $x, y$ nguyên tố cùng nhau nên $y$ là ước của $n$.
 	\end{itemize}
 
-	Theo Đinh lý~\ref{theorem:bound-of-divisors}, $\abs{m} \leq \abs{x}, \abs{x} \leq \abs{m}$ và $\abs{n} \leq \abs{y}, \abs{y} \leq \abs{n}$. Theo tính chất phản đối xứng, chúng ta suy ra $\abs{x} = \abs{m}$ và $\abs{y} = \abs{n}$. Vì $y$ và $n$ là hai số nguyên dương nên $\abs{y} = \abs{n}$ kéo theo $y = n$. Bên cạnh đó, $m\cdot y = n\cdot x$ nên $(m - x)\cdot n = 0$, kéo theo $x = m$.
+	Theo Đinh lý~\ref{theorem:bound-of-divisors}, $\abs{m} \leq \abs{x}, \abs{x} \leq \abs{m}$ và $\abs{n} \leq \abs{y}, \abs{y} \leq \abs{n}$. Theo tính chất phản đối xứng, chúng ta suy ra $\abs{x} = \abs{m}$ và $\abs{y} = \abs{n}$. Vì $y$ và $n$ là hai số nguyên dương nên $\abs{y} = \abs{n}$ kéo theo $y = n$. Bên cạnh đó, $m y = n x$ nên $(m - x) n = 0$, kéo theo $x = m$.
 
 	Vậy với mỗi số hữu tỉ $\frac{a}{b}$, tồn tại duy nhất phân số tối giản $\frac{x}{y}$ sao cho $\frac{a}{b} = \frac{x}{y}$.
 \end{proof}
@@ -1984,19 +1991,75 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 \begin{definition}[Phép cộng hai số hữu tỉ]
 	Phép cộng hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $+$. Với hai số hữu tỉ $\frac{a}{b}$ và $\frac{c}{d}$, chúng ta kí hiệu kết quả của phép cộng hai số nguyên này là $\frac{a}{b} + \frac{c}{d}$ và
 	\[
-		\frac{a}{b} + \frac{c}{d} = \frac{a\cdot d + c\cdot b}{b\cdot d}.
+		\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{b d}.
 	\]
 \end{definition}
 
-\begin{theorem}
+Giống như với phép cộng hai số nguyên, chúng ta cũng cần chỉ ra định nghĩa phép cộng hai số hữu tỉ không phụ thuộc vào cách chọn đại diện của lớp tương đương. Điều này được khẳng định bởi mệnh đề dưới đây.
+\begin{proposition}
+	Nếu các số hữu tỉ $\frac{a_{1}}{b_{1}}, \frac{c_{1}}{d_{1}}, \frac{a_{2}}{b_{2}}, \frac{c_{2}}{d_{2}}$ thỏa mãn $\frac{a_{1}}{b_{1}} = \frac{a_{2}}{b_{2}}$ và $\frac{c_{1}}{d_{1}} = \frac{c_{2}}{d_{2}}$ thì
+	\[
+		\frac{a_{1}}{b_{1}} + \frac{c_{1}}{d_{1}} = \frac{a_{2}}{b_{2}} + \frac{c_{2}}{d_{2}}.
+	\]
+\end{proposition}
+
+\begin{proof}
+	Theo định nghĩa phép cộng hai số hữu tỉ, chúng ta có
+	\[
+		\begin{split}
+			\frac{a_{1}}{b_{1}} + \frac{c_{1}}{d_{1}} = \frac{a_{1} d_{1} + b_{1} c_{1}}{b_{1} d_{1}}, \\
+			\frac{a_{2}}{b_{2}} + \frac{c_{2}}{d_{2}} = \frac{a_{2} d_{2} + b_{2} c_{2}}{b_{2} d_{2}}.
+		\end{split}
+	\]
+
+	Chúng ta sẽ chứng minh $\frac{a_{1} d_{1} + b_{1} c_{1}}{b_{1} d_{1}} = \frac{a_{2} d_{2} + b_{2} c_{2}}{b_{2} d_{2}}$.
+	\begin{align*}
+		    & (a_{1} d_{1} + b_{1} c_{1}) (b_{2} d_{2})                                                                                                                        \\
+		=\  & (a_{1} d_{1}) (b_{2} d_{2}) + (b_{1} c_{1}) (b_{2} d_{2}) & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}                    \\
+		=\  & (a_{1} b_{2}) (d_{1} d_{2}) + (c_{1} d_{2}) (b_{1} b_{2}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                       \\
+		=\  & (b_{1} a_{2}) (d_{1} d_{2}) + (d_{1} c_{2}) (b_{1} b_{2}) & \text{(vì $a_{1} b_{2} = b_{1} a_{2}$ và $c_{1} d_{2} = d_{1} c_{2}$)} \\
+		=\  & (a_{2} d_{2}) (b_{1} d_{1}) + (b_{2} c_{2}) (b_{1} d_{1}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                       \\
+		=\  & (a_{2} d_{2} + b_{2} c_{2}) (b_{1} d_{1})                           & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}
+	\end{align*}
+
+	Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a_{1} d_{1} + b_{1} c_{1}, b_{1} d_{1}) \sim (a_{2} d_{2} + b_{2} c_{2}, b_{2} d_{2})$. Do đó
+	\[
+		\frac{a_{1} d_{1} + c_{1} b_{1}}{b_{1} d_{1}} = \frac{a_{2} d_{2} + c_{2} b_{2}}{b_{2} d_{2}}.
+	\]
+
+	Vậy
+	\[
+		\frac{a_{1}}{b_{1}} + \frac{c_{1}}{d_{1}} = \frac{a_{2}}{b_{2}} + \frac{c_{2}}{d_{2}}.\qedhere
+	\]
+\end{proof}
+
+Trong trường hợp phân số của hai số hữu tỉ có cùng mẫu số, chúng ta có mệnh đề sau.
+\begin{proposition}\label{proposition:same-denominator}
+	$\frac{a}{b}$ và $\frac{c}{b}$ là hai số hữu tỉ thì $\frac{a}{b} + \frac{c}{b} = \frac{a + c}{b}$.
+\end{proposition}
+
+\begin{proof}
+	Theo định nghĩa phép cộng số hữu tỉ và tính chất giao hoán, phân phối của phép nhân với phép cộng số nguyên
+	\begin{align*}
+		\frac{a}{b} + \frac{c}{b} = \frac{ab + bc}{bb} = \frac{ab + cb}{bb} = \frac{(a + c)b}{bb} = \frac{a + c}{b}.
+	\end{align*}
+\end{proof}
+
+\begin{theorem}\label{theorem:property-of-rational-numbers-addition}
 	Phép cộng số hữu tỉ có các tính chất sau.
 	\begin{enumerate}[label={(\roman*)}]
 		\item Phép cộng số hữu tỉ có tính chất kết hợp. Tức là, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$, chúng ta có
 		      \[
 			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
 		      \]
-		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có $\frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}$.
-		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có $\frac{a}{b} + \frac{-a}{b} = \frac{-a}{b} + \frac{a}{b} = \frac{0}{1}$.
+		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có
+		      \[
+				  \frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}
+		      \]
+		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có
+		      \[
+				  \frac{a}{b} + \frac{-a}{b} = \frac{-a}{b} + \frac{a}{b} = \frac{0}{1}.
+			  \]
 		\item Phép cộng số hữu tỉ có tính chất giao hoán. Tức là, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}$, chúng ta có
 		      \[
 			      \frac{a}{b} + \frac{c}{d} = \frac{c}{d} + \frac{a}{b}.
@@ -2008,25 +2071,71 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 	\begin{enumerate}[label={(\roman*)}]
 		\item Theo định nghĩa phép cộng số hữu tỉ
 		      \begin{align*}
-			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y}
+			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} & = \frac{a d + b c}{b d} + \frac{x}{y} = \frac{(a d + b c) y + x (b d)}{(b d) y} \\
+				  & = \frac{(a d) y + (b c) y +  (x b) d}{b (d y)} \\
+				  & \text{(theo tính chất kết hợp và phân phối của phép nhân với phép cộng số nguyên)} \\
+				  & = \frac{a (d y) + b (c y) + b(dx)}{b (d y)} \\
+				  & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)} \\
+				  & = \frac{a (d y) + b (c y + dx)}{b (d y)} \\
+				  & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
+				  & = \frac{a}{b} + \frac{c y + dx}{d y} \\
+				  & = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
 		      \end{align*}
-		\item
-		\item
-		\item
+		\item Theo định nghĩa phép cộng số hữu tỉ
+		      \begin{align*}
+				  \frac{a}{b} + \frac{0}{1} & = \frac{a\cdot 1 + b\cdot 0}{b\cdot 1} = \frac{a}{b}, \\
+				  \frac{0}{1} + \frac{a}{b} & = \frac{0\cdot b + 1\cdot a}{1\cdot b} = \frac{a}{b}.
+			  \end{align*}
+		\item Theo Mệnh đề~\ref{proposition:same-denominator}
+		      \begin{align*}
+				  \frac{a}{b} + \frac{-a}{b} & = \frac{a + (-a)}{b} = \frac{0}{b} = \frac{0}{1}, \\
+				  \frac{-a}{b} + \frac{a}{b} & = \frac{(-a) + a}{b} = \frac{0}{b} = \frac{0}{1}.
+			  \end{align*}
+		\item Theo định nghĩa phép cộng số hữu tỉ và tính chất giao hoán của phép cộng, phép nhân số nguyên
+			  \begin{align*}
+				  \frac{a}{b} + \frac{c}{d} & = \frac{ad + bc}{bd} = \frac{cb + da}{db} = \frac{c}{d} + \frac{a}{b}.
+			  \end{align*}
 	\end{enumerate}
+\end{proof}
+
+Kế tiếp phần (ii) và (iii) của định lý trên, chúng ta có kết quả sau.
+\begin{theorem}
+	Trong tập hợp số hữu tỉ.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tồn tại đúng một số hữu tỉ $\theta$ sao cho với mọi số hữu tỉ $q$, có $q + \theta = \theta + q = q$.
+		\item Với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q'$ sao cho $q + q' = q' + q = \theta$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
 \end{proof}
 
 \begin{definition}[Phép trừ hai số hữu tỉ]
 \end{definition}
 
+\begin{theorem}
+	Với hai số hữu tỉ $q_{1}, q_{2}$, tồn tại duy nhất số hữu tỉ $q$ sao cho $q_{1} + q = q_{2}$.
+\end{theorem}
+
 \begin{definition}[Phép nhân hai số hữu tỉ]
 \end{definition}
 
-\begin{theorem}
+Với hai số nguyên $a, b$, số nguyên $k$ thỏa mãn $ka = b$ tồn tại khi và chỉ khi $a$ là ước của $b$. Với phép nhân hai số hữu tỉ, sự hạn chế trên được giải quyết, theo như mệnh đề dưới đây.
+\begin{proposition}
+	Với mọi số nguyên $a, b$, nếu $a\ne 0$ thì
+	\[
+		\frac{a}{1}\cdot\frac{b}{a} = \frac{b}{1}.
+	\]
+\end{proposition}
+
+\begin{theorem}\label{theorem:property-of-rational-numbers-multiplication}
 \end{theorem}
 
-\begin{definition}[Phép chia hai số hữu tỉ]
+\begin{definition}[Nghịch đảo]
 \end{definition}
+
+\begin{theorem}[Phép chia hai số hữu tỉ]
+\end{theorem}
 
 \subsection*{$\dagger$ Quan hệ thứ tự trên tập hợp số hữu tỉ}
 
