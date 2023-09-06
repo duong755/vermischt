@@ -1419,7 +1419,7 @@ Các kết quả dưới đây là cơ bản và cần thiết trong việc ch�
 
 Phần (iv) của định lý trên tương đương với định lý sau. Sử dụng định lý này có phần thuận tiện hơn phần (iv) của định lý trên.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:integers-order-and-multiplication}
 	Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
 \end{theorem}
 
@@ -1434,13 +1434,25 @@ Phần (iv) của định lý trên tương đương với định lý sau. Sử
 	Vậy với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corollary:integers-order-and-multiplication}
 	\begin{enumerate}[label={(\roman*)}]
 		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha < \beta$ và $[(0,0)] < \gamma$ thì $\alpha\cdot\gamma < \beta\cdot\gamma$.
 		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha \leq \beta$ và $[(0,0)] < \gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
 		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha < \beta$ và $[(0,0)] \leq \gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
 	\end{enumerate}
 \end{corollary}
+
+\begin{theorem}
+	Với mọi số nguyên $\alpha\ne [(0,0)]$, có $[(0,0)] < \alpha\cdot\alpha$. 
+\end{theorem}
+
+\begin{proof}
+	Nếu $[(0,0)] < \alpha$ thì theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, chúng ta có $[(0,0)] < \alpha\cdot\alpha$.
+
+	Nếu $\alpha < [(0,0)]$ thì theo định nghĩa của phép nhân số nguyên (trường hợp 4), $\alpha\cdot\alpha = (-\alpha)\cdot(-\alpha)$. Vì $\alpha < [(0,0)]$ nên theo Định lý~\ref{theorem:integers-order-and-operations}, chúng ta có $[(0,0)] < (-\alpha)$. Theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, chúng ta có $[(0,0)] < (-\alpha)\cdot(-\alpha) = \alpha\cdot\alpha$.
+
+	Như vậy với mọi số nguyên $\alpha\ne [(0,0)]$, có $[(0,0)] < \alpha\cdot\alpha$.
+\end{proof}
 
 Tương tự với số tự nhiên, giữa hai số nguyên liên tiếp không còn số nguyên nào khác.
 \begin{theorem}
@@ -2330,6 +2342,76 @@ Với trong tập hợp số nguyên, không phải khi nào chúng ta cũng th�
 Bạn đọc lưu ý rằng kí hiệu $\frac{q_{1}}{q_{2}}$ không mâu thuẫn với kí hiệu phân số.
 
 \subsection*{$\dagger$ Quan hệ thứ tự trên tập hợp số hữu tỉ}
+
+Trong mục này, chúng ta đưa ra một quan hệ thứ tự trên tập hợp số hữu tỉ.
+\begin{definition}
+	Với hai số hữu tỉ $\frac{a}{b}$ và $\frac{c}{d}$, chúng ta nói $\frac{a}{b}$ nhỏ hơn hoặc bằng $\frac{c}{d}$ và kí hiệu $\frac{a}{b}\leq \frac{c}{d}$ khi và chỉ khi $abdd \leq cdbb$.
+
+	Nếu $\frac{a}{b}\leq \frac{c}{d}$ và $\frac{a}{b}\ne\frac{c}{d}$ thì chúng ta viết $\frac{a}{b} < \frac{c}{d}$.
+\end{definition}
+
+\begin{theorem}
+	Quan hệ $\leq$ trên tập hợp số hữu tỉ là một quan hệ thứ tự toàn phần.
+\end{theorem}
+
+\begin{proof}
+	Với mỗi số hữu tỉ $\frac{a}{b}$, chúng ta có $abbb\leq abbb$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $\frac{a}{b}\leq\frac{a}{b}$. Do đó quan hệ $\leq$ trên tập hợp số hữu tỉ có tính chất phản xạ.
+
+	Nếu các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$ thỏa mãn $\frac{a}{b}\leq \frac{c}{d}$ và $\frac{c}{d}\leq\frac{x}{y}$ thì theo ịnh nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $abdd \leq cdbb$ và $cdyy \leq xydd$. Vì $0 < dd$, $0 < bb$, $0 < yy$ nên theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, cùng tính chất kết hợp và giao hoán của phép nhân số nguyên, chúng ta có
+	\[
+		(abyy)dd = (abdd)yy \leq (cdbb)yy = (cdyy)bb \leq (xydd)bb = (xybb)dd.
+	\]
+
+	Theo tính chất phân phối của phép nhân với phép cộng và phép trừ số nguyên, chúng ta suy ra $(abyy - xybb)dd\leq 0$. Nếu $0 < abyy - xybb$ thì $0 < (abyy - xybb)dd$, vì còn có $0 < dd$. Do đó $abyy - xybb \leq 0$. Nói cách khác, $abyy\leq xybb$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $\frac{a}{b}\leq \frac{x}{y}$. Do đó quan hệ $\leq$ trên tập hợp số hữu tỉ có tính chất bắc cầu.
+
+	Nếu các số hữu tỉ $\frac{a}{b}, \frac{c}{d}$ thỏa mãn $\frac{a}{b}\leq \frac{c}{d}$ và $\frac{c}{d}\leq\frac{a}{b}$ thì theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $abdd\leq cdbb$ và $cdbb\leq abdd$. Do quan hệ $\leq$ trên tập hợp số nguyên có tính chất phản đối xứng nên $abdd = cdbb$. Theo tính chất kết hợp, giao hoán, và tính chất phân phối của phép nhân với phép cộng (phép trừ) số nguyên, từ đẳng thức $abđ = cdbb$, chúng ta suy ra $(ad - bc)bd = 0$. Vì $b$ và $d$ khác $0$ nên $ad - bc = 0$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ và định nghĩa số hữu tỉ, chúng ta suy ra $\frac{a}{b} = \frac{c}{d}$. Do đó quan hệ $\leq$ trên tập hợp số hữu tỉ có tính chất phản đối xứng.
+
+	Như vậy quan hệ $\leq$ trên tập hợp số hữu tỉ là một quan hệ thứ tự.
+
+	Với hai số hữu tỉ $\frac{a}{b}$ và $\frac{c}{d}$ bất kì, ít nhất một trong hai mệnh đề sau là đúng: (1) $abdd \leq cdbb$; (2) $cdbb \leq abdd$ vì quan hệ $\leq$ trên tập hợp số nguyên là quan hệ thứ tự toàn phần. Theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, $\frac{a}{b}\leq\frac{c}{d}$ hoặc $\frac{c}{d}\leq\frac{a}{b}$.
+
+	Vậy quan hệ $\leq$ trên tập hợp số hữu tỉ là một quan hệ thứ tự toàn phần.
+\end{proof}
+
+Quan hệ $\leq$ trên tập hợp số hữu tỉ có những liên hệ sau đây với các phép toán cộng và nhân số hữu tỉ.
+\begin{theorem}\label{theorem:rational-numbers-order-and-operations}
+	Trong tập hợp số hữu tỉ
+	\begin{enumerate}[label={(\roman*)}]
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\frac{0}{1}\leq q_{1}$ và $\frac{0}{1}\leq q_{2}$ thì $\frac{0}{1}\leq q_{1} + q_{2}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\frac{0}{1}\leq q_{1}$ và $\frac{0}{1}\leq q_{2}$ thì $\frac{0}{1}\leq q_{1}q_{2}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chúng ta kí hiệu phân số của $q_{1}$ và $q_{2}$ lần lượt là $\frac{a}{b}$ và $\frac{c}{d}$. Theo định nghĩa phép cộng số hữu tỉ, chúng ta có
+		      \[
+				  \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}
+			  \]
+
+			  Vì $0\cdot 1\cdot bdbd = 0 \leq (ad + bc)bd\cdot 1\cdot 1$ nên theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta suy ra $\frac{0}{1}\leq \frac{ad + bc}{bd} = \frac{a}{b} + \frac{c}{d} = q_{1} + q_{2}$.
+		\item Chúng ta kí hiệu phân số của $q_{1}$ và $q_{2}$ lần lượt là $\frac{a}{b}$ và $\frac{c}{d}$. Theo định nghĩa phép nhân số hữu tỉ, chúng ta có
+		      \[
+			     \frac{a}{b}\cdot \frac{c}{d} = \frac{ac}{bd}
+		      \]
+
+			  Vì $0\cdot 1\cdot bdbd = 0 \leq acbd\cdot 1\cdot 1$ nên theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta suy ra $\frac{0}{1}\leq \frac{ac}{bd} = \frac{a}{b}\cdot\frac{c}{d} = q_{1}q_{2}$.
+	\end{enumerate}
+\end{proof}
+
+Từ định lý trên, Định lý~\ref{theorem:property-of-rational-numbers-addition} và~\ref{theorem:property-of-rational-numbers-multiplication}, chúng ta thu được các hệ quả sau. Những hệ quả này thuận tiện hơn trong thực hành và chứng minh các kết quả khác.
+\begin{corollary}\label{corollary:rational-numbers-order-and-operations}
+	Trong tập hợp số hữu tỉ
+	\begin{enumerate}[label={(\roman*)}]
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $q_{1}\leq q_{2}$ thì với mọi số hữu tỉ $q_{3}$, chúng ta có $q_{1} + q_{3}\leq q_{2} + q_{3}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $q_{1}\leq q_{2}$ thì $-q_{2}\leq -q_{1}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\frac{0}{1} < q_{1}$ và $\frac{0}{1} < q_{2}$ thì $\frac{0}{1} < q_{1}q_{2}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}, q_{3}$ thỏa mãn $q_{1}\leq q_{2}$ và $\frac{0}{1}\leq q_{3}$ thì $q_{1}q_{3}\leq q_{2}q_{3}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}, q_{3}$ thỏa mãn $q_{1} < q_{2}$ và $\frac{0}{1} < q_{3}$ thì $q_{1}q_{3} < q_{2}q_{3}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}, q_{3}$ thỏa mãn $q_{1}\leq q_{2}$ và $\frac{0}{1} < q_{3}$ thì $q_{1}q_{3}\leq q_{2}q_{3}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}, q_{3}$ thỏa mãn $q_{1} < q_{2}$ và $\frac{0}{1}\leq q_{3}$ thì $q_{1}q_{3}\leq q_{2}q_{3}$.
+	\end{enumerate}
+\end{corollary}
 
 \subsection*{Số hữu tỉ và Số nguyên}
 
