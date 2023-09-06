@@ -1319,33 +1319,14 @@ Từ định lý trên, chúng ta rút ra hệ quả sau.
 Các kết quả dưới đây là cơ bản và cần thiết trong việc chứng minh bất đẳng thức với các số nguyên.
 \begin{theorem}\label{theorem:integers-order-and-operations}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Với mọi số nguyên $\alpha, \beta$, nếu $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ thì $[(0,0)]\leq\alpha + \beta$.
+		\item Với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ thì $\alpha + \gamma\leq \beta + \gamma$.
 		\item Với mọi số nguyên $\alpha, \beta$, nếu $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ thì $[(0,0)]\leq\alpha\cdot\beta$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Nếu $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ thì theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, $\alpha, \beta$ là hai số nguyên không âm. Theo Hệ quả~\ref{corollary:positivity-negativity-nonnegativity-of-sum-of-integers}, $\alpha + \beta$ là một số nguyên không âm. Theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, chúng ta có $[(0,0)]\leq \alpha + \beta$.
-		\item Nếu $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ thì theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, $\alpha, \beta$ là hai số nguyên không âm. Theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha\cdot\beta$ là một số nguyên không âm. Theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, chúng ta có $[(0,0)]\leq \alpha\cdot\beta$.
-	\end{enumerate}
-\end{proof}
-
-\begin{corollary}\label{corollary:integers-order-and-operations}
-	\begin{enumerate}[label={(\roman*)}]
-		\item Với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ khi và chỉ khi $\alpha + \gamma\leq \beta + \gamma$.
-		\item Với mọi số nguyên $\alpha, \beta$, $\alpha\leq \beta$ khi và chỉ khi $-\beta\leq-\alpha$.
-		\item Với mọi số nguyên $\alpha, \beta$, $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
-		\item Với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
-		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
-	\end{enumerate}
-\end{corollary}
-
-\begin{proof}
-	\begin{enumerate}[label={(\roman*)}]
-		\item ($\Rightarrow$) $\alpha\leq\beta$.
-
-		      Theo Định lý~\ref{theorem:solution-of-integer-linear-equation}, $\alpha + ((-\alpha) + \beta) = \beta$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $(-\alpha) + \beta$ là một số nguyên không âm. Khi đó
+		\item Theo Định lý~\ref{theorem:solution-of-integer-linear-equation}, $\alpha + ((-\alpha) + \beta) = \beta$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $(-\alpha) + \beta$ là một số nguyên không âm. Khi đó
 		      \begin{align*}
 			      (\alpha + \gamma) + [(-\alpha) + \beta] & = \alpha + (\gamma + [(c, 0)]) & \text{(theo tính chất giao hoán của phép cộng số nguyên)} \\
 			                                              & = \alpha + ([(c, 0)] + \gamma) & \text{(theo tính chất giao hoán của phép cộng số nguyên)} \\
@@ -1354,20 +1335,21 @@ Các kết quả dưới đây là cơ bản và cần thiết trong việc ch�
 		      \end{align*}
 
 		      Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $\alpha + \gamma\leq \beta + \gamma$.
+		\item Nếu $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ thì theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, $\alpha, \beta$ là hai số nguyên không âm. Theo Định lý~\ref{theorem:sign-of-product-of-integers}, $\alpha\cdot\beta$ là một số nguyên không âm. Theo Hệ quả~\ref{corollary:positive-nonnegative-negative-precise-condition}, chúng ta có $[(0,0)]\leq \alpha\cdot\beta$.
+	\end{enumerate}
+\end{proof}
 
-		      ($\Leftarrow$) $\alpha + \gamma\leq \beta + \gamma$.
+\begin{theorem}\label{theorem:integers-order-and-operations-sequel}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mọi số nguyên $\alpha, \beta$, $\alpha\leq \beta$ khi và chỉ khi $-\beta\leq-\alpha$.
+		\item Với mọi số nguyên $\alpha, \beta$, $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
+		\item Với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
+		\item Với mọi số nguyên $\alpha, \beta, \gamma$, nếu $\alpha\leq\beta$ và $[(0,0)]\leq\gamma$ thì $\alpha\cdot\gamma \leq \beta\cdot\gamma$.
+	\end{enumerate}
+\end{theorem}
 
-		      Theo phần chứng minh trước, $\alpha + \gamma\leq \beta + \gamma$ kéo theo $(\alpha + \gamma) + (-\gamma)\leq (\beta + \gamma) + (-\gamma)$. Bên cạnh đó
-		      \[
-			      \begin{split}
-				      (\alpha + \gamma) + (-\gamma) = \alpha + (\gamma + (-\gamma)) = \alpha + [(0,0)] = \alpha, \\
-				      (\beta + \gamma) + (-\gamma) = \beta + (\gamma + (-\gamma)) = \beta + [(0,0)] = \beta.
-			      \end{split}
-		      \]
-
-		      Do đó $\alpha + \gamma\leq \beta + \gamma$ kéo theo $\alpha\leq\beta$.
-
-		      Vậy với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ khi và chỉ khi $\alpha + \gamma\leq \beta + \gamma$.
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
 		\item ($\Rightarrow$) $\alpha\leq\beta$.
 
 		      Theo Định lý~\ref{theorem:solution-of-integer-linear-equation}, $\alpha + ((-\alpha) + \beta) = \beta$. Cùng với định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, chúng ta suy ra $(-\alpha) + \beta$ là một số nguyên không âm. Mặt khác
@@ -1397,18 +1379,18 @@ Các kết quả dưới đây là cơ bản và cần thiết trong việc ch�
 
 		      $\alpha < \beta$ tương đương với phủ định của $\beta\leq\alpha$.
 
-		      $\beta\leq\alpha$ tương đương với $-\alpha\leq-\beta$, theo phần (ii).
+		      $\beta\leq\alpha$ tương đương với $-\alpha\leq-\beta$, theo phần (i).
 
 		      $-\beta < -\alpha$ tương đương với phủ định của $-\alpha\leq-\beta$.
 
 		      Do đó $\alpha < \beta$ khi và chỉ khi $-\beta < -\alpha$.
 		\item ($\Rightarrow$) $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ hoặc $\alpha < [(0,0)]$ và $\beta < [(0,0)]$.
 
-		      Nếu $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ thì $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$. Theo phần (iii), $[(0,0)] \leq \alpha\cdot\beta$.
+		      Nếu $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ thì $[(0,0)]\leq \alpha$ và $[(0,0)]\leq \beta$. Theo phần (ii), $[(0,0)] \leq \alpha\cdot\beta$.
 
 		      Theo Định lý~\ref{theorem:zero-one-and-natural-numbers-multiplication}, vì $\alpha\ne [(0,0)]$ và $\beta\ne[(0,0)]$ nên $\alpha\cdot\beta \ne [(0,0)]$.
 
-		      Nếu $\alpha < [(0,0)]$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$, $[(0,0)] < -\beta$. Theo trường hợp vừa xét, cùng với Mệnh đề~\ref{proposition:sign}, chúng ta suy ra $[(0, 0)] < (-\alpha)\cdot(-\beta) = \alpha\cdot\beta$.
+		      Nếu $\alpha < [(0,0)]$ và $\beta < [(0,0)]$ thì theo phần (ii), chúng ta có $[(0,0)] < -\alpha$, $[(0,0)] < -\beta$. Theo trường hợp vừa xét, cùng với Mệnh đề~\ref{proposition:sign}, chúng ta suy ra $[(0, 0)] < (-\alpha)\cdot(-\beta) = \alpha\cdot\beta$.
 
 		      Do đó $[(0,0)] < \alpha\cdot\beta$.
 
@@ -1418,14 +1400,14 @@ Các kết quả dưới đây là cơ bản và cần thiết trong việc ch�
 
 		      Giả sử phản chứng rằng $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ hoặc $\alpha < [(0,0)]$ và $[(0,0)] < \beta$.
 
-		      Nếu $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\beta$ và $[(0,0)] < \alpha$. Theo phần chứng minh trước, $[(0,0)] < \alpha\cdot(-\beta)$. Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot(-\beta) = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
+		      Nếu $[(0,0)] < \alpha$ và $\beta < [(0,0)]$ thì theo phần (iii), chúng ta có $[(0,0)] < -\beta$ và $[(0,0)] < \alpha$. Theo phần chứng minh trước, $[(0,0)] < \alpha\cdot(-\beta)$. Theo Mệnh đề~\ref{proposition:sign}, $\alpha\cdot(-\beta) = -\alpha\cdot\beta$. Một lần nữa, theo phần (ii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
 
-		      Nếu $\alpha < [(0,0)]$ và $[(0,0)] < \beta$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$ và $[(0,0)] < \beta$. Theo phần chứng minh trước, $[(0,0)] < (-\alpha)\cdot\beta$. Theo Mệnh đề~\ref{proposition:sign}, $(-\alpha)\cdot\beta = -\alpha\cdot\beta$. Một lần nữa, theo phần (iii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
+		      Nếu $\alpha < [(0,0)]$ và $[(0,0)] < \beta$ thì theo phần (iii), chúng ta có $[(0,0)] < -\alpha$ và $[(0,0)] < \beta$. Theo phần chứng minh trước, $[(0,0)] < (-\alpha)\cdot\beta$. Theo Mệnh đề~\ref{proposition:sign}, $(-\alpha)\cdot\beta = -\alpha\cdot\beta$. Một lần nữa, theo phần (ii), chúng ta suy ra $\alpha\cdot\beta < [(0,0)]$. Điều này mâu thuẫn với điều kiện $[(0,0)] < \alpha\cdot\beta$.
 
 		      Như vậy giả sử phản chứng là sai, chúng ta kết luận $[(0,0)] < \alpha$ và $[(0,0)] < \beta$ hoặc $\alpha < [(0,0)]$ và $\beta < [(0,0)]$.
 
 		      Vậy với mọi số nguyên $\alpha, \beta$, $[(0,0)] < \alpha\cdot \beta$ khi và chỉ khi $[(0,0)] < \alpha, [(0,0)] < \beta$ hoặc $\alpha < [(0,0)], \beta < [(0,0)]$.
-		\item Theo Định lý~\ref{theorem:solution-of-integer-linear-equation}, $\alpha + ((-\alpha) + \beta) = \beta$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $[(0,0)] \leq \beta - \alpha$. Do đó, theo Định lý~\ref{corollary:positive-nonnegative-negative-precise-condition}, $(-\alpha) + \beta$ là một số nguyên không âm. Theo Định lý~\ref{theorem:integers-order-and-operations}, $[(0,0)]\leq ((-\alpha) + \beta)\cdot\gamma$. Theo phần (i) và tính chất phân phối của phép nhân với phép cộng số nguyên
+		\item Theo Định lý~\ref{theorem:solution-of-integer-linear-equation}, $\alpha + ((-\alpha) + \beta) = \beta$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số nguyên, $[(0,0)] \leq \beta - \alpha$. Do đó, theo Định lý~\ref{corollary:positive-nonnegative-negative-precise-condition}, $(-\alpha) + \beta$ là một số nguyên không âm. Theo Định lý~\ref{theorem:integers-order-and-operations}, $[(0,0)]\leq ((-\alpha) + \beta)\cdot\gamma$. Theo Định lý~\ref{theorem:integers-order-and-operations} và tính chất phân phối của phép nhân với phép cộng số nguyên
 		      \begin{align*}
 			      \alpha\cdot\gamma & \leq \alpha\cdot\gamma + ((-\alpha) + \beta)\cdot\gamma \\
 			                        & = (\alpha + ((-\alpha) + \beta))\cdot\gamma             \\
@@ -1444,14 +1426,14 @@ Các kết quả dưới đây là cơ bản và cần thiết trong việc ch�
 	\end{enumerate}
 \end{corollary}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:square-of-nonzero-integers}
 	Với mọi số nguyên $\alpha\ne [(0,0)]$, có $[(0,0)] < \alpha\cdot\alpha$.
 \end{theorem}
 
 \begin{proof}
 	Nếu $[(0,0)] < \alpha$ thì theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, chúng ta có $[(0,0)] < \alpha\cdot\alpha$.
 
-	Nếu $\alpha < [(0,0)]$ thì theo định nghĩa của phép nhân số nguyên (trường hợp 4), $\alpha\cdot\alpha = (-\alpha)\cdot(-\alpha)$. Vì $\alpha < [(0,0)]$ nên theo Định lý~\ref{corollary:integers-order-and-operations}, chúng ta có $[(0,0)] < (-\alpha)$. Theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, chúng ta có $[(0,0)] < (-\alpha)\cdot(-\alpha) = \alpha\cdot\alpha$.
+	Nếu $\alpha < [(0,0)]$ thì theo định nghĩa của phép nhân số nguyên (trường hợp 4), $\alpha\cdot\alpha = (-\alpha)\cdot(-\alpha)$. Vì $\alpha < [(0,0)]$ nên theo Định lý~\ref{theorem:integers-order-and-operations-sequel}, chúng ta có $[(0,0)] < (-\alpha)$. Theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, chúng ta có $[(0,0)] < (-\alpha)\cdot(-\alpha) = \alpha\cdot\alpha$.
 
 	Như vậy với mọi số nguyên $\alpha\ne [(0,0)]$, có $[(0,0)] < \alpha\cdot\alpha$.
 \end{proof}
@@ -2411,19 +2393,36 @@ Quan hệ $\leq$ trên tập hợp số hữu tỉ tương thích với các ph�
 \begin{theorem}\label{theorem:rational-numbers-order-and-operations}
 	Trong tập hợp số hữu tỉ
 	\begin{enumerate}[label={(\roman*)}]
-		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\frac{0}{1}\leq q_{1}$ và $\frac{0}{1}\leq q_{2}$ thì $\frac{0}{1}\leq q_{1} + q_{2}$.
+		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $q_{1}\leq q_{2}$ thì với mọi số hữu tỉ $q_{3}$, có $q_{1} + q_{3}\leq q_{2} + q_{3}$.
 		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\frac{0}{1}\leq q_{1}$ và $\frac{0}{1}\leq q_{2}$ thì $\frac{0}{1}\leq q_{1}q_{2}$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Chúng ta kí hiệu phân số của $q_{1}$ và $q_{2}$ lần lượt là $\frac{a}{b}$ và $\frac{c}{d}$. Theo định nghĩa phép cộng số hữu tỉ, chúng ta có
+		\item Chúng ta kí hiệu phân số của $q_{1}, q_{2}, q_{3}$ lần lượt là $\frac{a}{b}, \frac{c}{d}$ và $\frac{x}{y}$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, nếu $q_{1}\leq q_{2}$ thì $abdd\leq cdbb$. Theo định nghĩa phép cộng số hữu tỉ
 		      \[
-			      \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}
+			      \begin{split}
+				      q_{1} + q_{3} = \frac{a}{b} + \frac{x}{y} = \frac{ay + bx}{by} \\
+				      q_{2} + q_{3} = \frac{c}{d} + \frac{x}{y} = \frac{cy + dx}{dy}
+			      \end{split}
 		      \]
 
-		      Vì $0\cdot 1\cdot bdbd = 0 \leq (ad + bc)bd\cdot 1\cdot 1$ nên theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta suy ra $\frac{0}{1}\leq \frac{ad + bc}{bd} = \frac{a}{b} + \frac{c}{d} = q_{1} + q_{2}$.
+		      Để chứng minh $q_{1} + q_{3}\leq q_{2} + q_{3}$, chúng ta sẽ chỉ ra rằng
+		      \[
+			      (ay + bx)(by)(dy)(dy)\leq (cy + dx)(dy)(by)(by)
+		      \]
+
+			  Theo tính chất kết hợp, giao hoán, và phân phối của phép nhân với phép cộng số nguyên, cùng Định lý~\ref{theorem:square-of-nonzero-integers}
+			  \begin{align*}
+				  (ay + bx)(by)(dy)(dy) & = (ay)(by)(dy)(dy) + (bx)(by)(dy)(dy) \\
+				                        & = (abdd)(yy)(yy) + (dx)(dy)(by)(by) \\
+										& \leq (cdbb)(yy)(yy) + (dx)(dy)(by)(by) \\
+										& = (cy)(dy)(by)(by) + (dx)(dy)(by)(by) \\
+										& = (cy + dx)(dy)(by)(by).
+			  \end{align*}
+
+			  Theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta suy ra $\frac{ay + bx}{by}\leq \frac{cy + dx}{dy}$, kéo theo $q_{1} + q_{3}\leq q_{2} + q_{3}$.
 		\item Chúng ta kí hiệu phân số của $q_{1}$ và $q_{2}$ lần lượt là $\frac{a}{b}$ và $\frac{c}{d}$. Theo định nghĩa phép nhân số hữu tỉ, chúng ta có
 		      \[
 			      \frac{a}{b}\cdot \frac{c}{d} = \frac{ac}{bd}
@@ -2437,7 +2436,6 @@ Từ định lý trên, Định lý~\ref{theorem:property-of-rational-numbers-ad
 \begin{theorem}\label{theorem:rational-numbers-order-and-operations}
 	Trong tập hợp số hữu tỉ
 	\begin{enumerate}[label={(\roman*)}]
-		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $q_{1}\leq q_{2}$ thì với mọi số hữu tỉ $q_{3}$, chúng ta có $q_{1} + q_{3}\leq q_{2} + q_{3}$.
 		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $q_{1}\leq q_{2}$ thì $-q_{2}\leq -q_{1}$.
 		\item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\frac{0}{1} < q_{1}$ và $\frac{0}{1} < q_{2}$ thì $\frac{0}{1} < q_{1}q_{2}$.
 		\item Nếu các số hữu tỉ $q_{1}, q_{2}, q_{3}$ thỏa mãn $q_{1}\leq q_{2}$ và $\frac{0}{1}\leq q_{3}$ thì $q_{1}q_{3}\leq q_{2}q_{3}$.
