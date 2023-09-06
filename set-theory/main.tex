@@ -1,6 +1,6 @@
 % chktex-file 44
 \documentclass[oneside]{book}
-\usepackage[a4paper,top=3cm,right=3cm,bottom=3cm,left=3cm]{geometry}
+\usepackage[a4paper,top=3cm,right=2cm,bottom=3cm,left=2cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{vietnam}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,amscdx,mathtools,mathrsfs}
@@ -48,6 +48,7 @@
 \counterwithin{exercise}{section}
 
 \newcommand{\card}[1]{\left\vert{#1}\right\vert} % cardinality
+\newcommand{\abs}[1]{\left\vert{#1}\right\vert} % absolute value
 
 \makeindex[columns=2]
 
@@ -61,10 +62,13 @@
 
 \maketitle
 
+\pagenumbering{roman}
+
 \input{preface.tex}
 
 \tableofcontents
 
+\pagenumbering{arabic}
 \part{Lý thuyết tập hợp}\label{part1}
 
 \input{chapter1.tex}

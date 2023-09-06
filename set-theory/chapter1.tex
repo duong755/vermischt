@@ -1,4 +1,4 @@
-\chapter{Logic và Tập hợp}\label{chapter1:logic-and-set-theory}
+\chapter{Logic và Tập hợp}\label{chapter:logic-and-set-theory}
 
 \section{Mệnh đề và các phép toán logic}
 
@@ -13,7 +13,7 @@ Trong toán học cũng như đời sống, bạn đọc hẳn đã bắt gặp 
     \item Năm 1967, Alexander Grothendieck đến Việt Nam.
 \end{enumerate}
 
-Mỗi câu trên được gọi là một \textit{mệnh đề toán học}, hay nói ngắn gọn trong ngữ cảnh của tài liệu này là \textit{mệnh đề}, và \textit{có tính đúng sai}. Một mệnh đề hoặc đúng, hoặc sai, không thể vừa đúng vừa sai. Trong năm ví dụ nêu trên, bạn đọc có thể kiểm tra tính đúng sai của một số mệnh đề. Các mệnh đề 1, 5 là đúng. Mệnh đề 2 là sai. Mệnh đề 3 mặc dù có tính đúng sai, nhưng cho đến nay các nhà toán học vẫn chưa có câu trả lời. Mệnh đề chưa được kiểm chứng được gọi là giả thuyết.
+Mỗi câu trên được gọi là một \textit{mệnh đề toán học}, hay nói ngắn gọn trong ngữ cảnh của tài liệu này là \textit{mệnh đề}, và \textit{có tính đúng sai}. Một mệnh đề hoặc đúng, hoặc sai, không thể vừa đúng vừa sai. Trong các ví dụ nêu trên, bạn đọc có thể kiểm tra tính đúng sai của một số mệnh đề. Các mệnh đề 1, 4 là đúng. Mệnh đề 2 là sai. Mệnh đề 3 mặc dù có tính đúng sai, nhưng cho đến nay các nhà toán học vẫn chưa có câu trả lời. Mệnh đề chưa được kiểm chứng được gọi là giả thuyết.
 
 Với một mệnh đề đúng, chúng ta nói giá trị chân lý (hay chân trị) của mệnh đề đó là \textit{đúng}. Với một mệnh đề sai, chúng ta nói giá trị chân lý (hay chân trị) của mệnh đề đó là \textit{sai}.
 
@@ -98,7 +98,7 @@ Trên đây, chúng ta đã nhắc đến thứ tự thực hiện phép toán t
 \subsection*{Bài tập}
 \setcounter{exercise}{0}
 
-\begin{exercise}\label{section1:exercise1}
+\begin{exercise}\label{propositional-logic:exercise1}
     Trong các câu dưới đây, câu nào là một mệnh đề? Nếu đó là một mệnh đề, hãy cho biết mệnh đề đó đúng, sai, hay không xác định.
     \begin{enumerate}[label={(\alph*)},itemsep=0pt]
         \item $\pi = 3.14159265358979$
@@ -108,11 +108,11 @@ Trên đây, chúng ta đã nhắc đến thứ tự thực hiện phép toán t
     \end{enumerate}
 \end{exercise}
 
-\begin{exercise}\label{section1:exercise2}
+\begin{exercise}\label{propositional-logic:exercise2}
     Cho trước mệnh đề $P$, có thể kết luận gì về tính đúng sai của các mệnh đề sau: $P\vee P$, $P\wedge P$, $P\vee \neg P$, $P\wedge \neg P$?
 \end{exercise}
 
-\begin{exercise}\label{section1:exercise3}
+\begin{exercise}\label{propositional-logic:exercise3}
     Cho trước ba mệnh đề $P$, $Q$, và $R$. Dùng bảng chân trị, hãy chứng minh
     \begin{enumerate}[label={(\alph*)},itemsep=0pt]
         \item $P\wedge Q$ và $Q\wedge P$ tương đương.
@@ -128,7 +128,7 @@ Trên đây, chúng ta đã nhắc đến thứ tự thực hiện phép toán t
 
 Thứ tự thực hiện phép toán cho phép người sử dụng lược bỏ những cặp ngoặc không cần thiết. Tuy nhiên, khi biểu thức sử dụng các phép toán rất nhiều lần, việc sử dụng ngoặc ngay cả ở những vị trí không cần thiết lại tỏ ra dễ đọc và bớt gây nhầm lẫn hơn.
 
-\begin{exercise}\label{section1:exercise4}
+\begin{exercise}\label{propositional-logic:exercise4}
     Cho hai mệnh đề $P$ và $Q$, chứng minh rằng các cặp mệnh đề dưới đây tương đương.
     \begin{enumerate}[label={(\alph*)},itemsep=0pt]
         \item $\neg (P\vee Q)$ và $(\neg P) \wedge (\neg Q)$.
@@ -138,13 +138,13 @@ Thứ tự thực hiện phép toán cho phép người sử dụng lược bỏ
     \end{enumerate}
 \end{exercise}
 
-\begin{exercise}\label{section1:exercise5}
+\begin{exercise}\label{propositional-logic:exercise5}
     Một phép toán logic hai ngôi $*$ thực hiện trên hai mệnh đề $P$ và $Q$ là một quy tắc gán mỗi cặp giá trị chân lý của $P$ và $Q$ với \textit{đúng một} giá trị chân lý nữa, kí hiệu là $P * Q$. Phép toán hội và tuyển là hai ví dụ về phép toán logic hai ngôi. Hai phép toán logic $*$ và $\#$ được gọi là trùng nhau (tương đương) nếu tại mỗi cặp giá trị chân lý của $P$ và $Q$ luôn có $P * Q = P\# Q$.
 
     Có bao nhiêu phép toán logic hai ngôi (không tính thêm phép toán trùng với phép toán đã xét)? Tương tự, bạn có thể định nghĩa phép toán logic $n$ ngôi không? Và có bao nhiêu phép toán logic $n$ ngôi? [Gợi ý: Quan sát bảng chân trị của một phép toán logic hai ngôi, và đếm bằng quy tắc nhân.]
 \end{exercise}
 
-\begin{exercise}\label{section1:exercise6}
+\begin{exercise}\label{propositional-logic:exercise6}
     Dựa vào bảng chân trị của biểu thức $P\implies Q$, chứng minh quan hệ tương đương sau
     \[
         (P\implies Q) \Leftrightarrow (P\wedge Q)\vee (\neg P\wedge Q) \vee (\neg P\wedge \neg Q)
@@ -152,8 +152,8 @@ Thứ tự thực hiện phép toán cho phép người sử dụng lược bỏ
     [Gợi ý: Các biểu thức $P\wedge Q$, $\neg P\wedge Q$, $\neg P\wedge \neg Q$ tương ứng với các hàng nào trong bảng chân trị?]
 \end{exercise}
 
-\begin{exercise}\label{section1:exercise7}
-    Áp dụng cách tiếp cận của Bài tập~\ref{section1:exercise6}, chứng minh rằng với mỗi phép toán logic hai ngôi $*$, biểu thức $P * Q$ tương đương với một biểu thức chỉ gồm $P, Q$ và ba phép toán phủ định, hội, và tuyển.
+\begin{exercise}\label{propositional-logic:exercise7}
+    Áp dụng cách tiếp cận của Bài tập~\ref{propositional-logic:exercise6}, chứng minh rằng với mỗi phép toán logic hai ngôi $*$, biểu thức $P * Q$ tương đương với một biểu thức chỉ gồm $P, Q$ và ba phép toán phủ định, hội, và tuyển.
 \end{exercise}
 
 \section{Tập hợp}
@@ -179,7 +179,7 @@ Một tập hợp có thể không có phần tử nào (tập hợp rỗng), kh
           \]
 \end{itemize}
 
-Trong toán học, chúng ta thường xuyên làm việc với các tập hợp số. Những tập hợp này được kí hiệu bằng các chữ cái rỗng: $\mathbb{N}$ (tập hợp các số tự nhiên), $\mathbb{Z}$ (tập hợp các số nguyên), $\mathbb{Z}_{\geq 0}$ (tập hợp các số nguyên không âm), $\mathbb{Q}$ (tập hợp các số hữu tỉ), $\mathbb{R}$ (tập hợp các số thực). Trong Chương~\ref{chapter3:cardinality} và Phần~\ref{part2}, chúng ta sẽ tìm hiểu chi tiết hơn về các tập hợp này.
+Trong toán học, chúng ta thường xuyên làm việc với các tập hợp số. Những tập hợp này được kí hiệu bằng các chữ cái rỗng: $\mathbb{N}$ (tập hợp các số tự nhiên), $\mathbb{Z}$ (tập hợp các số nguyên), $\mathbb{Z}_{\geq 0}$ (tập hợp các số nguyên không âm), $\mathbb{Q}$ (tập hợp các số hữu tỉ), $\mathbb{R}$ (tập hợp các số thực). Trong Chương~\ref{chapter:cardinality} và Phần~\ref{part2}, chúng ta sẽ tìm hiểu chi tiết hơn về các tập hợp này.
 
 Bên cạnh đó, để xác định tập hợp, thay vì liệt kê các phần tử, chúng ta có thể đưa ra một \textit{mô tả chính xác} cho các phần tử của tập hợp đó. Lưu ý rằng mô tả này cần rõ ràng, khách quan (được thống nhất giữa những người học và làm toán), không nhập nhằng hay đa nghĩa.
 \begin{itemize}
@@ -187,7 +187,7 @@ Bên cạnh đó, để xác định tập hợp, thay vì liệt kê các phầ
     \item $S = \{ n \mid \text{$n$ là một số tự nhiên rất lớn} \}$ không phải một tập hợp, vì khái niệm \textit{số tự nhiên rất lớn} không được định nghĩa.
 \end{itemize}
 
-Để cho ngắn gọn, chúng ta có thể dùng từ tập thay vì tập hợp. Ở Chương~\ref{chapter3:cardinality}, chúng ta sẽ bàn thêm về tập hợp có vô hạn phần tử.
+Để cho ngắn gọn, chúng ta có thể dùng từ tập thay vì tập hợp. Ở Chương~\ref{chapter:cardinality}, chúng ta sẽ bàn thêm về tập hợp có vô hạn phần tử.
 
 \subsection*{Quan hệ bao hàm giữa các tập hợp}
 
@@ -227,7 +227,7 @@ Dưới đây là một số ví dụ và phản ví dụ về quan hệ bao hà
     Cho các tập hợp $A, B, C$. Nếu $A\subseteq B$, $B\subseteq C$ thì $A\subseteq C$.
 \end{theorem}
 
-Chúng ta kết thúc mục này bằng định nghĩa tập hợp lũy thừa, và sẽ quay trở lại với khái niệm này trong Chương~\ref{chapter3:cardinality}.
+Chúng ta kết thúc mục này bằng định nghĩa tập hợp lũy thừa, và sẽ quay trở lại với khái niệm này trong Chương~\ref{chapter:cardinality}.
 
 \begin{definition}[Tập hợp lũy thừa]
     Tập hợp lũy thừa của một tập hợp $S$ là một tập hợp với các phần tử là tất cả các tập hợp con của $S$. Chúng ta kí hiệu tập hợp lũy thừa của $S$ là $\mathcal{P}(S)$.
@@ -250,7 +250,7 @@ Trong nhiều tài liệu khác, các tác giả còn dùng kí hiệu $\subset$
 \subsection*{Bài tập}
 \setcounter{exercise}{0}
 
-\begin{exercise}\label{section2:exercise1}
+\begin{exercise}\label{naive-set-theory:exercise1}
     Trong các trường hợp dưới đây, đâu là tập hợp? Nếu đó là tập hợp, hãy thử liệt kê các phần tử của tập hợp đó.
     \begin{enumerate}[label={(\alph*)},itemsep=0pt]
         \item $\{ n \mid n \text{ là ước nguyên dương của 27 } \}$.
@@ -260,15 +260,15 @@ Trong nhiều tài liệu khác, các tác giả còn dùng kí hiệu $\subset$
     \end{enumerate}
 \end{exercise}
 
-\begin{exercise}\label{section2:exercise2}
+\begin{exercise}\label{naive-set-theory:exercise2}
     Cho tập hợp $S$ gồm ba phần tử $x, y, z$. Hãy liệt kê tất cả các tập hợp con của $S$ và quan hệ bao hàm giữa các tập hợp con đó.
 \end{exercise}
 
-\begin{exercise}\label{section2:exercise3}
+\begin{exercise}\label{naive-set-theory:exercise3}
     Cho tập hợp $S$ gồm các chuỗi nhị phân có độ dài $n$. $S$ có bao nhiêu phần tử?
 \end{exercise}
 
-\begin{exercise}\label{section2:exercise4}
+\begin{exercise}\label{naive-set-theory:exercise4}
     Cho các tập hợp $A, B, C$. Nếu $A\subseteq B$, $B\subseteq C$ thì $A\subseteq C$.
 
     Nếu $A\subseteq B$ và $B\subset C$, hoặc $A\subset B$ và $B\subseteq C$, hoặc $A\subset B$ và $B\subset C$, có thể kết luận gì về mối quan hệ giữa $A$ và $C$?
@@ -332,7 +332,7 @@ Thay cho câu ``với mọi $x$, với mọi $y$, có $p(x, y)$'', chúng ta kí
 
 Qua ba ví dụ trên đây, chúng ta rút ra quy tắc khi viết phủ định của một mệnh đề gồm nhiều lượng hóa: đổi lượng hóa phổ cập sang lượng hóa tồn tại và ngược lại, rồi phủ định điều kiện giữa các biến.
 
-Trong toán học, việc sử dụng lượng hóa trong các mệnh đề là rất phổ biến, đặc biệt là trong Giải tích (điều này sẽ được thể hiện ở Chương~\ref{chapter5:real-numbers-and-complex-numbers}). Việc sử dụng kí hiệu lượng hóa thay cho một câu văn hoàn chỉnh có thể khá ngắn gọn nhưng lại đánh đổi với tính dễ đọc của mệnh đề cũng như khả năng giao tiếp với người khác. Trong thực tế, cách phát biểu bằng một câu văn được ưa chuộng hơn. Nói riêng đối với bạn đọc là học sinh, sinh viên: Khi mới học, không nên lạm dụng kí hiệu, hãy dùng lời văn nhiều hơn, vì việc lạm dụng kí hiệu có thể làm thui chột khả năng diễn đạt và suy nghĩ mạch lạc.
+Trong toán học, việc sử dụng lượng hóa trong các mệnh đề là rất phổ biến, đặc biệt là trong Giải tích (điều này sẽ được thể hiện ở Chương~\ref{chapter:real-numbers-and-complex-numbers}). Việc sử dụng kí hiệu lượng hóa thay cho một câu văn hoàn chỉnh có thể khá ngắn gọn nhưng lại đánh đổi với tính dễ đọc của mệnh đề cũng như khả năng giao tiếp với người khác. Trong thực tế, cách phát biểu bằng một câu văn được ưa chuộng hơn. Nói riêng đối với bạn đọc là học sinh, sinh viên: Khi mới học, không nên lạm dụng kí hiệu, hãy dùng lời văn nhiều hơn, vì việc lạm dụng kí hiệu có thể làm thui chột khả năng diễn đạt và suy nghĩ mạch lạc.
 
 \subsection*{Phương pháp quy nạp toán học}
 
@@ -452,7 +452,7 @@ Sau đây là một ví dụ điển hình cho việc chứng minh bằng phươ
 
 Dù mang tên gọi ``Nguyên lý quy nạp mạnh'' nhưng nguyên lý này và nguyên lý quy nạp toán học là tương đương nhau.
 
-Không phải mệnh đề nào với lượng hóa cho số tự nhiên, hay số nguyên dương cũng được chứng minh bằng phương pháp quy nạp toán học.  Tuy vậy, phương pháp quy nạp toán học tỏ ra hiệu quả trong việc chứng minh nhiều kết quả. Tuy nhiên lúc này chúng ta chưa khẳng định được tính đúng đắn của phương pháp này mà mới chỉ được thuyết phục bằng các bước chứng minh nghe hợp lý cũng như các ví dụ. Thực ra, nguyên lý quy nạp toán học thường được phát biểu như một tiên đề. Chúng ta sẽ quay lại với nguyên lý quy nạp toán học trong Chương~\ref{chapter4:natural-numbers-integers-and-rationals}.
+Không phải mệnh đề nào với lượng hóa cho số tự nhiên, hay số nguyên dương cũng được chứng minh bằng phương pháp quy nạp toán học.  Tuy vậy, phương pháp quy nạp toán học tỏ ra hiệu quả trong việc chứng minh nhiều kết quả. Tuy nhiên lúc này chúng ta chưa khẳng định được tính đúng đắn của phương pháp này mà mới chỉ được thuyết phục bằng các bước chứng minh nghe hợp lý cũng như các ví dụ. Thực ra, nguyên lý quy nạp toán học thường được phát biểu như một tiên đề. Chúng ta sẽ quay lại với nguyên lý quy nạp toán học trong Chương~\ref{chapter:natural-numbers-integers-and-rationals}.
 
 Như đã đề cập từ trước, chúng ta nói thêm về sự dự đoán trong chứng minh bằng phương pháp quy nạp toán học. Bạn đọc khi theo dõi đến ví dụ về tổng các số tự nhiên lẻ liên tiếp có thể thấy điều dự đoán là không tự nhiên, và đặt ra các câu hỏi như: ``Dự đoán đó đến từ đâu?\@'' thậm chí là ``Nếu gặp trường hợp quá khó dự đoán thì sao?\@'' Đây là một nhược điểm lớn của phương pháp chứng minh quy nạp $-$ Đó là \textit{người sử dụng phương pháp quy nạp phải biết mình đang chứng minh điều gì, một cách cụ thể}, và chứng minh bằng phương pháp quy nạp \textit{không cung cấp thêm thông tin gì về bài toán} ngoại trừ chính kết quả được chứng minh. Điểm yếu này không thể khắc phục hoàn toàn vì tính chủ quan của nó. Những người học và làm toán chỉ còn cách phát triển kinh nghiệm để cải thiện kĩ năng dự đoán đó, hoặc không dùng những phương pháp chứng minh khác.
 
@@ -603,12 +603,12 @@ Khi đó, chúng ta còn nói $S$ là \textit{hợp rời} của họ tập hợ
     \item Tập hợp các số nguyên có thể được phân hoạch thành họ gồm hai tập hợp: tập hợp gồm các số nguyên chẵn và tập hợp gồm các số nguyên lẻ.
 \end{itemize}
 
-Trong Chương~\ref{chapter2:relations-and-mappings}, chúng ta sẽ quay trở lại với khái niệm phân hoạch khi bàn về quan hệ tương đương.
+Trong Chương~\ref{chapter:relations-and-mappings}, chúng ta sẽ quay trở lại với khái niệm phân hoạch khi bàn về quan hệ tương đương.
 
 \subsection*{Bài tập}
 \setcounter{exercise}{0}
 
-\begin{exercise}\label{section4:exercise1}
+\begin{exercise}\label{set-operations:exercise1}
     Cho ba tập hợp $A, B, C$ gồm hữu hạn phần tử. Kí hiệu $\card{A}$ là số lượng phần tử của tập hợp $A$. Chứng minh rằng
     \begin{enumerate}[label={(\alph*)}]
         \item $\card{A\cup B} = \card{A} + \card{B} - \card{A\cap B}$.
@@ -618,7 +618,7 @@ Trong Chương~\ref{chapter2:relations-and-mappings}, chúng ta sẽ quay trở 
     Bạn đọc hãy đưa ra một tổng quát (không cần chứng minh) cho hai công thức trên (cho nhiều tập hợp thay vì hai, hay ba tập hợp).
 \end{exercise}
 
-\begin{exercise}\label{section4:exercise2}
+\begin{exercise}\label{set-operations:exercise2}
     Cho ba tập hợp $A, B, C$. Chứng minh rằng
     \begin{equation*}
         \begin{split}
@@ -628,11 +628,11 @@ Trong Chương~\ref{chapter2:relations-and-mappings}, chúng ta sẽ quay trở 
     \end{equation*}
 \end{exercise}
 
-\begin{exercise}\label{section4:exercise3}
+\begin{exercise}\label{set-operations:exercise3}
     Hãy đưa ra một chứng minh trực tiếp cho công thức thứ hai trong Định lý~\ref{theorem:de-morgan-formula}.
 \end{exercise}
 
-\begin{exercise}\label{section4:exercise4}
+\begin{exercise}\label{set-operations:exercise4}
     Công thức De Morgan có thể được viết dưới dạng khác, sử dụng phép toán hiệu hai tập hợp thay vì lấy phần bù. Cụ thể là
     \begin{equation*}
         \begin{split}
@@ -641,20 +641,20 @@ Trong Chương~\ref{chapter2:relations-and-mappings}, chúng ta sẽ quay trở 
         \end{split}
     \end{equation*}
 
-    Chứng minh hai công thức trên. [Gợi ý: Tham khảo cách chứng minh của công thức De Morgan ban đầu và Bài tập~\ref{section4:exercise2}]
+    Chứng minh hai công thức trên. [Gợi ý: Tham khảo cách chứng minh của công thức De Morgan ban đầu và Bài tập~\ref{set-operations:exercise2}]
 \end{exercise}
 
-\begin{exercise}\label{section4:exercise5}
+\begin{exercise}\label{set-operations:exercise5}
     Trong ví dụ, chúng ta đã phân hoạch tập hợp các số nguyên thành một họ gồm tập hợp các số nguyên lẻ và tập hợp gồm các số nguyên chẵn. Hãy đưa ra một phân hoạch là một họ 3 tập hợp cho tập hợp số nguyên. Tương tự, hãy phân hoạch tập hợp số nguyên thành một họ $n$ tập hợp với $n\geq 2$.
 \end{exercise}
 
-\begin{exercise}\label{section4:exercise6}
+\begin{exercise}\label{set-operations:exercise6}
     Chứng minh rằng mọi tập hợp khác rỗng đều có thể được phân hoạch bởi một họ các tập hợp mà mỗi tập hợp trong họ đó gồm đúng một phần tử. [Gợi ý: Lưu ý rằng tập hợp đã cho có thể có vô hạn phần tử. Hãy chọn tập hợp chỉ số là chính tập hợp khác rỗng được cho ban đầu.]
 \end{exercise}
 
-Kết quả từ Bài tập~\ref{section4:exercise6} khá đơn giản, thậm chí có thể xem là hiển nhiên, nhưng lại tỏ ra hữu ích trong một số bài toán. Bản thân tác giả đã dùng đến kết quả này khi học topology điểm và lý thuyết nhóm.
+Kết quả từ Bài tập~\ref{set-operations:exercise6} khá đơn giản, thậm chí có thể xem là hiển nhiên, nhưng lại tỏ ra hữu ích trong một số bài toán. Bản thân tác giả đã dùng đến kết quả này khi học topology điểm và lý thuyết nhóm.
 
-\begin{exercise}\label{section4:exercise7}
+\begin{exercise}\label{set-operations:exercise7}
     Cho tập hợp $S$ khác rỗng được phân hoạch thành họ các tập hợp $A_{i}$ với $i\in I$ (tập hợp $I$ khác rỗng). Chứng minh rằng với mỗi phần tử thuộc $S$, tồn tại duy nhất $i\in I$ sao cho phần tử đó thuộc $A_{i}$. [Gợi ý: Chứng minh bằng phản chứng.]
 \end{exercise}
 
