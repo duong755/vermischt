@@ -280,14 +280,14 @@ Chúng ta nhắc lại và chứng minh các tính chất sau của phép nhân 
 \begin{theorem}\label{theorem:property-of-natural-numbers-multiplication}
 	Trên tập hợp số tự nhiên
 	\begin{enumerate}[label={(\roman*)}]
-		\item Phép nhân có tính chất phân phối (từ bên phải) với phép cộng. Tức là, với mọi số tự nhiên $x, y, z$, chúng ta có $(x + y)\cdot z = (x\cdot z) + (y\cdot z)$.
-		\item Phép nhân có tính chất kết hợp. Tức là, với mọi số tự nhiên $x, y, z$, chúng ta có $(x \cdot y) \cdot z = x \cdot (y \cdot z)$. Bằng kí hiệu logic hình thức, chúng ta viết
+		\item Phép nhân có tính chất phân phối (từ bên phải) với phép cộng. Nói cách khác, với mọi số tự nhiên $x, y, z$, chúng ta có $(x + y)\cdot z = (x\cdot z) + (y\cdot z)$.
+		\item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số tự nhiên $x, y, z$, chúng ta có $(x \cdot y) \cdot z = x \cdot (y \cdot z)$. Bằng kí hiệu logic hình thức, chúng ta viết
 		      \[
 			      \forall x\forall y\forall z \left( (x \cdot y) \cdot z = x \cdot (y \cdot z) \right).
 		      \]
 		\item Với mọi só tự nhiên $x$, $0\cdot x = 0$.
 		\item Với mọi số tự nhiên $x$, $x\cdot S(0) = S(0) \cdot x = x$.
-		\item Phép nhân có tính chất giao hoán.  Tức là, với mọi số tự nhiên $x, y$, chúng ta có $x \cdot y = y \cdot x$. Bằng kí hiệu logic hình thức, chúng ta viết
+		\item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số tự nhiên $x, y$, chúng ta có $x \cdot y = y \cdot x$. Bằng kí hiệu logic hình thức, chúng ta viết
 		      \[
 			      \forall x\forall y \left( x \cdot y = y \cdot x \right).
 		      \]
@@ -743,13 +743,13 @@ Việc mở rộng tập số tự nhiên thành tập hợp số nguyên cho ph
 \begin{theorem}\label{theorem:group-of-integers}
 	Trong tập hợp số nguyên,
 	\begin{enumerate}[label={(\roman*)}]
-		\item Phép cộng hai số nguyên có tính chất kết hợp. Tức là, với các số nguyên $[(a, b)], [(c, d)], [(x, y)]$, chúng ta có
+		\item Phép cộng hai số nguyên có tính chất kết hợp. Nói cách khác, với các số nguyên $[(a, b)], [(c, d)], [(x, y)]$, chúng ta có
 		      \[
 			      ([(a, b)] + [(c, d)]) + [(x, y)] = [(a, b)] + ([(c, d)] + [(x, y)]).
 		      \]
 		\item Với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(0, 0)] = [(0, 0)] + [(a, b)] = [(a, b)]$.
 		\item Với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(b, a)] = [(b, a)] + [(a, b)] = [(0, 0)]$.
-		\item Phép cộng hai số nguyên có tính chất giao hoán. Tức là, với mọi số nguyên $[(a, b)], [(c, d)]$, chúng ta có
+		\item Phép cộng hai số nguyên có tính chất giao hoán. Nói cách khác, với mọi số nguyên $[(a, b)], [(c, d)]$, chúng ta có
 		      \[
 			      [(a, b)] + [(c, d)] = [(c, d)] + [(a, b)].
 		      \]
@@ -803,14 +803,14 @@ Việc mở rộng tập số tự nhiên thành tập hợp số nguyên cho ph
 \begin{theorem}\label{theorem:uniqueness-of-additive-identity-and-additive-inverse}
 	Trong tập hợp số nguyên,
 	\begin{enumerate}[label={(\roman*)}]
-		\item Tồn tại duy nhất số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
-		\item Với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0,0)]$.
+		\item Tồn tại duy nhất số nguyên được gọi là \textbf{phần tử trung lập của phép cộng}. Nói cách khác, tồn tại duy nhất số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+		\item Với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ được gọi là \textbf{phần tử đối}, hay \textbf{số nguyên đối} của $\alpha$. Nói cách khác, với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0,0)]$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Theo phần (ii) của Định lý~\ref{theorem:group-of-integers}, với mọi số nguyên $\alpha$, chúng ta có $\alpha + [(0,0)] = [(0,0)] + \alpha = \alpha$. Như vậy, tồn tại số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+		\item Theo phần (ii) của Định lý~\ref{theorem:group-of-integers}, với mọi số nguyên $\alpha$, chúng ta có $\alpha + [(0,0)] = [(0,0)] + \alpha = \alpha$.
 
 		      Giả sử $\theta$ là một số nguyên thỏa mãn: Với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$. Khi đó
 		      \begin{align*}
@@ -818,7 +818,7 @@ Việc mở rộng tập số tự nhiên thành tập hợp số nguyên cho ph
 			             & = [(0, 0)]          & \text{(theo định nghĩa của số nguyên $\theta$)}.
 		      \end{align*}
 
-		      Do đó $\theta = [(0, 0)]$. Như vậy, tồn tại duy nhất số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+		      Do đó $\theta = [(0, 0)]$. Như vậy, tồn tại duy nhất một số nguyên là phần tử trung lập của phép cộng.
 		\item Phần (iii) của Định lý~\ref{theorem:group-of-integers} khẳng định rằng với mỗi số nguyên $\alpha$, tồn tại số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0, 0)]$.
 
 		      Giả sử $\gamma$ là một số nguyên thỏa mãn $\alpha + \gamma = \gamma + \alpha = \alpha$. Khi đó
@@ -830,15 +830,15 @@ Việc mở rộng tập số tự nhiên thành tập hợp số nguyên cho ph
 			             & = \beta.                    & \text{(theo phần (ii) của Định lý~\ref{theorem:group-of-integers})}
 		      \end{align*}
 
-		      Do đó $\gamma = \beta$. Như vậy, với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0, 0)]$.
+		      Do đó $\gamma = \beta$. Như vậy, với mỗi số nguyên $\alpha$, tồn tại duy nhất một số nguyên là phần tử đối của $\alpha$.
 	\end{enumerate}
 \end{proof}
 
 Phần (ii) của Định lý~\ref{theorem:uniqueness-of-additive-identity-and-additive-inverse} là cơ sở cho định nghĩa sau đây.
 \begin{definition}
 	\begin{enumerate}[label={(\roman*)}]
-		\item Với mỗi số nguyên $\alpha$, số nguyên $\alpha'$ duy nhất thỏa mãn $\alpha + \alpha' = \alpha' + \alpha = [(0, 0)]$ được gọi là số nguyên đối của $\alpha$, hay số đối của $\alpha$. Số đối của $\alpha$ được kí hiệu là $-\alpha$.
-		\item Phép trừ hai số nguyên là một phép toán hai ngôi trên tập hợp số nguyên. Kết quả của phép trừ hai số nguyên $\alpha$ và $\beta$ là tổng của $\alpha$ và $(-\beta)$. Chúng ta kí hiệu $\alpha - \beta = \alpha + (-\beta)$.
+		\item Với mỗi số nguyên $\alpha$, số nguyên đối của $\alpha$ được kí hiệu là $-\alpha$.
+		\item Phép trừ hai số nguyên là một phép toán hai ngôi trên tập hợp số nguyên. Kết quả của phép trừ hai số nguyên $\alpha$ và $\beta$ là tổng của $\alpha$ và $(-\beta)$. Chúng ta kí hiệu kết quả của phép trừ $\alpha$ cho $\beta$ là $\alpha - \beta$.
 	\end{enumerate}
 \end{definition}
 
@@ -1870,7 +1870,7 @@ Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B
 		a_{0}   & = b_{0} q_{0} + r_{0}       & a_{1} = b_{0}, b_{1} = r_{0}     \\
 		a_{1}   & = b_{1} q_{1} + r_{1}       & a_{2} = b_{1}, b_{2} = r_{1}     \\
 		a_{2}   & = b_{2} q_{2} + r_{2}       & a_{3} = b_{2}, b_{3} = r_{2}     \\
-		        & \ldots                                                              \\
+		        & \ldots                                                         \\
 		a_{k-1} & = b_{k-1} q_{k-1} + r_{k-1} & a_{k} = b_{k-1}, b_{k} = r_{k-1} \\
 		a_{k}   & = b_{k} q_{k}.
 	\end{align*}
@@ -1930,7 +1930,7 @@ Chúng ta cũng định nghĩa tập hợp số mới bằng một quan hệ tư
 
 	Nếu các phần tử $(a, b), (c, d)$, và $(x, y)$ của $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ thỏa mãn $(a, b)\sim (c, d)$ và $(c, d)\sim (x, y)$ thì $a d = b c$ và $c y = d x$. Từ hai đẳng thức này, cùng tính chất kết hợp và giao hoán của phép nhân số nguyên, chúng ta suy ra
 	\begin{align*}
-		(a y) (c d) & = (a d) (c y)                              \\
+		(a y) (c d) & = (a d) (c y)               \\
 		(b x) (c d) & = (b c) (d x) = (a d) (c y)
 	\end{align*}
 
@@ -1956,8 +1956,8 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 \end{example}
 
 Từ định nghĩa số hữu tỉ, chúng ta có định lý sau, thường được gọi là tính chất cơ bản của phân số.
-\begin{theorem}
-	Nếu $a, b, c$ là các số nguyên và $b, c$ khác $0$ thì $\frac{a}{b} = \frac{ac}{bc}$.
+\begin{theorem}\label{theorem:fundamental-property-of-fraction}
+	Nếu $a, b, c$ là các số nguyên và $b, c$ khác $0$ thì $\frac{a}{b} = \frac{ac}{bc} = \frac{ca}{cb}$.
 \end{theorem}
 
 \begin{theorem}[Phân số tối giản]
@@ -2014,12 +2014,12 @@ Giống như với phép cộng hai số nguyên, chúng ta cũng cần chỉ ra
 
 	Chúng ta sẽ chứng minh $\frac{a_{1} d_{1} + b_{1} c_{1}}{b_{1} d_{1}} = \frac{a_{2} d_{2} + b_{2} c_{2}}{b_{2} d_{2}}$.
 	\begin{align*}
-		    & (a_{1} d_{1} + b_{1} c_{1}) (b_{2} d_{2})                                                                                                                        \\
-		=\  & (a_{1} d_{1}) (b_{2} d_{2}) + (b_{1} c_{1}) (b_{2} d_{2}) & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}                    \\
-		=\  & (a_{1} b_{2}) (d_{1} d_{2}) + (c_{1} d_{2}) (b_{1} b_{2}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                       \\
-		=\  & (b_{1} a_{2}) (d_{1} d_{2}) + (d_{1} c_{2}) (b_{1} b_{2}) & \text{(vì $a_{1} b_{2} = b_{1} a_{2}$ và $c_{1} d_{2} = d_{1} c_{2}$)} \\
-		=\  & (a_{2} d_{2}) (b_{1} d_{1}) + (b_{2} c_{2}) (b_{1} d_{1}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                       \\
-		=\  & (a_{2} d_{2} + b_{2} c_{2}) (b_{1} d_{1})                           & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}
+		    & (a_{1} d_{1} + b_{1} c_{1}) (b_{2} d_{2})                                                                                           \\
+		=\  & (a_{1} d_{1}) (b_{2} d_{2}) + (b_{1} c_{1}) (b_{2} d_{2}) & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
+		=\  & (a_{1} b_{2}) (d_{1} d_{2}) + (c_{1} d_{2}) (b_{1} b_{2}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}    \\
+		=\  & (b_{1} a_{2}) (d_{1} d_{2}) + (d_{1} c_{2}) (b_{1} b_{2}) & \text{(vì $a_{1} b_{2} = b_{1} a_{2}$ và $c_{1} d_{2} = d_{1} c_{2}$)}  \\
+		=\  & (a_{2} d_{2}) (b_{1} d_{1}) + (b_{2} c_{2}) (b_{1} d_{1}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}    \\
+		=\  & (a_{2} d_{2} + b_{2} c_{2}) (b_{1} d_{1})                 & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}
 	\end{align*}
 
 	Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, $(a_{1} d_{1} + b_{1} c_{1}, b_{1} d_{1}) \sim (a_{2} d_{2} + b_{2} c_{2}, b_{2} d_{2})$. Do đó
@@ -2034,9 +2034,9 @@ Giống như với phép cộng hai số nguyên, chúng ta cũng cần chỉ ra
 \end{proof}
 
 Trong trường hợp phân số của hai số hữu tỉ có cùng mẫu số, chúng ta có mệnh đề sau.
-\begin{proposition}\label{proposition:same-denominator}
+\begin{theorem}\label{theorem:same-denominator}
 	$\frac{a}{b}$ và $\frac{c}{b}$ là hai số hữu tỉ thì $\frac{a}{b} + \frac{c}{b} = \frac{a + c}{b}$.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
 	Theo định nghĩa phép cộng số hữu tỉ và tính chất giao hoán, phân phối của phép nhân với phép cộng số nguyên
@@ -2045,22 +2045,23 @@ Trong trường hợp phân số của hai số hữu tỉ có cùng mẫu số,
 	\end{align*}
 \end{proof}
 
+Giống với phép cộng số nguyên, phép cộng số hữu tỉ có đủ bốn tính chất sau đây.
 \begin{theorem}\label{theorem:property-of-rational-numbers-addition}
 	Phép cộng số hữu tỉ có các tính chất sau.
 	\begin{enumerate}[label={(\roman*)}]
-		\item Phép cộng số hữu tỉ có tính chất kết hợp. Tức là, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$, chúng ta có
+		\item Phép cộng số hữu tỉ có tính chất kết hợp. Nói cách khác, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$, chúng ta có
 		      \[
 			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
 		      \]
 		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có
 		      \[
-				  \frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}
+			      \frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}
 		      \]
 		\item Với mọi số hữu tỉ $\frac{a}{b}$, chúng ta có
 		      \[
-				  \frac{a}{b} + \frac{-a}{b} = \frac{-a}{b} + \frac{a}{b} = \frac{0}{1}.
-			  \]
-		\item Phép cộng số hữu tỉ có tính chất giao hoán. Tức là, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}$, chúng ta có
+			      \frac{a}{b} + \frac{-a}{b} = \frac{-a}{b} + \frac{a}{b} = \frac{0}{1}.
+		      \]
+		\item Phép cộng số hữu tỉ có tính chất giao hoán. Nói cách khác, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}$, chúng ta có
 		      \[
 			      \frac{a}{b} + \frac{c}{d} = \frac{c}{d} + \frac{a}{b}.
 		      \]
@@ -2071,54 +2072,116 @@ Trong trường hợp phân số của hai số hữu tỉ có cùng mẫu số,
 	\begin{enumerate}[label={(\roman*)}]
 		\item Theo định nghĩa phép cộng số hữu tỉ
 		      \begin{align*}
-			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} & = \frac{a d + b c}{b d} + \frac{x}{y} = \frac{(a d + b c) y + x (b d)}{(b d) y} \\
-				  & = \frac{(a d) y + (b c) y +  (x b) d}{b (d y)} \\
-				  & \text{(theo tính chất kết hợp và phân phối của phép nhân với phép cộng số nguyên)} \\
-				  & = \frac{a (d y) + b (c y) + b(dx)}{b (d y)} \\
-				  & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)} \\
-				  & = \frac{a (d y) + b (c y + dx)}{b (d y)} \\
-				  & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
-				  & = \frac{a}{b} + \frac{c y + dx}{d y} \\
-				  & = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
+			      \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} & = \frac{a d + b c}{b d} + \frac{x}{y} = \frac{(a d + b c) y + x (b d)}{(b d) y}    \\
+			                                                           & = \frac{(a d) y + (b c) y +  (x b) d}{b (d y)}                                     \\
+			                                                           & \text{(theo tính chất kết hợp và phân phối của phép nhân với phép cộng số nguyên)} \\
+			                                                           & = \frac{a (d y) + b (c y) + b(dx)}{b (d y)}                                        \\
+			                                                           & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}               \\
+			                                                           & = \frac{a (d y) + b (c y + dx)}{b (d y)}                                           \\
+			                                                           & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}            \\
+			                                                           & = \frac{a}{b} + \frac{c y + dx}{d y}                                               \\
+			                                                           & = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
 		      \end{align*}
 		\item Theo định nghĩa phép cộng số hữu tỉ
 		      \begin{align*}
-				  \frac{a}{b} + \frac{0}{1} & = \frac{a\cdot 1 + b\cdot 0}{b\cdot 1} = \frac{a}{b}, \\
-				  \frac{0}{1} + \frac{a}{b} & = \frac{0\cdot b + 1\cdot a}{1\cdot b} = \frac{a}{b}.
-			  \end{align*}
-		\item Theo Mệnh đề~\ref{proposition:same-denominator}
+			      \frac{a}{b} + \frac{0}{1} & = \frac{a\cdot 1 + b\cdot 0}{b\cdot 1} = \frac{a}{b}, \\
+			      \frac{0}{1} + \frac{a}{b} & = \frac{0\cdot b + 1\cdot a}{1\cdot b} = \frac{a}{b}.
+		      \end{align*}
+		\item Theo Định lý~\ref{theorem:same-denominator}
 		      \begin{align*}
-				  \frac{a}{b} + \frac{-a}{b} & = \frac{a + (-a)}{b} = \frac{0}{b} = \frac{0}{1}, \\
-				  \frac{-a}{b} + \frac{a}{b} & = \frac{(-a) + a}{b} = \frac{0}{b} = \frac{0}{1}.
-			  \end{align*}
+			      \frac{a}{b} + \frac{-a}{b} & = \frac{a + (-a)}{b} = \frac{0}{b} = \frac{0}{1}, \\
+			      \frac{-a}{b} + \frac{a}{b} & = \frac{(-a) + a}{b} = \frac{0}{b} = \frac{0}{1}.
+		      \end{align*}
 		\item Theo định nghĩa phép cộng số hữu tỉ và tính chất giao hoán của phép cộng, phép nhân số nguyên
-			  \begin{align*}
-				  \frac{a}{b} + \frac{c}{d} & = \frac{ad + bc}{bd} = \frac{cb + da}{db} = \frac{c}{d} + \frac{a}{b}.
-			  \end{align*}
+		      \begin{align*}
+			      \frac{a}{b} + \frac{c}{d} & = \frac{ad + bc}{bd} = \frac{cb + da}{db} = \frac{c}{d} + \frac{a}{b}.
+		      \end{align*}
 	\end{enumerate}
 \end{proof}
 
 Kế tiếp phần (ii) và (iii) của định lý trên, chúng ta có kết quả sau.
-\begin{theorem}
+\begin{theorem}\label{theorem:rational-numbers-additive-identity-and-additive-inverse}
 	Trong tập hợp số hữu tỉ.
 	\begin{enumerate}[label={(\roman*)}]
-		\item Tồn tại đúng một số hữu tỉ $\theta$ sao cho với mọi số hữu tỉ $q$, có $q + \theta = \theta + q = q$.
-		\item Với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q'$ sao cho $q + q' = q' + q = \theta$.
+		\item Tồn tại đúng một số hữu tỉ là \textbf{phần tử đồng nhất của phép cộng}. Nói cách khác, tồn tại duy nhất số hữu tỉ $\theta$ sao cho với mọi số hữu tỉ $q$, có $q + \theta = \theta + q = q$.
+		\item Với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q'$ là \textbf{phần tử đối}, hay \textbf{số hữu tỉ đối} của $q$. Nói cách khác, với mỗi số hữu tỉ $q$, tồn tại duy nhất số hữu tỉ $q'$ sao cho $q + q' = q' + q = \frac{0}{1}$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Theo phần (ii) của Định lý~\ref{theorem:property-of-rational-numbers-addition}, với mọi số hữu tỉ $q$, có $q + \frac{0}{1} = \frac{0}{1} + q = q$.
+
+		      Giả sử số hữu tỉ $\theta$ thỏa mãn $q + \theta = \theta + q = q$ với mọi số hữu tỉ $q$. Khi đó $\theta = \theta + \frac{0}{1} = \frac{0}{1}$.
+
+		      Như vậy tồn tại duy nhất phần tử đồng nhất của phép cộng và phần tử đó là $\frac{0}{1}$.
+		\item Theo phần (iii) của Định lý~\ref{theorem:property-of-rational-numbers-addition}, với mỗi số hữu tỉ $q$, tồn tại số hữu tỉ $q'$ sao cho $q + q' = q' + q = \frac{0}{1}$.
+
+		      Giả sử số hữu tỉ $q''$ thỏa mãn $q + q'' = q'' + q = \frac{0}{1}$. Khi đó
+		      \[
+			      q'' = q'' + \frac{0}{1} = q'' + (q + q') = (q'' + q) + q' = \frac{0}{1} + q' = q'.
+		      \]
+
+		      Do đó với mỗi số hữu tỉ $q$, phần tử đối của $q$ tồn tại và là duy nhất.
+	\end{enumerate}
 \end{proof}
 
+Từ định lý trên, chúng ta định nghĩa phép trừ hai số hữu tỉ.
 \begin{definition}[Phép trừ hai số hữu tỉ]
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mỗi số hữu tỉ $q$, số hữu tỉ đối của $q$ được kí hiệu là $-q$. Nói riêng, chúng ta kí hiệu số hữu tỉ đối của $\frac{a}{b}$ là $-\frac{a}{b}$.
+		\item Phép trừ hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ. Kết quả của phép trừ hai số hữu tỉ $q_{1}$ và $q_{2}$ là tổng của $q_{1}$ và $(-q_{2})$. Chúng ta kí hiệu kết quả của phép trừ là $q_{1} - q_{2}$.
+	\end{enumerate}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:solution-of-linear-equation-part-1}
 	Với hai số hữu tỉ $q_{1}, q_{2}$, tồn tại duy nhất số hữu tỉ $q$ sao cho $q_{1} + q = q_{2}$.
 \end{theorem}
 
+\begin{proof}
+	Nếu số hữu tỉ $q$ thỏa mãn $q_{1} + q = q_{2}$ thì
+	\[
+		q = \frac{0}{1} + q = ((-q_{1}) + q_{1}) + q = (-q_{1}) + (q_{1} + q) = (-q_{1}) + q_{2}.
+	\]
+
+	Ngược lại, $q_{1} + ((-q_{1}) + q_{2}) = (q_{1} + (-q_{1})) + q_{2} = \frac{0}{1} + q_{2} = q_{2}$.
+
+	Như vậy với hai số hữu tỉ $q_{1}, q_{2}$, tồn tại duy nhất số hữu tỉ $q$ sao cho $q_{1} + q = q_{2}$, và số hữu tỉ đó là $(-q_{1}) + q_{2}$.
+\end{proof}
+
 \begin{definition}[Phép nhân hai số hữu tỉ]
+	Phép nhân hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $\cdot$. Với hai số hữu tỉ $\frac{a}{b}$ và $\frac{c}{d}$, chúng ta kí hiệu kết quả của phép nhân hai số hữu tỉ này là $\frac{a}{b}\cdot\frac{c}{d}$ và
+	\[
+		\frac{a}{b}\cdot\frac{c}{d} = \frac{ac}{bd}.
+	\]
 \end{definition}
+
+Cũng như với phép cộng hai số hữu tỉ, chúng ta khẳng định rằng phép nhân hai số hữu tỉ theo định nghĩa trên không phụ thuộc vào việc chọn phần tử đại diện.
+\begin{proposition}
+	Nếu các số hữu tỉ $\frac{a_{1}}{b_{1}}, \frac{c_{1}}{d_{1}}, \frac{a_{2}}{b_{2}}, \frac{c_{2}}{d_{2}}$ thỏa mãn $\frac{a_{1}}{b_{1}} = \frac{a_{2}}{b_{2}}$ và $\frac{c_{1}}{d_{1}} = \frac{c_{2}}{d_{2}}$ thì
+	\[
+		\frac{a_{1}}{b_{1}}\cdot\frac{c_{1}}{d_{1}} = \frac{a_{2}}{b_{2}}\cdot\frac{c_{2}}{d_{2}}.
+	\]
+\end{proposition}
+
+\begin{proof}
+	Theo định nghĩa phép nhân hai số hữu tỉ, chúng ta có
+	\[
+		\frac{a_{1}}{b_{1}}\cdot\frac{c_{1}}{d_{1}} = \frac{a_{1}c_{1}}{b_{1}d_{1}}\qquad\text{và}\qquad\frac{a_{2}}{b_{2}}\cdot\frac{c_{2}}{d_{2}} = \frac{a_{2}c_{2}}{b_{2}d_{2}}.
+	\]
+
+	Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, chúng ta có $a_{1}b_{2} = a_{2}b_{1}$ và $c_{1}d_{2} = c_{2}d_{1}$.
+	\begin{align*}
+		(a_{1}c_{1})(b_{2}d_{2}) & = (a_{1}b_{2})(c_{1}d_{2})  & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)} \\
+		                         & = (a_{2}b_{1})(c_{2}d_{1})  & \text{(vì $a_{1}b_{2} = a_{2}b_{1}$ và $c_{1}d_{2} = c_{2}d_{1}$)}   \\
+		                         & = (a_{2}c_{2})(b_{1}d_{1}). & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}
+	\end{align*}
+
+	Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$, chúng ta suy ra $\frac{a_{1}c_{1}}{b_{1}d_{1}} = \frac{a_{2}c_{2}}{b_{2}d_{2}}$. Do đó
+	\[
+		\frac{a_{1}}{b_{1}}\cdot\frac{c_{1}}{d_{1}} = \frac{a_{2}}{b_{2}}\cdot\frac{c_{2}}{d_{2}}.
+	\]
+\end{proof}
 
 Với hai số nguyên $a, b$, số nguyên $k$ thỏa mãn $ka = b$ tồn tại khi và chỉ khi $a$ là ước của $b$. Với phép nhân hai số hữu tỉ, sự hạn chế trên được giải quyết, theo như mệnh đề dưới đây.
 \begin{proposition}
@@ -2128,14 +2191,143 @@ Với hai số nguyên $a, b$, số nguyên $k$ thỏa mãn $ka = b$ tồn tại
 	\]
 \end{proposition}
 
+Phép nhân hai số hữu tỉ cũng có những tính chất tương tự với phép nhân hai số nguyên. Ngoài ra, phép nhân số hữu tỉ có tính chất khác mà phép nhân hai số nguyên không có.
 \begin{theorem}\label{theorem:property-of-rational-numbers-multiplication}
+	Trong tập hợp số hữu tỉ
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép nhân số hữu tỉ có tính chất kết hợp. Nói cách khác, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$, chúng ta có
+		      \[
+			      \left(\frac{a}{b}\cdot\frac{c}{d}\right)\cdot\frac{x}{y} = \frac{a}{b}\cdot\left(\frac{c}{d}\cdot\frac{x}{y}\right).
+		      \]
+		\item Phép nhân số hữu tỉ có tính chất phân phối với phép cộng số hữu tỉ. Nói cách khác, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}, \frac{x}{y}$, chúng ta có
+		      \[
+			      \begin{split}
+				      \left(\frac{a}{b} + \frac{c}{d}\right)\cdot\frac{x}{y} = \frac{a}{b}\cdot\frac{x}{y} + \frac{c}{d}\cdot\frac{x}{y}, \\
+				      \frac{x}{y}\cdot\left(\frac{a}{b} + \frac{c}{d}\right) = \frac{x}{y}\cdot\frac{a}{b} + \frac{x}{y}\cdot\frac{a}{b}.
+			      \end{split}
+		      \]
+		\item Với mỗi số hữu tỉ $q$, $q\cdot \frac{1}{1} = \frac{1}{1}\cdot q = q$.
+		\item Phép nhân số hữu tỉ có tính chất giao hoán. Nói cách khác, với các số hữu tỉ $\frac{a}{b}, \frac{c}{d}$, chúng ta có
+		      \[
+			      \frac{a}{b}\cdot\frac{c}{d} = \frac{c}{d}\cdot\frac{a}{b}.
+		      \]
+		\item Với mọi số hữu tỉ $q$, có $\frac{0}{1}\cdot q = q\cdot\frac{0}{1} = \frac{0}{1}$.
+		\item Với mỗi số hữu tỉ $q\ne \frac{0}{1}$, tồn tại số hữu tỉ $q'$ sao cho $qq' = q'q = \frac{1}{1}$.
+	\end{enumerate}
 \end{theorem}
 
-\begin{definition}[Nghịch đảo]
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Theo định nghĩa phép nhân số hữu tỉ và tính chất kết hợp của phép nhân số nguyên, chúng ta có
+		      \[
+			      \left(\frac{a}{b}\cdot\frac{c}{d}\right)\cdot\frac{x}{y} = \frac{ab}{cd}\cdot\frac{x}{y} = \frac{(ac)x}{(bd)y} = \frac{a(cx)}{b(dy)} = \frac{a}{b}\cdot\frac{cx}{dy} = \frac{a}{b}\cdot\left(\frac{c}{d}\cdot\frac{x}{y}\right).
+		      \]
+
+		      Vậy phép nhân số hữu tỉ có tính chất kết hợp.
+		\item Theo định nghĩa phép cộng và phép nhân số hữu tỉ, chúng ta có
+		      \begin{align*}
+			      \left(\frac{a}{b} + \frac{c}{d}\right)\cdot\frac{x}{y} & = \frac{ad + bc}{bd}\cdot\frac{x}{y}                                    \\
+			                                                             & = \frac{(ad + bc)x}{(bd)y}                                              \\
+			                                                             & = \frac{(ad)x + (bc)x}{(bd)y}                                           \\
+			                                                             & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
+			                                                             & = \frac{(ad)x}{(bd)y} + \frac{(bc)x}{(bd)y}                             \\
+			                                                             & \text{(theo Định lý~\ref{theorem:same-denominator})}                    \\
+			                                                             & = \frac{(ax)d}{(by)d} + \frac{b(cx)}{b(dy)}                             \\
+			                                                             & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}    \\
+			                                                             & = \frac{ax}{by} + \frac{cx}{dy}                                         \\
+			                                                             & \text{(theo Định lý~\ref{theorem:fundamental-property-of-fraction})}    \\
+			                                                             & = \frac{a}{b}\cdot\frac{x}{y} + \frac{c}{d}\cdot\frac{x}{y}.
+		      \end{align*}
+		      \begin{align*}
+			      \frac{x}{y}\cdot\left(\frac{a}{b} + \frac{c}{d}\right) & = \frac{x}{y}\cdot\frac{ad + bc}{bd}                                    \\
+			                                                             & = \frac{x(ad + bc)}{y(bd)}                                              \\
+			                                                             & = \frac{x(ad) + x(bc)}{y(bd)}                                           \\
+			                                                             & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
+			                                                             & = \frac{x(ad)}{y(bd)} + \frac{x(bc)}{y(bd)}                             \\
+			                                                             & \text{(theo Định lý~\ref{theorem:same-denominator})}                    \\
+			                                                             & = \frac{(xa)d}{(yb)d} + \frac{b(xc)}{b(yd)}                             \\
+			                                                             & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}    \\
+			                                                             & = \frac{xa}{yb} + \frac{xc}{yd}                                         \\
+			                                                             & \text{(theo Định lý~\ref{theorem:fundamental-property-of-fraction})}    \\
+			                                                             & = \frac{x}{y}\cdot\frac{a}{b} + \frac{x}{y}\cdot\frac{c}{d}.
+		      \end{align*}
+
+		      Vậy phép nhân số hữu tỉ có tính chất phân phối với phép cộng số hữu tỉ.
+		\item Chúng ta kí hiệu phân số của số hữu tỉ $q$ là $\frac{a}{b}$. Theo định nghĩa phép nhân hai số hữu tỉ và Định lý~\ref{theorem:property-of-integers-multiplication}, chúng ta có
+		      \begin{align*}
+				  \frac{a}{b}\cdot\frac{1}{1} = \frac{a\cdot 1}{b\cdot 1} = \frac{a}{b}, \\
+				  \frac{1}{1}\cdot\frac{1}{1} = \frac{1\cdot a}{1\cdot b} = \frac{a}{b}.
+			  \end{align*}
+
+			  Vậy với mọi số hữu tỉ $q$, chúng ta có $q\cdot\frac{1}{1} = \frac{1}{1}\cdot q = q$.
+		\item Theo định nghĩa phép nhân hai số hữu tỉ và tính chất giao hoán của phép nhân hai số nguyên, chúng ta có
+		      \[
+				  \frac{a}{b}\cdot\frac{c}{d} = \frac{ac}{bd} = \frac{ca}{db} = \frac{c}{d}\cdot\frac{a}{b}.
+			  \]
+
+			  Vậy phép nhân số hữu tỉ có tính chất giao hoán.
+		\item Phần (v) này có thể được chứng minh trực tiếp bằng định nghĩa phép nhân hai số hữu tỉ. Tuy nhiên ở đây chúng tôi đưa ra một chứng minh khác. Theo phần (i) và Định lý~\ref{theorem:property-of-rational-numbers-addition}
+		      \[
+				  \begin{split}
+				  	  \frac{0}{1}\cdot q = \left(\frac{0}{1} + \frac{0}{1}\right)\cdot q = \frac{0}{1}\cdot q + \frac{0}{1}\cdot q, \\
+					  q\cdot \frac{0}{1} = q\cdot \left(\frac{0}{1} + \frac{0}{1}\right) = q\cdot \frac{0}{1} + q\cdot \frac{0}{1}.
+				  \end{split}
+			  \]
+
+			  Theo Định lý~\ref{theorem:rational-numbers-additive-identity-and-additive-inverse}, chúng ta suy ra $\frac{0}{1}\cdot q = \frac{0}{1}$ và $q\cdot\frac{0}{1} = \frac{0}{1}$.
+		\item Chúng ta kí hiệu phân số của số hữu tỉ $q$ là $\frac{a}{b}$. Vì $q\ne \frac{0}{1}$ nên $a\ne 0$ và $b\ne 0$. Theo định nghĩa phép nhân hai số hữu tỉ, tính chất giao hoán của phép nhân hai số nguyên và Định lý~\ref{theorem:fundamental-property-of-fraction}
+		      \[
+				  \begin{split}
+				  	\frac{a}{b}\cdot\frac{b}{a} = \frac{ab}{ba} = \frac{ab}{ab} = \frac{1}{1}, \\
+					\frac{b}{a}\cdot\frac{a}{b} = \frac{ba}{ab} = \frac{ba}{ba} = \frac{1}{1}.
+				  \end{split}
+			  \]
+
+			  Vậy với mỗi số hữu tỉ $q\ne \frac{0}{1}$, tồn tại số hữu tỉ $q'$ sao cho $qq' = q'q = \frac{1}{1}$.
+	\end{enumerate}
+\end{proof}
+
+Điểm khác biệt cơ bản trong các tính chất của phép nhân số hữu tỉ với phép nhân số nguyên là phần (vi) của định lý trên. Đó cũng là một cơ sở cho định nghĩa trong kết quả dưới đây.
+\begin{theorem}\label{theorem:rational-numbers-multiplicative-identity-multiplicative-inverse}
+	Trong tập hợp số hữu tỉ
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tồn tại đúng một một số hữu tỉ được gọi là \textbf{phần tử đồng nhất của phép nhân}. Nói cách khác, tồn tại duy nhất số hữu tỉ $e$ sao cho với mọi số hữu tỉ $q$, chúng ta có $e\cdot q = q\cdot q = q$.
+		\item Với mỗi số hữu tỉ $q$ khác $\frac{0}{1}$, tồn tại duy nhất một số hữu tỉ $q'$ được gọi là \textbf{phần tử nghịch đảo}, hay \textbf{số hữu tỉ nghịch đảo} của $q$. Nói cách khác, với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q'$ sao cho $qq' = q'q = \frac{1}{1}$. Phần tử nghịch đảo của $q$ được kí hiệu là $q^{-1}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Theo phần (iii) của Định lý~\ref{theorem:property-of-rational-numbers-multiplication}, $\frac{1}{1}$ thỏa mãn điều đó. Như vậy trong tập hợp số hữu tỉ, tồn tại ít nhất một phần tử đồng nhất của phép nhân.
+
+		      Giả sử số hữu tỉ $e$ thỏa mãn: Với mọi số hữu tỉ $q$, chúng ta có $e\cdot q = q\cdot q = q$. Khi đó
+			  \[
+				  e = e\cdot\frac{1}{1} = \frac{1}{1}.
+			  \]
+
+			  Như vậy tồn tại đúng một số hữu tỉ là phần tử đồng nhất của phép nhân, và số hữu tỉ đó là $\frac{1}{1}$.
+		\item Theo phần (iii) của Định lý~\ref{theorem:property-of-rational-numbers-multiplication}, với mỗi số hữu tỉ $q\ne \frac{0}{1}$, tồn tại ít nhất một số hữu tỉ $q'$ sao cho $qq' = q'q = \frac{1}{1}$.
+
+		      Giả sử với số hữu tỉ $q\ne \frac{0}{1}$, có số hữu tỉ $q''$ thỏa mãn $qq'' = q''q = \frac{1}{1}$. Khi đó, theo tính chất kết hợp của phép nhân số hữu tỉ, chúng ta có
+			  \[
+				  q' = q'\cdot\frac{1}{1} = q'\cdot\left( qq'' \right) = (q'q)q'' = \frac{1}{1}q'' = q''.
+			  \]
+
+			  Như vậy với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ là phần tử nghịch đảo của $q$.
+	\end{enumerate}
+\end{proof}
+
+Tương tự như sự tồn tại của phần tử đối được dùng để định nghĩa phép trừ, chúng ta dùng sự tồn tại của phần tử nghịch đảo để định nghĩa phép chia.
+\begin{definition}[Phép chia hai số hữu tỉ]
+	Kết quả của phép chia một số hữu tỉ $q_{1}$ cho một số hữu tỉ $q_{2}\ne\frac{0}{1}$ là kết quả của phép nhân $q_{1}$ với phần tử nghịch đảo của $q_{2}$. Chúng ta kí hiệu phép chia hai số hữu tỉ như sau
+	\[
+		\frac{q_{1}}{q_{2}} = q_{1}/q_{2} = q_{1}{(q_{2})}^{-1}.
+	\]
 \end{definition}
 
-\begin{theorem}[Phép chia hai số hữu tỉ]
-\end{theorem}
+Với trong tập hợp số nguyên, không phải khi nào chúng ta cũng thực hiện được phép chia (chia hết). Nhưng với số hữu tỉ, chúng ta luôn chia được một số hữu tỉ cho một số hữu tỉ khác $\frac{0}{1}$.
+
+Bạn đọc lưu ý rằng kí hiệu $\frac{q_{1}}{q_{2}}$ không mâu thuẫn với kí hiệu phân số.
 
 \subsection*{$\dagger$ Quan hệ thứ tự trên tập hợp số hữu tỉ}
 
