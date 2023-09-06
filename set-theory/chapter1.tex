@@ -2,7 +2,7 @@
 
 \section{Mệnh đề và các phép toán logic}
 
-\subsection*{Mệnh đề}
+\subsection{Mệnh đề}
 
 Trong toán học cũng như đời sống, bạn đọc hẳn đã bắt gặp những câu có tính phát biểu. Chẳng hạn như:
 
@@ -17,7 +17,7 @@ Mỗi câu trên được gọi là một \textit{mệnh đề toán học}, hay
 
 Với một mệnh đề đúng, chúng ta nói giá trị chân lý (hay chân trị) của mệnh đề đó là \textit{đúng}. Với một mệnh đề sai, chúng ta nói giá trị chân lý (hay chân trị) của mệnh đề đó là \textit{sai}.
 
-\subsection*{Các phép toán logic}
+\subsection{Các phép toán logic}
 
 Sẽ không phải bàn gì thêm nếu chúng ta chỉ xem xét các mệnh đề một cách riêng rẽ. Trong thực tế, người ta kết hợp các mệnh đề với nhau, tạo ra các mệnh đề mới, và \textit{lập luận}. Để cho ngắn gọn, sau đây chúng ta kí hiệu mệnh đề bằng các chữ cái $P, Q,\ldots$
 
@@ -64,7 +64,7 @@ Bên cạnh ba phép toán logic là phủ định, hội, và tuyển, chúng t
 
 Thay vì ghi nhớ Bảng~\ref{section1:truth-table-of-implication-and-equivalence}, chúng ta có thể tóm gọn nội dung bảng bằng vài nhận xét: $P\implies Q$ chỉ sai khi $P$ đúng và $Q$ sai; $P\Leftrightarrow Q$ đúng nếu $P$ và $Q$ cùng đúng, hoặc cùng sai; $P\Leftrightarrow Q$ sai nếu một trong hai mệnh đề đúng, mệnh đề còn lại sai.
 
-\subsection*{$\dagger$ Biểu thức logic}
+\subsection{$\dagger$ Biểu thức logic}
 
 Với các toán tử và quan hệ logic đã nêu, chúng ta có thể kết hợp các mệnh đề với nhau để tạo ra những \textit{biểu thức logic}. Biểu thức logic có thể phức tạp như biểu thức số, và cũng có quy ước về thứ tự thực hiện các phép toán $-$ theo mức độ ưu tiên giảm dần, chúng ta lần lượt thực hiện phép phủ định, hội, và tuyển, trong đó biểu thức ở ngoặc trong cùng được thực hiện trước. Một số ví dụ về biểu thức logic là $(P\wedge Q)\wedge R$, $P\vee (Q\vee R)$, $P \implies (Q\vee \neg R)$, $(P\vee Q) \wedge (P\vee R)$.
 
@@ -95,7 +95,7 @@ Trên đây, chúng ta đã nhắc đến thứ tự thực hiện phép toán t
     \item Có thể tạo ra một biểu thức logic mới, tương đương với biểu thức logic đã cho và chỉ sử dụng ba phép toán phủ định, hội, và tuyển hay không?
 \end{itemize}
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 \setcounter{exercise}{0}
 
 \begin{exercise}\label{propositional-logic:exercise1}
@@ -158,7 +158,7 @@ Thứ tự thực hiện phép toán cho phép người sử dụng lược bỏ
 
 \section{Tập hợp}
 
-\subsection*{Định nghĩa tập hợp}
+\subsection{Định nghĩa tập hợp}
 
 Tập hợp là một khái niệm nguyên thủy, không được định nghĩa về mặt toán học. Chúng ta chấp nhận và hiểu về tập hợp bằng định nghĩa trực giác ``Tập hợp là một bộ các đối tượng'' và các ví dụ: \textit{Tập hợp các sinh viên trong một lớp học}, \textit{Tập hợp các câu văn trong một cuốn sách}, \textit{Tập hợp các nghiệm thực của phương trình $x^{2} + 1 = 0$}, \textit{Tập hợp các số nguyên}\ldots Bạn đọc có thể đưa ra thêm nhiều ví dụ khác về tập hợp. Tựu chung lại, chúng ta thống nhất các thuật ngữ và các đặc điểm sau của tập hợp như sau:
 \begin{enumerate}[label={(\arabic*)},itemsep=0pt]
@@ -189,7 +189,7 @@ Bên cạnh đó, để xác định tập hợp, thay vì liệt kê các phầ
 
 Để cho ngắn gọn, chúng ta có thể dùng từ tập thay vì tập hợp. Ở Chương~\ref{chapter:cardinality}, chúng ta sẽ bàn thêm về tập hợp có vô hạn phần tử.
 
-\subsection*{Quan hệ bao hàm giữa các tập hợp}
+\subsection{Quan hệ bao hàm giữa các tập hợp}
 
 Cho trước một đối tượng và một tập hợp, chúng ta đặt câu hỏi đối tượng này có thuộc tập hợp đó hay không? Với hai tập hợp, chúng ta có câu hỏi: phần tử của tập hợp này có là phần tử của tập hợp kia hay không? Với câu hỏi này, chúng ta đi đến định nghĩa sau.
 
@@ -247,7 +247,7 @@ Dưới đây là một số ví dụ về tập lũy thừa.
 
 Trong nhiều tài liệu khác, các tác giả còn dùng kí hiệu $\subset$ để chỉ quan hệ là tập hợp con, và dùng kí hiệu $\subsetneq$ để chỉ quan hệ là tập hợp con thực sự. Còn ở tài liệu này, chúng ta quy ước dùng kí hiệu $\subseteq$ để chỉ quan hệ là tập hợp con, và dùng kí hiệu $\subset$ để chỉ quan hệ là tập hợp con thực sự, gợi sự tương tự với cặp kí hiệu $\leq$ và $<$.
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 \setcounter{exercise}{0}
 
 \begin{exercise}\label{naive-set-theory:exercise1}
@@ -276,7 +276,7 @@ Trong nhiều tài liệu khác, các tác giả còn dùng kí hiệu $\subset$
 
 \section{Vị từ và lượng hóa}
 
-\subsection*{Vị từ}
+\subsection{Vị từ}
 
 Mục này giới thiệu khái niệm vị từ. Chúng ta bắt đầu bằng hai ví dụ thực tế.
 
@@ -286,7 +286,7 @@ Một giáo viên hỏi đồng nghiệp của mình về điểm thi Toán củ
 
 Trong hai ví dụ vừa xét, chúng ta có những mệnh đề có cú pháp giống nhau, chỉ khác nhau về đối tương được nhắc đến (in đậm) và thông tin về đối tượng đó (in nghiêng). Về mặt hình thức, chúng ta có thể định nghĩa biểu thức $A(x)$ có nghĩa là \textit{Ngày $x$ có mưa}, và $B(x, y)$ có nghĩa là \textit{$x$ được điểm $y$}. Khi đó, $A$, $B$ được gọi là các \textit{vị từ}. Nói theo cách \textit{không chính thức}, vị từ là một ``mệnh đề chứa biến''. Vì mệnh đề là một phát biểu có tính đúng sai, nên chúng ta không coi vị từ $A$, vị từ $B$ là các mệnh đề. Chúng tạo ra mệnh đề khi áp dụng vị từ lên các đối tượng, chẳng hạn: Trong mệnh đề \textit{Ngày hôm qua có mưa}, vị từ $A$ áp dụng cho đối tượng \textbf{Ngày hôm qua}; Trong mệnh đề \textit{An được điểm 9}, vị từ $B$ áp dụng cho đối tượng \textbf{An}. $A(x)$, $B(x, y)$ còn được gọi là \textit{điều kiện của các biến $x, y$}.
 
-\subsection*{Lượng hóa}
+\subsection{Lượng hóa}
 
 Quay trở lại với hai ví dụ được xét ở mục trước. Ở ví dụ đầu tiên, vì ngày hôm qua và ngày hôm kia có mưa, nên người hàng xóm có thể trả lời \textit{cả hai ngày vừa qua đều có mưa} thay vì nói về từng ngày một. Ở ví dụ thứ hai, người giáo viên có thể hỏi tiếp người đồng nghiệp của mình rằng: ``Trong lớp có học sinh nào được điểm 10 không?\@'', hay là ``Tất cả học sinh nào đều được điểm trên trung bình chứ?\@''. Người đồng nghiệp có thể trả lời rằng ``Có học sinh được điểm 10'' và ``Mọi học sinh đều được điểm lớn hơn hoặc bằng 5.\@''
 
@@ -334,7 +334,7 @@ Qua ba ví dụ trên đây, chúng ta rút ra quy tắc khi viết phủ địn
 
 Trong toán học, việc sử dụng lượng hóa trong các mệnh đề là rất phổ biến, đặc biệt là trong Giải tích (điều này sẽ được thể hiện ở Chương~\ref{chapter:real-numbers-and-complex-numbers}). Việc sử dụng kí hiệu lượng hóa thay cho một câu văn hoàn chỉnh có thể khá ngắn gọn nhưng lại đánh đổi với tính dễ đọc của mệnh đề cũng như khả năng giao tiếp với người khác. Trong thực tế, cách phát biểu bằng một câu văn được ưa chuộng hơn. Nói riêng đối với bạn đọc là học sinh, sinh viên: Khi mới học, không nên lạm dụng kí hiệu, hãy dùng lời văn nhiều hơn, vì việc lạm dụng kí hiệu có thể làm thui chột khả năng diễn đạt và suy nghĩ mạch lạc.
 
-\subsection*{Phương pháp quy nạp toán học}
+\subsection{Phương pháp quy nạp toán học}
 
 Trong mục này, chúng ta xem xét một trường hợp riêng của vị từ: vị từ sử dụng biến là số nguyên dương. Chúng ta quan tâm tới trường hợp này vì khi học và làm toán, chúng ta thường cần chứng minh các mệnh đề có dạng $p(n)$ (với $n$ là số nguyên dương) cho \textit{tất cả} các trường hợp của $n$. Để chứng minh một lớp các mệnh đề như vậy, phương pháp quy nạp toán học thường được sử dụng. Phương pháp này được phát biểu thành định lý sau.
 
@@ -456,7 +456,7 @@ Không phải mệnh đề nào với lượng hóa cho số tự nhiên, hay s�
 
 Như đã đề cập từ trước, chúng ta nói thêm về sự dự đoán trong chứng minh bằng phương pháp quy nạp toán học. Bạn đọc khi theo dõi đến ví dụ về tổng các số tự nhiên lẻ liên tiếp có thể thấy điều dự đoán là không tự nhiên, và đặt ra các câu hỏi như: ``Dự đoán đó đến từ đâu?\@'' thậm chí là ``Nếu gặp trường hợp quá khó dự đoán thì sao?\@'' Đây là một nhược điểm lớn của phương pháp chứng minh quy nạp $-$ Đó là \textit{người sử dụng phương pháp quy nạp phải biết mình đang chứng minh điều gì, một cách cụ thể}, và chứng minh bằng phương pháp quy nạp \textit{không cung cấp thêm thông tin gì về bài toán} ngoại trừ chính kết quả được chứng minh. Điểm yếu này không thể khắc phục hoàn toàn vì tính chủ quan của nó. Những người học và làm toán chỉ còn cách phát triển kinh nghiệm để cải thiện kĩ năng dự đoán đó, hoặc không dùng những phương pháp chứng minh khác.
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 \setcounter{exercise}{0}
 
 \begin{exercise}
@@ -471,7 +471,7 @@ Như đã đề cập từ trước, chúng ta nói thêm về sự dự đoán 
 
 Với các tập hợp cho trước, chúng ta có thể kết hợp các phần tử từ các tập hợp này để cho ra một tập hợp khác.
 
-\subsection*{Hợp và giao của các tập hợp}
+\subsection{Hợp và giao của các tập hợp}
 
 \begin{definition}[Hợp của hai tập hợp]
     Cho hai tập hợp $A$ và $B$. Hợp của $A$ và $B$ là tập hợp gồm các phần tử của $A$ và các phần tử của $B$, được kí hiệu là $A\cup B$.
@@ -503,7 +503,7 @@ Phép toán hợp và phép toán giao của hai tập hợp có những tính c
 
 Chứng minh cho định lý trên có thể được thực hiện bằng các tính chất giao hoán, kết hợp, và phân phối của hai phép toán tuyển và hội. Trong định lý trên, nhờ tính chất kết hợp mà chúng ta có thể bỏ qua dấu ngoặc để viết $A\cup B\cup C$ và $A\cap B\cap C$ mà không lo ngại có hiểu lầm nào.
 
-\subsection*{Phần bù và hiệu hai tập hợp}
+\subsection{Phần bù và hiệu hai tập hợp}
 
 Khi học hay làm toán và làm việc với tập hợp, chúng ta thường xuyên gặp trường hợp các tập hợp đang xét đều là tập hợp con của một tập hợp nào đó. Chẳng hạn: Khi học hình học phẳng, chúng ta làm việc trong một mặt phẳng (mặt phẳng này chứa tất cả các điểm, đường thẳng, tam giác, đường tròn mà chúng ta đang xét); Khi xem xét một đồ thị, chúng ta quan tâm tới các đỉnh, cạnh của đồ thị, và có thể cả các đồ thị con của đồ thị đó;\ldots Tập hợp chứa tất cả các đối tượng đang xét (việc tập hợp này là gì phụ thuộc vào ngữ cảnh của môn học, chuyên ngành, và đặc biệt là vấn đề đang tìm hiểu) được gọi là \textit{không gian}, hay \textit{tập vũ trụ}. Ở các phân ngành khác của toán học nói riêng và khoa học nói chung, thuật ngữ không gian được sử dụng như vậy, thường xuyên (không gian vector, không gian topology, không gian mẫu, không gian affine, không gian xạ ảnh, không gian tìm kiếm,\ldots). Trong mục này, chúng ta kí hiệu không gian là $X$.
 
@@ -522,7 +522,7 @@ Khi không gian $X$ đã được xác định qua ngữ cảnh, chúng ta chỉ
 
 Khái niệm phần bù là một trường hợp riêng của khái niệm hiệu hai tập hợp. Khác với phần bù, để định nghĩa hiệu của hai tập hợp $A$ và $B$, chúng ta không nhất thiết phải có $A\supseteq B$.
 
-\subsection*{Công thức De Morgan}
+\subsection{Công thức De Morgan}
 
 Để có thể phát biểu hình thức cho công thức De Morgan, chúng ta cần định nghĩa hợp và giao của một lượng tùy ý các tập hợp (có thể là vô hạn các tập hợp). Cho đến thời điểm hiện tại, chúng ta chỉ có một cách để thể hiện ``số lượng'' tùy ý như vậy, đó là sử dụng chính tập hợp. Chúng ta áp dụng điều này trong định nghĩa dưới đây.
 
@@ -576,7 +576,7 @@ Ngay ở thời điểm chưa chứng minh, chúng ta có thể chỉ ra hai cô
 
 Bằng lời, công thức De Morgan được phát biểu là: Phần bù của hợp của một họ các tập hợp là giao của các phần bù, phần bù của giao của một họ các tập hợp là hợp của các phần bù.
 
-\subsection*{Phân hoạch của một tập hợp}
+\subsection{Phân hoạch của một tập hợp}
 
 \begin{definition}[Hai tập hợp rời nhau]
     Hai tập hợp được gọi là rời nhau nếu giao của chúng là tập hợp rỗng.
@@ -605,7 +605,7 @@ Khi đó, chúng ta còn nói $S$ là \textit{hợp rời} của họ tập hợ
 
 Trong Chương~\ref{chapter:relations-and-mappings}, chúng ta sẽ quay trở lại với khái niệm phân hoạch khi bàn về quan hệ tương đương.
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 \setcounter{exercise}{0}
 
 \begin{exercise}\label{set-operations:exercise1}
@@ -661,6 +661,6 @@ Kết quả từ Bài tập~\ref{set-operations:exercise6} khá đơn giản, th
 
 \section{$\dagger$ Lý thuyết tập hợp theo tiên đề}\label{section5:axiomatic-set-theory}
 
-\subsection*{Nghịch lý Russell}
+\subsection{Nghịch lý Russell}
 
-\subsection*{Lý thuyết tập hợp ZFC}
+\subsection{Lý thuyết tập hợp ZFC}

@@ -4,7 +4,7 @@
 
 Tích Descartes là một phép toán khác trên các tập hợp. Để định nghĩa tích Descartes của hai tập hợp, chúng ta định nghĩa cặp có thứ tự.
 
-\subsection*{Cặp có thứ tự}
+\subsection{Cặp có thứ tự}
 
 \noindent\textbf{Định nghĩa.} (Cặp có thứ tự) Một \textbf{cặp có thứ tự} là một cặp gồm hai đối tượng và xác định thứ tự là $a$ và $b$, kí hiệu là $(a, b)$. Hai cặp có thứ tự $(a, b)$ và $(c, d)$ được gọi là bằng nhau khi và chỉ khi $a = c$ và $b = d$. Khi hai cặp có thứ tự $(a, b)$ và $(c, d)$ bằng nhau, chúng ta kí hiệu $(a, b) = (c, d)$.
 
@@ -51,7 +51,7 @@ Với định nghĩa này, điều kiện bằng nhau của hai cặp có thứ 
 
 Từ Định lý trên, chúng ta thu được hệ quả: $(a, b) = (b, a)$ khi và chỉ khi $a = b$. Một lần nữa, tính thứ tự được nhấn mạnh.
 
-\subsection*{Tích Descartes của hai tập hợp}
+\subsection{Tích Descartes của hai tập hợp}
 
 \begin{definition}[Tích Descartes của hai tập hợp]
     Cho hai tập hợp $A$ và $B$. Tích Descartes của $A$ và $B$ là tập hợp gồm tất cả các cặp có thứ tự mà đối tượng thứ nhất là phần tử của $A$, đối tượng thứ hai là phần tử của $B$. Tích Descartes của $A$ và $B$ được kí hiệu là $A\times B$.
@@ -75,7 +75,7 @@ Không như phép toán hợp và giao hai tập hợp, tích Descartes nói chu
     \end{split}
 \]
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 \setcounter{exercise}{0}
 
 \begin{exercise}\label{cartesian-product:exercise1}
@@ -92,7 +92,7 @@ Không như phép toán hợp và giao hai tập hợp, tích Descartes nói chu
 
 \section{Ánh xạ}\label{section:mappings}
 
-\subsection*{Định nghĩa}
+\subsection{Định nghĩa}
 
 \begin{definition}[Ánh xạ]
     Cho hai tập hợp $X$ và $Y$. Một \textbf{ánh xạ $f$ từ $X$ vào $Y$} là một \textit{quy tắc gán mỗi phần tử của $X$ với đúng một phần tử của $Y$}. Tập $X$ được gọi là \textbf{tập nguồn} (hay \textbf{miền}, \textbf{miền giá định}) của $f$, còn tập $Y$ được gọi là \textbf{tập đích} (hay \textbf{đối miền}) của $f$.
@@ -172,7 +172,7 @@ Trừu tượng hơn, với một tập hợp $S$ cho trước, $*$ được g�
 
 Nói riêng, tập nguồn của một ánh xạ có thể là tập hợp rỗng. Nhưng nếu tập đích của một ánh xạ là tập rỗng thì tập nguồn của ánh xạ đó cũng phải là tập hợp rỗng. Vì nếu tập nguồn khác rỗng và tập đích rỗng thì ``ánh xạ'' sẽ không có phần tử nào để gán với phần tử của tập nguồn $-$ Điều này vi phạm định nghĩa ánh xạ. Chúng ta gọi ánh xạ có tập nguồn rỗng là một ánh xạ rỗng. Khi học và làm toán, chúng ta rất ít khi gặp ánh xạ rỗng và thường bỏ qua (việc này là chấp nhận được) trường hợp này.
 
-\subsection*{Ảnh và Nghịch ảnh}
+\subsection{Ảnh và Nghịch ảnh}
 
 Ở mục trước, khi định nghĩa ánh xạ, chúng ta đã đề cập đến ảnh của một phần tử dưới một ánh xạ.
 
@@ -249,7 +249,7 @@ Tương tự với hàm số, chúng ta cũng có thể định nghĩa đồ th�
     Vậy hai ánh xạ $f$ và $g$ với chung tập nguồn $X$ và tập đích $Y$ bằng nhau khi và chỉ khi với mọi $x\in X$, có $f(x) = g(x)$.
 \end{proof}
 
-\subsection*{Ánh xạ hợp}
+\subsection{Ánh xạ hợp}
 
 Các ánh xạ có thể kết hợp với nhau để cho ra một ánh xạ nữa nếu tập nguồn của ánh xạ thứ nhất là tập đích của ánh xạ thứ hai, như trong định nghĩa sau đây.
 
@@ -304,7 +304,7 @@ Chúng ta xem xét một số ví dụ tính toán với những ánh xạ cụ 
     \]
 \end{example}
 
-\subsection*{Đơn ánh. Toàn ánh. Song ánh}
+\subsection{Đơn ánh. Toàn ánh. Song ánh}
 
 \begin{definition}
     Cho ánh xạ $f: X\to Y$.
@@ -388,7 +388,7 @@ Từ định nghĩa ánh xạ ngược, chúng ta suy ra rằng nếu ánh xạ 
 
 Chúng tôi nhường lại chứng minh định lý trên cho bạn đọc trong phần Bài tập.
 
-\subsection*{$\dagger$ Tích Descartes}
+\subsection{$\dagger$ Tích Descartes}
 
 Ngoại trừ mục hiện tại và Mục~\ref{section5:axiomatic-set-theory}, trong tài liệu này, chúng ta chỉ làm việc với tích Descartes của hai tập hợp. Mục tiêu của mục này là đưa ra một định nghĩa cho tích Descartes của một họ các tập hợp (có thể gồm vô hạn tập hợp).
 
@@ -433,7 +433,7 @@ Trong định nghĩa trên, tích Descartes là một tập hợp các ánh xạ
 
 Tích Descartes của hữu hạn tập hợp là khác rỗng nếu từng tập hợp trong tích Descartes là khác rỗng, điều này có thể được chứng minh bằng phương pháp quy nạp toán học. Tuy nhiên phương pháp quy nạp toán học mà chúng ta đã biết chỉ được áp dụng cho số tự nhiên, không áp dụng cho vô hạn. Nói thêm, nếu công nhận Tiên đề chọn, chúng ta khẳng định được tích Descartes của một họ các tập khác rỗng là khác rỗng. Nếu không công nhận tiên đề chọn, chưa thể trả lời được tích Descartes của họ vô hạn tập hợp là rỗng hay không.
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 \setcounter{exercise}{0}
 
 \begin{exercise}
@@ -499,7 +499,7 @@ Nghịch ảnh là một khái niệm quan trọng trong topology. Một vài tr
 
 \section{Quan hệ}
 
-\subsection*{Quan hệ hai ngôi}
+\subsection{Quan hệ hai ngôi}
 
 Cho đến mục này, bạn chắc hẳn đọc đã bắt gặp thuật ngữ quan hệ, hoặc sử dụng khái niệm đó (dù là theo cách tường minh hay ngầm định) trong tài liệu vài lần. Chúng ta đều đã biết \textit{quan hệ bằng nhau giữa các số thực}, \textit{quan hệ bao hàm giữa các tập hợp}, \textit{quan hệ so sánh giữa các số thức}\ldots Điểm chung trong những ví dụ trên về quan hệ là có hai đối tượng cùng thuộc tập hợp nào đấy và được đặt trong mối quan hệ đó $-$ \textit{hai số thực bằng nhau}, \textit{tập hợp này là tập hợp con của tập hợp kia}, \textit{số thực này nhỏ hơn hoặc bằng số thực kia}. Sự ghép cặp như vậy dẫn tới ý tưởng định nghĩa quan hệ bằng tích Descartes của hai tập hợp.
 
@@ -548,7 +548,7 @@ Trong tài liệu này, chúng ta chỉ định nghĩa và quan tâm đến quan
 
 Trong phần còn lại của chương này, chúng ta nói về hai loại quan hệ đặc biệt: quan hệ tương đương và quan hệ thứ tự. Mỗi \textit{loại quan hệ} được xác định bởi những tính chất mà chúng thỏa mãn.
 
-\subsection*{Trường hợp riêng: Quan hệ tương đương}
+\subsection{Trường hợp riêng: Quan hệ tương đương}
 
 \begin{definition}[Quan hệ tương đương]
     Quan hệ tương đương trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ tương đương thỏa mãn ba tính chất: phản xạ, đối xứng, và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ tương đương trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn ba tính chất
@@ -593,7 +593,7 @@ Các lớp tương đương của một quan hệ tương đương có tính ch�
 
 Ngược lại, cho trước một phân hoạch của một tập hợp $S$ khác rỗng, chúng ta có thể định nghĩa một quan hệ tương đương tương ứng với phân hoạch đó. Giả sử họ các tập hợp $S_{i}$ (với $i\in I$ và tập hợp $I$ khác rỗng) tạo thành một phân hoạch của tập hợp $S$. Khi đó chúng ta định nghĩa một quan hệ $\mathscr{R}$ trên $S$ như sau: $x\mathscr{R}y$ nếu và chỉ nếu tồn tại $i\in I$ sao cho $x$ và $y$ là phần tử của $A_{i}$. Trong trường hợp này, $\mathscr{R}$ chính là một quan hệ tương đương. Phần kiểm chứng, chúng tôi xin nhường lại cho bạn đọc.
 
-\subsection*{Trường hợp riêng: Quan hệ thứ tự và Quan hệ tiền thứ tự}
+\subsection{Trường hợp riêng: Quan hệ thứ tự và Quan hệ tiền thứ tự}
 
 Trước mục này, chúng ta đã nhắc đến quan hệ nhỏ hơn hoặc bằng giữa các số thực và gọi đó là quan hệ so sánh. Thực ra, tên gọi chính thức của loại quan hệ này là quan hệ thứ tự.
 
@@ -682,4 +682,4 @@ Quan hệ tiền thứ tự được kí hiệu bởi $\lesssim$. Chúng ta xem 
 
 Ví dụ trên đây chỉ đơn thuần là ví dụ cho sự tồn tại của một quan hệ tiền thứ tự mà không phải quan hệ thứ tự, và dường như không cung cấp nhiều thông tin. Trong Chương~\ref{chapter:real-numbers-and-complex-numbers}, chúng ta sẽ định nghĩa một quan hệ tiền thứ tự có ý nghĩa trong việc xây dựng tập hợp số thực.
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
