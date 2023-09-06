@@ -1486,21 +1486,7 @@ Câu trả lời là không. Tác dụng của kí hiệu đó đã được gi�
 
 Định lý sau phát biểu rằng tập hợp số tự nhiên có thể nhúng được vào tập hợp số nguyên.
 \begin{theorem}\label{theorem:embed-N-into-Z}
-	Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh.
-\end{theorem}
-
-\begin{proof}
-	Với hai số tự nhiên $m, n$, $[(m, 0)] = [(n, 0)]$ kéo theo $(m, 0)\sim (n, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(m, 0)\sim (n, 0)$ khi và chỉ khi $m + 0 = 0 + n$, tức là $m = n$. Do đó $\iota$ là một đơn ánh.
-
-	Giả sử phản chứng rằng tồn tại số tự nhiên $n$ sao cho $\iota(n) = [(0, 1)]$. Theo định nghĩa của $\iota$ và định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $(n, 0)\sim (0, 1)$, tức là $n + 1 = 0$, hay $S(n) = 0$, điều này mâu thuẫn với tiên đề Peano thứ 8. Do đó không tồn tại số tự nhiên $n$ nào sao cho $\iota(n) = [(0, 1)]$, nên $\iota$ không phải toàn ánh.
-
-	Vậy $\iota$ là đơn ánh nhưng không phải song ánh.
-\end{proof}
-
-Đơn ánh $\iota: \mathbb{N}\to \mathbb{Z}$ trong định lý trên bảo toàn phép toán cộng, nhân, và quan hệ thứ tự.
-
-\begin{theorem}\label{theorem:monomorphism-N-to-Z}
-	$\iota$ là ánh xạ trong Định lý~\ref{theorem:embed-N-into-Z} thì với mọi số tự nhiên $m, n$
+	Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh. Ngoài ra, với mọi số tự nhiên $m, n$, chúng ta có
 	\[
 		\begin{split}
 			\iota(m + n) = \iota(m) + \iota(n), \\
@@ -1511,6 +1497,23 @@ Câu trả lời là không. Tác dụng của kí hiệu đó đã được gi�
 
 	(Trong đó, phép cộng ở $\iota(m + n)$ là phép cộng hai số tự nhiên, phép cộng ở $\iota(m) + \iota(n)$ là phép cộng hai số nguyên; phép nhân ở $\iota(m\cdot n)$ là phép nhân hai số tự nhiên, phép nhân ở $\iota(m)\cdot\iota(n)$ là phép nhân hai số nguyên; quan hệ $\leq$ ở $m\leq n$ là quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, quan hệ $\leq$ ở $\iota(m)\leq \iota(n)$ là quan hệ thứ tự $\leq$ trên tập hợp số nguyên.)
 \end{theorem}
+
+\begin{proof}
+	Với hai số tự nhiên $m, n$, $[(m, 0)] = [(n, 0)]$ kéo theo $(m, 0)\sim (n, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(m, 0)\sim (n, 0)$ khi và chỉ khi $m + 0 = 0 + n$, tức là $m = n$. Do đó $\iota$ là một đơn ánh.
+
+	Giả sử phản chứng rằng tồn tại số tự nhiên $n$ sao cho $\iota(n) = [(0, 1)]$. Theo định nghĩa của $\iota$ và định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $(n, 0)\sim (0, 1)$, tức là $n + 1 = 0$, hay $S(n) = 0$, điều này mâu thuẫn với tiên đề Peano thứ 8. Do đó không tồn tại số tự nhiên $n$ nào sao cho $\iota(n) = [(0, 1)]$, nên $\iota$ không phải toàn ánh.
+
+	Vậy $\iota$ là đơn ánh nhưng không phải song ánh.
+
+	Theo định nghĩa phép cộng, phép nhân số nguyên và quan hệ $\leq$ trên tập hợp số nguyên
+	\begin{itemize}
+		\item $\iota(m + n) = [(m + n, 0)] = [(m, 0)] + [(n, 0)] = \iota(m) + \iota(n)$.
+		\item $\iota(m\cdot n) = [(m\cdot n, 0)] = [(m, 0)]\cdot [(n, 0)] = \iota(m)\cdot\iota(n)$.
+		\item Nếu $m\leq n$ thì tồn tại số tự nhiên $c$ sao cho $m + c = n$. Do đó $[(m, 0)] + [(c, 0)]\leq [(n, 0)]$ nên $[(m, 0)]\leq [(n, 0)]$ vì $[(c, 0)]$ là một số nguyên không âm. $[(m, 0)]\leq [(n, 0)]$ kéo theo $\iota(m)\leq\iota(n)$.
+	\end{itemize}
+\end{proof}
+
+Đơn ánh $\iota: \mathbb{N}\to \mathbb{Z}$ trong định lý trên bảo toàn phép toán cộng, nhân, và quan hệ thứ tự.
 
 Chúng tôi muốn nói thêm về việc tại sao cách kí hiệu quen biết cho số nguyên lại phù hợp. Định lý~\ref{theorem:embed-N-into-Z} chỉ ra một đơn ánh từ tập hợp số tự nhiên vào tập hợp số nguyên. Ảnh của đơn ánh này chính là tập hợp các số nguyên không âm. Chúng ta có thể kiểm tra rằng số nguyên $[(0,0)]$ và ánh xạ $S$ với tập nguồn và tập đích là tập hợp số nguyên không âm, $S$ được định nghĩa bởi $S: [(n,0)] \mapsto [(n+1,0)]$ cùng với tập hợp số nguyên không âm thỏa mãn hệ tiên đề Peano. Một đối tượng thỏa mãn hệ tiên đề Peano thì cũng có mọi đặc điểm của \textit{số tự nhiên theo tiên đề Peano}. Vì vậy, chúng ta có thể coi các số nguyên không âm như các \textit{số tự nhiên theo tiên đề Peano}. Do đó việc kí hiệu các số nguyên không âm bởi $0, 1, 2, 3,\ldots$ và các số nguyên âm bởi $\ldots, -3, -2, -1$ là hợp lý.
 
@@ -2414,5 +2417,36 @@ Từ định lý trên, Định lý~\ref{theorem:property-of-rational-numbers-ad
 \end{corollary}
 
 \subsection*{Số hữu tỉ và Số nguyên}
+
+Tập hợp số nguyên có thể được nhúng vào tập hợp số hữu tỉ.
+\begin{theorem}\label{theorem:embed-Z-into-Q}
+	Ánh xạ $\iota: \mathbb{Z}\to \mathbb{Q}$ được định nghĩa bởi $\iota(x) = \frac{x}{1}$ là một đơn ánh nhưng không phải song ánh và thỏa mãn
+	\[
+		\begin{split}
+			\iota(x + y) = \iota(x) + \iota(y), \\
+			\iota(xy) = \iota(x)\iota(y), \\
+			x\leq y \implies \iota(x)\leq \iota(y).
+		\end{split}
+	\]
+
+	(Trong đó, phép cộng ở $\iota(x + y)$ là phép cộng hai số nguyên, phép cộng ở $\iota(x) + \iota(y)$ là phép cộng hai số hữu tỉ; phép nhân ở $\iota(m\cdot n)$ là phép nhân hai số nguyên, phép nhân ở $\iota(m)\cdot\iota(n)$ là phép nhân hai số hữu tỉ; quan hệ $\leq$ ở $m\leq n$ là quan hệ thứ tự $\leq$ trên tập hợp số nguyên, quan hệ $\leq$ ở $\iota(m)\leq \iota(n)$ là quan hệ thứ tự $\leq$ trên tập hợp số hữu tỉ.)
+\end{theorem}
+
+\begin{proof}
+	Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta có $\iota(x) = \iota(y)$ khi và chỉ khi $x = y$. Do đó $\iota$ là một đơn ánh.
+
+	Giả sử phản chứng rằng tồn tại số nguyên $x$ sao cho $\iota(x) = \frac{1}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta có $\frac{x}{1} = \frac{1}{2}$ khi và chỉ khi $2\cdot x = 1$. Vì $2\cdot x\ne 0$ nên $x\ne 0$. Theo Định lý~\ref{theorem:product-of-integers-are-zero-or-one}, $2$ khác $1$ và $-1$ và $x\ne 0$ nên $2\cdot x$ khác $0$ và $1$. Như vậy giả sử phản chứng là sai. Nói cách khác, không tồn tại số nguyên $x$ sao cho $\iota(x) = \frac{1}{2}$, kéo theo $\iota$ không phải toàn ánh và do đó $\iota$ không phải song ánh.
+
+	Theo định nghĩa phép cộng, phép nhân số hữu tỉ và quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta suy ra
+	\begin{itemize}
+		\item $\iota(x + y) = \frac{x + y}{1} = \frac{x\cdot 1 + 1\cdot y}{1\cdot 1} = \frac{x}{1} + \frac{y}{1} = \iota(x) + \iota(y)$.
+		\item $\iota(xy) = \frac{xy}{1} = \frac{xy}{1\cdot 1} = \frac{x}{1}\cdot\frac{y}{1} = \iota(x)\iota(y)$.
+		\item Nếu $x\leq y$ thì $x\cdot 1\cdot 1\cdot 1\leq y\cdot 1\cdot 1\cdot 1$, kéo theo $\frac{x}{1}\leq \frac{y}{1}$ và $\iota(x)\leq \iota(y)$.
+	\end{itemize}
+\end{proof}
+
+Đơn ánh $\iota$ trong định lý trên bảo toàn phép cộng, phép nhân, và quan hệ thứ tự, mặc dù ở tập nguồn và tập đích, các phép toán và quan hệ đó khác nhau.
+
+Với cơ sở là định lý này, chúng ta có thể coi số hữu tỉ như một mở rộng của số nguyên, và coi các số hữu tỉ với phân số có dạng $\frac{x}{1}$ như các số nguyên. Cũng vì điều này, chúng ta sẽ viết $x$ thay vì $\frac{x}{1}$.
 
 \subsection*{Bài tập}
