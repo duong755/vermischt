@@ -1525,9 +1525,9 @@ Mục này bàn nhiều hơn về nguyên lý quy nạp toán học cùng các b
 
 \subsection*{Nguyên lý quy nạp toán học và các biến thể}
 
-Với số nguyên, chúng ta có một mở rộng đơn giản cho nguyên lý quy nạp toán học, và cũng tương đương với nguyên lý quy nạp toán học.
+Cúng ta có một mở rộng đơn giản sau đây cho nguyên lý quy nạp toán học, và cũng tương đương với nguyên lý quy nạp toán học.
 
-\begin{theorem}[Nguyên lý quy nạp toán học (trường hợp cơ sở là một số nguyên)]
+\begin{theorem}[Nguyên lý quy nạp toán học]
 	Nếu hai điều kiện sau thỏa mãn
 	\begin{enumerate}[label={(\roman*)}]
 		\item Mệnh đề $p(n)$ đúng với số nguyên $n_{0}$.
@@ -1549,6 +1549,9 @@ Với số nguyên, chúng ta có một mở rộng đơn giản cho nguyên lý
 	Theo nguyên lý quy nạp toán học, có $q(n)$ với mọi số tự nhiên $n$. Theo định nghĩa của $q(n)$ thì có $p(n)$ với mọi số nguyên $n$ lớn hơn hoặc bằng $n_{0}$.
 \end{proof}
 
+Với dạng trên của nguyên lý quy nạp toán học, chúng ta có thể bắt đầu với trường hợp cơ sở là một số nguyên bất kì thay vì $0$ hay $1$. Các biến thể khác của nguyên lý quy nạp toán học dưới đây được phát biểu ở dạng ``chuẩn'', tức là bắt đầu với trường hợp cơ sở là $0$. Thực ra các biến thể này đều có thể bắt đầu với trường hợp cơ sở là số nguyên bất kì.
+
+Nguyên lý quy nạp mạnh cũng là một dạng tương đương của nguyên lý quy nạp toán học. Nguyên lý quy nạp mạnh có thay đổi ở bước quy nạp. Ở bước quy nạp, chúng ta không chỉ cần đến mệnh đề $p(k)$ mà còn cần đến một hay một số, thậm chí tất cả các mệnh đề trước $p(k)$.
 \begin{theorem}[Nguyên lý quy nạp mạnh]
 	Nếu hai điều kiện sau thỏa mãn
 	\begin{enumerate}[label={(\roman*)}]
@@ -1573,11 +1576,18 @@ Với số nguyên, chúng ta có một mở rộng đơn giản cho nguyên lý
 	Theo nguyên lý quy nạp toán học, $c(n)$ đúng với mọi số tự nhiên $n$. Theo định nghĩa của mệnh đề $c(n)$, chúng ta suy ra $p(n)$ đúng với mọi số tự nhiên $n$.
 \end{proof}
 
+Có những trường hợp mà chúng ta cần chứng minh mệnh đề $p(n)$ với $n$ là số tự nhiên không vượt quá một số tự nhiên $n_{0}$ cho trước. Khi đó phương pháp quy nạp toán học có dạng sau.
 \begin{theorem}[Nguyên lý quy nạp toán học hữu hạn]
+	Cho vị từ $p$ được áp dụng trên các số tự nhiên không vượt quá số tự nhiên $n_{0}$. Nếu các điều kiện sau thỏa mãn
+	\begin{enumerate}[label={(\roman*)}]
+		\item Mệnh đề $p(0)$ đúng.
+		\item Với mọi số tự nhiên $k$ \textbf{nhỏ hơn} $n$, $p(k)$ kéo theo $p(k+1)$.
+	\end{enumerate}
+
+	thì $p(n)$ đúng với mọi số tự nhiên không vượt quá số tự nhiên $n_{0}$.
 \end{theorem}
 
-\begin{theorem}[Nguyên lý giảm vô hạn]
-\end{theorem}
+Tuy nguyên lý quy nạp toán học được phát biểu cho số tự nhiên nhưng biến thể trên vẫn hợp lệ. Nguyên nhân là mệnh đề kéo theo $P\implies Q$ \textit{chỉ sai} khi $P$ đúng và $Q$ sai. Còn nếu $P$ sai thì mệnh đề $P\implies Q$ luôn đúng, bất kể giá trị chân lý của $Q$ là gì.
 
 \begin{theorem}[Nguyên lý quy nạp Cauchy]
 \end{theorem}
@@ -1598,14 +1608,48 @@ Với số nguyên, chúng ta có một mở rộng đơn giản cho nguyên lý
 	Theo nguyên lý quy nạp mạnh, mọi số nguyên dương đều không thuộc $S$. Do đó $S$ là tập hợp rỗng, mâu thuẫn với giả thiết. Do vậy giả sử phản chứng là sai. Vậy tập hợp $S$ có phần tử nhỏ nhất.
 \end{proof}
 
-Tương tự với ``dạng số nguyên'' của nguyên lý quy nạp toán học, chúng ta có hệ quả sau. Hệ quả này cho phép chúng ta áp dụng nguyên lý thứ tự tốt linh hoạt hơn.
-
+Tương tự với việc của nguyên lý quy nạp toán học có thể được áp dụng với trường hợp cơ sở là số nguyên bất kì, chúng ta có hệ quả sau. Hệ quả này cho phép chúng ta áp dụng nguyên lý thứ tự tốt linh hoạt hơn.
 \begin{corollary}
 	\begin{enumerate}[label={(\roman*)}]
 		\item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{lớn hơn hoặc bằng} (hoặc \textbf{lớn hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử nhỏ nhất}.
 		\item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{nhỏ hơn hoặc bằng} (hoặc \textbf{nhỏ hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử lớn nhất}.
 	\end{enumerate}
 \end{corollary}
+
+Tập hợp con trong phát biểu của nguyên lý thứ tự tốt có thể vô hạn. Với một tập hợp hữu hạn và được sắp thứ tự toàn phần, chúng ta có nguyên lý sau.
+\begin{theorem}[Nguyên lý cực hạn]
+	Tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+\end{theorem}
+
+\begin{proof}
+	Chúng ta chứng minh bằng phương pháp quy nạp toán học rằng: Nếu một tập hợp khác rỗng được sắp thứ tự toàn phần và có $n$ phần tử ($n$ là một số tự nhiên lớn hơn hoặc bằng $1$) thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+
+	Khi $n = 1$, tập hợp chỉ có một phần tử thì phần tử đó là phần tử nhỏ nhất và cũng là phần tử lớn nhất.
+
+	Giả sử với $n = k\geq 1$, tập hợp khác rỗng được sắp thứ tự toàn phần và có $k$ phần tử thì tập hợp đó cũng có phần tử nhỏ nhất và phần tử lớn nhất.
+	
+	Chúng ta kí hiệu $S$ là một tập hợp được sắp thứ tự toàn phần và có $(k+1)$ phần tử. Chúng ta chọn ra một phần tử $x$ bất kì của $S$ thì $S - \{x\}$ có $k$ phần tử. Theo giả thiết quy nạp, $S - \{x\}$ có phần tử nhỏ nhất và phần tử lớn nhất.
+	\begin{itemize}
+		\item Nếu $x$ nhỏ hơn phần tử nhỏ nhất của $S - \{x\}$ thì $x$ là phần tử nhỏ nhất của $S$. Ngược lại, phần tử nhỏ nhất của $S - \{x\}$ cũng là phần tử nhỏ nhất của $S$.
+		\item Nếu $x$ lớn hơn phần tử lớn nhất của $S - \{x\}$ thì $x$ là phần tử lớn nhất của $S$. Ngược lại, phần tử lớn nhất của $S - \{x\}$ cũng là phần tử lớn nhất của $S$.
+	\end{itemize}
+	
+	Theo nguyên lý quy nạp toán học, tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+\end{proof}
+
+Khi kết hợp nguyên lý thứ tự tốt với phương pháp chứng minh bằng phản chứng, chúng ta có phương pháp chứng minh giảm vô hạn. Phương pháp này còn được gọi là phương pháp giảm vô hạn của Fermat. Nhà toán học Fermat đã sử dụng phương pháp này để chứng minh rằng không tồn tại các số nguyên dương $a, b, c$ nào thỏa mãn $a^{4} + b^{4} = c^{2}$. Ngược với phương pháp quy nạp toán học, phương pháp giảm vô hạn được sử dụng để chứng minh một mệnh đề $p(n)$ là sai với mọi số tự nhiên $n$.
+
+\begin{theorem}[Giảm vô hạn]
+	Nếu với mỗi số tự nhiên $n$, mệnh đề $p(n)$ kéo theo tồn tại số tự nhiên $m < n$ sao cho có $p(m)$ thì với mọi số tự nhiên $n$, không có $p(n)$.
+\end{theorem}
+
+\begin{proof}
+	Chúng ta kí hiệu $S$ là tập hợp các số tự nhiên $n$ sao cho có $p(n)$.
+
+	Giả sử phản chứng rằng $S$ khác rỗng. Theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Chúng ta kí hiệu phần tử nhỏ nhất là $n_{0}$. Theo giả thiết, tồn tại số tự nhiên $m < n_{0}$ sao cho $p(m)$ đúng. Điều này mâu thuẫn với việc $n_{0}$ là phần tử nhỏ nhất của $S$. Do đó giả sử phản chứng là sai, kéo theo $S$ là tập hợp rỗng.
+
+	Vậy mệnh đề $p(n)$ sai với mọi số tự nhiên $n$.
+\end{proof}
 
 Một nhược điểm của nguyên lý thứ tự tốt và chứng minh của nguyên lý này là \textit{không có tính xây dựng}. Chúng ta chỉ ra sự tồn tại của số nguyên dương nhỏ nhất trong một tập hợp con khác rỗng của tập hợp số nguyên dương, nhưng không biết đó là số nào, hay cách tìm số đó. Có một tư tưởng trong toán học được gọi là \textit{tư tưởng xây dựng} (constructivism). Tư tưởng này khẳng định rằng để chứng minh sự tồn tại của một đối tượng toán học, cần phải đưa ra một ví dụ, hoặc thuật toán (cách) tìm ra ví dụ. Trái với tư tưởng xây dựng, chứng minh bằng phương pháp phản chứng giả sử rằng một đối tượng như vậy không tồn tại và tiếp tục lập luận để đi tới một mâu thuẫn. Tư tưởng xây dựng rất có ích trong việc học và làm toán, bởi quá trình tìm ví dụ và việc có một ví dụ cụ thể là rất giá trị trong việc hiểu một đối tượng toán học. Kĩ năng xây dựng ví dụ là một trong những kĩ năng tối quan trọng trong việc học và làm toán. Tuy vậy, phương pháp phản chứng vẫn luôn tỏ ra là một công cụ mạnh và dễ dàng, thậm chí đôi khi được coi là duy nhất để chứng minh nhiều định lý quan trọng về tính tồn tại.
 
@@ -1753,7 +1797,7 @@ Tổng của hai tổ hợp tuyến tính của hai số nguyên $a$ và $b$ v�
 \begin{proof}
 	Kí hiệu số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$ là $c$. Theo Định lý~\ref{theorem:bound-of-divisors}, nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}$ không vượt quá số nhỏ nhất và khác $0$ trong hai số $\abs{a}$ và $\abs{b}$.
 
-	Bằng kí hiệu, phát biểu trên có nghĩa là: Nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}\leq c$. Mà $-\abs{d}\leq d \leq \abs{d}$ nên $-c\leq d\leq c$. Vì chỉ có hữu hạn số nguyên lớn hơn hoặc bằng $-c$ và nhỏ hơn hoặc bằng $c$ và các ước chung $d$ của $a$ và $b$ thỏa mãn $-c\leq d\leq c$ nên tập hợp ước chung của $a$ và $b$ chỉ có hữu hạn phần tử. Do đó, tập hợp ước chung của $a$ và $b$ có phần tử lớn nhất, tức là $a$ và $b$ có ước chung lớn nhất.
+	Bằng kí hiệu, phát biểu trên có nghĩa là: Nếu số nguyên $d$ là ước chung của hai số nguyên $a, b$ thì $\abs{d}\leq c$. Mà $-\abs{d}\leq d \leq \abs{d}$ nên $-c\leq d\leq c$. Vì chỉ có hữu hạn số nguyên lớn hơn hoặc bằng $-c$ và nhỏ hơn hoặc bằng $c$ và các ước chung $d$ của $a$ và $b$ thỏa mãn $-c\leq d\leq c$ nên tập hợp ước chung của $a$ và $b$ chỉ có hữu hạn phần tử. Theo nguyên lý cực hạn, tập hợp ước chung của $a$ và $b$ có phần tử lớn nhất, tức là $a$ và $b$ có ước chung lớn nhất.
 \end{proof}
 
 Ước chung lớn nhất của hai số nguyên $a$ và $b$ được kí hiệu là $\text{gcd}(a, b)$ (gcd là viết tắt của \textit{greatest common divisor}).
@@ -2148,21 +2192,6 @@ Từ định lý trên, chúng ta định nghĩa phép trừ hai số hữu tỉ
 		\item Phép trừ hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ. Kết quả của phép trừ hai số hữu tỉ $q_{1}$ và $q_{2}$ là tổng của $q_{1}$ và $(-q_{2})$. Chúng ta kí hiệu kết quả của phép trừ là $q_{1} - q_{2}$.
 	\end{enumerate}
 \end{definition}
-
-\begin{theorem}\label{theorem:solution-of-linear-equation-part-1}
-	Với hai số hữu tỉ $q_{1}, q_{2}$, tồn tại duy nhất số hữu tỉ $q$ sao cho $q_{1} + q = q_{2}$.
-\end{theorem}
-
-\begin{proof}
-	Nếu số hữu tỉ $q$ thỏa mãn $q_{1} + q = q_{2}$ thì
-	\[
-		q = \frac{0}{1} + q = ((-q_{1}) + q_{1}) + q = (-q_{1}) + (q_{1} + q) = (-q_{1}) + q_{2}.
-	\]
-
-	Ngược lại, $q_{1} + ((-q_{1}) + q_{2}) = (q_{1} + (-q_{1})) + q_{2} = \frac{0}{1} + q_{2} = q_{2}$.
-
-	Như vậy với hai số hữu tỉ $q_{1}, q_{2}$, tồn tại duy nhất số hữu tỉ $q$ sao cho $q_{1} + q = q_{2}$, và số hữu tỉ đó là $(-q_{1}) + q_{2}$.
-\end{proof}
 
 \begin{definition}[Phép nhân hai số hữu tỉ]
 	Phép nhân hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $\cdot$. Với hai số hữu tỉ $\frac{a}{b}$ và $\frac{c}{d}$, chúng ta kí hiệu kết quả của phép nhân hai số hữu tỉ này là $\frac{a}{b}\cdot\frac{c}{d}$ và
