@@ -1,36 +1,67 @@
-\chapter{Số thực và Số phức}\label{chapter:real-numbers-and-complex-numbers}
+\chapter{Số thực}\label{chapter:real-numbers}
 
 \section{Số thực là gì?}
 
 \subsection{Hệ tiên đề về số thực}
 
 \begin{axiom}
-    Tập hợp số thực được kí hiệu là $\mathbb{R}$. Các phần tử của $\mathbb{R}$ thỏa mãn ba nhóm tiên đề sau.
+	Tập hợp số thực được kí hiệu là $\mathbb{R}$. Các phần tử của $\mathbb{R}$ thỏa mãn ba nhóm tiên đề sau.
 
-    \textbf{Các tiên đề về trường.} $\mathbb{R}$ có hai phép toán hai ngôi là phép cộng (được kí hiệu là $+$) và phép nhân (được kí hiệu là $\cdot$) và các phép toán này thỏa mãn các tính chất sau:
-    \begin{enumerate}[label={(\roman*)}]
-        \item Phép cộng có tính chất kết hợp.
-        \item Phép cộng có phần tử đồng nhất.
-        \item Mỗi số thực có phần tử đối.
-        \item Phép cộng có tính chất giao hoán.
-        \item Phép nhân có tính chất kết hợp.
-        \item Phép nhân có tính chất phân phối với phép cộng.
-        \item Phép nhân có phần tử đồng nhất.
-        \item Phép nhân có tính chất giao hoán.
-        \item Mỗi số thực khác $0$ có phần tử nghịch đảo.
-    \end{enumerate}
+	\textbf{Các tiên đề về trường.} $\mathbb{R}$ có hai phép toán hai ngôi là phép cộng (được kí hiệu là $+$) và phép nhân (được kí hiệu là $\cdot$) và các phép toán này thỏa mãn các tính chất sau:
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+		      \[
+			      (x + y) + z = x + (y + z).
+		      \]
+		\item Phép cộng có phần tử đồng nhất. Nói cách khác, tồn tại số thực $0$ sao cho với mọi số thực $x$, chúng ta có
+		      \[
+			      x + 0 = 0 + x = x.
+		      \]
+		\item Mỗi số thực có phần tử đối. Nói cách khác, với mỗi số thực $x$, tồn tại số thực $(-x)$ thỏa mãn
+		      \[
+			      x + (-x) = (-x) + x = 0.
+		      \]
+		\item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
+		      \[
+			      x + y = y + x.
+		      \]
+		\item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+		      \[
+			      (x \cdot y) \cdot z = x \cdot (y \cdot z).
+		      \]
+		\item Phép nhân có tính chất phân phối với phép cộng. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+		      \[
+			      \begin{split}
+				      (x + y)\cdot z = x\cdot z + y\cdot z, \\
+				      z\cdot (x + y) = z\cdot x + z\cdot y.
+			      \end{split}
+		      \]
 
-    \textbf{Các tiên đề về thứ tự.} $\mathbb{R}$ có quan hệ $\leq$ thỏa mãn các tính chất sau:
-    \begin{enumerate}[label={(\roman*)}]
-        \item $\leq$ là một quan hệ thứ tự toàn phần.
-        \item Với mọi số thực $x, y$, nếu $x\leq y$ thì với mọi số thực $z$, $x + z\leq y + z$.
-        \item Với mọi số thực $x, y$, nếu $0\leq x$ và $0\leq y$ thì $0\leq x\cdot y$.
-    \end{enumerate}
+		\item Phép nhân có phần tử đồng nhất. Nói cách khác, tồn tại số thực $1$ sao cho với mọi số thực $x$, chúng ta có
+		      \[
+			      x + 1 = 1 + x = x.
+		      \]
+		\item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
+		      \[
+			      x\cdot y = y\cdot x.
+		      \]
+		\item Mỗi số thực khác $0$ có phần tử nghịch đảo. Nói cách khác, với mỗi số thực $x\ne 0$, tồn tại số thực $x^{-1}$ sao cho
+		      \[
+			      x\cdot x^{-1} = x^{-1}\cdot x = 1.
+		      \]
+	\end{enumerate}
 
-    \textbf{Tiên đề về cận trên.} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
+	\textbf{Các tiên đề về thứ tự.} $\mathbb{R}$ có quan hệ $\leq$ thỏa mãn các tính chất sau:
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\leq$ là một quan hệ thứ tự toàn phần.
+		\item Với mọi số thực $x, y$, nếu $x\leq y$ thì với mọi số thực $z$, $x + z\leq y + z$.
+		\item Với mọi số thực $x, y$, nếu $0\leq x$ và $0\leq y$ thì $0\leq x\cdot y$.
+	\end{enumerate}
+
+	\textbf{Tiên đề về cận trên.} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
 \end{axiom}
 
-\subsection{Xây dựng tập hợp số thực}
+\subsection{Xây dựng tập hợp số thực bằng dãy Cauchy}
 
 \section{Dãy Cauchy}
 
@@ -38,7 +69,9 @@
 
 \subsection{Quan hệ tương đương giữa các dãy Cauchy hữu tỉ}
 
-\subsection{Các phép toán với các dãy Cauchy hữu tỉ}
+\subsection{Các phép toán với dãy Cauchy hữu tỉ}
+
+\subsection{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
 
 \subsection{Quan hệ thứ tự giữa các lớp tương đương của các dãy Cauchy hữu tỉ}
 
@@ -48,20 +81,28 @@
 
 \subsection{Dãy Cauchy thực}
 
-\subsection{Một số hệ quả quan trọng của tính đầy đủ}
-
-\section{$\dagger$ Các cách xây dựng tập số thực}
+\section{$\dagger$ Các cách xây dựng tập hợp số thực}
 
 \subsection{Sơ lược về lát cắt Dedekind}
 
-\subsection{Tính duy nhất của tập số thực}
+\subsection{Tính duy nhất của tập hợp số thực}
 
-\section{Số phức}
+\subsection{So sánh hai cách xây dựng tập hợp số thực}
 
-\subsection{Định nghĩa số phức}
+\section{Một số hệ quả từ hệ tiên đề về số thực}
 
-\subsection{Dạng lượng giác của số phức}
+\subsection{Nhóm tiên đề về trường}
 
-\subsection{Định lý cơ bản của đại số}
+\subsection{Nhóm tiên đề vế thứ tự}
 
-\subsection{$\dagger$ Sơ lược về số siêu phức}
+\subsection{Tiên đề về tính đầy đủ}
+
+\section{Mở đầu về giải tích thực}
+
+\subsection{Dãy số}
+
+\subsection{Chuỗi số}
+
+\subsection{Giới hạn của hàm số}
+
+\subsection{Hàm số liên tục}
