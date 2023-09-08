@@ -4,70 +4,560 @@
 
 \subsection{Hệ tiên đề về số thực}
 
+Có ít nhất hai cách hiểu cho câu hỏi ``Số thực là gì?'' Đầu tiên, chúng ta có thể hiểu rằng người hỏi đang muốn được biết một \textit{định nghĩa toán học} cho số thực. Đó là một định nghĩa hình thức tương tự như định nghĩa số tự nhiên, số nguyên, số hữu tỉ, tính chia hết, \ldots đã được nêu trong tài liệu này. Thứ hai, chúng ta có thể hiểu rằng người hỏi đang muốn liên hệ cái-được-gọi-là-số-thực với thực tế. Nói cách khác, để trả lời cho cách hiểu thứ hai, người trả lời cần định nghĩa số thực như một đối tượng nào đó tương đương trong thực tế hoặc gần thực tế.
+
+Chúng tôi đưa ra một câu trả lời trực giác cho cách hiểu thứ hai như sau: \textit{Hình dung một đường thẳng kéo dài vô tận về hai phía. Mỗi điểm được đánh dấu trên đường thẳng đó tương ứng với một số thực. Nói rõ hơn, trên đường thẳng đó, chúng ta đánh dấu hai điểm khác nhau, lần lượt gọi là $0$ và $1$. Các điểm $x$ trên đường thẳng này tương ứng với một số (thực) âm nếu điểm $0$ nằm giữa $x$ và $1$. Các điểm $x$ trên đường thẳng này tương ứng với một số (thực) dương nếu hoặc $x$ nằm giữa $0$ và $1$, hoặc $x$ trùng $1$, hoặc $1$ nằm giữa $0$ và $x$.}
+
+Câu trả lời trực giác hình học cho cách hiểu thứ hai có thể làm hài lòng nhiều người nhưng là không đủ tốt đối với một định nghĩa toán học. Với định nghĩa trực giác như vậy, chúng ta khó lòng nói về các phép toán với các số thực như cộng, trừ, nhân, chia. Đối với những người học và làm toán, việc biết các số thực và các phép toán với số thực, quan hệ giữa các số thực có những tính chất gì quan trọng hơn việc biết số thực là gì trong thực tế. Trong chương này, chúng ta định nghĩa số thực bằng một hệ tiên đề (hay tính chất). Chúng ta coi những đối tượng thỏa mãn hệ tiên đề (hay tính chất) này là các số thực.
+
 \begin{axiom}
-	Tập hợp số thực được kí hiệu là $\mathbb{R}$. Các phần tử của $\mathbb{R}$ thỏa mãn ba nhóm tiên đề sau.
+    Tập hợp số thực được kí hiệu là $\mathbb{R}$. Các phần tử của $\mathbb{R}$ thỏa mãn ba nhóm tiên đề sau.
 
-	\textbf{Các tiên đề về trường.} $\mathbb{R}$ có hai phép toán hai ngôi là phép cộng (được kí hiệu là $+$) và phép nhân (được kí hiệu là $\cdot$) và các phép toán này thỏa mãn các tính chất sau:
-	\begin{enumerate}[label={(\roman*)}]
-		\item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
-		      \[
-			      (x + y) + z = x + (y + z).
-		      \]
-		\item Phép cộng có phần tử đồng nhất. Nói cách khác, tồn tại số thực $0$ sao cho với mọi số thực $x$, chúng ta có
-		      \[
-			      x + 0 = 0 + x = x.
-		      \]
-		\item Mỗi số thực có phần tử đối. Nói cách khác, với mỗi số thực $x$, tồn tại số thực $(-x)$ thỏa mãn
-		      \[
-			      x + (-x) = (-x) + x = 0.
-		      \]
-		\item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
-		      \[
-			      x + y = y + x.
-		      \]
-		\item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
-		      \[
-			      (x \cdot y) \cdot z = x \cdot (y \cdot z).
-		      \]
-		\item Phép nhân có tính chất phân phối với phép cộng. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
-		      \[
-			      \begin{split}
-				      (x + y)\cdot z = x\cdot z + y\cdot z, \\
-				      z\cdot (x + y) = z\cdot x + z\cdot y.
-			      \end{split}
-		      \]
+    \textbf{Các tiên đề về trường.} $\mathbb{R}$ có hai phép toán hai ngôi là phép cộng (được kí hiệu là $+$) và phép nhân (được kí hiệu là $\cdot$) và các phép toán này thỏa mãn các tính chất sau:
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+              \[
+                  (x + y) + z = x + (y + z).
+              \]
+        \item Phép cộng có phần tử đồng nhất. Nói cách khác, tồn tại số thực $0$ sao cho với mọi số thực $x$, chúng ta có
+              \[
+                  x + 0 = 0 + x = x.
+              \]
+        \item Mỗi số thực có phần tử đối. Nói cách khác, với mỗi số thực $x$, tồn tại số thực $(-x)$ thỏa mãn
+              \[
+                  x + (-x) = (-x) + x = 0.
+              \]
+        \item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
+              \[
+                  x + y = y + x.
+              \]
+        \item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+              \[
+                  (x \cdot y) \cdot z = x \cdot (y \cdot z).
+              \]
+        \item Phép nhân có tính chất phân phối với phép cộng. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+              \[
+                  \begin{split}
+                      (x + y)\cdot z = x\cdot z + y\cdot z, \\
+                      z\cdot (x + y) = z\cdot x + z\cdot y.
+                  \end{split}
+              \]
 
-		\item Phép nhân có phần tử đồng nhất. Nói cách khác, tồn tại số thực $1$ sao cho với mọi số thực $x$, chúng ta có
-		      \[
-			      x + 1 = 1 + x = x.
-		      \]
-		\item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
-		      \[
-			      x\cdot y = y\cdot x.
-		      \]
-		\item Mỗi số thực khác $0$ có phần tử nghịch đảo. Nói cách khác, với mỗi số thực $x\ne 0$, tồn tại số thực $x^{-1}$ sao cho
-		      \[
-			      x\cdot x^{-1} = x^{-1}\cdot x = 1.
-		      \]
-	\end{enumerate}
+        \item Phép nhân có phần tử đồng nhất. Nói cách khác, tồn tại số thực $1$ sao cho với mọi số thực $x$, chúng ta có
+              \[
+                  x + 1 = 1 + x = x.
+              \]
+        \item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
+              \[
+                  x\cdot y = y\cdot x.
+              \]
+        \item Mỗi số thực khác $0$ có phần tử nghịch đảo. Nói cách khác, với mỗi số thực $x\ne 0$, tồn tại số thực $x^{-1}$ sao cho
+              \[
+                  x\cdot x^{-1} = x^{-1}\cdot x = 1.
+              \]
+    \end{enumerate}
 
-	\textbf{Các tiên đề về thứ tự.} $\mathbb{R}$ có quan hệ $\leq$ thỏa mãn các tính chất sau:
-	\begin{enumerate}[label={(\roman*)}]
-		\item $\leq$ là một quan hệ thứ tự toàn phần.
-		\item Với mọi số thực $x, y$, nếu $x\leq y$ thì với mọi số thực $z$, $x + z\leq y + z$.
-		\item Với mọi số thực $x, y$, nếu $0\leq x$ và $0\leq y$ thì $0\leq x\cdot y$.
-	\end{enumerate}
+    \textbf{Các tiên đề về thứ tự.} $\mathbb{R}$ có quan hệ $\leq$ thỏa mãn các tính chất sau:
+    \begin{enumerate}[label={(\roman*)}]
+        \item $\leq$ là một quan hệ thứ tự toàn phần.
+        \item Với mọi số thực $x, y$, nếu $x\leq y$ thì với mọi số thực $z$, chúng ta có $x + z\leq y + z$.
+        \item Với mọi số thực $x, y$, nếu $0\leq x$ và $0\leq y$ thì $0\leq x\cdot y$.
+    \end{enumerate}
 
-	\textbf{Tiên đề về cận trên.} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
+    \textbf{Tiên đề về cận trên (hay tiên đề về tính đầy đủ).} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
 \end{axiom}
 
-\subsection{Xây dựng tập hợp số thực bằng dãy Cauchy}
+Chúng ta bình luận và làm rõ thêm hệ tiên đề vừa nêu. Các tiên đề về trường và các tiên đề về thứ tự có lẽ không có gì xa lạ với bạn đọc. Chúng tôi chỉ lưu ý thêm ba điều về hai nhóm tiên đề này: (1) Các phần tử $0$, $1$, $(-x)$, và $x^{-1}$ được hiểu như các kí hiệu đơn thuần, ở thời điểm này chúng ta \textit{chưa} coi đó như những số hai phép toán quen thuộc; (2) Tiên đề về sự tồn tại của hai phần tử $0$ và $1$ không khẳng định tính duy nhất của những phần tử như vậy, chúng ta sẽ chứng minh tính duy nhất của hai phần tử đó ở mục hệ quả trong chương này.
 
-\section{Dãy Cauchy}
+Tiên đề về cận trên là phần ít quen thuộc nhất trong hệ tiên đề trên, và chúng ta cần làm rõ khái niệm được nhắc tới trong tiên đề này: \textit{cận trên} và \textit{cận trên nhỏ nhất}.
 
-\subsection{Dãy Cauchy hữu tỉ}
+\begin{definition}[Cận trên và Cận dưới]
+    Cho một tập hợp $S$ được định nghĩa một quan hệ thứ tự bộ phận $\leq$ và $A$ là một tập hợp con của $S$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Một phần tử $u$ của $S$ được gọi là một \textbf{cận trên} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $a\leq u$. Chúng ta còn nói $A$ bị chặn trên bởi $u$.
+        \item Một phần tử $\ell$ của $S$ được gọi là một \textbf{cận dưới} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $\ell\leq a$. Chúng ta còn nói $A$ bị chặn dưới bởi $\ell$.
+        \item Tập hợp $A$ được gọi là bị chặn nếu $A$ có cả cận trên và cận dưới.
+        \item Một phần tử $x$ của $S$ được gọi là một \textbf{cận trên nhỏ nhất} hay \textbf{cận trên đúng} của $A$ nếu như với mỗi cận trên $u$ của $A$, chúng ta có $x\leq u$. Cận trên nhỏ nhất của $A$ được kí hiệu là $\sup A$.
+        \item Một phần tử $y$ của $S$ được gọi là một \textbf{cận dưới lớn nhất} hay \textbf{cận dưới đúng} của $A$ nếu như với mỗi cận dưới $\ell$ của $A$, chúng ta có $\ell\leq y$. Cận dưới lớn nhất của $A$ được kí hiệu là $\inf A$.
+    \end{enumerate}
+\end{definition}
 
-\subsection{Quan hệ tương đương giữa các dãy Cauchy hữu tỉ}
+Chúng ta theo dõi một số ví dụ.
+\begin{example}
+    Tập hợp
+    \[
+        S = \left\{ 1, \frac{1}{2}, \frac{1}{3}, \ldots \right\} = \left\{ \frac{1}{n} \mid \text{$n$ là một số nguyên dương} \right\}
+    \]
+
+    là một tập hợp con của tập hợp số hữu tỉ $\mathbb{Q}$. Tập hợp $\mathbb{Q}$ được sắp thứ tự toàn phần.
+    \begin{itemize}
+        \item $S$ bị chặn trên bởi $1, 2, \frac{5}{2}, 3, \ldots$ và bị chặn dưới bởi $0, \frac{-1}{2}, -1, \ldots$
+        \item $1$ là cận trên nhỏ nhất của $S$.
+        \item $S$ không có phần tử nhỏ nhất. Bởi vì mỗi phần tử $\frac{1}{m}$ của $S$, luôn có phần tử nhỏ hơn, chẳng hạn $\frac{1}{m+1}, \frac{1}{2m}, \ldots$
+        \item $0$ là cận dưới lớn nhất của $S$. Giả sử phản chứng rằng $S$ có một cận dưới lớn hơn $0$. Cận dưới đó (là một số hữu tỉ vì chúng ta đang xét $S$ là tập hợp con của $\mathbb{Q}$). Chúng ta kí hiệu phân số tối giản của cận dưới đó là $\frac{p}{q}$. Nhưng vì $\frac{p}{q}\geq \frac{1}{q} > \frac{1}{2q}$ nên $\frac{p}{q}$ không phải cận dưới của $S$, dẫn đến giả sử phản chứng là sai. Do đó chúng ta khẳng định $0$ là cận dưới lớn nhất của $S$.
+        \item $1$ vừa là cận trên nhỏ nhất, vừa là phần tử lớn nhất của $S$. Còn $0$ là cận dưới lớn nhất của $S$ nhưng không thuộc $S$, và do đó không phải phần tử nhỏ nhất của $S$.
+    \end{itemize}
+\end{example}
+
+Quay lại với hệ tiên đề về số thực. Trong chương trước, chúng ta đã chỉ ra được tập hợp số hữu tỉ $\mathbb{Q}$ cùng với hai phép toán cộng, nhân, và quan hệ $\leq$ thỏa mãn các tiên đề về trường và các tiên đề về thứ tự. Mệnh đề dưới đây cho thấy tập hợp số hữu tỉ không thỏa mãn tiên đề về cận trên, hay chúng ta còn nói rằng tập hợp số hữu tỉ không đầy đủ theo quan hệ thứ tự $\leq$.
+
+\begin{proposition}\label{proposition:irrational-cut}
+    Trong tập hợp số hữu tỉ
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng không tồn tại số hữu tỉ $x$ nào thỏa mãn $x^{2} = 2$.
+        \item Chứng minh rằng tập hợp
+              \[
+                  S = \{ x \mid x\in\mathbb{Q}, 0 < x \text{ và } x^{2} < 2 \}
+              \]
+
+              không có phần tử lớn nhất.
+        \item Chứng minh rằng tập hợp $S$ ở phần (ii) không có cận trên nhỏ nhất.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Giả sử phản chứng rằng tồn tại số hữu tỉ $x$ sao cho $x^{2} = 2$. Chúng ta kí hiệu phân số tối giản của $x$ là $\frac{p}{q}$. Vì ${\left(\frac{p}{q}\right)}^{2} = 2$ nên $p^{2} = 2q^{2}$. Vì $2$ là ước của $2q^{2}$ nên $2$ cũng là ước của $p^{2}$. Theo bổ đề Euclid (Định lý~\ref{theorem:euclid-lemma}), chúng ta suy ra $2$ là ước của $p$, do đó tồn tại số tự nhiên $a$ sao cho $p = 2a$. Cùng với việc $p^{2} = 2q^{2}$, chúng ta suy ra $4a^{2} = 2q^{2}$, kéo theo $2a^{2} = q^{2}$. Một lần nữa, theo bổ đề Euclid, chúng ta suy ra $2$ là ước của $q$. Như vậy $2$ là ước chung của $p$ và $q$, điều này mâu thuẫn với việc $\frac{p}{q}$ là một phân số tối giản.
+
+              Vậy không tồn tại số hữu tỉ $x$ nào thỏa mãn $x^{2} = 2$.
+        \item Chúng ta chọn một số hữu tỉ $\frac{a}{b}$ thuộc $S$ (trong đó $a, b$ là các số nguyên dương). Theo định nghĩa của $S$, chúng ta suy ra $a^{2} < 2b^{2}$. Xét số hữu tỉ $\frac{2a + 2b}{a + 2b}$.
+              \begin{align*}
+                  {(2a + 2b)}^{2} & = 4a^{2} + 8ab + 4b^{2}   \\
+                                  & < 2a^{2} + 8ab + 8b^{2}   \\
+                                  & = 2(a^{2} + 4ab + 4b^{2}) \\
+                                  & = 2{(a + 2b)}^{2}
+              \end{align*}
+
+              Do đó $\frac{2a + 2b}{a + b}$ là một phần tử của $S$. Bên cạnh đó, $\frac{a}{b} < \frac{2a + 2b}{a + 2b}$, vì
+              \begin{align*}
+                  a(a + 2b) & = a^{2} + 2ab < 2ab + 2b^{2} = b(2a + 2b)
+              \end{align*}
+
+              Như vậy, với mỗi phần tử $x$ thuộc $S$, chúng ta luôn tìm được được một phần tử khác của $S$ nhưng lớn hơn $x$. Do đó tập hợp $S$ không có phần tử lớn nhất.
+        \item Tập hợp $S$ có cận trên. Chẳng hạn, $2$ là một cận trên của $S$, bởi vì với mọi $x$ thuộc $S$, $x^{2} < 2 < 4$, kéo theo $(x - 2)(x + 2) < 0$, và $x < 2$. Mặt khác, nếu $y$ là một cận trên của $S$ thì $y > 0$.
+
+              Tiếp theo, chúng ta chứng minh rằng nếu số hữu tỉ $y$ là một cận trên của $S$ thì $y^{2} > 2$. Giả sử phản chứng rằng $y^{2}\leq 2$. Theo phần (i), chúng ta suy ra $y^{2} < 2$, kéo theo $y$ là một phần tử của $S$. $y$ là một cận trên của $S$ và là một phần tử của $S$ thì $y$ cũng là phần tử lớn nhất của $S$. Điều này mâu thuẫn với kết quả đã chứng minh ở phần (ii). Do đó giả sử phản chứng là sai, và chúng ta suy ra $y^{2} > 2$.
+
+              Chọn $y$ là một cận trên của $S$. Chúng ta kí hiệu $\frac{a}{b}$ là phân số của $y$ ($a, b$ là các số nguyên dương). Vì $y^{2} > 2$ nên $a^{2} > 2b^{2}$. Chúng ta tiếp tục xét số hữu tỉ $\frac{2a + 2b}{a + 2b}$.
+              \begin{align*}
+                  {(2a + 2b)}^{2} & = 4a^{2} + 8ab + 4b^{2}   \\
+                                  & > 2a^{2} + 8ab + 8b^{2}   \\
+                                  & = 2(a^{2} + 4ab + 4b^{2}) \\
+                                  & = 2{(a + 2b)}^{2}
+              \end{align*}
+
+              Do đó $\frac{2a + 2b}{a + b}$ là một cận trên của $S$. Ngoài ra, $\frac{2a + 2b}{a + 2b} < \frac{a}{b}$, vì
+              \begin{align*}
+                  b(2a + 2b) = 2ab + 2b^{2} < 2ab + a^{2} = a(a + 2b)
+              \end{align*}
+
+              Như vậy với mỗi cận trên $y$ của $S$, chúng ta luôn tìm được một cận trên khác của $S$ và nhỏ hơn $y$. Do đó tập hợp $S$ không có cận trên nhỏ nhất.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Dẫn nhập về việc xây dựng tập hợp số thực}
+
+Vì sao cần xây dựng tập hợp số thực? Ở đây chúng tôi dẫn ra khía cạnh giảng dạy và khía cạnh cơ sở toán học. Trong khía cạnh giảng dạy, việc chỉ dẫn cách xây dựng tập hợp số thực sẽ cho thấy mối liên hệ giữa đối tượng mới (tập hợp số thực) với các đối tượng quen thuộc hơn (tập hợp số hữu tỉ, tập hợp số nguyên, tập hợp số tự nhiên). Điều đó có ích hơn so với việc thừa nhận hệ tiên đề và coi tập hợp số thực như một công cụ tiện lợi một cách khó hiểu. Ở khía cạnh cơ sở toán học, những người làm toán cố gắng không thừa nhận quá nhiều thứ. Đúng là trong một thời gian dài, các nhà Toán học vẫn sử dụng phương pháp tiên đề và xuất phát từ các tiên đề cùng các luật logic để chứng minh các định lý. Nhưng tư tưởng của phương pháp tiên đề không chỉ đơn thuần là thừa nhận một số thứ rồi áp dụng luật logic, mà còn là việc xuất phát từ một ít tiên đề rồi từ đó xây dựng nên tất cả những thứ khác. Nếu thừa nhận quá nhiều thì chúng ta lại chẳng biết được bao nhiêu.
+
+Xây dựng tập hợp số thực là gì? Xây dựng tập hợp số thực là việc tạo ra một đối tượng toán học thỏa mãn hệ tiên đề về số thực. Chúng ta có thể so sánh hệ tiên đề về số thực với một bản thiết kế, khi đó việc xây dựng tập hợp số thực chính là tạo ra một công trình, tác phẩm giống như bản thiết kế đó. Xây dựng được tập hợp số thực đồng nghĩa với việc \textit{chứng minh} bản thiết kế là khả thi. Trong toán học, chúng ta có thuật ngữ riêng để gọi một công trình tương ứng với một bản thiết kế, đó là \textit{mô hình} và \textit{hệ tiên đề}. Mô hình là một đối tượng, hay cấu trúc toán học thỏa mãn một hệ tiên đề nào đó. Để minh họa, chúng tôi đưa ra một mô hình bằng lý thuyết tập hợp (được đề xuất bởi nhà toán học John von Neumann) cho hệ tiên đề Peano về số tự nhiên như sau:
+\begin{itemize}
+    \item $0$ là tập hợp rỗng $\varnothing$.
+    \item $S$ là một phép toán trên tập hợp: $S(A) = A \cup \{ A \}$.
+    \item Các số tự nhiên tương ứng với các tập hợp sau (dưới đây chỉ liệt kê bốn số tự nhiên)
+          \begin{align*}
+              0 & = \varnothing,                                                                                                \\
+              1 & = 0 \cup \{ 0 \} = \{ \varnothing \},                                                                         \\
+              2 & = 1 \cup \{ 1 \} = \{ 0, 1 \}  = \{ \varnothing, \{ \varnothing \} \}                                         \\
+              3 & = 2 \cup \{ 2 \} = \{ 0, 1, 2 \} = \{ \varnothing, \{ \varnothing \}, \{ \varnothing, \{ \varnothing \} \} \}
+          \end{align*}
+    \item Quan hệ bằng nhau giữa các số tự nhiên được nhìn nhận là quan hệ bằng nhau giữa các tập hợp.
+\end{itemize}
+
+Việc kiểm tra một mô hình có thỏa mãn một hệ tiên đề hay không chính là công việc chứng minh.
+
+Chỉ còn lại câu hỏi làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Trong chương này, chúng tôi đề cập, giải thích ý tưởng và nêu chi tiết về cả hai cách xây dựng.
+
+\section{Lát cắt Dedekind}
+
+Trong mục này, không gian mà chúng ta làm việc (định nghĩa và chứng minh các kết quả liên quan đến lát cắt Dedekind) là tập hợp số hữu tỉ.
+
+\subsection{Định nghĩa lát cắt Dedekind}
+
+Trong phần mở đầu của chương này, chúng tôi có đưa ra một định nghĩa trực giác về tập hợp số thực. Theo định nghĩa trực giác đó, tập hợp số thực là một đường thẳng kéo dài vô tận về hai phía, còn mỗi số thực tương ứng với một điểm được đánh dấu trên đường thẳng đó. Định nghĩa trực giác này có thể được xem như khởi nguồn cho định nghĩa lát cắt Dedekind sau đây.
+
+\begin{definition}[Lát cắt Dedekind]
+    Một lát cắt Dedekind\index{Lát cắt Dedekind} trong tập hợp số hữu tỉ (hay lát cắt) là một phân hoạch gồm hai tập hợp $A, B$ của tập hợp số hữu tỉ, sao cho
+    \begin{enumerate}[label={(DC\arabic*)}]
+        \item $A$ khác rỗng và $A$ không phải toàn bộ tập hợp số hữu tỉ.
+        \item Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ (theo quan hệ $\leq$ trên tập hợp số hữu tỉ).
+        \item $A$ không có phần tử lớn nhất.
+        \item Nếu một số hữu tỉ $x$ thuộc $A$ thì mọi số hữu tỉ nhỏ hơn $x$ cũng thuộc $A$ (tính chất này còn được phát biểu là $A$ đóng dưới).
+    \end{enumerate}
+
+    Một lát cắt như vậy được kí hiệu là $(A, B)$, hoặc chỉ là $A$, bởi vì $B = \mathbb{Q} - A$ ($B$ hoàn toàn được xác định khi biết $A$). Chúng ta kí hiệu tập hợp các lát cắt Dedekind trong tập hợp số hữu tỉ là $\mathscr{D}_{\mathbb{Q}}$.
+\end{definition}
+
+Để hiểu rõ hơn định nghĩa này, chúng ta theo dõi các ví dụ sau.
+\begin{example}
+    Tập hợp
+    \[
+        A = \{ x \mid x\in\mathbb{Q} \wedge x < 1 \}
+    \]
+
+    là một lát cắt. Chúng ta kiểm tra điều này qua từng điều trong định nghĩa lát cắt.
+    \begin{enumerate}[label={(DC\arabic*)}]
+        \item $A$ khác rỗng vì $0$ là một phần tử của $A$. Bên cạnh đó, $A$ cũng không phải toàn bộ tập hợp số hữu tỉ vì $1$ không phải một phần tử của $A$.
+        \item $B = \mathbb{Q} - A = \{ x \mid x\in\mathbb{Q} \wedge 1\leq x \}$. Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ theo tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
+        \item $A$ không có phần tử lớn nhất vì với mỗi phần tử $x$ của $A$, chúng ta luôn tìm được một phần tử khác lớn hơn, chẳng hạn như $\frac{1 + x}{2}$.
+        \item Nếu một số hữu tỉ $x$ thuộc $A$ thì mọi số hữu tỉ nhỏ hơn $x$ cũng thuộc $A$. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    Tập hợp
+    \[
+        A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x < 0$ hoặc $x^{2} < 2$} \}
+    \]
+
+    là một lát cắt. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ và Mệnh đề~\ref{proposition:irrational-cut}.
+\end{example}
+
+\begin{example}
+    Tập hợp
+    \[
+        A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x > 0$ và $x^{2} < 2$} \}
+    \]
+
+    \textbf{không phải} một lát cắt. Bởi vì $1$ là phần tử của $A$ nhưng $0 < 1$ lại không phải một phần tử của $A$.
+\end{example}
+
+\begin{example}
+    Tập hợp
+    \[
+        A = \left\{ \frac{-1}{n} \mid \text{$n$ là một số nguyên dương} \right\}
+    \]
+
+    \textbf{không phải} một lát cắt. Bởi vì $-1$ là phần tử của $A$ nhưng $-2 < -1$ lại không phải một phần tử của $A$.
+\end{example}
+
+\noindent Trước khi tiếp tục xây dựng tập hợp số thực bằng lát cắt, chúng ta lưu ý kết quả sau.
+\begin{proposition}\label{proposition:upper-bound-of-dedekind-cut}
+    Tập hợp $A$ là tập hợp con của tập hợp số hữu tỉ sao cho $A$ khác rỗng và $A$ không phải toàn bộ tập hợp số hữu tỉ. Chứng minh rằng $A$ là một lát cắt khi và chỉ khi $\mathbb{Q} - A$ chỉ chứa tất cả các cận trên của $A$.
+\end{proposition}
+
+\begin{proof}
+    ($\Rightarrow$) $A$ là một lát cắt.
+
+    Theo định nghĩa lát cắt, mọi phần tử của $A$ nhỏ hơn mọi phần tử của $\mathbb{Q} - A$. Do đó mọi phần tử của $\mathbb{Q} - A$ là các cận trên của $A$.
+
+    Giả sử phản chứng rằng nếu $x$ là một cận trên của $A$ thì $x$ thuộc $A$. Theo giả sử phản chứng, $x$ là phần tử lớn nhất của $A$, và điều này mâu thuẫn với định nghĩa lát cắt rằng $A$ không có phần tử lớn nhất. Do đó giả sử phản chứng là sai, kéo theo mọi cận trên của $A$ là phần tử của $\mathbb{Q} - A$.
+
+    Do đó $\mathbb{Q} - A$ chỉ chứa tất cả các cận trên của $A$.
+
+    \bigskip
+
+    ($\Leftarrow$) $\mathbb{Q} - A$ chỉ chứa tất cả các cận trên của $A$.
+
+    Giả sử phản chứng rằng $A$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử lớn nhất của $A$ là $x$. Vì $x$ là một cận trên của $A$ nên $x$ cũng là một phần tử của $\mathbb{Q} - A$. Điều này mâu thuẫn với định nghĩa hiệu của hai tập hợp. Do đó giả sử phản chứng là sai, kéo theo $A$ không có phẩn tử lớn nhất.
+
+    Giả sử $a\in A$ và $x < a$. Vì $x < a$ nên $x$ không phải cận trên của $A$, kéo theo $x$ không phải phần tử của $\mathbb{Q} - A$. Do đó $x$ là một phần tử của $A$.
+
+    Theo định nghĩa lát cắt, chúng ta kết luận $A$ là một lát cắt.
+\end{proof}
+
+Trong các mục tiếp theo, chúng ta lần lượt định nghĩa quan hệ thứ tự giữa các lát cắt, phép toán cộng, nhân hai lát cắt và kiểm tra xem những cấu trúc đó có thỏa mãn hệ tiên đề về số thực hay không.
+
+\subsection{Quan hệ thứ tự giữa các lát cắt}
+
+Việc hình dung tập hợp số thực như một đường thẳng cho chúng ta một cách nhìn khá trực quan về quan hệ thứ tự (tương ứng với khái niệm bên trái, bên phải trong thực tế).
+
+\begin{definition}\label{definition:order-relation-between-dedekind-cuts}
+    $A$ và $B$ là hai lát cắt Dedekind. Chúng ta nói lát cắt $A$ có quan hệ $\leq$ với lát cắt $B$ và kí hiệu là $A\leq B$ nếu và chỉ nếu $A\subseteq B$.
+\end{definition}
+
+\begin{theorem}
+    Quan hệ $\leq$ trên tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$ ở Định nghĩa~\ref{definition:order-relation-between-dedekind-cuts} là một quan hệ thứ tự toàn phần.
+\end{theorem}
+
+\begin{proof}
+    Với mỗi lát cắt $A$, chúng ta luôn có $A\subseteq A$, kéo theo $A\leq A$. Do đó quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$ có tính chất phản xạ.
+
+    Với mỗi lát cắt $A, B, C$, nếu $A\leq B$ và $B\leq C$ thì $A\subseteq B$ và $B\subseteq C$. Vì quan hệ bao hàm giữa các tập hợp có tính chất bắc cầu nên $A\subseteq C$, kéo theo $A\leq C$. Do đó quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$ có tính chất bắc cầu.
+
+    Với mỗi lát cắt $A, B$, nếu $A\leq B$ và $B\leq A$ thì $A\subseteq B$ và $B\subseteq A$, kéo theo $A = B$. Do đó quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$ có tính chất phản đối xứng.
+
+    Như vậy quan hệ $\leq$ trong tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$ là một quan hệ thứ tự.
+
+    \bigskip
+
+    Chúng ta chọn hai lát cắt $A, B$ bất kì. Nếu $A = B$ thì $A\leq B$ và $B\leq A$. Nếu $A\ne B$, chúng ta xét hai trường hợp sau.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item Mọi phần tử của $A$ đều thuộc $B$.
+
+              Điều này đồng nghĩa với $A\subset B$, kéo theo $A\leq B$.
+        \item Tồn tại một phần tử của $A$ nhưng không thuộc $B$.
+
+              Giả sử phần tử $a$ của $A$ không thuộc $B$. Theo Mệnh đề~\ref{proposition:upper-bound-of-dedekind-cut}, $a$ là một cận trên của $B$. Mà $B$ không có phần tử lớn nhất, nên chúng ta suy ra mọi phần tử của $B$ đều nhỏ hơn $a$. Vì $A$ là một lát cắt nên mọi số hữu tỉ nhỏ hơn $a$ đều thuộc $A$. Kết hợp hai điều vừa thu được, chúng ta suy ra mọi phần tử của $B$ đều là phần tử của $A$. Do đó $B\subset A$, kéo theo $B\leq A$.
+    \end{enumerate}
+
+    Do đó với hai lát cắt $A, B$ bất kì, $A\leq B$ hoặc $B\leq A$. Vậy quan hệ $\leq$ trên tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$ là một quan hệ thứ tự toàn phần.
+\end{proof}
+
+Chúng ta đặc biệt lưu ý lát cắt sau.
+\[
+    \begin{split}
+        O = \{ x \mid x\in\mathbb{Q} \wedge x < 0 \}.
+    \end{split}
+\]
+
+Với cơ sở là quan hệ thứ tự toàn phần trên tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$, chúng ta đưa ra định nghĩa sau.
+\begin{definition}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Một lát cắt $A$ được gọi là lát cắt dương nếu và chỉ nếu $O < A$.
+        \item Một lát cắt $A$ được gọi là lát cắt âm nếu và chỉ nếu $A < O$.
+    \end{enumerate}
+\end{definition}
+
+Như vậy, một lát cắt $A$ là không âm nếu và chỉ nếu $O\leq A$, là không dương nếu $A\leq O$.
+
+\subsection{Phép cộng lát cắt}
+
+\begin{theorem}[Phép toán cộng lát cắt]
+    Cho hai lát cắt $A$ và $B$. Khi đó tập hợp sau
+    \[
+        A + B = \{ a + b \mid a\in A\wedge b\in B \}
+    \]
+
+    là một lát cắt.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kiểm tra từng điều kiện của một lát cắt.
+    \begin{enumerate}[label={(DC\arabic*)}]
+        \item Vì $A$ và $B$ khác rỗng nên tồn tại hai số hữu tỉ $a$ và $b$ lần lượt thuộc $A$ và $B$. Theo định nghĩa của tập hợp $A + B$ thì $a + b$ là một phần tử của $A + B$. Do đó tập hợp $A + B$ khác rỗng.
+        \item Chúng ta chọn $c$ là một cận trên của $A$, và $d$ là một cận trên của $B$. Với mọi phần tử $a$ thuộc $A$ và $b$ thuộc $B$, chúng ta có $a + b\leq c + b \leq c + d$. Do đó $A + B$ không phải toàn bộ tập hợp số hữu tỉ.
+        \item Chúng ta chọn $a + b$ là một phần tử bất kì của tập hợp $A + B$, trong đó $a$ thuộc $A$ và $b$ thuộc $B$. Vì $A$ là một lát cắt nên $A$ không có phần tử lớn nhất, do đó tồn tại phần tử $a'$ của $A$ sao cho $a < a'$. Từ việc $a < a'$, chúng ta suy ra $a + b < a' + b$. Do đó trong tập hợp $A + B$, với mỗi phần tử, luôn tồn tại phần tử lớn hơn, kéo theo $A + B$ không có phần tử lớn nhất.
+        \item Chúng ta chọn $a + b$ là một phần tử bất kì của tập hợp $A + B$, và $x$ là một số hữu tỉ nhỏ hơn $a + b$. Vì $x < a + b$ nên $x + (-b) < a$. Theo định nghĩa lát cắt, vì $x + (-b) < a$ nên $x + (-b)$ thuộc $A$. Theo định nghĩa của tập hợp $A + B$, $x = (x + (-b)) + b$ là một phần tử của $A + B$. Do đó $A + B$ đóng dưới.
+    \end{enumerate}
+
+    Vậy $A + B$ là một lát cắt.
+\end{proof}
+
+Sau đây, chúng ta kiểm tra bốn tiên đề đầu tiên của các tiên đề về trường. Chúng tôi gặp khó khăn với việc kiểm tra tiên đề thứ ba trong các tiên đề về trường. Để giải quyết khó khăn đó, chúng tôi sử dụng một tính chất sâu hơn của số hữu tỉ.
+
+\begin{proposition}\label{proposition:integral-part-of-rational-numbers}
+    Với mỗi số hữu tỉ $x$, tồn tại duy nhất số nguyên $k$ sao cho $k\leq x < k+1$.
+\end{proposition}
+
+\begin{proof}
+    Chúng ta kí hiệu $\frac{a}{b}$ là phân số tối giản của $x$ (lưu ý rằng $b$ là một số nguyên dương). Theo thuật toán chia Euclid, tồn tại duy nhất số nguyên $k$ và số nguyên $r$ sao cho $a = kb + r$ và $0\leq r < b$. Do đó
+    \[
+        k = \frac{kb}{b} \leq \frac{kb + r}{b} = \frac{a}{b} < \frac{(k+1)b}{b} = k+1
+    \]
+
+    Giả sử số nguyên $\ell$ thỏa mãn $\ell\leq x < \ell + 1$.
+
+    Giả sử phản chứng rằng $\ell < k$. Khi đó $\ell\leq k - 1$. Cùng với $x < \ell + 1$, chúng ta suy ra $x < \ell + 1\leq (k-1) + 1 = k$. Điều này mâu thuẫn với $k\leq x$.
+
+    Giả sử phản chứng rằng $\ell > k$. Khi đó $k\leq \ell - 1$. Cùng với $x < k + 1$, chúng ta suy ra $x < k + 1\leq (\ell - 1) + 1 = \ell$. Điều này mâu thuẫn với $\ell\leq x$.
+
+    Do đó, $k = \ell$. Như vậy, với mỗi số hữu tỉ $x$, tồn tại duy nhất số tự nhiên $k$ sao cho $k\leq x < k+1$.
+\end{proof}
+
+Chứng minh các đẳng thức về lát cắt đồng nghĩa với việc chứng minh hai tập hợp bằng nhau. Nhắc lại, để chứng minh hai tập hợp bằng nhau, chúng ta cần chỉ ra tập hợp này là bộ phận của tập hợp kia và ngược lại, hoặc chỉ ra định nghĩa của hai tập hợp đó là tương đương.
+
+\begin{theorem}[Các tính chất của phép cộng lát cắt]\label{theorem:properties-of-dedekind-cuts-addition}
+    Trong tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép toán cộng lát cắt có tính chất kết hợp. Nói cách khác, với mọi lát cắt $A, B, C$, chúng ta có
+              \[
+                  (A + B) + C = A + (B + C).
+              \]
+        \item Phép toán cộng lát cắt có phần tử đồng nhất. Nói cách khác, tồn tại lát cắt $O$ sao cho với mọi lát cắt $A$, chúng ta có
+              \[
+                  A + O = O + A = A.
+              \]
+        \item Mỗi lát cắt có một lát cắt đối. Nói cách khác, với mỗi lát cắt $A$, tồn tại lát cắt $A'$ sao cho
+              \[
+                  A + A' = A' + A = O.
+              \]
+        \item Phép cộng lát cắt có tính chất giao hoán. Nói cách khác, với mọi lát cắt $A, B$, chúng ta có
+              \[
+                  A + B = B + A.
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Theo định nghĩa phép cộng lát cắt và tính chất kết hợp của phép cộng số hữu tỉ
+              \begin{align*}
+                  (A + B) + C & = \{ x + c \mid x\in A + B \wedge c\in C \}                  \\
+                              & = \{ (a + b) + c \mid (a\in A\wedge b\in B)\wedge c\in C \}  \\
+                              & = \{ a + (b + c) \mid a\in A \wedge (b\in B\wedge c\in C) \} \\
+                              & = \{ a + y \mid a\in A \wedge y\in B + C \}                  \\
+                              & = A + (B + C).
+              \end{align*}
+
+              Do đó phép cộng lát cắt có tính chất kết hợp.
+        \item Chúng ta định nghĩa lát cắt $O$ là tập hợp các số hữu tỉ nhỏ hơn $0$.
+
+              Với mỗi phần tử $a + x$ của lát cắt $A + O$ ($a$ thuộc $A$ và $x$ thuộc $O$), chúng ta có $a + x < a$. Do đó $A + O \subseteq A$. Mặt khác, trong lát cắt $A$, với mỗi phần tử $a$, tồn tại một phần tử $a'$ sao cho $a < a'$. Chúng ta có $a = a' + ((-a') + a)$. $a'$ là một phần tử của $A$ và $(-a') + a$ là một phần tử của $A + O$. Do đó $A \subseteq A + O$. Như vậy, $A + O = A$.
+
+              Hoàn toàn tương tự, với mỗi phần tử $x + a$ của lát cắt $O + A$ ($x$ thuộc $O$ và $a$ thuộc $A$), chúng ta có $x + a < a$. Do đó $O + A \subseteq A$. Mặt khác, trong lát cắt $A$, với mỗi phần tử $a$, tồn tại một phần tử $a'$ sao cho $a < a'$. Chúng ta có $a = (a + (-a')) + a'$. $a'$ là một phần tử của $A$ và $a + (-a')$ là một phần tử của $O + A$. Do đó $A \subseteq O + A$. Như vậy, $O + A = A$.
+        \item Chúng ta định nghĩa tập hợp $A'$ như sau
+              \[
+                  A' = \{ x - a' \mid x < 0 \wedge a'\in \mathbb{Q} - A \}
+              \]
+
+              Trước tiên, chúng ta chứng minh rằng $A'$ là một lát cắt.
+              \begin{enumerate}[label={(DC\arabic*)}]
+                  \item Vì $A$ là một lát cắt nên $\mathbb{Q} - A$ khác rỗng. Chọn $a'$ thuộc $\mathbb{Q} - A$ và chọn $x$ là một số hữu tỉ nhỏ hơn $0$. Theo định nghĩa của tập hợp $A'$, $x - a'$ thuộc $A'$. Do đó $A'$ khác rỗng.
+                  \item Giả sử $x - a'$ là một phần tử của $A'$ ($x < 0$ và $a'$ thuộc $\mathbb{Q} - A$). Chọn $a$ là một phần tử của $A$. Chúng ta có $x < 0$ và $a < a'$. Điều này kéo theo $-a' < -a$ và $x - a' < 0 - a = -a$. Như vậy $-a$ là một cận trên của $A'$. Do đó $A'$ không phải toàn bộ tập hợp số hữu tỉ.
+                  \item Giả sử $x - a'$ là một phần tử của $A'$ ($x < 0$ và $a'$ thuộc $\mathbb{Q} - A$). Vì $O$ là một lát cắt nên tồn tại một số hữu tỉ $y$ nhỏ hơn $0$ và lớn hơn $x$. Vì $x - a'$ thuộc $A'$ và $x < y$ nên $x - a' < y - a'$. Phần tử $y - a'$ của $A'$ lớn hơn $x - a'$. Điều này có nghĩa là trong tập hợp $A'$, với mỗi phần tử, luôn tồn tại phần tử lớn hơn. Do đó $A'$ không có phần tử lớn nhất.
+                  \item Giả sử $x - a'$ là một phần tử của $A'$ ($x < 0$ và $a'$ thuộc $\mathbb{Q} - A$) và số hữu tỉ $y$ thỏa mãn $y < x - a'$. Khi đó $(a' - x) + y < 0$ và
+                        \[
+                            y = ((x - a') + (a' - x)) + y = (x + ((a' - x) + y)) - a'
+                        \]
+
+                        Vì $x + ((a' - x) + y) < x + 0 < 0$ và $a'$ thuộc $\mathbb{Q} - A$ nên theo định nghĩa của tập hợp $A'$, chúng ta suy ra $y$ thuộc $A'$. Do đó $A'$ đóng dưới.
+              \end{enumerate}
+
+              Như vậy $A'$ là một lát cắt. Tiếp theo, chúng ta chứng minh $A + A' = A' + A = O$.
+
+              Giả sử $a + (x - a')$ là một phần tử của $A + A'$ (trong đó $a$ thuộc $A$, $x < 0$, và $a'$ thuộc $\mathbb{Q} - A$). Vì $a - a' < 0$ và $x < 0$ nên $a + (x - a') = x + (a - a') < x < 0$. Do đó $A + A' \subseteq O$.
+
+              Giả sử $(x - a') + a$ là một phần tử của $A + A'$ (trong đó $a$ thuộc $A$, $x < 0$, và $a'$ thuộc $\mathbb{Q} - A$). Vì $a - a' < 0$ và $x < 0$ nên $(x - a') + a = x + (a - a') < x < 0$. Do đó $A' + A \subseteq O$.
+
+              Để chứng minh $O\subseteq A + A'$ và $O\subseteq A' + A$, chúng ta sẽ chỉ ra sự tồn tại của hai phần tử lần lượt thuộc $A$ và $A'$ sao cho tổng của chúng nhỏ hơn $0$.
+
+              Giả sử $x$ là một số hữu tỉ nhỏ hơn $0$ và $a$ là một phần tử của $A$. Chúng ta xét tập hợp $S$ gồm tất cả các số nguyên $n$ sao cho $nx$ thuộc $A$.
+              \[
+                  S = \{ n \mid n\in\mathbb{Z} \wedge nx\in A \}
+              \]
+
+              Theo Mệnh đề~\ref{proposition:integral-part-of-rational-numbers}, với mỗi số hữu tỉ $q$, tồn tại số nguyên $k$ sao cho $k\leq \frac{q}{x} < k + 1$. Vì $x < 0$ nên
+              \[
+                  \begin{split}
+                      (k + 1)x < \frac{q}{x}\cdot x = q, \\
+                      kx \geq \frac{q}{x}\cdot x = q.
+                  \end{split}
+              \]
+
+              Chọn $q$ là một phần tử của $A$ thì $(k + 1)x < q$ cho thấy tập hợp $S$ khác rỗng. Chọn $q$ là một cận trên của $A$ thì việc $kx\geq q$ cho thấy tập hợp $S$ không phải toàn bộ tập hợp số nguyên, tức là tồn tại số nguyên $n_{0}$ nào đó sao cho $n_{0}x$ không thuộc $A$.
+
+              Bên cạnh đó, bằng định nghĩa của lát cắt, cùng tính chất phân phối của phép nhân với phép cộng số hữu tỉ và tính tương thích của phép cộng với quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta rút ra hai nhận xét: (1) Nếu $n$ thuộc $S$ thì $(n + 1)$ cũng thuộc $S$; (2) Nếu $n$ không thuộc $S$ thì $(n - 1)$ cũng không thuộc $S$.
+
+              Với những điều trên, chúng ta suy ra rằng với mọi $n$ thuộc $A$, chúng ta có $n\geq n_{0}$. Như vậy tập hợp $S$ thỏa mãn giả thiết của nguyên lý thứ tự tốt. Theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Chúng ta kí hiệu phần tử nhỏ nhất của $S$ là $m$. Vì số nguyên $m$ là phần tử nhỏ nhất của $S$ nên $m - 1$ không thuộc $S$. Nói cách khác, $mx$ thuộc $A$ và $(m - 1)x$ không thuộc $A$. Do $A$ là một lát cắt, nên tồn tại phần tử $a$ của $A$ sao cho $mx < a$. Khi đó chúng ta có $mx - a < 0$. Ngoài ra
+              \begin{align*}
+                  x & = mx - (m-1)x = (a + (mx - a)) - (m-1)x \\
+                    & = a + ((mx-a) - (m-1)x)                 \\
+                    & = ((mx - a) - (m-1)x) + a
+              \end{align*}
+
+              Vì $a$ thuộc $A$ và $(mx - a) - (m-1)x$ thuộc $A'$ nên theo định nghĩa phép cộng lát cắt, chúng ta có $x$ thuộc $A + A'$ và $A' + A$. Vì chúng ta đang xét số hữu tỉ $x$ bất kì nhỏ hơn $0$, nên chúng ta suy ra $O \subseteq A + A'$ và $O \subseteq A' + A$.
+
+              Như vậy, $O = A + A'$ và $O = A' + A$.
+        \item Theo định nghĩa phép cộng lát cắt và tính chất giao hoán của phép cộng số hữu tỉ
+              \begin{align*}
+                  A + B & = \{ a + b \mid a\in A \wedge b\in B \} \\
+                        & = \{ b + a \mid b\in B \wedge a\in A \} \\
+                        & = B + A.
+              \end{align*}
+
+              Do đó phép cộng lát cắt có tính chất giao hoán.
+    \end{enumerate}
+\end{proof}
+
+Với định lý sau đây, chúng ta khẳng định được tính duy nhất của phần tử đồng nhất của phép cộng lát cắt và lát cắt đối.
+\begin{theorem}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng lát cắt có đúng một phần tử đồng nhất.
+        \item Với mỗi lát cắt $A$, tồn tại duy nhất một lát cắt là lát cắt đối của $A$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Định lý~\ref{theorem:properties-of-dedekind-cuts-addition} đã chỉ ra sự tồn tại của phần tử đồng nhất của phép cộng lát cắt, phần tử đó là lát cắt $O$.
+
+              Giả sử lát cắt $O'$ thỏa mãn $A + O' = O' + A = A$ với mọi lát cắt $A$. Khi đó, theo phần (i), (ii), (iii) của Định lý~\ref{theorem:properties-of-dedekind-cuts-addition} và định nghĩa của $O'$, chúng ta có $O' = O' + O = O$.
+
+              Vậy phép cộng lát cắt có đúng một phần tử đồng nhất.
+        \item Định lý~\ref{theorem:properties-of-dedekind-cuts-addition} đã chỉ ra rằng với mỗi lát cắt $A$, tồn tại một lát cắt $A'$ sao cho $A + A' = A' + A = O$.
+
+              Giả sử lát cắt $A''$ thỏa mãn $A + A'' = A'' + A = O$. Khi đó, theo phần (i), (ii), (iii) của Định lý~\ref{theorem:properties-of-dedekind-cuts-addition} và định nghĩa của $A''$, chúng ta có
+              \begin{align*}
+                  A'' & = A'' + O        \\
+                      & = A'' + (A + A') \\
+                      & = (A'' + A) + A' \\
+                      & = O + A'         \\
+                      & = A'
+              \end{align*}
+
+              Vậy, với mỗi lát cắt $A$, tồn tại duy nhất một lát cắt là lát cắt đối của $A$.
+    \end{enumerate}
+\end{proof}
+
+Với mỗi lát cắt $A$, chúng ta kí hiệu bởi $-A$ lát cắt sau
+\[
+    -A = A' = \{ x - a' \mid x < 0 \wedge a'\in \mathbb{Q} - A \}.
+\]
+
+\begin{theorem}
+    Với mọi lát cắt $A$, chúng ta có $A = -(-A)$.
+\end{theorem}
+
+\begin{proof}
+    Theo định nghĩa của $-A$ và phần (i), (ii), (iii) của Định lý~\ref{theorem:properties-of-dedekind-cuts-addition}
+    \begin{align*}
+        (-(-A)) & = (-(-A)) + O          \\
+                & = (-(-A)) + ((-A) + A) \\
+                & = ((-(-A)) + (-A)) + A \\
+                & = O + A                \\
+                & = A.
+    \end{align*}
+
+    Vậy, với mọi lát cắt $A$, chúng ta có $A = -(-A)$.
+\end{proof}
+
+Tiếp theo, chúng ta kiểm tra tính tương thích của phép cộng lát cắt với quan hệ thứ tự $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$.
+
+\begin{theorem}
+    Với mọi lát cắt $A, B$, nếu $A\leq B$ thì với mọi lát cắt $C$, chúng ta có $A + C\leq B + C$.
+\end{theorem}
+
+\begin{proof}
+    Giả sử hai lát cắt $A, B$ thỏa mãn $A\leq B$. Theo định nghĩa quan hệ thứ tự $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$, chúng ta có $A\subseteq B$.
+
+    Giả sử $a + c$ là một phần tử bất kì của $A + C$ (trong đó, $a$ thuộc $A$ và $c$ thuộc $C$). Vì $A\subseteq B$ nên $a$ thuộc $B$. Theo định nghĩa phép cộng lát cắt, chúng ta suy ra $a + c$ thuộc $B + C$. Do đó $A + C \subseteq B + C$.
+
+    Vậy với mọi lát cắt $A, B$, nếu $A\leq B$ thì với mọi lát cắt $C$, chúng ta có $A + C\leq B + C$.
+\end{proof}
+
+Kết hợp định lý trên với phương pháp chứng minh bằng phản chứng, chúng ta thu được các hệ quả sau.
+
+\begin{corollary}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mọi lát cắt $A, B$, nếu $A < B$ thì với mọi lát cắt $C$, chúng ta có $A + C < B + C$.
+        \item Nếu $A$ và $B$ là các lát cắt không âm thì $A + B$ là một lát cắt không âm.
+        \item Nếu $A$ và $B$ là các lát cắt dương thì $A + B$ là một lát cắt dương.
+        \item Nếu $A$ và $B$ là các lát cắt âm thì $A + B$ là một lát cắt âm.
+        \item Lát cắt $A$ là lát cắt dương khi và chỉ khi lát cắt $-A$ là lát cắt âm.
+    \end{enumerate}
+\end{corollary}
+
+\subsection{Phép nhân lát cắt}
+
+Khi định nghĩa phép nhân lát cắt, chúng ta cũng gặp vấn đề như khi định nghĩa phép nhân hai số nguyên. Trong trường này này, chúng ta cũng giải quyết tương tự như định nghĩa phép nhân hai số nguyên.
+
+\subsection{Lát cắt và tiên đề về cận trên}
+
+\subsection{Liên hệ lát cắt Dedekind với số hữu tỉ}
+
+\section{Dãy Cauchy hữu tỉ}
+
+\subsection{Định nghĩa dãy Cauchy hữu ti}
 
 \subsection{Các phép toán với dãy Cauchy hữu tỉ}
 
@@ -75,27 +565,35 @@
 
 \subsection{Quan hệ thứ tự giữa các lớp tương đương của các dãy Cauchy hữu tỉ}
 
-\section{Tính đầy đủ của tập hợp số thực}
-
 \subsection{Dãy Cauchy hữu tỉ và tiên đề về cận trên}
 
-\subsection{Dãy Cauchy thực}
+\subsection{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
 
-\section{$\dagger$ Các cách xây dựng tập hợp số thực}
+\section{Hệ tiên đề về số thực và các mô hình}
 
-\subsection{Sơ lược về lát cắt Dedekind}
+\subsection{Sơ lược về một số mô hình khác cho hệ tiên đề về số thực}
 
-\subsection{Tính duy nhất của tập hợp số thực}
+\subsection{Sự tương đương của các mô hình cho hệ tiên đề về số thực}
 
-\subsection{So sánh hai cách xây dựng tập hợp số thực}
+\subsection{So sánh lát cắt Dedekind và dãy Cauchy hữu tỉ}
 
-\section{Một số hệ quả từ hệ tiên đề về số thực}
+\subsection{Hai câu hỏi không trả lời}
+
+\section{Một số kết quả từ hệ tiên đề về số thực}
 
 \subsection{Nhóm tiên đề về trường}
 
-\subsection{Nhóm tiên đề vế thứ tự}
+\subsection{Nhóm tiên đề về thứ tự}
 
 \subsection{Tiên đề về tính đầy đủ}
+
+\section{Các số thực không hữu tỉ}
+
+\subsection{Số vô tỉ}
+
+\subsection{Số vổ tỉ đại số}
+
+\subsection{Số siêu việt}
 
 \section{Mở đầu về giải tích thực}
 

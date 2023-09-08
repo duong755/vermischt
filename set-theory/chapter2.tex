@@ -598,7 +598,7 @@ Ngược lại, cho trước một phân hoạch của một tập hợp $S$ kh�
 Trước mục này, chúng ta đã nhắc đến quan hệ nhỏ hơn hoặc bằng giữa các số thực và gọi đó là quan hệ so sánh. Thực ra, tên gọi chính thức của loại quan hệ này là quan hệ thứ tự.
 
 \begin{definition}[Quan hệ thứ tự]
-    \textbf{Quan hệ thứ tự} (hay còn gọi là \textbf{quan hệ thứ tự một phần}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ thứ tự thỏa mãn ba tính chất: phản xạ, phản đối xứng, và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn ba tính chất:
+    \textbf{Quan hệ thứ tự} (hay còn gọi là \textbf{quan hệ thứ tự bộ phận}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ thứ tự thỏa mãn ba tính chất: phản xạ, phản đối xứng, và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn ba tính chất:
     \begin{enumerate}[label={(\roman*)}]
         \item (Phản xạ) Với mọi $x\in S$, có $x\mathscr{R}x$.
         \item (Phản đối xứng) Với mọi $x, y\in S$, nếu $x\mathscr{R}y$ và $y\mathscr{R}x$ thì $x = y$.
@@ -635,14 +635,14 @@ Từ sự khác biệt giữa hai ví dụ về quan hệ thứ tự, chúng ta 
     \noindent Một tập hợp với một quan hệ thứ tự toàn phần được gọi là \textbf{tập được sắp toàn phần}.
 \end{definition}
 
-Quan hệ thứ tự toàn phần là trường hợp riêng của quan hệ thứ tự (quan hệ thứ tự một phần). Khi ngữ cảnh chỉ cho biết một quan hệ là quan hệ thứ tự thì chúng ta hiểu đó là quan hệ thứ tự một phần, cho đến khi chỉ ra được đó là quan hệ thứ tự toàn phần.
+Quan hệ thứ tự toàn phần là trường hợp riêng của quan hệ thứ tự (quan hệ thứ tự bộ phận). Khi ngữ cảnh chỉ cho biết một quan hệ là quan hệ thứ tự thì chúng ta hiểu đó là quan hệ thứ tự bộ phận, cho đến khi chỉ ra được đó là quan hệ thứ tự toàn phần.
 
 Trong một tập được sắp, có thể tồn tại những phần tử được gọi là phần tử nhỏ nhất và phần tử lớn nhất.
 \begin{definition}[Phần tử nhỏ nhất và phần tử lớn nhất]
-    Cho tập $S$ là một tập được sắp với quan hệ thứ tự $\leq$.
+    Cho tập $S$ là một tập hợp khác rỗng được sắp với quan hệ thứ tự $\leq$.
     \begin{enumerate}[label={(\roman*)}]
-        \item Phần tử $x$ của $S$ được gọi là \textbf{phần tử nhỏ nhất} (theo quan hệ thứ tự $\leq$) nếu với mọi phần tử $y$ của $S$, có $x\leq y$.
-        \item Phần tử $x$ của $S$ được gọi là \textbf{phần tử lớn nhất} (theo quan hệ thứ tự $\leq$) nếu với mọi phần tử $y$ của $S$, có $y\leq x$.
+        \item Phần tử $x$ của $S$ được gọi là \textbf{phần tử nhỏ nhất} (theo quan hệ thứ tự $\leq$) nếu với mọi phần tử $y$ của $S$, có $x\leq y$. Phần tử nhỏ nhất của $S$ được kí hiệu là $\min S$.
+        \item Phần tử $x$ của $S$ được gọi là \textbf{phần tử lớn nhất} (theo quan hệ thứ tự $\leq$) nếu với mọi phần tử $y$ của $S$, có $y\leq x$. Phần tử lớn nhất của $S$ được kí hiệu là $\max S$.
     \end{enumerate}
 \end{definition}
 
@@ -663,7 +663,7 @@ Tuy một quan hệ thứ tự có thể không phải quan hệ thứ tự toà
 Quan hệ thứ tự là một trường hợp riêng của quan hệ tiền thứ tự.
 
 \begin{definition}[Quan hệ tiền thứ tự]
-    \textbf{Quan hệ tiền thứ tự} (hay còn gọi là \textbf{quan hệ tiền thứ tự một phần}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ tiền thứ tự thỏa mãn hai tính chất: phản xạ và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ tiền thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn hai tính chất:
+    \textbf{Quan hệ tiền thứ tự} (hay còn gọi là \textbf{quan hệ tiền thứ tự bộ phận}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ tiền thứ tự thỏa mãn hai tính chất: phản xạ và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ tiền thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn hai tính chất:
     \begin{enumerate}[label={(\roman*)}]
         \item (Phản xạ) Với mọi $x\in S$, có $x\mathscr{R}x$.
         \item (Bắc cầu) Với mọi $x, y, z\in S$, nếu $x\mathscr{R}y$ và $y\mathscr{R}z$ thì $x\mathscr{R}z$.
