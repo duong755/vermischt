@@ -4,7 +4,7 @@
 
 \subsection{Hệ tiên đề về số thực}
 
-Có ít nhất hai cách hiểu cho câu hỏi ``Số thực là gì?'' Đầu tiên, chúng ta có thể hiểu rằng người hỏi đang muốn được biết một \textit{định nghĩa toán học} cho số thực. Đó là một định nghĩa hình thức tương tự như định nghĩa số tự nhiên, số nguyên, số hữu tỉ, tính chia hết, \ldots đã được nêu trong tài liệu này. Thứ hai, chúng ta có thể hiểu rằng người hỏi đang muốn liên hệ cái-được-gọi-là-số-thực với thực tế. Nói cách khác, để trả lời cho cách hiểu thứ hai, người trả lời cần định nghĩa số thực như một đối tượng nào đó tương đương trong thực tế hoặc gần thực tế.
+Có ít nhất hai cách hiểu cho câu hỏi ``Số thực là gì?\@'' Đầu tiên, chúng ta có thể hiểu rằng người hỏi đang muốn được biết một \textit{định nghĩa toán học} cho số thực. Đó là một định nghĩa hình thức tương tự như định nghĩa số tự nhiên, số nguyên, số hữu tỉ, tính chia hết, \ldots đã được nêu trong tài liệu này. Thứ hai, chúng ta có thể hiểu rằng người hỏi đang muốn liên hệ cái-được-gọi-là-số-thực với thực tế. Nói cách khác, để trả lời cho cách hiểu thứ hai, người trả lời cần định nghĩa số thực như một đối tượng nào đó tương đương trong thực tế hoặc gần thực tế.
 
 Chúng tôi đưa ra một câu trả lời trực giác cho cách hiểu thứ hai như sau: \textit{Hình dung một đường thẳng kéo dài vô tận về hai phía. Mỗi điểm được đánh dấu trên đường thẳng đó tương ứng với một số thực. Nói rõ hơn, trên đường thẳng đó, chúng ta đánh dấu hai điểm khác nhau, lần lượt gọi là $0$ và $1$. Các điểm $x$ trên đường thẳng này tương ứng với một số (thực) âm nếu điểm $0$ nằm giữa $x$ và $1$. Các điểm $x$ trên đường thẳng này tương ứng với một số (thực) dương nếu hoặc $x$ nằm giữa $0$ và $1$, hoặc $x$ trùng $1$, hoặc $1$ nằm giữa $0$ và $x$.}
 
@@ -43,7 +43,7 @@ Câu trả lời trực giác hình học cho cách hiểu thứ hai có thể l
                   \end{split}
               \]
 
-        \item Phép nhân có phần tử đồng nhất. Nói cách khác, tồn tại số thực $1$ sao cho với mọi số thực $x$, chúng ta có
+        \item Phép nhân có phần tử đồng nhất, phần tử này khác $0$. Nói cách khác, tồn tại số thực $1\ne 0$ sao cho với mọi số thực $x$, chúng ta có
               \[
                   x + 1 = 1 + x = x.
               \]
@@ -186,29 +186,33 @@ Trong mục này, không gian mà chúng ta làm việc (định nghĩa và ch�
 Trong phần mở đầu của chương này, chúng tôi có đưa ra một định nghĩa trực giác về tập hợp số thực. Theo định nghĩa trực giác đó, tập hợp số thực là một đường thẳng kéo dài vô tận về hai phía, còn mỗi số thực tương ứng với một điểm được đánh dấu trên đường thẳng đó. Định nghĩa trực giác này có thể được xem như khởi nguồn cho định nghĩa lát cắt Dedekind sau đây.
 
 \begin{definition}[Lát cắt Dedekind]
-    Một lát cắt Dedekind\index{Lát cắt Dedekind} trong tập hợp số hữu tỉ (hay lát cắt) là một phân hoạch gồm hai tập hợp $A, B$ của tập hợp số hữu tỉ, sao cho
+    Một lát cắt Dedekind\index{Lát cắt Dedekind} trong một tập hợp $S$ được sắp thứ tự toàn phần là một phân hoạch gồm hai tập hợp $A, B$ sao cho
     \begin{enumerate}[label={(DC\arabic*)}]
-        \item $A$ khác rỗng và $A$ không phải toàn bộ tập hợp số hữu tỉ.
-        \item Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ (theo quan hệ $\leq$ trên tập hợp số hữu tỉ).
+        \item $A$ khác rỗng và $A$ không phải toàn bộ tập hợp $S$.
+        \item Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$.
         \item $A$ không có phần tử lớn nhất.
-        \item Nếu một số hữu tỉ $x$ thuộc $A$ thì mọi số hữu tỉ nhỏ hơn $x$ cũng thuộc $A$ (tính chất này còn được phát biểu là $A$ đóng dưới).
+        \item Nếu $x$ thuộc $A$ thì bất cứ phần tử nào nhỏ hơn $x$ và thuộc $S$ cũng thuộc $A$ (đặc điểm này còn được phát biểu là $A$ đóng dưới).
     \end{enumerate}
 
-    Một lát cắt như vậy được kí hiệu là $(A, B)$, hoặc chỉ là $A$, bởi vì $B = \mathbb{Q} - A$ ($B$ hoàn toàn được xác định khi biết $A$). Chúng ta kí hiệu tập hợp các lát cắt Dedekind trong tập hợp số hữu tỉ là $\mathscr{D}_{\mathbb{Q}}$.
+    Một lát cắt như vậy được kí hiệu là $(A, B)$, hoặc chỉ là $A$, bởi vì $B = S\setminus A$ ($B$ hoàn toàn được xác định khi biết $A$).
+
+    Chúng ta kí hiệu tập hợp các lát cắt Dedekind trong tập hợp $S$ là $\mathscr{D}_{S}$.
 \end{definition}
 
-Để hiểu rõ hơn định nghĩa này, chúng ta theo dõi các ví dụ sau.
+Để xây dựng tập hợp số thực bằng lát cắt Dedekind, chúng ta sử dụng các lát cắt trong tập hợp số hữu tỉ. Tập hợp các lát cắt Dedekind trong tập hợp số hữu tỉ được kí hiệu là $\mathscr{D}_{\mathbb{Q}}$. Chúng ta cũng dùng cách gọi vắn tắt là lát cắt để chỉ lát cắt Dedekind trên tập hợp số hữu tỉ, trừ khi ngữ cảnh phát biểu khác đi.
+
+Để hiểu rõ hơn định nghĩa lát cắt, chúng ta theo dõi các ví dụ và phản ví dụ sau.
 \begin{example}
     Tập hợp
     \[
-        A = \{ x \mid x\in\mathbb{Q} \wedge x < 1 \}
+        A = \{ x \mid x\in\mathbb{Q} \wedge x < q \}
     \]
 
-    là một lát cắt. Chúng ta kiểm tra điều này qua từng điều trong định nghĩa lát cắt.
+    trong đó $q$ là một số hữu tỉ, là một lát cắt. Chúng ta kiểm tra điều này qua từng điều trong định nghĩa lát cắt.
     \begin{enumerate}[label={(DC\arabic*)}]
-        \item $A$ khác rỗng vì $0$ là một phần tử của $A$. Bên cạnh đó, $A$ cũng không phải toàn bộ tập hợp số hữu tỉ vì $1$ không phải một phần tử của $A$.
-        \item $B = \mathbb{Q} - A = \{ x \mid x\in\mathbb{Q} \wedge 1\leq x \}$. Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ theo tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
-        \item $A$ không có phần tử lớn nhất vì với mỗi phần tử $x$ của $A$, chúng ta luôn tìm được một phần tử khác lớn hơn, chẳng hạn như $\frac{1 + x}{2}$.
+        \item $A$ khác rỗng vì $q - 1$ là một phần tử của $A$. Bên cạnh đó, $A$ cũng không phải toàn bộ tập hợp số hữu tỉ vì $q$ không phải một phần tử của $A$.
+        \item $B = \mathbb{Q} - A = \{ x \mid x\in\mathbb{Q} \wedge q\leq x \}$. Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ theo tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
+        \item $A$ không có phần tử lớn nhất vì với mỗi phần tử $x$ của $A$, chúng ta luôn tìm được một phần tử khác lớn hơn, chẳng hạn như $\frac{q + x}{2}$.
         \item Nếu một số hữu tỉ $x$ thuộc $A$ thì mọi số hữu tỉ nhỏ hơn $x$ cũng thuộc $A$. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
     \end{enumerate}
 \end{example}
@@ -222,45 +226,45 @@ Trong phần mở đầu của chương này, chúng tôi có đưa ra một đ�
     là một lát cắt. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ và Mệnh đề~\ref{proposition:irrational-cut}.
 \end{example}
 
-\begin{example}
+\begin{counterexample}
     Tập hợp
     \[
         A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x > 0$ và $x^{2} < 2$} \}
     \]
 
     \textbf{không phải} một lát cắt. Bởi vì $1$ là phần tử của $A$ nhưng $0 < 1$ lại không phải một phần tử của $A$.
-\end{example}
+\end{counterexample}
 
-\begin{example}
+\begin{counterexample}
     Tập hợp
     \[
         A = \left\{ \frac{-1}{n} \mid \text{$n$ là một số nguyên dương} \right\}
     \]
 
     \textbf{không phải} một lát cắt. Bởi vì $-1$ là phần tử của $A$ nhưng $-2 < -1$ lại không phải một phần tử của $A$.
-\end{example}
+\end{counterexample}
 
-\noindent Trước khi tiếp tục xây dựng tập hợp số thực bằng lát cắt, chúng ta lưu ý kết quả sau.
+\noindent Trước khi tiếp tục xây dựng tập hợp số thực bằng lát cắt, chúng ta lưu ý kết quả sau về lát cắt nói chung.
 \begin{proposition}\label{proposition:upper-bound-of-dedekind-cut}
-    Tập hợp $A$ là tập hợp con của tập hợp số hữu tỉ sao cho $A$ khác rỗng và $A$ không phải toàn bộ tập hợp số hữu tỉ. Chứng minh rằng $A$ là một lát cắt khi và chỉ khi $\mathbb{Q} - A$ chỉ chứa tất cả các cận trên của $A$.
+    Tập hợp $A$ là tập hợp con của một tập hợp $S$ được sắp thứ tự toàn phần sao cho $A$ khác rỗng và $A$ không phải toàn bộ tập hợp $S$. Chứng minh rằng $A$ là một lát cắt khi và chỉ khi $S\setminus A$ chỉ chứa tất cả các cận trên của $A$.
 \end{proposition}
 
 \begin{proof}
     ($\Rightarrow$) $A$ là một lát cắt.
 
-    Theo định nghĩa lát cắt, mọi phần tử của $A$ nhỏ hơn mọi phần tử của $\mathbb{Q} - A$. Do đó mọi phần tử của $\mathbb{Q} - A$ là các cận trên của $A$.
+    Theo định nghĩa lát cắt, mọi phần tử của $A$ nhỏ hơn mọi phần tử của $S\setminus A$. Do đó mọi phần tử của $S\setminus A$ là các cận trên của $A$.
 
-    Giả sử phản chứng rằng nếu $x$ là một cận trên của $A$ thì $x$ thuộc $A$. Theo giả sử phản chứng, $x$ là phần tử lớn nhất của $A$, và điều này mâu thuẫn với định nghĩa lát cắt rằng $A$ không có phần tử lớn nhất. Do đó giả sử phản chứng là sai, kéo theo mọi cận trên của $A$ là phần tử của $\mathbb{Q} - A$.
+    Giả sử phản chứng rằng nếu phần tử $x$ của $S$ là một cận trên của $A$ thì $x$ thuộc $A$. Theo giả sử phản chứng, $x$ là phần tử lớn nhất của $A$, và điều này mâu thuẫn với định nghĩa lát cắt rằng $A$ không có phần tử lớn nhất. Do đó giả sử phản chứng là sai, kéo theo mọi cận trên của $A$ là phần tử của $S - A$.
 
-    Do đó $\mathbb{Q} - A$ chỉ chứa tất cả các cận trên của $A$.
+    Do đó $S\setminus A$ chỉ chứa tất cả các cận trên của $A$.
 
     \bigskip
 
-    ($\Leftarrow$) $\mathbb{Q} - A$ chỉ chứa tất cả các cận trên của $A$.
+    ($\Leftarrow$) $S\setminus A$ chỉ chứa tất cả các cận trên của $A$.
 
-    Giả sử phản chứng rằng $A$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử lớn nhất của $A$ là $x$. Vì $x$ là một cận trên của $A$ nên $x$ cũng là một phần tử của $\mathbb{Q} - A$. Điều này mâu thuẫn với định nghĩa hiệu của hai tập hợp. Do đó giả sử phản chứng là sai, kéo theo $A$ không có phẩn tử lớn nhất.
+    Giả sử phản chứng rằng $A$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử lớn nhất của $A$ là $x$. Vì $x$ là một cận trên của $A$ nên $x$ cũng là một phần tử của $S\setminus A$. Điều này mâu thuẫn với định nghĩa hiệu của hai tập hợp. Do đó giả sử phản chứng là sai, kéo theo $A$ không có phẩn tử lớn nhất.
 
-    Giả sử $a\in A$ và $x < a$. Vì $x < a$ nên $x$ không phải cận trên của $A$, kéo theo $x$ không phải phần tử của $\mathbb{Q} - A$. Do đó $x$ là một phần tử của $A$.
+    Giả sử $a\in A$ và $x < a$. Vì $x < a$ nên $x$ không phải cận trên của $A$, kéo theo $x$ không phải phần tử của $S\setminus A$. Do đó $x$ là một phần tử của $A$.
 
     Theo định nghĩa lát cắt, chúng ta kết luận $A$ là một lát cắt.
 \end{proof}
@@ -272,7 +276,7 @@ Trong các mục tiếp theo, chúng ta lần lượt định nghĩa quan hệ t
 Việc hình dung tập hợp số thực như một đường thẳng cho chúng ta một cách nhìn khá trực quan về quan hệ thứ tự (tương ứng với khái niệm bên trái, bên phải trong thực tế).
 
 \begin{definition}\label{definition:order-relation-between-dedekind-cuts}
-    $A$ và $B$ là hai lát cắt Dedekind. Chúng ta nói lát cắt $A$ có quan hệ $\leq$ với lát cắt $B$ và kí hiệu là $A\leq B$ nếu và chỉ nếu $A\subseteq B$.
+    $A$ và $B$ là hai lát cắt. Chúng ta nói lát cắt $A$ có quan hệ $\leq$ với lát cắt $B$ và kí hiệu là $A\leq B$ nếu và chỉ nếu $A\subseteq B$.
 \end{definition}
 
 \begin{theorem}
@@ -319,6 +323,16 @@ Với cơ sở là quan hệ thứ tự toàn phần trên tập hợp các lát
 \end{definition}
 
 Như vậy, một lát cắt $A$ là không âm nếu và chỉ nếu $O\leq A$, là không dương nếu $A\leq O$.
+
+\begin{theorem}
+    Nếu lát cắt $A$ là một lát cắt dương thì tồn tại một phần tử $a$ của $A$ sao cho $a > 0$.
+\end{theorem}
+
+\begin{proof}
+    Giả sử phản chứng rằng lát cắt dương $A$ không có số hữu tỉ dương nào. Như vậy mọi phần tử $x$ của $A$ đều thỏa mãn $x\leq 0$. Do đó, $A\subseteq O$. Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$, chúng ta suy ra $A\leq O$. Điều này mâu thuẫn với giả thiết $A$ là một lát cắt dương ($A > O$).
+
+    Vậy nếu lát cắt $A$ là một lát cắt dương thì tồn tại một phần tử $a$ của $A$ sao cho $a > 0$.
+\end{proof}
 
 \subsection{Phép cộng lát cắt}
 
@@ -504,7 +518,7 @@ Với mỗi lát cắt $A$, chúng ta kí hiệu bởi $-A$ lát cắt sau
     -A = A' = \{ x - a' \mid x < 0 \wedge a'\in \mathbb{Q} - A \}.
 \]
 
-\begin{theorem}
+\begin{theorem}\label{theorem:additive-inversion-is-involutive}
     Với mọi lát cắt $A$, chúng ta có $A = -(-A)$.
 \end{theorem}
 
@@ -535,6 +549,8 @@ Tiếp theo, chúng ta kiểm tra tính tương thích của phép cộng lát c
     Vậy với mọi lát cắt $A, B$, nếu $A\leq B$ thì với mọi lát cắt $C$, chúng ta có $A + C\leq B + C$.
 \end{proof}
 
+Ngược lại, nếu các lát cắt $A, B, C$ thỏa mãn $A + C\leq B + C$ thì chúng ta cũng có $A\leq B$. Tuy nhiên đây là một hệ quả trực tiếp của định lý trên, bởi vì $A + C\leq B + C$ kéo theo $(A + C) + (-C) \leq (B + C) + (-C)$.
+
 Kết hợp định lý trên với phương pháp chứng minh bằng phản chứng, chúng ta thu được các hệ quả sau.
 
 \begin{corollary}
@@ -547,13 +563,785 @@ Kết hợp định lý trên với phương pháp chứng minh bằng phản ch
     \end{enumerate}
 \end{corollary}
 
+\begin{proposition}\label{proposition:nonnegative-elements-of-dedekind-cuts-addition}
+    Với mọi lát cắt $A, B$, nếu $A > O$ và $B > O$ thì với mỗi số hữu tỉ $x$ không âm (nếu có) trong $A + B$, tồn tại số hữu tỉ $a$ không âm trong $A$ và số hữu tỉ $b$ không âm trong $B$ sao cho $x = a + b$.
+\end{proposition}
+
+\begin{proof}
+    Vì phép cộng lát cắt có tính chất giao hoán nên không mất tính tổng quát, chúng ta giả sử $A\leq B$.
+
+    Vì $A > O$ và $B > O$ nên $0$ là một phần tử của $A, B$ và trong $A, B$ tồn tại số hữu tỉ dương.
+
+    Nếu số hữu tỉ $x$ thuộc $A + B$ và $x = 0$ thì $x = 0 + 0$.
+
+    Nếu số hữu tỉ $x$ thuộc $A + B$ và $x > 0$, chúng ta xét các trường hợp sau và chỉ ra rằng $x$ có thể được viết dưới dạng tổng của hai số hữu tỉ không âm lần lượt thuộc $A$ và $B$.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1.5cm]
+        \item $A = B$.
+
+              Giả sử phản chứng rằng $\frac{x}{2}$ không thuộc $A$ (và $B$). Khi đó $\frac{x}{2}$ là một cận trên của $A$ và $B$, kéo theo $x = \frac{x}{2} + \frac{x}{2}$ là một cận trên của $A + B$, điều này mâu thuẫn với giả thiết $x$ thuộc $A + B$. Do đó $\frac{x}{2}$ thuộc $A$ và $B$.
+        \item $A < B$.
+
+              \textbf{Khả năng 1.} $x$ thuộc $A$.
+
+              $x$ thuộc $A$ thì $x$ cũng thuộc $B$ vì $A\subset B$, $\frac{x}{2}$ thuộc $A$ và $B$. Chúng ta viết $x = \frac{x}{2} + \frac{x}{2}$.
+
+              \textbf{Khả năng 2.} $x$ không thuộc $A$ và $x$ thuộc $B$.
+
+              Chúng ta viết $x = 0 + x$.
+
+              \textbf{Khả năng 3.} $x$ không thuộc $A$ và không thuộc $B$.
+
+              Theo định nghĩa tổng hai lát cắt, tồn tại phần tử $a$ của $A$ và phần tử $b$ của $B$ sao cho $x = a + b$. Nếu $a$ là số hữu tỉ âm thì $x < b$, kéo theo $x$ thuộc $B$ (vì $B$ đóng dưới). Nếu $b$ là số hữu tỉ âm thì $x < a$, kéo theo $x$ thuộc $A$ (vì $A$ đóng dưới). Việc $x$ thuộc $A$ hay $x$ thuộc $B$ đều mâu thuẫn với giả thiết. Do đó $a$ và $b$ là hai số hữu tỉ không âm. Do đó $x = a + b$ viết dưới dạng tổng của hai số hữu tỉ không âm lần lượt thuộc $A$ và $B$.
+    \end{enumerate}
+
+    Vậy với mọi lát cắt $A, B$, nếu $A > O$ và $B > O$ thì với mỗi số hữu tỉ $x$ không âm trong $A + B$, tồn tại số hữu tỉ $a$ không âm trong $A$ và số hữu tỉ $b$ không âm trong $B$ sao cho $x = a + b$.
+\end{proof}
+
 \subsection{Phép nhân lát cắt}
 
 Khi định nghĩa phép nhân lát cắt, chúng ta cũng gặp vấn đề như khi định nghĩa phép nhân hai số nguyên. Trong trường này này, chúng ta cũng giải quyết tương tự như định nghĩa phép nhân hai số nguyên.
 
+\begin{theorem}[Phép nhân hai lát cắt]
+    Cho hai lát cắt $A$ và $B$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu $A\geq O$ và $B\geq O$ thì tập hợp sau
+              \[
+                  A\cdot B = \{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \} \cup O
+              \]
+
+              là một lát cắt.
+        \item Nếu $A\geq 0$ và $B < O$ thì tập hợp $A\cdot B = -A\cdot (-B)$ là một lát cắt.
+        \item Nếu $A < 0$ và $B\geq O$ thì tập hợp $A\cdot B = -(-A)\cdot B$ là một lát cắt.
+        \item Nếu $A < 0$ và $B < O$ thì tập hợp $A\cdot B = (-A)\cdot (-B)$ là một lát cắt.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta kiểm tra các điều kiện trong định nghĩa lát cắt.
+
+              Nếu ít nhất một trong hai lát cắt $A$ và $B$ bằng $O$ thì tập hợp $\{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \}$ là tập hợp rỗng, kéo theo $A\cdot B = O$, và là một lát cắt.
+
+              Dưới đây, chúng ta xét trường hợp $A > O$ và $B > O$.
+              \begin{enumerate}[label={(DC\arabic*)}]
+                  \item Theo định nghĩa của $A\cdot B$, $A\cdot B$ không phải tập hợp rỗng, vì $A\cdot B \supseteq O$ và $O$ khác rỗng.
+                  \item $A > O$ và $B > O$ thì tập hợp $\{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \}$ khác rỗng. Vì $A$ và $B$ là các lát cắt nên $A$ và $B$ có cận trên. Chọn $a_{0}, b_{0}$ lần lượt là cận trên của $A$ và $B$. Vì $A > O, B > 0$ và $A, B$ không có phần tử lớn nhất nên $a_{0} > 0$ và $b_{0} > 0$. Như vậy, nếu phần tử $x$ của $A\cdot B$ là một số hữu tỉ không vượt quá $0$ thì $x < a_{0}b_{0}$, còn nếu $x$ là một số hữu tỉ lớn hơn $0$ thì $x$ thuộc tập hợp $\{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \}$, kéo theo tồn tại $a$ thuộc $A$ và $b$ thuộc $B$ sao cho $x = ab$. Khi đó chúng ta có $ab\leq ab_{0} \leq a_{0}b_{0}$, do đó $A\cdot B$ có cận trên, tức là $A\cdot B$ không phải toàn bộ tập hợp số hữu tỉ.
+                  \item Giả sử $x$ là một phần tử của $A\cdot B$. Vì $A > O$ và $B > O$ nên trong $A$ tồn tại phần tử $a$ sao cho $a > 0$ và trong $B$ tồn tại phần tử $b$ sao cho $b > 0$.
+
+                        Nếu $x\leq 0$ thì $x\leq 0 < ab$.
+
+                        Nếu $x > 0$ thì tồn tại các số hữu tỉ dương $a'$ thuộc $A$ và $b'$ thuộc $B$ sao cho $x = a'b'$. Vì $A$ và $B$ không có phần tử lớn nhất nên trong $A$ tồn tại phần tử $a''$ sao cho $a' < a''$ và trong $B$ tồn tại phần tử $b''$ sao cho $b' < b''$. Khi đó chúng ta có $x = a'b' < a'b'' < a''b''$.
+
+                        Như vậy, trong tập hợp $A\cdot B$, với mỗi phần tử $x$, tồn tại phần tử lớn hơn. Do đó $A\cdot B$ không có phần tử lớn nhất.
+                  \item Giả sử $x$ là một phần tử của $A\cdot B$, và $y$ là một số hữu tỉ sao cho $x > y$.
+
+                        Nếu $y\leq 0$ thì $y$ thuộc $A\cdot B$, theo định nghĩa của $A\cdot B$, bởi $A\cdot B$ chứa mọi số hữu tỉ âm, và $\{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \}$ chứa số $0$ (vì $A > O$ và $B > O$).
+
+                        Nếu $y > 0$ thì $x > y > 0$. Khi đó tồn tại số hữu tỉ dương $a$ thuộc $A$ và tồn tại số hữu tỉ dương $b$ thuộc $B$ sao cho $x = ab$. Khi đó
+                        \[
+                            y = x - (x - y) = ab - a\cdot\frac{x-y}{a} = a\cdot\left( b - \frac{x - y}{a} \right).
+                        \]
+
+                        Trong đó, $a$ thuộc $A$, $b - \frac{x - y}{a} > 0$ và thuộc $B$. Theo định nghĩa của tập hợp $A\cdot B$, chúng ta suy ra $y$ thuộc $A\cdot B$. Như vậy, tập hợp $A\cdot B$ đóng dưới.
+              \end{enumerate}
+
+              Vậy $A\cdot B$ là một lát cắt.
+        \item Nếu $A\geq 0$ và $B < O$ thì $A\geq 0$ và $-B > O$. Theo phần (i), tập hợp $A\cdot (-B)$ là một lát cắt. Do đó $A\cdot B = -A\cdot (-B)$ là một lát cắt.
+        \item Nếu $A < 0$ và $B\geq O$ thì $-A > O$ và $B\geq O$. Theo phần (i), tập hợp $(-A)\cdot B$ là một lát cắt. Do đó $A\cdot B = -(-A)\cdot B$ là một lát cắt.
+        \item Nếu $A < 0$ và $B < O$ thì $-A > O$ và $-B > O$. Theo phần (i), tập hợp $(-A)\cdot (-B)$ là một lát cắt. Do đó $A\cdot B = (-A)\cdot (-B)$ là một lát cắt.
+    \end{enumerate}
+\end{proof}
+
+Tính tương thích của phép nhân lát cắt với quan hệ thứ tự $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$ được rút ra trực tiếp từ định nghĩa.
+\begin{theorem}
+    Với mọi lát cắt $A, B$, nếu $A\geq O$ và $B\geq O$ thì $A\cdot B\geq O$.
+\end{theorem}
+
+\begin{proof}
+    Theo định nghĩa của lát cắt $A\cdot B$, nếu $A\geq O$ và $B\geq O$ thì $O\subseteq A\cdot B$. Do đó, nếu $A\geq O$ và $B\geq O$ thì $A\cdot B\geq O$.
+\end{proof}
+
+Khi chứng minh các tính chất của phép nhân số nguyên, chúng ta xem xét từng trường hợp số nguyên âm, số nguyên không âm. Với các lát cắt, chúng ta cũng làm tương tự. Để làm gọn chứng minh cho các tính chất của phép nhân lát cắt, chúng ta sử dụng mệnh đề sau đây.
+\begin{proposition}\label{proposition:dedekind-cuts-and-sign}
+    Với mọi lát cắt $A, B$, chúng ta có
+    \begin{enumerate}[label={(\roman*)}]
+        \item $-A\cdot B = (-A)\cdot B = A\cdot (-B)$.
+        \item $A\cdot B = (-A)\cdot (-B)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta xét đủ các trường hợp sau nhằm áp dụng định nghĩa tích hai lát cắt (có bốn trường hợp trong định nghĩa) và Định lý~\ref{theorem:additive-inversion-is-involutive}.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1cm]
+                  \item $A = B = O$.
+
+                        Theo định nghĩa tích hai lát cắt, chúng ta có $A\cdot B = O\cdot O = O$.
+                  \item $A = O$ và $B\ne O$.
+
+                        Nếu $B > O$
+                        \begin{align*}
+                            -A\cdot B   & = -O = O                      & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$)}  \\
+                            (-A)\cdot B & = O\cdot B = O                & \text{(áp dụng định nghĩa tích lát cắt cho $O$ và $B$)}  \\
+                            A\cdot (-B) & = -A\cdot (-(-B)) = -A\cdot B & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $-B$)}
+                        \end{align*}
+
+                        Nếu $B < O$
+                        \begin{align*}
+                            -A\cdot B   & = A\cdot (-B) = O\cdot (-B) = O & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$, $O$ và $-B$)} \\
+                            (-A)\cdot B & = O\cdot B = -O\cdot (-B) = O   & \text{(áp dụng định nghĩa tích lát cắt cho $O$ và $B$)}              \\
+                        \end{align*}
+                  \item $B = O$ và $A\ne O$.
+
+                        Nếu $A > O$
+                        \begin{align*}
+                            -A\cdot B   & = -O = O                          & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$)}  \\
+                            (-A)\cdot B & = -(-(-A))\cdot B = -A\cdot B = O & \text{(áp dụng định nghĩa tích lát cắt cho $-A$ và $B$)} \\
+                            A\cdot (-B) & = A\cdot O = O                    & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $O$)}
+                        \end{align*}
+
+                        Nếu $A < O$
+                        \begin{align*}
+                            -A\cdot B   & = (-A)\cdot B = (-A)\cdot O = O & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$, $-A$ và $O$)} \\
+                            A\cdot (-B) & = O\cdot (-B) = O               & \text{(áp dụng định nghĩa tích lát cắt cho $O$ và $-B$)}
+                        \end{align*}
+
+                  \item $A > O$ và $B > O$.
+                        \begin{align*}
+                            (-A)\cdot B & = -(-(-A))\cdot B = -A\cdot B & \text{(áp dụng định nghĩa tích lát cắt cho $-A$ và $B$)} \\
+                            A\cdot (-B) & = -A\cdot (-(-B)) = -A\cdot B & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $-B$)}
+                        \end{align*}
+                  \item $A > O$ và $B < O$.
+                        \begin{align*}
+                            (-A)\cdot B & = (-(-A))\cdot (-B) = A\cdot (-B) & \text{(áp dụng định nghĩa tích lát cắt cho $-A$ và $B$)} \\
+                            -A\cdot B   & = A\cdot (-B)                     & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$)}
+                        \end{align*}
+                  \item $A < O$ và $B > O$.
+                        \begin{align*}
+                            A\cdot (-B) & = -A\cdot (-(-B)) = -A\cdot B & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $-B$)} \\
+                            -A\cdot B   & = (-A)\cdot B                 & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$)}
+                        \end{align*}
+                  \item $A < O$ và $B < O$.
+                        \begin{align*}
+                            A\cdot (-B) & = -(-A)\cdot (-B) & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $-B$)} \\
+                            (-A)\cdot B & = -(-A)\cdot (-B) & \text{(áp dụng định nghĩa tích lát cắt cho $-A$ và $B$)} \\
+                            -A\cdot B   & = -(-A)\cdot (-B) & \text{(áp dụng định nghĩa tích lát cắt cho $A$ và $B$)}
+                        \end{align*}
+              \end{enumerate}
+
+              Như vậy, trong mọi trường hợp, chúng ta đều có $(-A)\cdot B = A\cdot (-B) = -A\cdot B$.
+        \item Theo phần (i), chúng ta suy ra
+              \[
+                  (-A)\cdot (-B) = -(-(-A))\cdot (-B) = -A\cdot (-B) = A\cdot (-(-B)) = A\cdot B.
+              \]
+    \end{enumerate}
+\end{proof}
+
+Nếu $A$ và $B$ là các lát cắt không âm thì tập hợp con $\{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \}$ gồm tất cả các phần tử không âm của $A\cdot B$. Mệnh đề dưới đây khẳng định điều ngược lại: Với mỗi phần tử $x$ không âm (nếu có) của $A\cdot B$ (trong đó $A$ và $B$ là các lát cắt không âm), chúng ta có thể viết $x = ab$, trong đó $a, b$ lần lượt là các phần tử không âm nào đó của $A$ và $B$.
+
+\begin{proposition}\label{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}
+    Với mọi lát cắt $A, B$, nếu $A\geq O$ và $B\geq O$ thì với mỗi số hữu tỉ $x$ không âm (nếu có) trong $A\cdot B$, tồn tại số hữu tỉ $a$ không âm trong $A$ và số hữu tỉ $b$ không âm trong $B$ sao cho $x = ab$.
+\end{proposition}
+
+\begin{proof}
+    Nếu $A = O$ hoặc $B = O$ thì $A\cdot B = O$, kéo theo $A\cdot B$ không chứa số hữu tỉ không âm nào.
+
+    Nếu $A > O$ và $B > O$ thì trong $A\cdot B$ tồn tại số hữu tỉ không âm. Khi đó tập hợp sau
+    \[
+        (A\cdot B) \setminus O = \{ ab \mid a\in A \wedge b\in B \wedge a\geq 0 \wedge b\geq 0 \}
+    \]
+
+    khác rỗng. Chúng ta xét hai trường hợp. Nếu phần tử $x$ của $A\cdot B$ là $0$ thì $x = 0\cdot b$, trong đó $0$ thuộc $A$ và $b$ là một số hữu tỉ không âm thuộc $B$. Nếu phần tử $x$ của $A\cdot B$ là một số hữu tỉ dương thì $x$ thuộc $(A\cdot B)\setminus O$, kéo theo tồn tại hai số hữu tỉ không âm $a$ và $b$ lần lượt thuộc $A$ và $B$ sao cho $x = ab$.
+
+    Vậy với mọi lát cắt $A, B$, nếu $A\geq O$ và $B\geq O$ thì với mỗi số hữu tỉ $x$ không âm trong $A\cdot B$, tồn tại số hữu tỉ $a$ không âm trong $A$ và số hữu tỉ $b$ không âm trong $B$ sao cho $x = ab$.
+\end{proof}
+
+\begin{theorem}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép nhân lát cắt có tính chất kết hợp. Nói cách khác, với mọi lát cắt $A, B, C$, chúng ta có
+              \[
+                  (A\cdot B)\cdot C = A\cdot (B\cdot C).
+              \]
+        \item Phép nhân lát cắt có tính chất giao hoán. Nói cách khác, với mọi lát cắt $A, B$, chúng ta có
+              \[
+                  A\cdot B = B\cdot A.
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Theo chứng minh của Mệnh đề~\ref{proposition:dedekind-cuts-and-sign}, nếu ít nhất một trong các lát cắt $A, B, C$ bằng $O$ thì $(A\cdot B)\cdot C = A\cdot (B\cdot C)$. Dưới đây, chúng ta xét tất cả các trường hợp mà $A\ne O, B\ne O, C\ne O$.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1cm]
+                  \item $A > O, B > O, C > O$.
+
+                        Theo định nghĩa phép nhân lát cắt, Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, và tính chất kết hợp của phép nhân số hữu tỉ, chúng ta có
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = \{ xc \mid x\in A\cdot B\wedge c\in C\wedge x\geq 0\wedge c\geq 0 \} \cup O                        \\
+                                              & = \{ (ab)c \mid a\in A\wedge b\in B\wedge c\in C\wedge a\geq 0\wedge b\geq 0\wedge c\geq 0 \} \cup O \\
+                                              & = \{ a(bc) \mid a\in A\wedge b\in B\wedge c\in C\wedge a\geq 0\wedge b\geq 0\wedge c\geq 0 \} \cup O \\
+                                              & = \{ ay \mid a\in A\wedge y\in B\cdot C\wedge a\geq 0\wedge y\geq 0 \} \cup O                        \\
+                                              & = A\cdot (B\cdot C).
+                        \end{align*}
+                  \item $A > O, B > O, C < O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = -(A\cdot B)\cdot (-C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = -A\cdot (B\cdot (-C)) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                              & = A\cdot (-B\cdot (-C)) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = A\cdot (B\cdot C)     & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+                  \item $A > O, B < O, C > O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = -(A\cdot (-B))\cdot C & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = -A\cdot ((-B)\cdot C) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                              & = A\cdot (-(-B)\cdot C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = A\cdot (B\cdot C)     & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+                  \item $A > O, B < O, C < O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = (-(A\cdot B))\cdot (-C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = (A\cdot (-B))\cdot (-C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = A\cdot ((-B)\cdot (-C)) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                              & = A\cdot (B\cdot C)       & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+                  \item $A < O, B > O, C > O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = (-(-A)\cdot B)\cdot C & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = -((-A)\cdot B)\cdot C & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = -(-A)\cdot (B\cdot C) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                              & = A\cdot (B\cdot C)     & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+                  \item $A < O, B > O, C < O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = (-A\cdot B)\cdot (-C)   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = ((-A)\cdot B)\cdot (-C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = (-A)\cdot (B\cdot (-C)) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                              & = (-A)\cdot (-B\cdot C)   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = A\cdot (B\cdot C)       & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+                  \item $A < O, B < O, C > O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = ((-A)\cdot (-B))\cdot C & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = (-A)\cdot ((-B)\cdot C) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                              & = (-A)\cdot (-B\cdot C)   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                              & = A\cdot (B\cdot C)       & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+                  \item $A < O, B < O, C < O$
+                        \begin{align*}
+                            (A\cdot B)\cdot C & = ((-A)\cdot (-B))\cdot C     & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                              & = -((-A)\cdot (-B))\cdot (-C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                              & = -(-A)\cdot ((-B)\cdot (-C)) & \text{(theo \textbf{Trường hợp 1})}                                  \\
+                                              & = -(-A)\cdot (B\cdot C)       & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                              & = (-(-A))\cdot (B\cdot C)     & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                              & = A\cdot (B\cdot C)           & \text{(theo Định lý~\ref{theorem:additive-inversion-is-involutive})}
+                        \end{align*}
+              \end{enumerate}
+
+              Như vậy, với mọi lát cắt $A, B, C$, chúng ta có $(A\cdot B)\cdot C = A\cdot (B\cdot C)$.
+        \item Theo chứng minh của Mệnh đề~\ref{proposition:dedekind-cuts-and-sign}, nếu ít nhất một trong các lát cắt $A, B$ bằng $O$ thì $A\cdot B = B\cdot A = O$. Dưới đây, chúng ta xét tất cả các trường hợp mà $A\ne O, B\ne O$.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1cm]
+                  \item $A > O, B > O$.
+
+                        Theo định nghĩa phép nhân lát cắt, Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, và tính chất giao hoán của phép nhân số hữu tỉ, chúng ta có
+                        \begin{align*}
+                            A\cdot B & = \{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \} \cup O \\
+                                     & = \{ ba \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \} \cup O \\
+                                     & = B\cdot A.
+                        \end{align*}
+                  \item $A > O, B < O$
+                        \begin{align*}
+                            A\cdot B & = -A\cdot (-B)   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                     & = -(-B)\cdot A   & \text{(theo \textbf{Trường hợp 1})}                                  \\
+                                     & = (-(-B))\cdot A & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                     & = B\cdot A       & \text{(theo Định lý~\ref{theorem:additive-inversion-is-involutive})}
+                        \end{align*}
+                  \item $A < O, B > O$
+                        \begin{align*}
+                            A\cdot B & = -(-A)\cdot B   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                     & = -B\cdot (-A)   & \text{(theo \textbf{Trường hợp 1})}                                  \\
+                                     & = B\cdot (-(-A)) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}       \\
+                                     & = B\cdot A       & \text{(theo Định lý~\ref{theorem:additive-inversion-is-involutive})}
+                        \end{align*}
+                  \item $A < O, B < O$
+                        \begin{align*}
+                            A\cdot B & = (-A)\cdot (-B) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                     & = (-B)\cdot (-A) & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                     & = B\cdot A       & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+              \end{enumerate}
+
+              Như vậy, với mọi lát cắt $A, B$, chúng ta có $A\cdot B = B\cdot A$.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    Phép nhân lát cắt có tính chất phân phối với phép cộng lát cắt. Nói cách khác, với mọi lát cắt $A, B, C$, chúng ta có
+    \[
+        \begin{split}
+            (A + B)\cdot C = A\cdot C + B\cdot C, \\
+            C\cdot (A + B) = C\cdot A + C\cdot B.
+        \end{split}
+    \]
+\end{theorem}
+
+\begin{proof}
+    Nếu $A = O$ thì
+    \[
+        (A + B)\cdot C = B\cdot C = O + B\cdot C = A\cdot C + B\cdot C.
+    \]
+
+    Nếu $B = O$ thì
+    \[
+        (A + B)\cdot C = A\cdot C = A\cdot C + O = A\cdot C + B\cdot C.
+    \]
+
+    Nếu $C = O$ thì
+    \[
+        (A + B)\cdot C = O = O + O = A\cdot C + B\cdot C.
+    \]
+
+    Chúng ta xem xét các trường hợp mà $A\ne O, B\ne O, C\ne O$.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item $A > O, B > O, C > O$.
+
+              Vì $A > O, B > O, C > O$ nên $(A + B)\cdot C$ và $A\cdot C + B\cdot C$ là các lát cắt dương.
+
+              Để được ngắn gọn, trong chứng minh này, chúng ta kí hiệu $A_{0}$ là tập hợp con của $A$ gồm tất cả các phần tử hữu tỉ không âm của $A$.
+
+              Theo định nghĩa phép nhân lát cắt và tính chất phân phối của phép nhân với phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  (A + B)\cdot C      & = \{ xc \mid x\in {(A+B)}_{0} \wedge c\in C_{0} \} \cup O                                                                                                                                                 \\
+                                      & = \{ (a+b)c \mid a\in A_{0}\wedge b\in B_{0}\wedge c\in C_{0} \}\cup O                                           & \text{(theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-addition})} \\
+                                      & = \{ ac + bc \mid a\in A_{0}\wedge b\in B_{0}\wedge c\in C_{0} \} \cup O;                                                                                                                                 \\
+                  A\cdot C + B\cdot C & = \{ a\cdot c \mid a\in A_{0}\wedge c\in C_{0} \}\cup O + \{ b\cdot c \mid b\in B_{0}\wedge c\in C_{0} \}\cup O.
+              \end{align*}
+
+              Chúng ta sẽ chứng minh rằng $(A + B)\cdot C \subseteq A\cdot C + B\cdot C$ và $A\cdot C + B\cdot C \subseteq (A + B)\cdot C$.
+
+              Giả sử $x$ là một phần tử của $(A + B)\cdot C$. Nếu $x\leq 0$ thì $x$ cũng thuộc $A\cdot C + B\cdot C$ vì $A\cdot C + B\cdot C$ là một lát cắt dương.
+
+              Còn nếu $x > 0$ thì theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, tồn tại số hữu tỉ không âm $d$ thuộc $A + B$ và số hữu tỉ không âm $c$ thuộc $C$ sao cho $x = dc$. Theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-addition}, tồn tại số hữu tỉ không âm $a$ thuộc $A$ và số hữu tỉ không âm $b$ thuộc $B$ sao cho $a + b = d$. Khi đó, $x = (a + b)c = ac + bc$. Theo định nghĩa phép nhân lát cắt và phép cộng lát cắt, chúng ta suy ra $ac$ thuộc $A\cdot C$, $bc$ thuộc $B\cdot C$, và $ac + bc$ thuộc $A\cdot C + B\cdot C$.
+
+              Do đó $(A + B)\cdot C \subseteq A\cdot C + B\cdot C$.
+
+              Giả sử $x$ là một phần tử của $A\cdot C + B\cdot C$. Nếu $x\leq 0$ thì $x$ cũng thuộc $(A + B)\cdot C$ vì $(A + B)\cdot C$ là một lát cắt dương.
+
+              Còn nếu $x > 0$ thì theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-addition}, tồn tại phần tử $y$ không âm của $A\cdot C$ và phần tử $z$ không âm của $B\cdot C$ sao cho $x = y + z$. Theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, chúng ta có hai điều sau
+              \begin{itemize}
+                  \item Tồn tại số hữu tỉ không âm $a$ thuộc $A$ và số hữu tỉ không âm $c_{1}$ thuộc $C$ sao cho $y = ac_{1}$.
+                  \item Tồn tại số hữu tỉ không âm $b$ thuộc $B$ và số hữu tỉ không âm $c_{2}$ thuộc $C$ sao cho $z = bc_{2}$.
+              \end{itemize}
+
+              Vì $x > 0$ nên $a$ và $b$ không thể đồng thời bằng $0$ (ngược lại sẽ dẫn đến $x = y + z = ac_{1} + bc_{2} = 0 + 0 = 0$). Chúng ta chọn $c = \dfrac{ac_{1} + bc_{2}}{a + b}$. Khi đó $c$ không vượt quá số lớn hơn trong hai số $c_{1}$ và $c_{2}$. Vì $C$ có tính đóng dưới nên $c$ thuộc $C$.
+              \[
+                  x = y + z = ac_{1} + bc_{2} = (a + b)\cdot\frac{ac_{1} + bc_{2}}{a + b} = ac + bc = (a + b)c.
+              \]
+
+              Đẳng thức trên cho thấy $x$ cũng thuộc lát cắt $(A + B)\cdot C$.
+
+              Do đó $A\cdot C + B\cdot C \subseteq (A + B)\cdot C$.
+
+              Như vậy $(A + B)\cdot C = A\cdot C + B\cdot C$.
+
+              Chúng ta sẽ đưa các trường hợp dưới đây về \textbf{Trường hợp 1}.
+        \item $A > O, B < O, C > O$.
+              \begin{enumerate}[label={\textbf{Khả năng \arabic*.}},itemindent=1.5cm]
+                  \item $A + B = O$.
+                        \begin{align*}
+                            (A + B)\cdot C & = O\cdot C = O = A\cdot C + (-A\cdot C)                                                                  \\
+                                           & = A\cdot C + (-A)\cdot C                & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                           & = A\cdot C + B\cdot C
+                        \end{align*}
+                  \item $A + B > O$.
+                        \begin{align*}
+                            A\cdot C & = ((A + B) + (-B))\cdot C                                                                       \\
+                                     & = (A + B)\cdot C + (-B)\cdot C & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                     & = (A + B)\cdot C + (-B\cdot C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Do đó $(A + B)\cdot C = A\cdot C + B\cdot C$.
+                  \item $A + B < O$.
+                        \begin{align*}
+                            -B\cdot C & = (-B)\cdot C                   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                      & = (A + (-(A + B)))\cdot C                                                                        \\
+                                      & = A\cdot C + (-(A + B))\cdot C  & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                      & = A\cdot C + (-(A + B)\cdot C). & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Do đó $(A + B)\cdot C = A\cdot C + B\cdot C$.
+              \end{enumerate}
+        \item $A < O, B > O, C > O$.
+              \begin{enumerate}[label={\textbf{Khả năng \arabic*.}},itemindent=1.5cm]
+                  \item $A + B = O$.
+                        \begin{align*}
+                            (A + B)\cdot C & = O\cdot C = O = A\cdot C + (-A\cdot C) \\
+                                           & = A\cdot C + (-A)\cdot C                \\
+                                           & = A\cdot C + B\cdot C.
+                        \end{align*}
+                  \item $A + B > O$.
+                        \begin{align*}
+                            B\cdot C & = ((-A) + (A + B))\cdot C                                                                        \\
+                                     & = (-A)\cdot C + (A + B)\cdot C  & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                     & = (-A\cdot C) + (A + B)\cdot C. & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Do đó $(A + B)\cdot C = A\cdot C + B\cdot C$.
+                  \item $A + B < O$.
+                        \begin{align*}
+                            -A\cdot C & = (-A)\cdot C                   & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                      & = ((-(A + B)) + B)\cdot C                                                                        \\
+                                      & = (-(A + B))\cdot C + B\cdot C  & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                      & = (-(A + B)\cdot C) + B\cdot C. & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Do đó $(A + B)\cdot C = A\cdot C + B\cdot C$.
+              \end{enumerate}
+        \item $A < O, B < O, C > O$.
+              \begin{align*}
+                  -(A + B)\cdot C & = (-(A + B))\cdot C         & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                  & = ((-A) + (-B))\cdot C                                                                       \\
+                                  & = (-A)\cdot C + (-B)\cdot C & \text{(theo \textbf{Trường hợp 1})}                            \\
+                                  & = (-A\cdot C) + (-B\cdot C) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                  & = -(A\cdot C + B\cdot C).
+              \end{align*}
+
+              Do đó $(A + B)\cdot C = A\cdot C + B\cdot C$.
+        \item $C < O$.
+              \begin{align*}
+                  (A + B)\cdot C & = -(A + B)\cdot (-C)              & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                 & = -(A\cdot (-C) + B\cdot (-C))    & \text{(theo \textbf{Trường hợp 1, 2, 3, 4})}                   \\
+                                 & = (-A\cdot (-C)) + (-B\cdot (-C)) & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})} \\
+                                 & = A\cdot C + B\cdot C.            & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+              \end{align*}
+    \end{enumerate}
+
+    Như vậy, trong mọi trường hợp, chúng ta có $(A + B)\cdot C = A\cdot C + B\cdot C$. Mặt khác, vì phép nhân lát cắt có tính chất giao hoán nên chúng ta cũng có $C\cdot (A + B) = C\cdot A + C\cdot B$.
+\end{proof}
+
+\begin{theorem}
+    Với mọi lát cắt $A$, chúng ta có $A\cdot I = I\cdot A = A$, trong đó $I$  là lát cắt $\{ x \mid x\in\mathbb{Q} \wedge x < 1 \}$.
+\end{theorem}
+
+\begin{proof}
+    $I\ne O$ vì $0$ thuộc $I$ nhưng $0$ không thuộc $O$.
+
+    Chúng ta xét ba trường hợp sau.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item $A = O$.
+
+              Theo chứng minh của Mệnh đề~\ref{proposition:dedekind-cuts-and-sign}, $A\cdot I = O\cdot I = O = I\cdot O = I\cdot A$.
+        \item $A > O$.
+
+              Theo định nghĩa phép nhân lát cắt, chúng ta có
+              \[
+                  A\cdot I = \{ ae \mid a\in A\wedge e\in I\wedge a\geq 0\wedge e\geq 0 \}\cup O
+              \]
+
+              Giả sử $x$ là một phần tử của $A$. Nếu $x < 0$ thì $x$ thuộc $O$, kéo theo $x$ thuộc $A\cdot I$. Còn nếu $x\geq 0$, chúng ta chọn $a$ là một phần tử của $A$ và $x < a$ (tồn tại $a$ như vậy vì $A$ không có phần tử lớn nhất). Khi đó $x = a\cdot\dfrac{x}{a}$, mà $a$ thuộc $A$ và $0\leq \dfrac{x}{a} < 1$ nên $x$ thuộc $A\cdot I$. Như vậy $A\subseteq A\cdot I$.
+
+              Giả sử $x$ là một phần tử của $A\cdot I$. Nếu $x < 0$ thì $x$ thuộc $A$ (vì $A$ là một lát cắt dương). Còn nếu $x\geq 0$ thì theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, tồn tại số hữu tỉ không âm $a$ thuộc $A$ và số hữu tỉ không âm $e$ thuộc $I$ sao cho $x = ae$. Vì $e < 1$ và $a\geq 0$ nên $ae\leq a\cdot 1 = a$, kéo theo $x = ae$ thuộc $A$. Như vậy $A\cdot I\subseteq A$.
+
+              Do đó $A\cdot I = A$. Theo tính chất giao hoán của phép nhân lát cắt, chúng ta suy ra $I\cdot A = A\cdot I = A$.
+        \item $A < O$.
+
+              Theo \textbf{Trường hợp 2}, Mệnh đề~\ref{proposition:dedekind-cuts-and-sign}, và Định lý~\ref{theorem:additive-inversion-is-involutive}, chúng ta có
+              \[
+                  \begin{split}
+                      A\cdot I = -(-A)\cdot I = -(-A) = A, \\
+                      I\cdot A = -I\cdot (-A) = -(-A) = A.
+                  \end{split}
+              \]
+
+              Do đó $A\cdot I = I\cdot A = A$.
+    \end{enumerate}
+
+    Vậy với mọi lát cắt $A$, chúng ta có $A\cdot I = I\cdot A = A$.
+\end{proof}
+
+Để kiểm chứng tiên đề cuối cùng trong các tiên đề về trường, chúng tôi sử dụng định nghĩa và kết quả sau (ba phần cuối cùng của mệnh đề sau được sử dụng để kiểm tra tiên đề về trường).
+\begin{proposition}[Lũy thừa nguyên]
+    $q$ là một số hữu tỉ và $n$ là một số nguyên. Nếu $q\ne 0$, bằng đệ quy, chúng ta định nghĩa
+    \[
+        q^{n} = \begin{cases}
+            1                 & \text{khi $n = 0$}                    \\
+            q\cdot q^{n-1}    & \text{khi $n$ là một số nguyên dương} \\
+            \dfrac{1}{q^{-n}} & \text{khi $n$ là một số nguyên âm}
+        \end{cases}
+    \]
+
+    Còn nếu $q = 0$, chúng ta định nghĩa $q^{n} = 0$ với mọi số nguyên dương $n$.
+
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{-n} = \dfrac{1}{q^{n}}$.
+        \item Chứng minh rằng nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{n+1} = qq^{n}$.
+        \item Chứng minh rằng nếu $q\ne 0$ thì với mọi số nguyên $m, n$, chúng ta có $q^{m + n} = q^{m}q^{n}$.
+        \item Chứng minh rằng nếu $0 < q < 1$ thì $0 < q^{n} < 1$ với mọi số nguyên dương $n$.
+        \item Chứng minh rằng nếu $0 < q < 1$ thì $1 < q^{-n}$ với mọi số nguyên dương $n$.
+        \item (Bất đẳng thức Bernoulli) Nếu số hữu tỉ $q$ thỏa mãn $q > -1$ thì với mọi số nguyên không âm $n$, có ${(1 + q)}^{n}\geq 1 + nq$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu $n = 0$ thì $q^{-n} = q^{0} = 1 = \frac{1}{1} = \frac{1}{q^{n}}$.
+
+              Nếu $n$ là một số nguyên dương thì $q^{-n} = \dfrac{1}{q^{n}}$ theo định nghĩa lũy thừa nguyên.
+
+              Nếu $n$ là một số nguyên âm thì $q^{n} = \dfrac{1}{q^{-n}}$ theo định nghĩa lũy thừa nguyên. Vì $q^{-n}$ là nghịch đảo của $\dfrac{1}{q^{-n}}$ và $\dfrac{1}{q^{n}}$ là nghịch đảo của $q^{n}$ nên $q^{-n} = \dfrac{1}{q^{n}}$.
+
+              Như vậy, nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{-n} = \dfrac{1}{q^{n}}$.
+        \item Trong trường hợp $n$ là một số nguyên không âm thì $q^{n+1} = qq^{n}$ theo định nghĩa lũy thừa nguyên.
+
+              Trong trường hợp $n = -1$ thì $q^{n+1} = q^{0} = 1 = \dfrac{q}{q} = qq^{-1}$.
+
+              Trong trường hợp $n$ là số nguyên âm nhỏ hơn $-1$ thì theo định nghĩa lũy thừa nguyên, chúng ta có
+              \[
+                  q^{n+1} = \dfrac{1}{q^{-(n+1)}} = \dfrac{1}{q^{-n-1}} = \dfrac{q}{qq^{-n-1}}
+              \]
+
+              Theo hai trường hợp trên, chúng ta có $q^{-n} = qq^{-n-1}$. Cùng với định nghĩa lũy thừa nguyên và phần (i), chúng ta suy ra
+              \[
+                  \dfrac{q}{qq^{-n-1}} = \dfrac{q}{q^{-n}} = qq^{n}
+              \]
+
+              Như vậy, nếu $q\ne 0$ thì $q^{n+1} = qq^{n}$ với mọi số nguyên $n$.
+        \item Trước hết, chúng ta chứng minh bằng nguyên lý quy nạp toán học cho trường hợp $m + n\geq 0$.
+
+              Khi $n = -m$ thì theo định nghĩa lũy thừa nguyên và phần (i), chúng ta có $q^{m + n} = q^{0} = 1 = \frac{q^{m}}{q^{m}} = q^{m}q^{-m} = q^{m}q^{n}$.
+
+              Giả sử với $n = k\geq -m$, có $q^{m+k} = q^{m}q^{k}$. Theo định nghĩa lũy thừa nguyên, $q^{m+(k+1)} = q^{(m+k)+1} = qq^{m+k}$. Theo giả thiết quy nạp, $qq^{m+k} = q(q^{m}q^{k}) = q^{m}(qq^{k})$. Theo phần (ii), chúng ta có $q^{m}(qq^{k}) = q^{m}q^{k+1}$.
+
+              Theo nguyên lý quy nạp toán học, $q^{m + n} = q^{m}q^{n}$ với mọi số nguyên $m, n$ thỏa mãn $m+n\geq 0$.
+
+              Trong trường hợp $m + n < 0$, theo trường hợp trước và phần (i), chúng ta có
+              \[
+                  q^{m+n} = \dfrac{1}{q^{(-m) + (-n)}} = \dfrac{1}{q^{-m}q^{-n}} = \dfrac{1}{q^{-m}}\dfrac{1}{q^{-n}} = q^{m}q^{n}.
+              \]
+
+              Như vậy, nếu $q\ne 0$ thì $q^{m + n} = q^{m}q^{n}$ với mọi số nguyên $m, n$.
+        \item Khi $n = 1$, chúng ta có $0 < q^{1} < 1$ vì $0 < q < 1$ và $q^{1} = q$.
+
+              Giả sử với $n = k\geq 1$, có $0 < q^{k} < 1$ và $q^{-k} > 1$. Vì $0 < q < 1$ nên $0 < q\cdot q^{k} = q^{k+1}$. Bên cạnh đó, theo giả thiết quy nạp và định nghĩa lũy thừa nguyên, chúng ta có $q^{k+1} = q\cdot q^{k} < q^{k} < 1$. Do đó $0 < q^{k+1} < 1$.
+
+              Theo nguyên lý quy nạp toán học, nếu $0 < q < 1$ thì $0 < q^{n} < 1$ với mọi số nguyên dương $n$.
+        \item Theo phần (iv), nếu $0 < q < 1$ thì $0 < q^{n} < 1$. Bên cạnh đó, vì $0 < q^{-n}$ nên $q^{-n}q^{n} < q^{-n}$, kéo theo $1 < q^{-n}$.
+        \item Khi $n = 0$ thì chúng ta có ${(1 + q)}^{n} = {(1 + q)}^{0} = 1 \geq 1 + 0q$.
+
+              Giả sử với số nguyên $n = k\geq 0$, có ${(1 + q)}^{k} \geq 1 + kq$. Vì $(1 + q) > 0$ nên theo định nghĩa lũy thừa nguyên và  giả thiết quy nạp, chúng ta suy ra
+              \[
+                  {(1 + q)}^{k+1} = (1 + q){(1 + q)}^{k} \geq (1 + q)(1 + kq) = 1 + (k+1)q + q^{2} \geq 1 + (k + 1)q
+              \]
+
+              Vậy theo nguyên lý quy nạp toán học, nếu số hữu tỉ $q$ thỏa mãn $q > -1$ thì với mọi số nguyên không âm $n$, có ${(1 + q)}^{n}\geq 1 + nq$.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    Với mỗi lát cắt $A\ne O$, tồn tại lát cắt $B$ sao cho $A\cdot B = B\cdot A = I$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta xét hai trường hợp lát cắt dương và lát cắt âm.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item $A > O$.
+
+              Vì $A > O$ nên tập hợp $\mathbb{Q}\setminus A$ gồm toàn các số hữu tỉ dương.
+
+              Chúng ta định nghĩa tập hợp $B$ như sau và chứng minh $B$ là một lát cắt.
+              \[
+                  B = \left\{ \frac{e}{x} \mid e\in I \wedge x\in \mathbb{Q}\setminus A\wedge e\geq 0 \right\}\cup O
+              \]
+
+              \begin{enumerate}[label={(DC\arabic*)}]
+                  \item Vì $O$ là tập hợp con của $B$ nên $B$ khác rỗng.
+                  \item Chọn $a$ là một số hữu tỉ dương thuộc $A$. Khi đó, mọi số hữu tỉ âm thuộc $B$ đều nhỏ hơn $a$. Bên cạnh đó, các phần tử $\dfrac{e}{x}$ của $B$ (trong đó $e$ thuộc $I$ và $e\geq 0$, $x$ thuộc $\mathbb{Q}\setminus A$) thỏa mãn $\dfrac{e}{x}\leq \dfrac{e}{a} < \dfrac{1}{a}$. Do đó, mọi phần tử của $B$ đều khác $\dfrac{1}{a}$, kéo theo $B$ không phải toàn bộ tập hợp số hữu tỉ.
+                  \item Giả sử $b$ là một phần tử của $B$. Nếu $b < 0$ thì $0$ chính là một phần tử của $B$ và lớn hơn $b$. Còn nếu $b\geq 0$ thì theo định nghĩa của tập hợp $B$, tồn tại số hữu tỉ không âm $e$ thuộc $I$ và tồn tại số hữu tỉ $x$ thuộc $\mathbb{Q}\setminus A$ sao cho $b = \dfrac{e}{a}$. Vì $I$ là một lát cắt nên trong $I$ tồn tại phần tử $e'$ lớn hơn $e$, kéo theo $b = \dfrac{e}{a} < \dfrac{e'}{a}$. Hơn nữa, theo định nghĩa của tập hợp $B$, $\dfrac{e'}{a}$ cũng là một phần tử của $B$. Do đó tập hợp $B$ không có phần tử lớn nhất, vì với mỗi phần tử của $B$, chúng ta luôn tìm được phần tử lớn hơn.
+                  \item Giả sử $b$ là một phần tử của $B$ và $b'$ là một số hữu tỉ nhỏ hơn $b$. Nếu $b' < 0$ thì $b'$ thuộc $B$ vì $O$ là tập hợp con của $B$. Còn nếu $b'\geq 0$ thì $b > 0$. Khi đó $b' = \dfrac{b'}{b}\cdot b$. Theo định nghĩa tập hợp $B$, chúng ta suy ra $b'$ thuộc $B$. Do đó $B$ đóng dưới.
+              \end{enumerate}
+
+              Như vậy $B$ là một lát cắt. Tiếp theo, chúng ta chứng minh $A\cdot B \subseteq I$ và $I\subseteq A\cdot B$.
+
+              \bigskip
+
+              Giả sử $x$ là một phần tử của $A\cdot B$. Nếu $x < 0$ thì $x$ cũng thuộc $I$. Nếu $x\geq 0$ thì theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, tồn tại số hữu tỉ không âm $a$ thuộc $A$ và số hữu tỉ không âm $b$ thuộc $B$ sao cho $x = ab$. Theo định nghĩa của tập hợp $B$, tồn tại số hữu tỉ không âm $e$ thuộc $I$ và số hữu tỉ dương $y$ thuộc $\mathbb{Q}\setminus A$ sao cho $b = \dfrac{e}{y}$. Từ những đẳng thức trên, chúng ta suy ra $x = a\cdot\dfrac{e}{y} = e\cdot\dfrac{a}{y}$. Vì $e\geq 0, \dfrac{a}{y}\geq 0$ và $e < 1, \dfrac{a}{y} < 1$, chúng ta suy ra $x < 1$, điều này kéo theo $x$ thuộc $I$. Do đó $A\cdot B \subseteq I$.
+              \bigskip
+
+              Giả sử $x$ là một phần tử của $I$. Chúng ta sẽ chứng minh $x$ cũng là một phần tử của $A\cdot B$.
+              \begin{enumerate}[label={\textbf{Khả năng \arabic*.}},itemindent=1.5cm]
+                  \item $x\leq 0$
+
+                        $x\leq 0$ thì $x$ cũng thuộc $A\cdot B$.
+                  \item $0 < x < 1$.
+
+                        Vì $A\cdot B$ không có phần tử lớn nhất nên trong $A\cdot B$ tồn tại phần tử $y > x$, lưu ý rằng $0 < y < 1$. Chúng ta xét tập hợp sau
+                        \[
+                            S = \{ n \mid n\in\mathbb{Z} \wedge y^{n}\in A \}
+                        \]
+
+                        Theo bất đẳng thức Bernoulli, với mọi số nguyên dương $n$, chúng ta có
+                        \[
+                            y^{-n} = \dfrac{1}{y^{n}} = {\left(\frac{1}{y}\right)}^{n} = {\left(1 + \left(\frac{1}{y} - 1\right)\right)}^{n}\geq 1 + n\left(\frac{1}{y} - 1\right)
+                        \]
+
+                        Chọn $c$ là một số hữu tỉ dương bất kì. Theo Mệnh đề~\ref{proposition:integral-part-of-rational-numbers}, tồn tại số nguyên $m$ sao cho $m > \dfrac{c - 1}{\dfrac{1}{y} - 1}$, kéo theo $1 + m\left(\frac{1}{y} - 1\right) > c$. Chọn số nguyên dương $n > m$ thì chúng ta có $y^{-n} > c$. Điều này kéo theo $cy^{n} < 1$ và $y^{n} < \frac{1}{c}$.
+
+                        Trên đây, chúng ta vừa chứng minh mệnh đề: Với mỗi số hữu tỉ dương $c$, tồn tại số nguyên $n$ sao cho $y^{n} < \frac{1}{c}$. Chúng ta sẽ sử dụng mệnh đề này để chỉ ra tập hợp $S$ thỏa mãn giả thiết của nguyên lý thứ tự tốt.
+
+                        Chọn $a$ là một số hữu tỉ dương thuộc $A$, khi đó $\frac{1}{a}$ cũng là một số hữu tỉ dương. Theo mệnh đề vừa chứng minh, tồn tại số nguyên $n$ sao cho $y^{n} < a$. Theo tính chất đóng dưới của lát cắt, $y^{n} < a$ kéo theo $y^{n}$ thuộc $A$ và số nguyên $n$ đó thuộc tập hợp $S$ (theo định nghĩa tập hợp $S$). Do đó tập hợp $S$ khác rỗng.
+
+                        Chọn $a_{0}$ là một cận trên của $A$. Vì $A$ là một lát cắt dương nên $a_{0} > 0$. Theo mệnh đề vừa chứng minh, tồn tại số nguyên $n$ sao cho $y^{n} < \frac{1}{a_{0}}$, kéo theo $y^{-n} > a_{0}$, điều này có nghĩa là $y^{-n}$ là một cận trên của $A$ và $-n$ không thuộc $S$ (theo định nghĩa tập hợp $S$). Ngoài ra, nếu số nguyên $m$ không thuộc $S$ thì số nguyên $m-1$ cũng không thuộc $S$, vì $y^{m} < y^{m-1}$. Do đó, nếu chọn $n_{0}$ là một số nguyên không thuộc $S$ thì mọi phần tử $n$ của $S$ phải lớn hơn hoặc bằng $n_{0}$.
+
+                        Theo nguyên lý thứ tự tốt, tập hợp $S$ có phần tử nhỏ nhất. Chúng ta kí hiệu phần tử nhỏ nhất của $S$ là $p$. Khi đó $y^{p}$ thuộc $A$ và $y^{p-1}$ không thuộc $A$, và
+                        \[
+                            x = y\cdot\frac{x}{y} = \frac{y^{p}}{y^{p-1}}\cdot\frac{x}{y} = y^{p}\cdot \frac{x/y}{y^{p-1}}
+                        \]
+
+                        Vì $0 < y^{p}$, $y^{p}$ thuộc $A$, $0\leq x/y < 1$ và $y^{p-1}$ thuộc $\mathbb{Q}\setminus$ nên $x$ thuộc lát cắt $A\cdot B$.
+              \end{enumerate}
+
+              Do đó $I\subseteq A\cdot B$.
+
+              Vì $A\cdot B\subseteq I$ và $I\subseteq A\cdot B$ nên $A\cdot B = I$. Vì phép nhân lát cắt có tính chất giao hoán, chúng ta suy ra $B\cdot A = A\cdot B = I$.
+        \item $A < O$.
+
+              $A < O$ thì $-A > O$. Theo \textbf{Trường hợp 1}, tồn tại lát cắt $C$ sao cho $(-A)\cdot C = C\cdot (-A) = I$. Như vậy, với lát cắt $B = -C$, theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign}, chúng ta có
+              \[
+                  \begin{split}
+                      A\cdot B = (-A)\cdot (-B) = (-A)\cdot C = I, \\
+                      B\cdot A = (-B)\cdot (-A) = C\cdot (-A) = I.
+                  \end{split}
+              \]
+
+              Do đó $A\cdot B = B\cdot A = I$.
+    \end{enumerate}
+
+    Vậy, nếu $A \ne O$ thì tồn tại lát cắt $B$ sao cho $A\cdot B = B\cdot A = I$.
+\end{proof}
+
 \subsection{Lát cắt và tiên đề về cận trên}
 
+Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
+
+\begin{theorem}
+    Cho tập hợp $\mathscr{D}$ là một tập hợp con khác rỗng của tập hợp các lát cắt Dedekind hữu tỉ $\mathscr{D}_{\mathbb{Q}}$ và $\mathscr{D}$ có cận trên. Khi đó $\mathscr{D}$ có cận trên nhỏ nhất.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta xét tập hợp $S = \bigcup\limits_{A\in\mathscr{D}} A$, trong đó $A$ là các phần tử (là các lát cắt) của $\mathscr{D}$. Tập hợp $S$ bao gồm các số hữu tỉ.
+
+    Đầu tiên, chúng ta chứng minh $S$ là một lát cắt.
+    \begin{enumerate}[label={(DC\arabic*)}, itemindent=0.2cm]
+        \item $S$ là hợp thành của các lát cắt nên $S$ khác rỗng.
+        \item Vì $\mathscr{D}$ có cận trên nên mọi phần tử $A$ của $\mathscr{D}$ đều nhỏ hơn hoặc bằng một lát cắt $B$ nào đó. Do đó $S\leq B$, kéo theo $S$ không phải toàn bộ tập hợp số hữu tỉ.
+        \item Giả sử $x$ là một phần tử của $S$. Theo định nghĩa của $S$ và phép toán hợp của các tập hợp, tồn tại một lát cắt $A$ (là phần tử của $S$) sao cho $x$ thuộc $A$. Vì lát cắt $A$ không có phần tử lớn nhất nên tồn tại phần tử $y$ của $A$ sao cho $x < y$. Do $y$ thuộc $A$ nên $y$ cũng thuộc $S$. Do đó $S$ không có phần tử lớn nhất.
+        \item Giả sử $x$ là một phần tử của $S$ và $y$ là một số hữu tỉ nhỏ hơn $x$.  Theo định nghĩa của $S$ và phép toán hợp của các tập hợp, tồn tại một lát cắt $A$ (là phần tử của $S$) sao cho $x$ thuộc $A$. Vì lát cắt $A$ đóng dưới nên $y$ thuộc $A$, kéo theo $y$ cũng thuộc $S$. Do đó $S$ đóng dưới.
+    \end{enumerate}
+
+    Như vậy $S$ là một lát cắt.
+
+    Tiếp theo, chúng ta chứng minh $S$ là cận trên nhỏ nhất của $\mathscr{D}$.
+
+    Giả sử $X$ là một cận trên của $\mathscr{D}$. Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$, mọi phần tử $A$ (cũng là các lát cắt) của $\mathscr{D}$ thỏa mãn $A\leq X$ ($A\subseteq X$). Do đó, hợp của tất cả các phần tử của $\mathscr{D}$, hay $S = \bigcup\limits_{A\in\mathscr{D}} A$ thỏa mãn $S\subseteq X$ ($S\leq X$). Do đó $S$ nhỏ hơn hoặc bằng của mọi cận trên của $\mathscr{D}$, điều này có nghĩa là $S$ là cận trên nhỏ nhất của $\mathscr{D}$.
+
+    Vậy $\mathscr{D}$ có cận trên nhỏ nhất.
+\end{proof}
+
 \subsection{Liên hệ lát cắt Dedekind với số hữu tỉ}
+
+\begin{theorem}
+    Ánh xạ $\iota: \mathbb{Q}\to \mathscr{D}_{\mathbb{Q}}$ được định nghĩa bởi $\iota(q) = q^{*}$, trong đó $q^{*}$ là lát cắt $\{ x \mid x\in\mathbb{Q} \wedge x < q \}$ là một đơn ánh nhưng không phải một song ánh. Bên cạnh đó, với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta có
+    \[
+        \begin{split}
+            \iota(q_{1} + q_{2}) = \iota(q_{1}) + \iota(q_{2}), \\
+            \iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2}), \\
+            q_{1}\leq q_{2} \implies \iota(q_{1})\leq \iota(q_{2}).
+        \end{split}
+    \]
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Giả sử $\iota(q_{1}) = \iota(q_{2})$. Giả sử phản chứng rằng $q_{1} < q_{2}$, khi đó $q_{1}$ thuộc $\iota(q_{2})$ và $\iota(q_{1})\subset \iota(q_{2})$. Giả sử phản chứng rằng $q_{2} < q_{1}$, khi đó $q_{2}$ thuộc $\iota(q_{1})$ và $\iota(q_{2})\subset \iota(q_{1})$. thì $q_{1}$ thuộc $\iota(q_{2})$ và $q_{2}$ thuộc $\iota(q_{1})$. Do đó giả sử phản chứng là sai, kéo theo $q_{1} = q_{2}$. Như vậy $\iota$ là một đơn ánh.
+
+              Theo Mệnh đề~\ref{proposition:irrational-cut}, $S = \{ x \mid x\in\mathbb{Q}, 0 < x \text{ và } x^{2} < 2 \}$ là một lát cắt. Giả sử phản chứng rằng tồn tại số hữu tỉ $q$ sao cho $\iota(q) = S$. Cũng theo Mệnh đề~\ref{proposition:irrational-cut}, $\mathbb{Q}\setminus S$ không có phần tử nhỏ nhất. Mà $\mathbb{Q}\setminus\iota(q)$ có phần tử nhỏ nhất là $q$. Do đó $\iota(q)\ne S$. Như vậy không tồn tại số hữu tỉ $q$ nào sao cho $\iota(q) = S$, điều này có nghĩa là $\iota$ không phải một toàn ánh, và cũng không phải một song ánh.
+
+        \item Giả sử $x$ là một phần tử của $\iota(q_{1}) + \iota(q_{2})$. Theo định nghĩa phép cộng lát cắt, tồn tại hai phần tử $x_{1}$ trong $\iota(q_{1})$ và $x_{2}$ trong $\iota(q_{2})$ sao cho $x = x_{1} + x_{2}$. Vì $x_{1} < q_{1}$ và $x_{2} < q_{2}$ nên
+              \[
+                  x = x_{1} + x_{2} < q_{1} + x_{2} < q_{1} + q_{2}
+              \]
+
+              Theo định nghĩa của ánh xạ $\iota$, chúng ta suy ra $x$ thuộc $\iota(q_{1} + q_{2})$. Do đó $ \iota(q_{1}) + \iota(q_{2}) \subseteq \iota(q_{1} + q_{2})$.
+
+              Giả sử $x$ là một phần tử của $\iota(q_{1} + q_{2})$. Chúng ta chọn $x_{1} = q_{1} + \frac{x - (q_{1} + q_{2})}{2}$ và $x_{2} = q_{2} + \frac{x - (q_{1} + q_{2})}{2}$. Vì $x < q_{1} + q_{2}$ nên $x_{1} < q_{1}$ và $x_{2} < q_{2}$, kéo theo $x_{1}$ thuộc $\iota(q_{1})$ và $x_{2}$ thuộc $\iota(q_{2})$. Bên cạnh đó
+              \[
+                  x_{1} + x_{2} = (q_{1} + q_{2}) + (x - (q_{1} + q_{2})) = x
+              \]
+
+              Theo định nghĩa phép cộng lát cắt thì $x$ thuộc $\iota(q_{1}) + \iota(q_{2})$. Do đó $\iota(q_{1} + q_{2}) \subseteq \iota(q_{1}) + \iota(q_{2})$.
+
+              Như vậy, với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta có $ \iota(q_{1} + q_{2}) = \iota(q_{1}) + \iota(q_{2})$.
+        \item Đầu tiên, chúng ta chứng minh $\iota(-q) = -\iota(q)$.
+
+              Theo phần (i), $\iota(q) + \iota(-q) = \iota(-q) + \iota(q) = \iota(0) = O$. Do đó
+              \begin{align*}
+                  -\iota(q) & = (-\iota(q)) + O                      \\
+                            & = (-\iota(q)) + (\iota(q) + \iota(-q)) \\
+                            & = ((-\iota(q)) + \iota(q)) + \iota(-q) \\
+                            & = O + \iota(-q)                        \\
+                            & = \iota(-q).
+              \end{align*}
+
+              Để chứng minh $\iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2})$ với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta xét các trường hợp sau.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+                  \item $q_{1} = 0$ hoặc $q_{2} = 0$.
+
+                        Nếu $q_{1} = 0$ thì $\iota(q_{1}q_{2}) = \iota(0) = O = O\cdot\iota(q_{2}) = \iota(q_{1})\iota(q_{2})$.
+
+                        Nếu $q_{2} = 0$ thì $\iota(q_{1}q_{2}) = \iota(0) = O = \iota(q_{1})\cdot O = \iota(q_{1})\iota(q_{2})$.
+                  \item $q_{1} > 0$ và $q_{2} > 0$.
+
+                        $q_{1} > 0$ và $q_{2} > 0$ thì $\iota(q_{1}q_{2}), \iota(q_{1}), \iota(q_{2})$ là các lát cắt dương.
+
+                        Giả sử $x$ là một phần tử của $\iota(q_{1}q_{2})$. Nếu $x < 0$ thì $x$ cũng thuộc $\iota(q_{1})\iota(q_{2})$. Nếu $x\geq 0$ thì theo Mệnh đề~\ref{proposition:nonnegative-elements-of-dedekind-cuts-multiplication}, tồn tại số hữu tỉ không âm $x_{1}$ thuộc $\iota(q_{1})$ và số hữu tỉ không âm $x_{2}$ thuộc $\iota(q_{2})$ sao cho $x = x_{1}x_{2}$. Theo định nghĩa phép nhân lát cắt thì $x_{1}x_{2}$ thuộc $\iota(q_{1})\iota(q_{2})$, kéo theo $x$ cũng thuộc $\iota(q_{1})\iota(q_{2})$. Do đó $\iota(q_{1}q_{2}) \subseteq \iota(q_{1})\iota(q_{2})$.
+
+                        Giả sử $x$ là một phần tử của $\iota(q_{1})\iota(q_{2})$. Nếu $x < 0$ thì $x$ cũng thuộc $\iota(q_{1}q_{2})$. Nếu $x\geq 0$ thì theo định nghĩa phép nhân lát cắt, tồn tại số hữu tỉ không âm $x_{1}$ thuộc $\iota(q_{1})$ và số hữu tỉ không âm $x_{2}$ thuộc $\iota(q_{2})$ sao cho $x = x_{1}x_{2}$. Vì $0\leq x_{1} < q_{1}$ và $0\leq x_{2} < q_{2}$ nên $x_{1}x_{2}\leq q_{1}x_{2} < q_{1}q_{2}$, kéo theo $x = x_{1}x_{2}$ thuộc $\iota(q_{1}q_{2})$. Do đó $\iota(q_{1})\iota(q_{2}) \subseteq \iota(q_{1}q_{2})$.
+
+                        Như vậy $\iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2})$ với mọi số hữu tỉ dương $q_{1}, q_{2}$.
+                  \item $q_{1} > 0$ và $q_{2} < 0$.
+                        \begin{align*}
+                            \iota(q_{1}q_{2}) & = \iota(-q_{1}(-q_{2})) = -\iota(q_{1}(-q_{2}))                                                                  \\
+                                              & = -\iota(q_{1})\iota(-q_{2})                    & \text{(theo \textbf{Trường hợp 2})}                            \\
+                                              & = \iota(q_{1})(-\iota(-q_{2}))                                                                                   \\
+                                              & = \iota(q_{1})\iota(q_{2})                      & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Như vậy $\iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2})$ với mọi số hữu tỉ dương $q_{1}$ và số hữu tỉ âm $q_{2}$.
+                  \item  $q_{1} < 0$ và $q_{2} > 0$.
+                        \begin{align*}
+                            \iota(q_{1}q_{2}) & = \iota(-(-q_{1})q_{2}) = -\iota((-q_{1})q_{2})                                                                  \\
+                                              & = -\iota(-q_{1})\iota(q_{2})                    & \text{(theo \textbf{Trường hợp 2})}                            \\
+                                              & = (-\iota(-q_{1}))\iota(q_{2})                                                                                   \\
+                                              & = \iota(q_{1})\iota(q_{2})                      & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Như vậy $\iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2})$ với mọi số hữu tỉ âm $q_{1}$ và số hữu tỉ dương $q_{2}$.
+                  \item  $q_{1} < 0$ và $q_{2} < 0$.
+                        \begin{align*}
+                            \iota(q_{1}q_{2}) & = \iota((-q_{1})(-q_{2}))                                                                          \\
+                                              & = \iota(-q_{1})\iota(-q_{2})      & \text{(theo \textbf{Trường hợp 2})}                            \\
+                                              & = (-\iota(q_{1}))(-\iota(-q_{2}))                                                                  \\
+                                              & = \iota(q_{1})\iota(q_{2})        & \text{(theo Mệnh đề~\ref{proposition:dedekind-cuts-and-sign})}
+                        \end{align*}
+
+                        Như vậy $\iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2})$ với mọi số hữu tỉ âm $q_{1}, q_{2}$.
+              \end{enumerate}
+
+              Vậy $\iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2})$ với mọi số hữu tỉ $q_{1}, q_{2}$.
+        \item Nếu $q_{1}\leq q_{2}$ thì mỗi phần tử $q$ của $\iota(q_{1})$ thỏa mãn $q < q_{1}\leq q_{2}$, tức là $q$ cũng thuộc $\iota(q_{2})$. Do đó, $q_{1}\leq q_{2}$ kéo theo $\iota(q_{1})\subseteq \iota(q_{2})$, $\iota(q_{1})\leq \iota(q_{2})$.
+    \end{enumerate}
+\end{proof}
+
+Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Bên cạnh đó, cùng với việc $\iota$ ánh xạ một số hữu tỉ $q$ thành một lát cắt $q^{*} = \{ x \mid x\in\mathbb{Q}\wedge x < q \}$, các lát cắt $q^{*}$ có những tính chất mà số hữu tỉ có.
 
 \section{Dãy Cauchy hữu tỉ}
 
@@ -569,15 +1357,17 @@ Khi định nghĩa phép nhân lát cắt, chúng ta cũng gặp vấn đề nh�
 
 \subsection{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
 
-\section{Hệ tiên đề về số thực và các mô hình}
-
-\subsection{Sơ lược về một số mô hình khác cho hệ tiên đề về số thực}
+\section{Hệ tiên đề về số thực và các mô hình số thực}
 
 \subsection{Sự tương đương của các mô hình cho hệ tiên đề về số thực}
 
-\subsection{So sánh lát cắt Dedekind và dãy Cauchy hữu tỉ}
+\subsection{So sánh hai mô hình: lát cắt Dedekind và dãy Cauchy hữu tỉ}
 
-\subsection{Hai câu hỏi không trả lời}
+\subsection{Số hữu tỉ và Số vô tỉ}
+
+\subsection{Âm vô cực và dương vô cực}
+
+\subsection{Nhìn nhận về các tập hợp số}
 
 \section{Một số kết quả từ hệ tiên đề về số thực}
 
@@ -585,22 +1375,7 @@ Khi định nghĩa phép nhân lát cắt, chúng ta cũng gặp vấn đề nh�
 
 \subsection{Nhóm tiên đề về thứ tự}
 
-\subsection{Tiên đề về tính đầy đủ}
+\subsection{Đầy đủ Dedekind và đầy đủ Cauchy}
 
-\section{Các số thực không hữu tỉ}
+\subsection{Lũy thừa. Mũ. Logarithm}
 
-\subsection{Số vô tỉ}
-
-\subsection{Số vổ tỉ đại số}
-
-\subsection{Số siêu việt}
-
-\section{Mở đầu về giải tích thực}
-
-\subsection{Dãy số}
-
-\subsection{Chuỗi số}
-
-\subsection{Giới hạn của hàm số}
-
-\subsection{Hàm số liên tục}
