@@ -67,18 +67,18 @@ Câu trả lời trực giác hình học cho cách hiểu thứ hai có thể l
     \textbf{Tiên đề về cận trên (hay tiên đề về tính đầy đủ).} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
 \end{axiom}
 
-Chúng ta bình luận và làm rõ thêm hệ tiên đề vừa nêu. Các tiên đề về trường và các tiên đề về thứ tự có lẽ không có gì xa lạ với bạn đọc. Chúng tôi chỉ lưu ý thêm ba điều về hai nhóm tiên đề này: (1) Các phần tử $0$, $1$, $(-x)$, và $x^{-1}$ được hiểu như các kí hiệu đơn thuần, ở thời điểm này chúng ta \textit{chưa} coi đó như những số hai phép toán quen thuộc; (2) Tiên đề về sự tồn tại của hai phần tử $0$ và $1$ không khẳng định tính duy nhất của những phần tử như vậy, chúng ta sẽ chứng minh tính duy nhất của hai phần tử đó ở mục hệ quả trong chương này.
+Chúng ta bình luận và làm rõ thêm hệ tiên đề vừa nêu. Các tiên đề về trường và các tiên đề về thứ tự có lẽ không có gì xa lạ với bạn đọc. Chúng tôi chỉ lưu ý thêm ba điều về hai nhóm tiên đề này: (1) Các phần tử $0$, $1$, $(-x)$, và $x^{-1}$ được hiểu như các kí hiệu đơn thuần, ở thời điểm này chúng ta \textit{chưa} coi đó như những số hay phép toán quen thuộc; (2) Tiên đề về sự tồn tại của hai phần tử $0$ và $1$ không khẳng định tính duy nhất của những phần tử như vậy, chúng ta sẽ chứng minh tính duy nhất của hai phần tử đó ở một mục khác trong chương này.
 
 Tiên đề về cận trên là phần ít quen thuộc nhất trong hệ tiên đề trên, và chúng ta cần làm rõ khái niệm được nhắc tới trong tiên đề này: \textit{cận trên} và \textit{cận trên nhỏ nhất}.
 
 \begin{definition}[Cận trên và Cận dưới]
     Cho một tập hợp $S$ được định nghĩa một quan hệ thứ tự bộ phận $\leq$ và $A$ là một tập hợp con của $S$.
     \begin{enumerate}[label={(\roman*)}]
-        \item Một phần tử $u$ của $S$ được gọi là một \textbf{cận trên} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $a\leq u$. Chúng ta còn nói $A$ bị chặn trên bởi $u$.
-        \item Một phần tử $\ell$ của $S$ được gọi là một \textbf{cận dưới} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $\ell\leq a$. Chúng ta còn nói $A$ bị chặn dưới bởi $\ell$.
+        \item Một phần tử $u$ của $S$ được gọi là một \textbf{cận trên\index{Cận trên}} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $a\leq u$. Chúng ta còn nói $A$ bị chặn trên bởi $u$.
+        \item Một phần tử $\ell$ của $S$ được gọi là một \textbf{cận dưới\index{Cận dưới}} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $\ell\leq a$. Chúng ta còn nói $A$ bị chặn dưới bởi $\ell$.
         \item Tập hợp $A$ được gọi là bị chặn nếu $A$ có cả cận trên và cận dưới.
-        \item Một phần tử $x$ của $S$ được gọi là một \textbf{cận trên nhỏ nhất} hay \textbf{cận trên đúng} của $A$ nếu như với mỗi cận trên $u$ của $A$, chúng ta có $x\leq u$. Cận trên nhỏ nhất của $A$ được kí hiệu là $\sup A$.
-        \item Một phần tử $y$ của $S$ được gọi là một \textbf{cận dưới lớn nhất} hay \textbf{cận dưới đúng} của $A$ nếu như với mỗi cận dưới $\ell$ của $A$, chúng ta có $\ell\leq y$. Cận dưới lớn nhất của $A$ được kí hiệu là $\inf A$.
+        \item Một phần tử $x$ của $S$ được gọi là một \textbf{cận trên nhỏ nhất\index{Cận trên nhỏ nhất}} hay \textbf{cận trên đúng\index{Cận trên đúng}} của $A$ nếu như với mỗi cận trên $u$ của $A$, chúng ta có $x\leq u$. Cận trên nhỏ nhất của $A$ được kí hiệu là $\sup A$.
+        \item Một phần tử $y$ của $S$ được gọi là một \textbf{cận dưới lớn nhất\index{Cận dưới lớn nhất}} hay \textbf{cận dưới đúng\index{Cận dưới đúng}} của $A$ nếu như với mỗi cận dưới $\ell$ của $A$, chúng ta có $\ell\leq y$. Cận dưới lớn nhất của $A$ được kí hiệu là $\inf A$.
     \end{enumerate}
 \end{definition}
 
@@ -157,7 +157,7 @@ Quay lại với hệ tiên đề về số thực. Trong chương trước, ch�
 
 \subsection{Dẫn nhập về việc xây dựng tập hợp số thực}
 
-Vì sao cần xây dựng tập hợp số thực? Ở đây chúng tôi dẫn ra khía cạnh giảng dạy và khía cạnh cơ sở toán học. Trong khía cạnh giảng dạy, việc chỉ dẫn cách xây dựng tập hợp số thực sẽ cho thấy mối liên hệ giữa đối tượng mới (tập hợp số thực) với các đối tượng quen thuộc hơn (tập hợp số hữu tỉ, tập hợp số nguyên, tập hợp số tự nhiên). Điều đó có ích hơn so với việc thừa nhận hệ tiên đề và coi tập hợp số thực như một công cụ tiện lợi một cách khó hiểu. Ở khía cạnh cơ sở toán học, những người làm toán cố gắng không thừa nhận quá nhiều thứ. Đúng là trong một thời gian dài, các nhà Toán học vẫn sử dụng phương pháp tiên đề và xuất phát từ các tiên đề cùng các luật logic để chứng minh các định lý. Nhưng tư tưởng của phương pháp tiên đề không chỉ đơn thuần là thừa nhận một số thứ rồi áp dụng luật logic, mà còn là việc xuất phát từ một ít tiên đề rồi từ đó xây dựng nên tất cả những thứ khác. Nếu thừa nhận quá nhiều thì chúng ta lại chẳng biết được bao nhiêu.
+Vì sao cần xây dựng tập hợp số thực? Ở đây chúng tôi dẫn ra khía cạnh giảng dạy và khía cạnh cơ sở toán học. Trong khía cạnh giảng dạy, việc chỉ dẫn cách xây dựng tập hợp số thực sẽ cho thấy mối liên hệ giữa đối tượng mới (tập hợp số thực) với các đối tượng quen thuộc hơn (tập hợp số hữu tỉ, tập hợp số nguyên, tập hợp số tự nhiên). Điều đó có ích hơn so với việc thừa nhận hệ tiên đề và coi tập hợp số thực như một công cụ tiện lợi một cách khó hiểu. Ở khía cạnh cơ sở toán học, những người làm toán cố gắng không thừa nhận quá nhiều thứ. Đúng là trong một thời gian dài, các nhà Toán học vẫn sử dụng phương pháp tiên đề và xuất phát từ các tiên đề cùng các luật logic để chứng minh các định lý. Nhưng tư tưởng của phương pháp tiên đề không chỉ đơn thuần là thừa nhận một số mệnh đề rồi áp dụng luật logic, mà còn là việc xuất phát từ một ít tiên đề rồi từ đó xây dựng nên tất cả những thứ khác. Nếu thừa nhận quá nhiều thì chúng ta chẳng biết được bao nhiêu.
 
 Xây dựng tập hợp số thực là gì? Xây dựng tập hợp số thực là việc tạo ra một đối tượng toán học thỏa mãn hệ tiên đề về số thực. Chúng ta có thể so sánh hệ tiên đề về số thực với một bản thiết kế, khi đó việc xây dựng tập hợp số thực chính là tạo ra một công trình, tác phẩm giống như bản thiết kế đó. Xây dựng được tập hợp số thực đồng nghĩa với việc \textit{chứng minh} bản thiết kế là khả thi. Trong toán học, chúng ta có thuật ngữ riêng để gọi một công trình tương ứng với một bản thiết kế, đó là \textit{mô hình} và \textit{hệ tiên đề}. Mô hình là một đối tượng, hay cấu trúc toán học thỏa mãn một hệ tiên đề nào đó. Để minh họa, chúng tôi đưa ra một mô hình bằng lý thuyết tập hợp (được đề xuất bởi nhà toán học John von Neumann) cho hệ tiên đề Peano về số tự nhiên như sau:
 \begin{itemize}
@@ -175,7 +175,7 @@ Xây dựng tập hợp số thực là gì? Xây dựng tập hợp số thực
 
 Việc kiểm tra một mô hình có thỏa mãn một hệ tiên đề hay không chính là công việc chứng minh.
 
-Chỉ còn lại câu hỏi làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Trong chương này, chúng tôi đề cập, giải thích ý tưởng và nêu chi tiết về cả hai cách xây dựng.
+Chỉ còn lại câu hỏi là làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Trong chương này, chúng tôi giải thích ý tưởng và nêu chi tiết về cả hai cách xây dựng. Cách xây dựng được trình bày trong chương này mang nhiều chi tiết kĩ thuật, đặc biệt là với dãy Cauchy hữu tỉ. Chúng tôi khuyên bạn đọc theo dõi những kết quả chính trước (được đánh dấu là Định lý), chú ý tới thứ tự, bình luận, và không cần nắm bắt chứng minh của tất cả trong lần đọc đầu tiên.
 
 \section{Lát cắt Dedekind}
 
@@ -357,10 +357,10 @@ Như vậy, một lát cắt $A$ là không âm nếu và chỉ nếu $O\leq A$,
     Vậy $A + B$ là một lát cắt.
 \end{proof}
 
-Sau đây, chúng ta kiểm tra bốn tiên đề đầu tiên của các tiên đề về trường. Chúng tôi gặp khó khăn với việc kiểm tra tiên đề thứ ba trong các tiên đề về trường. Để giải quyết khó khăn đó, chúng tôi sử dụng một tính chất sâu hơn của số hữu tỉ.
+Sau đây, chúng ta kiểm tra bốn tiên đề đầu tiên của các tiên đề về trường. Chúng tôi gặp khó khăn với việc kiểm tra tiên đề thứ ba trong các tiên đề về trường. Để giải quyết khó khăn đó, chúng tôi sử dụng một tính chất sâu hơn của số hữu tỉ. Định nghĩa trong mệnh đề sau còn được sử dụng ở những phần sau của tài liệu.
 
-\begin{proposition}\label{proposition:integral-part-of-rational-numbers}
-    Với mỗi số hữu tỉ $x$, tồn tại duy nhất số nguyên $k$ sao cho $k\leq x < k+1$.
+\begin{proposition}[Phần nguyên của số hữu tỉ]\label{proposition:integral-part-of-rational-numbers}
+    Với mỗi số hữu tỉ $x$, tồn tại duy nhất số nguyên $k$ sao cho $k\leq x < k+1$. (Số nguyên $k$ như vậy được gọi là \textbf{phần nguyên\index{Phần nguyên}} của số hữu tỉ $x$, và được kí hiệu là $\floor{x}$.)
 \end{proposition}
 
 \begin{proof}
@@ -1196,7 +1196,7 @@ Nếu $A$ và $B$ là các lát cắt không âm thì tập hợp con $\{ ab \mi
                             x = y\cdot\frac{x}{y} = \frac{y^{p}}{y^{p-1}}\cdot\frac{x}{y} = y^{p}\cdot \frac{x/y}{y^{p-1}}
                         \]
 
-                        Vì $0 < y^{p}$, $y^{p}$ thuộc $A$, $0\leq x/y < 1$ và $y^{p-1}$ thuộc $\mathbb{Q}\setminus$ nên $x$ thuộc lát cắt $A\cdot B$.
+                        Vì $0 < y^{p}$, $y^{p}$ thuộc $A$, $0\leq x/y < 1$ và $y^{p-1}$ thuộc $\mathbb{Q}\setminus A$ nên $x$ thuộc lát cắt $A\cdot B$.
               \end{enumerate}
 
               Do đó $I\subseteq A\cdot B$.
@@ -1345,37 +1345,487 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
 
 \section{Dãy Cauchy hữu tỉ}
 
-\subsection{Định nghĩa dãy Cauchy hữu ti}
+Một cách khác để xây dựng tập hợp số thực là sử dụng dãy Cauchy hữu tỉ. Cách tiếp cận này được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Về sau, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt. Ý tưởng xây dựng tập hợp số thực bằng dãy Cauchy xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực.
+
+\subsection{Dãy số hữu ti và dãy Cauchy hữu tỉ}
+
+Bạn đọc có thể đã được nghe qua, hoặc học về khái niệm dãy số (dãy số vô hạn). Khái niệm dãy số có thể được mô tả một cách trực giác: Một dãy số là một danh sách số và \textit{mỗi số tự nhiên được gán với đúng một số trong danh sách}. Dãy số tự nhiên $0, 1, 2, \ldots$, dãy số lẻ $1, 3, 5, \ldots$ là những ví dụ về dãy số. Tuy nhiên, để tuân thủ tiêu chuẩn của toán học hiện đại, các khái niệm cần được định nghĩa hình thức. Dãy số được định nghĩa như một ánh xạ, như trong định nghĩa sau đây.
+
+\begin{definition}[Dãy số hữu tỉ\index{Dãy số hữu tỉ}]
+    Một \textbf{dãy số hữu tỉ} là một ánh xạ với tập nguồn là tập hợp số tự nhiên và tập đích là tập hợp số hữu tỉ.
+
+    \noindent Một dãy số hữu tỉ $f: \mathbb{N}\to\mathbb{Q}$ được kí hiệu là ${(f_{n})}_{n\in\mathbb{N}}$, và $f_{n}$ là giá trị được gán với số tự nhiên $n$ bởi $f$. Ngoài cách kí hiệu trên, nhiều tác giả còn dùng các kí hiệu khác cho dãy số, chẳng hạn
+    \[
+        {(f_{n})}, \quad {(f_{n})}_{n=0}, \quad {(f_{n})}^{\infty}_{n=0}
+    \]
+
+    \noindent Trong dãy số hữu tỉ ${(f_{n})}_{n\in\mathbb{N}}$, một số tự nhiên $n$ cụ thể được gọi là một \textbf{chỉ số\index{Chỉ số}}.
+\end{definition}
+
+Giống như việc người ta vẫn hay tranh cãi $0$ có phải một số tự nhiên không, có những tài liệu định nghĩa dãy số bắt đầu bằng chỉ số $1$ thay vì $0$. Nhưng đây cũng chỉ là vấn đề quy ước, và giống như phương pháp quy nạp toán học, dãy số có thể bắt đầu bằng bất cứ chỉ số $n_{0}$ nào, với $n_{0}$ là một số nguyên. Tuy nhiên, để thuận theo tinh thần của tài liệu này, chúng ta sẽ luôn để dãy số bắt đầu với chỉ số $0$.
+
+Chúng ta theo dõi một số ví dụ về dãy số hữu tỉ và định nghĩa một số kiểu dãy số đặc biệt.
+\begin{example}
+    Dãy số Fibonacci ${(F_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng quy nạp
+    \[
+        F_{n} = \begin{cases}
+            0                 & \text{khi $n = 0$}, \\
+            1                 & \text{khi $n = 1$}, \\
+            F_{n-1} + F_{n-2} & \text{khi $n > 1$}.
+        \end{cases}
+    \]
+\end{example}
+
+\begin{example}[Dãy hằng số\index{Dãy hằng số}]
+    ${(a_{n})}_{n\in\mathbb{N}}$ được định nghĩa $a_{n} = 0$ với mọi số tự nhiên $n$ là một dãy số. Đây được gọi là một dãy hằng số, vì giá trị của dãy số tại mọi số tự nhiên $n$ là bằng nhau.
+\end{example}
+
+\begin{example}[Dãy dừng\index{Dãy dừng}]
+    ${(a_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $a_{0} = 1$, $a_{1} = -1$, $a_{n} = 0$ với mọi số tự nhiên $n$ lớn hơn $1$ là một dãy số. Đây được gọi là một dãy dừng, vì giá trị của dãy số này tại mọi số tự nhiên $n$ là bằng nhau, bắt đầu từ một chỉ số nào đó (trong ví dụ này, chỉ số đó là $2$).
+\end{example}
+
+\begin{example}[Dãy đơn điệu\index{Dãy đơn điệu}]
+    \begin{itemize}
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số tăng\index{Dãy số tăng thực sự} (đơn điệu tăng, tăng thực sự) khi và chỉ khi $a_{n+1} > a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số giảm\index{Dãy số giảm thực sự} (đơn điệu giảm, giảm thực sự) khi và chỉ khi $a_{n+1} < a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số không giảm\index{Dãy số không giảm} (đơn điệu không giảm) khi và chỉ khi $a_{n+1}\geq a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số không tăng\index{Dãy số không tăng} (đơn điệu không tăng) khi và chỉ khi $a_{n+1}\leq a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+    \end{itemize}
+\end{example}
+
+Khi có một dãy số, người ta thường quan tâm đến việc giá trị của dãy số sẽ như thế nào với chỉ số $n$ rất lớn, hay dãy số đó có hội tụ không. Để phát biểu một cách chặt chẽ về đặc điểm đó của dãy số, các nhà toán học đã đúc kết lại thành định nghĩa dãy số hội tụ. Trước khi đưa ra định nghĩa dãy số hữu tỉ hội tụ, chúng ta cần định nghĩa giá trị tuyệt đối của số hữu tỉ.
+\begin{definition}[Giá trị tuyệt đối của số hữu tỉ\index{Giá trị tuyệt đối của số hữu tỉ}]
+    Ánh xạ $\abs{\cdot}: \mathbb{Q}\to \mathbb{Q}_{\geq 0}$ được định nghĩa bởi
+    \[
+        \abs{x} = \begin{cases}
+            x  & \text{nếu $x\geq 0$}, \\
+            -x & \text{nếu $x < 0$}
+        \end{cases}
+    \]
+
+    được gọi là \textbf{ánh xạ giá trị tuyệt đối}, hay \textbf{hàm giá trị tuyệt đối} của số hữu tỉ\index{Giá trị tuyệt đối của số hữu tỉ}. Số hữu tỉ không âm $\abs{x}$ được gọi là giá trị tuyệt đối của số hữu tỉ $x$.
+\end{definition}
+
+Giá trị tuyệt đối của số hữu tỉ cũng có các tính chất tương tự như giá trị tuyệt đối của số nguyên.
+\begin{theorem}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mọi số hữu tỉ $x$, có $0 \leq \abs{x}$. Bên cạnh đó, $\abs{x} = 0$ khi và chỉ khi $x = 0$.
+        \item Với mọi số hữu tỉ $x$, có $-\abs{x}\leq x\leq \abs{x}$.
+        \item Với mọi số hữu tỉ $x, y$, có $\abs{xy} = \abs{x}\abs{y}$.
+        \item Với mọi số hữu tỉ $x, y$, có $\abs{x+y}\leq \abs{x} + \abs{y}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là
+    \textbf{hội tụ đến số hữu tỉ $a$} nếu và chỉ nếu
+    \[
+        \forall \varepsilon > 0 \Biggl(\exists N(\varepsilon)\Bigl(\forall n\geq N(\varepsilon)(\abs{a_{n} - a} < \varepsilon)\bigr)\biggr).
+    \]
+
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{hội tụ\index{Hội tụ}} nếu tồn tại số hữu tỉ $a$ sao cho dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$. Số hữu tỉ $a$ khi đó được gọi là một \textbf{điểm giới hạn\index{Điểm giới hạn}}, hay \textbf{giới hạn\index{Giới hạn}} của dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$.
+
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{phân kì\index{Phân kì}} nếu dãy này không hội tụ.
+
+    Bằng kí hiệu, chúng ta viết điều kiện cần và đủ để dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không hội tụ đến số hữu tỉ $a$} như sau
+    \[
+        \exists\varepsilon_{0} > 0 \Biggl(\forall N\Bigl(\exists n\geq N (\abs{a_{n} - a}\geq\varepsilon_{0} )\Bigr)\Biggr).
+    \]
+\end{definition}
+
+Trên đây là một định nghĩa hình thức cho khái niệm dãy số hữu tỉ hội tụ. Chúng tôi thừa nhận rằng cách định nghĩa này khó hiểu với những người mới học. Nếu bạn đọc cảm thấy đây là một cách định nghĩa phức tạp, thì chúng tôi cho rằng việc nên làm đầu tiên là đọc về vị từ và lượng từ trong Chương~\ref{chapter:logic-and-set-theory}. Thay cho (nhưng không hoàn toàn thay thế) cách định nghĩa trên, định nghĩa cho dãy số hữu tỉ hội tụ có thể được phát biểu bớt hình thức hơn như sau:
+\begin{itemize}
+    \item (Thông dịch trực tiếp logic hình thức thành câu văn) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$, tồn tại số tự nhiên $N(\varepsilon)$ chỉ phụ thuộc vào $\varepsilon$ sao cho với mọi chỉ số $n\geq N(\varepsilon)$, chúng ta có $\abs{a_{n} - a} < \varepsilon$.
+    \item (Phát biểu không hình thức) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$ nhỏ tùy ý, luôn tồn tại một chỉ số mà từ chỉ số đó trở đi, khoảng cách từ $a_{n}$ đến $a$ nhỏ hơn $\varepsilon$.
+\end{itemize}
+
+Sau đây chúng tôi đưa ra một số ví dụ và phản ví dụ nhằm minh họa khái niệm dãy số hữu tỉ hội tụ và cách chứng minh hay bác bỏ sự hội tụ của một dãy số hữu tỉ.
+\begin{example}
+    Mọi dãy số hữu tỉ dừng đều hội tụ.
+
+    Một cách tổng quát, chúng ta xét dãy hữu tỉ dừng ${(a_{n})}_{n\in\mathbb{N}}$ thoả mãn $a_{n} = a$ ($a$ là một số hữu tỉ) với mọi số tự nhiên $n\geq n_{0}$. Với định nghĩa này, chúng ta suy ra $\abs{a_{n} - a} = 0$ với mọi số tự nhiên $n\geq n_{0}$. Bên cạnh đó
+    \[
+        \forall\varepsilon > 0\Bigl(\exists N=n_{0}\bigl(\forall n\geq N( \abs{a_{n} - a} < \varepsilon )\bigr)\Bigr).
+    \]
+
+    Do đó dãy số hữu tỉ  ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $a$.
+
+    Dãy số hữu tỉ hằng số là trường hợp riêng của dãy số hữu tỉ dừng nên mọi dãy hữu tỉ hằng số đều hội tụ.
+\end{example}
+
+\begin{counterexample}
+    Dãy số tự nhiên không hội tụ đến bất kì số hữu tỉ nào.
+
+    Giả sử phản chứng rằng dãy số tự nhiên hội tụ đến một số hữu tỉ $q$ nào đó.
+
+    Chúng ta chọn $\varepsilon_{0} = \frac{1}{2}$. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi $n\geq N$, chúng ta có $\abs{n - q} < \frac{1}{2}$. Tiếp tục sử dụng số tự nhiên $N$ và số tự nhiên $n\geq N$, chúng ta có
+    \[
+        1 = \abs{(n + 1) - n} = \abs{(n+1) - q + (q - n)} \leq \abs{n+1 - q} + \abs{n-q} < \frac{1}{2} + \frac{1}{2} = 1
+    \]
+
+    là một mâu thuẫn. Do đó giả sử phản chứng là sai, kéo theo dãy số tự nhiên không hội tụ đến bất kì số hữu tỉ nào.
+\end{counterexample}
+
+\begin{example}
+    Dãy số ${(a_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $a_{n} = \frac{n}{n+1}$ hội tụ đến $1$.
+
+    Chọn một số hữu tỉ $\varepsilon > 0$, chúng ta sẽ tìm số tự nhiên $N(\varepsilon)$ để sử dụng định nghĩa dãy số hữu tỉ hội tụ.
+
+    $\abs{a_{n} - 1} < \varepsilon$ khi và chỉ khi $\frac{1}{n+1} < \varepsilon$. Bên cạnh đó, nếu $n \geq \floor{\frac{1}{\varepsilon}}$ (đây là kí hiệu phần nguyên, được định nghĩa ở Mệnh đề~\ref{proposition:integral-part-of-rational-numbers}) thì
+    \[
+        \frac{1}{n+1}\leq \frac{1}{\floor{\dfrac{1}{\varepsilon}} + 1} < \frac{1}{\dfrac{1}{\varepsilon}} = \varepsilon.
+    \]
+
+    Như vậy
+    \[
+        \forall\varepsilon > 0 \Biggl( \exists N=\floor{\frac{1}{\varepsilon}}\bigl(\forall n\geq N ( \abs{a_{n} - 1} < \varepsilon )\bigr) \Biggr).
+    \]
+
+    Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta kết luận dãy số ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $1$.
+\end{example}
+
+\begin{counterexample}
+    Dãy số ${(b_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $b_{n} = {(-1)}^{n}$ (với mọi số tự nhiên $n$) không hội tụ đến số hữu tỉ nào.
+
+    Giả sử phản chứng rằng dãy số ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ $q$. Chúng ta chọn $\varepsilon = 1$. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{b_{n} - q} < 1$. Vẫn là với số $\varepsilon = 1$, số tự nhiên $N$ và $n\ge N$, chúng ta có
+    \[
+        2 = \abs{b_{n} - b_{n}} = \abs{(b_{n+1} - q) + (q - b_{n})} \leq \abs{b_{n+1} - q} + \abs{b_{n} - q} < 1 + 1 = 2
+    \]
+
+    là một mâu thuẫn. Do đó giả sử phản chứng là sai, kéo theo dãy số ${(b_{n})}_{n\in\mathbb{N}}$ không hội tụ đến bất kì số hữu tỉ nào.
+\end{counterexample}
+
+\begin{theorem}\label{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}
+    Nếu một dãy số hữu tỉ hội tụ thì dãy số hữu tỉ đó chỉ có một điểm giới hạn.
+\end{theorem}
+
+\begin{proof}
+    Giả sử phản chứng rằng dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến hai số hữu tỉ khác nhau là $a$ và $b$. Chọn $\varepsilon = \abs{a - b}$.
+
+    Theo định nghĩa dãy số hữu tỉ hội tụ
+    \begin{itemize}[topsep=0pt]
+        \item Tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$.
+        \item Tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{a_{n} - b} < \dfrac{\varepsilon}{2}$.
+    \end{itemize}
+
+    Chúng ta chọn $N$ là số tự nhiên lớn nhất trong hai số $N_{a}$ và $N_{b}$ (nói cách khác, $N = \max\{ N_{a}, N_{b} \}$). Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$ và $\abs{a_{n} - b} < \dfrac{\varepsilon}{2}$, từ đó chúng ta có
+    \[
+        \abs{a - b} = \abs{(a - a_{n}) + (a_{n} - b)} \leq \abs{a_{n} - a} + \abs{a_{n} - b} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon = \abs{a - b}
+    \]
+
+    là một điều vô lí. Do đó giả sử phản chứng là sai. Vậy nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ thì đó là số hữu tỉ duy nhất mà ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến.
+\end{proof}
+
+Nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $a$ thì chúng ta kí hiệu $\lim a_{n} = a$, hoặc $\lim\limits_{n} a_{n} = a$ khi cần nhấn mạnh chỉ số.
+
+Đối với dãy số, chúng ta cũng có khái niệm dãy số bị chặn.
+\begin{definition}[Dãy số hữu tỉ bị chặn]
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{bị chặn\index{Dãy số hữu tỉ bị chặn}} nếu và chỉ nếu tồn tại số hữu tỉ dương $A$ sao cho $\abs{a_{n}}\leq A$ (hoặc $\abs{a_{n}} < A$) với mọi số tự nhiên $n$.
+\end{definition}
+
+Một cách trực giác, việc một dãy số hữu tỉ hội tụ đến một số hữu tỉ $a$ có thể được mô tả như sau: Từ một chỉ số $n$ nào đó trở đi, các giá trị của dãy số sẽ chụm quanh điểm giới hạn. Mô tả này cho thấy sẽ thật không hợp lý nếu như ``khoảng cách'' từ một giá trị nào đó của dãy số đến $a$ có thể lớn tùy ý. Chúng ta có kết quả sau đây.
+\begin{proposition}
+    Nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ thì ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
+\end{proposition}
+
+\begin{proof}
+    Giả sử dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ $a$ nào đó.
+
+    Chúng ta chọn $\varepsilon = 1$. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ nào đó sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - a} < 1$. Với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{(a_{n} - a) + a} \leq \abs{a_{n} - a} + \abs{a} < 1 + \abs{a}.
+    \]
+
+    Theo nguyên lý cực hạn, tập hợp $\{ a_{0}, a_{1}, \ldots, a_{N-1}, 1 + \abs{a} \}$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử đó là $A$. $A$ là một số hữu tỉ dương vì các phần tử trong tập hợp trên đều là số hữu tỉ, và $1 + \abs{a} > 0$. Do đó, $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$, đồng nghĩa với việc dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ bị chặn.
+\end{proof}
+
+Việc tính toán giới hạn của một số dãy số có thể được đơn giản hóa nhờ kết quả sau và những giới hạn đã biết.
+\begin{proposition}\label{proposition:limits-of-sum-and-product}
+    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}$ là các dãy số hữu tỉ.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim s_{n} = a + b$, trong đó dãy số hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $s_{n} = a_{n} + b_{n}$ với mọi số tự nhiên $n$.
+        \item Nếu $\lim a_{n} = a$ thì $\lim c_{n} = ca$, trong đó dãy số hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $c_{n} = c\cdot a_{n}$ với mọi số tự nhiên $n$, trong đó $c$ là một hằng số hữu tỉ.
+        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim p_{n} = ab$, trong đó dãy số hữu tỉ ${(p_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $p_{n} = a_{n}b_{n}$ với mọi số tự nhiên $n$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì.
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$; tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$.
+
+              Chúng ta kí hiệu $N = \max\{ N_{a}, N_{b} \}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$. Khi đó chúng ta có
+              \[
+                  \abs{(a_{n} + b_{n}) - (a + b)}  = \abs{(a_{n} - a) + (b_{n} - b)} \leq \abs{a_{n} - a} + \abs{b_{n} - b} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Những điều trên có nghĩa là: với mọi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{(a_{n} + b_{n}) - (a + b)} < \varepsilon$. Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta suy ra $\lim s_{n} = a + b$.
+        \item Nếu $c = 0$ thì ${(c_{n})}_{n\in\mathbb{N}}$ là một dãy hằng số, vì $c_{n} = c\cdot a_{n} = 0$ với mọi số tự nhiên $n$. Khi đó $\lim c_{n} = 0 = ca$.
+
+              Nếu $c\ne 0$, chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{\abs{c}}$. Cũng là số tự nhiên $N$, nếu số tự nhiên $n\geq N$ thì chúng ta có
+              \[
+                  \abs{ca_{n} - ca} = \abs{c(a_{n} - a)} = \abs{c}\abs{a_{n} - a} \leq \abs{c}\cdot\frac{\varepsilon}{\abs{c}} = \varepsilon.
+              \]
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta kết luận $\lim c_{n} = ca$.
+        \item Chúng ta có
+              \begin{align*}
+                  \abs{a_{n}b_{n} - ab} & = \abs{(a_{n} - a)b_{n} + a(b_{n} - b)}                  \\
+                                        & \leq \abs{a_{n} - a}\abs{b_{n}} + \abs{a}\abs{b_{n} - b}
+              \end{align*}
+
+              Dựa trên bất đẳng thức vừa thu được, chúng ta tìm số tự nhiên ``$N$'' để có thể áp dụng được định nghĩa dãy số hữu tỉ hội tụ. Vì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$ và ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $b$ nên hai dãy số này bị chặn, kéo theo tồn tại hai số hữu tỉ dương $A, B$ sao cho $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq B$ với mọi số tự nhiên $n$.
+
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$; tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$. Chúng ta định nghĩa $N$ là số tự nhiên lớn nhất trong hai số $N_{a}, N_{b}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$. Khi đó chúng ta có
+              \begin{align*}
+                  \abs{a_{n}b_{n} - ab} & = \abs{(a_{n} - a)b_{n} + a(b_{n} - b)}                         \\
+                                        & \leq \abs{a_{n} - a}\abs{b_{n}} + \abs{a}\abs{b_{n} - b}        \\
+                                        & < \frac{\varepsilon}{2B}\cdot B + \frac{\varepsilon}{2A}\cdot A \\
+                                        & = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \end{align*}
+
+              Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}b_{n} - ab} < \varepsilon$. Theo định nghĩa giới hạn dãy số hữu tỉ, chúng ta kết luận $\lim p_{n} = ab$.
+    \end{enumerate}
+\end{proof}
+
+Đến lúc này, chúng ta đã chuẩn bị đủ để định nghĩa và chứng minh các kết quả về dãy Cauchy hữu tỉ.
+
+\begin{definition}[Dãy Cauchy hữu tỉ]
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một \textbf{dãy Cauchy hữu tỉ\index{Dãy Cauchy hữu tỉ}} nếu và chỉ nếu
+    \[
+        \forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall m\geq N(\varepsilon) (\abs{a_{m} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
+    \]
+
+    \noindent Điều kiện trên có thể phát biểu dưới dạng tương đương là
+    \[
+        \forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall p > 0 (\abs{a_{n+p} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
+    \]
+
+    \noindent Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}$.
+\end{definition}
+
+Chúng ta cũng có thể phát biểu định nghĩa dãy Cauchy hữu tỉ theo cách bớt hình thức hơn.
+\begin{itemize}
+    \item (Thông dịch trực tiếp từ định nghĩa hình thức) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy Cauchy hữu tỉ nếu và chỉ nếu: Với mọi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N(\varepsilon)$ sao cho với mọi số tự nhiên $n, m\geq N(\varepsilon)$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$.
+    \item (Mô tả trực giác) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy Cauchy hữu tỉ nếu và chỉ nếu: Với mọi số hữu tỉ dương $\varepsilon$ nhỏ tùy ý, từ một chỉ số nào đó trở đi, khoảng cách giữa các giá trị của dãy số nhỏ hơn $\varepsilon$.
+\end{itemize}
+
+Dãy số hữu tỉ hội tụ là một trường hợp riêng của dãy Cauchy hữu tỉ.
+\begin{theorem}
+    Nếu một dãy số hữu tỉ hội tụ thì đó cũng là một dãy Cauchy hữu tỉ.
+\end{theorem}
+
+\begin{proof}
+    Giả sử dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $a$. Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương bất kì.
+
+    Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$. Vẫn là số tự nhiên $N$, nếu các số tự nhiên $n, m$ thỏa mãn $n, m\geq N$ thì chúng ta có
+    \[
+        \abs{a_{m} - a_{n}} = \abs{(a_{m} - a) + (a - a_{n})} \leq \abs{a_{m} - a} + \abs{a_{n} - a} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+    \]
+
+    Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $m, n\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+\end{proof}
+
+Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng điều ngược lại nói chung không đúng. Mệnh đề dưới đây cung cấp một ví dụ cho điều đó.
+
+\begin{proposition}
+    Dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng đệ quy như sau
+    \[
+        x_{n} = \begin{cases}
+            1                                 & \text{khi $n = 0$}   \\
+            \dfrac{2x_{n-1} + 2}{x_{n-1} + 2} & \text{khi $n\geq 1$}
+        \end{cases}
+    \]
+
+    Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy và không hội tụ đến bất kì số hữu tỉ nào.
+\end{proposition}
+
+\begin{proof}
+    Chúng ta chứng minh mệnh đề này bằng phản chứng, lần lượt qua các bước sau.
+    \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
+        \item $x_{n}\geq 1$ với mọi số tự nhiên $n$.
+
+              Khi $n = 0$, chúng ta có $x_{0} = 1$, do đó $x_{0}\geq 1$.
+
+              Giả sử với số tự nhiên $n = k\geq 0$, chúng ta có $x_{k}\geq 1$. Khi đó theo giả thiết quy nạp
+              \[
+                  x_{k+1} = \frac{2x_{k-1} + 2}{x_{k-1} + 2} = 1 + \frac{x_{k-1}}{x_{k-1} + 2} \geq 1
+              \]
+
+              Theo nguyên lý quy nạp toán học, $x_{n}\geq 1$ với mọi số tự nhiên $n$.
+        \item Với mọi số tự nhiên $n$, $\abs{{x_{n}}^{2} - 2}\leq \dfrac{1}{n+1}$.
+
+              Khi $n = 0$, chúng ta có $x_{0} = 1$, do đó $\abs{{x_{0}}^{2} - 1} = 1\leq \dfrac{1}{0+1}$.
+
+              Giả sử với số tự nhiên $n = k\geq 0$, chúng ta có $\abs{{x_{k}}^{2} - 2}\leq \dfrac{1}{k+1}$.
+              \begin{align*}
+                  \abs{{x_{k+1}}^{2} - 2} & = \abs{\frac{4{(x_{k} + 1)}^{2}}{{(x_{k} + 2)}^{2}} - 2} = \abs{\frac{2{x_{k}^{2}} - 4}{{(x_{k} + 2)}^{2}}} = \abs{\frac{2}{{(x_{k} + 2)}^{2}}}\abs{{x_{k}}^{2} - 2}                                   \\
+                                          & \leq \frac{1}{2}\abs{{x_{k}}^{2} - 2}                                                                                                                                & \text{(vì $x_{k} > 0$)}         \\
+                                          & \leq \frac{1}{2}\cdot\frac{1}{k+1}                                                                                                                                   & \text{(theo giả thiết quy nạp)} \\
+                                          & = \frac{1}{2k+2}\leq \frac{1}{k+2}.
+              \end{align*}
+
+              Theo nguyên lý quy nạp toán học, $\abs{{x_{n}}^{2} - 2}\leq \dfrac{1}{n+1}$ với mọi số tự nhiên $n$.
+        \item Chứng minh rằng ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì với mọi số tự nhiên $p$, chúng ta có
+              \begin{align*}
+                  \abs{x_{n+p} - x_{n}} & = \frac{\abs{{x_{n+p}}^{2} - {x_{n}}^{2}}}{\abs{x_{n+p} + x_{n}}} = \frac{\abs{({x_{n+p}}^{2} - 2) + (2 - {x_{n}}^{2})}}{\abs{x_{n+p} + x_{n}}}                                                    \\
+                                        & \leq \frac{\abs{{x_{n+p}}^{2} - 2} + \abs{{x_{n}}^{2} - 2}}{\abs{x_{n+p} + x_{n}}}                                                                                                                 \\
+                                        & \leq \frac{1}{2}\left(\frac{1}{n+1} + \frac{1}{n+p+1}\right)                                                                                    & \text{(theo \textbf{Bước 1} và \textbf{Bước 2})} \\
+                                        & \leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} = \varepsilon.
+              \end{align*}
+
+              Do đó với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$ và với mọi số tự nhiên $p$, chúng ta có $\abs{x_{n+p} - x_{n}} < \varepsilon$. Theo định nghĩa dãy Cauchy hữu tỉ, ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+        \item Dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ (được định nghĩa bởi $y_{n} = {x_{n}}^{2}$ với mọi số tự nhiên $n$) hội tụ đến $2$.
+
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì
+              \[
+                  \abs{{x_{n}}^{2} - 2}\leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} < \varepsilon.
+              \]
+
+              Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{{x_{n}}^{2} - 2} < \varepsilon$. Theo định nghĩa dãy số hội tụ, dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến $2$.
+        \item Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến bất kì số hữu tỉ nào.
+
+              Giả sử phản chứng rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ hội tụ    đến số hữu tỉ $x$.
+
+              Theo phần (iii) của Mệnh đề~\ref{proposition:limits-of-sum-and-product}, chúng ta suy ra dãy số ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $x^{2}$. Theo Định lý~
+              \ref{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}, chúng ta suy ra $x^{2} = 2$.
+
+              Theo Mệnh đề~\ref{proposition:irrational-cut}, không có số hữu tỉ nào có bình phương bằng $2$. Do đó $x^{2} = 2$ (với $x$ là số hữu tỉ) là một kết quả vô lý. Như vậy giả sử phản chứng là sai, kéo theo dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến số hữu tỉ nào.
+    \end{enumerate}
+\end{proof}
+
+Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực, chúng ta gặp một vấn đề: \textit{có nhiều dãy Cauchy hữu tỉ hội tụ đến cùng một số hữu tỉ}. Điều này sẽ được giải quyết bằng một quan hệ tương đương như sau.
+
+\begin{theorem}
+    Hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ được gọi là có quan hệ $\sim$, và được kí hiệu là ${(a_{n})}_{n\in\mathbb{N}} \sim {b_{n}}_{n\in\mathbb{N}}$ khi và chỉ khi dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$, nói cách khác
+    \[
+        \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
+    \]
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item Quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ là một quan hệ tương đương. Nói riêng, quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là một quan hệ tương đương.
+        \item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+        \item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item Dãy số hữu tỉ ${(a_{n} - a_{n})}_{n\in\mathbb{N}}$ là một dãy hữu tỉ hằng số, giá trị của dãy này tại mọi số tự nhiên $n$ bằng $0$, kéo theo dãy số hữu tỉ ${(a_{n} - a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$. Do đó quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ có tính chất phản xạ.
+
+              ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi
+              \[
+                  \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
+              \]
+
+              ${(b_{n})}_{n\in\mathbb{N}}\sim {(a_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi
+              \[
+                  \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{b_{n} - a_{n}} < \varepsilon ) \Bigr) \Biggr).
+              \]
+
+              Mặt khác, vì $\abs{a_{n} - b_{n}} = \abs{b_{n} - a_{n}}$ với mọi số tự nhiên $n$ nên hai điều kiện dưới đây tương đương
+              \[
+                  \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr) \quad\longleftrightarrow\quad \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{b_{n} - a_{n}} < \varepsilon ) \Bigr) \Biggr).
+              \]
+
+              Do đó ${(a_{n})}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}} \sim {(a_{n})}_{n\in\mathbb{N}}$, điều này có nghĩa là quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ có tính chất đối xứng.
+
+              Nếu các dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}, {(c_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$ thì theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, với mỗi số hữu tỉ dương $\varepsilon$
+              \begin{itemize}
+                  \item Tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{2}$.
+                  \item Tồn tại số tự nhiên $N_{bc}$ sao cho với mọi số tự nhiên $n\geq N_{bc}$, chúng ta có $\abs{b_{n} - c_{n}} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa số tự nhiên $N$ là số tự nhiên lớn nhất trong hai số $N_{ab}, N_{bc}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{2}$, $\abs{b_{n} - c_{n}} < \dfrac{\varepsilon}{2}$, và
+              \[
+                  \abs{a_{n} - c_{n}} = \abs{(a_{n} - b_{n}) + (b_{n} - c_{n})} \leq \abs{a_{n} - b_{n}} + \abs{b_{n} - c_{n}} < \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $ \abs{a_{n} - c_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}} \sim {(c_{n})}_{n\in\mathbb{N}}$, điều này có nghĩa là quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ có tính chất bắc cầu.
+
+              Vậy quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ là một quan hệ tương đương. Vì tập hợp các dãy Cauchy hữu tỉ là tập hợp con của tập hợp các dãy số hữu tỉ nên quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ cũng là một quan hệ tương đương.
+        \item ($\Rightarrow$) ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - q} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \varepsilon$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{a}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  \abs{b_{n} - q} = \abs{(b_{n} - a_{n}) + (a_{n} - q)} \leq \abs{b_{n} - a_{n}} + \abs{a_{n} - q} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+              \]
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, dãy số hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+
+              ($\Rightarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+
+              Hoàn toàn tương tự, chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - q} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ thì tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \varepsilon$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{b}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  \abs{a_{n} - q} = \abs{(a_{n} - b_{n}) + (b_{n} - q)} \leq \abs{a_{n} - b_{n}} + \abs{b_{n} - q} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+              \]
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+        \item ($\Rightarrow$) ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{n} - a_{m}} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{4}$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{a}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n, m\geq N$, chúng ta có
+              \begin{align*}
+                  \abs{b_{m} - b_{n}} & = \abs{(b_{m} - a_{m}) + (a_{m} - a_{n}) + (a_{n} - b_{n})}                            \\
+                                      & \leq \abs{b_{m} - a_{m}} + \abs{a_{m} - a_{n}} + \abs{a_{n} - b_{n}}                   \\
+                                      & < \frac{\varepsilon}{4} + \frac{\varepsilon}{2} + \frac{\varepsilon}{4} = \varepsilon.
+              \end{align*}
+
+              Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{b_{m} - b_{n}} < \varepsilon$. Do đó ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+              ($\Rightarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{n} - b_{m}} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{4}$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{b}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n, m\geq N$, chúng ta có
+              \begin{align*}
+                  \abs{a_{m} - a_{n}} & = \abs{(a_{m} - b_{m}) + (b_{m} - b_{n}) + (b_{n} - a_{n})}                            \\
+                                      & \leq \abs{a_{m} - b_{m}} + \abs{b_{m} - b_{n}} + \abs{b_{n} - a_{n}}                   \\
+                                      & < \frac{\varepsilon}{4} + \frac{\varepsilon}{2} + \frac{\varepsilon}{4} = \varepsilon.
+              \end{align*}
+
+              Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{proof}
+
+Chúng ta kí hiệu tập thương gồm các lớp tương đương của quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Trong nội dung tiếp theo, chúng ta sẽ định nghĩa các phép toán, quan hệ với dãy Cauchy hữu tỉ, và với lớp tương đương các dãy Cauchy hữu tỉ. Phần kĩ thuật nhất trong nội dung này là việc chỉ ra các phép toán và quan hệ đó không phụ thuộc vào việc chọn đại diện của lớp tương đương.
 
 \subsection{Các phép toán với dãy Cauchy hữu tỉ}
 
 \subsection{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
 
-\subsection{Quan hệ thứ tự giữa các lớp tương đương của các dãy Cauchy hữu tỉ}
-
 \subsection{Dãy Cauchy hữu tỉ và tiên đề về cận trên}
 
 \subsection{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
 
-\section{Hệ tiên đề về số thực và các mô hình số thực}
+\section{Các mô hình số thực}
 
-\subsection{Sự tương đương của các mô hình cho hệ tiên đề về số thực}
+\subsection{Sự tương đương của các mô hình số thực}
 
 \subsection{So sánh hai mô hình: lát cắt Dedekind và dãy Cauchy hữu tỉ}
 
-\subsection{Số hữu tỉ và Số vô tỉ}
+\subsection{Số hữu tỉ và số vô tỉ}
 
 \subsection{Âm vô cực và dương vô cực}
 
 \subsection{Nhìn nhận về các tập hợp số}
 
-\section{Một số kết quả từ hệ tiên đề về số thực}
+\section{Tiếp tục từ hệ tiên đề về số thực}
 
-\subsection{Nhóm tiên đề về trường}
+\subsection{Lưu ý về tiên đề và mô hình}
 
-\subsection{Nhóm tiên đề về thứ tự}
+\subsection{Các tiên đề về trường}
 
-\subsection{Đầy đủ Dedekind và đầy đủ Cauchy}
+\subsection{Các tiên đề về thứ tự và tiên đề về cận trên}
 
-\subsection{Lũy thừa. Mũ. Logarithm}
+\subsection{Hàm lũy thừa}
+
+\subsection{Hàm mũ và hàm logarithm}
 
