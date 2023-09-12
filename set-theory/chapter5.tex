@@ -1347,6 +1347,8 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
 
 Một cách khác để xây dựng tập hợp số thực là sử dụng dãy Cauchy hữu tỉ. Cách tiếp cận này được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Về sau, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt. Ý tưởng xây dựng tập hợp số thực bằng dãy Cauchy xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực.
 
+\subsection{Tóm tắt}
+
 \subsection{Dãy số hữu ti và dãy Cauchy hữu tỉ}
 
 Bạn đọc có thể đã được nghe qua, hoặc học về khái niệm dãy số (dãy số vô hạn). Khái niệm dãy số có thể được mô tả một cách trực giác: Một dãy số là một danh sách số và \textit{mỗi số tự nhiên được gán với đúng một số trong danh sách}. Dãy số tự nhiên $0, 1, 2, \ldots$, dãy số lẻ $1, 3, 5, \ldots$ là những ví dụ về dãy số. Tuy nhiên, để tuân thủ tiêu chuẩn của toán học hiện đại, các khái niệm cần được định nghĩa hình thức. Dãy số được định nghĩa như một ánh xạ, như trong định nghĩa sau đây.
@@ -1524,9 +1526,9 @@ Nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số h
 \end{definition}
 
 Một cách trực giác, việc một dãy số hữu tỉ hội tụ đến một số hữu tỉ $a$ có thể được mô tả như sau: Từ một chỉ số $n$ nào đó trở đi, các giá trị của dãy số sẽ chụm quanh điểm giới hạn. Mô tả này cho thấy sẽ thật không hợp lý nếu như ``khoảng cách'' từ một giá trị nào đó của dãy số đến $a$ có thể lớn tùy ý. Chúng ta có kết quả sau đây.
-\begin{proposition}
+\begin{theorem}\label{theorem:convergence-sequences-are-bounded}
     Nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ thì ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
     Giả sử dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ $a$ nào đó.
@@ -1543,9 +1545,9 @@ Việc tính toán giới hạn của một số dãy số có thể được đ
 \begin{proposition}\label{proposition:limits-of-sum-and-product}
     ${(a_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}$ là các dãy số hữu tỉ.
     \begin{enumerate}[label={(\roman*)}]
-        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim s_{n} = a + b$, trong đó dãy số hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $s_{n} = a_{n} + b_{n}$ với mọi số tự nhiên $n$.
-        \item Nếu $\lim a_{n} = a$ thì $\lim c_{n} = ca$, trong đó dãy số hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $c_{n} = c\cdot a_{n}$ với mọi số tự nhiên $n$, trong đó $c$ là một hằng số hữu tỉ.
-        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim p_{n} = ab$, trong đó dãy số hữu tỉ ${(p_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $p_{n} = a_{n}b_{n}$ với mọi số tự nhiên $n$.
+        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim s_{n} = a + b$, trong đó dãy số hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $s_{n} = a_{n} + b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(s_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$).
+        \item Nếu $\lim a_{n} = a$ thì $\lim c_{n} = ca$, trong đó dãy số hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $c_{n} = c\cdot a_{n}$ với mọi số tự nhiên $n$, trong đó $c$ là một hằng số hữu tỉ (Chúng ta còn kí hiệu ${(c_{n})}_{n\in\mathbb{N}}$ bởi ${(ca_{n})}_{n\in\mathbb{N}}$).
+        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim p_{n} = ab$, trong đó dãy số hữu tỉ ${(p_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $p_{n} = a_{n}b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(p_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n}b_{n})}_{n\in\mathbb{N}}$).
     \end{enumerate}
 \end{proposition}
 
@@ -1553,9 +1555,13 @@ Việc tính toán giới hạn của một số dãy số có thể được đ
     \begin{enumerate}[label={(\roman*)}]
         \item Chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì.
 
-              Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$; tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$.
+              Theo định nghĩa dãy số hữu tỉ hội tụ, với số hữu tỉ dương $\dfrac{\varepsilon}{2}$
+              \begin{itemize}
+                  \item tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$
+                  \item tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
 
-              Chúng ta kí hiệu $N = \max\{ N_{a}, N_{b} \}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$. Khi đó chúng ta có
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b} \}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$. Khi đó chúng ta có
               \[
                   \abs{(a_{n} + b_{n}) - (a + b)}  = \abs{(a_{n} - a) + (b_{n} - b)} \leq \abs{a_{n} - a} + \abs{b_{n} - b} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
               \]
@@ -1563,7 +1569,7 @@ Việc tính toán giới hạn của một số dãy số có thể được đ
               Những điều trên có nghĩa là: với mọi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{(a_{n} + b_{n}) - (a + b)} < \varepsilon$. Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta suy ra $\lim s_{n} = a + b$.
         \item Nếu $c = 0$ thì ${(c_{n})}_{n\in\mathbb{N}}$ là một dãy hằng số, vì $c_{n} = c\cdot a_{n} = 0$ với mọi số tự nhiên $n$. Khi đó $\lim c_{n} = 0 = ca$.
 
-              Nếu $c\ne 0$, chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{\abs{c}}$. Cũng là số tự nhiên $N$, nếu số tự nhiên $n\geq N$ thì chúng ta có
+              Nếu $c\ne 0$, chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, với số hữu tỉ dương $\dfrac{\varepsilon}{\abs{c}}$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{\abs{c}}$. Cũng là số tự nhiên $N$, nếu số tự nhiên $n\geq N$ thì chúng ta có
               \[
                   \abs{ca_{n} - ca} = \abs{c(a_{n} - a)} = \abs{c}\abs{a_{n} - a} \leq \abs{c}\cdot\frac{\varepsilon}{\abs{c}} = \varepsilon.
               \]
@@ -1577,7 +1583,13 @@ Việc tính toán giới hạn của một số dãy số có thể được đ
 
               Dựa trên bất đẳng thức vừa thu được, chúng ta tìm số tự nhiên ``$N$'' để có thể áp dụng được định nghĩa dãy số hữu tỉ hội tụ. Vì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$ và ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $b$ nên hai dãy số này bị chặn, kéo theo tồn tại hai số hữu tỉ dương $A, B$ sao cho $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq B$ với mọi số tự nhiên $n$.
 
-              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$; tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$. Chúng ta định nghĩa $N$ là số tự nhiên lớn nhất trong hai số $N_{a}, N_{b}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$. Khi đó chúng ta có
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ
+              \begin{itemize}
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2B}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2A}$, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b}\}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$. Khi đó chúng ta có
               \begin{align*}
                   \abs{a_{n}b_{n} - ab} & = \abs{(a_{n} - a)b_{n} + a(b_{n} - b)}                         \\
                                         & \leq \abs{a_{n} - a}\abs{b_{n}} + \abs{a}\abs{b_{n} - b}        \\
@@ -1627,7 +1639,23 @@ Dãy số hữu tỉ hội tụ là một trường hợp riêng của dãy Cauc
     Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $m, n\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
 \end{proof}
 
-Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng điều ngược lại nói chung không đúng. Mệnh đề dưới đây cung cấp một ví dụ cho điều đó.
+Tương tự với dãy số hữu tỉ hội tụ, dãy Cauchy hữu tỉ cũng bị chặn.
+\begin{theorem}\label{theorem:cauchy-sequences-are-bounded}
+    Nếu ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ thì ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
+\end{theorem}
+
+\begin{proof}
+    Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $1$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < 1$. Do đó $\abs{a_{n} - a_{N}} < 1$ với mọi số tự nhiên $n\geq N$. Bên cạnh đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{(a_{n} - a_{N}) + a_{N}} \leq \abs{a_{n} - a_{N}} + \abs{a_{N}} < 1 + \abs{a_{N}}.
+    \]
+
+    Theo nguyên lý cực hạn, tập hợp $\{ a_{0}, a_{1}, \ldots, a_{N-1}, 1 + \abs{a_{N}} \}$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử này là $A$, $A$ còn là một số hữu tỉ dương, vì $A$ thuộc tập hợp trên (gồm các số hữu tỉ) và $A\geq 1 + \abs{a_{N}}$.
+
+    Với hai điều trên, chúng ta suy ra $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$, điều này đồng nghĩa với việc ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
+\end{proof}
+
+Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng điều ngược lại nói chung không đúng. Mệnh đề dưới đây đưa ra một dãy Cauchy hữu tỉ nhưng không hội tụ đến một số hữu tỉ nào.
 
 \begin{proposition}
     Dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng đệ quy như sau
@@ -1699,8 +1727,8 @@ Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng đi
 
 Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực, chúng ta gặp một vấn đề: \textit{có nhiều dãy Cauchy hữu tỉ hội tụ đến cùng một số hữu tỉ}. Điều này sẽ được giải quyết bằng một quan hệ tương đương như sau.
 
-\begin{theorem}
-    Hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ được gọi là có quan hệ $\sim$, và được kí hiệu là ${(a_{n})}_{n\in\mathbb{N}} \sim {b_{n}}_{n\in\mathbb{N}}$ khi và chỉ khi dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$, nói cách khác
+\begin{theorem}\label{theorem:equivalent-rational-sequences}
+    Hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ được gọi là có quan hệ $\sim$, và được kí hiệu là ${(a_{n})}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$, nói cách khác
     \[
         \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
     \]
@@ -1795,13 +1823,288 @@ Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực
     \end{enumerate}
 \end{proof}
 
-Chúng ta kí hiệu tập thương gồm các lớp tương đương của quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Trong nội dung tiếp theo, chúng ta sẽ định nghĩa các phép toán, quan hệ với dãy Cauchy hữu tỉ, và với lớp tương đương các dãy Cauchy hữu tỉ. Phần kĩ thuật nhất trong nội dung này là việc chỉ ra các phép toán và quan hệ đó không phụ thuộc vào việc chọn đại diện của lớp tương đương.
+Chúng ta kí hiệu tập thương gồm các lớp tương đương của quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Trong nội dung tiếp theo của mục này, chúng ta chỉ làm việc với dãy Cauchy hữu tỉ và các lớp tương đương của các dãy Cauchy hữu tỉ.
 
-\subsection{Các phép toán với dãy Cauchy hữu tỉ}
+\subsection{$\dagger$ Các phép toán với dãy Cauchy hữu tỉ}
 
-\subsection{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
+\begin{theorem}[Phép cộng và phép nhân dãy Cauchy hữu tỉ]
+    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì
+    \begin{enumerate}[label={(\roman*)}]
+        \item ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép cộng dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n} + b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}} + {(b_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép nhân dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{theorem}
 
-\subsection{Dãy Cauchy hữu tỉ và tiên đề về cận trên}
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương.
+
+              Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon}{2}$
+              \begin{itemize}
+                  \item tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2}$
+                  \item tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b} \}$. Với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2}$ và $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2}$, và
+              \[
+                  \abs{(a_{m} + b_{m}) - (a_{n} + b_{n})} = \abs{(a_{m} - a_{n}) + (b_{m} - b_{n})} \leq \abs{a_{m} - a_{n}} + \abs{b_{m} - b_{n}} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{(a_{m} + b_{m}) - (a_{n} + b_{n})} < \varepsilon$. Như vậy ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ. Theo Định lý~\ref{theorem:cauchy-sequences-are-bounded}, tồn tại hai số hữu tỉ dương $A, B$ sao cho $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq B$ với mọi số tự nhiên $n$.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ
+              \begin{itemize}
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2B}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2B}$
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2A}$, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2A}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b}\}$. Nếu các số tự nhiên $n, m\geq N$ thì $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2B}$ và $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2A}$. Khi đó chúng ta có
+              \begin{align*}
+                  \abs{a_{m}b_{m} - a_{n}b_{n}} & = \abs{a_{m}(b_{m} - b_{n}) + b_{n}(a_{m} - a_{n})}               \\
+                                                & \leq \abs{a_{m}(b_{m} - b_{n})} + \abs{b_{n}(a_{m} - a_{n})}      \\
+                                                & = \abs{a_{m}}\abs{b_{m} - b_{n}} + \abs{b_{n}}\abs{a_{m} - a_{n}} \\
+                                                & < A\cdot \frac{\varepsilon}{2A} + B\cdot\frac{\varepsilon}{2B}    \\
+                                                & = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \end{align*}
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m}b_{m} - a_{n}b_{n}} < \varepsilon$. Như vậy ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{proof}
+
+Để định nghĩa phép cộng và phép nhân hai \textit{lớp tương đương của các dãy Cauchy hữu tỉ} (nói cách khác là hai phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$) theo cách tương tự như với \textit{dãy Cauchy hữu tỉ}, chúng ta cần một định nghĩa không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương.
+
+\begin{theorem}
+    Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$, ${(b_{n})}_{n\in\mathbb{N}}$, ${(c_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$ thì
+    \begin{enumerate}[label={(\roman*)}]
+        \item ${(a_{n} + b_{n})}_{n\in\mathbb{N}} \sim {(c_{n} + d_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n}b_{n})}_{n\in\mathbb{N}} \sim {(c_{n}d_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+              Theo định nghĩa quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon}{2}$
+              \begin{itemize}[topsep=0pt]
+                  \item tồn tại số tự nhiên $N_{ac}$ sao cho với mọi số tự nhiên $n\geq N_{ac}$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2}$,
+                  \item tồn tại số tự nhiên $N_{bd}$ sao cho với mọi số tự nhiên $n\geq N_{bd}$, chúng ta có $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{ac}, N_{bd} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2}$, $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2}$, và
+              \[
+                  \abs{(a_{n} + b_{n}) - (c_{n} + d_{n})} = \abs{(a_{n} - c_{n}) + (b_{n} - d_{n})} \leq \abs{a_{n} - c_{n}} + \abs{b_{n} - d_{n}} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{(a_{n} + b_{n}) - (c_{n} + d_{n})} < \varepsilon$. Như vậy ${(a_{n} + b_{n})}_{n\in\mathbb{N}} \sim {(c_{n} + d_{n})}_{n\in\mathbb{N}}$.
+        \item Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+              Theo Định lý~\ref{theorem:cauchy-sequences-are-bounded}, vì ${(a_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ nên tồn tại hai số hữu tỉ dương $A, D$ sao cho $\abs{a_{n}} < A$ và $\abs{d_{n}} < D$ với mọi số tự nhiên $n$.
+
+              Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy Cauchy hữu tỉ
+              \begin{itemize}
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2D}$, tồn tại số tự nhiên $N_{ac}$ sao cho với mọi số tự nhiên $n\geq N_{ac}$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2D}$,
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2A}$, tồn tại số tự nhiên $N_{bd}$ sao cho với mọi số tự nhiên $n\geq N_{bd}$, chúng ta có $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2A}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{ac}, N_{bd} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2D}$, $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2A}$ và
+              \begin{align*}
+                  \abs{a_{n}b_{n} - c_{n}d_{n}} & = \abs{a_{n}(b_{n} - d_{n}) + d_{n}(a_{n} - c_{n})}               \\
+                                                & \leq \abs{a_{n}(b_{n} - d_{n})} + \abs{d_{n}(a_{n} - c_{n})}      \\
+                                                & = \abs{a_{n}}\abs{b_{n} - d_{n}} + \abs{d_{n}}\abs{a_{n} - c_{n}} \\
+                                                & < A\cdot\frac{\varepsilon}{2A} + D\cdot\frac{\varepsilon}{2D}     \\
+                                                & = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \end{align*}
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}b_{n} - c_{n}d_{n}} < \varepsilon$. Như vậy ${(a_{n}b_{n})}_{n\in\mathbb{N}} \sim {(c_{n}d_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    Chúng ta kí hiệu lớp tương đương gồm các \textit{dãy số hữu tỉ} tương đương với dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ là $\clsseq{a_{n}}{n}$.
+
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng hai phần tử\index{Phép cộng hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $+$ và được xác định như sau
+              \[
+                  \clsseq{a_{n}}{n} + \clsseq{b_{n}}{n} = \clsseq{a_{n} + b_{n}}{n}
+              \]
+
+              trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+        \item Phép nhân hai phần tử\index{Phép nhân hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $\cdot$ và được xác định như sau
+              \[
+                  \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n} = \clsseq{a_{n}b_{n}}{n}
+              \]
+
+              trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{definition}
+
+Một cách không hình thức, chúng ta có thể diễn đạt định nghĩa trên thành: tổng (tích) của hai lớp tương đương là lớp tương đương của tổng (tích) hai dãy Cauchy. Với định nghĩa trên, phép cộng và phép nhân của hai phần tử trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương. Định nghĩa này cũng cho phép chúng ta chứng minh các tính chất của phép cộng, phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ theo cách dễ dàng.
+
+\begin{theorem}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item Phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đồng nhất.
+        \item Mỗi phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đối.
+        \item Phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất kết hợp của phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \left(\clsseq{a_{n}}{n} + \clsseq{b_{n}}{n}\right) + \clsseq{c_{n}}{n} & = \clsseq{a_{n} + b_{n}}{n} + \clsseq{c_{n}}{n}                          \\
+                                                                                         & = \clsseq{(a_{n} + b_{n}) + c_{n}}{n}                                    \\
+                                                                                         & = \clsseq{a_{n} + (b_{n} + c_{n})}{n}                                    \\
+                                                                                         & = \clsseq{a_{n}}{n} + \clsseq{b_{n} + c_{n}}{n}                          \\
+                                                                                         & = \clsseq{a_{n}}{n} + \left(\clsseq{b_{n}}{n} + \clsseq{c_{n}}{n}\right)
+              \end{align*}
+
+              Vậy phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item $\clsseq{0}{n}$ là một phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Với mọi phần tử $\clsseq{a_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} + \clsseq{0}{n} & = \clsseq{a_{n} + 0}{n} = \clsseq{a_{n}}{n}, \\
+                  \clsseq{0}{n} + \clsseq{a_{n}}{n} & = \clsseq{0 + a_{n}}{n} = \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy $\clsseq{0}{n}$ là một phần tử đồng nhất của phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} + \clsseq{-a_{n}}{n} & = \clsseq{a_{n} + (-a_{n})}{n} = \clsseq{0}{n}, \\
+                  \clsseq{-a_{n}}{n} + \clsseq{a_{n}}{n} & = \clsseq{(-a_{n}) + a_{n}}{n} = \clsseq{0}{n}.
+              \end{align*}
+
+              Vậy mỗi phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đối.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất giao hoán của phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} + \clsseq{b_{n}}{n} & = \clsseq{a_{n} + b_{n}}{n}              \\
+                                                        & = \clsseq{b_{n} + a_{n}}{n}              \\
+                                                        & = \clsseq{b_{n}}{n} + \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất phân phối với phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đồng nhất, và phần tử này khác với phần tử đồng nhất của phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất kết hợp của phép nhân số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \left(\clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n}\right) \cdot \clsseq{c_{n}}{n} & = \clsseq{a_{n}b_{n}}{n} \cdot \clsseq{c_{n}}{n}                                 \\
+                                                                                                 & = \clsseq{(a_{n}b_{n})c_{n}}{n}                                                  \\
+                                                                                                 & = \clsseq{a_{n}(b_{n}c_{n})}{n}                                                  \\
+                                                                                                 & = \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}c_{n}}{n}                                 \\
+                                                                                                 & = \clsseq{a_{n}}{n} \cdot \left(\clsseq{b_{n}}{n} \cdot \clsseq{c_{n}}{n}\right)
+              \end{align*}
+
+              Vậy phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân và phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất phân phối của phép nhân với phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \left(\clsseq{a_{n}}{n} + \clsseq{b_{n}}{n}\right) \cdot \clsseq{c_{n}}{n} & = \clsseq{a_{n} + b_{n}}{n} \cdot \clsseq{c_{n}}{n}                                      \\
+                                                                                             & = \clsseq{(a_{n}+ b_{n})c_{n}}{n}                                                        \\
+                                                                                             & = \clsseq{a_{n}c_{n} + b_{n}c_{n}}{n}                                                    \\
+                                                                                             & = \clsseq{a_{n}c_{n}}{n} + \clsseq{b_{n}c_{n}}{n}                                        \\
+                                                                                             & = \clsseq{a_{n}}{n} \cdot \clsseq{c_{n}}{n} + \clsseq{b_{n}}{n} \cdot \clsseq{c_{n}}{n}.
+              \end{align*}
+
+              Hoàn toàn tương tự, chúng ta cũng chứng minh được rằng
+              \[
+                  \clsseq{c_{n}}\cdot \left(\clsseq{a_{n}}{n} + \clsseq{b_{n}}{n}\right) = \clsseq{c_{n}}{n} \cdot \clsseq{a_{n}}{n} + \clsseq{c_{n}}{n} \cdot \clsseq{b_{n}}{n}.
+              \]
+
+              Vậy phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất phân phối với phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item $\clsseq{1}{n}$ là một phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Với mọi phần tử $\clsseq{a_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n}\cdot \clsseq{1}{n} & = \clsseq{a_{n}\cdot 1}{n} = \clsseq{a_{n}}{n}, \\
+                  \clsseq{1}{n}\cdot \clsseq{a_{n}}{n} & = \clsseq{1\cdot a_{n}}{n} = \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy $\clsseq{1}{n}$ là một phần tử đồng nhất của phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+
+              Giả sử phản chứng rằng $\clsseq{1}{n} = \clsseq{0}{n}$. Theo định nghĩa quan hệ $\sim$ trên $\mathscr{C}_{\mathbb{Q}}$, chúng ta có ${(1)}_{n\in\mathbb{N}} \sim {(0)}_{n\in\mathbb{N}}$. Theo Định lý~\ref{theorem:equivalent-rational-sequences}, hai dãy số hữu tỉ ${(1)}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}$ hội tụ đến cùng một số hữu tỉ. Điều này là vô lý vì ${(1)}_{n\in\mathbb{N}}$ hội tụ đến $1$, còn ${(0)}_{n\in\mathbb{N}}$ hội tụ đến $0$ và $0\ne 1$.
+
+              Do đó $\clsseq{1}{n}\ne \clsseq{0}{n}$.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất giao hoán của phép nhân số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n} & = \clsseq{a_{n}b_{n}}{n}                     \\
+                                                            & = \clsseq{b_{n}a_{n}}{n}                     \\
+                                                            & = \clsseq{b_{n}}{n} \cdot \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{proof}
+
+Trên đây chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng hai phép toán cộng và nhân thỏa mãn 8 tiên đề đầu tiên trong các tiên đề về trường. Để chứng minh rằng tiên đề thứ 9 cũng được thỏa mãn, chúng tôi sử dụng kết quả sau.
+\begin{theorem}\label{theorem:nonzero-cauchy-sequences}
+    Nếu dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ thì tồn tại số hữu tỉ dương $\varepsilon$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\geq \varepsilon$ và $a_{n}\ne 0$.
+\end{theorem}
+
+\begin{proof}
+    Theo định nghĩa dãy số hữu tỉ hội tụ, dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ khi và chỉ khi tồn tại số hữu tỉ dương $\varepsilon_{0}$ sao cho với mọi số tự nhiên $N_{a}$, tồn tại số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n}} \geq \varepsilon_{0}$. (1)
+
+    Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon_{0}}{2}$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon_{0}}{2}$. (2)
+
+    Vì (1) nên với số tự nhiên $N$, tồn tại số tự nhiên $N'\geq N$ sao cho $\abs{a_{N'}} \geq \varepsilon_{0}$. Cùng với (2), chúng ta suy ra rằng với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{a_{N'} - (a_{N'} - a_{n})} \geq \abs{a_{N'}} - \abs{a_{N'} - a_{n}} \geq \varepsilon_{0} - \frac{\varepsilon_{0}}{2} = \frac{\varepsilon_{0}}{2} > 0.
+    \]
+
+    Do đó, với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\ne 0$. Vì giá trị tuyệt đối của một số hữu tỉ bằng $0$ khi và chỉ khi số hữu tỉ đó bằng $0$ nên với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\ne 0$.
+
+    Vậy, với số hữu tỉ dương $\varepsilon = \dfrac{\varepsilon_{0}}{2}$, tồn tại tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\geq \varepsilon$ và $a_{n}\ne 0$.
+\end{proof}
+
+\begin{theorem}
+    Với mỗi phần tử $\alpha\ne \clsseq{0}{n}$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, tồn tại phần tử $\beta$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ sao cho $\alpha\cdot\beta = \beta\cdot\alpha = \clsseq{1}{n}$.
+\end{theorem}
+
+\begin{proof}
+    Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, mọi phần tử của lớp tương đương $\alpha$ đều không tương đương với dãy số hữu tỉ ${(0)}_{n\in\mathbb{N}}$, kéo theo mọi phần tử của lớp tương đương $\alpha$ đều không hội tụ đến $0$.
+
+    Chúng ta chọn ${(a_{n})}_{n\in\mathbb{N}}$ là một phần tử của lớp tương đương $\alpha$. Vì ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ nên theo Định lý~\ref{theorem:nonzero-cauchy-sequences}, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\ne 0$. Chúng ta định nghĩa dãy số hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ như sau.
+    \[
+        b_{n} = \begin{cases}
+            0                & \text{nếu $n < N$}   \\
+            \dfrac{1}{a_{n}} & \text{nếu $n\geq N$}
+        \end{cases}
+    \]
+
+    Chúng ta chứng minh ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+    Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo Định lý~\ref{theorem:nonzero-cauchy-sequences}, tồn tại số hữu tỉ dương $\varepsilon_{0}$ sao cho tồn tại số tự nhiên $N'$ sao cho với mọi số tự nhiên $n\geq N'$, chúng ta có $\abs{a_{n}}\geq \varepsilon_{0}$. Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\varepsilon\cdot{\varepsilon_{0}}^{2}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon\cdot{\varepsilon_{0}}^{2}$.
+
+    Chúng ta định nghĩa $N'' = \max\{ N_{a}, N' \}$. Với mọi số tự nhiên $n, m\geq N''$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon\cdot{\varepsilon_{0}}^{2}$, $\abs{a_{n}}\geq\varepsilon_{0}$, và
+    \[
+        \abs{b_{m} - b_{n}} = \abs{\frac{1}{a_{m}} - \frac{1}{a_{n}}} = \abs{\frac{a_{m} - a_{n}}{a_{m}a_{n}}} = \frac{\abs{a_{m} - a_{n}}}{\abs{a_{m}}\abs{a_{n}}} < \frac{\varepsilon\cdot{\varepsilon_{0}}^{2}}{{\varepsilon_{0}}^{2}} = \varepsilon.
+    \]
+
+    Do đó ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+    Mặt khác, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ dừng, vì với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}b_{n} = 1$. Do đó, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $1$. Theo định nghĩa và tính chất giao hoán của phép nhân trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta suy ra
+    \[
+        \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \clsseq{b_{n}}{n}\cdot\clsseq{a_{n}}{n} = \clsseq{b_{n}a_{n}}{n} = \clsseq{1}{n}.
+    \]
+
+    Vậy, với mỗi phần tử $\alpha\ne \clsseq{0}{n}$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, tồn tại phần tử $\beta$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ sao cho $\alpha\cdot\beta = \beta\cdot\alpha = \clsseq{1}{n}$.
+\end{proof}
+
+Đến lúc này, chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng hai phép toán cộng và nhân thỏa mãn các tiên đề về trường.
+
+\subsection{$\dagger$ Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
+
+\subsection{$\dagger$ Dãy Cauchy hữu tỉ và tiên đề về cận trên}
 
 \subsection{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
 
