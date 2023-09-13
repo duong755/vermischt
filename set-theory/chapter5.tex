@@ -69,16 +69,22 @@ Câu trả lời trực giác hình học cho cách hiểu thứ hai có thể l
 
 Chúng ta bình luận và làm rõ thêm hệ tiên đề vừa nêu. Các tiên đề về trường và các tiên đề về thứ tự có lẽ không có gì xa lạ với bạn đọc. Chúng tôi chỉ lưu ý thêm ba điều về hai nhóm tiên đề này: (1) Các phần tử $0$, $1$, $(-x)$, và $x^{-1}$ được hiểu như các kí hiệu đơn thuần, ở thời điểm này chúng ta \textit{chưa} coi đó như những số hay phép toán quen thuộc; (2) Tiên đề về sự tồn tại của hai phần tử $0$ và $1$ không khẳng định tính duy nhất của những phần tử như vậy, chúng ta sẽ chứng minh tính duy nhất của hai phần tử đó ở một mục khác trong chương này.
 
-Tiên đề về cận trên là phần ít quen thuộc nhất trong hệ tiên đề trên, và chúng ta cần làm rõ khái niệm được nhắc tới trong tiên đề này: \textit{cận trên} và \textit{cận trên nhỏ nhất}.
+Tiên đề về cận trên là phần ít quen thuộc nhất trong hệ tiên đề trên, và chúng ta cần làm rõ khái niệm được nhắc tới trong tiên đề này: \textit{cận trên} và \textit{cận trên nhỏ nhất}. Trước đó, bạn đọc cần biết về \textit{quan hệ tiền thứ tự} và \textit{quan hệ thứ tự} được nêu trong Chương~\ref{chapter:relations-and-mappings}, Mục~\ref{subsection:order-and-preorder-relations}.
 
 \begin{definition}[Cận trên và Cận dưới]
-    Cho một tập hợp $S$ được định nghĩa một quan hệ thứ tự bộ phận $\leq$ và $A$ là một tập hợp con của $S$.
+    Cho một tập hợp $S$ được định nghĩa một \textit{quan hệ tiền thứ tự bộ phận} $\leq$ và $A$ là một tập hợp con của $S$.
     \begin{enumerate}[label={(\roman*)}]
         \item Một phần tử $u$ của $S$ được gọi là một \textbf{cận trên\index{Cận trên}} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $a\leq u$. Chúng ta còn nói $A$ bị chặn trên bởi $u$.
         \item Một phần tử $\ell$ của $S$ được gọi là một \textbf{cận dưới\index{Cận dưới}} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $\ell\leq a$. Chúng ta còn nói $A$ bị chặn dưới bởi $\ell$.
         \item Tập hợp $A$ được gọi là bị chặn nếu $A$ có cả cận trên và cận dưới.
-        \item Một phần tử $x$ của $S$ được gọi là một \textbf{cận trên nhỏ nhất\index{Cận trên nhỏ nhất}} hay \textbf{cận trên đúng\index{Cận trên đúng}} của $A$ nếu như với mỗi cận trên $u$ của $A$, chúng ta có $x\leq u$. Cận trên nhỏ nhất của $A$ được kí hiệu là $\sup A$.
-        \item Một phần tử $y$ của $S$ được gọi là một \textbf{cận dưới lớn nhất\index{Cận dưới lớn nhất}} hay \textbf{cận dưới đúng\index{Cận dưới đúng}} của $A$ nếu như với mỗi cận dưới $\ell$ của $A$, chúng ta có $\ell\leq y$. Cận dưới lớn nhất của $A$ được kí hiệu là $\inf A$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Cho một tập hợp $S$ được định nghĩa một \textit{quan hệ thứ tự bộ phận} $\leq$ và $A$ là một tập hợp con của $S$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Một phần tử $x$ của $S$ được gọi là một \textbf{cận trên nhỏ nhất\index{Cận trên nhỏ nhất}}, hay \textbf{cận trên đúng\index{Cận trên đúng}}, hay \textbf{supremum\index{Supremum}} của $A$ nếu như với mỗi cận trên $u$ của $A$, chúng ta có $x\leq u$. Cận trên nhỏ nhất của $A$ được kí hiệu là $\sup A$.
+        \item Một phần tử $y$ của $S$ được gọi là một \textbf{cận dưới lớn nhất\index{Cận dưới lớn nhất}}, hay \textbf{cận dưới đúng\index{Cận dưới đúng}}, hay \textbf{infimum\index{Infimum}} của $A$ nếu như với mỗi cận dưới $\ell$ của $A$, chúng ta có $\ell\leq y$. Cận dưới lớn nhất của $A$ được kí hiệu là $\inf A$.
     \end{enumerate}
 \end{definition}
 
@@ -1343,13 +1349,15 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
     \end{enumerate}
 \end{proof}
 
-Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Bên cạnh đó, cùng với việc $\iota$ ánh xạ một số hữu tỉ $q$ thành một lát cắt $q^{*} = \{ x \mid x\in\mathbb{Q}\wedge x < q \}$, các lát cắt $q^{*}$ có những tính chất mà số hữu tỉ có.
+Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất các số hữu tỉ $q$ với lát cắt $q^{*}$.
 
 \section{Dãy Cauchy hữu tỉ}
 
 Một cách khác để xây dựng tập hợp số thực là sử dụng dãy Cauchy hữu tỉ. Cách tiếp cận này được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Về sau, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt. Ý tưởng xây dựng tập hợp số thực bằng dãy Cauchy xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực.
 
 \subsection{Tóm tắt}
+
+% pending
 
 \subsection{Dãy số hữu ti và dãy Cauchy hữu tỉ}
 
@@ -1659,7 +1667,7 @@ Tương tự với dãy số hữu tỉ hội tụ, dãy Cauchy hữu tỉ cũng
 
 Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng điều ngược lại nói chung không đúng. Mệnh đề dưới đây đưa ra một dãy Cauchy hữu tỉ nhưng không hội tụ đến một số hữu tỉ nào.
 
-\begin{proposition}
+\begin{proposition}\label{proposition:irrational-cauchy-sequence}
     Dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng đệ quy như sau
     \[
         x_{n} = \begin{cases}
@@ -2104,9 +2112,12 @@ Trên đây chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}
 
     Do đó ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
 
-    Mặt khác, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ dừng, vì với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}b_{n} = 1$. Do đó, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $1$. Theo định nghĩa và tính chất giao hoán của phép nhân trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta suy ra
+    Mặt khác, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ dừng, vì với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}b_{n} = 1$. Do đó, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $1$. Theo định nghĩa của phép nhân trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta suy ra
     \[
-        \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \clsseq{b_{n}}{n}\cdot\clsseq{a_{n}}{n} = \clsseq{b_{n}a_{n}}{n} = \clsseq{1}{n}.
+        \begin{split}
+            \alpha\cdot\beta = \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \clsseq{a_{n}b_{n}}{n} = \clsseq{1}{n}, \\
+            \beta\cdot\alpha = \clsseq{b_{n}}{n}\cdot\clsseq{a_{n}}{n} = \clsseq{b_{n}a_{n}}{n} = \clsseq{1}{n}.
+        \end{split}
     \]
 
     Vậy, với mỗi phần tử $\alpha\ne \clsseq{0}{n}$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, tồn tại phần tử $\beta$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ sao cho $\alpha\cdot\beta = \beta\cdot\alpha = \clsseq{1}{n}$.
@@ -2116,7 +2127,7 @@ Trên đây chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}
 
 \subsection{* Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
 
-Trong nội dung này, chúng ta định nghĩa một \textit{quan hệ tiền thứ tự} giữa các dãy Cauchy hữu tỉ để từ đó định nghĩa một \textit{quan hệ thứ tự} giữa các phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Để xem thêm về \textit{quan hệ tiền thứ tự} và \textit{quan hệ thứ tự}, bạn đọc có thể đọc tại Chương~\ref{chapter:relations-and-mappings}, Mục~\ref{subsection:order-and-preorder-relations}.
+Trong nội dung này, chúng ta định nghĩa một \textit{quan hệ tiền thứ tự} giữa các dãy Cauchy hữu tỉ để từ đó định nghĩa một \textit{quan hệ thứ tự} giữa các phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
 
 \begin{definition}
     ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ.
@@ -2299,6 +2310,10 @@ Bằng định lý trên, chúng ta chứng minh được điều kiện cần v
     Như vậy, quan hệ $\lesssim$ trên tập hợp các dãy số Cauchy hữu tỉ là một quan hệ tiền thứ tự toàn phần.
 \end{proof}
 
+\begin{corollary}
+    Nếu ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ là sai thì ${(b_{n})}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}$.
+\end{corollary}
+
 Tuy quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$ không phải một quan hệ thứ tự vì thiếu tính chất phản đối xứng, nhưng quan hệ này có một tính chất gần với tính chất phản đối xứng, được nêu trong định lý sau.
 
 \begin{theorem}\label{theorem:cauchy-sequences-pre-antisymmetric}
@@ -2319,7 +2334,7 @@ Tuy quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$ không ph�
     Vậy nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$.
 \end{proof}
 
-Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ để định nghĩa và chứng minh các tính chất của quan hệ thứ tự trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ để định nghĩa và chứng minh các tính chất của quan hệ thứ tự trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$: đó là một quan hệ thứ tự toàn phần và tương thích với hai phép toán cộng và nhân trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
 
 \begin{theorem}\label{theorem:equivalent-cauchy-sequences-and-preorder}
     Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$, ${(b_{n})}_{n\in\mathbb{N}}$, ${(c_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(c_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$.
@@ -2434,31 +2449,11 @@ Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ �
                             \item tồn tại số hữu tỉ dương $a$ sao cho tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $-b_{n}\leq -b$.
                         \end{itemize}
 
-                        Chúng ta định nghĩa $q = ab$ và $N = \max\{ N_{a}, N_{b} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\geq 0, b_{n}\geq 0$ và $a_{n}b_{n}\geq a_{n}b \geq ab$, kéo theo $-a_{n}b_{n}\leq -ab = -q$. Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(0)}_{n\in\mathbb{N}} < {(a_{n}b_{n})}_{n\in\mathbb{N}}$. Theo định nghĩa phép nhân dãy Cauchy hữu tỉ trong Định lý~\ref{theorem:addition-and-multiplication-of-cauchy-sequences}, ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$. Do vậy ${(0)}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$, kéo theo ${(0)}_{n\in\mathbb{N}} \lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$
+                        Chúng ta định nghĩa $q = ab$ và $N = \max\{ N_{a}, N_{b} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\geq 0, b_{n}\geq 0$ và $a_{n}b_{n}\geq a_{n}b \geq ab$, kéo theo $-a_{n}b_{n}\leq -ab = -q$. Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(0)}_{n\in\mathbb{N}} < {(a_{n}b_{n})}_{n\in\mathbb{N}}$. Theo định nghĩa phép nhân dãy Cauchy hữu tỉ trong Định lý~\ref{theorem:addition-and-multiplication-of-cauchy-sequences}, ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$. Do vậy ${(0)}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$, kéo theo ${(0)}_{n\in\mathbb{N}} \lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
               \end{enumerate}
 
-              Như vậy nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}} và {(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ thì ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+              Như vậy, nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ thì ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
     \end{enumerate}
-\end{proof}
-
-\begin{proposition}\label{proposition:uniqueness-of-additive-inverse-cauchy-sequence}
-    Trong tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, với mỗi phần tử $\alpha$ tồn tại duy nhất phần tử $\beta$ sao cho $\alpha + \beta = \beta + \alpha = \clsseq{0}{n}$ (chúng ta kí hiệu phần tử $\beta$ là $-\alpha$).
-\end{proposition}
-
-\begin{proof}
-    Định lý~\ref{theorem:rational-cauchy-sequences-abelian-group} khẳng định sự tồn tại của một phần tử như vậy với mỗi phần tử $\alpha$ trong tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
-
-    Giả với với phần tử $\alpha$ trong tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, có hai phần tử $\beta, \beta'$ thỏa mãn
-    \[
-        \alpha + \beta = \beta + \alpha = \alpha + \beta' = \beta' + \alpha = \clsseq{0}{n}.
-    \]
-
-    Khi đó, theo phần (i), (ii), (iii) của Định lý~\ref{theorem:rational-cauchy-sequences-abelian-group}, chúng ta có
-    \[
-        \beta' = \beta' + \clsseq{0}{n} = \beta' + (\alpha + \beta) = (\beta' + \alpha) + \beta = \clsseq{0}{n} + \beta = \beta.
-    \]
-
-    Như vậy, trong tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, với mỗi phần tử $\alpha$ tồn tại duy nhất phần tử $\beta$ sao cho $\alpha + \beta = \beta + \alpha = \clsseq{0}{n}$.
 \end{proof}
 
 \begin{theorem}
@@ -2472,35 +2467,22 @@ Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ �
     \begin{enumerate}[label={(\roman*)}]
         \item ${(x_{n})}_{n\in\mathbb{N}}$ và ${(y_{n})}_{n\in\mathbb{N}}$ lần lượt là hai phần tử của hai lớp tương đương $\alpha + \gamma$ và $\beta + \gamma$.
 
-              ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ lần lượt là các phần tử của các lớp tương đương $\alpha, \beta$. Chúng ta sẽ chứng minh rằng ${(x_{n} - a_{n})}_{n\in\mathbb{N}}$ và ${(y_{n} - b_{n})}_{n\in\mathbb{N}}$ thuộc lớp tương đương $\gamma$ để sử dụng Định lý~\ref{theorem:addition-multiplication-and-preorder-of-cauchy-sequences}.
+              ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}, {(c_{n})}_{n\in\mathbb{N}}$ lần lượt là các phần tử của các lớp tương đương $\alpha, \beta, \gamma$. Khi đó
+              \[
+                  \begin{split}
+                      \alpha + \gamma = \clsseq{a_{n}}{n} + \clsseq{c_{n}}{n} = \clsseq{a_{n} + c_{n}}{n}, \\
+                      \beta + \gamma = \clsseq{b_{n}}{n} + \clsseq{c_{n}}{n} = \clsseq{b_{n} + c_{n}}{n}.
+                  \end{split}
+              \]
 
-              Theo định nghĩa phép cộng hai dãy Cauchy hữu tỉ, định nghĩa phép cộng trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, Định lý~\ref{theorem:rational-cauchy-sequences-abelian-group}, và Mệnh đề~\ref{proposition:uniqueness-of-additive-inverse-cauchy-sequence} chúng ta có
-              \begin{align*}
-                  \clsseq{x_{n} - a_{n}}{n} & = \clsseq{x_{n} - a_{n}}{n} + (\alpha + (-\alpha))            \\
-                                            & = (\clsseq{x_{n} - a_{n}}{n} + \alpha) + (-\alpha)            \\
-                                            & = (\clsseq{x_{n} - a_{n}}{n} + \clsseq{a_{n}}{n}) + (-\alpha) \\
-                                            & = \clsseq{(x_{n} - a_{n}) + a_{n}}{n} + (-\alpha)             \\
-                                            & = \clsseq{x_{n}}{n} + (-\alpha)                               \\
-                                            & = (\alpha + \gamma) + (-\alpha)                               \\
-                                            & = (\gamma + \alpha) + (-\alpha)                               \\
-                                            & = \gamma + (\alpha + (-\alpha))                               \\
-                                            & = \gamma + \clsseq{0}{n} = \gamma.
-              \end{align*}
-
-              Do đó ${(x_{n} - a_{n})}_{n\in\mathbb{N}}$ thuộc lớp tương đương $\gamma$. Hoàn toàn tương tự, chúng ta chứng minh được ${(y_{n} - b_{n})}_{n\in\mathbb{N}}$ thuộc lớp tương đương $\gamma$. Theo Định lý~\ref{theorem:addition-multiplication-and-preorder-of-cauchy-sequences}
-              \begin{align*}
-                  {(x_{n})}_{n\in\mathbb{N}} & = {(x_{n} - a_{n})}_{n\in\mathbb{N}} + {(a_{n})}_{n\in\mathbb{N}}         \\
-                                             & \lesssim  {(y_{n} - b_{n})}_{n\in\mathbb{N}} + {(a_{n})}_{n\in\mathbb{N}} \\
-                                             & \lesssim {(y_{n} - b_{n})}_{n\in\mathbb{N}} + {(b_{n})}_{n\in\mathbb{N}}  \\
-                                             & = {(y_{n})}_{n\in\mathbb{N}}.
-              \end{align*}
+              Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}} \lesssim {(b_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{theorem:addition-multiplication-and-preorder-of-cauchy-sequences}, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$. Với những điều trên, theo Định lý~\ref{theorem:preorder-to-order}, chúng ta suy ra $\alpha + \gamma \leq \beta + \gamma$.
 
               Như vậy, với hai phần tử ${(x_{n})}_{n\in\mathbb{N}}$ và ${(y_{n})}_{n\in\mathbb{N}}$ bất kì của hai lớp tương đương $\alpha + \gamma$ và $\beta + \gamma$, chúng ta có ${(x_{n})}_{n\in\mathbb{N}}\lesssim {(y_{n})}_{n\in\mathbb{N}}$, điều này có nghĩa là $\alpha + \gamma \leq \beta + \gamma$.
         \item  ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ lần lượt là các phần tử của các lớp tương đương $\alpha, \beta$. Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{theorem:addition-multiplication-and-preorder-of-cauchy-sequences} và định nghĩa phép nhân dãy Cauchy hữu tỉ, chúng ta suy ra ${(0)}_{n\in\mathbb{N}} \lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot{(b_{n})}_{n\in\mathbb{N}} = {(a_{n}b_{n})}_{n\in\mathbb{N}}$.
 
               Mặt khác, theo Định lý~\ref{theorem:preorder-to-order} và định nghĩa phép nhân dãy Cauchy hữu tỉ và phép nhân trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
               \begin{align*}
-                  \clsseq{0}{n} \leq \clsseq{a_{n}b_{n}}{n} = \left[{(a_{n})}_{n\in\mathbb{N}}\cdot{(b_{n})}_{n\in\mathbb{N}}\right] = \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \alpha\cdot\beta.
+                  \clsseq{0}{n} \leq \clsseq{a_{n}b_{n}}{n} = \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \alpha\cdot\beta.
               \end{align*}
 
               Vậy nếu các phần tử $\alpha, \beta$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ thỏa mãn $\clsseq{0}{n} \leq \alpha$ và $\clsseq{0}{n}\leq \beta$ thì chúng ta có $\clsseq{0}{n}\leq \alpha\cdot\beta$.
@@ -2509,9 +2491,183 @@ Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ �
 
 \subsection{* Dãy Cauchy hữu tỉ và tiên đề về cận trên}
 
+Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán và quan hệ thứ tự đã chỉ ra trên đây thỏa mãn tiên đề về cận trên. Để kiểm chứng sự thỏa mãn tiên đề về cận trên, chúng ta cũng thực hiện theo hai bước giống như với các tiên đề về trường và các tiên đề về thứ tự: Chứng minh phát biểu dành cho dãy Cauchy hữu tỉ trước, sau đó chứng minh cho lớp tương đương của các các Cauchy hữu tỉ. Tuy nhiên, chúng tôi phát biểu định lý cho lớp tương đương của các các Cauchy hữu tỉ trước.
+
+\begin{theorem}\label{theorem:equivalence-class-cauchy-sequence-and-the-axioms-of-completeness}
+    $S$ là một tập hợp con khác rỗng của tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và $S$ bị chặn trên thì $S$ có cận trên nhỏ nhất.
+\end{theorem}
+
+\begin{theorem}\label{theorem:cauchy-sequence-and-the-axioms-of-completeness}
+    $S$ là một tập hợp khác rỗng với các phần tử là các dãy Cauchy hữu tỉ. $S$ có cận trên là một dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$. Khi đó, tồn tại một dãy Cauchy hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ sao cho
+    \begin{itemize}
+        \item ${(u_{n})}_{n\in\mathbb{N}}$ là một cận trên của $S$.
+        \item Nếu dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$ thì ${(x_{n})}_{n\in\mathbb{N}}$ không phải một cận trên của $S$.
+    \end{itemize}
+\end{theorem}
+
+\noindent Chứng minh dưới đây cho định lý trên mang tư tưởng xây dựng. Đây là một chứng minh dài, bạn đọc có thể tạm gác lại phần chứng minh cho các tính chất của hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ trong chứng minh dưới đây.
+
+\begin{proof}
+    Chúng ta chọn ${(b_{n})}_{n\in\mathbb{N}}$ là một phần tử của $S$. Vì các dãy Cauchy hữu tỉ bị chặn nên tồn tại các số hữu tỉ dương $A$ và $A'$ sao cho với mọi số tự nhiên $n$, có $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq A'$. Chúng ta chọn số hữu tỉ dương $B$ sao cho $A' < B$.
+
+    Chúng ta định nghĩa \textit{đồng thời} hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ bằng quy nạp như sau
+    \begin{itemize}
+        \item $u_{0} = A, \ell_{0} = -B$.
+        \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$.
+        \item Còn nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$.
+    \end{itemize}
+
+    Mục tiêu của chúng ta là chỉ ra ${(u_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ thỏa mãn. Trước đó, chúng ta chứng minh một số tính chất của hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$.
+
+    \begin{enumerate}[label={\textbf{Tính chất \arabic*.}},itemindent=1.7cm]
+        \item Với mỗi số tự nhiên $m$ cố định, dãy số hữu tỉ dừng ${(u_{m})}_{n\in\mathbb{N}}$ là một cận trên của $S$, dãy số hữu tỉ dừng ${(\ell_{m})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+
+              Khi $m = 0$, ${(u_{0})}_{n\in\mathbb{N}}$ là một cận trên của $S$, vì $u_{0} = A$ và $\abs{a_{n}}\leq A$ (với mọi số tự nhiên $n$) trong khi ${(a_{n})}_{n\in\mathbb{N}}$ là một cận trên của $S$. ${(\ell_{0})}_{n\in\mathbb{N}}$ không phải một cận trên của $S$, vì $\ell_{0} = -B$ và ${(-B)}_{n\in\mathbb{N}} < {(-A')}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+
+              Giả sử khi $m = k\geq 0$, ${(u_{k})}_{n\in\mathbb{N}}$ là một cận trên của $S$ và ${(\ell_{k})}_{n\in\mathbb{N}}$ không là cận trên của $S$. Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$, $\ell_{k+1} = \ell_{k}$.
+
+                        Điều này có nghĩa là ${(u_{k+1})}_{n\in\mathbb{N}}$ là cận trên của $S$. Mặt khác, theo giả thiết quy nạp, ${(\ell_{k})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$, $\ell_{k+1} = \dfrac{u_{k}+\ell_{k}}{2}$.
+
+                        Điều này có nghĩa là ${(\ell_{k+1})}_{n\in\mathbb{N}}$ không là cận trên của $S$. Mặt khác, theo giả thiết quy nạp, ${(u_{k+1})}_{n\in\mathbb{N}}$ là một cận trên của $S$.
+              \end{itemize}
+
+              Theo nguyên lý quy nạp toán học, với mỗi số tự nhiên $m$ cố định, dãy số hữu tỉ dừng ${(u_{m})}_{n\in\mathbb{N}}$ là một cận trên của $S$, dãy số hữu tỉ dừng ${(\ell_{m})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+        \item Với mọi số tự nhiên $n$, có $\ell_{n}\leq u_{n}$.
+
+              Với $n = 0$, vì $u_{0} = A$ (một số hữu tỉ dương) và $\ell_{0} = -B$ (một số hữu tỉ âm) nên $\ell_{0}\leq u_{0}$.
+
+              Giả sử với $n = k\geq 0$, $\ell_{k}\leq u_{k}$. Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$. Theo giả thiết quy nạp, chúng ta suy ra $\ell_{k+1}\leq u_{k+1}$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$. Theo giả thiết quy nạp, chúng ta suy ra $\ell_{k+1}\leq u_{k+1}$.
+              \end{itemize}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $n$, có $\ell_{n}\leq u_{n}$.
+        \item ${(u_{n})}_{n\in\mathbb{N}}$ là dãy không tăng và ${(\ell_{n})}_{n\in\mathbb{N}}$ là dãy không giảm.
+
+              Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$.
+
+                        Vì $\ell_{k+1} = \ell_{k}$ nên $\ell_{k}\leq \ell_{k+1}$. Mặt khác, theo \textbf{Tính chất 2}, $\ell_{k}\leq u_{k}$, kéo theo $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}\leq u_{k}$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$.
+
+                        Vì $u_{k+1} = u_{k}$ nên $u_{k+1}\leq u_{k}$. Mặt khác, theo \textbf{Tính chất 2}, $\ell_{k}\leq u_{k}$, kéo theo $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}\geq \ell_{k}$.
+              \end{itemize}
+
+              Vậy với mọi số tự nhiên $n$, có $u_{n+1}\leq u_{n}$ và $\ell_{n+1}\geq \ell_{n}$, kéo theo ${(u_{n})}_{n\in\mathbb{N}}$ là dãy không tăng và ${(\ell_{n})}_{n\in\mathbb{N}}$ là dãy không giảm.
+        \item Với mọi số tự nhiên $m, n$, có $\ell_{m}\leq u_{n}$.
+
+              Theo \textbf{Tính chất 2 và 3}, nếu $m\leq n$ thì $\ell_{m}\leq \ell_{n}\leq u_{n}$, còn nếu $m > n$ thì $\ell_{m}\leq u_{m}\leq u_{n}$.
+
+              Vậy với mọi số tự nhiên $m, n$, có $\ell_{m}\leq u_{n}$.
+        \item Với mọi số tự nhiên $n$, có $u_{n} - \ell_{n} = \dfrac{u_{0} - \ell_{0}}{2^{n}}$.
+
+              Khi $n = 0$, $u_{0} - \ell_{0} = u_{0} - \ell_{0}$.
+
+              Giả sử với $n = k\geq 0$, $u_{k} - \ell_{k} = \dfrac{u_{0} - \ell_{0}}{2^{k}}$. Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$.
+
+                        Cùng với giả thiết quy nạp, chúng ta suy ra $u_{k+1} - \ell_{k+1} = \dfrac{u_{k} - \ell_{k}}{2} = \dfrac{u_{0} - \ell_{0}}{2^{k+1}}$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$.
+
+                        Cùng với giả thiết quy nạp, chúng ta suy ra $u_{k+1} - \ell_{k+1} = \dfrac{u_{k} - \ell_{k}}{2} = \dfrac{u_{0} - \ell_{0}}{2^{k+1}}$.
+              \end{itemize}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $n$, $u_{n} - \ell_{n} = \dfrac{u_{0} - \ell_{0}}{2^{n}}$.
+        \item ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ tương đương.
+
+              Theo \textbf{Tính chất 5} và bất đẳng thức $n+1\leq 2^{n}$, chúng ta suy ra $u_{n} - \ell_{n}\leq \dfrac{u_{0} - \ell_{0}}{n+1} = \dfrac{A+B}{N+1}$ với mọi số tự nhiên $n$. Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+              Chúng ta định nghĩa $N = \floor{\dfrac{A+B}{\varepsilon}}$. Với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  \abs{u_{n} - \ell_{n}}\leq \frac{A + B}{n+1}\leq \frac{A+B}{\floor{\dfrac{A+B}{\varepsilon}} + 1} < \frac{A+B}{\dfrac{A+B}{\varepsilon}} = \varepsilon.
+              \]
+
+              Theo định nghĩa quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ, chúng ta suy ra ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy số hữu tỉ tương đương.
+
+              Vẫn là với số tự nhiên $N$ được định nghĩa trên, khi đó với mọi số tự nhiên $n\geq N$, với mọi số tự nhiên $p$, và theo \textbf{Tính chất 4}, chúng ta có
+              \begin{align*}
+                  \abs{u_{n+p} - u_{n}}       & = u_{n} - u_{n+p}\leq u_{n} - \ell_{n} < \varepsilon,       \\
+                  \abs{\ell_{n+p} - \ell_{n}} & = \ell_{n+p} - \ell_{n}\leq u_{n} - \ell_{n} < \varepsilon.
+              \end{align*}
+
+              Do đó ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ.
+
+              Như vậy ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ tương đương.
+    \end{enumerate}
+
+    Tiếp theo, chúng ta chứng minh ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là các cận trên của $S$.
+
+    Giả sử phản chứng rằng ${(u_{n})}_{n\in\mathbb{N}}$ không phải cận trên của $S$. Khi đó, tồn tại dãy Cauchy hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ thuộc $S$ sao cho ${(s_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N_{0}$ sao cho với mọi số tự nhiên $n\geq N_{0}$, có $u_{n} - s_{n}\leq -q$. Mặt khác, vì ${(s_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ nên với số hữu tỉ dương $\dfrac{q}{2}$, tồn tại số tự nhiên $N_{s}$ sao cho với mọi số tự nhiên $n, m\geq N_{s}$, có $\abs{s_{m} - s_{n}} < \dfrac{-q}{2}$. Chúng ta định nghĩa $N = \max\{ N_{0}, N_{s} \}$, khi đó với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        u_{N} - s_{n} = (u_{N} - s_{N}) + (s_{N} - s_{n}) \leq (-q) + \abs{s_{N} - s_{n}} \leq (-q) + \frac{q}{2} = \frac{-q}{2}
+    \]
+
+    Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, dãy số hữu tỉ dừng ${(u_{N})}_{n\in\mathbb{N}} < {(s_{n})}_{n\in\mathbb{N}}$. Tuy nhiên, điều này mâu thuẫn với \textbf{Tính chất 1} nên giả sử phản chứng là sai. Do đó ${(u_{n})}_{n\in\mathbb{N}}$ là một cận trên của $S$. Mặt khác, vì ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ tương đương nên ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là các cận trên của $S$.
+
+    Giả sử dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$. Cùng với việc ${(u_{n})}_{n\in\mathbb{N}}\sim {(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta suy ra ${(x_{n})}_{n\in\mathbb{N}} < {(\ell_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q'$ sao cho tồn tại số tự nhiên $N_{1}$ sao cho với mọi số tự nhiên $n\geq N_{1}$, có $x_{n} - \ell_{n}\leq -q'$. Mặt khác, vì ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ nên với số hữu tỉ dương $\dfrac{q'}{2}$, tồn tại số tự nhiên $N_{x}$ sao cho với mọi số tự nhiên $n, m\geq N_{x}$, có $\abs{x_{m} - x_{n}} < \dfrac{-q'}{2}$. Chúng ta định nghĩa $N' = \max\{ N_{1}, N_{x} \}$, khi đó với mọi số tự nhiên $n\geq N'$, chúng ta có
+    \[
+        x_{n} - \ell_{N'} = (x_{n} - x_{N'}) + (x_{N'} - \ell_{N'})\leq \abs{x_{n} - x_{N'}} + (-q')\leq \frac{q'}{2} + (-q') = \frac{-q'}{2}
+    \]
+
+    Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, dãy số hữu tỉ dừng ${(\ell_{N'})}_{n\in\mathbb{N}} > {(x_{n})}_{n\in\mathbb{N}}$. Theo \textbf{Tính chất 1}, ${(\ell_{N'})}_{n\in\mathbb{N}}$ không là cận trên của $S$. Do đó ${(x_{n})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+
+    Như vậy, ${(u_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ và là cận trên của $S$, và với mọi dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$ thì ${(x_{n})}_{n\in\mathbb{N}}$ không phải một cận trên của $S$.
+\end{proof}
+
+\begin{proof}[Chứng minh Định lý~\ref{theorem:equivalence-class-cauchy-sequence-and-the-axioms-of-completeness}]
+    Chúng ta định nghĩa tập hợp $S'$ như sau
+    \[
+        S' = \bigcup_{\xi\in S} \xi
+    \]
+
+    Các phần tử của $S$ là các lớp tương đương trên tập hợp $\mathscr{C}_{\mathbb{Q}}$ theo quan hệ $\sim$, các phần tử của các lớp tương đương này là các dãy Cauchy hữu tỉ. Do đó $\xi$ trong định nghĩa trên là phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, và tất cả các phần tử của $S'$ là các dãy Cauchy hữu tỉ.
+
+    Giả sử $\alpha$ là một cận trên của $S$ và ${(a_{n})}_{n\in\mathbb{N}}$ là một phần tử của lớp tương đương $\alpha$. Vì $\alpha$ là cận trên của $S$ nên theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, mỗi phần tử ${(s_{n})}_{n\in\mathbb{N}}$ của $S'$ đều thỏa mãn ${(s_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$. Do đó $S'$ bị chặn trên. Theo Định lý~\ref{theorem:cauchy-sequence-and-the-axioms-of-completeness}, tồn tại dãy Cauchy hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ sao cho ${(u_{n})}_{n\in\mathbb{N}}$ là cận trên của $S'$, và với mọi dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$ thì ${(x_{n})}_{n\in\mathbb{N}}$ không phải một cận trên của $S'$. Theo Định lý~\ref{theorem:preorder-to-order}, $\clsseq{u_{n}}{n}$ là một cận trên của $S$.
+
+    Giả sử $\beta$ là một cận trên của $S$, khi đó mỗi phần tử ${(y_{n})}_{n\in\mathbb{N}}$ của lớp tương đương $\beta$ là một cận trên của $S'$. Theo Định lý~\ref{theorem:cauchy-sequence-and-the-axioms-of-completeness}, không thể có ${(y_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$. Do đó ${(u_{n})}_{n\in\mathbb{N}}\lesssim {(y_{n})}_{n\in\mathbb{N}}$.  Theo Định lý~\ref{theorem:preorder-to-order}, $\clsseq{u_{n}}{n}\leq \clsseq{y_{n}}{n}$. Như vậy $\clsseq{u_{n}}{n}$ là cận trên nhỏ nhất của $S$.
+
+    Vậy $S$ có cận trên nhỏ nhất.
+\end{proof}
+
 \subsection{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
 
+\begin{theorem}
+    Ánh xạ $\iota: \mathbb{Q}\to \mathscr{C}_{\mathbb{Q}}/_{\sim}$ được định nghĩa bởi $\iota(q) = \clsseq{q}{n}$ là một đơn ánh nhưng không phải một song ánh. Bên cạnh đó, với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta có
+    \[
+        \begin{split}
+            \iota(q_{1} + q_{2}) = \iota(q_{1}) + \iota(q_{2}), \\
+            \iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2}), \\
+            q_{1}\leq q_{2} \implies \iota(q_{1})\leq \iota(q_{2}).
+        \end{split}
+    \]
+\end{theorem}
+
+\begin{proof}
+    Nếu $\iota(q_{1}) = \iota(q_{2})$ thì $\clsseq{q_{1}}{n} = \clsseq{q_{2}}{n}$, kéo theo ${(q_{1})}_{n\in\mathbb{N}}\sim {(q_{2})}_{n\in\mathbb{N}}$, dẫn đến $q_{1} = q_{2}$. Do đó $\iota$ là một đơn ánh. Mặt khác, $\iota$ không phải toàn ánh vì không tồn tại số hữu tỉ $q$ nào để lớp tương đương $\iota(q)$ chứa dãy Cauchy hữu tỉ trong Mệnh đề~\ref{proposition:irrational-cauchy-sequence}, kéo theo $\iota$ không phải một toàn ánh. Vì vậy $\iota$ là một đơn ánh nhưng không phải song ánh.
+
+    Theo định nghĩa phép cộng, phép nhân trên $\mathscr{C}_{\mathbb{Q}}$ và $\mathscr{C}_{\mathbb{Q}}/_{\sim}$
+    \begin{align*}
+         & \iota(q_{1} + q_{2}) = \clsseq{q_{1} + q_{2}}{n} = \clsseq{q_{1}}{n} + \clsseq{q_{2}}{n} = \iota(q_{1}) + \iota(q_{2}), \\
+         & \iota(q_{1}q_{2}) = \clsseq{q_{1}q_{2}}{n} = \clsseq{q_{1}}{n}\cdot\clsseq{q_{2}}{n} = \iota(q_{1})\iota(q_{2}).
+    \end{align*}
+
+    Theo định nghĩa quan hệ $\lesssim$ trên $\mathscr{C}_{\mathbb{Q}}$, quan hệ $\leq$ trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và Định lý~\ref{theorem:preorder-to-order}, chúng ta có
+    \[
+        q_{1}\leq q_{2} \implies {(q_{1})}_{n\in\mathbb{N}}\lesssim {(q_{2})}_{n\in\mathbb{N}} \implies \clsseq{q_{1}}{n} \leq \clsseq{q_{2}}{n} \implies \iota(q_{1}) \leq \iota(q_{2}).
+    \]
+\end{proof}
+
+Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất các số hữu tỉ $q$ với lớp tương đương $\clsseq{q}{n}$.
+
 \section{Các mô hình số thực}
+
+\subsection{Lưu ý về tiên đề và mô hình}
 
 \subsection{Sự tương đương của các mô hình số thực}
 
@@ -2519,11 +2675,9 @@ Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ �
 
 \subsection{Âm vô cực và dương vô cực}
 
-\subsection{Nhìn nhận về các tập hợp số}
-
 \section{Tiếp tục từ hệ tiên đề về số thực}
 
-\subsection{Lưu ý về tiên đề và mô hình}
+\subsection{Nhìn nhận về các tập hợp số}
 
 \subsection{Các tiên đề về trường}
 
