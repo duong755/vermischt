@@ -181,13 +181,23 @@ Xây dựng tập hợp số thực là gì? Xây dựng tập hợp số thực
 
 Việc kiểm tra một mô hình có thỏa mãn một hệ tiên đề hay không chính là công việc chứng minh.
 
-\subsection{So sánh hai mô hình: lát cắt Dedekind và dãy Cauchy hữu tỉ}
+\subsection{Tóm tắt hai mô hình số thực: lát cắt Dedekind và dãy Cauchy hữu tỉ}
 
-Chỉ còn lại câu hỏi là làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Trong chương này, chúng tôi giải thích ý tưởng và nêu chi tiết về cả hai cách xây dựng. Cách xây dựng được trình bày trong chương này mang nhiều chi tiết kĩ thuật, đặc biệt là với dãy Cauchy hữu tỉ. Chúng tôi khuyên bạn đọc theo dõi những kết quả chính trước (được đánh dấu là Định lý), chú ý tới thứ tự, bình luận, và không cần nắm bắt chứng minh của tất cả trong lần đọc đầu tiên.
+% introduction
+Chỉ còn lại câu hỏi là làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực (hay mô hình số thực) thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Về mặt lịch sử, việc xây dựng tập hợp số thực bằng dãy Cauchy hữu tỉ được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Sau đó ít năm, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt.
 
-\section{Lát cắt Dedekind}
+% caution
+Trong hai mục tiếp theo của Chương này (Mục~\ref{section:dedekind-cuts} và Mục~\ref{section:rational-cauchy-sequences}), chúng tôi nêu chi tiết về cả hai mô hình số thực. Cách xây dựng được trình bày trong hai mục này mang rất nhiều chi tiết kĩ thuật, đặc biệt là với dãy Cauchy hữu tỉ. Sự tồn tại của Mục~\ref{section:dedekind-cuts} và Mục~\ref{section:rational-cauchy-sequences} trong tài liệu này chỉ nhằm cung cấp một tư liệu tham khảo đầy đủ về hai mô hình cho những ai tò mò và muốn kiểm chứng. Bạn đọc có thể bỏ qua hai mục đó, hoặc theo dõi những kết quả chính trước (được đánh dấu là Định lý) và chú ý tới thứ tự, bình luận thay vì tập trung vào chứng minh của tất cả trong lần đọc đầu tiên.
 
-Trong mục này, không gian mà chúng ta làm việc (định nghĩa và chứng minh các kết quả liên quan đến lát cắt Dedekind) là tập hợp số hữu tỉ.
+Chúng tôi đưa ra mô tả tổng quan và so sánh hai mô hình số thực.
+
+Trong mô hình số thực bằng \textbf{lát cắt Dedekind}, một lát cắt Dedekind được định nghĩa như một tập hợp. Quan hệ thứ tự giữa các lát cắt Dedekind được định nghĩa là quan hệ bao hàm giữa các tập hợp, điều này khiến cho việc kiểm chứng các tiên đề về thứ tự và tiên đề về cận trên trở nên đơn giản. Phần khó khăn trong mô hình này là định nghĩa và chứng minh các tính chất của phép toán cộng và nhân các lát cắt. Việc chứng minh các quan hệ bằng nhau giữa các lát cắt được quy về việc chứng minh hai tập hợp bằng nhau.
+
+Mô hình số thực bằng \textbf{dãy Cauchy hữu tỉ} xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.\@'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực. Mô hình số thực bằng dãy Cauchy hữu tỉ cho phép định nghĩa và chứng minh các tính chất của phép toán cộng và nhân một cách khá dễ dàng. Tuy nhiên, với quan hệ tiền thứ tự, quan hệ thứ tự, và đặc biệt là tiên đề cận trên, việc định nghĩa và chứng minh lại khó khăn hơn so với mô hình số thực bằng lát cắt Dedekind.
+
+Lát cắt Dedekind và dãy Cauchy không chỉ được sử dụng để xây dựng tập hợp số thực (hay còn được nói là đầy đủ hóa tập hợp số hữu tỉ thành tập hợp số thực). Các kĩ thuật, ý tưởng của hai mô hình này còn được áp dụng, tổng quát hóa cho những đối tượng khác. Chẳng hạn, lát cắt Dedekind được sử dụng cho các tập hợp được sắp toàn phần, còn dãy Cauchy được áp dụng trong những tập hợp mà trên đó đã được định nghĩa thế nào là khoảng cách giữa các phần tử (không gian metric).
+
+\section{Lát cắt Dedekind}\label{section:dedekind-cuts}
 
 \subsection{Định nghĩa lát cắt Dedekind}
 
@@ -195,7 +205,7 @@ Trong phần mở đầu của chương này, chúng tôi có đưa ra một đ�
 
 \begin{definition}[Lát cắt Dedekind]
     Một lát cắt Dedekind\index{Lát cắt Dedekind} trong một tập hợp $S$ được sắp thứ tự toàn phần là một phân hoạch gồm hai tập hợp $A, B$ sao cho
-    \begin{enumerate}[label={(DC\arabic*)}]
+    \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
         \item $A$ khác rỗng và $A$ không phải toàn bộ tập hợp $S$.
         \item Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$.
         \item $A$ không có phần tử lớn nhất.
@@ -217,7 +227,7 @@ Trong phần mở đầu của chương này, chúng tôi có đưa ra một đ�
     \]
 
     trong đó $q$ là một số hữu tỉ, là một lát cắt. Chúng ta kiểm tra điều này qua từng điều trong định nghĩa lát cắt.
-    \begin{enumerate}[label={(DC\arabic*)}]
+    \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
         \item $A$ khác rỗng vì $q - 1$ là một phần tử của $A$. Bên cạnh đó, $A$ cũng không phải toàn bộ tập hợp số hữu tỉ vì $q$ không phải một phần tử của $A$.
         \item $B = \mathbb{Q} - A = \{ x \mid x\in\mathbb{Q} \wedge q\leq x \}$. Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ theo tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
         \item $A$ không có phần tử lớn nhất vì với mỗi phần tử $x$ của $A$, chúng ta luôn tìm được một phần tử khác lớn hơn, chẳng hạn như $\frac{q + x}{2}$.
@@ -355,7 +365,7 @@ Như vậy, một lát cắt $A$ là không âm nếu và chỉ nếu $O\leq A$,
 
 \begin{proof}
     Chúng ta kiểm tra từng điều kiện của một lát cắt.
-    \begin{enumerate}[label={(DC\arabic*)}]
+    \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
         \item Vì $A$ và $B$ khác rỗng nên tồn tại hai số hữu tỉ $a$ và $b$ lần lượt thuộc $A$ và $B$. Theo định nghĩa của tập hợp $A + B$ thì $a + b$ là một phần tử của $A + B$. Do đó tập hợp $A + B$ khác rỗng.
         \item Chúng ta chọn $c$ là một cận trên của $A$, và $d$ là một cận trên của $B$. Với mọi phần tử $a$ thuộc $A$ và $b$ thuộc $B$, chúng ta có $a + b\leq c + b \leq c + d$. Do đó $A + B$ không phải toàn bộ tập hợp số hữu tỉ.
         \item Chúng ta chọn $a + b$ là một phần tử bất kì của tập hợp $A + B$, trong đó $a$ thuộc $A$ và $b$ thuộc $B$. Vì $A$ là một lát cắt nên $A$ không có phần tử lớn nhất, do đó tồn tại phần tử $a'$ của $A$ sao cho $a < a'$. Từ việc $a < a'$, chúng ta suy ra $a + b < a' + b$. Do đó trong tập hợp $A + B$, với mỗi phần tử, luôn tồn tại phần tử lớn hơn, kéo theo $A + B$ không có phần tử lớn nhất.
@@ -1269,7 +1279,7 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
 
 \begin{proof}
     \begin{enumerate}[label={(\roman*)}]
-        \item Giả sử $\iota(q_{1}) = \iota(q_{2})$. Giả sử phản chứng rằng $q_{1} < q_{2}$, khi đó $q_{1}$ thuộc $\iota(q_{2})$ và $\iota(q_{1})\subset \iota(q_{2})$. Giả sử phản chứng rằng $q_{2} < q_{1}$, khi đó $q_{2}$ thuộc $\iota(q_{1})$ và $\iota(q_{2})\subset \iota(q_{1})$. thì $q_{1}$ thuộc $\iota(q_{2})$ và $q_{2}$ thuộc $\iota(q_{1})$. Do đó giả sử phản chứng là sai, kéo theo $q_{1} = q_{2}$. Như vậy $\iota$ là một đơn ánh.
+        \item Giả sử $\iota(q_{1}) = \iota(q_{2})$. Giả sử phản chứng rằng $q_{1} < q_{2}$, khi đó $q_{1}$ thuộc $\iota(q_{2})$ và $\iota(q_{1})\subset \iota(q_{2})$. Giả sử phản chứng rằng $q_{2} < q_{1}$, khi đó $q_{2}$ thuộc $\iota(q_{1})$ và $\iota(q_{2})\subset \iota(q_{1})$. Do đó giả sử phản chứng là sai, kéo theo $q_{1} = q_{2}$. Như vậy $\iota$ là một đơn ánh.
 
               Theo Mệnh đề~\ref{proposition:irrational-cut}, $S = \{ x \mid x\in\mathbb{Q}, 0 < x \text{ và } x^{2} < 2 \}$ là một lát cắt. Giả sử phản chứng rằng tồn tại số hữu tỉ $q$ sao cho $\iota(q) = S$. Cũng theo Mệnh đề~\ref{proposition:irrational-cut}, $\mathbb{Q}\setminus S$ không có phần tử nhỏ nhất. Mà $\mathbb{Q}\setminus\iota(q)$ có phần tử nhỏ nhất là $q$. Do đó $\iota(q)\ne S$. Như vậy không tồn tại số hữu tỉ $q$ nào sao cho $\iota(q) = S$, điều này có nghĩa là $\iota$ không phải một toàn ánh, và cũng không phải một song ánh.
 
@@ -1351,13 +1361,7 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
 
 Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất các số hữu tỉ $q$ với lát cắt $q^{*}$.
 
-\section{Dãy Cauchy hữu tỉ}
-
-Một cách khác để xây dựng tập hợp số thực là sử dụng dãy Cauchy hữu tỉ. Cách tiếp cận này được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Về sau, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt. Ý tưởng xây dựng tập hợp số thực bằng dãy Cauchy xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực.
-
-\subsection{Tóm tắt}
-
-% pending
+\section{Dãy Cauchy hữu tỉ}\label{section:rational-cauchy-sequences}
 
 \subsection{Dãy số hữu ti và dãy Cauchy hữu tỉ}
 
@@ -1728,8 +1732,7 @@ Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng đi
 
               Giả sử phản chứng rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ hội tụ    đến số hữu tỉ $x$.
 
-              Theo phần (iii) của Mệnh đề~\ref{proposition:limits-of-sum-and-product}, chúng ta suy ra dãy số ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $x^{2}$. Theo Định lý~
-              \ref{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}, chúng ta suy ra $x^{2} = 2$.
+              Theo phần (iii) của Mệnh đề~\ref{proposition:limits-of-sum-and-product}, chúng ta suy ra dãy số ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $x^{2}$. Theo Định lý~\ref{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}, chúng ta suy ra $x^{2} = 2$.
 
               Theo Mệnh đề~\ref{proposition:irrational-cut}, không có số hữu tỉ nào có bình phương bằng $2$. Do đó $x^{2} = 2$ (với $x$ là số hữu tỉ) là một kết quả vô lý. Như vậy giả sử phản chứng là sai, kéo theo dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến số hữu tỉ nào.
     \end{enumerate}
@@ -2018,7 +2021,7 @@ Một cách không hình thức, chúng ta có thể diễn đạt định nghĩ
 \end{theorem}
 
 \begin{proof}
-    \begin{enumerate}[label=(\roman*)]
+    \begin{enumerate}[label={(\roman*)}]
         \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất kết hợp của phép nhân số hữu tỉ, chúng ta có
               \begin{align*}
                   \left(\clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n}\right) \cdot \clsseq{c_{n}}{n} & = \clsseq{a_{n}b_{n}}{n} \cdot \clsseq{c_{n}}{n}                                 \\
@@ -2279,7 +2282,7 @@ Bằng định lý trên, chúng ta chứng minh được điều kiện cần v
 
               Chúng ta định nghĩa $q = q_{ab} + q_{bc}$, $N = \max\{ N_{ab}, N_{bc} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có
               \[
-                  a_{n} - c_{n} = (a_{n} - b_{n}) + (b_{n} - c_{n}) \leq (-q_{ab}) + (-q_{bc}) = -q .
+                  a_{n} - c_{n} = (a_{n} - b_{n}) + (b_{n} - c_{n}) \leq (-q_{ab}) + (-q_{bc}) = -q.
               \]
 
               Theo Định lý~\ref{theorem:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} < {(c_{n})}_{n\in\mathbb{N}}$, kéo theo ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$.
@@ -2685,9 +2688,9 @@ Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán
 
 \subsection{Tính đầy đủ-Dedekind và tính đầy đủ-Cauchy}
 
-\subsection{Giới hạn hàm số và tính liên tục}
-
 \subsection{Hàm lũy thừa}
 
 \subsection{Hàm mũ và hàm logarithm}
+
+\subsection{Giới hạn hàm số và tính liên tục}
 
