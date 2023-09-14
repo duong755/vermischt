@@ -1798,7 +1798,7 @@ Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực
 
               Theo định nghĩa dãy số hữu tỉ hội tụ, dãy số hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
 
-              ($\Rightarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+              ($\Leftarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
 
               Hoàn toàn tương tự, chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - q} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ thì tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \varepsilon$.
 
@@ -1810,26 +1810,26 @@ Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực
               Theo định nghĩa dãy số hữu tỉ hội tụ, dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
         \item ($\Rightarrow$) ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
 
-              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{n} - a_{m}} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{4}$.
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{n} - a_{m}} < \dfrac{\varepsilon}{3}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{3}$.
 
               Chúng ta chọn số tự nhiên $N = \max\{ N_{a}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n, m\geq N$, chúng ta có
               \begin{align*}
                   \abs{b_{m} - b_{n}} & = \abs{(b_{m} - a_{m}) + (a_{m} - a_{n}) + (a_{n} - b_{n})}                            \\
                                       & \leq \abs{b_{m} - a_{m}} + \abs{a_{m} - a_{n}} + \abs{a_{n} - b_{n}}                   \\
-                                      & < \frac{\varepsilon}{4} + \frac{\varepsilon}{2} + \frac{\varepsilon}{4} = \varepsilon.
+                                      & < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
               \end{align*}
 
               Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{b_{m} - b_{n}} < \varepsilon$. Do đó ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
 
-              ($\Rightarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+              ($\Leftarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
 
-              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{n} - b_{m}} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{4}$.
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{n} - b_{m}} < \dfrac{\varepsilon}{3}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{3}$.
 
               Chúng ta chọn số tự nhiên $N = \max\{ N_{b}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n, m\geq N$, chúng ta có
               \begin{align*}
                   \abs{a_{m} - a_{n}} & = \abs{(a_{m} - b_{m}) + (b_{m} - b_{n}) + (b_{n} - a_{n})}                            \\
                                       & \leq \abs{a_{m} - b_{m}} + \abs{b_{m} - b_{n}} + \abs{b_{n} - a_{n}}                   \\
-                                      & < \frac{\varepsilon}{4} + \frac{\varepsilon}{2} + \frac{\varepsilon}{4} = \varepsilon.
+                                      & < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
               \end{align*}
 
               Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
@@ -2674,7 +2674,7 @@ Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán
 
 \subsection{* Sự tương đương của các mô hình số thực}
 
-\subsection{Số hữu tỉ và số vô tỉ}
+\subsection{Số thực và số hữu tỉ}
 
 \subsection{Âm vô cực và dương vô cực}
 
