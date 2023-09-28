@@ -6,6 +6,7 @@
 \usepackage{amsmath,amsthm,amssymb,amsfonts,amscdx,mathtools,mathrsfs}
 \usepackage{pxfonts}
 \usepackage{imakeidx}
+\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
 \usepackage{tocloft}
 \usepackage{hyperref}
 \usepackage{array}
@@ -55,13 +56,15 @@
 \newcommand{\clsseq}[2]{\left[{\left({#1}\right)}_{{#2}\in\mathbb{N}}\right]} % equivalence class of Cauchy sequences
 \newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor} % floor function
 
-\makeindex[columns=2]
+\newcommand{\settheoryversion}{2023.12}
+\makeindex[intoc=true,columns=2]
+\addbibresource{main.bib}
 
 \captionsetup{labelsep={period},justification={centerlast},labelfont={bf,sc}}
 
 \title{Lý thuyết tập hợp và các tập hợp số}
 \author{random}
-\date{\today}
+\date{\settheoryversion}
 
 \begin{document}
 
@@ -92,5 +95,6 @@
 \chapter{Đọc thêm}
 
 \printindex
+\printbibliography[heading=bibintoc,title={Tài liệu tham khảo}]
 
 \end{document}

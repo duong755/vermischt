@@ -1723,7 +1723,7 @@ Chứng minh dưới đây cho thuật toán Euclid sử dụng nguyên lý th�
 Một số nguyên $d$ được gọi là ước chung\index{Ước chung} của hai số nguyên $a$ và $b$ nếu $d$ là ước của $a$ và $d$ là ước của $b$. Hai số nguyên bất kì luôn có ít nhất hai ước chung, đó là $1$ và $(-1)$. Ước chung của hai số nguyên có tính chất sau.
 
 \begin{theorem}\label{theorem:linear-combination-and-common-divisor}
-    Nếu số nguyên $d$ là ước chung của hai số nguyên $a$ và $b$ thì $d$ là ước của $ax + by$ với mọi số nguyên $x, y$. (Chúng ta gọi số nguyên viết được dưới dạng $ax + by$ là một \textbf{tổ hợp tuyến tính} của $a$ và $b$, trong đó $x, y$ là các số nguyên).
+    Nếu số nguyên $d$ là ước chung của hai số nguyên $a$ và $b$ thì $d$ là ước của $ax + by$ với mọi số nguyên $x, y$. (Chúng ta gọi số nguyên viết được dưới dạng $ax + by$ là một \textbf{tổ hợp tuyến tính\index{Tổ hợp tuyến tính của hai số nguyên}} của $a$ và $b$, trong đó $x, y$ là các số nguyên).
 \end{theorem}
 
 \begin{proof}
@@ -1748,7 +1748,7 @@ Một số nguyên $d$ được gọi là ước chung\index{Ước chung} của
     Do đó, tổng của $ax_{1} + by_{1}$ và $ax_{2} + by_{2}$ là một tổ hợp tuyến tính của $a$ và $b$.
 \end{proof}
 
-Ước của một số nguyên khác $0$ không thể lớn tùy ý.
+\noindent Định lý dưới đây khẳng định rằng ước của một số nguyên khác $0$ không thể lớn tùy ý.
 \begin{theorem}\label{theorem:bound-of-divisors}
     Nếu số nguyên $a$ là ước của số nguyên $b\ne 0$ thì $\abs{a}\leq \abs{b}$.
 \end{theorem}
@@ -1844,9 +1844,7 @@ Chúng ta sử dụng bổ đề sau ở những lập luận cuối cùng của
 
               Theo mệnh đề vừa chứng minh, $r_{0} - (r_{0} + 1)\geq r_{r_{0} + 1}$, kéo theo $r_{r_{0} + 1}\leq -1$, hay $r_{r_{0} + 1}$ là số nguyên âm. Điều này mâu thuẫn với định nghĩa số dư. Do đó giả sử phản chứng là sai, tức là quy trình áp dụng thuật toán chia Euclid sẽ dừng. Như vậy, tồn tại số nguyên dương $k$ sao cho $r_{k} = 0$.
 
-              Theo bổ đề trên và phần (i), $\text{gcd}(a, b) = \text{gcd}(b, r_{0}) = \text{gcd}(b_{i}, r_{i})$ (với mọi số nguyên dương $i$ không vượt quá $k$). $\text{gcd}(b_{k}, r_{k}) = \text{gcd}(b_{k}, 0) = \abs{b_{k}}$.
-
-              Vậy, $\text{gcd}(a, b) = \abs{b_{k}}$.
+              Theo bổ đề trên và phần (i), $\text{gcd}(a, b) = \text{gcd}(b, r_{0}) = \text{gcd}(b_{i}, r_{i})$ (với mọi số nguyên dương $i$ không vượt quá $k$), và $\text{gcd}(b_{k}, r_{k}) = \text{gcd}(b_{k}, 0) = \abs{b_{k}}$. Vậy, $\text{gcd}(a, b) = \abs{b_{k}}$.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -1866,7 +1864,7 @@ Một trong những kết quả sơ cấp sâu sắc nhất về ước chung l�
 
     $a$ và $b$ không đồng thời bằng $0$. Không mất tính tổng quát, chúng ta giả sử $b\ne 0$. Khi đó $a\cdot 0 + b\cdot b = b\cdot b > 0$ là một phần tử của $S$. Do đó tập hợp $S$ khác rỗng. $S$ là tập hợp con của tập hợp các số nguyên dương nên theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Kí hiệu phần tử nhỏ nhất của $S$ là $g$. Như vậy tồn tại các số nguyên $x, y$ sao cho $g = a x + b y$. Chúng ta chứng minh rằng $g$ chính là ước chung lớn nhất của $a$ và $b$.
 
-    Giả sử $d$ là ước chung của $a$ và $b$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $c$ là ước của $a x + b y = g$. Theo Định lý~\ref{theorem:bound-of-divisors}, $\abs{d}\leq g$. Mà $d\leq \abs{d}$ nên theo tính chất bắc cầu, $d\leq g$. Do đó $d$ là ước chung lớn nhất của $a$ và $b$.
+    Giả sử $d$ là ước chung của $a$ và $b$. Theo Định lý~\ref{theorem:linear-combination-and-common-divisor}, $d$ là ước của $a x + b y = g$. Theo Định lý~\ref{theorem:bound-of-divisors}, $\abs{d}\leq g$. Mà $d\leq \abs{d}$ nên theo tính chất bắc cầu, $d\leq g$. Do đó $g$ là ước chung lớn nhất của $a$ và $b$.
 \end{proof}
 
 Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B\'{e}zout cung cấp một thuật toán để tìm hai số nguyên $x$ và $y$ như vậy. Để hiểu rõ chứng minh hơn, chúng ta quay lại với ví dụ tìm ước chung lớn nhất của $1597$ và $986$.
@@ -1886,7 +1884,7 @@ Chứng minh bằng thuật toán Euclid mở rộng cho đồng nhất thức B
                               & = 305\cdot \mathbf{1597} + (-494)\cdot \mathbf{986}.
     \end{align*}
 
-    Chúng ta tìm được một cặp số $x = 305, y = -494$.
+    Chúng ta tìm được một cặp số $(x, y) = (305, -494)$.
 \end{example}
 
 \begin{proof}[Chứng minh cho đồng nhất thức B\'{e}zout bằng thuật toán Euclid mở rộng]
@@ -1986,17 +1984,17 @@ Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
 
 Từ định nghĩa số hữu tỉ, chúng ta có định lý sau, thường được gọi là tính chất cơ bản của phân số.
 \begin{theorem}\label{theorem:fundamental-property-of-fraction}
-    Nếu $a, b, c$ là các số nguyên và $b, c$ khác $0$ thì $\dfrac{a}{b} = \frac{ac}{bc} = \frac{ca}{cb}$.
+    Nếu $a, b, c$ là các số nguyên và $b, c$ khác $0$ thì $\dfrac{a}{b} = \dfrac{ac}{bc} = \dfrac{ca}{cb}$.
 \end{theorem}
 
 \begin{theorem}[Phân số tối giản\index{Phân số tối giản}]
-    Một phân số được gọi là \textbf{phân số tối giản} khi và chỉ khi tử số và mẫu số là nguyên tố cùng nhau và mẫu số là một số nguyên dương. Với mỗi số hữu tỉ $\dfrac{a}{b}$, tồn tại duy nhất phân số tối giản $\dfrac{x}{y}$ sao cho $\dfrac{a}{b} = \frac{x}{y}$.
+    Một phân số được gọi là \textbf{phân số tối giản} khi và chỉ khi tử số và mẫu số là nguyên tố cùng nhau và mẫu số là một số nguyên dương. Với mỗi số hữu tỉ $\dfrac{a}{b}$, tồn tại duy nhất phân số tối giản $\dfrac{x}{y}$ sao cho $\dfrac{a}{b} = \dfrac{x}{y}$.
 \end{theorem}
 
 \begin{proof}
-    $\dfrac{a}{b}$ là một số hữu tỉ. Không mất tính tổng quát, chúng ta có thể giả sử $b$ là số nguyên dương. Chúng ta kí hiệu $g$ là ước chung lớn nhất của $a$ và $b$. Chọn $x = a/g$ và $y = b/g$ thì $x, y$ nguyên tố cùng nhau và $\dfrac{a}{b} = \frac{x}{y}$.
+    $\dfrac{a}{b}$ là một số hữu tỉ. Không mất tính tổng quát, chúng ta có thể giả sử $b$ là số nguyên dương. Chúng ta kí hiệu $g$ là ước chung lớn nhất của $a$ và $b$. Chọn $x = a/g$ và $y = b/g$ thì $x, y$ nguyên tố cùng nhau và $\dfrac{a}{b} = \dfrac{x}{y}$. Theo định nghĩa phân số tối giản, $\dfrac{x}{y}$ là một phân số tối giản.
 
-    Giả sử $\dfrac{m}{n}$ là một phân số tối giản sao cho $\dfrac{m}{n} = \frac{a}{b}$. Khi đó $\dfrac{m}{n} = \frac{x}{y}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta suy ra $m y = n x$.
+    Giả sử $\dfrac{m}{n}$ là một phân số tối giản sao cho $\dfrac{m}{n} = \dfrac{a}{b}$. Khi đó $\dfrac{m}{n} = \dfrac{x}{y}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta suy ra $m y = n x$.
 
     Chúng ta xét hai trường hợp.
 
@@ -2012,7 +2010,7 @@ Từ định nghĩa số hữu tỉ, chúng ta có định lý sau, thường đ
 
     Theo Đinh lý~\ref{theorem:bound-of-divisors}, $\abs{m} \leq \abs{x}, \abs{x} \leq \abs{m}$ và $\abs{n} \leq \abs{y}, \abs{y} \leq \abs{n}$. Theo tính chất phản đối xứng, chúng ta suy ra $\abs{x} = \abs{m}$ và $\abs{y} = \abs{n}$. Vì $y$ và $n$ là hai số nguyên dương nên $\abs{y} = \abs{n}$ kéo theo $y = n$. Bên cạnh đó, $m y = n x$ nên $(m - x) n = 0$, kéo theo $x = m$.
 
-    Vậy với mỗi số hữu tỉ $\dfrac{a}{b}$, tồn tại duy nhất phân số tối giản $\dfrac{x}{y}$ sao cho $\dfrac{a}{b} = \frac{x}{y}$.
+    Vậy với mỗi số hữu tỉ $\dfrac{a}{b}$, tồn tại duy nhất phân số tối giản $\dfrac{x}{y}$ sao cho $\dfrac{a}{b} = \dfrac{x}{y}$.
 \end{proof}
 
 \subsection{* Các phép toán trên tập hợp số hữu tỉ}
@@ -2026,7 +2024,7 @@ Từ định nghĩa số hữu tỉ, chúng ta có định lý sau, thường đ
 
 Giống như với phép cộng hai số nguyên, chúng ta cũng cần chỉ ra định nghĩa phép cộng hai số hữu tỉ không phụ thuộc vào cách chọn đại diện của lớp tương đương. Điều này được khẳng định bởi mệnh đề dưới đây.
 \begin{proposition}
-    Nếu các số hữu tỉ $\dfrac{a_{1}}{b_{1}}, \frac{c_{1}}{d_{1}}, \frac{a_{2}}{b_{2}}, \frac{c_{2}}{d_{2}}$ thỏa mãn $\dfrac{a_{1}}{b_{1}} = \frac{a_{2}}{b_{2}}$ và $\dfrac{c_{1}}{d_{1}} = \frac{c_{2}}{d_{2}}$ thì
+    Nếu các số hữu tỉ $\dfrac{a_{1}}{b_{1}}$, $\dfrac{c_{1}}{d_{1}}$, $\dfrac{a_{2}}{b_{2}}$, $\dfrac{c_{2}}{d_{2}}$ thỏa mãn $\dfrac{a_{1}}{b_{1}} = \dfrac{a_{2}}{b_{2}}$ và $\dfrac{c_{1}}{d_{1}} = \dfrac{c_{2}}{d_{2}}$ thì
     \[
         \frac{a_{1}}{b_{1}} + \frac{c_{1}}{d_{1}} = \frac{a_{2}}{b_{2}} + \frac{c_{2}}{d_{2}}.
     \]
@@ -2041,7 +2039,7 @@ Giống như với phép cộng hai số nguyên, chúng ta cũng cần chỉ ra
         \end{split}
     \]
 
-    Chúng ta sẽ chứng minh $\dfrac{a_{1} d_{1} + b_{1} c_{1}}{b_{1} d_{1}} = \frac{a_{2} d_{2} + b_{2} c_{2}}{b_{2} d_{2}}$.
+    Chúng ta sẽ chứng minh $\dfrac{a_{1} d_{1} + b_{1} c_{1}}{b_{1} d_{1}} = \dfrac{a_{2} d_{2} + b_{2} c_{2}}{b_{2} d_{2}}$.
     \begin{align*}
             & (a_{1} d_{1} + b_{1} c_{1}) (b_{2} d_{2})                                                                                           \\
         =\  & (a_{1} d_{1}) (b_{2} d_{2}) + (b_{1} c_{1}) (b_{2} d_{2}) & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
@@ -2069,9 +2067,9 @@ Trong trường hợp phân số của hai số hữu tỉ có cùng mẫu số,
 
 \begin{proof}
     Theo định nghĩa phép cộng số hữu tỉ và tính chất giao hoán, phân phối của phép nhân với phép cộng số nguyên
-    \begin{align*}
-        \frac{a}{b} + \frac{c}{b} = \frac{ab + bc}{bb} = \frac{ab + cb}{bb} = \frac{(a + c)b}{bb} = \frac{a + c}{b}.
-    \end{align*}
+    \[
+        \frac{a}{b} + \frac{c}{b} = \frac{ab + bc}{bb} = \frac{ab + cb}{bb} = \frac{(a + c)b}{bb} = \frac{a + c}{b}.\qedhere
+    \]
 \end{proof}
 
 Giống với phép cộng số nguyên, phép cộng số hữu tỉ có đủ bốn tính chất sau đây.
@@ -2084,7 +2082,7 @@ Giống với phép cộng số nguyên, phép cộng số hữu tỉ có đủ 
               \]
         \item Với mọi số hữu tỉ $\dfrac{a}{b}$, chúng ta có
               \[
-                  \frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}
+                  \frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}.
               \]
         \item Với mọi số hữu tỉ $\dfrac{a}{b}$, chúng ta có
               \[
@@ -2132,20 +2130,20 @@ Kế tiếp phần (ii) và (iii) của định lý trên, chúng ta có kết q
     Trong tập hợp số hữu tỉ.
     \begin{enumerate}[label={(\roman*)}]
         \item Tồn tại đúng một số hữu tỉ là \textbf{phần tử đồng nhất của phép cộng}. Nói cách khác, tồn tại duy nhất số hữu tỉ $\theta$ sao cho với mọi số hữu tỉ $q$, có $q + \theta = \theta + q = q$.
-        \item Với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q'$ là \textbf{phần tử đối}, hay \textbf{số hữu tỉ đối} của $q$. Nói cách khác, với mỗi số hữu tỉ $q$, tồn tại duy nhất số hữu tỉ $q'$ sao cho $q + q' = q' + q = \frac{0}{1}$.
+        \item Với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q'$ là \textbf{phần tử đối}, hay \textbf{số hữu tỉ đối} của $q$. Nói cách khác, với mỗi số hữu tỉ $q$, tồn tại duy nhất số hữu tỉ $q'$ sao cho $q + q' = q' + q = \dfrac{0}{1}$.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof}
     \begin{enumerate}[label={(\roman*)}]
-        \item Theo phần (ii) của Định lý~\ref{theorem:property-of-rational-numbers-addition}, với mọi số hữu tỉ $q$, có $q + \frac{0}{1} = \frac{0}{1} + q = q$.
+        \item Theo phần (ii) của Định lý~\ref{theorem:property-of-rational-numbers-addition}, với mọi số hữu tỉ $q$, có $q + \dfrac{0}{1} = \dfrac{0}{1} + q = q$.
 
-              Giả sử số hữu tỉ $\theta$ thỏa mãn $q + \theta = \theta + q = q$ với mọi số hữu tỉ $q$. Khi đó $\theta = \theta + \frac{0}{1} = \frac{0}{1}$.
+              Giả sử số hữu tỉ $\theta$ thỏa mãn $q + \theta = \theta + q = q$ với mọi số hữu tỉ $q$. Khi đó $\theta = \theta + \dfrac{0}{1} = \dfrac{0}{1}$.
 
-              Như vậy tồn tại duy nhất phần tử đồng nhất của phép cộng và phần tử đó là $\dfrac{0}{1}$.
-        \item Theo phần (iii) của Định lý~\ref{theorem:property-of-rational-numbers-addition}, với mỗi số hữu tỉ $q$, tồn tại số hữu tỉ $q'$ sao cho $q + q' = q' + q = \frac{0}{1}$.
+              Như vậy tồn tại duy nhất phần tử đồng nhất của phép cộng số hữu tỉ và phần tử đó là $\dfrac{0}{1}$.
+        \item Theo phần (iii) của Định lý~\ref{theorem:property-of-rational-numbers-addition}, với mỗi số hữu tỉ $q$, tồn tại số hữu tỉ $q'$ sao cho $q + q' = q' + q = \dfrac{0}{1}$.
 
-              Giả sử số hữu tỉ $q''$ thỏa mãn $q + q'' = q'' + q = \frac{0}{1}$. Khi đó
+              Giả sử số hữu tỉ $q''$ thỏa mãn $q + q'' = q'' + q = \dfrac{0}{1}$. Khi đó
               \[
                   q'' = q'' + \frac{0}{1} = q'' + (q + q') = (q'' + q) + q' = \frac{0}{1} + q' = q'.
               \]
@@ -2163,7 +2161,7 @@ Từ định lý trên, chúng ta định nghĩa phép trừ hai số hữu tỉ
 \end{definition}
 
 \begin{definition}[Phép nhân số hữu tỉ\index{Phép nhân số hữu tỉ}]
-    Phép nhân hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $\cdot$. Với hai số hữu tỉ $\dfrac{a}{b}$ và $\dfrac{c}{d}$, chúng ta kí hiệu kết quả của phép nhân hai số hữu tỉ này là $\dfrac{a}{b}\cdot\dfrac{c}{d}$ và
+    Phép nhân hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $\cdot$. Với hai số hữu tỉ $\dfrac{a}{b}$ và $\dfrac{c}{d}$, chúng ta kí hiệu kết quả của phép nhân hai số hữu tỉ này là $\dfrac{a}{b}\cdot\dfrac{c}{d}$ và định nghĩa
     \[
         \frac{a}{b}\cdot\frac{c}{d} = \frac{ac}{bd}.
     \]
@@ -2204,7 +2202,7 @@ Với hai số nguyên $a, b$, số nguyên $k$ thỏa mãn $ka = b$ tồn tại
     \]
 \end{proposition}
 
-Phép nhân hai số hữu tỉ cũng có những tính chất tương tự với phép nhân hai số nguyên. Ngoài ra, phép nhân số hữu tỉ có tính chất khác mà phép nhân hai số nguyên không có.
+Phép nhân hai số hữu tỉ cũng có những tính chất tương tự với phép nhân hai số nguyên. Ngoài ra, phép nhân số hữu tỉ có tính chất mà phép nhân hai số nguyên không có.
 \begin{theorem}\label{theorem:property-of-rational-numbers-multiplication}
     Trong tập hợp số hữu tỉ
     \begin{enumerate}[label={(\roman*)}]
@@ -2264,7 +2262,7 @@ Phép nhân hai số hữu tỉ cũng có những tính chất tương tự vớ
                   \frac{1}{1}\cdot\frac{1}{1} = \frac{1\cdot a}{1\cdot b} = \frac{a}{b}.
               \end{align*}
 
-              Vậy với mọi số hữu tỉ $q$, chúng ta có $q\cdot\frac{1}{1} = \frac{1}{1}\cdot q = q$.
+              Vậy với mọi số hữu tỉ $q$, chúng ta có $q\cdot\dfrac{1}{1} = \dfrac{1}{1}\cdot q = q$.
         \item Theo định nghĩa phép nhân hai số hữu tỉ và tính chất giao hoán của phép nhân hai số nguyên, chúng ta có
               \[
                   \frac{a}{b}\cdot\frac{c}{d} = \frac{ac}{bd} = \frac{ca}{db} = \frac{c}{d}\cdot\frac{a}{b}.
@@ -2329,7 +2327,7 @@ Phép nhân hai số hữu tỉ cũng có những tính chất tương tự vớ
     \end{enumerate}
 \end{proof}
 
-Tương tự như sự tồn tại của phần tử đối được dùng để định nghĩa phép trừ, chúng ta dùng sự tồn tại của phần tử nghịch đảo để định nghĩa phép chia.
+Tương tự như sự tồn tại của phần tử đối được dùng để định nghĩa phép trừ, chúng ta dùng sự tồn tại duy nhất của phần tử nghịch đảo để định nghĩa phép chia.
 \begin{definition}[Phép chia hai số hữu tỉ]
     Kết quả của phép chia một số hữu tỉ $q_{1}$ cho một số hữu tỉ $q_{2}\ne\dfrac{0}{1}$ là kết quả của phép nhân $q_{1}$ với phần tử nghịch đảo của $q_{2}$. Chúng ta kí hiệu phép chia hai số hữu tỉ như sau
     \[
@@ -2357,7 +2355,7 @@ Trong mục này, chúng ta đưa ra một quan hệ thứ tự trên tập hợ
 \begin{proof}
     Với mỗi số hữu tỉ $\dfrac{a}{b}$, chúng ta có $abbb\leq abbb$. Theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $\dfrac{a}{b}\leq\dfrac{a}{b}$. Do đó quan hệ $\leq$ trên tập hợp số hữu tỉ có tính chất phản xạ.
 
-    Nếu các số hữu tỉ $\dfrac{a}{b}$, $\dfrac{c}{d}$, $\dfrac{x}{y}$ thỏa mãn $\dfrac{a}{b}\leq \dfrac{c}{d}$ và $\dfrac{c}{d}\leq\dfrac{x}{y}$ thì theo ịnh nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $abdd \leq cdbb$ và $cdyy \leq xydd$. Vì $0 < dd$, $0 < bb$, $0 < yy$ nên theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, cùng tính chất kết hợp và giao hoán của phép nhân số nguyên, chúng ta có
+    Nếu các số hữu tỉ $\dfrac{a}{b}$, $\dfrac{c}{d}$, $\dfrac{x}{y}$ thỏa mãn $\dfrac{a}{b}\leq \dfrac{c}{d}$ và $\dfrac{c}{d}\leq\dfrac{x}{y}$ thì theo định nghĩa quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta có $abdd \leq cdbb$ và $cdyy \leq xydd$. Vì $0 < dd$, $0 < bb$, $0 < yy$ nên theo Hệ quả~\ref{corollary:integers-order-and-multiplication}, cùng tính chất kết hợp và giao hoán của phép nhân số nguyên, chúng ta có
     \[
         (abyy)dd = (abdd)yy \leq (cdbb)yy = (cdyy)bb \leq (xydd)bb = (xybb)dd.
     \]
@@ -2590,5 +2588,28 @@ Chúng ta chứng minh một số tính chất của lũy thừa của một s�
               Vậy theo nguyên lý quy nạp toán học, nếu số hữu tỉ $q$ thỏa mãn $q > -1$ thì với mọi số nguyên không âm $n$, có ${(1 + q)}^{n}\geq 1 + nq$.
     \end{enumerate}
 \end{proof}
+
+\subsection{Phần nguyên của số hữu tỉ}
+
+\begin{theorem}[Phần nguyên của số hữu tỉ]
+    Với mỗi số hữu tỉ $x$, tồn tại duy nhất số nguyên $k$ sao cho $k\leq x < k+1$. (Số nguyên $k$ như vậy được gọi là \textbf{phần nguyên\index{Phần nguyên của số hữu tỉ}} của số hữu tỉ $x$, và được kí hiệu là $\floor{x}$.)
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $\frac{a}{b}$ là phân số tối giản của $x$ (lưu ý rằng $b$ là một số nguyên dương). Theo thuật toán Euclid, tồn tại duy nhất số nguyên $k$ và số nguyên $r$ sao cho $a = kb + r$ và $0\leq r < b$. Do đó
+    \[
+        k = \frac{kb}{b} \leq \frac{kb + r}{b} = \frac{a}{b} < \frac{(k+1)b}{b} = k+1.
+    \]
+
+    Giả sử số nguyên $\ell$ thỏa mãn $\ell\leq x < \ell + 1$.
+
+    Giả sử phản chứng rằng $\ell < k$. Khi đó $\ell\leq k - 1$. Cùng với $x < \ell + 1$, chúng ta suy ra $x < \ell + 1\leq (k-1) + 1 = k$. Điều này mâu thuẫn với $k\leq x$.
+
+    Giả sử phản chứng rằng $\ell > k$. Khi đó $k\leq \ell - 1$. Cùng với $x < k + 1$, chúng ta suy ra $x < k + 1\leq (\ell - 1) + 1 = \ell$. Điều này mâu thuẫn với $\ell\leq x$.
+
+    Do đó, $k = \ell$. Như vậy, với mỗi số hữu tỉ $x$, tồn tại duy nhất số tự nhiên $k$ sao cho $k\leq x < k+1$.
+\end{proof}
+
+Trong chương tiếp theo, chúng ta sẽ dùng đến phần nguyên của số hữu tỉ trong việc xây dựng tập hợp số thực, và tổng quát mở rộng khái niệm này thành phần nguyên của số thực.
 
 \subsection{Bài tập}

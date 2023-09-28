@@ -183,17 +183,13 @@ Việc kiểm tra một mô hình có thỏa mãn một hệ tiên đề hay kh�
 
 \subsection{Tóm tắt hai mô hình số thực: lát cắt Dedekind và dãy Cauchy hữu tỉ}
 
-% introduction
-Chỉ còn lại câu hỏi là làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực (hay mô hình số thực) thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Về mặt lịch sử, việc xây dựng tập hợp số thực bằng dãy Cauchy hữu tỉ được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Sau đó ít năm, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt.
+Chỉ còn lại câu hỏi là làm sao để xây dựng tập hợp số thực. Hiện nay, hai cách xây dựng tập hợp số thực (hay mô hình số thực) thường được sử dụng nhất là \textit{lát cắt Dedekind} và \textit{dãy Cauchy hữu tỉ}, với cơ sở là tập hợp số hữu tỉ. Về mặt lịch sử, việc xây dựng tập hợp số thực bằng dãy Cauchy hữu tỉ được đề xuất lần đầu bởi hai nhà toán học Charles M\'{e}ray và Georg Cantor, một cách độc lập với nhau. Sau đó ít năm, Richard Dedekind trích dẫn bài báo của Georg Cantor và giới thiệu khái niệm lát cắt. Ở thời điểm của hai công bố, các tính chất của số thực chưa được đúc kết thành một hệ tiên đề như hiện nay, thậm chí định nghĩa của một trường khi đó cũng chưa có hình thức như bây giờ.
 
-% caution
-Trong hai mục tiếp theo của Chương này (Mục~\ref{section:dedekind-cuts} và Mục~\ref{section:rational-cauchy-sequences}), chúng tôi nêu chi tiết về cả hai mô hình số thực. Cách xây dựng được trình bày trong hai mục này mang rất nhiều chi tiết kĩ thuật, đặc biệt là với dãy Cauchy hữu tỉ. Sự tồn tại của Mục~\ref{section:dedekind-cuts} và Mục~\ref{section:rational-cauchy-sequences} trong tài liệu này chỉ nhằm cung cấp một tư liệu tham khảo đầy đủ về hai mô hình cho những ai tò mò và muốn kiểm chứng. Bạn đọc có thể bỏ qua hai mục đó, hoặc theo dõi những kết quả chính trước (được đánh dấu là Định lý) và chú ý tới thứ tự, bình luận thay vì tập trung vào chứng minh của tất cả trong lần đọc đầu tiên.
-
-Chúng tôi đưa ra mô tả tổng quan và so sánh hai mô hình số thực.
+Trong hai mục tiếp theo của Chương này (Mục~\ref{section:dedekind-cuts} và Mục~\ref{section:rational-cauchy-sequences}), chúng tôi nêu chi tiết về cả hai mô hình số thực. Cách xây dựng được trình bày trong hai mục này mang rất nhiều chi tiết kĩ thuật, đặc biệt là với dãy Cauchy hữu tỉ. Sự tồn tại của Mục~\ref{section:dedekind-cuts} và Mục~\ref{section:rational-cauchy-sequences} trong tài liệu này chỉ nhằm cung cấp một tư liệu tham khảo đầy đủ về hai mô hình cho những ai tò mò và muốn kiểm chứng. Bạn đọc có thể bỏ qua hai mục đó, hoặc theo dõi những kết quả chính trước (được đánh dấu là Định lý) và chú ý tới thứ tự, bình luận thay vì tập trung vào chứng minh của tất cả trong lần đọc đầu tiên. Chúng tôi cho rằng mô hình số thực bằng lát cắt Dedekind là dễ tiếp thu hơn, và khuyên những bạn đọc đã có kiến thức về dãy số và giới hạn đọc về mô hình số thực bằng dãy Cauchy hữu tỉ.
 
 Trong mô hình số thực bằng \textbf{lát cắt Dedekind}, một lát cắt Dedekind được định nghĩa như một tập hợp. Quan hệ thứ tự giữa các lát cắt Dedekind được định nghĩa là quan hệ bao hàm giữa các tập hợp, điều này khiến cho việc kiểm chứng các tiên đề về thứ tự và tiên đề về cận trên trở nên đơn giản. Phần khó khăn trong mô hình này là định nghĩa và chứng minh các tính chất của phép toán cộng và nhân các lát cắt. Việc chứng minh các quan hệ bằng nhau giữa các lát cắt được quy về việc chứng minh hai tập hợp bằng nhau.
 
-Mô hình số thực bằng \textbf{dãy Cauchy hữu tỉ} xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.\@'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực. Mô hình số thực bằng dãy Cauchy hữu tỉ cho phép định nghĩa và chứng minh các tính chất của phép toán cộng và nhân một cách khá dễ dàng. Tuy nhiên, với quan hệ tiền thứ tự, quan hệ thứ tự, và đặc biệt là tiên đề cận trên, việc định nghĩa và chứng minh lại khó khăn hơn so với mô hình số thực bằng lát cắt Dedekind.
+Mô hình số thực bằng \textbf{dãy Cauchy hữu tỉ} xuất phát từ kết quả rằng ``Mọi dãy Cauchy (thực) đều hội tụ đến một số thực.\@'' Tuy nhiên, vì chúng ta muốn xây dựng tập hợp số thực từ các số hữu tỉ nên dãy Cauchy thực không thể là một xuất phát điểm. Thay vào đó, chúng ta sử dụng dãy Cauchy hữu tỉ và xem như chưa biết đến số thực. Mô hình số thực bằng dãy Cauchy hữu tỉ cho phép định nghĩa và chứng minh các tính chất của phép toán cộng và nhân một cách khá dễ dàng. Tuy nhiên, với quan hệ tiền thứ tự, quan hệ thứ tự, và đặc biệt là tiên đề cận trên, việc định nghĩa và chứng minh lại kém tự nhiên hơn so với mô hình số thực bằng lát cắt Dedekind.
 
 Lát cắt Dedekind và dãy Cauchy không chỉ được sử dụng để xây dựng tập hợp số thực (hay còn được nói là đầy đủ hóa tập hợp số hữu tỉ thành tập hợp số thực). Các kĩ thuật, ý tưởng của hai mô hình này còn được áp dụng, tổng quát hóa cho những đối tượng khác. Chẳng hạn, lát cắt Dedekind được sử dụng cho các tập hợp được sắp toàn phần, còn dãy Cauchy được áp dụng trong những tập hợp mà trên đó đã được định nghĩa thế nào là khoảng cách giữa các phần tử (không gian metric).
 
@@ -375,26 +371,7 @@ Như vậy, một lát cắt $A$ là không âm nếu và chỉ nếu $O\leq A$,
     Vậy $A + B$ là một lát cắt.
 \end{proof}
 
-Sau đây, chúng ta kiểm tra bốn tiên đề đầu tiên của các tiên đề về trường. Chúng tôi gặp khó khăn với việc kiểm tra tiên đề thứ ba trong các tiên đề về trường. Để giải quyết khó khăn đó, chúng tôi sử dụng một tính chất sâu hơn của số hữu tỉ. Định nghĩa trong mệnh đề sau còn được sử dụng ở những phần sau của tài liệu.
-
-\begin{proposition}[Phần nguyên của số hữu tỉ]\label{proposition:integral-part-of-rational-numbers}
-    Với mỗi số hữu tỉ $x$, tồn tại duy nhất số nguyên $k$ sao cho $k\leq x < k+1$. (Số nguyên $k$ như vậy được gọi là \textbf{phần nguyên\index{Phần nguyên}} của số hữu tỉ $x$, và được kí hiệu là $\floor{x}$.)
-\end{proposition}
-
-\begin{proof}
-    Chúng ta kí hiệu $\frac{a}{b}$ là phân số tối giản của $x$ (lưu ý rằng $b$ là một số nguyên dương). Theo thuật toán chia Euclid, tồn tại duy nhất số nguyên $k$ và số nguyên $r$ sao cho $a = kb + r$ và $0\leq r < b$. Do đó
-    \[
-        k = \frac{kb}{b} \leq \frac{kb + r}{b} = \frac{a}{b} < \frac{(k+1)b}{b} = k+1
-    \]
-
-    Giả sử số nguyên $\ell$ thỏa mãn $\ell\leq x < \ell + 1$.
-
-    Giả sử phản chứng rằng $\ell < k$. Khi đó $\ell\leq k - 1$. Cùng với $x < \ell + 1$, chúng ta suy ra $x < \ell + 1\leq (k-1) + 1 = k$. Điều này mâu thuẫn với $k\leq x$.
-
-    Giả sử phản chứng rằng $\ell > k$. Khi đó $k\leq \ell - 1$. Cùng với $x < k + 1$, chúng ta suy ra $x < k + 1\leq (\ell - 1) + 1 = \ell$. Điều này mâu thuẫn với $\ell\leq x$.
-
-    Do đó, $k = \ell$. Như vậy, với mỗi số hữu tỉ $x$, tồn tại duy nhất số tự nhiên $k$ sao cho $k\leq x < k+1$.
-\end{proof}
+Sau đây, chúng ta kiểm tra bốn tiên đề đầu tiên của các tiên đề về trường.
 
 Chứng minh các đẳng thức về lát cắt đồng nghĩa với việc chứng minh hai tập hợp bằng nhau. Nhắc lại, để chứng minh hai tập hợp bằng nhau, chúng ta cần chỉ ra tập hợp này là bộ phận của tập hợp kia và ngược lại, hoặc chỉ ra định nghĩa của hai tập hợp đó là tương đương.
 
@@ -468,7 +445,7 @@ Chứng minh các đẳng thức về lát cắt đồng nghĩa với việc ch�
                   S = \{ n \mid n\in\mathbb{Z} \wedge nx\in A \}
               \]
 
-              Theo Mệnh đề~\ref{proposition:integral-part-of-rational-numbers}, với mỗi số hữu tỉ $q$, tồn tại số nguyên $k$ sao cho $k\leq \frac{q}{x} < k + 1$. Vì $x < 0$ nên
+              Theo định nghĩa phần nguyên của số hữu tỉ, với mỗi số hữu tỉ $q$, tồn tại số nguyên $k$ sao cho $k\leq \frac{q}{x} < k + 1$. Vì $x < 0$ nên
               \[
                   \begin{split}
                       (k + 1)x < \frac{q}{x}\cdot x = q, \\
@@ -1076,84 +1053,6 @@ Nếu $A$ và $B$ là các lát cắt không âm thì tập hợp con $\{ ab \mi
     Vậy với mọi lát cắt $A$, chúng ta có $A\cdot I = I\cdot A = A$.
 \end{proof}
 
-Để kiểm chứng tiên đề cuối cùng trong các tiên đề về trường, chúng tôi sử dụng định nghĩa và kết quả sau (ba phần cuối cùng của mệnh đề sau được sử dụng để kiểm tra tiên đề về trường).
-\begin{proposition}[Lũy thừa nguyên]
-    $q$ là một số hữu tỉ và $n$ là một số nguyên. Nếu $q\ne 0$, bằng đệ quy, chúng ta định nghĩa
-    \[
-        q^{n} = \begin{cases}
-            1                 & \text{khi $n = 0$}                    \\
-            q\cdot q^{n-1}    & \text{khi $n$ là một số nguyên dương} \\
-            \dfrac{1}{q^{-n}} & \text{khi $n$ là một số nguyên âm}
-        \end{cases}
-    \]
-
-    Còn nếu $q = 0$, chúng ta định nghĩa $q^{n} = 0$ với mọi số nguyên dương $n$.
-
-    \begin{enumerate}[label={(\roman*)}]
-        \item Chứng minh rằng nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{-n} = \dfrac{1}{q^{n}}$.
-        \item Chứng minh rằng nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{n+1} = qq^{n}$.
-        \item Chứng minh rằng nếu $q\ne 0$ thì với mọi số nguyên $m, n$, chúng ta có $q^{m + n} = q^{m}q^{n}$.
-        \item Chứng minh rằng nếu $0 < q < 1$ thì $0 < q^{n} < 1$ với mọi số nguyên dương $n$.
-        \item Chứng minh rằng nếu $0 < q < 1$ thì $1 < q^{-n}$ với mọi số nguyên dương $n$.
-        \item (Bất đẳng thức Bernoulli) Nếu số hữu tỉ $q$ thỏa mãn $q > -1$ thì với mọi số nguyên không âm $n$, có ${(1 + q)}^{n}\geq 1 + nq$.
-    \end{enumerate}
-\end{proposition}
-
-\begin{proof}
-    \begin{enumerate}[label={(\roman*)}]
-        \item Nếu $n = 0$ thì $q^{-n} = q^{0} = 1 = \frac{1}{1} = \frac{1}{q^{n}}$.
-
-              Nếu $n$ là một số nguyên dương thì $q^{-n} = \dfrac{1}{q^{n}}$ theo định nghĩa lũy thừa nguyên.
-
-              Nếu $n$ là một số nguyên âm thì $q^{n} = \dfrac{1}{q^{-n}}$ theo định nghĩa lũy thừa nguyên. Vì $q^{-n}$ là nghịch đảo của $\dfrac{1}{q^{-n}}$ và $\dfrac{1}{q^{n}}$ là nghịch đảo của $q^{n}$ nên $q^{-n} = \dfrac{1}{q^{n}}$.
-
-              Như vậy, nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{-n} = \dfrac{1}{q^{n}}$.
-        \item Trong trường hợp $n$ là một số nguyên không âm thì $q^{n+1} = qq^{n}$ theo định nghĩa lũy thừa nguyên.
-
-              Trong trường hợp $n = -1$ thì $q^{n+1} = q^{0} = 1 = \dfrac{q}{q} = qq^{-1}$.
-
-              Trong trường hợp $n$ là số nguyên âm nhỏ hơn $-1$ thì theo định nghĩa lũy thừa nguyên, chúng ta có
-              \[
-                  q^{n+1} = \dfrac{1}{q^{-(n+1)}} = \dfrac{1}{q^{-n-1}} = \dfrac{q}{qq^{-n-1}}
-              \]
-
-              Theo hai trường hợp trên, chúng ta có $q^{-n} = qq^{-n-1}$. Cùng với định nghĩa lũy thừa nguyên và phần (i), chúng ta suy ra
-              \[
-                  \dfrac{q}{qq^{-n-1}} = \dfrac{q}{q^{-n}} = qq^{n}
-              \]
-
-              Như vậy, nếu $q\ne 0$ thì $q^{n+1} = qq^{n}$ với mọi số nguyên $n$.
-        \item Trước hết, chúng ta chứng minh bằng nguyên lý quy nạp toán học cho trường hợp $m + n\geq 0$.
-
-              Khi $n = -m$ thì theo định nghĩa lũy thừa nguyên và phần (i), chúng ta có $q^{m + n} = q^{0} = 1 = \frac{q^{m}}{q^{m}} = q^{m}q^{-m} = q^{m}q^{n}$.
-
-              Giả sử với $n = k\geq -m$, có $q^{m+k} = q^{m}q^{k}$. Theo định nghĩa lũy thừa nguyên, $q^{m+(k+1)} = q^{(m+k)+1} = qq^{m+k}$. Theo giả thiết quy nạp, $qq^{m+k} = q(q^{m}q^{k}) = q^{m}(qq^{k})$. Theo phần (ii), chúng ta có $q^{m}(qq^{k}) = q^{m}q^{k+1}$.
-
-              Theo nguyên lý quy nạp toán học, $q^{m + n} = q^{m}q^{n}$ với mọi số nguyên $m, n$ thỏa mãn $m+n\geq 0$.
-
-              Trong trường hợp $m + n < 0$, theo trường hợp trước và phần (i), chúng ta có
-              \[
-                  q^{m+n} = \dfrac{1}{q^{(-m) + (-n)}} = \dfrac{1}{q^{-m}q^{-n}} = \dfrac{1}{q^{-m}}\dfrac{1}{q^{-n}} = q^{m}q^{n}.
-              \]
-
-              Như vậy, nếu $q\ne 0$ thì $q^{m + n} = q^{m}q^{n}$ với mọi số nguyên $m, n$.
-        \item Khi $n = 1$, chúng ta có $0 < q^{1} < 1$ vì $0 < q < 1$ và $q^{1} = q$.
-
-              Giả sử với $n = k\geq 1$, có $0 < q^{k} < 1$ và $q^{-k} > 1$. Vì $0 < q < 1$ nên $0 < q\cdot q^{k} = q^{k+1}$. Bên cạnh đó, theo giả thiết quy nạp và định nghĩa lũy thừa nguyên, chúng ta có $q^{k+1} = q\cdot q^{k} < q^{k} < 1$. Do đó $0 < q^{k+1} < 1$.
-
-              Theo nguyên lý quy nạp toán học, nếu $0 < q < 1$ thì $0 < q^{n} < 1$ với mọi số nguyên dương $n$.
-        \item Theo phần (iv), nếu $0 < q < 1$ thì $0 < q^{n} < 1$. Bên cạnh đó, vì $0 < q^{-n}$ nên $q^{-n}q^{n} < q^{-n}$, kéo theo $1 < q^{-n}$.
-        \item Khi $n = 0$ thì chúng ta có ${(1 + q)}^{n} = {(1 + q)}^{0} = 1 \geq 1 + 0q$.
-
-              Giả sử với số nguyên $n = k\geq 0$, có ${(1 + q)}^{k} \geq 1 + kq$. Vì $(1 + q) > 0$ nên theo định nghĩa lũy thừa nguyên và  giả thiết quy nạp, chúng ta suy ra
-              \[
-                  {(1 + q)}^{k+1} = (1 + q){(1 + q)}^{k} \geq (1 + q)(1 + kq) = 1 + (k+1)q + q^{2} \geq 1 + (k + 1)q
-              \]
-
-              Vậy theo nguyên lý quy nạp toán học, nếu số hữu tỉ $q$ thỏa mãn $q > -1$ thì với mọi số nguyên không âm $n$, có ${(1 + q)}^{n}\geq 1 + nq$.
-    \end{enumerate}
-\end{proof}
-
 \begin{theorem}
     Với mỗi lát cắt $A\ne O$, tồn tại lát cắt $B$ sao cho $A\cdot B = B\cdot A = I$.
 \end{theorem}
@@ -1201,7 +1100,7 @@ Nếu $A$ và $B$ là các lát cắt không âm thì tập hợp con $\{ ab \mi
                             y^{-n} = \dfrac{1}{y^{n}} = {\left(\frac{1}{y}\right)}^{n} = {\left(1 + \left(\frac{1}{y} - 1\right)\right)}^{n}\geq 1 + n\left(\frac{1}{y} - 1\right)
                         \]
 
-                        Chọn $c$ là một số hữu tỉ dương bất kì. Theo Mệnh đề~\ref{proposition:integral-part-of-rational-numbers}, tồn tại số nguyên $m$ sao cho $m > \dfrac{c - 1}{\dfrac{1}{y} - 1}$, kéo theo $1 + m\left(\frac{1}{y} - 1\right) > c$. Chọn số nguyên dương $n > m$ thì chúng ta có $y^{-n} > c$. Điều này kéo theo $cy^{n} < 1$ và $y^{n} < \frac{1}{c}$.
+                        Chọn $c$ là một số hữu tỉ dương bất kì. Theo định nghĩa phần nguyên của số hữu tỉ, tồn tại số nguyên $m$ sao cho $m > \dfrac{c - 1}{\dfrac{1}{y} - 1}$, kéo theo $1 + m\left(\frac{1}{y} - 1\right) > c$. Chọn số nguyên dương $n > m$ thì chúng ta có $y^{-n} > c$. Điều này kéo theo $cy^{n} < 1$ và $y^{n} < \frac{1}{c}$.
 
                         Trên đây, chúng ta vừa chứng minh mệnh đề: Với mỗi số hữu tỉ dương $c$, tồn tại số nguyên $n$ sao cho $y^{n} < \frac{1}{c}$. Chúng ta sẽ sử dụng mệnh đề này để chỉ ra tập hợp $S$ thỏa mãn giả thiết của nguyên lý thứ tự tốt.
 
@@ -1266,7 +1165,7 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
 
 \subsection{Liên hệ lát cắt Dedekind với số hữu tỉ}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:embed-Q-into-the-set-of-dedekind-cuts}
     Ánh xạ $\iota: \mathbb{Q}\to \mathscr{D}_{\mathbb{Q}}$ được định nghĩa bởi $\iota(q) = q^{*}$, trong đó $q^{*}$ là lát cắt $\{ x \mid x\in\mathbb{Q} \wedge x < q \}$ là một đơn ánh nhưng không phải một song ánh. Bên cạnh đó, với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta có
     \[
         \begin{split}
@@ -1361,7 +1260,7 @@ Chúng ta kiểm tra tiên đề cuối cùng: tiên đề về cận trên.
 
 Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất các số hữu tỉ $q$ với lát cắt $q^{*}$.
 
-\section{Dãy Cauchy hữu tỉ}\label{section:rational-cauchy-sequences}
+\section{* Dãy Cauchy hữu tỉ}\label{section:rational-cauchy-sequences}
 
 \subsection{Dãy số hữu ti và dãy Cauchy hữu tỉ}
 
@@ -1487,7 +1386,7 @@ Sau đây chúng tôi đưa ra một số ví dụ và phản ví dụ nhằm mi
 
     Chọn một số hữu tỉ $\varepsilon > 0$, chúng ta sẽ tìm số tự nhiên $N(\varepsilon)$ để sử dụng định nghĩa dãy số hữu tỉ hội tụ.
 
-    $\abs{a_{n} - 1} < \varepsilon$ khi và chỉ khi $\frac{1}{n+1} < \varepsilon$. Bên cạnh đó, nếu $n \geq \floor{\frac{1}{\varepsilon}}$ (đây là kí hiệu phần nguyên, được định nghĩa ở Mệnh đề~\ref{proposition:integral-part-of-rational-numbers}) thì
+    $\abs{a_{n} - 1} < \varepsilon$ khi và chỉ khi $\frac{1}{n+1} < \varepsilon$. Bên cạnh đó, nếu $n \geq \floor{\frac{1}{\varepsilon}}$ (đây là kí hiệu phần nguyên, được định nghĩa phần nguyên của số hữu tỉ thì
     \[
         \frac{1}{n+1}\leq \frac{1}{\floor{\dfrac{1}{\varepsilon}} + 1} < \frac{1}{\dfrac{1}{\varepsilon}} = \varepsilon.
     \]
@@ -1838,7 +1737,7 @@ Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực
 
 Chúng ta kí hiệu tập thương gồm các lớp tương đương của quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Trong nội dung tiếp theo của mục này, chúng ta chỉ làm việc với dãy Cauchy hữu tỉ và các lớp tương đương của các dãy Cauchy hữu tỉ.
 
-\subsection{* Các phép toán với dãy Cauchy hữu tỉ}
+\subsection{Các phép toán với dãy Cauchy hữu tỉ}
 
 \begin{theorem}[Phép cộng và phép nhân dãy Cauchy hữu tỉ]\label{theorem:addition-and-multiplication-of-cauchy-sequences}
     ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì
@@ -2128,7 +2027,7 @@ Trên đây chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}
 
 Đến lúc này, chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng hai phép toán cộng và nhân thỏa mãn các tiên đề về trường.
 
-\subsection{* Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
+\subsection{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
 
 Trong nội dung này, chúng ta định nghĩa một \textit{quan hệ tiền thứ tự} giữa các dãy Cauchy hữu tỉ để từ đó định nghĩa một \textit{quan hệ thứ tự} giữa các phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
 
@@ -2492,7 +2391,7 @@ Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ �
     \end{enumerate}
 \end{proof}
 
-\subsection{* Dãy Cauchy hữu tỉ và tiên đề về cận trên}
+\subsection{Dãy Cauchy hữu tỉ và tiên đề về cận trên}
 
 Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán và quan hệ thứ tự đã chỉ ra trên đây thỏa mãn tiên đề về cận trên. Để kiểm chứng sự thỏa mãn tiên đề về cận trên, chúng ta cũng thực hiện theo hai bước giống như với các tiên đề về trường và các tiên đề về thứ tự: Chứng minh phát biểu dành cho dãy Cauchy hữu tỉ trước, sau đó chứng minh cho lớp tương đương của các các Cauchy hữu tỉ. Tuy nhiên, chúng tôi phát biểu định lý cho lớp tương đương của các các Cauchy hữu tỉ trước.
 
@@ -2640,7 +2539,7 @@ Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán
 
 \subsection{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:embed-Q-into-quotient-set-of-rational-cauchy-sequences}
     Ánh xạ $\iota: \mathbb{Q}\to \mathscr{C}_{\mathbb{Q}}/_{\sim}$ được định nghĩa bởi $\iota(q) = \clsseq{q}{n}$ là một đơn ánh nhưng không phải một song ánh. Bên cạnh đó, với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta có
     \[
         \begin{split}
@@ -2666,31 +2565,443 @@ Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán
     \]
 \end{proof}
 
-Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất các số hữu tỉ $q$ với lớp tương đương $\clsseq{q}{n}$.
+Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất số hữu tỉ $q$ với lớp tương đương $\clsseq{q}{n}$.
 
 \section{Các mô hình số thực}
 
-\subsection{* Lưu ý về tiên đề và mô hình}
-
-\subsection{* Sự tương đương của các mô hình số thực}
-
-\subsection{Số thực và số hữu tỉ}
-
-\subsection{Âm vô cực và dương vô cực}
+Kết quả chính của mục này là sự tương đương, hay đẳng cấu của các mô hình số thực. Trước khi đi đến chứng minh cho định lý đó, chúng ta cần chuẩn bị một số kết quả khác. Chúng ta định nghĩa tập hợp số thực là $\mathscr{D}_{\mathbb{Q}}$.
 
 \subsection{Nhìn nhận về các tập hợp số}
 
+\subsection{Một số tính chất của trường}
+
+Khi đề cập đến hệ tiên đề về số thực, chúng ta đã nhắc đến \textit{các hệ tiên đề về trường} và làm việc mà chưa cần biết trường là gì. Tại đây, chúng ta đưa ra định nghĩa cho khái niệm này.
+\begin{definition}[Trường\index{Trường}]
+    Trong một trường $\mathbb{F}$ là một tập hợp khác rỗng mà trong đó được định nghĩa hai phép toán hai ngôi, gọi là phép cộng và phép nhân, được kí hiệu lần lượt là $+$ và $\cdot$ và thỏa mãn 9 tính chất sau.
+    \begin{enumerate}[label={(F\arabic*)},itemsep=0pt]
+        \item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi $x, y, z$ thuộc $\mathbb{F}$, có $(x + y) + z = x + (y + z)$.
+        \item Phép cộng có phần tử đồng nhất, được kí hiệu là $0$. Nói cách khác, với mọi $x$ thuộc $\mathbb{F}$, có $x + 0 = 0 + x = x$.
+        \item Mỗi phần tử có phần tử đối. Nói cách khác, với mỗi $x$ thuộc $\mathbb{F}$, tồn tại $x_{0}$ thuộc $\mathbb{F}$ sao cho $x + x_{0} = x_{0} + x = 0$.
+        \item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi $x, y$ thuộc $\mathbb{F}$, có $x + y = y + x$.
+        \item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi $x, y, z$ thuộc $\mathbb{F}$, có $(x\cdot y)\cdot z = x\cdot (y\cdot z)$.
+        \item Phép nhân có tính chất phân phối với phép cộng từ cả hai phía. Nói cách khác, với mọi $x, y, z$ thuộc $\mathbb{F}$, có $(x + y)\cdot z = x\cdot z + y\cdot z$ và $z\cdot (x + y) = z\cdot x + z\cdot y$.
+        \item Phép nhân có phần tử đồng nhất, được kí hiệu là $1$, và $1\ne 0$. Nói cách khác, với mọi $x$ thuộc $\mathbb{F}$, có $x\cdot 1 = 1\cdot x = x$.
+        \item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi $x, y$ thuộc $\mathbb{F}$, có $x\cdot y = y\cdot x$.
+        \item Mỗi phần tử khác $0$ đều có phần tử nghịch đảo. Nói cách khác, với mọi $x$ thuộc $\mathbb{F}$, nếu $x\ne 0$ thì tồn tại $x_{1}$ thuộc $\mathbb{F}$ sao cho $xx_{1} = x_{1}x = 1$.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Tập hợp số hữu tỉ $\mathbb{Q}$ với hai phép toán cộng và nhân là một trường\index{Trường số hữu tỉ}.
+
+    \noindent Tập hợp $\mathscr{D}_{\mathbb{Q}}$ (trong Mục~\ref{section:dedekind-cuts}) với hai phép toán cộng và nhân là một trường.
+
+    \noindent Tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ (trong Mục~\ref{section:rational-cauchy-sequences}) với hai phép toán cộng và nhân là một trường.
+\end{example}
+
+\begin{counterexample}
+    Tập hợp số tự nhiên $\mathbb{N}$ với hai phép toán cộng và nhân không phải một trường. Trong trường hợp này, các tính chất (F3), (F9) không được thỏa mãn.
+
+    \noindent Tập hợp số nguyên $\mathbb{Z}$ với hai phép toán cộng và nhân không phải một trường. Trong trường hợp này, tính chất (F9) không được thỏa mãn.
+\end{counterexample}
+
+\begin{theorem}
+    Trong một trường $\mathbb{F}$ với hai phép toán cộng và nhân,
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item Phần tử đồng nhất $0$ của phép cộng là duy nhất.
+        \item Mỗi phần tử có đúng một phần tử đối. Nói riêng, chúng ta kí hiệu phần tử đối của $x$ là $-x$.
+        \item Phần tử đồng nhất $1$ của phép nhân là duy nhất.
+        \item Mỗi phần tử khác $0$ có đúng một phần tử nghịch đảo. Nói riêng, chúng ta kí hiệu phần tử đối của $x\ne 0$ là $x^{-1}$.
+        \item Tích hai phần tử bằng $0$ khi và chỉ khi ít nhất một trong hai phần tử đó bằng $0$.
+        \item Với mọi phần tử $x, y$, có $x(-y) = (-x)y = -xy$ và $xy = (-x)(-y)$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item Giả sủ $0$ và $0'$ là hai phần tử đồng nhất của phép cộng. Theo tính chất (F2), chúng ta có $0 = 0 + 0' = 0'$. Do đó trong một trường, phần tử đồng nhất của phép cộng là duy nhất.
+        \item Chúng ta chọn $x$ là một phần tử bất kì của $\mathbb{F}$. Theo tính chất (F4), tồn tại $x_{0}$ thuộc $\mathbb{F}$ sao cho $x + x_{0} = x_{0} + x = 0$. Giả sử phần tử $x'_{0}$ thuộc $\mathbb{F}$ và $x + x'_{0} = x'_{0} + x = 0$. Theo các tính chất (F1), (F2), (F3)
+              \[
+                  x'_{0} = x'_{0} + 0 = x'_{0} + (x + x_{0}) = (x'_{0} + x) + x_{0} = 0 + x_{0} = 0.
+              \]
+
+              Do đó trong một trường, mỗi phần tử có đúng một phần tử đối.
+        \item Giả sủ $1$ và $1'$ là hai phần tử đồng nhất của phép nhân. Theo tính chất (F7), chúng ta có $1 = 1\cdot 1' = 1'$. Do đó trong một trường, phần tử đồng nhất của phép nhân là duy nhất.
+        \item Chúng ta chọn $x$ là một phần tử bất kì và khác $0$ của $\mathbb{F}$. Theo tính chất (F9), tồn tại $x_{1}$ thuộc $\mathbb{F}$ sao cho $x\cdot x_{1} = x_{1}\cdot x = 1$. Giả sử phần tử $x'_{1}$ thuộc $\mathbb{F}$ và $x\cdot x'_{1} = x'_{1}\cdot x = 1$. Theo các tính chất (F5), (F7), (F9)
+              \[
+                  x'_{1} = x'_{1}\cdot 1 = x'_{1}\cdot (x\cdot x_{1}) = (x'_{1}\cdot x)\cdot x_{1} = 1\cdot x_{1} = x_{1}.
+              \]
+
+              Do đó trong một trường, mỗi phần tử khác $0$ có đúng một phần tử nghịch đảo.
+        \item ($\Rightarrow$) Chứng minh rằng nếu một trong hai phần tử của trường $\mathbb{F}$ bằng $0$ thì tích của chúng bằng $0$.
+
+              Chúng ta chọn $x$ là một phần tử bất kì của $\mathbb{F}$. Theo các tính chất (F2), (F6)
+              \[
+                  \begin{split}
+                      0\cdot x = (0 + 0)\cdot x = 0\cdot x + 0\cdot x, \\
+                      x\cdot 0 = x\cdot (0 + 0) = x\cdot 0 + x\cdot 0.
+                  \end{split}
+              \]
+
+              Theo tính chất (F1), (F2), (F3)
+              \[
+                  \begin{split}
+                      0\cdot x = (0\cdot x + 0\cdot x) + (-0\cdot x) = 0\cdot x + (-0\cdot x) = 0, \\
+                      x\cdot 0 = (x\cdot 0 + x\cdot 0) + (-x\cdot 0) = x\cdot 0 + (-x\cdot 0) = 0.
+                  \end{split}
+              \]
+
+              ($\Leftarrow$) Chứng minh rằng nếu tích của hai phần tử của trường $\mathbb{F}$ bằng $0$ thì một trong hai phần tử của trường $\mathbb{F}$ bằng $0$.
+
+              Chúng ta giả sử $a, b$ là hai phần tử của trường $\mathbb{F}$ sao cho $a\cdot b = 0$.
+
+              Nếu $a\ne 0$ thì theo tính chất (F5), (F7), (F9), và phần thuận
+              \[
+                  b = 1\cdot b = (a^{-1}\cdot a)\cdot b = a^{-1}\cdot (a\cdot b) = a^{-1}\cdot 0 = 0.
+              \]
+
+              Như vậy, nếu $a\ne 0$ thì $b = 0$. Do đó ít nhất một trong hai phần tử $a, b$ bằng $0$.
+
+              Vậy tích hai phần tử bằng $0$ khi và chỉ khi ít nhất một trong hai phần tử đó bằng $0$.
+        \item Theo tính chất (F6), phần (ii) và phần (v)
+              \[
+                  \begin{split}
+                      xy + x(-y) = x(y + (-y)) = x\cdot 0 = 0, \\
+                      x(-y) + xy = x((-y) + y) = x\cdot 0 = 0, \\
+                      (-x)y + xy = ((-x) + x)y = 0\cdot y = 0, \\
+                      xy + (-x)y = (x + (-x))y = 0\cdot y = 0.
+                  \end{split}
+              \]
+
+              Theo phần (ii), chúng ta có $x(-y) = (-x)y = -xy$. Do đó, $xy = -(-x)y = (-x)(-y)$.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Thuộc tính Archimedes và tính trù mật của tập hợp số hữu tỉ}
+
+Tính trù mật của tập hợp số hữu tỉ là một kết quả cần thiết trong chứng minh ở nội dung tiếp theo. Để chứng minh tính chất này, chúng ta cần đến thuộc tính Archimedes.
+
+\begin{theorem}[Thuộc tính Archimedes\index{Thuộc tính Archimedes}]
+    Với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
+\end{theorem}
+
+\begin{proof}
+    Giả sử phản chứng rằng tồn tại số thực $x$ sao cho với mọi số nguyên $n$, có $n\leq x$. Theo giả sử phản chứng, $x$ là một cận trên của tập hợp số nguyên. Theo tiên đề về cận trên, tập hợp số nguyên có cận trên nhỏ nhất, chúng ta kí hiệu cận trên nhỏ nhất đó là $s$. Do đó $n\leq s$ với mọi số nguyên $n$. Vì $s$ là cận trên nhỏ nhất của tập hợp số nguyên nên $s - 1$ không phải một cận trên của tập hợp số nguyên, do đó tồn tại số nguyên $m$ sao cho $s - 1 < m$, kéo theo $s < m + 1$. Điều này mâu thuẫn với việc $s$ là cận trên của tập hợp số nguyên, nên giả sử phản chứng là sai.
+
+    Vậy với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
+\end{proof}
+
+\begin{corollary}
+    Với mọi số thực $x, y$, nếu $y > 0$ thì tồn tại số nguyên $n$ sao cho $x < ny$.
+\end{corollary}
+
+Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimedes cho số thực $\frac{x}{y}$. Trong nhiều tài liệu, hệ quả trên được coi là thuộc tính Archimedes.
+
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}[scale=2.0]
+        \coordinate (O) at (0,0);
+        \coordinate (I) at (1,0);
+        \coordinate (II) at (2,0);
+        \coordinate (III) at (3,0);
+        \coordinate (IV) at (4,0);
+        \coordinate (V) at (5,0);
+
+        \coordinate (PI) at (3.1415926,0);
+
+        \node [label={below:$0$}] at (O) {};
+        \node [label={below:$1$}] at (I) {};
+        \node [label={below:$2$}] at (II) {};
+        \node [label={below:$\mathbf{3}$}] at (III) {};
+        \node [label={above:$\mathbf{3.14}$}] at (PI) {};
+        \node [label={below:$\mathbf{4}$}] at (IV) {};
+        \node [label={below:$5$}] at (V) {};
+
+        \draw (O) -- (I) -- (II) -- (III) -- (IV) -- (V);
+        \draw (O) -- ++(0,0.1);
+        \draw (I) -- ++(0,0.1);
+        \draw (II) -- ++(0,0.1);
+        \draw (III) -- ++(0,0.1);
+        \draw (PI) -- ++(0,0.1);
+        \draw (IV) -- ++(0,0.1);
+        \draw (V) -- ++(0,0.1);
+
+        \draw (O) arc (120:60:1);
+        \draw (I) arc (120:60:1);
+        \draw (II) arc (120:60:1);
+        \draw (III) arc (120:60:1);
+        \draw (IV) arc (120:60:1);
+    \end{tikzpicture}
+    \caption{Minh họa thuộc tính Archimedes với $x = 3.14$.}
+\end{figure}
+
+\begin{theorem}[Phần nguyên của số thực\index{Phần nguyên của số thực}]
+    Với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$. 
+    
+    \noindent Nói riêng, số nguyên $n$ như vậy được gọi là \textbf{phần nguyên của số thực $x$} và được kí hiệu là $\floor{x}$.
+\end{theorem}
+
+\begin{proof}
+    Theo thuộc tính Archimedes, tồn tại số nguyên $a$ và $b$ sao cho $x < b$ và $-x < a$, kéo theo $-a < x < b$.
+
+    Theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số thực, nếu một số nguyên $c$ thỏa mãn $c\leq x$ thì $c\leq b$. Theo nguyên lý thứ tự tốt, tập hợp các số nguyên nhỏ hơn hoặc bằng $x$ có phần tử lớn nhất, chúng ta kí hiệu phần tử đó là $n$. Vì $n < n + 1$ và $n + 1$ là một số nguyên nên theo định nghĩa của $n$, chúng ta có $n\leq x < n + 1$.
+
+    Giả sử số nguyên $m$ thỏa mãn $m\leq x < m + 1$. Giả sử phản chứng rằng $m < n$, khi đó $m + 1\leq n$, kéo theo $m + 1\leq x$, mâu thuẫn với $x < m + 1$. Giả sử phản chứng rằng $n < m$, khi đó $n + 1\leq m$, kéo theo $n + 1\leq x$, mâu thuẫn với $x < n + 1$. Do đó $m = n$.
+
+    Vậy với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$.
+\end{proof}
+
+\begin{theorem}[Tính trù mật của tập hợp số hữu tỉ\index{Tính trù mật của tập hợp số hữu tỉ}]
+    Với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
+\end{theorem}
+
+\begin{proof}
+    Theo thuộc tính Archimedes, tồn tại số nguyên $n$ sao cho $1 < n(y - x)$. Do đó $1 + nx < ny$. Theo định nghĩa phần nguyên của số thực, chúng ta có $nx < \floor{nx} + 1 \leq nx + 1 < ny$.
+
+    Do đó, với số nguyên $m = \floor{nx} + 1$, chúng ta có $nx < m < ny$. Bên cạnh đó, vì $y - x > 0$ và $n > 0$ nên  $1 < n(y - x)$ kéo theo $n > 0$. Do đó $x < \frac{m}{n} < y$.
+
+    Vậy, với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
+\end{proof}
+
+\subsection{Sự tương đương của các mô hình số thực}
+
+Chúng ta đã đưa ra hai mô hình số thực là lát cắt Dedekind và lớp tương đương của các dãy Cauchy hữu tỉ. Bên cạnh hai mô hình này, các nhà toán học còn đưa ra nhiều mô hình khác cho số thực. Điều này đặt ra câu hỏi rằng việc mỗi người chọn một mô hình khác nhau có gây ảnh hưởng gì không? Trong trường hợp của hệ tiên đề về số thực, các mô hình là ``tương đương'', như trong định lý sau đây.
+
+\begin{theorem}\label{theorem:uniqueness-of-complete-ordered-field}
+    Mọi mô hình số thực đều đẳng cấu với $\mathscr{D}_{\mathbb{Q}}$ (tập hợp các lát cắt Dedekind trên tập hợp số hữu tỉ, định nghĩa ở Mục~\ref{section:dedekind-cuts}). Cụ thể hơn, nếu tập hợp $R$ với phép cộng (${+}_{R}$) với phần tử đồng nhất của phép cộng ($0_{R}$), phép nhân (${\times}_{R}$) với phần tử đồng nhất của phép nhân ($1_{R}$), và quan hệ thứ tự ($\leq_{R}$) thỏa mãn hệ tiên đề về số thực thì tồn tại một song ánh $f: \mathscr{D}_{\mathbb{Q}}\to R$ sao cho
+    \begin{itemize}[topsep=0pt,itemsep=0pt]
+        \item $f(0) = 0_{R}$, $f(1) = 1_{R}$.
+        \item $f(x + y) = f(x) +_{R} f(y)$ với mọi số thực $x, y$.
+        \item $f(xy) = f(x) \times_{R} f(y)$ với mọi số thực $x, y$.
+        \item $x\leq y$ kéo theo $f(x)\leq_{R} f(y)$ với mọi số thực $x, y$.
+    \end{itemize}
+\end{theorem}
+
+Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set-of-dedekind-cuts}, chúng ta đồng nhất mỗi số hữu tỉ $q$ với lát cắt $q^{*} = \{ x \mid x\in\mathbb{Q} \wedge x < q \}$ (tập hợp các số hữu tỉ nhỏ hơn $q$). Chứng minh dưới đây dài, tái hiện quá trình xây dựng tập hợp số thực (bằng lát cắt Dedekind) bắt đầu từ tập hợp số tự nhiên, tập hợp số nguyên, tập hợp số hữu tỉ. Do vậy chúng tôi chia chứng minh thành các bước nhỏ hơn để tiện theo dõi.
+
+\begin{proof}
+    Chúng ta định nghĩa ánh xạ $f: \mathscr{D}_{\mathbb{Q}}\to R$ như sau.
+
+    \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
+        \item Định nghĩa ảnh của các số nguyên dưới ánh xạ $f$.
+
+              Chúng ta gán $0$ với phần tử đồng nhất của phép cộng trong $R$, gán $1$ với phần tử đồng nhất của phép nhân trong $R$. Nói cách khác, $f(0) = 0_{R}$, $f(1) = 1_{R}$.
+
+              Chúng ta gán các số nguyên dương và số nguyên âm với các phần tử của $R$ theo quy tắc: Nếu $n$ là một số nguyên dương thì $f(n) = f(n-1) + 1_{R}$, $f(-n) = -f(n)$.
+        \item Chứng minh $f(m + n) = f(m) +_{R} f(n)$ với mọi số nguyên $m, n$.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1.5cm]
+                  \item Ít nhất một trong hai số nguyên $m$ hoặc $n$ là số nguyên không âm.
+
+                        Không mất tính tổng quát, chúng ta giả sử $n$ là số nguyên không âm.
+
+                        Khi $n = 0$, chúng ta có $f(m + n) = f(m) = f(m) +_{R} 0_{R}$.
+
+                        Giả sử với số nguyên không âm $n = k$, chúng ta có $f(m + n) = f(m) +_{R} f(n)$. Khi đó, theo giả thiết quy nạp
+                        \begin{align*}
+                            f(m + (k+1)) & = f((m + k) + 1) = f(m + k) +_{R} 1_{R} \\
+                                         & = (f(m) +_{R} f(k)) +_{R} 1_{R}         \\
+                                         & = f(m) +_{R} (f(k) +_{R} 1_{R})         \\
+                                         & = f(m) +_{R} f(k+1).
+                        \end{align*}
+
+                        Theo nguyên lý quy nạp toán học, với mọi số nguyên không âm $n$ và với mọi số nguyên $m$, chúng ta có $f(m + n) = f(m) + f(n)$.
+                  \item $m$ hoặc $n$ là các số nguyên âm.
+
+                        Theo \textbf{Trường hợp 1},
+                        \begin{align*}
+                            f(m + n) & = -f((-n) + (-m)) = -(f(-n) +_{R} f(-m)) \\
+                                     & = (-f(-m)) +_{R} (-f(-n))                \\
+                                     & = f(m) +_{R} f(n).
+                        \end{align*}
+              \end{enumerate}
+
+              Do đó với mọi số nguyên $m, n$, chúng ta có $f(m + n) = f(m) +_{R} f(n)$.
+        \item Chứng minh $f(mn) = f(m) \times_{R} f(n)$ với mọi số nguyên $m, n$.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1.5cm]
+                  \item Ít nhất một trong hai số nguyên $m$ hoặc $n$ là số nguyên không âm.
+
+                        Không mất tính tổng quát, chúng ta giả sử $n$ là số nguyên không âm.
+
+                        Khi $n = 0$, chúng ta có $f(mn) = f(0) = f(m)\times_{R} 0_{R} = f(m) \times_{R} f(n)$.
+
+                        Giả sử với số nguyên không âm $n = k$, chúng ta có $f(mn) = f(m) \times_{R} f(n)$. Khi đó, theo giả thiết quy nạp
+                        \begin{align*}
+                            f(m(k+1)) & = f(mk + m) = f(mk) +_{R} f(m)               \\
+                                      & = f(m)\times_{R} f(k) +_{R} f(m)\times 1_{R} \\
+                                      & = f(m)\times_{R} (f(k) + 1_{R})              \\
+                                      & = f(m)\times_{R} f(k+1)
+                        \end{align*}
+
+                        Theo nguyên lý quy nạp toán học, với mọi số nguyên không âm $n$ và với mọi số nguyên $m$, chúng ta có $f(mn) = f(m)\times_{R} f(n)$.
+                  \item $m$ hoặc $n$ là các số nguyên âm.
+
+                        Theo \textbf{Trường hợp 1},
+                        \begin{align*}
+                            f(mn) & = f((-m)(-n)) = f(-m)\times_{R} f(-n) \\
+                                  & = (-f(-m))\times_{R} (-f(-n))         \\
+                                  & = f(m) \times_{R} f(n).
+                        \end{align*}
+              \end{enumerate}
+
+              Do đó với mọi số nguyên $m, n$, chúng ta có $f(m + n) = f(m) +_{R} f(n)$.
+
+        \item Chứng minh $m\leq n$ kéo theo $f(m) \leq_{R} f(n)$ với mọi số nguyên $m, n$.
+
+              Chúng ta chứng minh mệnh đề sau: Với mọi số nguyên dương $n$, $0_{R} <_{R} f(n)$.
+
+              Với $n = 1$, chúng ta có $0_{R}\leq 1_{R}$ và $0_{R}\ne 1_{R}$ theo hệ tiên đề về số thực, do đó $0_{R} < 1_{R}$.
+
+              Giả sử với số nguyên dương $n = k$, có $0_{R} < f(k)$. Khi đó, theo hệ tiên đề về số thực và giả thiết quy nạp, chúng ta có
+              \[
+                  0_{R}\leq 0_{R} +_{R} 1_{R}\leq f(k) +_{R} 1_{R} = f(k+1).
+              \]
+
+              Giả sử phản chứng rằng $f(k + 1) = 0_{R}$, khi đó $f(k) +_{R} 1_{R} = 0_{R}$, kéo theo $0_{R}\geq 1_{R} +_{R} + 0_{R} = 1_{R}$, dẫn đến $0_{R} = 1_{R}$ theo tính chất phản đối xứng. Do đó giả sử phản chứng là sai, điều này có nghĩa là $f(k+1)\ne 0_{R}$. Theo nguyên lý quy nạp toán học, với mọi số nguyên dương $n$, $0_{R} <_{R} f(n)$.
+
+              Từ mệnh đề trên, cùng với hệ tiên đề về số thực, chúng ta suy ra
+              \[
+                  f(-n) = 0_{R} +_{R} f(-n) \leq_{R} f(n) +_{R} f(-n) = 0_{R}
+              \]
+
+              và $f(-n)\ne f(n) +_{R} f(-n)$, kéo theo $f(-n) \leq_{R} 0_{R}$ và $f(-n)\ne 0_{R}$.
+
+              Với mọi số nguyên $m, n$, nếu $m\leq n$ thì tồn tại số nguyên không âm $k$ sao cho $m + k = n$. Theo \textbf{Bước 2}, chúng ta có $f(n) = f(m + k) = f(m) +_{R} f(k)$. Mặt khác, theo mệnh đề vừa chứng minh, chúng ta có $0_{R}\leq_{R} f(k)$, dẫn đến $f(m)\leq_{R} f(n)$.
+        \item Định nghĩa ảnh của các số hữu tỉ dưới ánh xạ $f$.
+
+              Theo chứng minh ở \textbf{Bước 4}, nếu số nguyên $n$ khác $0$ thì $f(n)\ne 0_{R}$. Do đó, nếu số nguyên $n$ khác $0$ thì $f(n)$ có nghịch đảo. Theo \textbf{Bước 3}, nếu $\frac{a}{b} = \frac{c}{d}$ thì $f(a)\times_{R} {(f(b))}^{-1} = f(c)\times_{R} {(f(d))}^{-1}$. Điều này là cơ sở để chúng ta định nghĩa ảnh của một số hữu tỉ $q = \frac{a}{b}$ dưới ánh xạ $f$ như sau
+              \[
+                  f(q) = f\left(\frac{a}{b}\right) = f(a)\times_{R} {(f(b))}^{-1}.
+              \]
+        \item Chứng minh $f(q_{1} + q_{2}) = f(q_{1}) +_{R} f(q_{2})$, $f(q_{1}q_{2}) = f(q_{1}) \times_{R} f(q_{2})$, $q_{1} < q_{2}\implies f(q_{1}) <_{R} f(q_{2})$ với mọi số hữu tỉ $q_{1}, q_{2}$.
+
+              Chúng ta kí hiệu $\frac{a}{b}$ và $\frac{c}{d}$ lần lượt là các phân số tối giản của $q_{1}$ và $q_{2}$. Lưu ý rằng $b$ và $d$ là các số nguyên dương. Theo định nghĩa ảnh của số hữu tỉ dưới ánh xạ $f$
+              \begingroup
+              \allowdisplaybreaks
+              \begin{align*}
+                  f\left( \frac{a}{b} + \frac{c}{d} \right)   & = f\left( \frac{ad + bc}{bd} \right) = f(ad + bc)\times_{R} {(f(bd))}^{-1}                                                                  \\
+                                                              & = (f(ad) +_{R} f(bc)) \times_{R} {(f(bd))}^{-1}                                                                                                 \\
+                                                              & = f(ad) \times_{R} {(f(bd))}^{-1} +_{R} f(bc) \times_{R} {(f(bd))}^{-1}                                                                         \\
+                                                              & = f\left(\frac{ad}{bd}\right) +_{R} f\left(\frac{bc}{bd}\right) = f\left(\frac{a}{b}\right) +_{R} f\left(\frac{c}{d}\right),                        \\
+                  f\left( \frac{a}{b}\cdot\frac{c}{d} \right) & = f\left(\frac{ac}{bd}\right) = f(ac)\times_{R} {(f(bd))}^{-1}                                                                              \\
+                                                              & = (f(a)\times_{R} f(c)) \times_{R} ({(f(d))}^{-1}\times_{R} {(f(c))}^{-1})                                                                  \\
+                                                              & = (f(a)\times_{R} {(f(b))}^{-1}) \times_{R} (f(c)\times_{R} {(f(d))}^{-1}) \\
+                                                              & = f\left(\frac{a}{b}\right)\times_{R} f\left(\frac{c}{d}\right).
+              \end{align*}
+              \endgroup
+
+              Nếu $\frac{a}{b} < \frac{c}{d}$ thì $ad < bc$. Theo \textbf{Bước 4}, $f(ad) <_{R} f(bc)$. Mặt khác, $f(ad) = f(a)\times_{R} f(d)$, $f(bc) = f(b) \times_{R} f(c)$. Do đó $f(a)\times_{R} f(d) <_{R} f(b)\times_{R} f(c)$ và kéo theo
+              \[
+                f(a)\times_{R} f(d) <_{R} f(b)\times_{R} f(c).
+              \]
+
+              Bên cạnh đó, $0_{R} <_{R} f(c), 0_{R} <_{R} f(d)$ vì $c, d$ là các số nguyên dương, nên $0_{R} < {(f(c))}^{-1}, 0_{R} <_{R} {(f(d))}^{-1}$ và chúng ta suy ra
+              \[
+                f(a)\times_{R} {(f(b))}^{-1} <_{R} f(c)\times_{R} {(f(d))}^{-1}.
+              \]
+
+              Do đó $f\left(\frac{a}{b}\right) <_{R} f\left(\frac{c}{d}\right)$.
+        \item Định nghĩa ảnh của các số thực dưới ánh xạ $f$.
+
+              Với mỗi số thực $x$, chúng ta kí hiệu $S_{x}$ là tập hợp tất cả các số hữu tỉ nhỏ hơn $x$. Tập hợp $S_{x}$ là một lát cắt trên tập hợp các số hữu tỉ, vì
+              \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
+                  \item $S_{x}$ không rỗng, $\mathbb{Q}\setminus S_{x}$ không rỗng, theo định lý về phần nguyên của số thực.
+                  \item Mọi phần tử của $S_{x}$ nhỏ hơn mọi phần tử của $\mathbb{Q}\setminus S_{x}$, theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số hữu tỉ.
+                  \item Với mỗi số hữu tỉ $a$ thuộc $S_{x}$, luôn tồn tại một số hữu tỉ khác lớn hơn $a$ và cũng thuộc $S_{x}$, điều này được suy ra từ việc áp dụng tính trù mật của tập hợp số hữu tỉ cho hai số thực $a$ và $x$. Do đó $S_{x}$ không có phần tử lớn nhất.
+                  \item Nếu số hữu tỉ $a$ thuộc $S_{x}$ thì mọi số hữu tỉ nhỏ hơn $a$ cũng thuộc $S_{x}$, theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số hữu tỉ.
+              \end{enumerate}
+
+              Bên cạnh đó, $x$ là cận trên nhỏ nhất của $S_{x}$. Bởi vì với mọi số thực $y < x$, luôn tồn tại số hữu tỉ $q$ sao cho $y < q < x$, đồng nghĩa với việc mọi số thực nhỏ hơn $x$ đều không phải cận trên của $S_{x}$.
+
+              Vì $S_{x}$ có cận trên nên theo kết quả ở \textbf{Bước 6}, ảnh của $S_{x}$ dưới ánh xạ $f$ (được kí hiệu là $f[S_{x}]$) cũng có cận trên. Theo tiên đề về cận trên, $f[S_{x}]$ có cận trên nhỏ nhất. Chúng ta định nghĩa ảnh của $x$ dưới ánh xạ $f$ là $\sup f[S_{x}]$.
+    \end{enumerate}
+
+    Như vậy chúng ta đã định nghĩa một ánh xạ $f: \mathscr{D}_{\mathbb{Q}}\to R$.
+    \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm,start=8]
+        \item Chứng minh rằng với mọi số thực $x, y$, có $x\leq y$ kéo theo $f(x) \leq_{R} f(y)$.
+
+              Nếu $x = y$ thì $f(x) = f(y)$.
+
+              Nếu $x < y$ thì theo tính trù mật của tập hợp số hữu tỉ, tồn tại các số hữu tỉ $q, q'$ sao cho $x < q < q' < y$. Vì $x$ là cận trên nhỏ nhất của $S_{x}$ và $x < q$ nên $f(x)\leq_{R} f(q)$. Với hai số hữu tỉ $q < q'$, chúng ta có $f(q) <_{R} f(q')$, do đó $f(x) <_{R} f(q')$. Bên cạnh đó, $q'$ thuộc $S_{y}$ nên $f(q')\leq_{R} f(y)$. Do đó $f(x) <_{R} f(y)$.
+
+              Như vậy, $x\leq y$ kéo theo $f(x) \leq_{R} f(y)$.
+        \item Chứng minh rằng với mọi số thực $x, y$, có $f(x + y) = f(x) +_{R} f(y)$.
+        \item Chứng minh rằng với mọi số thực $x, y$, có $f(xy) = f(x) \times_{R} f(y)$.
+        \item Chứng minh $f$ là song ánh.
+
+              Giả sử $f(x) = f(y)$. Theo \textbf{Bước 8}, nếu $x < y$ thì $f(x) <_{R} f(y)$ và nếu $y < x$ thì $f(y) <_{R} f(x)$. Do đó $x = y$. Như vậy $f$ là một đơn ánh.
+    \end{enumerate}
+
+    Vậy $\mathscr{D}_{\mathbb{Q}}$ và $R$ đẳng cấu.
+\end{proof}
+
+Trong Định lý~\ref{theorem:uniqueness-of-complete-ordered-field}, $f$ được gọi là một đẳng cấu trường bảo toàn thứ tự. Với định lý này, chúng ta kết luận rằng mọi mô hình số thực đẳng cấu, hay tập hợp số thực là duy nhất, sai khác một đẳng cấu.
+
+Tập hợp số thực còn được gọi là \textbf{trường số thực\index{Trường số thực}}, hay \textbf{trường được sắp thứ tự đầy đủ\index{Trường được sắp thứ tự đầy đủ}} (tên gọi trường, sắp thứ tự, và đầy đủ tương ứng với ba nhóm tiên đề trong hệ tiên đề về số thực). Chúng ta có thể sử dụng hệ tiên đề số thực hay bất kì mô hình số thực nào để định nghĩa số thực, giống như có thể sử dụng bất kì phần tử nào của một lớp tương đương để làm phần tử đại diện.
+
 \section{Nhập môn giải tích thực}
 
-\subsection{Các tiên đề về trường}
-
-\subsection{Các tiên đề về thứ tự và tiên đề về cận trên}
+\subsection{Âm vô cực và dương vô cực}
 
 \subsection{Tính đầy đủ-Dedekind và tính đầy đủ-Cauchy}
 
-\subsection{Hàm lũy thừa}
+\begin{theorem}[Tính đầy đủ-Dedekind]
+\end{theorem}
 
-\subsection{Hàm mũ và hàm logarithm}
+\begin{definition}[Dãy số thực]
+\end{definition}
+
+\begin{definition}
+\end{definition}
+
+\begin{theorem}[Định lý về dãy đơn điệu và bị chặn]
+\end{theorem}
+
+\begin{theorem}[Định lý Cantor về các khoảng đóng lồng nhau]
+\end{theorem}
+
+\begin{theorem}[Định lý Bolzano-Weierstra{\ss}]
+\end{theorem}
+
+\begin{theorem}[Tính đầy đủ-Cauchy]
+\end{theorem}
 
 \subsection{Giới hạn hàm số và tính liên tục}
+
+\begin{definition}[Hàm thực\index{Hàm thực}]
+\end{definition}
+
+\begin{definition}[Giới hạn hàm số\index{Giới hạn hàm số}]
+\end{definition}
+
+\begin{definition}[Hàm số liên tục\index{Hàm số liên tục}]
+\end{definition}
+
+\begin{theorem}
+\end{theorem}
+
+\begin{theorem}[Hàm đa thức]
+\end{theorem}
+
+\begin{theorem}[Định lý giá trị trung gian]
+\end{theorem}
+
+\subsection{Hàm lũy thừa. Hàm mũ. Hàm logarithm}
+
+\begin{theorem}[Lũy thừa nguyên của số thực]
+\end{theorem}
+
+\begin{theorem}[Căn bậc $n$]
+\end{theorem}
+
+\begin{definition}[Lũy thừa hữu tỉ của số thực không âm]
+\end{definition}
+
+\begin{definition}[Lũy thừa thực của số thực không âm]
+\end{definition}
+
+\begin{theorem}
+\end{theorem}
+
+\begin{definition}[Hàm lũy thừa]
+\end{definition}
 
