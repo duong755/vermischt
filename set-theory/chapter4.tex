@@ -1460,6 +1460,72 @@ Tương tự với số tự nhiên, giữa hai số nguyên liên tiếp không
 
 \subsection{Lũy thừa của số nguyên}
 
+\begin{definition}[Lũy thừa của số nguyên\index{Lũy thừa của số nguyên}]
+    Cho $a$ là một số nguyên và $n$ là một số tự nhiên. Lũy thừa với \textbf{số mũ\index{Số mũ}} $n$ của \textbf{cơ số\index{Cơ số}} $a$ được kí hiệu và định nghĩa bằng đệ quy như sau
+    \[
+        a^{n} = \begin{cases}
+            a              & \text{khi $n = 1$} \\
+            a\cdot a^{n-1} & \text{khi $n > 1$}
+        \end{cases}
+    \]
+
+    Nếu $n = 0$ và $a\ne 0$, chúng ta định nghĩa $a^{0} = 1$.
+\end{definition}
+
+Lưu ý rằng chúng ta không định nghĩa $0^{0}$. Từ định nghĩa trên, chúng ta rút ra hai nhận xét: Lũy thừa với số mũ tự nhiên của một số nguyên là một số nguyên, và với Định lý~\ref{theorem:product-of-integers-are-zero-or-one}, lũy thừa với số mũ tự nhiên $n\geq 1$ của một số nguyên khác $0$ là khác $0$. Lũy thừa của số nguyên có các tính chất sau.
+
+\begin{theorem}
+    Cho $a, b$ là các số nguyên khác $0$. Khi đó
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,label={(\roman*)}]
+        \item Với mọi số tự nhiên $m, n$, chúng ta có $a^{m+n} = a^{m}a^{n}$.
+        \item Với mọi số tự nhiên $m, n$, chúng ta có ${(a^{m})}^{n} = a^{mn}$.
+        \item Với mọi số tự nhiên $n$, chúng ta có ${(ab)}^{n} = a^{n}b^{n}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Chúng ta chứng minh bằng quy nạp toán học theo số tự nhiên $n$.
+    \begin{enumerate}[topsep=0pt,itemsep=0pt,label={(\roman*)}]
+        \item Khi $n = 0$, chúng ta có $a^{m+n} = a^{m} = a^{m}a^{0} = a^{m}a^{n}$.
+
+              Giả sử với số tự nhiên $n = k$, chúng ta có $a^{m + k} = a^{m}a^{k}$. Khi đó
+              \begin{align*}
+                  a^{m + (k + 1)} & = a^{(m + k) + 1} & \text{(theo tính chất kết hợp của phép cộng số tự nhiên)} \\
+                                  & = aa^{m + k}      & \text{(theo định nghĩa lũy thừa của số nguyên)}           \\
+                                  & = a^{m+k}a        & \text{(theo tính chất giao hoán của phép nhân số nguyên)} \\
+                                  & = (a^{m}a^{k})a   & \text{(theo giả thiết quy nạp)}                           \\
+                                  & = a^{m}(a^{k}a)   & \text{(theo tính chất kết hợp của phép nhân số nguyên)}   \\
+                                  & = a^{m}(aa^{k})   & \text{(theo tính chất giao hoán của phép nhân số nguyên)} \\
+                                  & = a^{m}a^{k+1}.
+              \end{align*}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $m, n$, với mọi số nguyên $a$ khác $0$, chúng ta có $a^{m + n} = a^{m}a^{n}$.
+        \item Khi $n = 0$, chúng ta có ${(a^{m})}^{n} = {(a^{m})}^{0} = 1 = a^{0} = a^{mn}$.
+
+              Giả sử với số tự nhiên $n = k$, chúng ta có ${(a^{m})}^{k} = a^{mk}$. Khi đó
+              \begin{align*}
+                  {(a^{m})}^{k+1} & = a^{m}{(a^{m})}^{k} & \text{(theo định nghĩa lũy thừa của số nguyên)}                           \\
+                                  & = a^{m}a^{mk}        & \text{(theo giả thiết quy nạp)}                                           \\
+                                  & = a^{m + mk}         & \text{(theo phần (i))}                                                    \\
+                                  & = a^{m(1 + k)}       & \text{(theo tính chất phân phối của phép nhân với phép cộng số tự nhiên)} \\
+                                  & = a^{m(k+1)}         & \text{(theo tính chất giao hoán của phép cộng số tự nhiên)}
+              \end{align*}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $m, n$, với mọi số nguyên $a$ khác $0$, chúng ta có ${(a^{m})}^{n} = a^{mn}$.
+        \item Khi $n = 0$, chúng ta có ${(ab)}^{n} = {(ab)}^{0} = 1 = 1\cdot 1 = a^{0}b^{0}$.
+
+              Giả sử với số tự nhiên $n = k$, chúng ta có ${(ab)}^{k} = a^{k}b^{k}$. Khi đó
+              \begin{align*}
+                  {(ab)}^{k+1} & = (ab){(ab)}^{k}   & \text{(theo định nghĩa lũy thừa của số nguyên)}                      \\
+                               & = (ab)(a^{k}b^{k}) & \text{(theo giả thiết quy nạp)}                                      \\
+                               & = (aa^{k})(bb^{k}) & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)} \\
+                               & = a^{k+1}b^{k+1}   & \text{(theo định nghĩa lũy thừa của số nguyên)}
+              \end{align*}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $n$, với mọi số nguyên $a, b$ khác $0$, chúng ta có ${(ab)}^{n} = a^{n}b^{n}$.
+    \end{enumerate}
+\end{proof}
+
 \subsection{Bài tập}
 
 \section{Nguyên lý quy nạp toán học}\label{section:principle-of-mathematical-induction}
@@ -2099,13 +2165,13 @@ Giống với phép cộng số nguyên, phép cộng số hữu tỉ có đủ 
     \begin{enumerate}[label={(\roman*)}]
         \item Theo định nghĩa phép cộng số hữu tỉ
               \begin{align*}
-                  \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} & = \frac{a d + b c}{b d} + \frac{x}{y} = \frac{(a d + b c) y + x (b d)}{(b d) y} = \frac{((a d) y + (b c) y) +  (x b) d}{b (d y)}                                     \\
-                                                                       & \text{(theo tính chất kết hợp và phân phối của phép nhân với phép cộng số nguyên)} \\
-                                                                       & = \frac{a (d y) + (b (c y) + b(dx))}{b (d y)}                                        \\
-                                                                       & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}               \\
-                                                                       & = \frac{a (d y) + b (c y + dx)}{b (d y)}                                           \\
-                                                                       & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}            \\
-                                                                       & = \frac{a}{b} + \frac{c y + dx}{d y}                                               \\
+                  \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{x}{y} & = \frac{a d + b c}{b d} + \frac{x}{y} = \frac{(a d + b c) y + x (b d)}{(b d) y} = \frac{((a d) y + (b c) y) +  (x b) d}{b (d y)} \\
+                                                                       & \text{(theo tính chất kết hợp và phân phối của phép nhân với phép cộng số nguyên)}                                               \\
+                                                                       & = \frac{a (d y) + (b (c y) + b(dx))}{b (d y)}                                                                                    \\
+                                                                       & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                                                             \\
+                                                                       & = \frac{a (d y) + b (c y + dx)}{b (d y)}                                                                                         \\
+                                                                       & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}                                                          \\
+                                                                       & = \frac{a}{b} + \frac{c y + dx}{d y}                                                                                             \\
                                                                        & = \frac{a}{b} + \left(\frac{c}{d} + \frac{x}{y}\right).
               \end{align*}
         \item Theo định nghĩa phép cộng số hữu tỉ
@@ -2237,21 +2303,21 @@ Phép nhân hai số hữu tỉ cũng có những tính chất tương tự vớ
               Vậy phép nhân số hữu tỉ có tính chất kết hợp.
         \item Theo định nghĩa phép cộng và phép nhân số hữu tỉ, chúng ta có
               \begin{align*}
-                  \left(\frac{a}{b} + \frac{c}{d}\right)\cdot\frac{x}{y} & = \frac{ad + bc}{bd}\cdot\frac{x}{y} = \frac{(ad + bc)x}{(bd)y} = \frac{(ad)x + (bc)x}{(bd)y}                                           \\
-                                                                         & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
-                                                                         & = \frac{(ad)x}{(bd)y} + \frac{(bc)x}{(bd)y} \quad \text{(theo Định lý~\ref{theorem:same-denominator})}                    \\
-                                                                         & = \frac{(ax)d}{(by)d} + \frac{b(cx)}{b(dy)}                             \\
-                                                                         & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}    \\
-                                                                         & = \frac{ax}{by} + \frac{cx}{dy} \quad \text{(theo Định lý~\ref{theorem:fundamental-property-of-fraction})}    \\
+                  \left(\frac{a}{b} + \frac{c}{d}\right)\cdot\frac{x}{y} & = \frac{ad + bc}{bd}\cdot\frac{x}{y} = \frac{(ad + bc)x}{(bd)y} = \frac{(ad)x + (bc)x}{(bd)y}              \\
+                                                                         & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}                                    \\
+                                                                         & = \frac{(ad)x}{(bd)y} + \frac{(bc)x}{(bd)y} \quad \text{(theo Định lý~\ref{theorem:same-denominator})}     \\
+                                                                         & = \frac{(ax)d}{(by)d} + \frac{b(cx)}{b(dy)}                                                                \\
+                                                                         & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                                       \\
+                                                                         & = \frac{ax}{by} + \frac{cx}{dy} \quad \text{(theo Định lý~\ref{theorem:fundamental-property-of-fraction})} \\
                                                                          & = \frac{a}{b}\cdot\frac{x}{y} + \frac{c}{d}\cdot\frac{x}{y}.
               \end{align*}
               \begin{align*}
-                  \frac{x}{y}\cdot\left(\frac{a}{b} + \frac{c}{d}\right) & = \frac{x}{y}\cdot\frac{ad + bc}{bd} = \frac{x(ad + bc)}{y(bd)} = \frac{x(ad) + x(bc)}{y(bd)}                                           \\
-                                                                         & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
-                                                                         & = \frac{x(ad)}{y(bd)} + \frac{x(bc)}{y(bd)} \quad \text{(theo Định lý~\ref{theorem:same-denominator})}                    \\
-                                                                         & = \frac{(xa)d}{(yb)d} + \frac{b(xc)}{b(yd)}                             \\
-                                                                         & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}    \\
-                                                                         & = \frac{xa}{yb} + \frac{xc}{yd} \quad \text{(theo Định lý~\ref{theorem:fundamental-property-of-fraction})}    \\
+                  \frac{x}{y}\cdot\left(\frac{a}{b} + \frac{c}{d}\right) & = \frac{x}{y}\cdot\frac{ad + bc}{bd} = \frac{x(ad + bc)}{y(bd)} = \frac{x(ad) + x(bc)}{y(bd)}              \\
+                                                                         & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)}                                    \\
+                                                                         & = \frac{x(ad)}{y(bd)} + \frac{x(bc)}{y(bd)} \quad \text{(theo Định lý~\ref{theorem:same-denominator})}     \\
+                                                                         & = \frac{(xa)d}{(yb)d} + \frac{b(xc)}{b(yd)}                                                                \\
+                                                                         & \text{(theo tính chất kết hợp và giao hoán của phép nhân số nguyên)}                                       \\
+                                                                         & = \frac{xa}{yb} + \frac{xc}{yd} \quad \text{(theo Định lý~\ref{theorem:fundamental-property-of-fraction})} \\
                                                                          & = \frac{x}{y}\cdot\frac{a}{b} + \frac{x}{y}\cdot\frac{c}{d}.
               \end{align*}
 
@@ -2344,9 +2410,9 @@ Bạn đọc lưu ý rằng kí hiệu $\dfrac{q_{1}}{q_{2}}$ không mâu thuẫ
 Trong mục này, chúng ta đưa ra một quan hệ thứ tự trên tập hợp số hữu tỉ.
 \begin{definition}
     Với hai số hữu tỉ $\dfrac{a}{b}$ và $\dfrac{c}{d}$, chúng ta nói $\dfrac{a}{b}$ nhỏ hơn hoặc bằng $\dfrac{c}{d}$ và kí hiệu $\dfrac{a}{b}\leq \dfrac{c}{d}$ khi và chỉ khi $abdd \leq cdbb$.
-
-    Nếu $\dfrac{a}{b}\leq \dfrac{c}{d}$ và $\dfrac{a}{b}\ne\dfrac{c}{d}$ thì chúng ta viết $\dfrac{a}{b} < \dfrac{c}{d}$.
 \end{definition}
+
+Bạn đọc hẳn sẽ thấy định nghĩa trên không hề tự nhiên và không quen thuộc. Đây là lời giải thích của chúng tôi: Vì $\dfrac{a}{b} = \dfrac{ab}{b^{2}}$ và $\dfrac{c}{d} = \dfrac{cd}{d^{2}}$ nên việc định nghĩa $\dfrac{a}{b}\leq \dfrac{c}{d}$ khi và chỉ khi $abdd \leq cdbb$ là tương thích với những gì chúng ta đã học ở chương trình phổ thông. Định nghĩa này cho phép chúng ta làm việc cả với mẫu số là số nguyên âm.
 
 \begin{theorem}
     Quan hệ $\leq$ trên tập hợp số hữu tỉ là một quan hệ thứ tự\index{Quan hệ thứ tự trên tập hợp số hữu tỉ} toàn phần.
@@ -2470,34 +2536,33 @@ Với cơ sở là định lý này, chúng ta \textbf{đồng nhất} số nguy
 
 \subsection{Lũy thừa của số hữu tỉ}
 
-\begin{definition}[Lũy thừa bậc tự nhiên của số hữu tỉ]
-    $q$ là một số hữu tỉ và $n$ là một số nguyên dương. \textbf{Lũy thừa bậc $n$ của $q$} được định nghĩa bằng đệ quy như sau
+Với số hữu tỉ, chúng ta có thể định nghĩa lũy thừa với số mũ nguyên.
+
+\begin{definition}[Lũy thừa của số hữu tỉ]
+    Cho số hữu tỉ $q$ và một số nguyên $n$. Lũy thừa với số mũ $n$ của số hữu tỉ $q$ được kí hiệu và định nghĩa như sau
     \[
         q^{n} =
         \begin{cases}
-            q              & \text{khi $n = 1$} \\
-            q\cdot q^{n-1} & \text{khi $n > 1$}
+            q                 & \text{khi $n = 1$}             \\
+            q\cdot q^{n-1}    & \text{khi $n > 1$}             \\
+            \dfrac{1}{q^{-n}} & \text{khi $n < 0$ và $q\ne 0$}
         \end{cases}
     \]
 
     Nếu $n = 0$, và $q\ne 0$, chúng ta định nghĩa $q^{0} = 1$.
 \end{definition}
 
-\begin{definition}[Lũy thừa bậc nguyên của số hữu tỉ]
-    $q$ là một số hữu tỉ khác $0$ và $n$ là một số tự nhiên. \textbf{Lũy thừa bậc $-n$ của $q$} được định nghĩa là nghịch đảo của $q^{n}$.
-    \[
-        q^{-n} = \frac{1}{q^{n}}.
-    \]
-\end{definition}
+Tương tự, chúng ta cũng không định nghĩa $0^{0}$. Khi cơ số là số nguyên, còn số mũ là số tự nhiên,chúng ta thu được lũy thừa của một số nguyên. Với định nghĩa trên, lũy thừa với số mũ nguyên của một số hữu tỉ là một số hữu tỉ. Lũy thừa của số hữu tỉ có các tính chất sau đây.
 
 Chúng ta chứng minh một số tính chất của lũy thừa của một số hữu tỉ.
 \begin{theorem}
-    Cho $q$ là một số hữu tỉ khác $0$, khi đó
+    Cho $q, p$ là một số hữu tỉ khác $0$, khi đó
     \begin{enumerate}[label={(\roman*)}]
         \item Với mọi số nguyên $n$, chúng ta có $q^{-n} = \dfrac{1}{q^{n}}$.
         \item Với mọi số nguyên $n$, chúng ta có $q^{n+1} = qq^{n}$.
         \item Với mọi số nguyên $m, n$, chúng ta có $q^{m + n} = q^{m}q^{n}$.
-        \item Với mọi số nguyên $m, n$, chúng ta có $q^{mn} = {(q^{m})}^{n}$.
+        \item Với mọi số nguyên $m, n$, chúng ta có ${(q^{m})}^{n} = q^{mn}$.
+        \item Với mọi số nguyên $n$, chúng ta có ${(pq)}^{n} = p^{n}q^{n}$.
     \end{enumerate}
 \end{theorem}
 
@@ -2505,38 +2570,44 @@ Chúng ta chứng minh một số tính chất của lũy thừa của một s�
     \begin{enumerate}[label={(\roman*)}]
         \item Nếu $n = 0$ thì $q^{-n} = q^{0} = 1 = \frac{1}{1} = \frac{1}{q^{n}}$.
 
-              Nếu $n$ là một số nguyên dương thì $q^{-n} = \dfrac{1}{q^{n}}$ theo định nghĩa lũy thừa nguyên.
+              Nếu $n$ là một số nguyên dương thì $q^{-n} = \dfrac{1}{q^{n}}$ theo định nghĩa lũy thừa của số hữu tỉ.
 
               Nếu $n$ là một số nguyên âm thì $q^{n} = \dfrac{1}{q^{-n}}$ theo định nghĩa lũy thừa nguyên. Vì $q^{-n}$ là nghịch đảo của $\dfrac{1}{q^{-n}}$ và $\dfrac{1}{q^{n}}$ là nghịch đảo của $q^{n}$ nên $q^{-n} = \dfrac{1}{q^{n}}$.
 
               Như vậy, nếu $q\ne 0$ thì với mọi số nguyên $n$, chúng ta có $q^{-n} = \dfrac{1}{q^{n}}$.
         \item Trong trường hợp $n$ là một số nguyên không âm thì $q^{n+1} = qq^{n}$ theo định nghĩa lũy thừa nguyên.
 
-              Trong trường hợp $n = -1$ thì $q^{n+1} = q^{0} = 1 = \dfrac{q}{q} = qq^{-1}$.
+              Trong trường hợp $n = -1$ thì $q^{n+1} = q^{0} = 1 = q\cdot\dfrac{1}{q} = qq^{-1}$.
 
-              Trong trường hợp $n$ là số nguyên âm nhỏ hơn $-1$ thì theo định nghĩa lũy thừa nguyên, chúng ta có
+              Trong trường hợp $n$ là số nguyên âm nhỏ hơn $-1$ thì theo định nghĩa lũy thừa của số hữu tỉ, chúng ta có
               \[
                   q^{n+1} = \dfrac{1}{q^{-(n+1)}} = \dfrac{1}{q^{-n-1}} = \dfrac{q}{qq^{-n-1}}.
               \]
 
-              Theo hai trường hợp trên, chúng ta có $q^{-n} = qq^{-n-1}$. Cùng với định nghĩa lũy thừa nguyên và phần (i), chúng ta suy ra
+              Theo hai trường hợp trên, chúng ta có $q^{-n} = qq^{-n-1}$. Cùng với định nghĩa lũy thừa của số hữu tỉ và phần (i), chúng ta suy ra
               \[
                   \dfrac{q}{qq^{-n-1}} = \dfrac{q}{q^{-n}} = qq^{n}.
               \]
 
               Như vậy, nếu $q\ne 0$ thì $q^{n+1} = qq^{n}$ với mọi số nguyên $n$.
-        \item Trước hết, chúng ta chứng minh bằng nguyên lý quy nạp toán học cho trường hợp $m + n\geq 0$.
+        \item Trước hết, chúng ta chứng minh bằng nguyên lý quy nạp toán học cho trường hợp $n\geq -m$.
 
-              Khi $n = -m$ thì theo định nghĩa lũy thừa nguyên và phần (i), chúng ta có $q^{m + n} = q^{0} = 1 = \frac{q^{m}}{q^{m}} = q^{m}q^{-m} = q^{m}q^{n}$.
+              Khi $n = -m$ thì theo định nghĩa lũy thừa của số hữu tỉ và phần (i), chúng ta có
+              \[
+                  q^{m + n} = q^{0} = 1 = q^{m}q^{-m} = q^{m}q^{n}.
+              \]
 
-              Giả sử với $n = k\geq -m$, có $q^{m+k} = q^{m}q^{k}$. Theo định nghĩa lũy thừa nguyên, $q^{m+(k+1)} = q^{(m+k)+1} = qq^{m+k}$. Theo giả thiết quy nạp, $qq^{m+k} = q(q^{m}q^{k}) = q^{m}(qq^{k})$. Theo phần (ii), chúng ta có $q^{m}(qq^{k}) = q^{m}q^{k+1}$.
+              Giả sử với $n = k\geq -m$, có $q^{m+k} = q^{m}q^{k}$. Theo định nghĩa lũy thừa của số hữu tỉ, $q^{m+(k+1)} = q^{(m+k)+1} = qq^{m+k}$. Theo giả thiết quy nạp, tính chất kết hợp và giao hoán của phép nhân số hữu tỉ, $qq^{m+k} = q(q^{m}q^{k}) = q^{m}(qq^{k})$. Theo phần (ii), chúng ta có $q^{m}(qq^{k}) = q^{m}q^{k+1}$.
 
               Theo nguyên lý quy nạp toán học, $q^{m + n} = q^{m}q^{n}$ với mọi số nguyên $m, n$ thỏa mãn $m+n\geq 0$.
 
-              Trong trường hợp $m + n < 0$, theo trường hợp trước và phần (i), chúng ta có
-              \[
-                  q^{m+n} = \dfrac{1}{q^{(-m) + (-n)}} = \dfrac{1}{q^{-m}q^{-n}} = \dfrac{1}{q^{-m}}\dfrac{1}{q^{-n}} = q^{m}q^{n}.
-              \]
+              Trong trường hợp $m + n < 0$, theo trường hợp trước và phần (i), và lưu ý rằng các số hữu tỉ $q^{(-m) + (-n)}$, $q^{-m}q^{-n}$ chúng ta có
+              \begin{align*}
+                  q^{m+n} & = \dfrac{1}{q^{(-m) + (-n)}}                                                                                 \\
+                          & = \dfrac{1}{q^{-m}q^{-n}}                  & \text{($q^{(-m) + (-n)}$ và $q^{-m}q^{-n}$ có cùng nghịch đảo)} \\
+                          & = \dfrac{1}{q^{-m}}\cdot \dfrac{1}{q^{-n}}                                                                   \\
+                          & = q^{m}q^{n}.
+              \end{align*}
 
               Như vậy, nếu $q\ne 0$ thì $q^{m + n} = q^{m}q^{n}$ với mọi số nguyên $m, n$.
         \item Chúng ta chứng minh cho hai trường hợp sau.
@@ -2544,18 +2615,42 @@ Chúng ta chứng minh một số tính chất của lũy thừa của một s�
               \textbf{Trường hợp $n\geq 0$.} Khi $n = 0$, chúng ta có $q^{m\cdot 0} = q^{0} = 1 = {(q^{m})}^{0} = {(q^{m})}^{n}$.
 
               Giả sử với số nguyên không âm $n = k$, chúng ta có $q^{mk} = {(q^{m})}^{k}$. Theo giả thiết quy nạp và phần (iii)
-              \[
-                  q^{m(k+1)} = q^{mk + m} = q^{mk}q^{m} = q^{m}q^{mk} = q^{m}{(q^{m})}^{k} = {(q^{m})}^{k+1}.
-              \]
+              \begin{align*}
+                  q^{m(k+1)} & = q^{mk + m}         & \text{(theo tính chất phân phối của phép nhân với phép cộng số nguyên)} \\
+                             & = q^{mk}q^{m}        & \text{(theo phần (iii))}                                                \\
+                             & = q^{m}q^{mk}        & \text{(theo tính chất giao hoán của phép nhân số nguyên)}               \\
+                             & = q^{m}{(q^{m})}^{k} & \text{(theo giả thiết quy nạp)}                                         \\
+                             & = {(q^{m})}^{k+1}    & \text{(theo phần (ii))}
+              \end{align*}
 
-              Theo nguyên lý quy nạp toán học, với mọi số nguyên $m$ và với mọi số nguyên không âm $n$, có $q^{mn} = {(q^{m})}^{n}$.
+              Theo nguyên lý quy nạp toán học, với mọi số nguyên $m$ và với mọi số nguyên không âm $n$, có ${(q^{m})}^{n} = q^{mn}$.
 
               \textbf{Trường hợp $n < 0$.} Theo trường hợp trước và phần (i)
               \[
-                q^{mn} = \frac{1}{q^{m(-n)}} = \frac{1}{{(q^{m})}^{-n}} = {(q^{m})}^{n}.  
+                  q^{mn} = \frac{1}{q^{m(-n)}} = \frac{1}{{(q^{m})}^{-n}} = {(q^{m})}^{n}.
               \]
 
               Vậy, với mọi số nguyên $m, n$, có $q^{mn} = {(q^{m})}^{n}$.
+        \item Chúng ta chứng minh cho hai trường hợp sau.
+
+              \textbf{Trường hợp $n\geq 0$.} Khi $n = 0$, chúng ta có ${(pq)}^{0} = 1 = 1\cdot 1 = p^{0}q^{0}$.
+
+              Giả sử với số nguyên không âm $n = k$, chúng ta có ${(pq)}^{k} = p^{k}q^{k}$. Khi đó
+              \begin{align*}
+                  {(pq)}^{k+1} & = {(pq)}{(pq)}^{k}     & \text{(theo định nghĩa lũy thừa của số hữu tỉ)}                      \\
+                               & = {(pq)}{(p^{k}q^{k})} & \text{(theo giả thiết quy nạp)}                                      \\
+                               & = (pp^{k})(qq^{k})     & \text{(theo tính chất kết hợp và giao hoán của phép nhân số hữu tỉ)} \\
+                               & = p^{k+1}q^{k+1}       & \text{(theo định nghĩa lũy thừa của số hữu tỉ)}
+              \end{align*}
+
+              Theo nguyên lý quy nạp toán học, với mọi số nguyên không âm $n$, chúng ta có ${(pq)}^{n} = p^{n}q^{n}$.
+
+              \textbf{Trường hợp $n < 0$.} Theo trường hợp trước và phần (i), chúng ta có
+              \[
+                  {(pq)}^{n} = \frac{1}{{(pq)}^{-n}} = \frac{1}{p^{-n}q^{-n}} = \frac{1}{p^{-n}}\cdot\frac{1}{q^{-n}} = p^{n}q^{n}.
+              \]
+
+              Vậy với mọi số nguyên $n$, chúng ta có ${(pq)}^{n} = p^{n}q^{n}$.
     \end{enumerate}
 \end{proof}
 
@@ -2574,13 +2669,13 @@ Chúng ta chứng minh một số tính chất của lũy thừa của một s�
         \item Nếu $q\geq 0$ thì $q^{2}\geq 0\cdot q = 0$. Nếu $q < 0$ thì $-q > 0$ và $q^{2} = {(-q)}^{2}\geq 0\cdot (-q) = 0$. Do đó $q^{2}\geq 0$.
         \item Khi $n = 1$, chúng ta có $0 < q^{1} < 1$ vì $0 < q < 1$ và $q^{1} = q$.
 
-              Giả sử với $n = k\geq 1$, có $0 < q^{k} < 1$ và $q^{-k} > 1$. Vì $0 < q < 1$ nên $0 < q\cdot q^{k} = q^{k+1}$. Bên cạnh đó, theo giả thiết quy nạp và định nghĩa lũy thừa nguyên, chúng ta có $q^{k+1} = q\cdot q^{k} < q^{k} < 1$. Do đó $0 < q^{k+1} < 1$.
+              Giả sử với $n = k\geq 1$, có $0 < q^{k} < 1$ và $q^{-k} > 1$. Vì $0 < q < 1$ nên $0 < q\cdot q^{k} = q^{k+1}$. Bên cạnh đó, theo giả thiết quy nạp và định nghĩa lũy thừa của số hữu tỉ, chúng ta có $q^{k+1} = q\cdot q^{k} < q^{k} < 1$. Do đó $0 < q^{k+1} < 1$.
 
               Theo nguyên lý quy nạp toán học, nếu $0 < q < 1$ thì $0 < q^{n} < 1$ với mọi số nguyên dương $n$.
-        \item Theo phần (iv), nếu $0 < q < 1$ thì $0 < q^{n} < 1$. Bên cạnh đó, vì $0 < q^{-n}$ nên $q^{-n}q^{n} < q^{-n}$, kéo theo $1 < q^{-n}$.
-        \item Khi $n = 0$ thì chúng ta có ${(1 + q)}^{n} = {(1 + q)}^{0} = 1 \geq 1 + 0q$.
+        \item Theo phần (ii), nếu $0 < q < 1$ thì $0 < q^{n} < 1$. Bên cạnh đó, vì $0 < q^{-n}$ nên $q^{-n}q^{n} < q^{-n}$, kéo theo $1 < q^{-n}$.
+        \item Khi $n = 0$ thì chúng ta có ${(1 + q)}^{n} = {(1 + q)}^{0} = 1 \geq 1 + 0q = 1 + nq$.
 
-              Giả sử với số nguyên $n = k\geq 0$, có ${(1 + q)}^{k} \geq 1 + kq$. Vì $(1 + q) > 0$ nên theo định nghĩa lũy thừa nguyên và  giả thiết quy nạp, chúng ta suy ra
+              Giả sử với số nguyên $n = k\geq 0$, có ${(1 + q)}^{k} \geq 1 + kq$. Vì $(1 + q) > 0$ nên theo định nghĩa lũy thừa của số hữu tỉ và giả thiết quy nạp, chúng ta suy ra
               \[
                   {(1 + q)}^{k+1} = (1 + q){(1 + q)}^{k} \geq (1 + q)(1 + kq) = 1 + (k+1)q + q^{2} \geq 1 + (k + 1)q
               \]
@@ -2610,6 +2705,6 @@ Chúng ta chứng minh một số tính chất của lũy thừa của một s�
     Do đó, $k = \ell$. Như vậy, với mỗi số hữu tỉ $x$, tồn tại duy nhất số tự nhiên $k$ sao cho $k\leq x < k+1$.
 \end{proof}
 
-Trong chương tiếp theo, chúng ta sẽ dùng đến phần nguyên của số hữu tỉ trong việc xây dựng tập hợp số thực, và tổng quát mở rộng khái niệm này thành phần nguyên của số thực.
+Trong chương tiếp theo, chúng ta sẽ dùng đến phần nguyên của số hữu tỉ trong việc xây dựng tập hợp số thực, và mở rộng khái niệm này thành phần nguyên của số thực.
 
 \subsection{Bài tập}
