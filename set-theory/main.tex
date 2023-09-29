@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{vietnam}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,amscdx,mathtools,mathrsfs}
+\usepackage[linewidth=2pt,innertopmargin=0pt]{mdframed}
 \usepackage{pxfonts}
 \usepackage{imakeidx}
 \usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
@@ -37,16 +38,16 @@
 \renewcommand\cftsecpresnum{\S}
 \counterwithout{section}{chapter}
 
-\newtheorem{theorem}{Định lý}
+\newmdtheoremenv{theorem}{Định lý}
 \counterwithin{theorem}{section}
-\newtheorem{proposition}[theorem]{Mệnh đề}
-\newtheorem{corollary}[theorem]{Hệ quả}
-\newtheorem{axiom}[theorem]{Tiên đề}
-\newtheorem{lemma}[theorem]{Bổ đề}
+\newmdtheoremenv{proposition}[theorem]{Mệnh đề}
+\newmdtheoremenv{corollary}[theorem]{Hệ quả}
+\newmdtheoremenv{axiom}[theorem]{Tiên đề}
+\newmdtheoremenv{lemma}[theorem]{Bổ đề}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Định nghĩa}
-\newtheorem{example}[theorem]{Ví dụ}
-\newtheorem{counterexample}[theorem]{Phản ví dụ}
+\newmdtheoremenv{definition}[theorem]{Định nghĩa}
+\newmdtheoremenv{example}[theorem]{Ví dụ}
+\newmdtheoremenv{counterexample}[theorem]{Phản ví dụ}
 \newtheorem{exercise}{Bài tập}
 \counterwithin{exercise}{section}
 

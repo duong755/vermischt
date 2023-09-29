@@ -236,6 +236,7 @@ Chúng ta kết thúc mục này bằng định nghĩa tập hợp lũy thừa, 
 Dưới đây là một số ví dụ về tập lũy thừa.
 
 \begin{example}
+    Tập hợp lũy thừa của tập hợp rỗng là $\{ \varnothing \}$.
     \begin{equation*}
         \begin{split}
             \mathcal{P}(\varnothing) = \{ \varnothing \}, \\
@@ -336,29 +337,27 @@ Trong toán học, việc sử dụng lượng hóa trong các mệnh đề là 
 
 \subsection{Phương pháp quy nạp toán học}
 
-Trong mục này, chúng ta xem xét một trường hợp riêng của vị từ: vị từ sử dụng biến là số nguyên dương. Chúng ta quan tâm tới trường hợp này vì khi học và làm toán, chúng ta thường cần chứng minh các mệnh đề có dạng $p(n)$ (với $n$ là số nguyên dương) cho \textit{tất cả} các trường hợp của $n$. Để chứng minh một lớp các mệnh đề như vậy, phương pháp quy nạp toán học thường được sử dụng. Phương pháp này được phát biểu thành định lý sau.
-
-\bigskip
+Trong mục này, chúng ta xem xét một trường hợp riêng của vị từ: vị từ sử dụng biến là số tự nhiên. Chúng ta quan tâm tới trường hợp này vì khi học và làm toán, chúng ta thường cần chứng minh các mệnh đề có dạng $p(n)$ (với $n$ là số tự nhiên) cho \textit{tất cả} các trường hợp của $n$. Để chứng minh một lớp các mệnh đề như vậy, phương pháp quy nạp toán học thường được sử dụng. Phương pháp này được phát biểu thành định lý sau.
 
 \begin{theorem}[Nguyên lý quy nạp toán học]
-    Cho $p(n)$ là một mệnh đề với $p$ là vị từ, $n$ là số tự nhiên. Nếu
+    Cho $p$ là một vị từ áp dụng trên tập hợp các số tự nhiên. Nếu
     \begin{itemize}
-        \item Có $p(1)$.
-        \item Với mọi số tự nhiên $k$, có $p(k)$ kéo theo $p(k + 1)$
+        \item Có $p(0)$.
+        \item Với mọi số tự nhiên $k$, có $p(k)$ kéo theo $p(k + 1)$.
     \end{itemize}
 
     thì có $p(n)$ với mọi số tự nhiên $n$.
 \end{theorem}
 
-Khi chứng minh có $p(n)$ với mọi $n$ là số nguyên dương bằng phương pháp quy nạp toán học, chúng ta thực hiện các bước sau:
+Khi chứng minh có $p(n)$ với mọi $n$ là số tự nhiên bằng phương pháp quy nạp toán học, chúng ta thực hiện các bước sau:
 
 \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
-    \item (Bước cơ sở) Chúng ta chứng minh có $p(1)$.
+    \item (Bước cơ sở) Chúng ta chứng minh có $p(0)$.
     \item (Bước quy nạp) Chúng ta chứng minh rằng với mỗi $k\geq 1$, $p(k)$ kéo theo $p(k+1)$. Ở bước này, mệnh đề $p(k)$ được gọi là \textit{giả thiết quy nạp}.
     \item Kết luận rằng có $p(n)$ với mọi số nguyên dương $n$.
 \end{enumerate}
 
-Từ tổng kết trên của phương pháp chứng minh bằng quy nạp toán học, bạn đọc có thể kiểm tra nhận xét sau: phương pháp trên vẫn áp dụng được cho trường hợp $n$ là số nguyên dương lớn hơn hoặc bằng một số nguyên dương $n_{0}$ cho trước, hoặc trường hợp $n$ là số nguyên lớn hơn hoặc bằng một số nguyên cho trước bằng cách thay đổi một chút ở Bước cơ sở.
+Từ tổng kết trên của phương pháp chứng minh bằng quy nạp toán học, bạn đọc có thể kiểm tra nhận xét sau: phương pháp trên vẫn áp dụng được cho trường hợp $n$ là số nguyên lớn hơn hoặc bằng một số nguyên $n_{0}$ cho trước, hoặc trường hợp $n$ là số nguyên lớn hơn hoặc bằng một số nguyên cho trước bằng cách thay đổi một chút ở Bước cơ sở.
 
 Chúng ta đưa ra hai ví dụ về chứng minh bằng phương pháp quy nạp toán học.
 
@@ -411,7 +410,7 @@ Từ khảo sát trên, chúng ta dự đoán (cuối mục này, chúng ta sẽ
 
     Nếu $f(X)$ có ít nhất một nghiệm là $X = a$, chúng ta thực hiện phép chia đa thức và lấy dư. Sau khi thực hiện phép chia, chúng ta thu được một đa thức $g(X)$ bậc $k$ (bậc của $g(X)$ = bậc của $f(X)$ trừ $1$) nào đó và số dư là một số thực $r$, chúng ta viết $f(X) = (X - a)g(x) + r$. Vì $f(a) = 0$ nên $r = 0$, dẫn đến $f(X) = (X - a)g(X)$. Theo giả thiết quy nạp, $g(X)$ có không quá $k$ nghiệm. Cùng với đẳng thức vừa thu được, chúng ta kết luận $f(X)$ có không quá $(k + 1)$ nghiệm.
 
-    Theo nguyên lý quy nạp, mỗi đa thức bậc $n$ có không quá $n$ nghiệm.
+    Theo nguyên lý quy nạp, mỗi đa thức bậc $n$ với hệ số thực có không quá $n$ nghiệm.
 \end{proof}
 
 Khi chứng minh bằng phương pháp quy nạp toán học, bước cơ sở và bước quy nạp đều là bắt buộc. Khi thiếu một trong hai bước, chúng ta gọi đó là \textit{quy nạp không hoàn toàn}. Việc bỏ qua một trong hai bước có thể dẫn đến một kết luận sai. Nhà toán học Fermat khi xem xét các số tự nhiên có dạng $2^{2^{n}} + 1$ đã nhận thấy rằng khi $n = 0, 1, 2, 3, 4$ thì số có dạng như vậy là số nguyên tố, và đi thẳng tới kết luận rằng mọi số tự nhiên có dạng đó là số nguyên tố. Về sau, nhà toán học Euler đã bác bỏ kết luận này sau khi chỉ ra $2^{2^{5}} + 1$ là hợp số với ước số là $641$.
@@ -420,8 +419,8 @@ Cũng có khi việc sử dụng giả thiết quy nạp mà chỉ gồm đúng 
 
 Nếu chứng minh có $p(n)$ với mọi $n$ là số nguyên dương bằng phương pháp quy nạp mạnh, chúng ta thực hiện các bước sau:
 \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
-    \item (Bước cơ sở) Chúng ta chứng minh có $p(1)$.
-    \item (Bước quy nạp) Chúng ta chứng minh rằng với mỗi số nguyên dương $k\geq 1$, nếu có $p(n)$ \textit{với mọi} $1\leq n\leq k$ thì có $p(k+1)$. Ở bước này, các mệnh đề $p(1), p(2), \ldots, p(k)$ được gọi là \textit{giả thiết quy nạp}.
+    \item (Bước cơ sở) Chúng ta chứng minh có $p(0)$.
+    \item (Bước quy nạp) Chúng ta chứng minh rằng với mỗi số tự nhiên $k$, nếu có $p(n)$ \textit{với mọi} $0\leq n\leq k$ thì có $p(k+1)$. Ở bước này, các mệnh đề $p(1), p(2), \ldots, p(k)$ được gọi là \textit{giả thiết quy nạp}.
     \item Kết luận rằng có $p(n)$ với mọi số nguyên dương $n$.
 \end{enumerate}
 
@@ -434,7 +433,7 @@ Sau đây là một ví dụ điển hình cho việc chứng minh bằng phươ
 \begin{proof}
     Khi $n = 2$, $n$ là một số nguyên tố, mệnh đề đúng.
 
-    Giả sử mỗi số tự nhiên $n$ lớn hơn $1$ và không vượt quá $m - 1$ đều là tích của các số nguyên tố và phân tích nguyên tố đó là duy nhất. Xét số tự nhiên $m$.
+    Giả sử mỗi số tự nhiên lớn hơn $1$ và không vượt quá $m - 1$ đều là tích của các số nguyên tố và phân tích nguyên tố đó là duy nhất. Xét số tự nhiên $m$.
 
     Nếu $m$ là số nguyên tố, mệnh đề đúng.
 
@@ -443,18 +442,18 @@ Sau đây là một ví dụ điển hình cho việc chứng minh bằng phươ
         m = {(p_{1})}^{m_{1}}{(p_{2})}^{m_{2}}\cdots {(p_{r})}^{m_{r}} = {(q_{1})}^{t_{1}}{(q_{2})}^{t_{2}}\cdots {(q_{s})}^{t_{s}}
     \]
 
-    trong đó $p_{1}, \ldots, p_{r}, q_{1}, \ldots, q_{s}$ là các số nguyên tố, còn $m_{1}, \ldots, m_{r}$, $t_{1}, \ldots, t_{s}$ là các số tự nhiên.
+    trong đó $p_{1}, \ldots, p_{r}, q_{1}, \ldots, q_{s}$ là các số nguyên tố, còn $m_{1}, \ldots, m_{r}$, $t_{1}, \ldots, t_{s}$ là các số nguyên dương.
 
-    $p_{1}$ là ước của $m = {(p_{1})}^{m_{1}}{(p_{2})}^{m_{2}}\cdots {(p_{r})}^{m_{r}}$ nên $p_{1}$ cũng là ước của ${(q_{1})}^{t_{1}}{(q_{2})}^{t_{2}}\cdots {(q_{s})}^{t_{s}}$. Theo Bổ đề Euclid\footnote{Bổ đề Euclid được phát biểu rằng: Nếu một số nguyên tố $p$ là ước của tích $ab$ thì $p$ là ước của ít nhất một trong hai số $a$ và $b$.}, tồn tại chỉ số $i$ (mà $1\leq i\leq s$) sao cho $p_{1}$ là ước của ${(q_{i})}^{t_{i}}$. Do tính giao hoán của phép nhân nên không mất tính tổng quát, chúng ta có thể giả sử chỉ số đó chính là $1$. Việc $p_{1}$ là ước của ${(q_{1})}^{t_{1}}$ kéo theo $p_{1} = q_{1}$ (điều này cũng được rút ra từ Bổ đề Euclid). Như vậy, chúng ta có hai phân tích nguyên tố của số tự nhiên $m/p_{1}$. Theo giả thiết quy nạp, phân tích nguyên tố của $m/p_{1}$ là duy nhất. Do đó phân tích nguyên tố của $m$ cũng là duy nhất.
+    $p_{1}$ là ước của $m = {(p_{1})}^{m_{1}}{(p_{2})}^{m_{2}}\cdots {(p_{r})}^{m_{r}}$ nên $p_{1}$ cũng là ước của ${(q_{1})}^{t_{1}}{(q_{2})}^{t_{2}}\cdots {(q_{s})}^{t_{s}}$. Theo hệ quả của Bổ đề Euclid\footnote{Hệ quả của Bổ đề Euclid được phát biểu rằng: Nếu một số nguyên tố $p$ là ước của tích $ab$ thì $p$ là ước của ít nhất một trong hai số $a$ và $b$.}, tồn tại chỉ số $i$ (mà $1\leq i\leq s$) sao cho $p_{1}$ là ước của ${(q_{i})}^{t_{i}}$. Do tính giao hoán của phép nhân nên không mất tính tổng quát, chúng ta có thể giả sử chỉ số đó chính là $1$. Việc $p_{1}$ là ước của ${(q_{1})}^{t_{1}}$ kéo theo $p_{1} = q_{1}$ (điều này cũng được rút ra từ hệ quả của Bổ đề Euclid). Như vậy, chúng ta có hai phân tích nguyên tố của số tự nhiên $m/p_{1}$. Theo giả thiết quy nạp, phân tích nguyên tố của $m/p_{1}$ là duy nhất. Do đó phân tích nguyên tố của $m$ cũng là duy nhất.
 
     Theo nguyên lý quy nạp mạnh, mỗi số tự nhiên lớn hơn $1$ đều là tích của các số nguyên tố và phân tích nguyên tố đó là duy nhất.
 \end{proof}
 
 Dù mang tên gọi ``Nguyên lý quy nạp mạnh'' nhưng nguyên lý này và nguyên lý quy nạp toán học là tương đương nhau.
 
-Không phải mệnh đề nào với lượng hóa cho số tự nhiên, hay số nguyên dương cũng được chứng minh bằng phương pháp quy nạp toán học.  Tuy vậy, phương pháp quy nạp toán học tỏ ra hiệu quả trong việc chứng minh nhiều kết quả. Tuy nhiên lúc này chúng ta chưa khẳng định được tính đúng đắn của phương pháp này mà mới chỉ được thuyết phục bằng các bước chứng minh nghe hợp lý cũng như các ví dụ. Thực ra, nguyên lý quy nạp toán học thường được phát biểu như một tiên đề. Chúng ta sẽ quay lại với nguyên lý quy nạp toán học trong Chương~\ref{chapter:natural-numbers-integers-and-rationals}.
+Không phải mệnh đề nào với lượng hóa cho số tự nhiên, hay số nguyên dương cũng được chứng minh bằng phương pháp quy nạp toán học.  Tuy vậy, phương pháp quy nạp toán học tỏ ra hiệu quả trong việc chứng minh nhiều kết quả. Lúc này chúng ta chưa khẳng định được tính đúng đắn của phương pháp này mà mới chỉ được thuyết phục bằng các bước chứng minh nghe hợp lý cũng như các ví dụ. Thực ra, nguyên lý quy nạp toán học thường được phát biểu như một tiên đề. Chúng ta sẽ quay lại với nguyên lý quy nạp toán học trong Chương~\ref{chapter:natural-numbers-integers-and-rationals}.
 
-Như đã đề cập từ trước, chúng ta nói thêm về sự dự đoán trong chứng minh bằng phương pháp quy nạp toán học. Bạn đọc khi theo dõi đến ví dụ về tổng các số tự nhiên lẻ liên tiếp có thể thấy điều dự đoán là không tự nhiên, và đặt ra các câu hỏi như: ``Dự đoán đó đến từ đâu?\@'' thậm chí là ``Nếu gặp trường hợp quá khó dự đoán thì sao?\@'' Đây là một nhược điểm lớn của phương pháp chứng minh quy nạp $-$ Đó là \textit{người sử dụng phương pháp quy nạp phải biết mình đang chứng minh điều gì, một cách cụ thể}, và chứng minh bằng phương pháp quy nạp \textit{không cung cấp thêm thông tin gì về bài toán} ngoại trừ chính kết quả được chứng minh. Điểm yếu này không thể khắc phục hoàn toàn vì tính chủ quan của nó. Những người học và làm toán chỉ còn cách phát triển kinh nghiệm để cải thiện kĩ năng dự đoán đó, hoặc dùng những phương pháp chứng minh khác.
+Như đã đề cập từ trước, chúng ta nói thêm về sự dự đoán trong chứng minh bằng phương pháp quy nạp toán học. Bạn đọc khi theo dõi đến ví dụ về tổng các số tự nhiên lẻ liên tiếp có thể thấy điều được dự đoán là không tự nhiên, và đặt ra các câu hỏi như: ``Dự đoán đó đến từ đâu?\@'' thậm chí là ``Nếu gặp trường hợp quá khó dự đoán thì sao?\@'' Đây là một nhược điểm lớn của phương pháp chứng minh quy nạp $-$ Đó là \textit{người sử dụng phương pháp quy nạp phải biết mình đang chứng minh điều gì, một cách cụ thể}, và chứng minh bằng phương pháp quy nạp \textit{không cung cấp thêm thông tin gì về bài toán} ngoại trừ chính kết quả được chứng minh. Điểm yếu này không thể khắc phục hoàn toàn vì tính chủ quan của nó. Những người học và làm toán chỉ còn cách phát triển kinh nghiệm để cải thiện kĩ năng dự đoán đó, hoặc dùng những phương pháp chứng minh khác.
 
 \subsection{Bài tập}
 \setcounter{exercise}{0}
@@ -505,7 +504,7 @@ Chứng minh cho định lý trên có thể được thực hiện bằng các 
 
 \subsection{Phần bù và hiệu hai tập hợp}
 
-Khi học hay làm toán và làm việc với tập hợp, chúng ta thường xuyên gặp trường hợp các tập hợp đang xét đều là tập hợp con của một tập hợp nào đó. Chẳng hạn: Khi học hình học phẳng, chúng ta làm việc trong một mặt phẳng (mặt phẳng này chứa tất cả các điểm, đường thẳng, tam giác, đường tròn mà chúng ta đang xét); Khi xem xét một đồ thị, chúng ta quan tâm tới các đỉnh, cạnh của đồ thị, và có thể cả các đồ thị con của đồ thị đó;\ldots Tập hợp chứa tất cả các đối tượng đang xét (việc tập hợp này là gì phụ thuộc vào ngữ cảnh của môn học, chuyên ngành, và đặc biệt là vấn đề đang tìm hiểu) được gọi là \textit{không gian}, hay \textit{tập vũ trụ}. Ở các phân ngành khác của toán học nói riêng và khoa học nói chung, thuật ngữ không gian được sử dụng như vậy, thường xuyên (không gian vector, không gian topology, không gian mẫu, không gian affine, không gian xạ ảnh, không gian tìm kiếm,\ldots). Trong mục này, chúng ta kí hiệu không gian là $X$.
+Khi học hay làm toán và làm việc với tập hợp, chúng ta thường xuyên gặp trường hợp các tập hợp đang xét đều là tập hợp con của một tập hợp nào đó. Chẳng hạn: Khi học hình học phẳng, chúng ta làm việc trong một mặt phẳng (mặt phẳng này chứa tất cả các điểm, đường thẳng, tam giác, đường tròn mà chúng ta đang xét); Khi xem xét một đồ thị, chúng ta quan tâm tới các đỉnh, cạnh của đồ thị, và có thể cả các đồ thị con của đồ thị đó;\ldots Tập hợp chứa tất cả các đối tượng đang xét được gọi là \textit{không gian}, hay \textit{tập vũ trụ}  (việc tập hợp này là gì phụ thuộc vào ngữ cảnh của môn học, chuyên ngành, và đặc biệt là vấn đề đang tìm hiểu). Ở các phân ngành khác của toán học nói riêng và khoa học nói chung, thuật ngữ không gian được sử dụng như vậy thường xuyên (không gian vector, không gian topology, không gian mẫu, không gian affine, không gian xạ ảnh, không gian tìm kiếm,\ldots). Trong mục này, chúng ta kí hiệu không gian là $X$.
 
 \begin{definition}[Phần bù]
     Cho tập hợp $A$ trong không gian $X$. Phần bù của $A$ (trong $X$) là tập hợp gồm các phần tử thuộc $X$ nhưng không thuộc $A$. Phần bù của $A$ trong $X$ được kí hiệu là $A^{c}$.
@@ -543,6 +542,7 @@ Tập hợp $I$ được sử dụng trong định nghĩa trên được gọi l
 Lúc này, chúng ta có thể phát biểu công thức De Morgan.
 
 \begin{theorem}[Công thức De Morgan]\label{theorem:de-morgan-formula}
+    ${(A_{i})}_{i\in I}$ là một họ các tập hợp. Khi đó
     \begin{equation*}
         \begin{split}
             {\left(\bigcup_{i\in I}A_{i}\right)}^{c} = \bigcap_{i\in I}{A_{i}}^{c}, \\
@@ -556,7 +556,7 @@ Lúc này, chúng ta có thể phát biểu công thức De Morgan.
 \begin{proof}
     Với công thức đầu tiên, chúng ta giả sử $x \in {\left(\bigcup_{i\in I}A_{i}\right)}^{c}$. Điều này tương đương với việc $x\notin A_{i}$ với mọi $i\in I$, hay $x\in {A_{i}}^{c}$ với mọi $i\in I$ (theo định nghĩa phần bù). Theo định nghĩa của phép giao các tập hợp, $x\in \bigcap_{i\in I}{A_{i}}^{c}$. Do đó $x\in \bigcap_{i\in I}{A_{i}}^{c}$, kéo theo
     \[
-        {\left(\bigcup_{i\in I}A_{i}\right)}^{c} \subseteq \bigcap_{i\in I}{A_{i}}^{c}
+        {\left(\bigcup_{i\in I}A_{i}\right)}^{c} \subseteq \bigcap_{i\in I}{A_{i}}^{c}.
     \]
 
     Ngược lại, giả sử $x\in \bigcap_{i\in I}{A_{i}}^{c}$. Theo định nghĩa của phép giao các tập hợp, chúng ta suy ra $x\in {A_{i}}^{c}$ với mọi $i\in I$, hay $x\notin A_{i}$ với mọi $i\in I$ (theo định nghĩa phần bù). Theo nguyên lý lượng hóa, mệnh đề vừa thu được tương đương với phủ định của mệnh đề ``tồn tại $i\in I$ sao cho $x\in A_{i}$''. Do đó $x\in {\left(\bigcup_{i\in I}A_{i}\right)}^{c}$, kéo theo
