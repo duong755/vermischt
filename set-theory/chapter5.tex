@@ -2569,7 +2569,7 @@ Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán
 
 \section{Các mô hình số thực}
 
-Kết quả chính của mục này là sự tương đương, hay đẳng cấu của các mô hình số thực. Trước khi đi đến chứng minh cho định lý đó, chúng ta cần chuẩn bị một số kết quả khác. Chúng ta định nghĩa tập hợp số thực là $\mathscr{D}_{\mathbb{Q}}$.
+Kết quả chính của mục này là sự tương đương, hay đẳng cấu của các mô hình số thực. Trước khi đi đến chứng minh cho định lý đó, chúng ta cần chuẩn bị một số kết quả khác. Trong mục này, để thuận tiện trong việc phát biểu, chúng ta định nghĩa tập hợp số thực là $\mathscr{D}_{\mathbb{Q}}$ (tập hợp các lát cắt Dedekind trên tập hợp số hữu tỉ, định nghĩa ở Mục~\ref{section:dedekind-cuts}).
 
 \subsection{Nhìn nhận về các tập hợp số}
 
@@ -2605,7 +2605,7 @@ Khi đề cập đến hệ tiên đề về số thực, chúng ta đã nhắc 
     \noindent Tập hợp số nguyên $\mathbb{Z}$ với hai phép toán cộng và nhân không phải một trường. Trong trường hợp này, tính chất (F9) không được thỏa mãn.
 \end{counterexample}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:field-properties}
     Trong một trường $\mathbb{F}$ với hai phép toán cộng và nhân,
     \begin{enumerate}[label={(\roman*)},itemsep=0pt]
         \item Phần tử đồng nhất $0$ của phép cộng là duy nhất.
@@ -2679,7 +2679,7 @@ Khi đề cập đến hệ tiên đề về số thực, chúng ta đã nhắc 
 
 \subsection{Thuộc tính Archimedes và tính trù mật của tập hợp số hữu tỉ}
 
-Tính trù mật của tập hợp số hữu tỉ là một kết quả cần thiết trong chứng minh ở nội dung tiếp theo. Để chứng minh tính chất này, chúng ta cần đến thuộc tính Archimedes.
+Tính trù mật của tập hợp số hữu tỉ là một kết quả cần thiết trong chứng minh ở nội dung tiếp theo. Để chứng minh tính chất này, chúng ta cần đến thuộc tính Archimedes. Những tính chất này đúng với mọi mô hình thỏa mãn hệ tiên đề về số thực.
 
 \begin{theorem}[Thuộc tính Archimedes\index{Thuộc tính Archimedes}]
     Với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
@@ -2736,8 +2736,8 @@ Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimede
 \end{figure}
 
 \begin{theorem}[Phần nguyên của số thực\index{Phần nguyên của số thực}]
-    Với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$. 
-    
+    Với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$.
+
     \noindent Nói riêng, số nguyên $n$ như vậy được gọi là \textbf{phần nguyên của số thực $x$} và được kí hiệu là $\floor{x}$.
 \end{theorem}
 
@@ -2763,12 +2763,14 @@ Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimede
     Vậy, với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
 \end{proof}
 
-\subsection{Sự tương đương của các mô hình số thực}
+\subsection{* Sự tương đương của các mô hình số thực}
 
 Chúng ta đã đưa ra hai mô hình số thực là lát cắt Dedekind và lớp tương đương của các dãy Cauchy hữu tỉ. Bên cạnh hai mô hình này, các nhà toán học còn đưa ra nhiều mô hình khác cho số thực. Điều này đặt ra câu hỏi rằng việc mỗi người chọn một mô hình khác nhau có gây ảnh hưởng gì không? Trong trường hợp của hệ tiên đề về số thực, các mô hình là ``tương đương'', như trong định lý sau đây.
 
+Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set-of-dedekind-cuts}, chúng ta đồng nhất mỗi số hữu tỉ $q$ với lát cắt $q^{*} = \{ x \mid x\in\mathbb{Q} \wedge x < q \}$ (tập hợp các số hữu tỉ nhỏ hơn $q$).
+
 \begin{theorem}\label{theorem:uniqueness-of-complete-ordered-field}
-    Mọi mô hình số thực đều đẳng cấu với $\mathscr{D}_{\mathbb{Q}}$ (tập hợp các lát cắt Dedekind trên tập hợp số hữu tỉ, định nghĩa ở Mục~\ref{section:dedekind-cuts}). Cụ thể hơn, nếu tập hợp $R$ với phép cộng (${+}_{R}$) với phần tử đồng nhất của phép cộng ($0_{R}$), phép nhân (${\times}_{R}$) với phần tử đồng nhất của phép nhân ($1_{R}$), và quan hệ thứ tự ($\leq_{R}$) thỏa mãn hệ tiên đề về số thực thì tồn tại một song ánh $f: \mathscr{D}_{\mathbb{Q}}\to R$ sao cho
+    Nếu tập hợp $R$ với phép cộng (${+}_{R}$) với phần tử đồng nhất của phép cộng ($0_{R}$), phép nhân (${\times}_{R}$) với phần tử đồng nhất của phép nhân ($1_{R}$), và quan hệ thứ tự ($\leq_{R}$) thỏa mãn hệ tiên đề về số thực thì tồn tại một song ánh $f: \mathscr{D}_{\mathbb{Q}}\to R$ sao cho
     \begin{itemize}[topsep=0pt,itemsep=0pt]
         \item $f(0) = 0_{R}$, $f(1) = 1_{R}$.
         \item $f(x + y) = f(x) +_{R} f(y)$ với mọi số thực $x, y$.
@@ -2777,7 +2779,7 @@ Chúng ta đã đưa ra hai mô hình số thực là lát cắt Dedekind và l�
     \end{itemize}
 \end{theorem}
 
-Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set-of-dedekind-cuts}, chúng ta đồng nhất mỗi số hữu tỉ $q$ với lát cắt $q^{*} = \{ x \mid x\in\mathbb{Q} \wedge x < q \}$ (tập hợp các số hữu tỉ nhỏ hơn $q$). Chứng minh dưới đây dài, tái hiện quá trình xây dựng tập hợp số thực (bằng lát cắt Dedekind) bắt đầu từ tập hợp số tự nhiên, tập hợp số nguyên, tập hợp số hữu tỉ. Do vậy chúng tôi chia chứng minh thành các bước nhỏ hơn để tiện theo dõi.
+Chứng minh dưới đây phỏng theo chứng minh trong cuốn sách Calculus của M.\@Spivak~\cite{spivak}. Chúng tôi chia chứng minh thành các bước nhỏ hơn để tiện theo dõi.
 
 \begin{proof}
     Chúng ta định nghĩa ánh xạ $f: \mathscr{D}_{\mathbb{Q}}\to R$ như sau.
@@ -2868,7 +2870,7 @@ Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set
               Với mọi số nguyên $m, n$, nếu $m\leq n$ thì tồn tại số nguyên không âm $k$ sao cho $m + k = n$. Theo \textbf{Bước 2}, chúng ta có $f(n) = f(m + k) = f(m) +_{R} f(k)$. Mặt khác, theo mệnh đề vừa chứng minh, chúng ta có $0_{R}\leq_{R} f(k)$, dẫn đến $f(m)\leq_{R} f(n)$.
         \item Định nghĩa ảnh của các số hữu tỉ dưới ánh xạ $f$.
 
-              Theo chứng minh ở \textbf{Bước 4}, nếu số nguyên $n$ khác $0$ thì $f(n)\ne 0_{R}$. Do đó, nếu số nguyên $n$ khác $0$ thì $f(n)$ có nghịch đảo. Theo \textbf{Bước 3}, nếu $\frac{a}{b} = \frac{c}{d}$ thì $f(a)\times_{R} {(f(b))}^{-1} = f(c)\times_{R} {(f(d))}^{-1}$. Điều này là cơ sở để chúng ta định nghĩa ảnh của một số hữu tỉ $q = \frac{a}{b}$ dưới ánh xạ $f$ như sau
+              Theo chứng minh ở \textbf{Bước 4}, nếu số nguyên $n$ khác $0$ thì $f(n)\ne 0_{R}$. Do đó, nếu số nguyên $n$ khác $0$ thì $f(n)$ có nghịch đảo. Theo \textbf{Bước 3}, nếu $\dfrac{a}{b} = \dfrac{c}{d}$ thì $f(a)\times_{R} {(f(b))}^{-1} = f(c)\times_{R} {(f(d))}^{-1}$. Điều này là cơ sở để chúng ta định nghĩa ảnh của một số hữu tỉ $q = \dfrac{a}{b}$ dưới ánh xạ $f$ như sau
               \[
                   f(q) = f\left(\frac{a}{b}\right) = f(a)\times_{R} {(f(b))}^{-1}.
               \]
@@ -2878,33 +2880,33 @@ Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set
               \begingroup
               \allowdisplaybreaks
               \begin{align*}
-                  f\left( \frac{a}{b} + \frac{c}{d} \right)   & = f\left( \frac{ad + bc}{bd} \right) = f(ad + bc)\times_{R} {(f(bd))}^{-1}                                                                  \\
-                                                              & = (f(ad) +_{R} f(bc)) \times_{R} {(f(bd))}^{-1}                                                                                                 \\
-                                                              & = f(ad) \times_{R} {(f(bd))}^{-1} +_{R} f(bc) \times_{R} {(f(bd))}^{-1}                                                                         \\
-                                                              & = f\left(\frac{ad}{bd}\right) +_{R} f\left(\frac{bc}{bd}\right) = f\left(\frac{a}{b}\right) +_{R} f\left(\frac{c}{d}\right),                        \\
-                  f\left( \frac{a}{b}\cdot\frac{c}{d} \right) & = f\left(\frac{ac}{bd}\right) = f(ac)\times_{R} {(f(bd))}^{-1}                                                                              \\
-                                                              & = (f(a)\times_{R} f(c)) \times_{R} ({(f(d))}^{-1}\times_{R} {(f(c))}^{-1})                                                                  \\
-                                                              & = (f(a)\times_{R} {(f(b))}^{-1}) \times_{R} (f(c)\times_{R} {(f(d))}^{-1}) \\
+                  f\left( \frac{a}{b} + \frac{c}{d} \right)   & = f\left( \frac{ad + bc}{bd} \right) = f(ad + bc)\times_{R} {(f(bd))}^{-1}                                                   \\
+                                                              & = (f(ad) +_{R} f(bc)) \times_{R} {(f(bd))}^{-1}                                                                              \\
+                                                              & = f(ad) \times_{R} {(f(bd))}^{-1} +_{R} f(bc) \times_{R} {(f(bd))}^{-1}                                                      \\
+                                                              & = f\left(\frac{ad}{bd}\right) +_{R} f\left(\frac{bc}{bd}\right) = f\left(\frac{a}{b}\right) +_{R} f\left(\frac{c}{d}\right), \\
+                  f\left( \frac{a}{b}\cdot\frac{c}{d} \right) & = f\left(\frac{ac}{bd}\right) = f(ac)\times_{R} {(f(bd))}^{-1}                                                               \\
+                                                              & = (f(a)\times_{R} f(c)) \times_{R} ({(f(d))}^{-1}\times_{R} {(f(c))}^{-1})                                                   \\
+                                                              & = (f(a)\times_{R} {(f(b))}^{-1}) \times_{R} (f(c)\times_{R} {(f(d))}^{-1})                                                   \\
                                                               & = f\left(\frac{a}{b}\right)\times_{R} f\left(\frac{c}{d}\right).
               \end{align*}
               \endgroup
 
               Nếu $\frac{a}{b} < \frac{c}{d}$ thì $ad < bc$. Theo \textbf{Bước 4}, $f(ad) <_{R} f(bc)$. Mặt khác, $f(ad) = f(a)\times_{R} f(d)$, $f(bc) = f(b) \times_{R} f(c)$. Do đó $f(a)\times_{R} f(d) <_{R} f(b)\times_{R} f(c)$ và kéo theo
               \[
-                f(a)\times_{R} f(d) <_{R} f(b)\times_{R} f(c).
+                  f(a)\times_{R} f(d) <_{R} f(b)\times_{R} f(c).
               \]
 
               Bên cạnh đó, $0_{R} <_{R} f(c), 0_{R} <_{R} f(d)$ vì $c, d$ là các số nguyên dương, nên $0_{R} < {(f(c))}^{-1}, 0_{R} <_{R} {(f(d))}^{-1}$ và chúng ta suy ra
               \[
-                f(a)\times_{R} {(f(b))}^{-1} <_{R} f(c)\times_{R} {(f(d))}^{-1}.
+                  f(a)\times_{R} {(f(b))}^{-1} <_{R} f(c)\times_{R} {(f(d))}^{-1}.
               \]
 
-              Do đó $f\left(\frac{a}{b}\right) <_{R} f\left(\frac{c}{d}\right)$.
+              Do đó $f\left(\dfrac{a}{b}\right) <_{R} f\left(\dfrac{c}{d}\right)$.
         \item Định nghĩa ảnh của các số thực dưới ánh xạ $f$.
 
-              Với mỗi số thực $x$, chúng ta kí hiệu $S_{x}$ là tập hợp tất cả các số hữu tỉ nhỏ hơn $x$. Tập hợp $S_{x}$ là một lát cắt trên tập hợp các số hữu tỉ, vì
+              Với mỗi số thực $x$, chúng ta kí hiệu $S_{x}$ là tập hợp tất cả các số hữu tỉ nhỏ hơn $x$. Tập hợp $S_{x}$ là một lát cắt trên tập hợp các số hữu tỉ (do đó, $x = S_{x}$), vì
               \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
-                  \item $S_{x}$ không rỗng, $\mathbb{Q}\setminus S_{x}$ không rỗng, theo định lý về phần nguyên của số thực.
+                  \item $S_{x}$ không rỗng, $\mathbb{Q}\setminus S_{x}$ không rỗng.
                   \item Mọi phần tử của $S_{x}$ nhỏ hơn mọi phần tử của $\mathbb{Q}\setminus S_{x}$, theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số hữu tỉ.
                   \item Với mỗi số hữu tỉ $a$ thuộc $S_{x}$, luôn tồn tại một số hữu tỉ khác lớn hơn $a$ và cũng thuộc $S_{x}$, điều này được suy ra từ việc áp dụng tính trù mật của tập hợp số hữu tỉ cho hai số thực $a$ và $x$. Do đó $S_{x}$ không có phần tử lớn nhất.
                   \item Nếu số hữu tỉ $a$ thuộc $S_{x}$ thì mọi số hữu tỉ nhỏ hơn $a$ cũng thuộc $S_{x}$, theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số hữu tỉ.
@@ -2912,12 +2914,16 @@ Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set
 
               Bên cạnh đó, $x$ là cận trên nhỏ nhất của $S_{x}$. Bởi vì với mọi số thực $y < x$, luôn tồn tại số hữu tỉ $q$ sao cho $y < q < x$, đồng nghĩa với việc mọi số thực nhỏ hơn $x$ đều không phải cận trên của $S_{x}$.
 
-              Vì $S_{x}$ có cận trên nên theo kết quả ở \textbf{Bước 6}, ảnh của $S_{x}$ dưới ánh xạ $f$ (được kí hiệu là $f[S_{x}]$) cũng có cận trên. Theo tiên đề về cận trên, $f[S_{x}]$ có cận trên nhỏ nhất. Chúng ta định nghĩa ảnh của $x$ dưới ánh xạ $f$ là $\sup f[S_{x}]$.
+              Vì $S_{x}$ có cận trên nên theo kết quả ở \textbf{Bước 6}, ảnh của $S_{x}$ dưới ánh xạ $f$ (được kí hiệu là $f[S_{x}]$) cũng có cận trên. Theo tiên đề về cận trên, $f[S_{x}]$ có cận trên nhỏ nhất.
+
+              Để định nghĩa ảnh của số thực dưới ánh xạ $f$ tương thích với định nghĩa ảnh của số hữu tỉ dưới ánh xạ $f$, chúng ta cần chỉ ra rằng khi $x$ là một số hữu tỉ thì $\sup f[S_{x}] = f(x)$. Với mọi số hữu tỉ $q$ nhỏ hơn $x$, chúng ta có $f(q) <_{R} f(x)$. Do đó, $\sup f[S_{x}]\leq_{R} f(x)$. Giả sử phản chứng rằng $\sup f[S_{x}] <_{R} f(x)$. Theo tính trù mật của tập hợp số hữu tỉ\footnote{Để hiểu vì sao có thể sử dụng tính trù mật của tập hợp số hữu tỉ, bạn đọc hãy nhìn nhận $f(n)$ như số nguyên trong $R$ (trong đó $n$ là số nguyên) và nhìn nhận $f(q)$ như số hữu tỉ trong $R$ (trong đó $q$ là số hữu tỉ).}, giữa hai phần tử $\sup f[S_{x}]$ và $f(x)$, tồn tại số hữu tỉ $q'$ sao cho $\sup f[S_{x}] <_{R} f(q') <_{R} f(x)$. Vì $f(q') <_{R} f(x)$ và $x$, $q'$ là các số hữu tỉ nên theo \textbf{Bước 6}, chúng ta có $q < q' < x$. Do đó $q'$ thuộc $S_{x}$ và $f(q')$ thuộc $f[S_{x}]$, mâu thuẫn với $\sup f[S_{x}] <_{R} f(q')$. Như vậy giả sử phản chứng là sai, kéo theo $\sup f[S_{x}] = f(x)$ khi $x$ là số hữu tỉ.
+
+              Chúng ta định nghĩa ảnh của số thực $x$ dưới ánh xạ $f$ là $\sup f[S_{x}]$.
     \end{enumerate}
 
     Như vậy chúng ta đã định nghĩa một ánh xạ $f: \mathscr{D}_{\mathbb{Q}}\to R$.
     \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm,start=8]
-        \item Chứng minh rằng với mọi số thực $x, y$, có $x\leq y$ kéo theo $f(x) \leq_{R} f(y)$.
+        \item Chứng minh rằng với mọi số thực $x, y$, $x\leq y$ kéo theo $f(x) \leq_{R} f(y)$.
 
               Nếu $x = y$ thì $f(x) = f(y)$.
 
@@ -2925,10 +2931,73 @@ Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set
 
               Như vậy, $x\leq y$ kéo theo $f(x) \leq_{R} f(y)$.
         \item Chứng minh rằng với mọi số thực $x, y$, có $f(x + y) = f(x) +_{R} f(y)$.
+
+              Giả sử phản chứng rằng $f(x + y) <_{R} f(x) +_{R} f(y)$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $q$ sao cho $f(x + y) <_{R} f(q) <_{R} f(x) +_{R} f(y)$. Theo \textbf{Bước 8}, chúng ta có $x + y < q$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $a$ sao cho $x < a < q - y$, và tồn tại số hữu tỉ $b$ sao cho $y < b < q - a$. Do đó, $x + y < a + b < q$. Theo \textbf{Bước 8}, chúng ta có $f(x) <_{R} f(a)$ và $f(y) <_{R} f(b)$. Theo \textbf{Bước 6}, $f(x) +_{R} f(y) <_{R} f(a) +_{R} f(b) = f(a + b) <_{R} f(q)$, điều này mâu thuẫn với $f(q) <_{R} f(x) +_{R} f(y)$.
+
+              Giả sử phản chứng rằng $f(x + y) >_{R} f(x) +_{R} f(y)$. Chúng ta chứng minh tương tự. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $q$ sao cho $f(x) +_{R} f(y) <_{R} f(q) <_{R} f(x+y)$. Theo \textbf{Bước 8}, chúng ta có $q < x + y$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $a$ sao cho $q - y < a < x$, và tồn tại số hữu tỉ $b$ sao cho $q - a < b < y$. Do đó $x + y > a + b > q$.  Theo \textbf{Bước 8}, chúng ta có $f(x) >_{R} f(a)$ và $f(y) >_{R} f(b)$. Theo \textbf{Bước 6}, $f(x) +_{R} f(y) >_{R} f(a) +_{R} f(b) = f(a + b) >_{R} f(q)$, điều này mâu thuẫn với $f(q) >_{R} f(x) +_{R} f(y)$.
+
+              Vậy các giả sử phản chứng là sai, kéo theo $f(x + y) = f(x) +_{R} f(y)$ (vì $\leq_{R}$ là một quan hệ thứ tự toàn phần trong $R$).
+
+              Hệ quả của điều này là $f(-x) = -f(x)$, với mọi số thực $x$.
         \item Chứng minh rằng với mọi số thực $x, y$, có $f(xy) = f(x) \times_{R} f(y)$.
+
+              Chúng ta xét đủ các trường hợp sau.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+                  \item $x = 0$ hoặc $y = 0$.
+
+                        $x = 0$ hoặc $y = 0$ thì $f(x) = 0_{R}$ hoặc $f(y) = 0_{R}$.
+
+                        $f(xy) = f(0) = 0_{R} = f(x)\times_{R} f(y)$.
+                  \item $x > 0$ và $y > 0$.
+
+                        $x > 0$ và $y > 0$ thì $xy > 0$. Theo \textbf{Bước 8}, $0_{R} <_{R} f(x), f(y), f(xy)$, kéo theo $0_{R} <_{R} f(x)\times_{R} f(y)$.
+
+                        Giả sử phản chứng rằng $f(xy) <_{R} f(x)\times_{R} f(y)$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $q$ sao cho $f(xy) <_{R} f(q) <_{R} f(x)\times_{R} f(y)$. Theo \textbf{Bước 8}, chúng ta có $0 < xy < q$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $a$ sao cho $x < a < \dfrac{q}{y}$, và tồn tại số hữu tỉ $b$ sao cho $y < b < \dfrac{q}{a}$. Do đó $xy < ab < q$. Theo \textbf{Bước 6}, $f(x)\times_{R} f(y) <_{R} f(a)\times_{R} f(b) = f(ab) <_{R} f(q)$, điều này mâu thuẫn với $ f(q) <_{R} f(x)\times_{R} f(y)$.
+
+                        Giả sử phản chứng rằng $f(x)\times_{R} f(y) <_{R} f(xy)$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $q$ sao cho $f(x)\times_{R} f(y) <_{R} f(q) <_{R} f(xy)$. Theo \textbf{Bước 8}, chúng ta có $0 < q < xy$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại số hữu tỉ $a$ sao cho $\dfrac{q}{y} < a < x$, và tồn tại số hữu tỉ $b$ sao cho $\dfrac{q}{a} < b < y$. Do đó $q < ab < xy$. Theo \textbf{Bước 6}, $f(x)\times_{R} f(y) >_{R} f(a)\times_{R} f(b) = f(ab) >_{R} f(q)$, điều này mâu thuẫn với $f(x)\times_{R} f(y) <_{R} f(q)$.
+
+                        Vậy các giả sử phản chứng là sai, kéo theo $f(xy) = f(x) \times_{R} f(y)$ với mọi $x, y$ thỏa mãn $x > 0$ và $y > 0$ (vì $\leq_{R}$ là một quan hệ thứ tự toàn phần trong $R$).
+                  \item $x > 0$ và $y < 0$.
+
+                        Theo \textbf{Trường hợp 2}, \textbf{Bước 9} và Định lý~\ref{theorem:field-properties}, chúng ta có
+                        \begin{align*}
+                            f(xy) & = f(-x(-y)) = -f(x(-y))   \\
+                                  & = -f(x)\times_{R} f(-y)   \\
+                                  & = f(x)\times_{R} (-f(-y)) \\
+                                  & = f(x)\times_{R} f(y).
+                        \end{align*}
+                  \item $x < 0$ và $y > 0$.
+                        Theo \textbf{Trường hợp 2}, \textbf{Bước 9} và Định lý~\ref{theorem:field-properties}, chúng ta có
+                        \begin{align*}
+                            f(xy) & = f(-(-x)y) = -f((-x)y)   \\
+                                  & = -f(-x)\times_{R} f(y)   \\
+                                  & = (-f(-x))\times_{R} f(y) \\
+                                  & = f(x)\times_{R} f(y).
+                        \end{align*}
+                  \item $x < 0$ và $y > 0$.
+                        Theo \textbf{Trường hợp 2}, \textbf{Bước 9} và Định lý~\ref{theorem:field-properties}, chúng ta có
+                        \begin{align*}
+                            f(xy) & = f((-x)(-y))                 \\
+                                  & = f(-x)\times_{R} f(-y)       \\
+                                  & = (-f(-x))\times_{R} (-f(-y)) \\
+                                  & = f(x)\times_{R} f(y).
+                        \end{align*}
+              \end{enumerate}
+
+              Vậy $f(xy) = f(x)\times_{R} f(y)$ với mọi số thực $x, y$.
         \item Chứng minh $f$ là song ánh.
 
               Giả sử $f(x) = f(y)$. Theo \textbf{Bước 8}, nếu $x < y$ thì $f(x) <_{R} f(y)$ và nếu $y < x$ thì $f(y) <_{R} f(x)$. Do đó $x = y$. Như vậy $f$ là một đơn ánh.
+
+              Giả sử $a$ là một phần tử của $R$. Trong $R$, tồn tại phần tử $b$, $c$ sao cho $b <_{R} a <_{R} c$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại các số hữu tỉ $q$ và $q'$ sao cho $b <_{R} f(q) <_{R} a$ và $a <_{R} f(q') <_{R} c$. Như vậy tập hợp $S$ gồm tất cả các số hữu tỉ $r$ sao cho $f(r) < a$ không rỗng và bị chặn trên. Theo tiên đề về cận trên, $S$ có cận trên nhỏ nhất, chúng ta kí hiệu $x = \sup S$.
+
+              Giả sử phản chứng rằng $f(x) <_{R} a$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại các số hữu tỉ $q$ sao cho $f(x) <_{R} f(q) <_{R} a$. Theo \textbf{Bước 8}, $\sup S = x < q$, điều này mâu thuẫn với việc $q$ là một phần tử của $S$.
+
+              Giả sử phản chứng rằng $a <_{R} f(x)$. Theo tính trù mật của tập hợp số hữu tỉ, tồn tại các số hữu tỉ $q$ sao cho $a <_{R} f(q) <_{R} f(x)$. Theo \textbf{Bước 8}, $q < x = \sup S$, kéo theo $q$ thuộc $S$. Vì $q$ thuộc $S$ nên $f(q) <_{R} a$, điều này mâu thuẫn với việc $a <_{R} f(q)$.
+
+              Do đó các giả sử phản chứng là sai, kéo theo $f(x) = a$ (vì $\leq_{R}$ là một quan hệ thứ tự toàn phần trong $R$). Như vậy $f$ là một toàn ánh.
+
+              Vì $f$ vừa là một đơn ánh, vừa là một toàn ánh nên $f$ cũng là một song ánh.
     \end{enumerate}
 
     Vậy $\mathscr{D}_{\mathbb{Q}}$ và $R$ đẳng cấu.
@@ -2936,34 +3005,50 @@ Bạn đọc lưu ý rằng: với Định lý~\ref{theorem:embed-Q-into-the-set
 
 Trong Định lý~\ref{theorem:uniqueness-of-complete-ordered-field}, $f$ được gọi là một đẳng cấu trường bảo toàn thứ tự. Với định lý này, chúng ta kết luận rằng mọi mô hình số thực đẳng cấu, hay tập hợp số thực là duy nhất, sai khác một đẳng cấu.
 
-Tập hợp số thực còn được gọi là \textbf{trường số thực\index{Trường số thực}}, hay \textbf{trường được sắp thứ tự đầy đủ\index{Trường được sắp thứ tự đầy đủ}} (tên gọi trường, sắp thứ tự, và đầy đủ tương ứng với ba nhóm tiên đề trong hệ tiên đề về số thực). Chúng ta có thể sử dụng hệ tiên đề số thực hay bất kì mô hình số thực nào để định nghĩa số thực, giống như có thể sử dụng bất kì phần tử nào của một lớp tương đương để làm phần tử đại diện.
+\begin{theorem}
+    Mọi mô hình số thực là đẳng cấu với nhau.
+\end{theorem}
+
+Tập hợp số thực còn được gọi là \textbf{trường số thực\index{Trường số thực}}, hay \textbf{trường được sắp thứ tự đầy đủ\index{Trường được sắp thứ tự đầy đủ}} (tên gọi trường, sắp thứ tự, và đầy đủ tương ứng với ba nhóm tiên đề trong hệ tiên đề về số thực). Chúng ta có thể sử dụng hệ tiên đề số thực hay bất kì mô hình số thực nào để định nghĩa số thực, giống như có thể sử dụng bất kì phần tử nào của một lớp tương đương để làm phần tử đại diện của lớp tương đương đó.
 
 \section{Nhập môn giải tích thực}
-
-\subsection{Âm vô cực và dương vô cực}
 
 \subsection{Tính đầy đủ-Dedekind và tính đầy đủ-Cauchy}
 
 \begin{theorem}[Tính đầy đủ-Dedekind]
 \end{theorem}
 
-\begin{definition}[Dãy số thực]
-\end{definition}
+\begin{proof}
+\end{proof}
 
-\begin{definition}
+\begin{definition}[Dãy số thực]
 \end{definition}
 
 \begin{theorem}[Định lý về dãy đơn điệu và bị chặn]
 \end{theorem}
 
+\begin{proof}
+\end{proof}
+
 \begin{theorem}[Định lý Cantor về các khoảng đóng lồng nhau]
 \end{theorem}
+
+\begin{proof}
+\end{proof}
 
 \begin{theorem}[Định lý Bolzano-Weierstra{\ss}]
 \end{theorem}
 
+\begin{proof}
+\end{proof}
+
 \begin{theorem}[Tính đầy đủ-Cauchy]
 \end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\subsection{Đường thẳng thực mở rộng}
 
 \subsection{Giới hạn hàm số và tính liên tục}
 
@@ -2979,24 +3064,24 @@ Tập hợp số thực còn được gọi là \textbf{trường số thực\in
 \begin{theorem}
 \end{theorem}
 
-\begin{theorem}[Hàm đa thức]
+\begin{theorem}
 \end{theorem}
 
 \begin{theorem}[Định lý giá trị trung gian]
 \end{theorem}
 
-\subsection{Hàm lũy thừa. Hàm mũ. Hàm logarithm}
+\subsection{Hàm lũy thừa}
 
-\begin{theorem}[Lũy thừa nguyên của số thực]
-\end{theorem}
+\begin{definition}[Lũy thừa với số mũ nguyên của số thực]
+\end{definition}
 
 \begin{theorem}[Căn bậc $n$]
 \end{theorem}
 
-\begin{definition}[Lũy thừa hữu tỉ của số thực không âm]
+\begin{definition}[Lũy thừa với số mũ hữu tỉ của số thực]
 \end{definition}
 
-\begin{definition}[Lũy thừa thực của số thực không âm]
+\begin{definition}[Lũy thừa với số mũ thực của số thực]
 \end{definition}
 
 \begin{theorem}
@@ -3004,4 +3089,22 @@ Tập hợp số thực còn được gọi là \textbf{trường số thực\in
 
 \begin{definition}[Hàm lũy thừa]
 \end{definition}
+
+\begin{theorem}
+\end{theorem}
+
+\subsection{Hàm mũ và hàm logarithm}
+
+\begin{definition}[Hàm mũ]
+\end{definition}
+
+\begin{theorem}
+\end{theorem}
+
+\begin{definition}[Hàm logarithm]
+\end{definition}
+
+\begin{theorem}
+\end{theorem}
+
 
