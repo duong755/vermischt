@@ -1,27 +1,179 @@
-\chapter{Lực lượng của tập hợp}\label{chapter:cardinality}
+\chapter{Số tự nhiên, số nguyên, và số hữu tỉ}\label{chapter:natural-numbers-integers-and-rationals}
 
-Cho đến thời điểm này, mặc dù chúng ta đã bắt gặp và làm việc cùng sự vô hạn (chẳng hạn như các tập hợp có vô hạn phần tử), nhưng chúng ta chưa hề định nghĩa thế nào là vô hạn. Mục tiêu của chương này không phải là trả lời vô hạn là gì, mà là giới thiệu khái niệm lực lượng của tập hợp để từ đó tìm ra một số đặc điểm của các tập hợp có vô hạn phần tử.
+\section{Số tự nhiên}
 
-\section{Các định nghĩa}
+\subsection{Hệ tiên đề Peano}
 
-\subsection{Lực lượng và so sánh lực lượng giữa các tập hợp}
-
-\subsection{Tập hợp lũy thừa}
+\subsection{Các phép toán và quan hệ thứ tự trên tập hợp số tự nhiên}
 
 \subsection{Bài tập}
 
-\section{Lực lượng đếm được và Lực lượng không đếm được}
+\section{Số nguyên}
 
-\subsection{Lực lượng đếm được}
+\subsection{Xây dựng tập hợp số nguyên}
 
-\subsection{Lực lượng không đếm được}
+\subsection{Các phép toán và quan hệ thứ tự trên tập hợp số nguyên}
 
 \subsection{Bài tập}
 
-\section{* Một số thông tin về lực lượng của tập hợp}
+\section{Nguyên lý quy nạp toán học}
 
-\subsection{Lục lượng của tập hợp số thực}
+Mục này bàn nhiều hơn về nguyên lý quy nạp toán học cùng các biến thể và nguyên lý thứ tự tốt. Kết quả quan trọng nhất của mục này là nguyên lý thứ tự tốt.
 
-\subsection{Định lý Cantor-Schr\"{o}der-Bernstein}
+\subsection{Nguyên lý quy nạp toán học và các biến thể}
 
-\subsection{Giả thuyết continuum}
+Cúng ta có một mở rộng đơn giản sau đây cho nguyên lý quy nạp toán học, và cũng tương đương với nguyên lý quy nạp toán học.
+
+\begin{theorem}[Nguyên lý quy nạp toán học]
+    Nếu hai điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $p(n)$ đúng với số nguyên $n_{0}$.
+        \item Với mọi số nguyên $n\geq n_{0}$, $p(n)$ kéo theo $p(n + 1)$.
+    \end{enumerate}
+
+    thì $p(n)$ đúng với mọi số nguyên lớn hơn hoặc bằng $n_{0}$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta định nghĩa vị từ $q$ áp dụng cho số tự nhiên $n$ như sau: $q(n)$ là mệnh đề $p(n + n_{0})$.
+
+    Như vậy
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $q(0)$ đúng.
+        \item Với mọi số tự nhiên $n$, $q(n)$ kéo theo $q(n + 1)$.
+    \end{enumerate}
+
+    Theo nguyên lý quy nạp toán học, có $q(n)$ với mọi số tự nhiên $n$. Theo định nghĩa của $q(n)$ thì có $p(n)$ với mọi số nguyên $n$ lớn hơn hoặc bằng $n_{0}$.
+\end{proof}
+
+Với dạng trên của nguyên lý quy nạp toán học, chúng ta có thể bắt đầu với trường hợp cơ sở là một số nguyên bất kì thay vì $0$ hay $1$. Các biến thể khác của nguyên lý quy nạp toán học dưới đây được phát biểu ở dạng ``chuẩn'', tức là bắt đầu với trường hợp cơ sở là $0$. Thực ra các biến thể này đều có thể bắt đầu với trường hợp cơ sở là số nguyên bất kì.
+
+Nguyên lý quy nạp mạnh cũng là một dạng tương đương của nguyên lý quy nạp toán học. Nguyên lý quy nạp mạnh có thay đổi ở bước quy nạp: Ở bước quy nạp, chúng ta không chỉ cần đến mệnh đề $p(k)$ mà còn cần đến một hay một số, thậm chí tất cả các mệnh đề trước $p(k)$.
+\begin{theorem}[Nguyên lý quy nạp mạnh]
+    Nếu hai điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $p(0)$ đúng.
+        \item Với mọi số tự nhiên $k$, $p(n)$ đúng với mọi số tự nhiên $n\leq k$ kéo theo $p(k+1)$.
+    \end{enumerate}
+
+    thì $p(n)$ đúng với mọi số tự nhiên.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta định nghĩa vị từ $c$ áp dụng cho số tự nhiên $n$ bằng đệ quy:
+    \begin{itemize}
+        \item $c(0)$ là mệnh đề $p(0)$.
+        \item Với mỗi số tự nhiên $n$, $c(n+1)$ là mệnh đề $c(n)\wedge p(n+1)$.
+    \end{itemize}
+
+    Mệnh đề $p(0)$ tương đương với mệnh đề $c(0)$.
+
+    Mệnh đề ``với mọi số tự nhiên $k$, $p(n)$ đúng với mọi số tự nhiên $n\leq k$ kéo theo $p(k+1)$'' tương đương với mệnh đề ``với mọi số tự nhiên $k$, $c(k)$ kéo theo $c(k+1)$''.
+
+    Theo nguyên lý quy nạp toán học, $c(n)$ đúng với mọi số tự nhiên $n$. Theo định nghĩa của mệnh đề $c(n)$, chúng ta suy ra $p(n)$ đúng với mọi số tự nhiên $n$.
+\end{proof}
+
+Có những trường hợp mà chúng ta cần chứng minh mệnh đề $p(n)$ với $n$ là số tự nhiên không vượt quá một số tự nhiên $n_{0}$ cho trước. Khi đó phương pháp quy nạp toán học có dạng sau.
+\begin{theorem}[Nguyên lý quy nạp toán học hữu hạn]
+    Cho vị từ $p$ được áp dụng trên các số tự nhiên không vượt quá số tự nhiên $n_{0}$. Nếu các điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $p(0)$ đúng.
+        \item Với mọi số tự nhiên $k$ \textbf{nhỏ hơn} $n$, $p(k)$ kéo theo $p(k+1)$.
+    \end{enumerate}
+
+    thì $p(n)$ đúng với mọi số tự nhiên không vượt quá số tự nhiên $n_{0}$.
+\end{theorem}
+
+Tuy nguyên lý quy nạp toán học được phát biểu cho số tự nhiên nhưng biến thể trên vẫn hợp lệ. Nguyên nhân là mệnh đề kéo theo $P\implies Q$ \textit{chỉ sai} khi $P$ đúng và $Q$ sai. Còn nếu $P$ sai thì mệnh đề $P\implies Q$ luôn đúng, bất kể giá trị chân lý của $Q$ là gì.
+
+\subsection{Nguyên lý thứ tự tốt}
+
+\begin{theorem}[Nguyên lý thứ tự tốt\index{Nguyên lý thứ tự tốt}]
+    Tập hợp con khác rỗng của tập hợp số nguyên dương có phần tử nhỏ nhất.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $S$ là tập hợp con khác rỗng của tập hợp số nguyên dương.
+
+    Giả sử phản chứng rằng $S$ không có phần tử nhỏ nhất. $1$ không thuộc $S$ vì $1$ là số nguyên dương nhỏ nhất.
+
+    Với mỗi số nguyên dương $k$, nếu các số nguyên dương $n$ không vượt quá $k$ không thuộc $S$ thì $(k+1)$ không thuộc $S$ (vì nếu $(k+1)$ thuộc $S$ thì $(k+1)$ là phần tử nhỏ nhất của $S$, trái với giả sử phản chứng).
+
+    Theo nguyên lý quy nạp mạnh, mọi số nguyên dương đều không thuộc $S$. Do đó $S$ là tập hợp rỗng, mâu thuẫn với giả thiết. Do vậy giả sử phản chứng là sai. Vậy tập hợp $S$ có phần tử nhỏ nhất.
+\end{proof}
+
+Tương tự với việc của nguyên lý quy nạp toán học có thể được áp dụng với trường hợp cơ sở là số nguyên bất kì, chúng ta có hệ quả sau. Hệ quả này cho phép chúng ta áp dụng nguyên lý thứ tự tốt một cách linh hoạt hơn.
+\begin{corollary}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{lớn hơn hoặc bằng} (hoặc \textbf{lớn hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử nhỏ nhất}.
+        \item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{nhỏ hơn hoặc bằng} (hoặc \textbf{nhỏ hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử lớn nhất}.
+    \end{enumerate}
+\end{corollary}
+
+Tập hợp con trong phát biểu của nguyên lý thứ tự tốt có thể có vô hạn phần tử. Với một tập hợp hữu hạn và được sắp thứ tự toàn phần, chúng ta có nguyên lý sau.
+\begin{theorem}[Nguyên lý cực hạn\index{Nguyên lý cực hạn}]
+    Tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta chứng minh bằng phương pháp quy nạp toán học rằng: Nếu một tập hợp khác rỗng được sắp thứ tự toàn phần và có $n$ phần tử ($n$ là một số tự nhiên lớn hơn hoặc bằng $1$) thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+
+    Khi $n = 1$, tập hợp chỉ có một phần tử thì phần tử đó là phần tử nhỏ nhất và cũng là phần tử lớn nhất.
+
+    Giả sử với $n = k\geq 1$, tập hợp khác rỗng được sắp thứ tự toàn phần và có $k$ phần tử thì tập hợp đó cũng có phần tử nhỏ nhất và phần tử lớn nhất.
+
+    Chúng ta kí hiệu $S$ là một tập hợp được sắp thứ tự toàn phần và có $(k+1)$ phần tử. Chúng ta chọn ra một phần tử $x$ bất kì của $S$ thì $S - \{x\}$ có $k$ phần tử. Theo giả thiết quy nạp, $S - \{x\}$ có phần tử nhỏ nhất và phần tử lớn nhất.
+    \begin{itemize}
+        \item Nếu $x$ nhỏ hơn phần tử nhỏ nhất của $S - \{x\}$ thì $x$ là phần tử nhỏ nhất của $S$. Ngược lại, phần tử nhỏ nhất của $S - \{x\}$ cũng là phần tử nhỏ nhất của $S$.
+        \item Nếu $x$ lớn hơn phần tử lớn nhất của $S - \{x\}$ thì $x$ là phần tử lớn nhất của $S$. Ngược lại, phần tử lớn nhất của $S - \{x\}$ cũng là phần tử lớn nhất của $S$.
+    \end{itemize}
+
+    Theo nguyên lý quy nạp toán học, tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+\end{proof}
+
+Khi kết hợp nguyên lý thứ tự tốt với phương pháp chứng minh bằng phản chứng, chúng ta có phương pháp chứng minh giảm vô hạn. Phương pháp này còn được gọi là phương pháp giảm vô hạn của Fermat. Nhà toán học Fermat đã sử dụng phương pháp này để chứng minh rằng không tồn tại các số nguyên dương $a, b, c$ nào thỏa mãn $a^{4} + b^{4} = c^{2}$. Ngược với phương pháp quy nạp toán học, phương pháp giảm vô hạn được sử dụng để chứng minh một mệnh đề $p(n)$ là sai với mọi số tự nhiên $n$.
+
+\begin{theorem}[Giảm vô hạn\index{Giảm vô hạn}]
+    Nếu với mỗi số tự nhiên $n$, mệnh đề $p(n)$ kéo theo tồn tại số tự nhiên $m < n$ sao cho có $p(m)$ thì với mọi số tự nhiên $n$, không có $p(n)$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $S$ là tập hợp các số tự nhiên $n$ sao cho có $p(n)$.
+
+    Giả sử phản chứng rằng $S$ khác rỗng. Theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Chúng ta kí hiệu phần tử nhỏ nhất là $n_{0}$. Theo giả thiết, tồn tại số tự nhiên $m < n_{0}$ sao cho $p(m)$ đúng. Điều này mâu thuẫn với việc $n_{0}$ là phần tử nhỏ nhất của $S$. Do đó giả sử phản chứng là sai, kéo theo $S$ là tập hợp rỗng.
+
+    Vậy mệnh đề $p(n)$ sai với mọi số tự nhiên $n$.
+\end{proof}
+
+Nguyên lý thứ tự tốt cung cấp một chứng minh cho nguyên lý quy nạp tiến-lùi, thường được biết đến với tên gọi \textit{quy nạp kiểu Cauchy}. Nguyên lý quy nạp tiến-lùi được Cauchy sử dụng để chứng minh bất đẳng thức trung bình cộng-trung bình nhân: Cauchy chứng minh bất đẳng thức đó cho $2^{k}$ số thực không âm và chứng minh rằng nếu bất đẳng thức đúng với $n$ số thực không âm thì cũng đúng với $(n-1)$ số thực không âm.
+\begin{theorem}[Nguyên lý quy nạp tiến-lùi\index{Nguyên lý quy nạp tiến-lùi (Cauchy)}]
+    Cho vị từ $p$ được áp dụng trên các số tự nhiên. Nếu các điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với $p(n)$ đúng với mọi số tự nhiên $n$ thuộc một tập hợp con vô hạn phần tử của $\mathbb{N}$.
+        \item Với mọi số tự nhiên $k$ lớn hơn $0$, $p(k)$ kéo theo $p(k-1)$.
+    \end{enumerate}
+
+    \noindent thì $p(n)$ đúng với mọi số tự nhiên $n$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $A$ là tập hợp gồm các số tự nhiên $n$ sao cho có $p(n)$, và $B$ là tập hợp gồm các số tự nhiên $n$ sao cho không có $p(n)$.
+
+    Giả sử phản chứng rằng tập hợp $B$ khác rỗng. Theo định nghĩa hai tập hợp $A$ và $B$, hai tập hợp này tạo thành một phân hoạch của $\mathbb{N}$. Theo nguyên lý thứ tự tốt, tập hợp $B$ có phần tử nhỏ nhất. Chúng ta kí hiệu $b = \min B$. Vì tập hợp $A$ có vô hạn phần tử nên trong $A$ tồn tại phần tử $a$ sao cho $a$ lớn hơn $b$. Vì $p(k)$ kéo theo $p(k-1)$ với mọi số tự nhiên $k > 0$ nên $\neg p(k-1)$ kéo theo $\neg p(k)$ với mọi số tự nhiên $k > 0$. Theo nguyên lý quy nạp toán học, có $\neg p(n)$ với mọi số tự nhiên $n\geq b$. Do đó, có $\neg p(a)$, điều này mâu thuẫn với việc có $p(a)$. Như vậy giả sử phản chứng là sai, kéo theo $B$ là tập hợp rỗng và $A$ là toàn bộ tập hợp số tự nhiên.
+
+    Vậy $p(n)$ đúng với mọi số tự nhiên $n$.
+\end{proof}
+
+Một nhược điểm của nguyên lý thứ tự tốt và chứng minh của nguyên lý này là \textit{không có tính xây dựng}. Chúng ta chỉ ra sự tồn tại của số nguyên dương nhỏ nhất trong một tập hợp con khác rỗng của tập hợp số nguyên dương, nhưng không biết đó là số nào, hay cách tìm số đó. Có một tư tưởng trong toán học được gọi là \textit{tư tưởng xây dựng} (constructivism). Tư tưởng này khẳng định rằng để chứng minh sự tồn tại của một đối tượng toán học, cần phải đưa ra một ví dụ, hoặc thuật toán (cách) tìm ra ví dụ. Trái với tư tưởng xây dựng, chứng minh bằng phương pháp phản chứng giả sử rằng một đối tượng như vậy không tồn tại và tiếp tục lập luận để đi tới một mâu thuẫn. Tư tưởng xây dựng rất có ích trong việc học và làm toán, bởi quá trình tìm ví dụ và việc có một ví dụ cụ thể là rất giá trị trong việc hiểu một đối tượng toán học. Kĩ năng xây dựng ví dụ là một trong những kĩ năng tối quan trọng trong việc học và làm toán. Tuy vậy, phương pháp phản chứng vẫn luôn tỏ ra là một công cụ mạnh và dễ dàng, thậm chí đôi khi được coi là duy nhất để chứng minh nhiều định lý quan trọng về tính tồn tại.
+
+\subsection{Bài tập}
+
+\section{Số hữu tỉ}
+
+\subsection{Xây dựng tập hợp số hữu tỉ}
+
+\subsection{Các phép toán và quan hệ thứ tự trên tập hợp số hữu tỉ}
+
+\subsection{Trường số hữu tỉ}
+
+\subsection{Bài tập}
