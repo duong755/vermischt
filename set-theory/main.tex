@@ -4,10 +4,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{vietnam}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,amscdx,mathtools,mathrsfs}
+\usepackage[linewidth=2pt,innertopmargin=0pt]{mdframed}
 \usepackage{pxfonts}
 \usepackage{imakeidx}
+\usepackage[backend=biber,style=alphabetic,sorting=ynt,maxbibnames=99]{biblatex}
 \usepackage{tocloft}
-\usepackage{hyperref}
+\usepackage[hyperfootnotes=false]{hyperref}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{cases}
@@ -17,12 +19,14 @@
 \usepackage{placeins}
 \usepackage{caption,subcaption}
 \usepackage{epigraph}
+\usepackage{setspace}
 \usepackage{pgf,tikz}
 \usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
 
+\setstretch{1.16}
 \hypersetup{colorlinks=true,
      linkcolor=blue,
      filecolor=blue,
@@ -30,33 +34,38 @@
      urlcolor=cyan,
 }
 
-\addtolength\cftsecnumwidth{0.7em}
+\addtolength\cftsecnumwidth{0.2em}
 \renewcommand\cftsecpresnum{\S}
 \counterwithout{section}{chapter}
 
-\newtheorem{theorem}{Định lý}
+\newmdtheoremenv{theorem}{Định lý}
 \counterwithin{theorem}{section}
-\newtheorem{proposition}[theorem]{Mệnh đề}
-\newtheorem{corollary}[theorem]{Hệ quả}
-\newtheorem{axiom}[theorem]{Tiên đề}
-\newtheorem{lemma}[theorem]{Bổ đề}
+\newmdtheoremenv{proposition}[theorem]{Mệnh đề}
+\newmdtheoremenv{corollary}[theorem]{Hệ quả}
+\newmdtheoremenv{axiom}[theorem]{Tiên đề}
+\newmdtheoremenv{lemma}[theorem]{Bổ đề}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Định nghĩa}
-\newtheorem{example}[theorem]{Ví dụ}
-\newtheorem{counterexample}[theorem]{Phản ví dụ}
+\newmdtheoremenv{definition}[theorem]{Định nghĩa}
+\newmdtheoremenv{example}[theorem]{Ví dụ}
+\newmdtheoremenv{counterexample}[theorem]{Phản ví dụ}
 \newtheorem{exercise}{Bài tập}
 \counterwithin{exercise}{section}
 
+\def\endofthisdocthm{\hfill$\blacktriangle$}
 \newcommand{\card}[1]{\left\vert{#1}\right\vert} % cardinality
 \newcommand{\abs}[1]{\left\vert{#1}\right\vert} % absolute value
+\newcommand{\clsseq}[2]{\left[{\left({#1}\right)}_{{#2}\in\mathbb{N}}\right]} % equivalence class of Cauchy sequences
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor} % floor function
 
-\makeindex[columns=2]
+\newcommand{\settheoryversion}{2023.12}
+\makeindex[intoc=true,columns=2]
+\addbibresource{main.bib}
 
 \captionsetup{labelsep={period},justification={centerlast},labelfont={bf,sc}}
 
 \title{Lý thuyết tập hợp và các tập hợp số}
 \author{random}
-\date{\today}
+\date{\settheoryversion}
 
 \begin{document}
 
@@ -80,15 +89,13 @@
 \input{chapter4.tex}
 \input{chapter5.tex}
 \input{chapter6.tex}
+\input{chapter7.tex}
 
 \appendix
-
-\chapter{Một số kết quả số học}
-
-\chapter{Các quy tắc đếm cơ bản}
 
 \chapter{Đọc thêm}
 
 \printindex
+\printbibliography[heading=bibintoc,title={Tài liệu tham khảo}]
 
 \end{document}
