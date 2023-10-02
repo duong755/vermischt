@@ -2571,10 +2571,6 @@ Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán
 
 Kết quả chính của mục này là sự tương đương, hay đẳng cấu của các mô hình số thực. Trước khi đi đến chứng minh cho định lý đó, chúng ta cần chuẩn bị một số kết quả khác. Trong mục này, để thuận tiện trong việc phát biểu, chúng ta định nghĩa tập hợp số thực là $\mathscr{D}_{\mathbb{Q}}$ (tập hợp các lát cắt Dedekind trên tập hợp số hữu tỉ, định nghĩa ở Mục~\ref{section:dedekind-cuts}).
 
-\subsection{Nhìn nhận về các tập hợp số}
-
-% pending
-
 \subsection{Một số tính chất của trường}
 
 Khi đề cập đến hệ tiên đề về số thực, chúng ta đã nhắc đến \textit{các hệ tiên đề về trường} và làm việc mà chưa cần biết trường là gì. Tại đây, chúng ta đưa ra định nghĩa cho khái niệm này.
@@ -3013,6 +3009,10 @@ Trong Định lý~\ref{theorem:uniqueness-of-complete-ordered-field}, $f$ đư�
 
 Tập hợp số thực còn được gọi là \textbf{trường số thực\index{Trường số thực}}, hay \textbf{trường được sắp thứ tự đầy đủ\index{Trường được sắp thứ tự đầy đủ}} (tên gọi trường, sắp thứ tự, và đầy đủ tương ứng với ba nhóm tiên đề trong hệ tiên đề về số thực). Chúng ta có thể sử dụng hệ tiên đề số thực hay bất kì mô hình số thực nào để định nghĩa số thực, giống như có thể sử dụng bất kì phần tử nào của một lớp tương đương để làm phần tử đại diện của lớp tương đương đó.
 
+\subsection{Nhìn nhận về các tập hợp số}
+
+% pending
+
 \section{Nhập môn giải tích thực}
 
 Giải tích thực là một ngành toán học nghiên cứu về các hàm số thực, lý thuyết hàm thực cũng là tên gọi trước đây của giải tích thực. Một giáo trình mẫu mực về giải tích thực luôn có các nội dung sau: số thực, giới hạn của dãy số, chuỗi số, giới hạn của hàm số, tính liên tục, vi phân, tích phân. Tuy nhiên, trong thực tế giảng dạy ở chương trình phổ thông cũng như đại học, phần nhiều vì thường không có đủ thời gian nên những nội dung cơ bản hơn (số thực, giới hạn của dãy số, giới hạn của hàm số, tính liên tục) không được đào sâu vào chi tiết, không tuân theo trình tự chặt chẽ, và thừa nhận những định nghĩa, tính chất của hàm lũy thừa, hàm mũ, hàm logarithm. Trong mục này, chúng ta sẽ triển khai nội dung về giới hạn của dãy số, giới hạn của hàm số, tính liên tục, cùng hàm lũy thừa, hàm mũ, hàm logarithm.
@@ -3230,41 +3230,41 @@ Trong đó, hai phần tử $-\infty$ (dương vô cực\index{Dương vô cực
 \begin{enumerate}[label={(\roman*)}]
     \item Với mọi số thực $x$, có $-\infty < x < +\infty$.
     \item Với mọi số thực $x$,
-    \[
-        \begin{split}
-            x + (+\infty) = (+\infty) + x = +\infty, \\
-            x + (-\infty) = (-\infty) + x = -\infty, \\
-            x - (+\infty) = -\infty, \\
-            x - (-\infty) = +\infty, \\
-            \frac{x}{+\infty} = \frac{x}{-\infty} = 0.
-        \end{split}    
-    \]
+          \[
+              \begin{split}
+                  x + (+\infty) = (+\infty) + x = +\infty, \\
+                  x + (-\infty) = (-\infty) + x = -\infty, \\
+                  x - (+\infty) = -\infty, \\
+                  x - (-\infty) = +\infty, \\
+                  \frac{x}{+\infty} = \frac{x}{-\infty} = 0.
+              \end{split}
+          \]
     \item Với mọi số thực $x > 0$,
-    \[
-        \begin{split}
-            x \cdot (+\infty) = (+\infty) \cdot x = +\infty, \\
-            x \cdot (-\infty) = (-\infty) \cdot x = -\infty,
-            \frac{+\infty}{x} = +\infty, \\
-            \frac{-\infty}{x} = -\infty.
-        \end{split}    
-    \]
+          \[
+              \begin{split}
+                  x \cdot (+\infty) = (+\infty) \cdot x = +\infty, \\
+                  x \cdot (-\infty) = (-\infty) \cdot x = -\infty,
+                  \frac{+\infty}{x} = +\infty, \\
+                  \frac{-\infty}{x} = -\infty.
+              \end{split}
+          \]
     \item Với mọi số thực $x < 0$,
-    \[
-        \begin{split}
-            x \cdot (+\infty) = (+\infty) \cdot x = -\infty, \\
-            x \cdot (-\infty) = (-\infty) \cdot x = +\infty, \\
-            \frac{+\infty}{x} = -\infty, \\
-            \frac{-\infty}{x} = +\infty.
-        \end{split}    
-    \]
+          \[
+              \begin{split}
+                  x \cdot (+\infty) = (+\infty) \cdot x = -\infty, \\
+                  x \cdot (-\infty) = (-\infty) \cdot x = +\infty, \\
+                  \frac{+\infty}{x} = -\infty, \\
+                  \frac{-\infty}{x} = +\infty.
+              \end{split}
+          \]
     \item \[
-        \begin{split}
-            (+\infty) + (+\infty) = +\infty, \\
-            (-\infty) + (-\infty) = -\infty, \\
-            (+\infty)\cdot (+\infty) = (-\infty)\cdot (-\infty) = +\infty, \\
-            (+\infty)\cdot (-\infty) = (-\infty)\cdot (+\infty) = -\infty.
-        \end{split}    
-    \]
+              \begin{split}
+                  (+\infty) + (+\infty) = +\infty, \\
+                  (-\infty) + (-\infty) = -\infty, \\
+                  (+\infty)\cdot (+\infty) = (-\infty)\cdot (-\infty) = +\infty, \\
+                  (+\infty)\cdot (-\infty) = (-\infty)\cdot (+\infty) = -\infty.
+              \end{split}
+          \]
 \end{enumerate}
 
 Bên cạnh đó, $(+\infty) - (+\infty)$, $(-\infty) - (-\infty)$, $\dfrac{+\infty}{+\infty}$, $\dfrac{+\infty}{-\infty}$, $\dfrac{-\infty}{+\infty}$, $\dfrac{-\infty}{-\infty}$, $0\cdot (+\infty)$, $(+\infty)\cdot 0$, $0\cdot (-\infty)$, $(-\infty)\cdot 0$ không được định nghĩa. Đây là một số dạng vô định\index{Dạng vô định}. Như vậy, phép cộng và phép nhân trong tập hợp số thực mở rộng có thể cho ra kết quả là số thực, $+\infty$, $-\infty$, hoặc không xác định.
@@ -3276,13 +3276,13 @@ Nhưng tính chất trên là các tiên đề. Cũng như với hệ tiên đ�
 Đối với cách xây dựng bằng dãy Cauchy hữu tỉ, chúng ta sẽ coi dãy số hữu tỉ như hai khả năng được mô tả sau đây là dãy Cauchy hữu tỉ.
 \begin{itemize}
     \item Với mỗi số hữu tỉ dương $q$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} > q$. Bằng logic hình thức, chúng ta viết
-    \[
-        \forall q > 0\ \exists N\ \forall n\geq N\ a_{n} > q.    
-    \]
+          \[
+              \forall q > 0\ \exists N\ \forall n\geq N\ a_{n} > q.
+          \]
     \item Với mỗi số hữu tỉ dương $q$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} < -q$. Bằng logic hình thức, chúng ta viết
-    \[
-        \forall q > 0\ \exists N\ \forall n\geq N\ a_{n} < -q.
-    \]
+          \[
+              \forall q > 0\ \exists N\ \forall n\geq N\ a_{n} < -q.
+          \]
 \end{itemize}
 
 Trong tập hợp số thực mở rộng, chúng ta định nghĩa dãy số có giới hạn $+\infty$ và dãy số có giới hạn $-\infty$.
@@ -3294,8 +3294,53 @@ Trong tập hợp số thực mở rộng, chúng ta định nghĩa dãy số c�
     \end{enumerate}
 \end{definition}
 
+Trước khi sang nội dung tiếp theo, chúng ta chứng minh một định lý về so sánh giới hạn các dãy số.
+\begin{theorem}\label{theorem:order-of-convergent-sequences}
+    Nếu hai dãy ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn $\lim a_{n} = a$, $\lim b_{n} = b$ ($a, b$ là các phần tử của tập hợp số thực mở rộng) và tồn tại số tự nhiên $N$ sao cho $a_{n}\leq b_{n}$ với mọi $n\geq N$ thì $a\leq b$.
+\end{theorem}
 
-\subsection{Giới hạn hàm số và tính liên tục}
+\begin{proof}
+    Chúng ta xét đủ các trường hợp sau.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1.6cm]
+        \item $a$ và $b$ là các số thực.
+
+              Giả sử phản chứng rằng $a > b$. Chúng ta chọn số thực dương $\varepsilon = a - b$. Theo định nghĩa giới hạn dãy số
+              \begin{itemize}
+                  \item Với số thực dương $\dfrac{\varepsilon}{2}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$.
+                  \item Với số thực dương $\dfrac{\varepsilon}{2}$, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chọn số tự nhiên $N' = \max\{ N, N_{a}, N_{b} \}$. Nếu số tự nhiên $n\geq N'$ thì chúng ta có $a_{n}\leq b_{n}$, $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$, $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$, và
+              \begin{align*}
+                  a - b & = (a - a_{n}) + (a_{n} - b_{n}) + (b_{n} - b)   \\
+                        & \leq \abs{a - a_{n}} + 0 + \abs{b_{n} - b}      \\
+                        & < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+                        & = \varepsilon = a - b.
+              \end{align*}
+
+              $a - b < a - b$ là một mệnh đề sai, do đó giả sử phản chứng là sai. Như vậy, $a\leq b$.
+        \item $a = -\infty$.
+
+              Vì $-\infty$ là phần tử nhỏ nhất trong tập hợp số thực mở rộng nên $a\leq b$.
+        \item $b = +\infty$.
+
+              Vì $+\infty$ là phần tử lớn nhất trong tập hợp số thực mở rộng nên $a\leq b$.
+        \item $a = +\infty$.
+
+              Theo định nghĩa dãy số có giới hạn dương vô cực, với mỗi số thực dương $M$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $a_{n} > M$.
+
+              Chọn số tự nhiên $N' = \max\{ N, N_{a} \}$. Vẫn là với số thực dương $M$, với số tự nhiên $N'$, với mọi số tự nhiên $n\geq N'$, có $b_{n}\geq a_{n} > M$. Do đó ${(b_{n})}_{n\in\mathbb{N}}$ có giới hạn dương vô cực, kéo theo $b = +\infty$ và $a\leq b$.
+        \item $b = -\infty$.
+
+              Theo định nghĩa dãy số có giới hạn dương vô cực, với mỗi số thực dương $M$, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $b_{n} < -M$.
+
+              Chọn số tự nhiên $N' = \max\{ N, N_{b} \}$. Vẫn là với số thực dương $M$, với số tự nhiên $N'$, với mọi số tự nhiên $n\geq N'$, có $a_{n}\leq b_{n} < -M$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ có giới hạn âm vô cực, kéo theo $a = +\infty$ và $a\leq b$.
+    \end{enumerate}
+
+    Vậy nếu $\lim a_{n} = a$, $\lim b_{n} = b$ và tồn tại số tự nhiên $N$ sao cho $a_{n}\leq b_{n}$ với mọi $n\geq N$ thì $a\leq b$.
+\end{proof}
+
+\subsection{Giới hạn hàm số}
 
 \begin{definition}[Hàm thực]
     Hàm thực một biến (hay hàm giá trị thực một biến) là một ánh xạ với tập hợp đích là tập hợp con của tập hợp số thực.
@@ -3322,9 +3367,9 @@ Nói riêng, trong mục này, chúng ta chỉ làm việc với hàm thực m�
     trong đó, $x^{n}$ (với $x$ là số thực) được định nghĩa bằng đệ quy
     \[
         x^{n} = \begin{cases}
-            x & \text{khi $n = 1$} \\
+            x        & \text{khi $n = 1$} \\
             xx^{n-1} & \text{khi $n > 1$}
-        \end{cases}    
+        \end{cases}
     \]
 
     $f$ là hàm thực. $f$ còn được gọi là hàm đa thức.
@@ -3339,32 +3384,32 @@ Một dãy số thực cũng là hàm thực. Tuy nhiên, tập hợp xác đị
 Trái lại, tập hợp số hữu tỉ và tập hợp số thực không rời rạc trong tập hợp số thực, bởi vì mỗi khoảng mở chứa số hữu tỉ (hoặc số thực) luôn chứa một số hữu tỉ nào đó khác (hoặc số thực nào đó khác) --- Trong trường hợp số hữu tỉ, điều này được suy ra từ tính chất trù mật của tập hợp số hữu tỉ. Như vậy, với số hữu tỉ (hoặc số thực), việc đề cập đến các số hữu tỉ (hoặc các số thực) gần tùy ý với số hữu tỉ đã cho (hoặc số thực đã cho) là có ý nghĩa. Tuy nhiên, chúng ta chọn làm việc với số thực thay vì chỉ mỗi số hữu tỉ, bởi vì tập hợp số thực có tính đầy đủ. Tương tự, chúng ta cũng quan tâm tới giới hạn của hàm số, hay câu hỏi: ``Giá trị của hàm số sẽ như thế nào khi đối số gần tùy ý một số cho trước''.
 
 \begin{definition}[Giới hạn hàm số\index{Giới hạn hàm số}]
-    Cho hàm số $f$ và số thực $x_{0}$. Chúng ta nói $f$ có giới hạn là số thực $a$ (hay $f(x)$ tiến đến số thực $a$, $f(x)$ hội tụ đến $a$) khi $x$ tiến đến $x_{0}$ nếu và chỉ nếu với mỗi số thực dương $\varepsilon$, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $0 < \abs{x - x_{0}} < \delta(\varepsilon)$ kéo theo $\abs{f(x) - a} < \varepsilon$.
+    Cho hàm số $f$ và số thực $a$. Chúng ta nói $f$ có giới hạn là số thực $b$ (hay $f(x)$ tiến đến số thực $A$, $f(x)$ hội tụ đến $A$) khi $x$ tiến đến $a$ nếu và chỉ nếu với mỗi số thực dương $\varepsilon$, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $0 < \abs{x - a} < \delta(\varepsilon)$ kéo theo $\abs{f(x) - A} < \varepsilon$.
 \end{definition}
 
-Tương tự với giới hạn dãy số. Nếu một hàm số có giới hạn khi đối số tiến đến $x_{0}$ thì giới hạn đó là duy nhất khi đối số tiến đến $x_{0}$.
+Tương tự với giới hạn dãy số. Nếu một hàm số có giới hạn khi đối số tiến đến $a$ thì giới hạn đó là duy nhất khi đối số tiến đến $a$.
 \begin{theorem}\label{theorem:uniqueness-of-function-limit-part-1}
-    Nếu hàm số $f$ có giới hạn là $a, b$ khi $x$ tiến đến $x_{0}$ thì $a = b$.
+    Nếu hàm số $f$ có giới hạn là $A, A'$ khi $x$ tiến đến $a$ thì $A = A'$.
 \end{theorem}
 
 \begin{proof}
-    Giả sử phản chứng rằng $a\ne b$. Chúng ta chọn $\varepsilon = \abs{a - b}$.
+    Giả sử phản chứng rằng $A\ne A'$. Chúng ta chọn $\varepsilon = \abs{A - A'}$.
 
     Theo định nghĩa giới hạn hàm số
     \begin{itemize}
-        \item Với số thực dương $\dfrac{\varepsilon}{2}$, tồn tại số thực dương $\delta_{1}$ sao cho $0 < \abs{x - x_{0}} < \delta_{1}$ kéo theo $\abs{f(x) - a} < \dfrac{\varepsilon}{2}$.
-        \item Với số thực dương $\dfrac{\varepsilon}{2}$, tồn tại số thực dương $\delta_{2}$ sao cho $0 < \abs{x - x_{0}} < \delta_{2}$ kéo theo $\abs{f(x) - b} < \dfrac{\varepsilon}{2}$.
+        \item Với số thực dương $\dfrac{\varepsilon}{2}$, tồn tại số thực dương $\delta_{1}$ sao cho $0 < \abs{x - a} < \delta_{1}$ kéo theo $\abs{f(x) - A} < \dfrac{\varepsilon}{2}$.
+        \item Với số thực dương $\dfrac{\varepsilon}{2}$, tồn tại số thực dương $\delta_{2}$ sao cho $0 < \abs{x - a} < \delta_{2}$ kéo theo $\abs{f(x) - A'} < \dfrac{\varepsilon}{2}$.
     \end{itemize}
 
-    Từ hai điều trên, chúng ta suy ra rằng nếu $0 < \abs{x - a} < \min\{ \delta_{1}, \delta_{2} \}$ thì $\abs{f(x) - a} < \dfrac{\varepsilon}{2}$, $\abs{f(x) - b} < \dfrac{\varepsilon}{2}$ và
+    Từ hai điều trên, chúng ta suy ra rằng nếu $0 < \abs{x - a} < \min\{ \delta_{1}, \delta_{2} \}$ thì $\abs{f(x) - A} < \dfrac{\varepsilon}{2}$, $\abs{f(x) - A'} < \dfrac{\varepsilon}{2}$ và
     \[
-        \abs{a - b} = \abs{(a - f(x)) + (f(x) - b)}\leq \abs{a - f(x)} + \abs{f(x) - b} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon = \abs{a - b}.
+        \abs{A - A'} = \abs{(A - f(x)) + (f(x) - A')}\leq \abs{A - f(x)} + \abs{f(x) - A'} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon = \abs{A - A'}.
     \]
 
-    $\abs{a - b} < \abs{a - b}$ là mệnh đề sai. Do đó giả sử phản chứng là sai, kéo theo $a = b$.
+    $\abs{A - A'} < \abs{A - A'}$ là mệnh đề sai. Do đó giả sử phản chứng là sai, kéo theo $A = A'$.
 \end{proof}
 
-\begin{example}
+\begin{example}\label{example:limits-of-cubic-function}
     Hàm $f: \mathbb{R}\to \mathbb{R}$, trong đó $f(x) = x^{3}$. Với mỗi số thực $a$, chúng ta có $f(x)$ tiến đến $a^{3}$ khi $x$ tiến đến $a$.
 
     Chúng ta xem xét biểu thức $\abs{x^{3} - a^{3}}$.
@@ -3374,20 +3419,20 @@ Tương tự với giới hạn dãy số. Nếu một hàm số có giới hạ
 
     Nếu $\abs{x - a} < \delta$ thì $\abs{x}\leq \abs{x - a} + \abs{a} < \delta + \abs{a}$ và chúng ta có
     \[
-        \abs{x^{3} - a^{3}}\leq \delta\cdot \left( {(\delta + \abs{a})}^{2} + \delta\cdot\abs{a} + \abs{a}^{2} \right)    
+        \abs{x^{3} - a^{3}}\leq \delta\cdot \left( {(\delta + \abs{a})}^{2} + \delta\cdot\abs{a} + \abs{a}^{2} \right)
     \]
 
     Đối với việc áp dụng định nghĩa giới hạn hàm số, biểu thức trên còn khá phức tạp. Chúng ta sẽ chọn số $\delta$ sao cho biểu thức thu được thật đơn giản.
     \begin{proof}
         $\varepsilon$ là một số thực dương bất kì. Với $\delta(\varepsilon) = \min\left\{ \dfrac{\varepsilon}{7\abs{a}^{2} + 1}, \abs{a} \right\}$, nếu $0 < \abs{x - a} < \delta(\varepsilon)$ thì $\abs{x} < \delta(\varepsilon) + \abs{a}\leq 2\abs{a}$.
         \begin{align*}
-            \abs{x^{3} - a^{3}} & \leq \abs{x-a}\cdot\left(\abs{x}^{2} + \abs{x}\cdot\abs{a} + \abs{a}^{2}\right) \\
+            \abs{x^{3} - a^{3}} & \leq \abs{x-a}\cdot\left(\abs{x}^{2} + \abs{x}\cdot\abs{a} + \abs{a}^{2}\right)            \\
                                 & \leq \frac{\varepsilon}{7\abs{a}^{2} + 1}\cdot (4\abs{a}^{2} + 2\abs{a}^{2} + \abs{a}^{2}) \\
-                                & = \frac{\varepsilon}{7\abs{a}^{2} + 1}\cdot 7\abs{a}^{2} \\
+                                & = \frac{\varepsilon}{7\abs{a}^{2} + 1}\cdot 7\abs{a}^{2}                                   \\
                                 & < \varepsilon.
         \end{align*}
 
-        Vậy với mỗi số thực dương $\varepsilon$, tồn tại số thực dương  $\delta(\varepsilon) = \min\left\{ \dfrac{\varepsilon}{7\abs{a}^{2} + 1}, \abs{a} \right\}$ sao cho $0 < \abs{x - a} < \delta(\varepsilon)$ kéo theo $\abs{x^{3} - a^{3}} < \varepsilon$. Do đó, $f(x)$ tiến đến $a^{3}$ khi $x$ tiến đến $a$. 
+        Vậy với mỗi số thực dương $\varepsilon$, tồn tại số thực dương  $\delta(\varepsilon) = \min\left\{ \dfrac{\varepsilon}{7\abs{a}^{2} + 1}, \abs{a} \right\}$ sao cho $0 < \abs{x - a} < \delta(\varepsilon)$ kéo theo $\abs{x^{3} - a^{3}} < \varepsilon$. Do đó, $f(x)$ tiến đến $a^{3}$ khi $x$ tiến đến $a$.
     \end{proof}
 \end{example}
 
@@ -3397,14 +3442,14 @@ Vì chúng ta làm việc với tập hợp số thực mở rộng, nên chúng
 \begin{definition}
     Cho hàm thực $f$ và số thực $x_{0}$.
     \begin{enumerate}[label={(\roman*)},itemsep=0pt]
-        \item Chúng ta nói $f$ có giới hạn là số thực $a$ (hay $f(x)$ tiến đến số thực $a$) khi $x$ tiến đến $+\infty$ nếu và chỉ nếu với mỗi số thực dương $\varepsilon$, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $x > \delta(\varepsilon)$ kéo theo $\abs{f(x) - a} < \varepsilon$.
-        \item Chúng ta nói $f$ có giới hạn là số thực $a$ (hay $f(x)$ tiến đến số thực $a$) khi $x$ tiến đến $-\infty$ nếu và chỉ nếu với mỗi số thực dương $\varepsilon$, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $x < -\delta(\varepsilon)$ kéo theo $\abs{f(x) - a} < \varepsilon$.
+        \item Chúng ta nói $f$ có giới hạn là số thực $A$ (hay $f(x)$ tiến đến số thực $A$) khi $x$ tiến đến $+\infty$ nếu và chỉ nếu với mỗi số thực dương $\varepsilon$, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $x > \delta(\varepsilon)$ kéo theo $\abs{f(x) - A} < \varepsilon$.
+        \item Chúng ta nói $f$ có giới hạn là số thực $A$ (hay $f(x)$ tiến đến số thực $A$) khi $x$ tiến đến $-\infty$ nếu và chỉ nếu với mỗi số thực dương $\varepsilon$, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $x < -\delta(\varepsilon)$ kéo theo $\abs{f(x) - A} < \varepsilon$.
         \item Chúng ta nói $f$ có giới hạn là dương vô cực (hay $f(x)$ tiến đến $+\infty$) khi $x$ tiến đến $x_{0}$ nếu và chỉ nếu với mỗi số thực dương $M$, tồn tại số thực dương $\delta(M)$ sao cho $0 < \abs{x - x_{0}} < \delta(M)$ kéo theo $f(x) > M$.
         \item Chúng ta nói $f$ có giới hạn là âm vô cực (hay $f(x)$ tiến đến $-\infty$) khi $x$ tiến đến $x_{0}$ nếu và chỉ nếu với mỗi số thực dương $M$, tồn tại số thực dương $\delta(M)$ sao cho $0 < \abs{x - x_{0}} < \delta(M)$ kéo theo $f(x) < -M$.
     \end{enumerate}
 \end{definition}
 
-Tương tự, chúng ta định nghĩa giới hạn vô cực của hàm số khi đối số tiến đến vô cực. 
+Tương tự, chúng ta định nghĩa giới hạn vô cực của hàm số khi đối số tiến đến vô cực.
 \begin{definition}
     Cho hàm thực $f$ và số thực $x_{0}$.
     \begin{enumerate}[label={(\roman*)},itemsep=0pt]
@@ -3420,39 +3465,182 @@ Mở rộng Định lý~\ref{theorem:uniqueness-of-function-limit-part-1}, chún
     Cho hàm thực $f$. Nếu $f(x)$ tiến đến $a$ khi $x$ tiến đến $x_{0}$ (trong đó $a, x_{0}$ là các phần tử của tập hợp số thực mở rộng) thì $f(x)$ không tiến đến phần tử nào khác $a$ trong tập hợp số thực mở rộng khi $x$ tiến đến $x_{0}$.
 \end{theorem}
 
-Nếu hàm thực $f$ có giới hạn $a$ khi $x$ tiến đến $x_{0}$ (trong đó $x_{0}$, $a$ là các phần tử của tập hợp số thực mở rộng) thì chúng ta kí hiệu $\lim\limits_{x\to x_{0}} f(x) = a$. Định lý~\ref{theorem:uniqueness-of-function-limit-part-2} là cơ sở để khẳng định tính nhất quán của kí hiệu này. Dấu bằng trong kí hiệu này không hoàn toàn giống như dấu bằng mà chúng ta vẫn sử dụng khi thực hiện các phép toán cộng, trừ, nhân, chia các số thực. Dấu bằng này chỉ nhằm biểu thị giới hạn của hàm $f$ khi $x$ tiến đến $x_{0}$. Trong định lý trên, nếu dùng tính chất bắc cầu của quan hệ bằng nhau để trực tiếp suy ra tính duy nhất của giới hạn thì đó là một lập luận sai về bản chất. Chúng tôi để bạn đọc tự chứng minh phần còn lại của Định lý~\ref{theorem:uniqueness-of-function-limit-part-2} (Định lý~\ref{theorem:uniqueness-of-function-limit-part-1} là một phần của định lý này, bạn đọc có thể xem phần chứng minh của Định lý~\ref{theorem:uniqueness-of-function-limit-part-1} như một gợi ý).
+Nếu hàm thực $f$ có giới hạn $A$ khi $x$ tiến đến $a$ (trong đó $A$, $a$ là các phần tử của tập hợp số thực mở rộng) thì chúng ta kí hiệu $\lim\limits_{x\to a} f(x) = A$. Định lý~\ref{theorem:uniqueness-of-function-limit-part-2} là cơ sở để khẳng định tính nhất quán của kí hiệu này. Dấu bằng trong kí hiệu này không hoàn toàn giống như dấu bằng mà chúng ta vẫn sử dụng khi thực hiện các phép toán cộng, trừ, nhân, chia các số thực. Dấu bằng này chỉ nhằm biểu thị giới hạn của hàm $f$ khi $x$ tiến đến $x_{0}$. Trong định lý trên, nếu dùng tính chất bắc cầu của quan hệ bằng nhau để trực tiếp suy ra tính duy nhất của giới hạn thì đó là một lập luận sai về bản chất. Chúng tôi để bạn đọc tự chứng minh phần còn lại của Định lý~\ref{theorem:uniqueness-of-function-limit-part-2} (Định lý~\ref{theorem:uniqueness-of-function-limit-part-1} là một phần của định lý này, bạn đọc có thể xem phần chứng minh của Định lý~\ref{theorem:uniqueness-of-function-limit-part-1} như một gợi ý).
 
 \begin{example}
+    Hàm thực $f: \mathbb{R}\setminus\{0\}\to \mathbb{R}$, $f(x) = \dfrac{1}{x}$ có giới hạn $0$ khi $x$ tiến đến dương vô cực hoặc âm vô cực.
 \end{example}
 
 \begin{example}
+    Hàm thực $f: \mathbb{R}\setminus\{0\}\to \mathbb{R}$, $f(x) = \dfrac{1}{x^{2}}$ có giới hạn dương vô cực khi $x$ tiến đến $0$.
 \end{example}
 
-Định lý sau đây cho phép việc tính toán giới hạn hàm số đơn giản hơn thông qua việc sử dụng những giới hạn đã biết.
+Định lý sau đây cho phép việc tính toán giới hạn hàm số đơn giản hơn thông qua việc sử dụng những giới hạn đã biết. Chứng minh của định lý sau được để lại cho bạn đọc trong phần bài tập.
+
+% pending: Tính lân cận trong khái niệm giới hạn dãy số và giới hạn hàm số
 
 \begin{theorem}\label{theorem:limits-of-sum-and-product-of-functions}
-    Cho các hàm thực $f, g$. $x_{0}, a, b$ là các phần tử của tập hợp số thực mở rộng và $\lim\limits_{x\to x_{0}} f(x) = a$, $\lim\limits_{x\to x_{0}} g(x) = b$.
+    Cho các hàm thực $f, g$. $x_{0}, a, b$ là các phần tử của tập hợp số thực mở rộng và\footnote{Nếu $f: D_{f}\to \mathbb{R}$ và $g: D_{g}\to \mathbb{R}$ thì các hàm $f + g$ và $f\cdot g$ được định nghĩa như sau.
+        \begin{align*}
+            f + g: & \ D_{f}\cap D_{g} \to \mathbb{R},    \\
+                   & \ x\mapsto (f + g)(x) = f(x) + g(x).
+        \end{align*}
+
+        và
+        \begin{align*}
+            f\cdot g: & \ D_{f}\cap D_{g} \to \mathbb{R},    \\
+                      & \ x\mapsto (f\cdot g)(x) = f(x)g(x).
+        \end{align*}} $\lim\limits_{x\to a} f(x) = A$, $\lim\limits_{x\to a} g(x) = B$.
     \begin{enumerate}[label={(\roman*)}]
-        \item Nếu $a + b$ không phải dạng vô định thì $\lim\limits_{x\to x_{0}} (f(x) + g(x)) = a + b$.
-        \item Nếu $ab$ không phải dạng vô định thì $\lim\limits_{x\to x_{0}} (f(x)g(x)) = ab$.
+        \item Nếu $A + B$ không phải dạng vô định thì $\lim\limits_{x\to a} (f(x) + g(x)) = A + B$.
+        \item Nếu $AB$ không phải dạng vô định thì $\lim\limits_{x\to a} (f(x)g(x)) = AB$.
     \end{enumerate}
 \end{theorem}
 
-Chứng minh của định lý trên được để lại cho bạn đọc trong phần bài tập.
+Định lý sau đây cung cấp một mối liên hệ giữa giới hạn dãy số và giới hạn hàm số.
+\begin{theorem}\label{theorem:limits-of-functions-and-sequences}
+    Cho hàm thực $f$. Hai mệnh đề sau tương đương.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Hàm thực $f$ có giới hạn $A$ khi $x$ tiến đến $a$.
+        \item Với mọi dãy số ${(x_{n})}_{n\in\mathbb{N}}$ có giới hạn $a$ (sao cho $x_{n}\ne a$ với mọi số tự nhiên $n$) thì dãy số ${(f(x_{n}))}_{n\in\mathbb{N}}$ có giới hạn $A$.
+    \end{enumerate}
+\end{theorem}
+
+Dưới đây chúng tôi chỉ đưa ra chứng minh (i) $\Rightarrow$ (ii) và (ii) $\Rightarrow$ (i) cho trường hợp $a, A$ là các số thực. Chúng tôi để bạn đọc tự kiểm chứng các trường hợp còn lại.
+
+\begin{proof}[Chứng minh cho trường hợp $a, A$ là các số thực]
+    Theo định nghĩa giới hạn hàm số, với $\varepsilon$ là một số thực dương bất kì, tồn tại số thực dương $\delta(\varepsilon)$ sao cho $0 < \abs{x - a} < \delta(\varepsilon)$ kéo theo $\abs{f(x) - A} < \varepsilon$. Nếu một dãy số ${(x_{n})}_{n\in\mathbb{N}}$ sao cho $x_{n}\ne a$ với mọi số tự nhiên $n$ có giới hạn $a$ thì theo định nghĩa giới hạn dãy số, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $0 < \abs{x_{n} - a} < \delta(\varepsilon)$. Như vậy, với mọi số tự nhiên $n\geq N$, có $\abs{f(x_{n}) - A} < \varepsilon$. Theo định nghĩa giới hạn dãy số, dãy ${(f(x_{n}))}_{n\in\mathbb{N}}$ có giới hạn $A$. Vậy (i) $\Rightarrow$ (ii).
+
+    Ngược lại, với mọi dãy số ${(x_{n})}_{n\in\mathbb{N}}$ (sao cho $x_{n}\ne a$ với mọi số tự nhiên $n$), ${(x_{n})}_{n\in\mathbb{N}}$ có giới hạn $a$ kéo theo ${(f(x_{n}))}_{n\in\mathbb{N}}$ có giới hạn $A$. Giả sử phản chứng rằng $f(x)$ không tiến đến $A$ khi $x$ tiến đến $a$. Theo định nghĩa giới hạn dãy số (phủ định), tồn tại số thực dương $\varepsilon_{0}$ sao cho \textit{với mỗi} số thực dương $\delta$, tồn tại số thực $x$ thỏa mãn $0 < \abs{x - a} < \delta$ sao cho $\abs{f(x) - A}\geq \varepsilon_{0}$. Từ điều này, với số thực dương $\dfrac{1}{2^{n}}$, tồn tại số thực $x_{n}$ thỏa mãn $0 < \abs{x_{n} - a} < \dfrac{1}{2^{n}}$ sao cho $\abs{f(x_{n}) - a}\geq \varepsilon_{0}$. Với cách chọn này, chúng ta thu được dãy ${(x_{n})}_{n\in\mathbb{N}}$ có giới hạn $a$ và $\abs{f(x_{n}) - a}\geq \varepsilon_{0}$ với mọi số tự nhiên $n$. Như vậy, tồn tại số thực dương $\varepsilon_{0}$ sao cho với mọi số tự nhiên $N$, tồn tại số tự nhiên $n\geq N$ sao cho $\abs{f(x_{n}) - A}\geq \varepsilon_{0}$. Điều này có nghĩa là dãy ${(f(x_{n}))}_{n\in\mathbb{N}}$ không hội tụ đến $A$, mâu thuẫn với giả thiết. Do đó giả sử phản chứng là sai, kéo theo $f(x)$ tiến đến $A$ khi $x$ tiến đến $a$. Vậy (ii) $\Rightarrow$ (i).
+\end{proof}
+
+Định lý trên được đề xuất bởi nhà toán học người Đức Eduard Heine. Định lý này cũng có thể được sử dụng làm định nghĩa giới hạn hàm số. Khi đó, định nghĩa giới hạn dãy số bằng cách phát biểu $\varepsilon - \delta$ trở thành một định lý.
+
+\subsection{Tính liên tục}
+
+Bên cạnh giới hạn, liên tục là một khái niệm cơ bản của giải tích. Cho đến thế kỉ 19, hầu hết các nhà toán học sử dụng trực giác để làm việc với khái niệm hàm số liên tục. Hiện nay, để nói về tính liên tục của hàm số một cách chặt chẽ, người ta thường sử dụng định nghĩa sau\footnote{Tổng quát cho khái niệm hàm số liên tục là khái niệm ánh xạ liên tục giữa các không gian topology. Khi đó định nghĩa ánh xạ liên tục có một hình thức khác so với định nghĩa hàm số liên tục.}, hoặc sử dụng cách phát biểu $\varepsilon-\delta$ như trong định nghĩa giới hạn hàm số.
 
 \begin{definition}[Hàm số liên tục\index{Hàm số liên tục}]
-    Hàm thực $f$ được gọi là \textbf{liên tục} (hay \textbf{liên tục điểm\index{liên tục điểm}}) tại số thực $x_{0}$ nếu và chỉ nếu $x_{0}$ thuộc tập hợp xác định của $f$ và $\lim\limits_{x\to x_{0}} f(x) = f(x_{0})$.
+    Hàm thực $f$ được gọi là \textbf{liên tục} (hay \textbf{liên tục điểm\index{Liên tục điểm}}) tại số thực $a$ nếu và chỉ nếu $a$ thuộc tập hợp xác định của $f$ và $\lim\limits_{x\to a} f(x) = f(a)$.
 
-    Hàm thực $f$ được gọi là liên tục trên tập hợp $S\subseteq \mathbb{R}$ nếu và chỉ nếu $f$ liên tục điểm tại mọi số thực $x_{0}$ thuộc $S$.
+    Hàm thực $f$ được gọi là liên tục trên tập hợp $S\subseteq \mathbb{R}$ nếu và chỉ nếu $f$ liên tục điểm tại mọi số thực $a$ thuộc $S$.
 
-    Hàm thực $f$ được gọi là liên tục trên toàn bộ tập hợp số thực nếu và chỉ nếu $f$ liên tục điểm tại mọi số thực $x_{0}$.
+    Hàm thực $f$ được gọi là liên tục trên toàn bộ tập hợp số thực nếu và chỉ nếu $f$ liên tục điểm tại mọi số thực.
+
+    Hàm thực $f$ được gọi là \textbf{gián đoạn\index{Gián đoạn}} tại số thực $a$ nếu và chỉ nếu $f$ không liên tục tại $a$.
 \end{definition}
 
-\begin{corollary}
+\begin{example}\label{example:constant-function-is-continuous}
+    Hàm hằng số $f: \mathbb{R}\to \mathbb{R}$, $f(x) = c$ với mọi số thực $x$ (trong đó $c$ là một hằng số thực) liên tục trên toàn bộ tập hợp số thực.
+
+    Với mỗi số thực dương $\varepsilon$, với số thực dương $\delta(\varepsilon) = \varepsilon$, nếu $0 < \abs{x - a} < \delta(\varepsilon)$ thì $\abs{f(x) - f(a)} = 0 < \varepsilon$. Do đó $f$ liên tục tại mọi số thực $a$, kéo theo $f$ liên tục trên toàn bộ tập hợp số thực.
+\end{example}
+
+\begin{example}
+    Hàm $f: \mathbb{R}\setminus\{0\}\to \mathbb{R}$, $f(x) = \dfrac{1}{x}$ liên tục tại mọi số thực $x\ne 0$, nhưng gián đoạn tại $0$.
+\end{example}
+
+\begin{example}
+    Hàm phần nguyên $f: \mathbb{R}\to \mathbb{R}$, $f(x) = \floor{x}$ liên tục tại các số thực không nguyên, nhưng gián đoạn tại các số nguyên.
+\end{example}
+
+Từ định nghĩa hàm số liên tục và Định lý~\ref{theorem:limits-of-sum-and-product-of-functions}, chúng ta rút ra hệ quả sau.
+
+\begin{corollary}\label{corollary:continuity-of-finite-sum-and-product}
+    Cho các hàm thực $f, g$ và số thực $x_{0}$
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu $f, g$ liên tục tại $a$ thì hàm $f + g$ liên tục tại $a$.
+        \item Nếu $f, g$ liên tục tại $a$ thì hàm $f\cdot g$ liên tục tại $a$.
+    \end{enumerate}
 \end{corollary}
 
-\begin{theorem}[Định lý giá trị trung gian]
+Một lớp các hàm thực quan trọng trong giải tích là các hàm đa thức.
+\begin{theorem}
+    Hàm đa thức liên tục trên toàn bộ tập hợp số thực.
 \end{theorem}
+
+Chúng ta chứng minh kết quả này bằng phương pháp quy nạp toán học.
+
+\begin{proof}
+    Trước tiên, chúng ta chứng minh rằng với mọi số thực $a$, hàm số $x\mapsto x^{n}$ ($n$ là một số nguyên dương) là hàm số liên tục tại $a$.
+
+    Khi $n = 1$, với mỗi số thực dương $\varepsilon$, với $\delta(\varepsilon) = \varepsilon$, nếu $0 < \abs{x - x_{0}} < \delta(\varepsilon)$ thì $\abs{x - a} < \varepsilon$. Do đó hàm số $x\mapsto x$ liên tục tại $a$.
+
+    Giả sử với số nguyên dương $n = k$, hàm số $f: x\mapsto x^{k}$ liên tục tại $a$. Theo giả thiết quy nạp và Hệ quả~\ref{corollary:continuity-of-finite-sum-and-product}, chúng ta suy ra hàm số $x\mapsto x^{k+1}$ liên tục tại $a$.
+
+    Theo nguyên lý quy nạp toán học, với mọi số thực $a$, hàm số $x\mapsto x^{n}$ liên tục tại $a$, với mọi số nguyên dương $n$.
+
+    Tiếp theo, chúng ta chứng minh rằng với mọi số thực $a$, hàm số $x\mapsto a_{0} + a_{1}x + \cdots + a_{n}x^{n}$ ($n$ là một số tự nhiên, $a_{0}$, $a_{1}$, \ldots, $a_{n}$ là các số thực) là hàm số liên tục tại $a$.
+
+    Khi $n = 0$, hàm số $x\mapsto a_{0}$ liên tục tại $a$ (theo Ví dụ~\ref{example:constant-function-is-continuous}).
+
+    Giả sử với số tự nhiên $n = k$, hàm số $x\mapsto a_{0} + a_{1}x + \cdots + a_{k}x^{k}$ liên tục tại $a$. Theo giả thiết quy nạp, Hệ quả~\ref{corollary:continuity-of-finite-sum-and-product} và mệnh đề vừa chứng minh, chúng ta suy ra hàm số $x\mapsto a_{0} + a_{1}x + \cdots + a_{k}x^{k} + a_{k+1}x^{k+1}$ liên tục tại $a$.
+
+    Theo nguyên lý quy nạp toán học, với mọi số thực $a$, hàm số $x\mapsto a_{0} + a_{1}x + \cdots + a_{n}x^{n}$ liên tục tại $a$, với mọi số tự nhiên $n$.
+
+    Vậy hàm đa thức liên tục trên toàn bộ tập hợp số thực.
+\end{proof}
+
+Chúng ta bàn thêm về mô tả trực giác của hàm số liên tục trên một khoảng (đóng hoặc mở). Khi trực quan hóa đồ thị của các hàm số $x\mapsto a_{0} + a_{1}x$, $x\mapsto a_{0} + a_{1}x + a_{2}x^{2}$ (trong đó $a_{2}\ne 0$), chúng ta lần lượt thu được hình ảnh đường thẳng và đường parabola. Khi vẽ đồ thị của một hàm số liên tục với giấy và bút, chúng ta có thể vẽ một đường liền nét mà không cần phải nhấc bút lên.
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \draw[very thin,color=gray,dashed] (-3.1,-3.1) grid (4.1,4.1);
+
+        \node[draw,circle,radius=1pt,inner sep=1pt,black,label={45:$(1, 1)$}] at (1,1) {};
+        \node[draw,circle,radius=1pt,inner sep=1pt,black,label={270:$(-1, -3)$}] at (-1,-3) {};
+
+        \draw[->] (-3.2,0) -- (4.2,0) node[right] {$x$};
+        \draw[->] (0,-3.2) -- (0,4.2) node[above] {$y$};
+
+        \draw[domain=-3:3]    plot (\x,{1+\x})             node[right] {$f(x) = 1+x$};
+        \draw[domain=-3:1.8]   plot (\x,{-2+2*\x+\x*\x})    node[right] {$g(x) = -2+2x+x^{2}$};
+    \end{tikzpicture}
+    \caption{Một phần đồ thị của hai hàm số $x\mapsto 1+x$ và $x\mapsto -2+2x+x^{2}$ trong mặt phẳng tọa độ Descartes.}\label{fig:graph-of-linear-function-and-quadratic-function}
+\end{figure}
+
+Chúng ta quan sát Hình~\ref{fig:graph-of-linear-function-and-quadratic-function}. Đồ thị hàm số $x\mapsto -2 + 2x + x^{2}$ đi qua điểm $(-1, 3)$ và $(1, 1)$. Bên cạnh đó, thuần túy bằng quan sát, chúng ta có thể thấy rằng với mọi số thực $a$ thuộc khoảng mở $(1, 3)$ (hay $(g(-1), g(1))$), tồn tại số thực $c$ thuộc khoảng mở $(-1, 1)$ sao cho $g(c) = a$. Điều tương tự cũng đúng với hàm số $x\mapsto 1 + x$. Hiện tượng này vẫn đúng với hàm số liên tục trên một khoảng đóng, và được phát biểu thành định lý sau.
+
+\begin{theorem}[Định lý giá trị trung gian\index{Định lý giá trị trung gian}]
+    Nếu hàm thực $f$ liên tục trên khoảng đóng $[a, b]$ với $a < b$ và $f(a)\ne f(b)$ thì với mỗi số thực $v$ thuộc khoảng mở $( \min\{ f(a), f(b) \}, \max\{ f(a), f(b) \} )$, tồn tại số thực $c$ thuộc khoảng mở $(a, b)$ sao cho $f(c) = v$.
+\end{theorem}
+
+Chứng minh dưới đây có trong cuốn sách Mathematical Analysis I của tác giả Zorich~\cite{zorich}, với cách tiếp cận tương tự định lý Bolzano-Weierstra{\ss}.
+
+\begin{proof}
+    Nếu tồn tại số thực $c$ như vậy thì $c\ne a$ và $c\ne b$, vì $v\ne f(a)$ và $v\ne f(b)$.
+
+    Chúng ta xét hàm thực $g: [a, b]\to \mathbb{R}$, $g(x) = f(x) - v$. Theo giả thiết, hàm $g$ nhận cả giá trị dương và âm trong khoảng đóng $[a, b]$. Chúng ta kí hiệu $a_{0} = a$, $b_{0} = b$, chia đổi khoảng này thành hai khoảng đóng $\left[a_{0}, \dfrac{1}{2}(a_{0}, b_{0})\right]$, $\left[\dfrac{1}{2}(a_{0} + b_{0}), b_{0}\right]$. Nếu $g$ nhận giá trị $0$ tại số thực ở chính giữa của khoảng đóng thì số thực đó là số thực cần tìm. Ngược lại, hàm $g$ nhận cả giá trị dương và âm trong ít nhất một trong hai khoảng đóng này --- Chúng ta kí hiệu khoảng đóng đó là $[a_{1}, b_{1}]$. Chúng ta tiếp tục quá trình trên với khoảng đóng $[a_{1}, b_{1}]$. Trong quá trình này, có hai khả năng.
+
+    \begin{enumerate}[label={\textbf{Khả năng \arabic*.}},itemindent=1.5cm]
+        \item Tồn tại số tự nhiên $n$ sao cho $g\left(\dfrac{1}{2}(a_{n} + b_{n})\right) = 0$.
+
+              Khi đó, $\dfrac{1}{2}(a_{n} + b_{n})$ là số thực $c$ cần tìm.
+        \item Không tồn tại số tự nhiên $n$ sao cho $g\left(\dfrac{1}{2}(a_{n} + b_{n})\right) = 0$.
+
+              Theo định lý Cantor về các khoảng đóng lồng nhau, chúng ta suy ra $\bigcap_{n\in\mathbb{N}} [a_{n}, b_{n}]$ có phần tử duy nhất --- Chúng ta kí hiệu phần tử này là $c$.
+
+              Theo cách xây dựng các khoảng đóng $[a_{n}, b_{n}]$, với mỗi số tự nhiên $n$, tồn tại các số thực $x_{n}$ và $y_{n}$ thuộc $[a_{n}, b_{n}]$ sao cho $g(x_{n}) < 0$ và $g(y_{n}) > 0$ (vì $g$ nhận cả giá trị dương và âm trong khoảng đóng $[a_{n}, b_{n}]$). Bên cạnh đó
+              \[
+                  \begin{split}
+                      \abs{x_{n} - c} \leq \abs{a_{n} - b_{n}} = \frac{b_{0} - a_{0}}{2^{n}}\leq \frac{b_{0} - a_{0}}{n+1}, \\
+                      \abs{y_{n} - c} \leq \abs{a_{n} - b_{n}} = \frac{b_{0} - a_{0}}{2^{n}}\leq \frac{b_{0} - a_{0}}{n+1}.
+                  \end{split}
+              \]
+
+              Do đó, với mỗi số thực dương $\varepsilon$, với số tự nhiên $N = \floor{\dfrac{b_{0} - a_{0}}{\varepsilon}}$, với mọi số tự nhiên $n\geq N$, có $\abs{x_{n} - c} < \varepsilon$ và $\abs{y_{n} - c} < \varepsilon$. Theo định nghĩa giới hạn dãy số, ${(x_{n})}_{n\in\mathbb{N}}$ và ${(y_{n})}_{n\in\mathbb{N}}$ có giới hạn $c$.
+
+              Theo Định lý~\ref{theorem:limits-of-functions-and-sequences}, chúng ta suy ra ${(g(x_{n}))}_{n\in\mathbb{N}}$ và ${(g(y_{n}))}_{n\in\mathbb{N}}$ có giới hạn $g(c)$. Vì $g(x_{n}) < 0$ và $g(y_{n}) > 0$ với mọi số tự nhiên $n$ nên theo Định lý~\ref{theorem:order-of-convergent-sequences}, chúng ta suy ra $g(c)\leq 0$ và $g(c)\geq 0$. Do đó $g(c) = 0$.
+    \end{enumerate}
+
+    Vậy, tồn tại số thực $c$ trong khoảng mở $(a, b)$ sao cho $f(c) = v$.
+\end{proof}
+
+Định lý giá trị trung gian cung cấp một thuật toán xấp xỉ để tìm nghiệm gần đúng trong khoảng đóng $[a, b]$ của phương trình $f(x) = 0$ khi $f(a)f(b) < 0$, trong đó $f$ là hàm thực liên tục trên khoảng đóng $[a, b]$.
+
+\begin{corollary}
+    Cho hàm thực $f$ liên tục trên khoảng đóng $[a, b]$ với $a < b$ và $f(a)\ne f(b)$. Khi đó, nếu $f(a)f(b) < 0$ thì tồn tại số thực $c$ thuộc khoảng mở $(a, b)$ sao cho $f(c) = 0$.
+\end{corollary}
 
 \subsection{Hàm lũy thừa}
 
@@ -3464,6 +3652,9 @@ Chứng minh của định lý trên được để lại cho bạn đọc trong
 
 \begin{definition}[Lũy thừa với số mũ hữu tỉ của số thực]
 \end{definition}
+
+\begin{theorem}
+\end{theorem}
 
 \begin{definition}[Lũy thừa với số mũ thực của số thực]
 \end{definition}
