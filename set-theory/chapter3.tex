@@ -1,27 +1,694 @@
-\chapter{Lực lượng của tập hợp}\label{chapter:cardinality}
+\chapter{Số tự nhiên, số nguyên, và số hữu tỉ}\label{chapter:natural-numbers-integers-and-rationals}
 
-Cho đến thời điểm này, mặc dù chúng ta đã bắt gặp và làm việc cùng sự vô hạn (chẳng hạn như các tập hợp có vô hạn phần tử), nhưng chúng ta chưa hề định nghĩa thế nào là vô hạn. Mục tiêu của chương này không phải là trả lời vô hạn là gì, mà là giới thiệu khái niệm lực lượng của tập hợp để từ đó tìm ra một số đặc điểm của các tập hợp có vô hạn phần tử.
+\noindent ``God made the natural numbers; all else is the work of man.\@''
 
-\section{Các định nghĩa}
+\noindent \rule[0.5ex]{2cm}{0.5pt}
 
-\subsection{Lực lượng và so sánh lực lượng giữa các tập hợp}
+\noindent \textit{Leopold Kronecker ($1823-1891$)}
 
-\subsection{Tập hợp lũy thừa}
+\section{Số tự nhiên}
+
+\subsection{Hệ tiên đề Peano}
+
+Cuối thế kỉ 19, nhà toán học người Ý Giuseppe Peano đưa ra một hệ tiên đề về các số tự nhiên. Hệ tiên đề này gồm 9 tiên đề sau.
+
+\begin{axiom}
+    $0$ và $S$ là hai đối tượng không được định nghĩa.
+
+    \begin{enumerate}[label={(PA\arabic*)},itemsep=0pt,topsep=0pt,itemindent=0.25cm]
+        \item $0$ là một số tự nhiên.
+        \item Với mọi số tự nhiên $x$, có $x = x$.
+        \item Với mọi số tự nhiên $x$ và $y$, nếu $x = y$ thì $y = x$.
+        \item Với mọi số tự nhiên $x, y$, và $z$, nếu $x = y$ và $y = z$ thì $x = z$.
+        \item Với mọi $x$ và $y$, nếu $y$ là số tự nhiên và $x = y$ thì $x$ cũng là một số tự nhiên.
+        \item Với mọi số tự nhiên $x$, $S(x)$ là một số tự nhiên.
+        \item Với mọi số tự nhiên $x$ và $y$, nếu $S(x) = S(y)$ thì $x = y$.
+        \item Với mọi số tự nhiên $x$, $S(x) \ne 0$.
+        \item Nếu một tập hợp $A$ thỏa mãn hai điều kiện sau
+              \begin{itemize}[itemsep=0pt,topsep=0pt]
+                  \item $0\in A$,
+                  \item với mọi số tự nhiên $n$, $n\in A$ kéo theo $S(n)\in A$,
+              \end{itemize}
+              thì mọi số tự nhiên đều thuộc $A$.
+    \end{enumerate}
+\end{axiom}
+
+Tập hợp (tất cả) các số tự nhiên được kí hiệu là $\mathbb{N}$.
+
+Tiên đề 1 khẳng định tập hợp số tự nhiên không rỗng. Hệ tiên đề ban đầu của Peano chọn $1$ làm số tự nhiên ``đầu tiên'' thay vì $0$. Nhưng trong tác phẩm chính thức của mình, ông lại chọn số $0$ làm số tự nhiên đầu tiên. Cho đến nay, cộng đồng toán học không thống nhất rằng $0$ là số tự nhiên hay không $-$ Đây chỉ là vấn đề quy ước. Vì sự nhập nhằng đó, thay vì viết là ``số tự nhiên'', nhiều tác giả chọn cách viết là ``số nguyên dương'', ``số nguyên không âm''.
+
+Tiên đề 2, 3, 4, 5 nói về quan hệ bằng nhau trên tập hợp số tự nhiên. Ba tiên đề 2, 3, 4 khẳng định quan hệ bằng nhau trên tập hợp số tự nhiên là một quan hệ tương đương. Tiên đề 5 có nghĩa là tập hợp số tự nhiên là \textit{đóng} dưới quan hệ bằng nhau (một số tự nhiên không thể bằng một đối tượng nào đó nằm ngoài tập hợp số tự nhiên).
+
+Đối tượng $S$ không được định nghĩa trong hệ tiên đề trên. $S$ được gọi là hàm successor (có nghĩa là kế tiếp, chúng tôi không dùng tên gọi được dịch). Tiên đề 6 phát biểu rằng tập hợp số tự nhiên đóng dưới hàm successor. Tiên đề 7 có nghĩa là $S$ là một đơn ánh. Tiên đề 8 có nghĩa là không có số tự nhiên nào nhận $0$ làm số tự nhiên liền sau nó. Ý nghĩa của hàm successor là nó gán một số tự nhiên với số tự nhiên ngay kế tiếp.
+
+Tuy mang một hình thức khác, nhưng tiên đề 9 chính là nguyên lý quy nạp toán học. Tiên đề 9 còn được gọi là \textit{tiên đề quy nạp}.
+
+Nếu phải xây dựng lại các phép toán và quan hệ thứ tự trên tập hợp số tự nhiên từ hệ tiên đề Peano thì các công cụ duy nhất chúng ta có là những kết quả từ lý thuyết tập hợp, phương pháp phản chứng và phương pháp quy nạp toán học. Dưới đây là chứng minh cho nguyên lý quy nạp toán học.
+
+Chúng ta nhắc lại nội dung nguyên lý quy nạp toán học: Nếu hai điều kiện sau thỏa mãn
+\begin{enumerate}[label={(\roman*)},itemsep=0pt]
+    \item mệnh đề $p(0)$ đúng,
+    \item với mọi số tự nhiên $k\geq 0$, $p(k)$ kéo theo $p(k+1)$,
+\end{enumerate}
+
+thì $p(n)$ đúng với mọi số tự nhiên $n$.
+
+\begin{proof}[Chứng minh nguyên lý quy nạp toán học]
+    Chúng ta gọi $A$ là tập hợp các số tự nhiên $n$ sao cho có $p(n)$.
+
+    Vì có $p(0)$ nên $0\in A$.
+
+    Vì với mọi số tự nhiên $k\geq 1$, $p(k)$ kéo theo $p(k+1)$ nên với mọi số tự nhiên $k\geq 1$, $k\in A$ kéo theo $(k+1)\in A$.
+
+    Theo tiên đề 9, $A$ chứa mọi số tự nhiên. Theo định nghĩa của tập hợp $A$, có $p(n)$ với mọi số tự nhiên $n$.
+\end{proof}
+
+Có thể bạn đọc đã bỏ qua một câu hỏi: ``Ngoài $0$, còn số tự nhiên $n$ nào mà không tồn tại số tự nhiên $m$ sao cho $S(m) = n$ không?\@'' Câu trả lời là không. Nhưng chúng ta cần một chứng minh.
+\begin{theorem}\label{theorem:successor}
+    Nếu $n$ là một số tự nhiên khác $0$ thì tồn tại một số tự nhiên $m$ sao cho $S(m) = n$.
+\end{theorem}
+
+\begin{proof}
+    Mệnh đề có phát biểu tương đương như sau: Với mọi số tự nhiên $n$, nếu $n$ khác $0$ thì tồn tại số tự nhiên $m$ sao cho $S(m) = n$.
+
+    Khi $n = 0$, tức là mệnh đề $n$ là số tự nhiên khác $0$ sai, thì theo tiên đề 8 không có số tự nhiên $m$ nào sao cho $S(m) = n$ (lưu ý rằng mệnh đề kéo theo $P\implies Q$ đúng khi $P$ và $Q$ sai).
+
+    Khi $n = 1$, chúng ta có $S(0) = 1$.
+
+    Giả sử với số tự nhiên $k\geq 1$, $n = k$ kéo theo tồn tại số tự nhiên $m$ sao cho $S(m) = k$. Khi đó $S(S(m)) = S(k)$.
+
+    Vậy, theo nguyên lý quy nạp toán học, với mọi số tự nhiên $n$ khác không, tồn tại số tự nhiên $m$ sao cho $S(m) = n$.
+\end{proof}
+
+Với định lý trên, chúng ta kết luận được rằng các số tự nhiên theo hệ tiên đề Peano được sinh ra từ $0$ và hàm successor.
+
+\subsection{Các phép toán và quan hệ thứ tự trên tập hợp số tự nhiên}
+
+Trong mục này, chúng ta sẽ định nghĩa hai phép toán cộng, nhân và quan hệ thứ tự trên tập hợp số tự nhiên theo hệ tiên đề Peano.
+
+Phép cộng hai số tự nhiên được định nghĩa bằng đệ quy như sau.
+\begin{definition}[Phép cộng số tự nhiên\index{Phép cộng số tự nhiên}]
+    Phép cộng hai số tự nhiên là một phép toán hai ngôi trên $\mathbb{N}$, kí hiệu là $+$. Phép cộng hai số tự nhiên $a$ và $b$ cho ra kết quả là một số tự nhiên, được kí hiệu là $a + b$, được gọi là \textbf{tổng} của $a$ và $b$. Với hai số tự nhiên $x$ và $y$, Chúng ta định nghĩa
+    \begin{align*}
+         & x + 0 = x,           \\
+         & x + S(y) = S(x + y).
+    \end{align*}
+\end{definition}
+
+Phép nhân số tự nhiên cũng được định nghĩa bằng đệ quy.
+\begin{definition}[Phép nhân số tự nhiên\index{Phép nhân số tự nhiên}]
+    Phép nhân hai số tự nhiên là một phép toán hai ngôi trên $\mathbb{N}$, kí hiệu là $\cdot$. Phép nhân hai số tự nhiên $a$ và $b$ cho ra kết quả là một số tự nhiên, được kí hiệu là $a\cdot b$, được gọi là \textbf{tích} của $a$ và $b$. Với hai số tự nhiên $x$ và $y$, chúng ta định nghĩa
+    \begin{align*}
+         & x\cdot 0 = 0,                 \\
+         & x\cdot S(y) = x + (x\cdot y).
+    \end{align*}
+\end{definition}
+
+Chúng tôi sẽ không chứng minh lại các tính chất quen thuộc của phép cộng, nhân, và quan hệ thứ tự trên tập hợp số tự nhiên. Thay vào đó, chúng tôi vạch ra trình tự logic của những tính chất đó để bạn đọc tự kiểm chứng.
+\begin{theorem}
+    Trong tập hợp số tự nhiên
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số tự nhiên $x, y, z$, chúng ta có $(x + y) + z = x + (y + z)$.
+        \item Với mọi số tự nhiên $x$, có $0 + x = x$.
+        \item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số tự nhiên $x, y$, chúng ta có $x + y = y + x$.
+        \item Với mọi số tự nhiên $x, y$, $x + y = x$ kéo theo $y = 0$.
+        \item Hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 0$ khi và chỉ khi $a = b = 0$.
+        \item Hai số tự nhiên $a$ và $b$ thỏa mãn $a + b = 1$ khi và chỉ khi $a = 0, b = 1$ hoặc $a = 1, b = 0$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}\label{theorem:property-of-natural-numbers-multiplication}
+    Trong tập hợp số tự nhiên
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép nhân có tính chất phân phối (từ bên phải) với phép cộng. Nói cách khác, với mọi số tự nhiên $x, y, z$, chúng ta có $(x + y)\cdot z = (x\cdot z) + (y\cdot z)$.
+        \item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số tự nhiên $x, y, z$, chúng ta có $(x \cdot y) \cdot z = x \cdot (y \cdot z)$.
+        \item Với mọi só tự nhiên $x$, có $0\cdot x = 0$.
+        \item Với mọi số tự nhiên $x$, có $x\cdot S(0) = S(0) \cdot x = x$.
+        \item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số tự nhiên $x, y$, chúng ta có $x \cdot y = y \cdot x$.
+        \item Với mọi số tự nhiên $x, y$, $x\cdot y = 0$ khi và chỉ khi $x = 0$ hoặc $y = 0$.
+        \item Với mọi số tự nhiên $x, y$, $x\cdot y = 1$ khi và chỉ khi $x = y = 1$.
+    \end{enumerate}
+\end{theorem}
+
+Quan hệ thứ tự trong tập hợp số tự nhiên được định nghĩa dựa trên phép cộng số tự nhiên.
+\begin{definition}
+    Số tự nhiên $x$ được gọi là nhỏ hơn hoặc bằng số tự nhiên $y$ nếu và chỉ nếu tồn tại số tự nhiên $z$ sao cho $x + z = y$. Khi đó, chúng ta kí hiệu $x\leq y$. Nếu $x\leq y$ và $x\ne y$ thì chúng ta nói $x$ nhỏ hơn $y$ và kí hiệu $x < y$.
+\end{definition}
+
+Quan hệ $\leq$ trong định nghĩa trên là một quan hệ thứ tự toàn phần. Điều này được khẳng định trong định lý sau.
+\begin{theorem}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Quan hệ $\leq$ trên tập hợp số tự nhiên thỏa mãn tính chất phản xạ và bắc cầu.
+        \item Với mọi số tự nhiên $x$, có $x < S(x)$.
+        \item Quan hệ $\leq$ trên tập hợp số tự nhiên thỏa mãn tính chất phản đối xứng.
+        \item Quan hệ $\leq$ trên tập hợp số tự nhiên là một quan hệ thứ tự\index{Quan hệ thứ tự trên tập hợp số tự nhiên} toàn phần.
+    \end{enumerate}
+\end{theorem}
+
+Sự tương thích của quan hệ $\leq$ và hai phép toán cộng và nhân trên tập hợp số tự nhiên được trình bày trong định lý sau.
+\begin{theorem}\label{theorem:natural-numbers-order}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mọi số tự nhiên $x, y$, $x\leq y$ thì với mọi số tự nhiên $z$, có $x + z\leq y + z$.
+        \item Với mọi số tự nhiên $x, y$, $x\leq y$ thì với mọi số tự nhiên $z$, có $x\cdot z\leq y\cdot z$.
+    \end{enumerate}
+\end{theorem}
+
+Bằng phương pháp phản chứng, từ định lý trên, chúng ta rút ra hệ quả sau.
+\begin{corollary}\label{corollary:addition-cancellation}
+    Với mọi số tự nhiên $x, y, z$, nếu $x + z = y + z$ thì $x = y$.
+\end{corollary}
+
+Định lý sau đây còn được phát biểu rằng ``Giữa hai số tự nhiên liên tiếp, không còn số tự nhiên nào khác.''
+\begin{theorem}
+    Với mọi số tự nhiên $m, n$, nếu $n\leq m$ và $m \leq S(n)$ thì hoặc $m = n$ hoặc $m = S(n)$.
+\end{theorem}
 
 \subsection{Bài tập}
 
-\section{Lực lượng đếm được và Lực lượng không đếm được}
+\section{Số nguyên}
 
-\subsection{Lực lượng đếm được}
+\subsection{Xây dựng tập hợp số nguyên}
 
-\subsection{Lực lượng không đếm được}
+Cho đến lúc này, chúng ta chưa định nghĩa phép trừ số tự nhiên. Từ Hệ quả~\ref{corollary:addition-cancellation} và định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, chúng ta suy ra rằng: Nếu $x\leq y$ thì \textit{tồn tại duy nhất} số tự nhiên $z$ sao cho $x + z = y$. Đây là cơ sở để chúng ta định nghĩa phép trừ hai số tự nhiên.
+
+\begin{definition}[Phép trừ hai số tự nhiên]
+    Cho hai số tự nhiên $x, y$ sao cho $x\leq y$. Số tự nhiên $z$ duy nhất thỏa mãn $x + z = y$ được gọi là \textbf{hiệu} của $y$ và $x$. Chúng ta kí hiệu $z = y - x$.
+\end{definition}
+
+Nếu hai số tự nhiên $x$ và $y$ không thỏa mãn $x\leq y$ thì $y < x$ (có được lập luận này là nhờ $\leq$ là một quan hệ thứ tự toàn phần trên tập hợp số tự nhiên). Theo định nghĩa quan hệ $\leq$ trên tập hợp số tự nhiên, phủ định của $x\leq y$ tương đương với việc không tồn tại số tự nhiên $z$ nào sao cho $x + z = y$. Như vậy, có những trường hợp mà chúng ta không thực hiện được phép trừ hai số tự nhiên theo định nghĩa trên. Để định nghĩa được phép trừ hai số tự nhiên bất kì, chúng ta cần bổ sung các đối tượng mới vào tập hợp số tự nhiên --- Bởi vì khi đó, hiệu $y - x$ với $y < x$ không phải là một số tự nhiên.
+
+Trước khi đưa ra một định nghĩa như vậy, chúng tôi có một nhận xét: Nếu các số tự nhiên $x, y, z$ thỏa mãn $x + z = y$ thì
+\[
+    z = z - 0 = y - x = S(y) - S(x) = S(S(y)) - S(S(x)) = \cdots
+\]
+
+Các đẳng thức trên gợi ý một quan hệ tương đương trên tập hợp $\mathbb{N}\times\mathbb{N}$.
+\begin{theorem}[Quan hệ tương đương giữa các cặp số tự nhiên]
+    Hai cặp có thứ tự số tự nhiên $(a, b)$ và $(c, d)$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a + d = b + c$. Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ là một quan hệ tương đương.
+\end{theorem}
+
+Bằng quan hệ tương đương trong định lý trên, chúng ta định nghĩa tập hợp số nguyên như sau.
+\begin{definition}
+    Tập thương $(\mathbb{N}\times\mathbb{N})/_{\sim}$ là tập hợp số nguyên. Chúng ta kí hiệu một số tự nhiên là $[(a, b)]$, trong đó $a$ và $b$ là hai số tự nhiên. Tập hợp số nguyên (tập thương $(\mathbb{N}\times\mathbb{N})/_{\sim}$) được kí hiệu là $\mathbb{Z}$.
+\end{definition}
+
+Để quen hơn với định nghĩa này, chúng ta theo dõi một ví dụ.
+\begin{example}
+    Với $n$ là số tự nhiên, chúng ta có
+    \begin{align*}
+        (1, 0) & \sim (2, 1) \sim (3, 2) \sim \cdots \sim (n+1, n) \in [(1, 0)], \\
+        (2, 0) & \sim (3, 1) \sim (4, 2) \sim \cdots \sim (n+2, n) \in [(2, 0)], \\
+        \ldots                                                                   \\
+        (0, 1) & \sim (1, 2) \sim (2, 3) \sim \cdots \sim (n, n+1) \in [(0, 1)], \\
+        (0, 2) & \sim (1, 3) \sim (2, 4) \sim \cdots \sim (n, n+2) \in [(0, 2)].
+    \end{align*}
+\end{example}
+
+\subsection{Các phép toán và quan hệ thứ tự trên tập hợp số nguyên}
+
+Đầu tiên, chúng ta định nghĩa phép cộng số nguyên.
+\begin{definition}[Phép cộng số nguyên\index{Phép cộng số nguyên}]
+    Phép cộng số nguyên\index{Phép cộng số nguyên} là một phép toán hai ngôi trên tập hợp số nguyên, kí hiệu là $+$. Với hai số nguyên $[(a, b)]$ và $[(c, d)]$, chúng ta kí hiệu kết quả của phép cộng hai số nguyên này là $[(a, b)] + [(c, d)]$ và định nghĩa
+    \[
+        [(a, b)] + [(c, d)] = [(a+c, b+d)].
+    \]
+\end{definition}
+
+Định nghĩa trên không phụ thuộc vào việc chọn đại diện của lớp tương đương. Nói cách khác, nếu chúng ta chọn hai phần tử khác nhau $(a_{1}, b_{1}) \sim (a_{2}, b_{2})$ từ lớp tương đương $[(a, b)]$ và  hai phần tử khác nhau $(c_{1}, d_{1}) \sim (c_{2}, d_{2})$ từ lớp tương đương $[(c, d)]$ thì
+\[
+    [(a_{1}, b_{1})] + [(c_{1}, d_{1})] = [(a_{2}, b_{2})] + [(c_{2}, d_{2})].
+\]
+
+Trong tập hợp số tự nhiên, với hai số tự nhiên $x, y$ bất kì, tồn tại số tự nhiên $z$ khi và chỉ khi $x\leq y$. Nói cách khác, phép trừ hai số tự nhiên không phải lúc nào cũng thực hiện được. Định lý sau đây khẳng định rằng luôn thực hiện được phép trừ số nguyên.
+\begin{theorem}
+    Với mọi số nguyên $[(a, b)], [(c, d)]$, có $[(a, b)] + [(b+c, a+d)] = [(c, d)]$.
+\end{theorem}
+
+Phép cộng số nguyên có các tính chất sau.
+\begin{theorem}\label{theorem:group-of-integers}
+    Trong tập hợp số nguyên,
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng hai số nguyên có tính chất kết hợp. Nói cách khác, với các số nguyên $[(a, b)], [(c, d)], [(x, y)]$, chúng ta có
+              \[
+                  ([(a, b)] + [(c, d)]) + [(x, y)] = [(a, b)] + ([(c, d)] + [(x, y)]).
+              \]
+        \item Với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(0, 0)] = [(0, 0)] + [(a, b)] = [(a, b)]$.
+        \item Với mọi số nguyên $[(a, b)]$, chúng ta có $[(a, b)] + [(b, a)] = [(b, a)] + [(a, b)] = [(0, 0)]$.
+        \item Phép cộng hai số nguyên có tính chất giao hoán. Nói cách khác, với mọi số nguyên $[(a, b)], [(c, d)]$, chúng ta có
+              \[
+                  [(a, b)] + [(c, d)] = [(c, d)] + [(a, b)].
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}\label{theorem:uniqueness-of-additive-identity-and-additive-inverse}
+    Trong tập hợp số nguyên,
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tồn tại duy nhất số nguyên được gọi là \textbf{phần tử đồng nhất của phép cộng}. Nói cách khác, tồn tại duy nhất số nguyên $\theta$ sao cho với mọi số nguyên $\alpha$, có $\alpha + \theta = \theta + \alpha = \alpha$.
+        \item Với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ được gọi là \textbf{phần tử đối}, hay \textbf{số nguyên đối} của $\alpha$. Nói cách khác, với mỗi số nguyên $\alpha$, tồn tại duy nhất số nguyên $\beta$ sao cho $\alpha + \beta = \beta + \alpha = [(0,0)]$.
+    \end{enumerate}
+\end{theorem}
+
+Phần tử đồng nhất của phép cộng số nguyên là $[(0,0)]$. Phần tử đối của số nguyên $[(a, b)]$ là $[(b, a)]$.
+
+Định lý trên là cơ sở cho định nghĩa và kí hiệu sau đây.
+\begin{definition}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mỗi số nguyên $\alpha$, số nguyên đối của $\alpha$ được kí hiệu là $-\alpha$.
+        \item Phép trừ hai số nguyên là một phép toán hai ngôi trên tập hợp số nguyên. Kết quả của phép trừ hai số nguyên $\alpha$ và $\beta$ là tổng của $\alpha$ và $(-\beta)$. Chúng ta kí hiệu kết quả của phép trừ $\alpha$ cho $\beta$ là $\alpha - \beta$.
+    \end{enumerate}
+\end{definition}
+
+Chúng ta gặp khó khăn trong việc định nghĩa phép nhân hai số nguyên. Để khắc phục điều này, chúng ta định nghĩa số nguyên dương, số nguyên âm, số nguyên không âm.
+\begin{definition}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Một số nguyên $\alpha = [(x, y)]$ được gọi là một \textbf{số nguyên dương} nếu \textit{tồn tại} số tự nhiên $n\ne 0$ sao cho $(n, 0)\sim (x, y)$ (nói cách khác, $(n, 0)$ thuộc lớp tương đương $[(x, y)]$).
+        \item Một số nguyên $\alpha = [(x, y)]$ được gọi là một \textbf{số nguyên âm} nếu \textit{không tồn tại} số tự nhiên $n$ nào sao cho $(n, 0)\sim (x, y)$.
+    \end{enumerate}
+\end{definition}
+
+Theo định nghĩa trên, một số nguyên là không âm nếu số nguyên đó bằng $[(0, 0)]$ hoặc số nguyên đó là số nguyên dương. Định lý sau đây cho phép mô tả số nguyên âm tốt hơn, thay vì sử dụng phủ định như trong định nghĩa trên.
+\begin{theorem}\label{theorem:positive-negative-nonnegative-integers}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Số nguyên $\alpha$ là số nguyên không âm khi và chỉ khi tồn tại số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$. Ngoài ra, nếu $\alpha$ là số nguyên không âm thì tồn tại duy nhất số tự nhiên $n$ sao cho $\alpha = [(n, 0)]$.
+        \item Số nguyên $\alpha$ là số nguyên âm khi và chỉ khi tồn tại số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$. Ngoài ra, nếu $\alpha$ là số nguyên âm thì tồn tại duy nhất số tự nhiên $n\ne 0$ sao cho $\alpha = [(0, n)]$.
+        \item Số nguyên $\alpha$ là số nguyên dương khi và chỉ khi $(-\alpha)$ là số nguyên âm.
+    \end{enumerate}
+\end{theorem}
+
+Với định lý trên và định nghĩa phép cộng số nguyên, chúng ta thu được hệ quả sau.
+\begin{corollary}\label{corollary:positivity-negativity-nonnegativity-of-sum-of-integers}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tổng hai số nguyên dương là một số nguyên dương.
+        \item Tổng hai số nguyên không âm là một số nguyên không âm.
+        \item Tổng hai số nguyên âm là một số nguyên âm.
+    \end{enumerate}
+\end{corollary}
+
+Chúng ta bắt đầu định nghĩa phép nhân số nguyên.
+\begin{definition}
+    Phép nhân hai số nguyên là một phép toán hai nôi trên tập hợp số nguyên. Kết quả của phép nhân hai số nguyên $\alpha, \beta$ được kí hiệu là $\alpha\cdot\beta$, được gọi là tích hai số nguyên $\alpha, \beta$ và được định nghĩa cho đủ bốn trường hợp như sau:
+    \begin{itemize}[itemsep=0pt]
+        \item Nếu $\alpha$ và $\beta$ là các số nguyên không âm thì tồn tại số tự nhiên $m, n$ sao cho $\alpha = [(m, 0)]$ và $\beta = [(n, 0)]$. Chúng ta định nghĩa
+              \[
+                  \alpha\cdot\beta = [(m\cdot n, 0)].
+              \]
+        \item Nếu $\alpha$ là số nguyên không âm, $\beta$ là số nguyên âm thì chúng ta định nghĩa
+              \[
+                  \alpha\cdot\beta = -\alpha\cdot(-\beta).
+              \]
+        \item Nếu $\alpha$ là số nguyên âm, $\beta$ là số nguyên không âm thì chúng ta định nghĩa
+              \[
+                  \alpha\cdot\beta = -(-\alpha)\cdot \beta.
+              \]
+        \item Nếu $\alpha$ là số nguyên không âm, $\beta$ là số nguyên không âm thì chúng ta định nghĩa
+              \[
+                  \alpha\cdot\beta = (-\alpha)\cdot(-\beta).
+              \]
+    \end{itemize}
+\end{definition}
+
+Trong định nghĩa trên, chúng ta lấy định nghĩa phép nhân hai số nguyên không âm làm cơ sở để định nghĩa phép nhân hai số nguyên trong các trường hợp khác. Có một câu hỏi muôn thuở mà nhiều người học toán luôn đặt ra: ``Tại sao tích của hai số nguyên âm lại là một số nguyên dương?'' Đó là bởi định nghĩa như vậy giúp phép cộng và phép nhân số nguyên có được các tính chất mong muốn --- chẳng hạn tính chất phân phối của phép nhân với phép cộng số nguyên.
+
+Định lý ngay dưới đây là hệ quả trực tiếp từ định nghĩa phép nhân số nguyên.
+\begin{theorem}
+    Với mọi số nguyên $\alpha, \beta$
+    \begin{enumerate}[label={(\roman*)}]
+        \item $[(0, 0)]\cdot\alpha = \alpha\cdot[(0,0)] = [(0,0)]$.
+        \item $(-\alpha)\cdot\beta = \alpha\cdot(-\beta) = -\alpha\cdot\beta$.
+        \item $\alpha\cdot\beta = (-\alpha)\cdot(-\beta)$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}\label{theorem:property-of-integers-multiplication}
+    Trong tập hợp số nguyên,
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép nhân các số nguyên có tính chất kết hợp. Tức là với mọi số nguyên $\alpha, \beta, \gamma$, chúng ta có $(\alpha\cdot\beta)\cdot\gamma = \alpha\cdot(\beta\cdot\gamma)$.
+        \item Với mọi số nguyên $\alpha$, chúng ta có $\alpha\cdot [(1, 0)] = [(1, 0)]\cdot\alpha = \alpha$.
+        \item Phép nhân các số nguyên có tính chất giao hoán. Tức là với mọi số nguyên $\alpha, \beta$, chúng ta có $\alpha\cdot\beta = \beta\cdot\alpha$.
+        \item Phép nhân các số nguyên có tính chất phân phối với phép cộng hai số nguyên. Tức là với mọi số nguyên $\alpha, \beta, \gamma$, chúng ta có $(\alpha + \beta)\cdot\gamma = \alpha\cdot\gamma + \beta\cdot\gamma$ và $\gamma\cdot(\alpha + \beta) = \gamma\cdot\alpha + \gamma\cdot\beta$.
+    \end{enumerate}
+\end{theorem}
+
+Tương tự với số tự nhiên, chúng ta có định lý sau cho số nguyên.
+\begin{theorem}
+    Cho hai số nguyên $\alpha, \beta$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item $\alpha\cdot\beta = [(0,0)]$ khi và chỉ khi $\alpha = [(0,0)]$ hoặc $\beta = [(0,0)]$.
+        \item $\alpha\cdot\beta = [(1,0)]$ khi và chỉ khi $\alpha = \beta = [(1, 0)]$ hoặc $\alpha = \beta = [(0,1)]$.
+    \end{enumerate}
+\end{theorem}
+
+Quan hệ thứ tự trên tập hợp số nguyên được định nghĩa như sau.
+\begin{definition}
+    Cho hai số nguyên $\alpha$ và $\beta$. Chúng ta nói $\alpha$ nhỏ hơn hoặc bằng $\beta$, và kí hiệu $\alpha\leq \beta$ nếu và chỉ nếu tồn tại \textit{số nguyên không âm} $\gamma$ sao cho $\alpha + \gamma = \beta$. Nếu $\alpha\leq \beta$ và $\alpha\ne \beta$ thì chúng ta kí hiệu $\alpha < \beta$.
+\end{definition}
+
+\begin{theorem}
+    Quan hệ $\leq$ trên tập hợp số nguyên là một quan hệ thứ tự toàn phần.
+\end{theorem}
+
+Với quan hệ $\leq$, và định nghĩa trên cho số nguyên dương, số nguyên âm, chúng ta thu được góc nhìn quen thuộc về số nguyên dương và số nguyên âm.
+\begin{enumerate}[label={(\roman*)}]
+    \item $\alpha$ là một số nguyên dương khi và chỉ khi $[(0,0)] < \alpha$.
+    \item $\alpha$ là một số nguyên không âm khi và chỉ khi $[(0,0)] \leq \alpha$.
+    \item $\alpha$ là một số nguyên âm khi và chỉ khi $\alpha < [(0,0)]$.
+\end{enumerate}
+
+Phép cộng và phép nhân số nguyên cũng tương thích với quan hệ thứ tự $\leq$.
+\begin{theorem}\label{theorem:integers-order-and-operations}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mọi số nguyên $\alpha, \beta, \gamma$, $\alpha\leq \beta$ thì $\alpha + \gamma\leq \beta + \gamma$.
+        \item Với mọi số nguyên $\alpha, \beta$, nếu $[(0,0)]\leq\alpha$ và $[(0,0)]\leq\beta$ thì $[(0,0)]\leq\alpha\cdot\beta$.
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Số tự nhiên và số nguyên}
+
+Định lý sau phát biểu rằng tập hợp số tự nhiên có thể nhúng được vào tập hợp số nguyên.
+\begin{theorem}\label{theorem:embed-N-into-Z}
+    Ánh xạ $\iota: \mathbb{N}\to \mathbb{Z}$ được định nghĩa bởi $\iota: n\mapsto [(n, 0)]$ là một đơn ánh nhưng không phải song ánh. Ngoài ra, với mọi số tự nhiên $m, n$, chúng ta có
+    \[
+        \begin{split}
+            \iota(m + n) = \iota(m) + \iota(n), \\
+            \iota(m\cdot n) = \iota(m)\cdot\iota(n), \\
+            m\leq n \implies \iota(m)\leq \iota(n).
+        \end{split}
+    \]
+
+    (Trong đó, phép cộng ở $\iota(m + n)$ là phép cộng hai số tự nhiên, phép cộng ở $\iota(m) + \iota(n)$ là phép cộng hai số nguyên; phép nhân ở $\iota(m\cdot n)$ là phép nhân hai số tự nhiên, phép nhân ở $\iota(m)\cdot\iota(n)$ là phép nhân hai số nguyên; quan hệ $\leq$ ở $m\leq n$ là quan hệ thứ tự $\leq$ trên tập hợp số tự nhiên, quan hệ $\leq$ ở $\iota(m)\leq \iota(n)$ là quan hệ thứ tự $\leq$ trên tập hợp số nguyên.)
+\end{theorem}
+
+\begin{proof}
+    Với hai số tự nhiên $m, n$, $[(m, 0)] = [(n, 0)]$ kéo theo $(m, 0)\sim (n, 0)$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, $(m, 0)\sim (n, 0)$ khi và chỉ khi $m + 0 = 0 + n$, tức là $m = n$. Do đó $\iota$ là một đơn ánh.
+
+    Giả sử phản chứng rằng tồn tại số tự nhiên $n$ sao cho $\iota(n) = [(0, 1)]$. Theo định nghĩa của $\iota$ và định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$, chúng ta suy ra $(n, 0)\sim (0, 1)$, tức là $n + 1 = 0$, hay $S(n) = 0$, điều này mâu thuẫn với tiên đề Peano thứ 8. Do đó không tồn tại số tự nhiên $n$ nào sao cho $\iota(n) = [(0, 1)]$, nên $\iota$ không phải toàn ánh.
+
+    Vậy $\iota$ là đơn ánh nhưng không phải song ánh.
+
+    Theo định nghĩa phép cộng, phép nhân số nguyên và quan hệ $\leq$ trên tập hợp số nguyên
+    \begin{itemize}
+        \item $\iota(m + n) = [(m + n, 0)] = [(m, 0)] + [(n, 0)] = \iota(m) + \iota(n)$.
+        \item $\iota(m\cdot n) = [(m\cdot n, 0)] = [(m, 0)]\cdot [(n, 0)] = \iota(m)\cdot\iota(n)$.
+        \item Nếu $m\leq n$ thì tồn tại số tự nhiên $c$ sao cho $m + c = n$. Vì $m + c = n$ nên $[(m, 0)] + [(c, 0)]= [(n, 0)]$, dẫn đến $[(m, 0)]\leq [(n, 0)]$ vì $[(c, 0)]$ là một số nguyên không âm. Do đó $[(m, 0)]\leq [(n, 0)]$ kéo theo $\iota(m)\leq\iota(n)$.
+    \end{itemize}
+\end{proof}
+
+Đơn ánh $\iota: \mathbb{N}\to \mathbb{Z}$ trong định lý trên bảo toàn phép toán cộng, nhân, và quan hệ thứ tự. Với định lý trên, chúng ta \textbf{đồng nhất} số tự nhiên $n$ với số nguyên $[(n, 0)]$. Với sự đồng nhất đó, tập hợp số tự nhiên là một tập hợp con thực sự của tập hợp số nguyên.
 
 \subsection{Bài tập}
 
-\section{* Một số thông tin về lực lượng của tập hợp}
+\section{Nguyên lý quy nạp toán học}
 
-\subsection{Lục lượng của tập hợp số thực}
+Mục này bàn nhiều hơn về nguyên lý quy nạp toán học cùng các biến thể và nguyên lý thứ tự tốt. Kết quả quan trọng nhất của mục này là nguyên lý thứ tự tốt.
 
-\subsection{Định lý Cantor-Schr\"{o}der-Bernstein}
+\subsection{Nguyên lý quy nạp toán học và các biến thể}
 
-\subsection{Giả thuyết continuum}
+Cúng ta có một mở rộng đơn giản sau đây cho nguyên lý quy nạp toán học, và cũng tương đương với nguyên lý quy nạp toán học.
+
+\begin{theorem}[Nguyên lý quy nạp toán học]
+    Nếu hai điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $p(n)$ đúng với số nguyên $n_{0}$.
+        \item Với mọi số nguyên $n\geq n_{0}$, $p(n)$ kéo theo $p(n + 1)$.
+    \end{enumerate}
+
+    thì $p(n)$ đúng với mọi số nguyên lớn hơn hoặc bằng $n_{0}$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta định nghĩa vị từ $q$ áp dụng cho số tự nhiên $n$ như sau: $q(n)$ là mệnh đề $p(n + n_{0})$.
+
+    Như vậy
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $q(0)$ đúng.
+        \item Với mọi số tự nhiên $n$, $q(n)$ kéo theo $q(n + 1)$.
+    \end{enumerate}
+
+    Theo nguyên lý quy nạp toán học, có $q(n)$ với mọi số tự nhiên $n$. Theo định nghĩa của $q(n)$ thì có $p(n)$ với mọi số nguyên $n$ lớn hơn hoặc bằng $n_{0}$.
+\end{proof}
+
+Với dạng trên của nguyên lý quy nạp toán học, chúng ta có thể bắt đầu với trường hợp cơ sở là một số nguyên bất kì thay vì $0$ hay $1$. Các biến thể khác của nguyên lý quy nạp toán học dưới đây được phát biểu ở dạng ``chuẩn'', tức là bắt đầu với trường hợp cơ sở là $0$. Thực ra các biến thể này đều có thể bắt đầu với trường hợp cơ sở là số nguyên bất kì.
+
+Nguyên lý quy nạp mạnh cũng là một dạng tương đương của nguyên lý quy nạp toán học. Nguyên lý quy nạp mạnh có thay đổi ở bước quy nạp: Ở bước quy nạp, chúng ta không chỉ cần đến mệnh đề $p(k)$ mà còn cần đến một hay một số, thậm chí tất cả các mệnh đề trước $p(k)$.
+\begin{theorem}[Nguyên lý quy nạp mạnh]
+    Nếu hai điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $p(0)$ đúng.
+        \item Với mọi số tự nhiên $k$, $p(n)$ đúng với mọi số tự nhiên $n\leq k$ kéo theo $p(k+1)$.
+    \end{enumerate}
+
+    thì $p(n)$ đúng với mọi số tự nhiên.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta định nghĩa vị từ $c$ áp dụng cho số tự nhiên $n$ bằng đệ quy:
+    \begin{itemize}
+        \item $c(0)$ là mệnh đề $p(0)$.
+        \item Với mỗi số tự nhiên $n$, $c(n+1)$ là mệnh đề $c(n)\wedge p(n+1)$.
+    \end{itemize}
+
+    Mệnh đề $p(0)$ tương đương với mệnh đề $c(0)$.
+
+    Mệnh đề ``với mọi số tự nhiên $k$, $p(n)$ đúng với mọi số tự nhiên $n\leq k$ kéo theo $p(k+1)$'' tương đương với mệnh đề ``với mọi số tự nhiên $k$, $c(k)$ kéo theo $c(k+1)$''.
+
+    Theo nguyên lý quy nạp toán học, $c(n)$ đúng với mọi số tự nhiên $n$. Theo định nghĩa của mệnh đề $c(n)$, chúng ta suy ra $p(n)$ đúng với mọi số tự nhiên $n$.
+\end{proof}
+
+Có những trường hợp mà chúng ta cần chứng minh mệnh đề $p(n)$ với $n$ là số tự nhiên không vượt quá một số tự nhiên $n_{0}$ cho trước. Khi đó phương pháp quy nạp toán học có dạng sau.
+\begin{theorem}[Nguyên lý quy nạp toán học hữu hạn]
+    Cho vị từ $p$ được áp dụng trên các số tự nhiên không vượt quá số tự nhiên $n_{0}$. Nếu các điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Mệnh đề $p(0)$ đúng.
+        \item Với mọi số tự nhiên $k$ \textbf{nhỏ hơn} $n$, $p(k)$ kéo theo $p(k+1)$.
+    \end{enumerate}
+
+    thì $p(n)$ đúng với mọi số tự nhiên không vượt quá số tự nhiên $n_{0}$.
+\end{theorem}
+
+Tuy nguyên lý quy nạp toán học được phát biểu cho số tự nhiên nhưng biến thể trên vẫn hợp lệ. Nguyên nhân là mệnh đề kéo theo $P\implies Q$ \textit{chỉ sai} khi $P$ đúng và $Q$ sai. Còn nếu $P$ sai thì mệnh đề $P\implies Q$ luôn đúng, bất kể giá trị chân lý của $Q$ là gì.
+
+\subsection{Nguyên lý thứ tự tốt}
+
+\begin{theorem}[Nguyên lý thứ tự tốt\index{Nguyên lý thứ tự tốt}]
+    Tập hợp con khác rỗng của tập hợp số nguyên dương có phần tử nhỏ nhất.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $S$ là tập hợp con khác rỗng của tập hợp số nguyên dương.
+
+    Giả sử phản chứng rằng $S$ không có phần tử nhỏ nhất. $1$ không thuộc $S$ vì $1$ là số nguyên dương nhỏ nhất.
+
+    Với mỗi số nguyên dương $k$, nếu các số nguyên dương $n$ không vượt quá $k$ không thuộc $S$ thì $(k+1)$ không thuộc $S$ (vì nếu $(k+1)$ thuộc $S$ thì $(k+1)$ là phần tử nhỏ nhất của $S$, trái với giả sử phản chứng).
+
+    Theo nguyên lý quy nạp mạnh, mọi số nguyên dương đều không thuộc $S$. Do đó $S$ là tập hợp rỗng, mâu thuẫn với giả thiết. Do vậy giả sử phản chứng là sai. Vậy tập hợp $S$ có phần tử nhỏ nhất.
+\end{proof}
+
+Tương tự với việc của nguyên lý quy nạp toán học có thể được áp dụng với trường hợp cơ sở là số nguyên bất kì, chúng ta có hệ quả sau. Hệ quả này cho phép chúng ta áp dụng nguyên lý thứ tự tốt một cách linh hoạt hơn.
+\begin{corollary}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{lớn hơn hoặc bằng} (hoặc \textbf{lớn hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử nhỏ nhất}.
+        \item Tập hợp con khác rỗng của tập hợp số nguyên \textbf{nhỏ hơn hoặc bằng} (hoặc \textbf{nhỏ hơn}) số nguyên $n_{0}$ nào đó \textbf{có phần tử lớn nhất}.
+    \end{enumerate}
+\end{corollary}
+
+Tập hợp con trong phát biểu của nguyên lý thứ tự tốt có thể có vô hạn phần tử. Với một tập hợp hữu hạn và được sắp thứ tự toàn phần, chúng ta có nguyên lý sau.
+\begin{theorem}[Nguyên lý cực hạn\index{Nguyên lý cực hạn}]
+    Tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta chứng minh bằng phương pháp quy nạp toán học rằng: Nếu một tập hợp khác rỗng được sắp thứ tự toàn phần và có $n$ phần tử ($n$ là một số tự nhiên lớn hơn hoặc bằng $1$) thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+
+    Khi $n = 1$, tập hợp chỉ có một phần tử thì phần tử đó là phần tử nhỏ nhất và cũng là phần tử lớn nhất.
+
+    Giả sử với $n = k\geq 1$, tập hợp khác rỗng được sắp thứ tự toàn phần và có $k$ phần tử thì tập hợp đó cũng có phần tử nhỏ nhất và phần tử lớn nhất.
+
+    Chúng ta kí hiệu $S$ là một tập hợp được sắp thứ tự toàn phần và có $(k+1)$ phần tử. Chúng ta chọn ra một phần tử $x$ bất kì của $S$ thì $S - \{x\}$ có $k$ phần tử. Theo giả thiết quy nạp, $S - \{x\}$ có phần tử nhỏ nhất và phần tử lớn nhất.
+    \begin{itemize}
+        \item Nếu $x$ nhỏ hơn phần tử nhỏ nhất của $S - \{x\}$ thì $x$ là phần tử nhỏ nhất của $S$. Ngược lại, phần tử nhỏ nhất của $S - \{x\}$ cũng là phần tử nhỏ nhất của $S$.
+        \item Nếu $x$ lớn hơn phần tử lớn nhất của $S - \{x\}$ thì $x$ là phần tử lớn nhất của $S$. Ngược lại, phần tử lớn nhất của $S - \{x\}$ cũng là phần tử lớn nhất của $S$.
+    \end{itemize}
+
+    Theo nguyên lý quy nạp toán học, tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
+\end{proof}
+
+Khi kết hợp nguyên lý thứ tự tốt với phương pháp chứng minh bằng phản chứng, chúng ta có phương pháp chứng minh giảm vô hạn. Phương pháp này còn được gọi là phương pháp giảm vô hạn của Fermat. Nhà toán học Fermat đã sử dụng phương pháp này để chứng minh rằng không tồn tại các số nguyên dương $a, b, c$ nào thỏa mãn $a^{4} + b^{4} = c^{2}$. Ngược với phương pháp quy nạp toán học, phương pháp giảm vô hạn được sử dụng để chứng minh một mệnh đề $p(n)$ là sai với mọi số tự nhiên $n$.
+
+\begin{theorem}[Giảm vô hạn\index{Giảm vô hạn}]
+    Nếu với mỗi số tự nhiên $n$, mệnh đề $p(n)$ kéo theo tồn tại số tự nhiên $m < n$ sao cho có $p(m)$ thì với mọi số tự nhiên $n$, không có $p(n)$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $S$ là tập hợp các số tự nhiên $n$ sao cho có $p(n)$.
+
+    Giả sử phản chứng rằng $S$ khác rỗng. Theo nguyên lý thứ tự tốt, $S$ có phần tử nhỏ nhất. Chúng ta kí hiệu phần tử nhỏ nhất là $n_{0}$. Theo giả thiết, tồn tại số tự nhiên $m < n_{0}$ sao cho $p(m)$ đúng. Điều này mâu thuẫn với việc $n_{0}$ là phần tử nhỏ nhất của $S$. Do đó giả sử phản chứng là sai, kéo theo $S$ là tập hợp rỗng.
+
+    Vậy mệnh đề $p(n)$ sai với mọi số tự nhiên $n$.
+\end{proof}
+
+Nguyên lý thứ tự tốt cung cấp một chứng minh cho nguyên lý quy nạp tiến-lùi, thường được biết đến với tên gọi \textit{quy nạp kiểu Cauchy}. Nguyên lý quy nạp tiến-lùi được Cauchy sử dụng để chứng minh bất đẳng thức trung bình cộng-trung bình nhân: Cauchy chứng minh bất đẳng thức đó cho $2^{k}$ số thực không âm và chứng minh rằng nếu bất đẳng thức đúng với $n$ số thực không âm thì cũng đúng với $(n-1)$ số thực không âm.
+\begin{theorem}[Nguyên lý quy nạp tiến-lùi\index{Nguyên lý quy nạp tiến-lùi (Cauchy)}]
+    Cho vị từ $p$ được áp dụng trên các số tự nhiên. Nếu các điều kiện sau thỏa mãn
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với $p(n)$ đúng với mọi số tự nhiên $n$ thuộc một tập hợp con vô hạn phần tử của $\mathbb{N}$.
+        \item Với mọi số tự nhiên $k$ lớn hơn $0$, $p(k)$ kéo theo $p(k-1)$.
+    \end{enumerate}
+
+    \noindent thì $p(n)$ đúng với mọi số tự nhiên $n$.
+\end{theorem}
+
+\begin{proof}
+    Chúng ta kí hiệu $A$ là tập hợp gồm các số tự nhiên $n$ sao cho có $p(n)$, và $B$ là tập hợp gồm các số tự nhiên $n$ sao cho không có $p(n)$.
+
+    Giả sử phản chứng rằng tập hợp $B$ khác rỗng. Theo định nghĩa hai tập hợp $A$ và $B$, hai tập hợp này tạo thành một phân hoạch của $\mathbb{N}$. Theo nguyên lý thứ tự tốt, tập hợp $B$ có phần tử nhỏ nhất. Chúng ta kí hiệu $b = \min B$. Vì tập hợp $A$ có vô hạn phần tử nên trong $A$ tồn tại phần tử $a$ sao cho $a$ lớn hơn $b$. Vì $p(k)$ kéo theo $p(k-1)$ với mọi số tự nhiên $k > 0$ nên $\neg p(k-1)$ kéo theo $\neg p(k)$ với mọi số tự nhiên $k > 0$. Theo nguyên lý quy nạp toán học, có $\neg p(n)$ với mọi số tự nhiên $n\geq b$. Do đó, có $\neg p(a)$, điều này mâu thuẫn với việc có $p(a)$. Như vậy giả sử phản chứng là sai, kéo theo $B$ là tập hợp rỗng và $A$ là toàn bộ tập hợp số tự nhiên.
+
+    Vậy $p(n)$ đúng với mọi số tự nhiên $n$.
+\end{proof}
+
+Một nhược điểm của nguyên lý thứ tự tốt và chứng minh của nguyên lý này là \textit{không có tính xây dựng}. Chúng ta chỉ ra sự tồn tại của số nguyên dương nhỏ nhất trong một tập hợp con khác rỗng của tập hợp số nguyên dương, nhưng không biết đó là số nào, hay cách tìm số đó. Có một tư tưởng trong toán học được gọi là \textit{tư tưởng xây dựng} (constructivism). Tư tưởng này khẳng định rằng để chứng minh sự tồn tại của một đối tượng toán học, cần phải đưa ra một ví dụ, hoặc thuật toán (cách) tìm ra ví dụ. Trái với tư tưởng xây dựng, chứng minh bằng phương pháp phản chứng giả sử rằng một đối tượng như vậy không tồn tại và tiếp tục lập luận để đi tới một mâu thuẫn. Tư tưởng xây dựng rất có ích trong việc học và làm toán, bởi quá trình tìm ví dụ và việc có một ví dụ cụ thể là rất giá trị trong việc hiểu một đối tượng toán học. Kĩ năng xây dựng ví dụ là một trong những kĩ năng tối quan trọng trong việc học và làm toán. Tuy vậy, phương pháp phản chứng vẫn luôn tỏ ra là một công cụ mạnh và dễ dàng, thậm chí đôi khi được coi là duy nhất để chứng minh nhiều định lý quan trọng về tính tồn tại.
+
+\subsection{Bài tập}
+
+\section{Số hữu tỉ}
+
+\subsection{Xây dựng tập hợp số hữu tỉ}
+
+Chúng ta định nghĩa tập hợp số hữu tỉ dựa trên tập hợp số nguyên, cũng bằng một quan hệ tương đương.
+\begin{theorem}
+    Hai phần tử $(a, b)$ và $(c, d)$ của tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a d - b c = 0$ (hay $a d = b c$). Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ là một quan hệ tương đương.
+\end{theorem}
+
+\begin{definition}[Số hữu tỉ\index{Số hữu tỉ}]
+   Tập hợp số hữu tỉ là tập thương ${(\mathbb{Z}\times (\mathbb{Z} - \{0\}))}/_{\sim}$. Chúng ta kí hiệu một số hữu tỉ là $\dfrac{a}{b}$, trong đó $a, b$ là hai số nguyên và $b\ne 0$.
+   
+   Tập hợp số hữu tỉ được kí hiệu là $\mathbb{Q}$. Kí hiệu $\dfrac{a}{b}$ được gọi là một \textbf{phân số\index{Phân số}}, trong đó số nguyên $a$ là \textbf{tử số\index{Tử số}}, còn số nguyên $b\ne 0$ là \textbf{mẫu số\index{Mẫu số}}.
+\end{definition}
+
+Chúng ta hãy điểm qua một số ví dụ về số hữu tỉ.
+\begin{example}
+    \begin{align*}
+        \frac{0}{1} = \frac{0}{-1} = \frac{0}{2} = \frac{0}{-2} = \frac{0}{3} = \frac{0}{-3} = \cdots        \\
+        \frac{1}{1} = \frac{-1}{-1} = \frac{2}{2} = \frac{-2}{-2} = \frac{3}{3} = \frac{-3}{-3} = \cdots     \\
+        \frac{1}{2} = \frac{-1}{-2} = \frac{2}{4} = \frac{-2}{-4} = \frac{3}{6} = \frac{-3}{-6} = \cdots     \\
+        \frac{-2}{5} = \frac{2}{-5} = \frac{-4}{10} = \frac{4}{-10} = \frac{-6}{15} = \frac{6}{-15} = \cdots
+    \end{align*}
+\end{example}
+
+Từ định nghĩa số hữu tỉ, chúng ta có định lý sau, thường được gọi là tính chất cơ bản của phân số.
+\begin{theorem}\label{theorem:fundamental-property-of-fraction}
+    Nếu $a, b, c$ là các số nguyên và $b, c$ khác $0$ thì $\dfrac{a}{b} = \dfrac{ac}{bc} = \dfrac{ca}{cb}$.
+\end{theorem}
+
+\begin{theorem}[Phân số tối giản\index{Phân số tối giản}]
+    Một phân số được gọi là \textbf{phân số tối giản} khi và chỉ khi tử số và mẫu số là nguyên tố cùng nhau và mẫu số là một số nguyên dương.
+    
+    Với mỗi số hữu tỉ $\dfrac{a}{b}$, tồn tại duy nhất phân số tối giản $\dfrac{x}{y}$ sao cho $\dfrac{a}{b} = \dfrac{x}{y}$.
+\end{theorem}
+
+\subsection{Các phép toán và quan hệ thứ tự trên tập hợp số hữu tỉ}
+
+Chúng ta định nghĩa phép cộng và phép nhân số hữu tỉ.
+\begin{definition}[Phép cộng số hữu tỉ]
+    Phép cộng hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $+$. Với hai số hữu tỉ $\dfrac{a}{b}$ và $\dfrac{c}{d}$, chúng ta kí hiệu kết quả của phép cộng hai số hữu tỉ này là $\dfrac{a}{b} + \dfrac{c}{d}$ và
+    \[
+        \frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{b d}.
+    \]
+\end{definition}
+
+\begin{definition}[Phép nhân số hữu tỉ\index{Phép nhân số hữu tỉ}]
+    Phép nhân hai số hữu tỉ là một phép toán hai ngôi trên tập hợp số hữu tỉ, kí hiệu là $\cdot$. Với hai số hữu tỉ $\dfrac{a}{b}$ và $\dfrac{c}{d}$, chúng ta kí hiệu kết quả của phép nhân hai số hữu tỉ này là $\dfrac{a}{b}\cdot\dfrac{c}{d}$ và định nghĩa
+    \[
+        \frac{a}{b}\cdot\frac{c}{d} = \frac{ac}{bd}.
+    \]
+\end{definition}
+
+Bạn đọc lưu ý rằng chúng ta đang sử dụng định nghĩa số hữu tỉ như một lớp tương đương. Định nghĩa trên đây cho phép cộng và phép nhân hai số hữu tỉ không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương.
+
+Phép cộng và phép nhân số hữu tỉ có các tính chất sau.
+\begin{theorem}
+    Trong tập hợp số hữu tỉ
+    \begin{enumerate}[label={(F\arabic*)}]
+        \item Phép cộng số hữu tỉ có tính chất kết hợp.
+        \item Với mọi số hữu tỉ $\dfrac{a}{b}$, chúng ta có
+              \[
+                  \frac{a}{b} + \frac{0}{1} = \frac{0}{1} + \frac{a}{b} = \frac{a}{b}.
+              \]
+        \item Với mọi số hữu tỉ $\dfrac{a}{b}$, chúng ta có
+              \[
+                  \frac{a}{b} + \frac{-a}{b} = \frac{-a}{b} + \frac{a}{b} = \frac{0}{1}.
+              \]
+        \item Phép cộng số hữu tỉ có tính chất giao hoán.
+        \item Phép nhân số hữu tỉ có tính chất kết hợp.
+        \item Phép nhân số hữu tỉ có tính chất phân phối với phép cộng số hữu tỉ.
+        \item Với mỗi số hữu tỉ $q$, $q\cdot \dfrac{1}{1} = \dfrac{1}{1}\cdot q = q$.
+        \item Phép nhân số hữu tỉ có tính chất giao hoán.
+        \item Với mỗi số hữu tỉ $q\ne \dfrac{0}{1}$, tồn tại số hữu tỉ $q'$ sao cho $qq' = q'q = \dfrac{1}{1}$.
+    \end{enumerate}
+\end{theorem}
+
+Điểm khác biệt cơ bản trong các tính chất của phép nhân số hữu tỉ với phép nhân số nguyên là phần (F9) của định lý trên. Với định lý trên, người ta gọi tập hợp số hữu tỉ với hai phép toán cộng và nhân là trường số hữu tỉ. Từ định lý trên, chúng ta chứng minh được các kết quả sau.
+\begin{theorem}
+    Trong tập hợp số hữu tỉ
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tồn tại đúng một số hữu tỉ là \textbf{phần tử đồng nhất của phép cộng}. Nói cách khác, tồn tại duy nhất số hữu tỉ $\theta$ sao cho với mọi số hữu tỉ $q$, có $q + \theta = \theta + q = q$.
+        \item Với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q_{0}$ là \textbf{phần tử đối}, hay \textbf{số hữu tỉ đối} của $q$. Nói cách khác, với mỗi số hữu tỉ $q$, tồn tại duy nhất số hữu tỉ $q_{0}$ sao cho $q + q_{0} = q_{0} + q = \dfrac{0}{1}$.
+        \item Với mọi số hữu tỉ $q$, có $\dfrac{0}{1}\cdot q = q\cdot\dfrac{0}{1} = \dfrac{0}{1}$.
+        \item Tồn tại đúng một một số hữu tỉ được gọi là \textbf{phần tử đồng nhất của phép nhân}. Nói cách khác, tồn tại duy nhất số hữu tỉ $e$ sao cho với mọi số hữu tỉ $q$, chúng ta có $e\cdot q = q\cdot e = q$.
+        \item Với mỗi số hữu tỉ $q$ khác $\dfrac{0}{1}$, tồn tại duy nhất một số hữu tỉ $q_{1}$ được gọi là \textbf{phần tử nghịch đảo}, hay \textbf{số hữu tỉ nghịch đảo} của $q$. Nói cách khác, với mỗi số hữu tỉ $q$, tồn tại đúng một số hữu tỉ $q_{1}$ sao cho $qq_{1} = q_{1}q = \dfrac{1}{1}$. Phần tử nghịch đảo của $q$ được kí hiệu là $q^{-1}$.
+        \item Nếu hai số hữu tỉ $a, b$ thỏa mãn $ab = 0$ thì ít nhất một trong hai số hữu tỉ $a, b$ bằng $0$.
+    \end{enumerate}
+\end{theorem}
+
+Chúng ta định nghĩa một quan hệ thứ tự trên tập hợp số hữu tỉ.
+\begin{definition}
+    Với hai số hữu tỉ $\dfrac{a}{b}$ và $\dfrac{c}{d}$, chúng ta nói $\dfrac{a}{b}$ nhỏ hơn hoặc bằng $\dfrac{c}{d}$ và kí hiệu $\dfrac{a}{b}\leq \dfrac{c}{d}$ khi và chỉ khi $abd^{2} \leq cdb^{2}$.
+\end{definition}
+
+Bạn đọc hẳn sẽ thấy định nghĩa trên không hề tự nhiên và không quen thuộc. Đây là lời giải thích của chúng tôi: Vì $\dfrac{a}{b} = \dfrac{ab}{b^{2}}$ và $\dfrac{c}{d} = \dfrac{cd}{d^{2}}$ nên việc định nghĩa $\dfrac{a}{b}\leq \dfrac{c}{d}$ khi và chỉ khi $abd^{2} \leq cdb^{2}$ là tương thích với những gì chúng ta đã học ở chương trình phổ thông. Định nghĩa này cho phép chúng ta làm việc cả với mẫu số là số nguyên âm mà không cần chia làm hai trường hợp.
+
+\begin{theorem}
+    Quan hệ $\leq$ trên tập hợp số hữu tỉ là một quan hệ thứ tự\index{Quan hệ thứ tự trên tập hợp số hữu tỉ} toàn phần.
+\end{theorem}
+
+Các phép toán cộng và nhân số hữu tỉ cũng tương thích với quan hệ $\leq$ trên tập hợp số hữu tỉ.
+\begin{theorem}\label{theorem:rational-numbers-order-and-operations}
+    Trong tập hợp số hữu tỉ
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $q_{1}\leq q_{2}$ thì với mọi số hữu tỉ $q_{3}$, có $q_{1} + q_{3}\leq q_{2} + q_{3}$.
+        \item Nếu các số hữu tỉ $q_{1}, q_{2}$ thỏa mãn $\dfrac{0}{1}\leq q_{1}$ và $\dfrac{0}{1}\leq q_{2}$ thì $\dfrac{0}{1}\leq q_{1}q_{2}$.
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Số nguyên và số hữu tỉ}
+
+Tương tự, tập hợp số nguyên có thể được nhúng vào tập hợp số hữu tỉ.
+\begin{theorem}\label{theorem:embed-Z-into-Q}
+    Ánh xạ $\iota: \mathbb{Z}\to \mathbb{Q}$ được định nghĩa bởi $\iota(x) = \frac{x}{1}$ là một đơn ánh nhưng không phải song ánh và thỏa mãn
+    \[
+        \begin{split}
+            \iota(x + y) = \iota(x) + \iota(y), \\
+            \iota(xy) = \iota(x)\iota(y), \\
+            x\leq y \implies \iota(x)\leq \iota(y).
+        \end{split}
+    \]
+
+    (Trong đó, phép cộng ở $\iota(x + y)$ là phép cộng hai số nguyên, phép cộng ở $\iota(x) + \iota(y)$ là phép cộng hai số hữu tỉ; phép nhân ở $\iota(xy)$ là phép nhân hai số nguyên, phép nhân ở $\iota(x)\cdot\iota(y)$ là phép nhân hai số hữu tỉ; quan hệ $\leq$ ở $x\leq y$ là quan hệ thứ tự $\leq$ trên tập hợp số nguyên, quan hệ $\leq$ ở $\iota(x)\leq \iota(y)$ là quan hệ thứ tự $\leq$ trên tập hợp số hữu tỉ.)
+\end{theorem}
+
+\begin{proof}
+    Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta có $\iota(x) = \iota(y)$ khi và chỉ khi $x = y$. Do đó $\iota$ là một đơn ánh.
+
+    Giả sử phản chứng rằng tồn tại số nguyên $x$ sao cho $\iota(x) = \dfrac{1}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times (\mathbb{Z} - \{0\})$, chúng ta có $\dfrac{x}{1} = \dfrac{1}{2}$ khi và chỉ khi $2\cdot x = 1$. Vì $2\cdot x\ne 0$ nên $x\ne 0$. Vì $2\ne 1$, $2\ne -1$, và $x\ne 0$ nên $2\cdot x$ khác $0$ và $1$. Như vậy giả sử phản chứng là sai. Nói cách khác, không tồn tại số nguyên $x$ sao cho $\iota(x) = \dfrac{1}{2}$, kéo theo $\iota$ không phải toàn ánh và do đó $\iota$ không phải song ánh.
+
+    Theo định nghĩa phép cộng, phép nhân số hữu tỉ và quan hệ $\leq$ trên tập hợp số hữu tỉ, chúng ta suy ra
+    \begin{itemize}
+        \item $\iota(x + y) = \dfrac{x + y}{1} = \dfrac{x\cdot 1 + 1\cdot y}{1\cdot 1} = \dfrac{x}{1} + \dfrac{y}{1} = \iota(x) + \iota(y)$.
+        \item $\iota(xy) = \dfrac{xy}{1} = \dfrac{xy}{1\cdot 1} = \dfrac{x}{1}\cdot\dfrac{y}{1} = \iota(x)\iota(y)$.
+        \item Nếu $x\leq y$ thì $x\cdot 1\cdot 1^{2}\leq y\cdot 1\cdot 1^{2}$, kéo theo $\dfrac{x}{1}\leq \dfrac{y}{1}$ và $\iota(x)\leq \iota(y)$.
+    \end{itemize}
+\end{proof}
+
+Đơn ánh $\iota$ trong định lý trên bảo toàn phép cộng, phép nhân, và quan hệ thứ tự, mặc dù ở tập nguồn và tập đích, các phép toán và quan hệ đó khác nhau. Với cơ sở là định lý này, chúng ta \textbf{đồng nhất} số nguyên $x$ với số hữu tỉ $\dfrac{x}{1}$, kéo theo tập hợp số nguyên là một tập hợp con thực sự của tập hợp số hữu tỉ.
+
+\subsection{Bài tập}

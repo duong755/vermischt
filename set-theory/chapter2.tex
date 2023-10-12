@@ -593,7 +593,7 @@ Các lớp tương đương của một quan hệ tương đương có tính ch�
 
 Ngược lại, cho trước một phân hoạch của một tập hợp $S$ khác rỗng, chúng ta có thể định nghĩa một quan hệ tương đương tương ứng với phân hoạch đó. Giả sử họ các tập hợp $S_{i}$ (với $i\in I$ và tập hợp $I$ khác rỗng) tạo thành một phân hoạch của tập hợp $S$. Khi đó chúng ta định nghĩa một quan hệ $\mathscr{R}$ trên $S$ như sau: $x\mathscr{R}y$ nếu và chỉ nếu tồn tại $i\in I$ sao cho $x$ và $y$ là phần tử của $A_{i}$. Trong trường hợp này, $\mathscr{R}$ chính là một quan hệ tương đương. Phần kiểm chứng, chúng tôi xin nhường lại cho bạn đọc.
 
-\subsection{Trường hợp riêng: Quan hệ thứ tự và Quan hệ tiền thứ tự}\label{subsection:order-and-preorder-relations}
+\subsection{Trường hợp riêng: Quan hệ thứ tự}\label{subsection:order-relation}
 
 Trước mục này, chúng ta đã nhắc đến quan hệ nhỏ hơn hoặc bằng giữa các số thực và gọi đó là quan hệ so sánh. Thực ra, tên gọi chính thức của loại quan hệ này là quan hệ thứ tự.
 
@@ -660,7 +660,9 @@ Tuy một quan hệ thứ tự có thể không phải quan hệ thứ tự toà
     Nếu $a, b$ là các phần tử lớn nhất của $S$ thì theo định nghĩa phần tử lớn nhất, $a\leq b$ và $b\leq a$. Theo tính chất phản đối xứng, $a = b$. Do đó nếu $S$ có phần tử lớn nhất thì phần tử lớn nhất đó là duy nhất.
 \end{proof}
 
-Quan hệ thứ tự là một trường hợp riêng của quan hệ tiền thứ tự.
+\subsection{Trường hợp riêng: Quan hệ tiền thứ tự}
+
+Quan hệ thứ tự là một trường hợp riêng của quan hệ tiền thứ tự. Quan hệ tiền thứ tự có tính chất phản xạ, bắc cầu, nhưng không nhất thiết có tính chất phản đối xứng.
 
 \begin{definition}[Quan hệ tiền thứ tự]
     \textbf{Quan hệ tiền thứ tự} (hay còn gọi là \textbf{quan hệ tiền thứ tự bộ phận}) trên một tập hợp là một quan hệ hai ngôi trên tập hợp đó và quan hệ tiền thứ tự thỏa mãn hai tính chất: phản xạ và bắc cầu. Chúng ta viết bằng lời và kí hiệu, nếu $\mathscr{R}$ là một quan hệ tiền thứ tự trên tập hợp $S$ thì $\mathscr{R}$ thỏa mãn hai tính chất:
@@ -680,6 +682,54 @@ Quan hệ tiền thứ tự được kí hiệu bởi $\lesssim$. Chúng ta xem 
     \noindent Quan hệ chia hết trên tập hợp số nguyên là một quan hệ tiền thứ tự, nhưng không phải quan hệ thứ tự.
 \end{example}
 
-Ví dụ trên đây chỉ đơn thuần là ví dụ cho sự tồn tại của một quan hệ tiền thứ tự mà không phải quan hệ thứ tự, và dường như không cung cấp nhiều thông tin. Trong Chương~\ref{chapter:real-numbers}, chúng ta sẽ định nghĩa một quan hệ tiền thứ tự có ý nghĩa trong việc xây dựng tập hợp số thực.
+Ví dụ trên đây chỉ đơn thuần là ví dụ cho sự tồn tại của một quan hệ tiền thứ tự mà không phải quan hệ thứ tự, và dường như không cung cấp nhiều thông tin. Trong Chương~\ref{chapter:real-and-complex-numbers}, chúng ta sẽ định nghĩa một quan hệ tiền thứ tự có ý nghĩa trong việc xây dựng tập hợp số thực.
+
+\begin{definition}
+    Cho trước một tập hợp và một quan hệ tiền thứ tự trên tập hợp đó. Nếu hai phần tử bất kì của tập hợp này luôn đặt được vào quan hệ tiền thứ tự đã cho thì chúng ta nói quan hệ thứ tự này là \textbf{quan hệ tiền thứ tự toàn phần}.
+\end{definition}
+
+\begin{definition}[Cận trên và Cận dưới]
+    Cho một tập hợp $S$ được định nghĩa một \textit{quan hệ tiền thứ tự bộ phận} $\leq$ và $A$ là một tập hợp con của $S$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Một phần tử $u$ của $S$ được gọi là một \textbf{cận trên\index{Cận trên}} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $a\leq u$. Chúng ta còn nói $A$ bị chặn trên bởi $u$.
+        \item Một phần tử $\ell$ của $S$ được gọi là một \textbf{cận dưới\index{Cận dưới}} của $A$ nếu như với mỗi phần tử $a$ của $A$, chúng ta có $\ell\leq a$. Chúng ta còn nói $A$ bị chặn dưới bởi $\ell$.
+        \item Tập hợp $A$ được gọi là bị chặn nếu $A$ có cả cận trên và cận dưới.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Cho một tập hợp $S$ được định nghĩa một \textit{quan hệ thứ tự bộ phận} $\leq$ và $A$ là một tập hợp con của $S$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Một phần tử $x$ của $S$ được gọi là một \textbf{cận trên nhỏ nhất\index{Cận trên nhỏ nhất}}, hay \textbf{cận trên đúng\index{Cận trên đúng}}, hay \textbf{supremum\index{Supremum}} của $A$ nếu như với mỗi cận trên $u$ của $A$, chúng ta có $x\leq u$. Cận trên nhỏ nhất của $A$ được kí hiệu là $\sup A$.
+        \item Một phần tử $y$ của $S$ được gọi là một \textbf{cận dưới lớn nhất\index{Cận dưới lớn nhất}}, hay \textbf{cận dưới đúng\index{Cận dưới đúng}}, hay \textbf{infimum\index{Infimum}} của $A$ nếu như với mỗi cận dưới $\ell$ của $A$, chúng ta có $\ell\leq y$. Cận dưới lớn nhất của $A$ được kí hiệu là $\inf A$.
+    \end{enumerate}
+\end{definition}
+
+Khái niệm cận trên, cận dưới, cận trên đúng, cận dưới đúng được áp dụng cho cả quan hệ tiền thứ tự và quan hệ thứ tự.
+
+Chúng ta theo dõi ví dụ sau.
+\begin{example}
+    Tập hợp
+    \[
+        S = \left\{ 1, \frac{1}{2}, \frac{1}{3}, \ldots \right\} = \left\{ \frac{1}{n} \mid \text{$n$ là một số nguyên dương} \right\}
+    \]
+
+    là một tập hợp con của tập hợp số hữu tỉ $\mathbb{Q}$. Tập hợp $\mathbb{Q}$ được sắp thứ tự toàn phần.
+    \begin{itemize}
+        \item $S$ bị chặn trên bởi $1, 2, \frac{5}{2}, 3, \ldots$ và bị chặn dưới bởi $0, \frac{-1}{2}, -1, \ldots$
+        \item $1$ là cận trên nhỏ nhất của $S$.
+        \item $S$ không có phần tử nhỏ nhất. Bởi vì mỗi phần tử $\frac{1}{m}$ của $S$, luôn có phần tử nhỏ hơn, chẳng hạn $\frac{1}{m+1}, \frac{1}{2m}, \ldots$
+        \item $0$ là cận dưới lớn nhất của $S$. Giả sử phản chứng rằng $S$ có một cận dưới lớn hơn $0$. Cận dưới đó (là một số hữu tỉ vì chúng ta đang xét $S$ là tập hợp con của $\mathbb{Q}$). Chúng ta kí hiệu phân số tối giản của cận dưới đó là $\frac{p}{q}$. Nhưng vì $\frac{p}{q}\geq \frac{1}{q} > \frac{1}{2q}$ nên $\frac{p}{q}$ không phải cận dưới của $S$, dẫn đến giả sử phản chứng là sai. Do đó chúng ta khẳng định $0$ là cận dưới lớn nhất của $S$.
+        \item $1$ vừa là cận trên nhỏ nhất, vừa là phần tử lớn nhất của $S$. Còn $0$ là cận dưới lớn nhất của $S$ nhưng không thuộc $S$, và do đó không phải phần tử nhỏ nhất của $S$.
+    \end{itemize}
+\end{example}
+
+Trong một tập hợp con $A$ của một tập hợp $S$ với một quan hệ thứ tự, có thể có phần tử nhỏ nhất, phần tử lớn nhất, cận dưới đúng, cận trên đúng. Những khái niệm này không nên bị nhầm lẫn.
+\begin{itemize}
+    \item Nếu $A$ có phần tử lớn nhất thì phần tử đó cũng là cận trên đúng.
+    \item Nếu $A$ có phần tử nhỏ nhất thì phần tử đó cũng là cận dưới đúng.
+    \item Nếu $A$ có cận trên đúng thì cận trên đúng không nhất thiết thuộc $A$.
+    \item Nếu $A$ có cận dưới đúng thì cận dưới đúng không nhất thiết thuộc $A$.
+\end{itemize}
 
 \subsection{Bài tập}
