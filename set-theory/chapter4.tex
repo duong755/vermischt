@@ -278,7 +278,7 @@ Kiểm tra phép cộng, phép nhân, quan hệ $\leq$ trên tập hợp các l�
 
 Mô hình số thực bằng dãy Cauchy hữu tỉ được đề xuất bởi Charles M\'{e}ray và Georg Cantor. Mô hình số thực bằng lát cắt được đề xuất sau đó bởi Richard Dedekind. Ý tưởng cho mô hình số thực bằng dãy Cauchy hữu tỉ bắt đầu từ một tính chất của dãy Cauchy thực: Mọi dãy Cauchy thực đều hội tụ đến một số thực. Tuy nhiên điều này lại không đúng cho dãy Cauchy hữu tỉ. Trong mô hình này, chúng ta đưa ra một quan hệ tương đương giữa các dãy Cauchy hữu tỉ, định nghĩa các phép toán và quan hệ giữa các lớp tương đương theo quan hệ này và chỉ ra các lớp tương đương đó thỏa mãn hệ tiên đề về số thực.
 
-Trước khi đi đến định nghĩa dãy Cauchy hữu tỉ, chúng ta cần định nghĩa về dãy số hữu tỉ và tính hội tụ.
+Nhiều định nghĩa và kết quả liên quan đến dãy số trong mục này có thể quen thuộc với nhiều bạn đọc. Tuy nhiên, chúng tôi vẫn sẽ nêu lại một cách sơ lược. Trước khi đi đến định nghĩa dãy Cauchy hữu tỉ, chúng ta cần định nghĩa về dãy số hữu tỉ và tính hội tụ.
 
 \begin{definition}[Dãy số hữu tỉ\index{Dãy số hữu tỉ}]
     Một \textbf{dãy số hữu tỉ} là một ánh xạ với tập nguồn là tập hợp số tự nhiên và tập đích là tập hợp số hữu tỉ.
@@ -413,7 +413,7 @@ Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\
 
 Phép cộng và phép nhân dãy Cauchy hữu tỉ được thực hiện bằng cách cộng và nhân các giá trị của hai dãy Cauchy hữu tỉ tại các chỉ số bằng nhau.
 
-\begin{theorem}[Phép cộng và phép nhân dãy Cauchy hữu tỉ]
+\begin{theorem}[Phép cộng và phép nhân dãy Cauchy hữu tỉ]\label{theorem:addition-and-multiplication-of-rational-cauchy-sequences}
     ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì
     \begin{enumerate}[label={(\roman*)}]
         \item ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép cộng dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n} + b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}} + {(b_{n})}_{n\in\mathbb{N}}$.
@@ -456,7 +456,7 @@ Một cách không hình thức, chúng ta có thể diễn đạt định nghĩ
     Quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tiền thứ tự toàn phần.
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:preorder-and-equivalence-relation-between-rational-cauchy-sequences}
     Nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$.
 \end{theorem}
 
@@ -491,6 +491,10 @@ Với việc có nhiều cách xây dựng tập hợp số thực, trong đó, 
 Một chứng minh cho Định lý~\ref{theorem:uniqueness-of-complete-ordered-field} được phác thảo trong~\cite{spivak}. Với định lý này, chúng ta có thể sử dụng khái niệm số thực mà không cần biết rõ là số thực được định nghĩa theo mô hình nào, tương tự với việc có thể sử dụng bất kì phần tử nào của một lớp tương đương để làm phần tử đại diện của lớp tương đương đó.
 
 \subsection{Thuộc tính Archimedes}
+
+Mục này nói về thuộc tính Archimedes trong tập hợp số thực và các hệ quả. Hệ quả đáng lưu ý nhất trong mục này là tính trù mật của tập hợp số hữu tỉ.
+
+Trong chương trình phổ thông, thuộc tính Archimedes thường được thừa nhận. Chứng minh dưới đây cho thuộc tính Archimedes sử dụng tiên đề về cận trên.
 
 \begin{theorem}[Thuộc tính Archimedes\index{Thuộc tính Archimedes}]
     Với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
@@ -575,6 +579,80 @@ Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimede
 \end{proof}
 
 \subsection{Bài tập}
+
+\begin{exercise}
+    $A$ là một lát cắt trên $\mathbb{Q}$. Chứng minh rằng $\mathbb{Q}\setminus A$ chỉ gồm tất cả các cận trên hữu tỉ của $A$.
+\end{exercise}
+
+\begin{exercise}
+    $A$ là một lát cắt trên $\mathbb{R}$. Chứng minh rằng $\mathbb{R}\setminus A$ có phần tử nhỏ nhất. Các lát cắt trên tập hợp số hữu tỉ có gì khác với các lát cắt trên tập hợp số thực?
+\end{exercise}
+
+\begin{exercise}
+    ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a_{N}} < 1$.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ bị chặn. Nói cách khác, tồn tại số thực dương $A$ sao cho $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$.
+    \end{enumerate}
+\end{exercise}
+
+Kết quả trong bài tập trên vẫn đúng với dãy Cauchy hữu tỉ và là cần thiết để chứng minh phần (ii) của Định lý~\ref{theorem:addition-and-multiplication-of-rational-cauchy-sequences}.
+
+\begin{exercise}
+    Chứng minh rằng với mỗi số thực $x$ và số thực dương $\varepsilon$, tồn tại số hữu tỉ $q$ sao cho $\abs{q - x} < \varepsilon$.
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng với hai số thực $x$, $y$ thỏa mãn $x < y$, tồn tại số nguyên $m$ và số tự nhiên $n$ sao cho $x < \dfrac{m}{2^{n}} < y$. [Gợi ý: Áp dụng cách lập luận của chứng minh tính trù mật của tập hợp số hữu tỉ.]
+\end{exercise}
+
+\begin{exercise}
+    Cho các số thực $a$, $b$ thỏa mãn $a < b$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tồn tại song ánh từ khoảng mở $(0, 1)$ đến khoảng mở $(a, b)$.
+        \item Tồn tại song ánh từ khoảng đóng $[0, 1]$ đến khoảng đóng $[a, b]$.
+    \end{enumerate}
+
+    Trong đó $(a, b)$ là tập hợp $\{ x\in\mathbb{R} \mid a < x < b \}$, $[a, b]$ là tập hợp $\{ x\in\mathbb{R} \mid a\leq x \leq b \}$.
+\end{exercise}
+
+\begin{exercise}
+    Cho $c$ là một số thực dương. Hai số thực $x$ và $y$ được gọi là có quan hệ $\sim$ nếu và chỉ nếu tồn tại số nguyên $n$ sao cho $x - y = nc$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item $\sim$ là một quan hệ tương đương.
+        \item Tồn tại một song ánh từ $\mathbb{R}/_{\sim}$ đến tập hợp $[0, c)$.
+    \end{enumerate}
+
+    Trong đó $[a, b)$ là tập hợp $\{ x\in\mathbb{R} \mid a\leq x < b \}$,$(a, b]$ là tập hợp $\{ x\in\mathbb{R} \mid a < x \leq b \}$.
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Hợp của hai khoảng mở có phải một khoảng mở không? Tương tự, hợp của hai khoảng đóng có phải một khoảng đóng không? Hãy đưa ra ví dụ và phản ví dụ.
+        \item Giao của hai khoảng mở hoặc là tập hợp rỗng, hoặc là một khoảng mở.
+        \item Giao của hai khoảng đóng hoặc là tập hợp rỗng, hoặc gồm đúng một phần tử, hoặc là một khoảng đóng.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Cho khoảng đóng $[a, b]$. Với mỗi số nguyên dương $n$, chúng ta định nghĩa $a_{n} = a - \dfrac{1}{n}$ và $b_{n} = b + \dfrac{1}{n}$. Chứng minh rằng 
+    \begin{enumerate}[label={(\roman*)}]
+        \item $a_{n}\leq b_{n}$ với mọi số nguyên dương $n$.
+        \item $a$ là cận trên đúng của tập hợp các số thực $a_{n}$, và $b$ là cận dưới đúng của tập hợp các số thực $b_{n}$.
+        \item $[a, b]$ là giao của tất cả các khoảng mở $(a_{n}, b_{n})$, với $n$ là số nguyên dương.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    Cho khoảng mở $(a, b)$. Với mỗi số nguyên dương $n > 1$, chúng ta định nghĩa $a_{n} = a + \dfrac{b-a}{n}$ và $b_{n} = b - \dfrac{b-a}{n}$. Chứng minh rằng 
+    \begin{enumerate}[label={(\roman*)}]
+        \item $a_{n}\leq b_{n}$ với mọi số nguyên dương $n > 1$.
+        \item $a$ là cận dưới đúng của tập hợp các số thực $a_{n}$, và $b$ là cận trên đúng của tập hợp các số thực $b_{n}$.
+        \item $(a, b)$ là hợp của tất cả các khoảng đóng $[a_{n}, b_{n}]$, với các số nguyên dương $n > 1$.
+    \end{enumerate}
+\end{exercise}
 
 \section{Số phức}
 
