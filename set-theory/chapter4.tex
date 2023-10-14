@@ -589,6 +589,21 @@ Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimede
 \end{exercise}
 
 \begin{exercise}
+    Chứng minh rằng nếu một tập hợp con khác rỗng của tập hợp số thực bị chặn dưới thì có cận dưới lớn nhất.
+\end{exercise}
+
+\begin{exercise}
+    $A$ là tập hợp con khác rỗng của tập hợp số thực. Tập hợp $-A$ được định nghĩa như sau
+    \[
+        -A = \{ -x \mid x\in A \}.
+    \]
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng nếu $A$ có cận trên nhỏ nhất thì $-A$ có cận dưới lớn nhất, và khi đó $\sup A = -\inf (-A)$.
+        \item Chứng minh rằng nếu $A$ có cận dưới lớn nhất thì $-A$ có cận trên nhỏ nhất, và khi đó $\inf A = -\sup (-A)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
     ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy. Chứng minh rằng
     \begin{enumerate}[label={(\roman*)}]
         \item Tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a_{N}} < 1$.
@@ -639,6 +654,42 @@ Kết quả trong bài tập trên vẫn đúng với dãy Cauchy hữu tỉ và
     \end{enumerate}
 \end{exercise}
 
+\begin{exercise}[Nguyên lý Cantor về các khoảng đóng lồng nhau]
+    Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
+        \item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
+        \item Chứng minh rằng nếu $a = b$ thì giao của tất cả các khoảng đóng $I_{n}$ chỉ gồm đúng một phần tử.
+    \end{enumerate}
+\end{exercise}
+
+Thực tế, trong nguyên lý Cantor, điều kiện $a = b$ được thay bởi điều kiện tương đương là $\lim (a_{n} - b_{n}) = 0$. Nguyên lý Cantor cho thấy giao của dãy các khoảng đóng lồng nhau khác rỗng, tuy nhiên điều này không còn đúng nếu chúng ta thay khoảng đóng bởi khoảng mở. Hai bài tập dưới đây cung cấp ví dụ và phản ví dụ cho nhận định này.
+
+\begin{exercise}
+    Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
+        \item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
+    \end{enumerate}
+\end{exercise}\begin{exercise}[Nguyên lý Cantor về các khoảng đóng lồng nhau]
+    Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
+        \item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
+        \item Chứng minh rằng nếu $a = b$ thì giao của tất cả các khoảng đóng $I_{n}$ chỉ gồm đúng một phần tử.
+    \end{enumerate}
+\end{exercise}
+
+Thực tế, trong nguyên lý Cantor, điều kiện $a = b$ được thay bởi điều kiện tương đương là $\lim (a_{n} - b_{n}) = 0$. Nguyên lý Cantor cho thấy giao của dãy các khoảng đóng lồng nhau khác rỗng, tuy nhiên điều này không còn đúng nếu chúng ta thay khoảng đóng bởi khoảng mở. Hai bài tập dưới đây cung cấp ví dụ và phản ví dụ cho nhận định này.
+
+\begin{exercise}
+    Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
+        \item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
+    \end{enumerate}
+\end{exercise}
+
 \begin{exercise}
     Cho khoảng đóng $[a, b]$. Với mỗi số nguyên dương $n$, chúng ta định nghĩa $a_{n} = a - \dfrac{1}{n}$ và $b_{n} = b + \dfrac{1}{n}$. Chứng minh rằng 
     \begin{enumerate}[label={(\roman*)}]
@@ -647,7 +698,6 @@ Kết quả trong bài tập trên vẫn đúng với dãy Cauchy hữu tỉ và
         \item $[a, b]$ là giao của tất cả các khoảng mở $(a_{n}, b_{n})$, với $n$ là số nguyên dương.
     \end{enumerate}
 \end{exercise}
-
 
 \begin{exercise}
     Cho khoảng mở $(a, b)$. Với mỗi số nguyên dương $n > 1$, chúng ta định nghĩa $a_{n} = a + \dfrac{b-a}{n}$ và $b_{n} = b - \dfrac{b-a}{n}$. Chứng minh rằng 
