@@ -21,10 +21,16 @@
 \usepackage{epigraph}
 \usepackage{setspace}
 \usepackage{pgf,tikz}
+\usepackage{tkz-euclide}
 \usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.text}
 
 \setstretch{1.16}
 \hypersetup{colorlinks=true,
@@ -48,6 +54,15 @@
 \newmdtheoremenv{definition}[theorem]{Định nghĩa}
 \newmdtheoremenv{example}[theorem]{Ví dụ}
 \newmdtheoremenv{counterexample}[theorem]{Phản ví dụ}
+
+\theoremstyle{theorem}
+\newmdtheoremenv{appendixthm}{Định lý}
+\newmdtheoremenv{appendixcorollary}[appendixthm]{Hệ quả}
+\theoremstyle{definition}
+\newmdtheoremenv{appendixdefinition}[appendixthm]{Định nghĩa}
+\newmdtheoremenv{appendixexample}[appendixthm]{Ví dụ}
+\newmdtheoremenv{appendixcounterexample}[appendixthm]{Phản ví dụ}
+
 \newtheorem{exercise}{Bài tập}
 \counterwithin{exercise}{section}
 
@@ -87,8 +102,8 @@
 \input{chapter6.tex}
 
 \appendix
-
-\chapter{Đọc thêm}
+\input{appendix1.tex}
+\input{appendix2.tex}
 
 \printindex
 \printbibliography[heading=bibintoc,title={Tài liệu tham khảo}]

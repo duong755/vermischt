@@ -1,0 +1,1308 @@
+\chapter{Mô hình số thực bằng dãy Cauchy hữu tỉ}
+
+Phần phụ lục này cung cấp đầy đủ các chi tiết kĩ thuật trong việc xây dựng tập hợp số thực bằng dãy Cauchy hữu tỉ. Để phục vụ cho Chương~\ref{chapter:p-adic} về số $p$-adic, bạn đọc chỉ cần xem mục 1 và 2 của chương này với lưu ý rằng chứng minh trong hai mục này vẫn hợp lệ khi thay giá trị tuyệt đối thông thường bởi giá trị tuyệt đối $p$-adic.
+
+\section{Dãy số hữu tỉ và dãy Cauchy hữu tỉ}
+
+Khái niệm dãy số có thể được mô tả một cách trực giác: Một dãy số là một danh sách số và \textit{mỗi số tự nhiên được gán với đúng một số trong danh sách}. Dãy số tự nhiên $0, 1, 2, \ldots$, dãy số lẻ $1, 3, 5, \ldots$ là những ví dụ về dãy số. Tuy nhiên, để tuân thủ tiêu chuẩn của toán học hiện đại, các khái niệm cần được định nghĩa hình thức. Dãy số được định nghĩa như một ánh xạ, như trong định nghĩa sau đây.
+
+\begin{definition}[Dãy số hữu tỉ\index{Dãy số hữu tỉ}]
+    Một \textbf{dãy số hữu tỉ} là một ánh xạ với tập nguồn là tập hợp số tự nhiên và tập đích là tập hợp số hữu tỉ.
+
+    \noindent Một dãy số hữu tỉ $f: \mathbb{N}\to\mathbb{Q}$ được kí hiệu là ${(f_{n})}_{n\in\mathbb{N}}$, và $f_{n}$ là giá trị được gán với số tự nhiên $n$ bởi $f$. Ngoài cách kí hiệu trên, nhiều tác giả còn dùng các kí hiệu khác cho dãy số, chẳng hạn
+    \[
+        {(f_{n})}, \quad {(f_{n})}_{n=0}, \quad {(f_{n})}^{\infty}_{n=0}
+    \]
+
+    \noindent Trong dãy số hữu tỉ ${(f_{n})}_{n\in\mathbb{N}}$, một số tự nhiên $n$ cụ thể được gọi là một \textbf{chỉ số\index{Chỉ số}}.
+\end{definition}
+
+Giống như việc người ta vẫn hay tranh cãi $0$ có phải một số tự nhiên không, có những tài liệu định nghĩa dãy số bắt đầu bằng chỉ số $1$ thay vì $0$. Nhưng đây cũng chỉ là vấn đề quy ước, và giống như phương pháp quy nạp toán học, dãy số có thể bắt đầu bằng bất cứ chỉ số $n_{0}$ nào, với $n_{0}$ là một số nguyên. Tuy nhiên, để thuận theo tinh thần của tài liệu này, chúng ta sẽ luôn để dãy số bắt đầu với chỉ số $0$.
+
+Chúng ta theo dõi một số ví dụ về dãy số hữu tỉ và định nghĩa một số kiểu dãy số đặc biệt.
+\begin{example}
+    Dãy số Fibonacci ${(F_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng quy nạp
+    \[
+        F_{n} = \begin{cases}
+            0                 & \text{khi $n = 0$}, \\
+            1                 & \text{khi $n = 1$}, \\
+            F_{n-1} + F_{n-2} & \text{khi $n > 1$}.
+        \end{cases}
+    \]
+\end{example}
+
+\begin{example}[Dãy hằng số\index{Dãy hằng số}]
+    ${(a_{n})}_{n\in\mathbb{N}}$ được định nghĩa $a_{n} = 0$ với mọi số tự nhiên $n$ là một dãy số. Đây được gọi là một dãy hằng số, vì giá trị của dãy số tại mọi số tự nhiên $n$ là bằng nhau.
+\end{example}
+
+\begin{example}[Dãy dừng\index{Dãy dừng}]
+    ${(a_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $a_{0} = 1$, $a_{1} = -1$, $a_{n} = 0$ với mọi số tự nhiên $n$ lớn hơn $1$ là một dãy số. Đây được gọi là một dãy dừng, vì giá trị của dãy số này tại mọi số tự nhiên $n$ là bằng nhau, bắt đầu từ một chỉ số nào đó (trong ví dụ này, chỉ số đó là $2$).
+\end{example}
+
+\begin{example}[Dãy đơn điệu\index{Dãy đơn điệu}]
+    \begin{itemize}
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số tăng\index{Dãy số tăng thực sự} (đơn điệu tăng, tăng thực sự) khi và chỉ khi $a_{n+1} > a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số giảm\index{Dãy số giảm thực sự} (đơn điệu giảm, giảm thực sự) khi và chỉ khi $a_{n+1} < a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số không giảm\index{Dãy số không giảm} (đơn điệu không giảm) khi và chỉ khi $a_{n+1}\geq a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy số không tăng\index{Dãy số không tăng} (đơn điệu không tăng) khi và chỉ khi $a_{n+1}\leq a_{n}$ kể từ một chỉ số $n = n_{0}$ nào đó trở đi.
+    \end{itemize}
+\end{example}
+
+Khi có một dãy số, người ta thường quan tâm đến việc giá trị của dãy số sẽ như thế nào với chỉ số $n$ rất lớn, hay dãy số đó có hội tụ không. Để phát biểu một cách chặt chẽ về đặc điểm đó của dãy số, các nhà toán học đã đúc kết lại thành định nghĩa dãy số hội tụ. Trước khi đưa ra định nghĩa dãy số hữu tỉ hội tụ, chúng ta cần định nghĩa giá trị tuyệt đối của số hữu tỉ.
+\begin{definition}[Giá trị tuyệt đối của số hữu tỉ\index{Giá trị tuyệt đối của số hữu tỉ}]
+    Ánh xạ $\abs{\cdot}: \mathbb{Q}\to \mathbb{Q}_{\geq 0}$ được định nghĩa bởi
+    \[
+        \abs{x} = \begin{cases}
+            x  & \text{nếu $x\geq 0$}, \\
+            -x & \text{nếu $x < 0$}
+        \end{cases}
+    \]
+
+    được gọi là \textbf{ánh xạ giá trị tuyệt đối}, hay \textbf{hàm giá trị tuyệt đối} của số hữu tỉ\index{Giá trị tuyệt đối của số hữu tỉ}. Số hữu tỉ không âm $\abs{x}$ được gọi là giá trị tuyệt đối của số hữu tỉ $x$.
+\end{definition}
+
+Giá trị tuyệt đối của số hữu tỉ cũng có các tính chất tương tự như giá trị tuyệt đối của số nguyên.
+\begin{appendixthm}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mọi số hữu tỉ $x$, có $0 \leq \abs{x}$. Bên cạnh đó, $\abs{x} = 0$ khi và chỉ khi $x = 0$.
+        \item Với mọi số hữu tỉ $x$, có $-\abs{x}\leq x\leq \abs{x}$.
+        \item Với mọi số hữu tỉ $x, y$, có $\abs{xy} = \abs{x}\abs{y}$.
+        \item Với mọi số hữu tỉ $x, y$, có $\abs{x+y}\leq \abs{x} + \abs{y}$.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{definition}
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là
+    \textbf{hội tụ đến số hữu tỉ $a$} nếu và chỉ nếu
+    \[
+        \forall \varepsilon > 0 \Biggl(\exists N(\varepsilon)\Bigl(\forall n\geq N(\varepsilon)(\abs{a_{n} - a} < \varepsilon)\bigr)\biggr).
+    \]
+
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{hội tụ\index{Hội tụ}} nếu tồn tại số hữu tỉ $a$ sao cho dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$. Số hữu tỉ $a$ khi đó được gọi là một \textbf{điểm giới hạn\index{Điểm giới hạn}}, hay \textbf{giới hạn\index{Giới hạn}} của dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$.
+
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{phân kì\index{Phân kì}} nếu dãy này không hội tụ.
+
+    Bằng kí hiệu, chúng ta viết điều kiện cần và đủ để dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không hội tụ đến số hữu tỉ $a$} như sau
+    \[
+        \exists\varepsilon_{0} > 0 \Biggl(\forall N\Bigl(\exists n\geq N (\abs{a_{n} - a}\geq\varepsilon_{0} )\Bigr)\Biggr).
+    \]
+\end{definition}
+
+Trên đây là một định nghĩa hình thức cho khái niệm dãy số hữu tỉ hội tụ. Chúng tôi thừa nhận rằng cách định nghĩa này khó hiểu với những người mới học. Nếu bạn đọc cảm thấy đây là một cách định nghĩa phức tạp, thì chúng tôi cho rằng việc nên làm đầu tiên là đọc về vị từ và lượng từ trong Chương~\ref{chapter:logic-and-set-theory}. Thay cho (nhưng không hoàn toàn thay thế) cách định nghĩa trên, định nghĩa cho dãy số hữu tỉ hội tụ có thể được phát biểu bớt hình thức hơn như sau:
+\begin{itemize}
+    \item (Thông dịch trực tiếp logic hình thức thành câu văn) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$, tồn tại số tự nhiên $N(\varepsilon)$ chỉ phụ thuộc vào $\varepsilon$ sao cho với mọi chỉ số $n\geq N(\varepsilon)$, chúng ta có $\abs{a_{n} - a} < \varepsilon$.
+    \item (Phát biểu không hình thức) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$ nhỏ tùy ý, luôn tồn tại một chỉ số mà từ chỉ số đó trở đi, khoảng cách từ $a_{n}$ đến $a$ nhỏ hơn $\varepsilon$.
+\end{itemize}
+
+Sau đây chúng tôi đưa ra một số ví dụ và phản ví dụ nhằm minh họa khái niệm dãy số hữu tỉ hội tụ và cách chứng minh hay bác bỏ sự hội tụ của một dãy số hữu tỉ.
+\begin{example}
+    Mọi dãy số hữu tỉ dừng đều hội tụ.
+
+    Một cách tổng quát, chúng ta xét dãy hữu tỉ dừng ${(a_{n})}_{n\in\mathbb{N}}$ thoả mãn $a_{n} = a$ ($a$ là một số hữu tỉ) với mọi số tự nhiên $n\geq n_{0}$. Với định nghĩa này, chúng ta suy ra $\abs{a_{n} - a} = 0$ với mọi số tự nhiên $n\geq n_{0}$. Bên cạnh đó
+    \[
+        \forall\varepsilon > 0\Bigl(\exists N=n_{0}\bigl(\forall n\geq N( \abs{a_{n} - a} < \varepsilon )\bigr)\Bigr).
+    \]
+
+    Do đó dãy số hữu tỉ  ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $a$.
+
+    Dãy số hữu tỉ hằng số là trường hợp riêng của dãy số hữu tỉ dừng nên mọi dãy hữu tỉ hằng số đều hội tụ.
+\end{example}
+
+\begin{counterexample}
+    Dãy số tự nhiên không hội tụ đến bất kì số hữu tỉ nào.
+
+    Giả sử phản chứng rằng dãy số tự nhiên hội tụ đến một số hữu tỉ $q$ nào đó.
+
+    Chúng ta chọn $\varepsilon_{0} = \frac{1}{2}$. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi $n\geq N$, chúng ta có $\abs{n - q} < \frac{1}{2}$. Tiếp tục sử dụng số tự nhiên $N$ và số tự nhiên $n\geq N$, chúng ta có
+    \[
+        1 = \abs{(n + 1) - n} = \abs{(n+1) - q + (q - n)} \leq \abs{n+1 - q} + \abs{n-q} < \frac{1}{2} + \frac{1}{2} = 1
+    \]
+
+    là một mâu thuẫn. Do đó giả sử phản chứng là sai, kéo theo dãy số tự nhiên không hội tụ đến bất kì số hữu tỉ nào.
+\end{counterexample}
+
+\begin{example}
+    Dãy số ${(a_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $a_{n} = \frac{n}{n+1}$ hội tụ đến $1$.
+
+    Chọn một số hữu tỉ $\varepsilon > 0$, chúng ta sẽ tìm số tự nhiên $N(\varepsilon)$ để sử dụng định nghĩa dãy số hữu tỉ hội tụ.
+
+    $\abs{a_{n} - 1} < \varepsilon$ khi và chỉ khi $\frac{1}{n+1} < \varepsilon$. Bên cạnh đó, nếu $n \geq \floor{\frac{1}{\varepsilon}}$ (đây là kí hiệu phần nguyên của số hữu tỉ), theo định nghĩa phần nguyên của số hữu tỉ thì
+    \[
+        \frac{1}{n+1}\leq \frac{1}{\floor{\dfrac{1}{\varepsilon}} + 1} < \frac{1}{\dfrac{1}{\varepsilon}} = \varepsilon.
+    \]
+
+    Như vậy
+    \[
+        \forall\varepsilon > 0 \Biggl( \exists N=\floor{\frac{1}{\varepsilon}}\bigl(\forall n\geq N ( \abs{a_{n} - 1} < \varepsilon )\bigr) \Biggr).
+    \]
+
+    Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta kết luận dãy số ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $1$.
+\end{example}
+
+\begin{counterexample}
+    Dãy số ${(b_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $b_{n} = {(-1)}^{n}$ (với mọi số tự nhiên $n$) không hội tụ đến số hữu tỉ nào.
+
+    Giả sử phản chứng rằng dãy số ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ $q$. Chúng ta chọn $\varepsilon = 1$. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{b_{n} - q} < 1$. Vẫn là với số $\varepsilon = 1$, số tự nhiên $N$ và $n\ge N$, chúng ta có
+    \[
+        2 = \abs{b_{n} - b_{n}} = \abs{(b_{n+1} - q) + (q - b_{n})} \leq \abs{b_{n+1} - q} + \abs{b_{n} - q} < 1 + 1 = 2
+    \]
+
+    là một mâu thuẫn. Do đó giả sử phản chứng là sai, kéo theo dãy số ${(b_{n})}_{n\in\mathbb{N}}$ không hội tụ đến bất kì số hữu tỉ nào.
+\end{counterexample}
+
+\begin{appendixthm}\label{appendixthm:uniqueness-of-limit-points-of-convergence-rational-sequences}
+    Nếu một dãy số hữu tỉ hội tụ thì dãy số hữu tỉ đó chỉ có một điểm giới hạn.
+\end{appendixthm}
+
+\begin{proof}
+    Giả sử phản chứng rằng dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến hai số hữu tỉ khác nhau là $a$ và $b$. Chọn $\varepsilon = \abs{a - b}$.
+
+    Theo định nghĩa dãy số hữu tỉ hội tụ
+    \begin{itemize}[topsep=0pt]
+        \item Tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$.
+        \item Tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{a_{n} - b} < \dfrac{\varepsilon}{2}$.
+    \end{itemize}
+
+    Chúng ta chọn $N$ là số tự nhiên lớn nhất trong hai số $N_{a}$ và $N_{b}$ (nói cách khác, $N = \max\{ N_{a}, N_{b} \}$). Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$ và $\abs{a_{n} - b} < \dfrac{\varepsilon}{2}$, từ đó chúng ta có
+    \[
+        \abs{a - b} = \abs{(a - a_{n}) + (a_{n} - b)} \leq \abs{a_{n} - a} + \abs{a_{n} - b} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon = \abs{a - b}
+    \]
+
+    là một điều vô lí. Do đó giả sử phản chứng là sai. Vậy nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ thì đó là số hữu tỉ duy nhất mà ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến.
+\end{proof}
+
+Nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $a$ thì chúng ta kí hiệu $\lim a_{n} = a$, hoặc $\lim\limits_{n} a_{n} = a$ khi cần nhấn mạnh chỉ số.
+
+Đối với dãy số, chúng ta cũng có khái niệm dãy số bị chặn.
+\begin{definition}[Dãy số hữu tỉ bị chặn]
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{bị chặn\index{Dãy số hữu tỉ bị chặn}} nếu và chỉ nếu tồn tại số hữu tỉ dương $A$ sao cho $\abs{a_{n}}\leq A$ (hoặc $\abs{a_{n}} < A$) với mọi số tự nhiên $n$.
+\end{definition}
+
+Một cách trực giác, việc một dãy số hữu tỉ hội tụ đến một số hữu tỉ $a$ có thể được mô tả như sau: Từ một chỉ số $n$ nào đó trở đi, các giá trị của dãy số sẽ chụm quanh điểm giới hạn. Mô tả này cho thấy sẽ thật không hợp lý nếu như ``khoảng cách'' từ một giá trị nào đó của dãy số đến $a$ có thể lớn tùy ý. Chúng ta có kết quả sau đây.
+\begin{appendixthm}\label{appendixthm:convergence-sequences-are-bounded}
+    Nếu dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ thì ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
+\end{appendixthm}
+
+\begin{proof}
+    Giả sử dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến một số hữu tỉ $a$ nào đó.
+
+    Chúng ta chọn $\varepsilon = 1$. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ nào đó sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - a} < 1$. Với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{(a_{n} - a) + a} \leq \abs{a_{n} - a} + \abs{a} < 1 + \abs{a}.
+    \]
+
+    Theo nguyên lý cực hạn, tập hợp $\{ \abs{a_{0}}, \abs{a_{1}}, \ldots, \abs{a_{N-1}}, 1 + \abs{a} \}$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử đó là $A$. $A$ là một số hữu tỉ dương vì các phần tử trong tập hợp trên đều là số hữu tỉ, và $1 + \abs{a} > 0$. Do đó, $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$, đồng nghĩa với việc dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ bị chặn.
+\end{proof}
+
+Việc tính toán giới hạn của một số dãy số có thể được đơn giản hóa nhờ kết quả sau và những giới hạn đã biết.
+\begin{appendixthm}\label{appendixthm:limits-of-sum-and-product}
+    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}$ là các dãy số hữu tỉ.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim s_{n} = a + b$, trong đó dãy số hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $s_{n} = a_{n} + b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(s_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$).
+        \item Nếu $\lim a_{n} = a$ thì $\lim c_{n} = ca$, trong đó dãy số hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $c_{n} = c\cdot a_{n}$ với mọi số tự nhiên $n$, trong đó $c$ là một hằng số hữu tỉ (Chúng ta còn kí hiệu ${(c_{n})}_{n\in\mathbb{N}}$ bởi ${(ca_{n})}_{n\in\mathbb{N}}$).
+        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim p_{n} = ab$, trong đó dãy số hữu tỉ ${(p_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $p_{n} = a_{n}b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(p_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n}b_{n})}_{n\in\mathbb{N}}$).
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì.
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, với số hữu tỉ dương $\dfrac{\varepsilon}{2}$
+              \begin{itemize}
+                  \item tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$
+                  \item tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b} \}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2}$. Khi đó chúng ta có
+              \[
+                  \abs{(a_{n} + b_{n}) - (a + b)}  = \abs{(a_{n} - a) + (b_{n} - b)} \leq \abs{a_{n} - a} + \abs{b_{n} - b} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Những điều trên có nghĩa là: với mọi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{(a_{n} + b_{n}) - (a + b)} < \varepsilon$. Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta suy ra $\lim s_{n} = a + b$.
+        \item Nếu $c = 0$ thì ${(c_{n})}_{n\in\mathbb{N}}$ là một dãy hằng số, vì $c_{n} = c\cdot a_{n} = 0$ với mọi số tự nhiên $n$. Khi đó $\lim c_{n} = 0 = ca$.
+
+              Nếu $c\ne 0$, chúng ta lấy $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, với số hữu tỉ dương $\dfrac{\varepsilon}{\abs{c}}$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a} < \dfrac{\varepsilon}{\abs{c}}$. Cũng là số tự nhiên $N$, nếu số tự nhiên $n\geq N$ thì chúng ta có
+              \[
+                  \abs{ca_{n} - ca} = \abs{c(a_{n} - a)} = \abs{c}\abs{a_{n} - a} \leq \abs{c}\cdot\frac{\varepsilon}{\abs{c}} = \varepsilon.
+              \]
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, chúng ta kết luận $\lim c_{n} = ca$.
+        \item Chúng ta có
+              \begin{align*}
+                  \abs{a_{n}b_{n} - ab} & = \abs{(a_{n} - a)b_{n} + a(b_{n} - b)}                  \\
+                                        & \leq \abs{a_{n} - a}\abs{b_{n}} + \abs{a}\abs{b_{n} - b}
+              \end{align*}
+
+              Dựa trên bất đẳng thức vừa thu được, chúng ta tìm số tự nhiên ``$N$'' để có thể áp dụng được định nghĩa dãy số hữu tỉ hội tụ. Vì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$ và ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $b$ nên hai dãy số này bị chặn, kéo theo tồn tại hai số hữu tỉ dương $A, B$ sao cho $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq B$ với mọi số tự nhiên $n$.
+
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ
+              \begin{itemize}
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2B}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2A}$, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b}\}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - a} < \dfrac{\varepsilon}{2B}$ và $\abs{b_{n} - b} < \dfrac{\varepsilon}{2A}$. Khi đó chúng ta có
+              \begin{align*}
+                  \abs{a_{n}b_{n} - ab} & = \abs{(a_{n} - a)b_{n} + a(b_{n} - b)}                         \\
+                                        & \leq \abs{a_{n} - a}\abs{b_{n}} + \abs{a}\abs{b_{n} - b}        \\
+                                        & < \frac{\varepsilon}{2B}\cdot B + \frac{\varepsilon}{2A}\cdot A \\
+                                        & = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \end{align*}
+
+              Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}b_{n} - ab} < \varepsilon$. Theo định nghĩa giới hạn dãy số hữu tỉ, chúng ta kết luận $\lim p_{n} = ab$.
+    \end{enumerate}
+\end{proof}
+
+Đến lúc này, chúng ta đã chuẩn bị đủ để định nghĩa và chứng minh các kết quả về dãy Cauchy hữu tỉ.
+
+\begin{definition}[Dãy Cauchy hữu tỉ]
+    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một \textbf{dãy Cauchy hữu tỉ\index{Dãy Cauchy hữu tỉ}} nếu và chỉ nếu
+    \[
+        \forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall m\geq N(\varepsilon) (\abs{a_{m} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
+    \]
+
+    \noindent Điều kiện trên có thể phát biểu dưới dạng tương đương là
+    \[
+        \forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall p > 0 (\abs{a_{n+p} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
+    \]
+
+    \noindent Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}$.
+\end{definition}
+
+Chúng ta cũng có thể phát biểu định nghĩa dãy Cauchy hữu tỉ theo cách bớt hình thức hơn.
+\begin{itemize}
+    \item (Thông dịch trực tiếp từ định nghĩa hình thức) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy Cauchy hữu tỉ nếu và chỉ nếu: Với mọi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N(\varepsilon)$ sao cho với mọi số tự nhiên $n, m\geq N(\varepsilon)$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$.
+    \item (Mô tả trực giác) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một dãy Cauchy hữu tỉ nếu và chỉ nếu: Với mọi số hữu tỉ dương $\varepsilon$ nhỏ tùy ý, từ một chỉ số nào đó trở đi, khoảng cách giữa các giá trị của dãy số nhỏ hơn $\varepsilon$.
+\end{itemize}
+
+Dãy số hữu tỉ hội tụ là một trường hợp riêng của dãy Cauchy hữu tỉ.
+\begin{appendixthm}
+    Nếu một dãy số hữu tỉ hội tụ thì đó cũng là một dãy Cauchy hữu tỉ.
+\end{appendixthm}
+
+\begin{proof}
+    Giả sử dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $a$. Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương bất kì.
+
+    Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - a} < \dfrac{\varepsilon}{2}$. Vẫn là số tự nhiên $N$, nếu các số tự nhiên $n, m$ thỏa mãn $n, m\geq N$ thì chúng ta có
+    \[
+        \abs{a_{m} - a_{n}} = \abs{(a_{m} - a) + (a - a_{n})} \leq \abs{a_{m} - a} + \abs{a_{n} - a} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+    \]
+
+    Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $m, n\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+\end{proof}
+
+Tương tự với dãy số hữu tỉ hội tụ, dãy Cauchy hữu tỉ cũng bị chặn.
+\begin{appendixthm}\label{appendixthm:cauchy-sequences-are-bounded}
+    Nếu ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ thì ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
+\end{appendixthm}
+
+\begin{proof}
+    Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $1$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < 1$. Do đó $\abs{a_{n} - a_{N}} < 1$ với mọi số tự nhiên $n\geq N$. Bên cạnh đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{(a_{n} - a_{N}) + a_{N}} \leq \abs{a_{n} - a_{N}} + \abs{a_{N}} < 1 + \abs{a_{N}}.
+    \]
+
+    Theo nguyên lý cực hạn, tập hợp $\{ \abs{a_{0}}, \abs{a_{1}}, \ldots, \abs{a_{N-1}}, 1 + \abs{a_{N}} \}$ có phần tử lớn nhất. Chúng ta kí hiệu phần tử này là $A$, $A$ còn là một số hữu tỉ dương, vì $A$ thuộc tập hợp trên (gồm các số hữu tỉ) và $A\geq 1 + \abs{a_{N}}$.
+
+    Với hai điều trên, chúng ta suy ra $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$, điều này đồng nghĩa với việc ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ bị chặn.
+\end{proof}
+
+Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ nhưng điều ngược lại nói chung không đúng. Mệnh đề dưới đây đưa ra một dãy Cauchy hữu tỉ nhưng không hội tụ đến một số hữu tỉ nào.
+
+\begin{appendixthm}\label{appendixthm:irrational-cauchy-sequence}
+    Dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng đệ quy như sau
+    \[
+        x_{n} = \begin{cases}
+            1                                 & \text{khi $n = 0$}   \\
+            \dfrac{2x_{n-1} + 2}{x_{n-1} + 2} & \text{khi $n\geq 1$}
+        \end{cases}
+    \]
+
+    Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy và không hội tụ đến bất kì số hữu tỉ nào.
+\end{appendixthm}
+
+\begin{proof}
+    Chúng ta chứng minh mệnh đề này bằng phản chứng, lần lượt qua các bước sau.
+    \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
+        \item $x_{n}\geq 1$ với mọi số tự nhiên $n$.
+
+              Khi $n = 0$, chúng ta có $x_{0} = 1$, do đó $x_{0}\geq 1$.
+
+              Giả sử với số tự nhiên $n = k\geq 0$, chúng ta có $x_{k}\geq 1$. Khi đó theo giả thiết quy nạp
+              \[
+                  x_{k+1} = \frac{2x_{k-1} + 2}{x_{k-1} + 2} = 1 + \frac{x_{k-1}}{x_{k-1} + 2} \geq 1
+              \]
+
+              Theo nguyên lý quy nạp toán học, $x_{n}\geq 1$ với mọi số tự nhiên $n$.
+        \item Với mọi số tự nhiên $n$, $\abs{{x_{n}}^{2} - 2}\leq \dfrac{1}{n+1}$.
+
+              Khi $n = 0$, chúng ta có $x_{0} = 1$, do đó $\abs{{x_{0}}^{2} - 1} = 1\leq \dfrac{1}{0+1}$.
+
+              Giả sử với số tự nhiên $n = k\geq 0$, chúng ta có $\abs{{x_{k}}^{2} - 2}\leq \dfrac{1}{k+1}$.
+              \begin{align*}
+                  \abs{{x_{k+1}}^{2} - 2} & = \abs{\frac{4{(x_{k} + 1)}^{2}}{{(x_{k} + 2)}^{2}} - 2} = \abs{\frac{2{x_{k}^{2}} - 4}{{(x_{k} + 2)}^{2}}} = \abs{\frac{2}{{(x_{k} + 2)}^{2}}}\abs{{x_{k}}^{2} - 2}                                   \\
+                                          & \leq \frac{1}{2}\abs{{x_{k}}^{2} - 2}                                                                                                                                & \text{(vì $x_{k} > 0$)}         \\
+                                          & \leq \frac{1}{2}\cdot\frac{1}{k+1}                                                                                                                                   & \text{(theo giả thiết quy nạp)} \\
+                                          & = \frac{1}{2k+2}\leq \frac{1}{k+2}.
+              \end{align*}
+
+              Theo nguyên lý quy nạp toán học, $\abs{{x_{n}}^{2} - 2}\leq \dfrac{1}{n+1}$ với mọi số tự nhiên $n$.
+        \item Chứng minh rằng ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì với mọi số tự nhiên $p$, chúng ta có
+              \begin{align*}
+                  \abs{x_{n+p} - x_{n}} & = \frac{\abs{{x_{n+p}}^{2} - {x_{n}}^{2}}}{\abs{x_{n+p} + x_{n}}} = \frac{\abs{({x_{n+p}}^{2} - 2) + (2 - {x_{n}}^{2})}}{\abs{x_{n+p} + x_{n}}}                                                    \\
+                                        & \leq \frac{\abs{{x_{n+p}}^{2} - 2} + \abs{{x_{n}}^{2} - 2}}{\abs{x_{n+p} + x_{n}}}                                                                                                                 \\
+                                        & \leq \frac{1}{2}\left(\frac{1}{n+1} + \frac{1}{n+p+1}\right)                                                                                    & \text{(theo \textbf{Bước 1} và \textbf{Bước 2})} \\
+                                        & \leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} = \varepsilon.
+              \end{align*}
+
+              Do đó với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$ và với mọi số tự nhiên $p$, chúng ta có $\abs{x_{n+p} - x_{n}} < \varepsilon$. Theo định nghĩa dãy Cauchy hữu tỉ, ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+        \item Dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ (được định nghĩa bởi $y_{n} = {x_{n}}^{2}$ với mọi số tự nhiên $n$) hội tụ đến $2$.
+
+              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì
+              \[
+                  \abs{{x_{n}}^{2} - 2}\leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} < \varepsilon.
+              \]
+
+              Như vậy, với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{{x_{n}}^{2} - 2} < \varepsilon$. Theo định nghĩa dãy số hội tụ, dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến $2$.
+        \item Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến bất kì số hữu tỉ nào.
+
+              Giả sử phản chứng rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ hội tụ    đến số hữu tỉ $x$.
+
+              Theo phần (iii) của Mệnh đề~\ref{appendixthm:limits-of-sum-and-product}, chúng ta suy ra dãy số ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $x^{2}$. Theo Định lý~\ref{appendixthm:uniqueness-of-limit-points-of-convergence-rational-sequences}, chúng ta suy ra $x^{2} = 2$.
+
+              Vì không có số hữu tỉ nào có bình phương bằng $2$ nên $x^{2} = 2$ (với $x$ là số hữu tỉ) là một kết quả vô lý. Như vậy giả sử phản chứng là sai, kéo theo dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến số hữu tỉ nào.
+    \end{enumerate}
+\end{proof}
+
+Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực, chúng ta gặp một vấn đề: \textit{có nhiều dãy Cauchy hữu tỉ hội tụ đến cùng một số hữu tỉ}. Điều này sẽ được giải quyết bằng một quan hệ tương đương như sau.
+
+\begin{appendixthm}\label{appendixthm:equivalent-rational-sequences}
+    Hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ được gọi là có quan hệ $\sim$, và được kí hiệu là ${(a_{n})}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$, nói cách khác
+    \[
+        \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
+    \]
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item Quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ là một quan hệ tương đương. Nói riêng, quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là một quan hệ tương đương.
+        \item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+        \item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
+        \item Dãy số hữu tỉ ${(a_{n} - a_{n})}_{n\in\mathbb{N}}$ là một dãy hữu tỉ hằng số, giá trị của dãy này tại mọi số tự nhiên $n$ bằng $0$, kéo theo dãy số hữu tỉ ${(a_{n} - a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$. Do đó quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ có tính chất phản xạ.
+
+              ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi
+              \[
+                  \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
+              \]
+
+              ${(b_{n})}_{n\in\mathbb{N}}\sim {(a_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi
+              \[
+                  \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{b_{n} - a_{n}} < \varepsilon ) \Bigr) \Biggr).
+              \]
+
+              Mặt khác, vì $\abs{a_{n} - b_{n}} = \abs{b_{n} - a_{n}}$ với mọi số tự nhiên $n$ nên hai điều kiện dưới đây tương đương
+              \[
+                  \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr) \quad\longleftrightarrow\quad \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{b_{n} - a_{n}} < \varepsilon ) \Bigr) \Biggr).
+              \]
+
+              Do đó ${(a_{n})}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}} \sim {(a_{n})}_{n\in\mathbb{N}}$, điều này có nghĩa là quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ có tính chất đối xứng.
+
+              Nếu các dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}, {(c_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$ thì theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, với mỗi số hữu tỉ dương $\varepsilon$
+              \begin{itemize}
+                  \item Tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{2}$.
+                  \item Tồn tại số tự nhiên $N_{bc}$ sao cho với mọi số tự nhiên $n\geq N_{bc}$, chúng ta có $\abs{b_{n} - c_{n}} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa số tự nhiên $N$ là số tự nhiên lớn nhất trong hai số $N_{ab}, N_{bc}$. Nếu số tự nhiên $n\geq N$ thì $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{2}$, $\abs{b_{n} - c_{n}} < \dfrac{\varepsilon}{2}$, và
+              \[
+                  \abs{a_{n} - c_{n}} = \abs{(a_{n} - b_{n}) + (b_{n} - c_{n})} \leq \abs{a_{n} - b_{n}} + \abs{b_{n} - c_{n}} < \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $ \abs{a_{n} - c_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}} \sim {(c_{n})}_{n\in\mathbb{N}}$, điều này có nghĩa là quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ có tính chất bắc cầu.
+
+              Vậy quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ là một quan hệ tương đương. Vì tập hợp các dãy Cauchy hữu tỉ là tập hợp con của tập hợp các dãy số hữu tỉ nên quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ cũng là một quan hệ tương đương.
+        \item ($\Rightarrow$) ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n} - q} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \varepsilon$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{a}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  \abs{b_{n} - q} = \abs{(b_{n} - a_{n}) + (a_{n} - q)} \leq \abs{b_{n} - a_{n}} + \abs{a_{n} - q} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+              \]
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, dãy số hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+
+              ($\Leftarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+
+              Hoàn toàn tương tự, chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy số hữu tỉ hội tụ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, chúng ta có $\abs{b_{n} - q} < \dfrac{\varepsilon}{2}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ thì tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \varepsilon$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{b}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  \abs{a_{n} - q} = \abs{(a_{n} - b_{n}) + (b_{n} - q)} \leq \abs{a_{n} - b_{n}} + \abs{b_{n} - q} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+              \]
+
+              Theo định nghĩa dãy số hữu tỉ hội tụ, dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+        \item ($\Rightarrow$) ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{n} - a_{m}} < \dfrac{\varepsilon}{3}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{3}$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{a}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n, m\geq N$, chúng ta có
+              \begin{align*}
+                  \abs{b_{m} - b_{n}} & = \abs{(b_{m} - a_{m}) + (a_{m} - a_{n}) + (a_{n} - b_{n})}                            \\
+                                      & \leq \abs{b_{m} - a_{m}} + \abs{a_{m} - a_{n}} + \abs{a_{n} - b_{n}}                   \\
+                                      & < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
+              \end{align*}
+
+              Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{b_{m} - b_{n}} < \varepsilon$. Do đó ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+              ($\Leftarrow$) ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{n} - b_{m}} < \dfrac{\varepsilon}{3}$. Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy số hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n \geq N_{ab}$, chúng ta có $\abs{a_{n} - b_{n}} < \dfrac{\varepsilon}{3}$.
+
+              Chúng ta chọn số tự nhiên $N = \max\{ N_{b}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n, m\geq N$, chúng ta có
+              \begin{align*}
+                  \abs{a_{m} - a_{n}} & = \abs{(a_{m} - b_{m}) + (b_{m} - b_{n}) + (b_{n} - a_{n})}                            \\
+                                      & \leq \abs{a_{m} - b_{m}} + \abs{b_{m} - b_{n}} + \abs{b_{n} - a_{n}}                   \\
+                                      & < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon.
+              \end{align*}
+
+              Từ điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon$. Do đó ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{proof}
+
+Chúng ta kí hiệu tập thương gồm các lớp tương đương của quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Trong nội dung tiếp theo của mục này, chúng ta chỉ làm việc với dãy Cauchy hữu tỉ và các lớp tương đương của các dãy Cauchy hữu tỉ.
+
+\section{Các phép toán với dãy Cauchy hữu tỉ}
+
+\begin{appendixthm}[Phép cộng và phép nhân dãy Cauchy hữu tỉ]\label{appendixthm:addition-and-multiplication-of-cauchy-sequences}
+    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì
+    \begin{enumerate}[label={(\roman*)}]
+        \item ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép cộng dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n} + b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}} + {(b_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép nhân dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương.
+
+              Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon}{2}$
+              \begin{itemize}
+                  \item tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2}$
+                  \item tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b} \}$. Với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2}$ và $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2}$, và
+              \[
+                  \abs{(a_{m} + b_{m}) - (a_{n} + b_{n})} = \abs{(a_{m} - a_{n}) + (b_{m} - b_{n})} \leq \abs{a_{m} - a_{n}} + \abs{b_{m} - b_{n}} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{(a_{m} + b_{m}) - (a_{n} + b_{n})} < \varepsilon$. Như vậy ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ. Theo Định lý~\ref{appendixthm:cauchy-sequences-are-bounded}, tồn tại hai số hữu tỉ dương $A, B$ sao cho $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq B$ với mọi số tự nhiên $n$.
+
+              Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo định nghĩa dãy Cauchy hữu tỉ
+              \begin{itemize}
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2B}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2B}$
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2A}$, tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n, m\geq N_{b}$, chúng ta có $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2A}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{a}, N_{b}\}$. Nếu các số tự nhiên $n, m\geq N$ thì $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon}{2B}$ và $\abs{b_{m} - b_{n}} < \dfrac{\varepsilon}{2A}$. Khi đó chúng ta có
+              \begin{align*}
+                  \abs{a_{m}b_{m} - a_{n}b_{n}} & = \abs{a_{m}(b_{m} - b_{n}) + b_{n}(a_{m} - a_{n})}               \\
+                                                & \leq \abs{a_{m}(b_{m} - b_{n})} + \abs{b_{n}(a_{m} - a_{n})}      \\
+                                                & = \abs{a_{m}}\abs{b_{m} - b_{n}} + \abs{b_{n}}\abs{a_{m} - a_{n}} \\
+                                                & < A\cdot \frac{\varepsilon}{2A} + B\cdot\frac{\varepsilon}{2B}    \\
+                                                & = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \end{align*}
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m}b_{m} - a_{n}b_{n}} < \varepsilon$. Như vậy ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{proof}
+
+\begin{corollary}\label{corollary:linear-combination-of-cauchy-sequences}
+    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì ${(xa_{n} + yb_{n})}_{n\in\mathbb{N}}$ cũng là một dãy Cauchy hữu tỉ, trong đó $x, y$ là hai hằng số hữu tỉ.
+\end{corollary}
+
+\begin{proof}
+    Theo phần (ii) của Định lý~\ref{appendixthm:addition-and-multiplication-of-cauchy-sequences}, ${(xa_{n})}_{n\in\mathbb{N}}$ và ${(yb_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+
+    Theo phần (i) của Định lý~\ref{appendixthm:addition-and-multiplication-of-cauchy-sequences}, ${(xa_{n} + yb_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+\end{proof}
+
+Để định nghĩa phép cộng và phép nhân hai \textit{lớp tương đương của các dãy Cauchy hữu tỉ} (nói cách khác là hai phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$) theo cách tương tự như với \textit{dãy Cauchy hữu tỉ}, chúng ta cần một định nghĩa không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương.
+
+\begin{appendixthm}\label{appendixthm:basis-of-equivalence-class-of-rational-cauchy-sequences-addition}
+    Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$, ${(b_{n})}_{n\in\mathbb{N}}$, ${(c_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$ thì
+    \begin{enumerate}[label={(\roman*)}]
+        \item ${(a_{n} + b_{n})}_{n\in\mathbb{N}} \sim {(c_{n} + d_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n}b_{n})}_{n\in\mathbb{N}} \sim {(c_{n}d_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+              Theo định nghĩa quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon}{2}$
+              \begin{itemize}[topsep=0pt]
+                  \item tồn tại số tự nhiên $N_{ac}$ sao cho với mọi số tự nhiên $n\geq N_{ac}$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2}$,
+                  \item tồn tại số tự nhiên $N_{bd}$ sao cho với mọi số tự nhiên $n\geq N_{bd}$, chúng ta có $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{ac}, N_{bd} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2}$, $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2}$, và
+              \[
+                  \abs{(a_{n} + b_{n}) - (c_{n} + d_{n})} = \abs{(a_{n} - c_{n}) + (b_{n} - d_{n})} \leq \abs{a_{n} - c_{n}} + \abs{b_{n} - d_{n}} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \]
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{(a_{n} + b_{n}) - (c_{n} + d_{n})} < \varepsilon$. Như vậy ${(a_{n} + b_{n})}_{n\in\mathbb{N}} \sim {(c_{n} + d_{n})}_{n\in\mathbb{N}}$.
+        \item Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+              Theo Định lý~\ref{appendixthm:cauchy-sequences-are-bounded}, vì ${(a_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ nên tồn tại hai số hữu tỉ dương $A, D$ sao cho $\abs{a_{n}} < A$ và $\abs{d_{n}} < D$ với mọi số tự nhiên $n$.
+
+              Theo định nghĩa quan hệ $\sim$ trên tập hợp dãy Cauchy hữu tỉ
+              \begin{itemize}
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2D}$, tồn tại số tự nhiên $N_{ac}$ sao cho với mọi số tự nhiên $n\geq N_{ac}$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2D}$,
+                  \item với số hữu tỉ dương $\dfrac{\varepsilon}{2A}$, tồn tại số tự nhiên $N_{bd}$ sao cho với mọi số tự nhiên $n\geq N_{bd}$, chúng ta có $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2A}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{ac}, N_{bd} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n} - c_{n}} < \dfrac{\varepsilon}{2D}$, $\abs{b_{n} - d_{n}} < \dfrac{\varepsilon}{2A}$ và
+              \begin{align*}
+                  \abs{a_{n}b_{n} - c_{n}d_{n}} & = \abs{a_{n}(b_{n} - d_{n}) + d_{n}(a_{n} - c_{n})}               \\
+                                                & \leq \abs{a_{n}(b_{n} - d_{n})} + \abs{d_{n}(a_{n} - c_{n})}      \\
+                                                & = \abs{a_{n}}\abs{b_{n} - d_{n}} + \abs{d_{n}}\abs{a_{n} - c_{n}} \\
+                                                & < A\cdot\frac{\varepsilon}{2A} + D\cdot\frac{\varepsilon}{2D}     \\
+                                                & = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+              \end{align*}
+
+              Từ những điều trên, chúng ta suy ra rằng với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}b_{n} - c_{n}d_{n}} < \varepsilon$. Như vậy ${(a_{n}b_{n})}_{n\in\mathbb{N}} \sim {(c_{n}d_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    Chúng ta kí hiệu lớp tương đương gồm các \textit{dãy số hữu tỉ} tương đương với dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ là $\clsseq{a_{n}}{n}$.
+
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng hai phần tử\index{Phép cộng hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $+$ và được xác định như sau
+              \[
+                  \clsseq{a_{n}}{n} + \clsseq{b_{n}}{n} = \clsseq{a_{n} + b_{n}}{n}
+              \]
+
+              trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+        \item Phép nhân hai phần tử\index{Phép nhân hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $\cdot$ và được xác định như sau
+              \[
+                  \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n} = \clsseq{a_{n}b_{n}}{n}
+              \]
+
+              trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+    \end{enumerate}
+\end{definition}
+
+Một cách không hình thức, chúng ta có thể diễn đạt định nghĩa trên thành: tổng (tích) của hai lớp tương đương là lớp tương đương của tổng (tích) hai dãy Cauchy. Với định nghĩa trên, phép cộng và phép nhân của hai phần tử trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương. Định nghĩa này cũng cho phép chúng ta chứng minh các tính chất của phép cộng, phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ theo cách dễ dàng.
+
+\begin{appendixthm}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item Phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đồng nhất.
+        \item Mỗi phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đối.
+        \item Phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất kết hợp của phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \left(\clsseq{a_{n}}{n} + \clsseq{b_{n}}{n}\right) + \clsseq{c_{n}}{n} & = \clsseq{a_{n} + b_{n}}{n} + \clsseq{c_{n}}{n}                          \\
+                                                                                         & = \clsseq{(a_{n} + b_{n}) + c_{n}}{n}                                    \\
+                                                                                         & = \clsseq{a_{n} + (b_{n} + c_{n})}{n}                                    \\
+                                                                                         & = \clsseq{a_{n}}{n} + \clsseq{b_{n} + c_{n}}{n}                          \\
+                                                                                         & = \clsseq{a_{n}}{n} + \left(\clsseq{b_{n}}{n} + \clsseq{c_{n}}{n}\right)
+              \end{align*}
+
+              Vậy phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item $\clsseq{0}{n}$ là một phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Với mọi phần tử $\clsseq{a_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} + \clsseq{0}{n} & = \clsseq{a_{n} + 0}{n} = \clsseq{a_{n}}{n}, \\
+                  \clsseq{0}{n} + \clsseq{a_{n}}{n} & = \clsseq{0 + a_{n}}{n} = \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy $\clsseq{0}{n}$ là một phần tử đồng nhất của phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} + \clsseq{-a_{n}}{n} & = \clsseq{a_{n} + (-a_{n})}{n} = \clsseq{0}{n}, \\
+                  \clsseq{-a_{n}}{n} + \clsseq{a_{n}}{n} & = \clsseq{(-a_{n}) + a_{n}}{n} = \clsseq{0}{n}.
+              \end{align*}
+
+              Vậy mỗi phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đối.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất giao hoán của phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} + \clsseq{b_{n}}{n} & = \clsseq{a_{n} + b_{n}}{n}              \\
+                                                        & = \clsseq{b_{n} + a_{n}}{n}              \\
+                                                        & = \clsseq{b_{n}}{n} + \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{proof}
+
+\begin{appendixthm}\label{appendixthm:rational-cauchy-sequences-abelian-group}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất phân phối với phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có phần tử đồng nhất, và phần tử này khác với phần tử đồng nhất của phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item Phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất kết hợp của phép nhân số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \left(\clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n}\right) \cdot \clsseq{c_{n}}{n} & = \clsseq{a_{n}b_{n}}{n} \cdot \clsseq{c_{n}}{n}                                 \\
+                                                                                                 & = \clsseq{(a_{n}b_{n})c_{n}}{n}                                                  \\
+                                                                                                 & = \clsseq{a_{n}(b_{n}c_{n})}{n}                                                  \\
+                                                                                                 & = \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}c_{n}}{n}                                 \\
+                                                                                                 & = \clsseq{a_{n}}{n} \cdot \left(\clsseq{b_{n}}{n} \cdot \clsseq{c_{n}}{n}\right)
+              \end{align*}
+
+              Vậy phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất kết hợp.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}, \clsseq{c_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân và phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất phân phối của phép nhân với phép cộng số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \left(\clsseq{a_{n}}{n} + \clsseq{b_{n}}{n}\right) \cdot \clsseq{c_{n}}{n} & = \clsseq{a_{n} + b_{n}}{n} \cdot \clsseq{c_{n}}{n}                                      \\
+                                                                                             & = \clsseq{(a_{n}+ b_{n})c_{n}}{n}                                                        \\
+                                                                                             & = \clsseq{a_{n}c_{n} + b_{n}c_{n}}{n}                                                    \\
+                                                                                             & = \clsseq{a_{n}c_{n}}{n} + \clsseq{b_{n}c_{n}}{n}                                        \\
+                                                                                             & = \clsseq{a_{n}}{n} \cdot \clsseq{c_{n}}{n} + \clsseq{b_{n}}{n} \cdot \clsseq{c_{n}}{n}.
+              \end{align*}
+
+              Hoàn toàn tương tự, chúng ta cũng chứng minh được rằng
+              \[
+                  \clsseq{c_{n}}{n}\cdot \left(\clsseq{a_{n}}{n} + \clsseq{b_{n}}{n}\right) = \clsseq{c_{n}}{n} \cdot \clsseq{a_{n}}{n} + \clsseq{c_{n}}{n} \cdot \clsseq{b_{n}}{n}.
+              \]
+
+              Vậy phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất phân phối với phép cộng trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+        \item $\clsseq{1}{n}$ là một phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Với mọi phần tử $\clsseq{a_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n}\cdot \clsseq{1}{n} & = \clsseq{a_{n}\cdot 1}{n} = \clsseq{a_{n}}{n}, \\
+                  \clsseq{1}{n}\cdot \clsseq{a_{n}}{n} & = \clsseq{1\cdot a_{n}}{n} = \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy $\clsseq{1}{n}$ là một phần tử đồng nhất của phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+
+              Giả sử phản chứng rằng $\clsseq{1}{n} = \clsseq{0}{n}$. Theo định nghĩa quan hệ $\sim$ trên $\mathscr{C}_{\mathbb{Q}}$, chúng ta có ${(1)}_{n\in\mathbb{N}} \sim {(0)}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:equivalent-rational-sequences}, hai dãy số hữu tỉ ${(1)}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}$ hội tụ đến cùng một số hữu tỉ. Điều này là vô lý vì ${(1)}_{n\in\mathbb{N}}$ hội tụ đến $1$, còn ${(0)}_{n\in\mathbb{N}}$ hội tụ đến $0$ và $0\ne 1$.
+
+              Do đó $\clsseq{1}{n}\ne \clsseq{0}{n}$.
+        \item Với mỗi phần tử $\clsseq{a_{n}}{n}, \clsseq{b_{n}}{n}$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, theo định nghĩa phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và tính chất giao hoán của phép nhân số hữu tỉ, chúng ta có
+              \begin{align*}
+                  \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n} & = \clsseq{a_{n}b_{n}}{n}                     \\
+                                                            & = \clsseq{b_{n}a_{n}}{n}                     \\
+                                                            & = \clsseq{b_{n}}{n} \cdot \clsseq{a_{n}}{n}.
+              \end{align*}
+
+              Vậy phép nhân trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất giao hoán.
+    \end{enumerate}
+\end{proof}
+
+Trên đây chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng hai phép toán cộng và nhân thỏa mãn 8 tiên đề đầu tiên trong các tiên đề về trường. Để chứng minh rằng tiên đề thứ 9 cũng được thỏa mãn, chúng ta sử dụng định lý sau.
+\begin{appendixthm}\label{appendixthm:nonzero-cauchy-sequences}
+    Nếu dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ thì tồn tại số hữu tỉ dương $\varepsilon$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\geq \varepsilon$ và $a_{n}\ne 0$.
+\end{appendixthm}
+
+\begin{proof}
+    Theo định nghĩa dãy số hữu tỉ hội tụ, dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ khi và chỉ khi tồn tại số hữu tỉ dương $\varepsilon_{0}$ sao cho với mọi số tự nhiên $N_{a}$, tồn tại số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n}} \geq \varepsilon_{0}$. ($\star$)
+
+    Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon_{0}}{2}$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon_{0}}{2}$. ($\star\star$)
+
+    Vì ($\star$) nên với số tự nhiên $N$, tồn tại số tự nhiên $N'\geq N$ sao cho $\abs{a_{N'}} \geq \varepsilon_{0}$. Cùng với ($\star\star$), chúng ta suy ra rằng với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{a_{N'} - (a_{N'} - a_{n})} \geq \abs{a_{N'}} - \abs{a_{N'} - a_{n}} \geq \varepsilon_{0} - \frac{\varepsilon_{0}}{2} = \frac{\varepsilon_{0}}{2} > 0.
+    \]
+
+    Do đó, với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\ne 0$. Vì giá trị tuyệt đối của một số hữu tỉ bằng $0$ khi và chỉ khi số hữu tỉ đó bằng $0$ nên với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\ne 0$.
+
+    Vậy, với số hữu tỉ dương $\varepsilon = \dfrac{\varepsilon_{0}}{2}$, tồn tại tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\geq \varepsilon$ và $a_{n}\ne 0$.
+\end{proof}
+
+\begin{appendixthm}
+    Với mỗi phần tử $\alpha\ne \clsseq{0}{n}$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, tồn tại phần tử $\beta$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ sao cho $\alpha\cdot\beta = \beta\cdot\alpha = \clsseq{1}{n}$.
+\end{appendixthm}
+
+\begin{proof}
+    Theo định nghĩa quan hệ $\sim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, mọi phần tử của lớp tương đương $\alpha$ đều không tương đương với dãy số hữu tỉ ${(0)}_{n\in\mathbb{N}}$, kéo theo mọi phần tử của lớp tương đương $\alpha$ đều không hội tụ đến $0$.
+
+    Chúng ta chọn ${(a_{n})}_{n\in\mathbb{N}}$ là một phần tử của lớp tương đương $\alpha$. Vì ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ nên theo Định lý~\ref{appendixthm:nonzero-cauchy-sequences}, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\ne 0$. Chúng ta định nghĩa dãy số hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ như sau.
+    \[
+        b_{n} = \begin{cases}
+            0                & \text{nếu $n < N$}   \\
+            \dfrac{1}{a_{n}} & \text{nếu $n\geq N$}
+        \end{cases}
+    \]
+
+    Chúng ta chứng minh ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+    Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì. Theo Định lý~\ref{appendixthm:nonzero-cauchy-sequences}, tồn tại số hữu tỉ dương $\varepsilon_{0}$ sao cho tồn tại số tự nhiên $N'$ sao cho với mọi số tự nhiên $n\geq N'$, chúng ta có $\abs{a_{n}}\geq \varepsilon_{0}$. Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\varepsilon\cdot{\varepsilon_{0}}^{2}$, tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n, m\geq N_{a}$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon\cdot{\varepsilon_{0}}^{2}$.
+
+    Chúng ta định nghĩa $N'' = \max\{ N_{a}, N' \}$. Với mọi số tự nhiên $n, m\geq N''$, chúng ta có $\abs{a_{m} - a_{n}} < \varepsilon\cdot{\varepsilon_{0}}^{2}$, $\abs{a_{n}}\geq\varepsilon_{0}$, và
+    \[
+        \abs{b_{m} - b_{n}} = \abs{\frac{1}{a_{m}} - \frac{1}{a_{n}}} = \abs{\frac{a_{m} - a_{n}}{a_{m}a_{n}}} = \frac{\abs{a_{m} - a_{n}}}{\abs{a_{m}}\abs{a_{n}}} < \frac{\varepsilon\cdot{\varepsilon_{0}}^{2}}{{\varepsilon_{0}}^{2}} = \varepsilon.
+    \]
+
+    Do đó ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+
+    Mặt khác, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy số hữu tỉ dừng, vì với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}b_{n} = 1$. Do đó, ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $1$. Theo định nghĩa của phép nhân trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta suy ra
+    \[
+        \begin{split}
+            \alpha\cdot\beta = \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \clsseq{a_{n}b_{n}}{n} = \clsseq{1}{n}, \\
+            \beta\cdot\alpha = \clsseq{b_{n}}{n}\cdot\clsseq{a_{n}}{n} = \clsseq{b_{n}a_{n}}{n} = \clsseq{1}{n}.
+        \end{split}
+    \]
+
+    Vậy, với mỗi phần tử $\alpha\ne \clsseq{0}{n}$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, tồn tại phần tử $\beta$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ sao cho $\alpha\cdot\beta = \beta\cdot\alpha = \clsseq{1}{n}$.
+\end{proof}
+
+Đến lúc này, chúng ta đã chứng minh được rằng tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng hai phép toán cộng và nhân thỏa mãn các tiên đề về trường.
+
+\section{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ}
+
+Trong nội dung này, chúng ta định nghĩa một \textit{quan hệ tiền thứ tự} giữa các dãy Cauchy hữu tỉ để từ đó định nghĩa một \textit{quan hệ thứ tự} giữa các phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+
+\begin{definition}
+    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta nói ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ có quan hệ $\lesssim$ nếu và chỉ nếu\index{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ} ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{tương đương} với ${(b_{n})}_{n\in\mathbb{N}}$ hoặc tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n}\leq b_{n}$.
+        \item Chúng ta nói ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ có quan hệ $<$ nếu và chỉ nếu ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không tương đương} với ${(b_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}\leq {(b_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{definition}
+
+Theo định nghĩa trên, quan hệ $<$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$ là trường hợp riêng của quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$.
+
+Để chứng minh các tính chất của quan hệ $<, \lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, chúng ta mở rộng Định lý~\ref{appendixthm:nonzero-cauchy-sequences} thành định lý sau. Chứng minh của định lý sau là chứng minh của Định lý~\ref{appendixthm:nonzero-cauchy-sequences} sau khi được bổ sung.
+\begin{appendixthm}\label{appendixthm:nonzero-cauchy-sequences-and-preorder}
+    Nếu dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ thì có đúng một trong hai khả năng sau
+    \begin{itemize}
+        \item Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n}\geq q$.
+        \item Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n}\leq -q$.
+    \end{itemize}
+\end{appendixthm}
+
+\begin{proof}
+    Theo định nghĩa dãy số hữu tỉ hội tụ, dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$ khi và chỉ khi tồn tại số hữu tỉ dương $\varepsilon_{0}$ sao cho với mọi số tự nhiên $N_{a}$, tồn tại số tự nhiên $n\geq N_{a}$, chúng ta có $\abs{a_{n}} \geq \varepsilon_{0}$. ($\star$)
+
+    Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon_{0}}{2}$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n, m\geq N$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon_{0}}{2}$. ($\star\star$)
+
+    Vì ($\star$) nên với số tự nhiên $N$, tồn tại số tự nhiên $N'\geq N$ sao cho $\abs{a_{N'}} \geq \varepsilon_{0}$. Cùng với ($\star\star$), chúng ta suy ra rằng với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        \abs{a_{n}} = \abs{a_{N'} - (a_{N'} - a_{n})} \geq \abs{a_{N'}} - \abs{a_{N'} - a_{n}} \geq \varepsilon_{0} - \frac{\varepsilon_{0}}{2} = \frac{\varepsilon_{0}}{2} > 0.
+    \]
+
+    Do đó, với mọi số tự nhiên $n\geq N$, chúng ta có $\abs{a_{n}}\ne 0$. Vì giá trị tuyệt đối của một số hữu tỉ bằng $0$ khi và chỉ khi số hữu tỉ đó bằng $0$ nên với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\ne 0$.
+
+    Theo định nghĩa dãy Cauchy hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon_{0}}{4}$, tồn tại số tự nhiên $N''$ sao cho với mọi số tự nhiên $n, m\geq N''$, chúng ta có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon_{0}}{4}$. Chúng ta chọn $N_{0} = \max\{ N, N'' \}$. Khi đó, với mọi số tự nhiên $n, m\geq N_{0}$, có $\abs{a_{m} - a_{n}} < \dfrac{\varepsilon_{0}}{4}$ và $\abs{a_{n}}\geq\dfrac{\varepsilon_{0}}{2}$. Vì $\abs{a_{N_{0}}}\geq\dfrac{\varepsilon_{0}}{2}$ và $a_{N_{0}}\ne 0$ nên chỉ có thể xảy ra một trong hai khả năng sau:
+    \begin{enumerate}[label={\textbf{Khả năng \arabic*.}},itemindent=2cm]
+        \item $a_{N_{0}}\geq \dfrac{\varepsilon_{0}}{2}$.
+
+              Với mọi $n\geq N_{0}$, chúng ta có
+              \begin{align*}
+                  a_{n} & = (a_{n} - a_{N_{0}}) + a_{N_{0}} \geq -\abs{a_{n} - a_{N_{0}}} + \frac{\varepsilon_{0}}{2} \geq -\frac{\varepsilon_{0}}{4} + \frac{\varepsilon_{0}}{2} = \frac{\varepsilon_{0}}{4}.
+              \end{align*}
+
+              Do đó, với số hữu tỉ dương $q = \dfrac{\varepsilon_{0}}{4}$, tồn tại số tự nhiên $N_{0}$ sao cho với mọi số tự nhiên $n\geq N_{0}$, có $a_{n}\geq q$.
+        \item $a_{N_{0}}\leq -\dfrac{\varepsilon_{0}}{2}$.
+
+              Với mọi $n\geq N_{0}$, chúng ta có
+              \begin{align*}
+                  a_{n} & = (a_{n} - a_{N_{0}}) + a_{N_{0}} \leq \abs{a_{n} - a_{N_{0}}} + \left(-\frac{\varepsilon_{0}}{2}\right) \leq \frac{\varepsilon_{0}}{4} + \left(-\frac{\varepsilon_{0}}{2}\right) = -\frac{\varepsilon_{0}}{4}.
+              \end{align*}
+
+              Do đó, với số hữu tỉ dương $q = \dfrac{\varepsilon_{0}}{4}$, tồn tại số tự nhiên $N_{0}$ sao cho với mọi số tự nhiên $n\geq N_{0}$, có $a_{n}\leq -q$.
+    \end{enumerate}
+\end{proof}
+
+Bằng định lý trên, chúng ta chứng minh được điều kiện cần và đủ để hai dãy Cauchy hữu tỉ có quan hệ $<$.
+
+\begin{appendixthm}\label{appendixthm:strictly-precedence-cauchy-sequence}
+    Hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\leq -q$. Bằng kí hiệu hình thức, điều kiện trên được viết như sau:
+    \[
+        \exists q > 0 \Biggl( \exists N \bigl( \forall n\geq N (a_{n} - b_{n}\leq -q) \bigr) \Biggr).
+    \]
+\end{appendixthm}
+
+\begin{proof}
+    ($\Rightarrow$) ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$.
+
+    Theo định nghĩa quan hệ $<$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ không tương đương. Theo định nghĩa quan hệ tương đương giữa các dãy số hữu tỉ, dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$. Theo Định lý~\ref{appendixthm:nonzero-cauchy-sequences-and-preorder}, chỉ có một trong hai khả năng sau
+    \begin{enumerate}[label={\textbf{Khả năng \arabic*.}},itemindent=2cm]
+        \item Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\geq q$.
+        \item Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\leq -q$.
+    \end{enumerate}
+
+    Giả sử phản chứng rằng \textbf{Khả năng 1} xảy ra: Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\geq q$.
+
+    Mặt khác, theo định nghĩa quan hệ $<$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, vì ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$ nên tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, có $a_{n}\leq b_{n}$.
+
+    Chúng ta chọn $m$ là một số tự nhiên lớn hơn $N$ và $N_{ab}$, khi đó $a_{m} > b_{m}$ (vì $a_{m} - b_{m}\geq q$) và $a_{m}\leq b_{m}$. Đây là một điều vô lý vì chỉ có đúng một trong hai mệnh đề $a_{m} > b_{m}$ và $a_{m}\leq b_{m}$ là đúng. Do đó giả sử phản chứng là sai.
+
+    Như vậy chỉ có \textbf{Khả năng 2}: Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\leq -q$.
+
+    \bigskip
+
+    ($\Leftarrow$) Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n} < -q$.
+
+    Từ điều trên, chúng ta suy ra rằng với mọi số tự nhiên $n\geq N$, có $a_{n}\leq b_{n}$ (vì $a_{n} - b_{n} < -q < 0$). Theo định nghĩa quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+
+    Mặt khác, với số hữu tỉ dương $q$, với mọi số tự nhiên $N'$, tồn tại số tự nhiên $n\geq N'$ sao cho $\abs{a_{n} - b_{n}}\geq q$ (một số tự nhiên $n$ như vậy chính là $\max\{ N, N' \}$). Bằng kí hiệu hình thức, phát biểu vừa rồi được viết là
+    \[
+        \exists \varepsilon > 0\Biggl( \forall N' \bigl( \exists n\geq N'( \abs{a_{n} - b_{n}} \geq \varepsilon ) \bigr) \Biggr)
+    \]
+
+    Điều trên có nghĩa là dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$, kéo theo hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ không tương đương.
+
+    Theo định nghĩa quan hệ $<$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$.
+
+    \bigskip
+
+    Vậy hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\leq -q$.
+\end{proof}
+
+\begin{appendixthm}
+    Quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tiền thứ tự toàn phần.
+\end{appendixthm}
+
+\begin{proof}
+    Với mỗi dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}} \sim {(a_{n})}_{n\in\mathbb{N}}$. Theo định nghĩa quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$, ${(a_{n})}_{n\in\mathbb{N}} \lesssim {(a_{n})}_{n\in\mathbb{N}}$. Do đó quan hệ $\lesssim$ có tính chất phản xạ.
+
+    Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}, {(c_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$ thì chúng ta xét đủ các trường hợp sau:
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$.
+
+              Vì quan hệ $\sim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tương đương nên theo tính chất bắc cầu, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$. Theo định nghĩa quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}} < {(c_{n})}_{n\in\mathbb{N}}$.
+
+              Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N_{bc}$ sao cho với mọi số tự nhiên $n\geq N_{bc}$, có $b_{n} - c_{n}\leq -q$.
+
+              Theo định nghĩa quan hệ tương đương giữa các dãy số hữu tỉ, vẫn là với số hữu tỉ dương $q$, tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, có $\abs{a_{n} - b_{n}} < q$.
+
+              Chúng ta định nghĩa $N = \max\{ N_{bc}, N_{ab} \}$. Khi đó, với mọi số tự nhiên $n\geq N$, chúng ta có $b_{n} - c_{n}\leq -q$, $\abs{a_{n} - b_{n}} < q$, và
+              \[
+                  a_{n} - c_{n} = (a_{n} - b_{n}) + (b_{n} - c_{n})\leq \abs{a_{n} - b_{n}} + (b_{n} - c_{n})\leq q + (-q) = 0
+              \]
+
+              hay nói cách khác, $a_{n}\leq c_{n}$ với mọi số tự nhiên $n\geq N$.
+
+              Theo định nghĩa quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$.
+
+              Chúng ta thực hiện hoàn toàn tương tự \textbf{Trường hợp 2}.
+
+              Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, có $a_{n} - b_{n}\leq -q$.
+
+              Theo định nghĩa quan hệ tương đương giữa các dãy số hữu tỉ, vẫn là với số hữu tỉ dương $q$, tồn tại số tự nhiên $N_{bc}$ sao cho với mọi số tự nhiên $n\geq N_{bc}$, có $\abs{b_{n} - c_{n}} < q$.
+
+              Chúng ta định nghĩa $N = \max\{ N_{ab}, N_{bc} \}$. Khi đó, với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n} - b_{n}\leq -q$, $\abs{b_{n} - c_{n}} < q$, và
+              \[
+                  a_{n} - c_{n} = (a_{n} - b_{n}) + (b_{n} - c_{n})\leq (a_{n} - b_{n}) + \abs{b_{n} - c_{n}}\leq (-q) + q = 0
+              \]
+
+              hay nói cách khác, $a_{n}\leq c_{n}$ với mọi số tự nhiên $n\geq N$.
+
+              Theo định nghĩa quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ, ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}} < {(c_{n})}_{n\in\mathbb{N}}$.
+
+              Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}
+              \begin{itemize}
+                  \item tồn tại số hữu tỉ dương $q_{ab}$ sao cho tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, có $a_{n} - b_{n}\leq -q_{ab}$,
+                  \item tồn tại số hữu tỉ dương $q_{bc}$ sao cho tồn tại số tự nhiên $N_{bc}$ sao cho với mọi số tự nhiên $n\geq N_{bc}$, có $b_{n} - c_{n}\leq -q_{bc}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $q = q_{ab} + q_{bc}$, $N = \max\{ N_{ab}, N_{bc} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  a_{n} - c_{n} = (a_{n} - b_{n}) + (b_{n} - c_{n}) \leq (-q_{ab}) + (-q_{bc}) = -q.
+              \]
+
+              Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} < {(c_{n})}_{n\in\mathbb{N}}$, kéo theo ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+
+    Các trường hợp khẳng định rằng quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ có tính chất bắc cầu. Đến lúc này, chúng ta đã chứng minh quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tiền thứ tự.
+
+    Xét hai dãy Cauchy hữu tỉ bất kì ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$. Theo Hệ quả~\ref{corollary:linear-combination-of-cauchy-sequences}, ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ. Chúng ta xét các trường hợp sau.
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương.
+
+              Theo định nghĩa quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ không tương đương.
+
+              Khi đó, dãy Cauchy hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ không hội tụ đến $0$. Theo Định lý~\ref{appendixthm:nonzero-cauchy-sequences-and-preorder}, chỉ có một trong hai khả năng sau:
+              \begin{itemize}
+                  \item Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\geq q$.
+
+                        Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, khả năng này tương đương với ${(b_{n})}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}$, kéo theo ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$.
+                  \item Tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\leq -q$.
+
+                        Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, khả năng này tương đương với ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$, kéo theo ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+              \end{itemize}
+    \end{enumerate}
+
+    Cả hai trường hợp đều kéo theo ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ hoặc ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+
+    Như vậy, quan hệ $\lesssim$ trên tập hợp các dãy số Cauchy hữu tỉ là một quan hệ tiền thứ tự toàn phần.
+\end{proof}
+
+\begin{corollary}
+    Nếu ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ là sai thì ${(b_{n})}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}$.
+\end{corollary}
+
+Tuy quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}$ không phải một quan hệ thứ tự vì thiếu tính chất phản đối xứng, nhưng quan hệ này có một tính chất gần với tính chất phản đối xứng, được nêu trong định lý sau.
+
+\begin{appendixthm}\label{appendixthm:cauchy-sequences-pre-antisymmetric}
+    Nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$.
+\end{appendixthm}
+
+\begin{proof}
+    Giả sử phản chứng rằng hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ không tương đương.
+
+    Cùng với giả thiết ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$, chúng ta suy ra  ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, chúng ta suy ra
+    \begin{itemize}
+        \item Tồn tại số hữu tỉ dương $q_{1}$ sao cho tồn tại số tự nhiên $N_{1}$ sao cho với mọi số tự nhiên $n\geq N_{1}$, có $a_{n} - b_{n}\leq -q_{1}$.
+        \item Tồn tại số hữu tỉ dương $q_{2}$ sao cho tồn tại số tự nhiên $N_{2}$ sao cho với mọi số tự nhiên $n\geq N_{2}$, có $b_{n} - a_{n}\leq -q_{2}$.
+    \end{itemize}
+
+    Chúng ta định nghĩa $N = \max\{ N_{1}, N_{2} \}$. Khi đó, $a_{N} - b_{N}\leq -q_{1}$ và $b_{N} - a_{N}\leq -q_{2}$, kéo theo $a_{N} < b_{N}$ và $b_{N} < a_{N}$. Đây là một điều vô lý vì $a_{N} < b_{N}$ và $b_{N} < a_{N}$ không thể xảy ra đồng thời. Do đó giả sử phản chứng là sai.
+
+    Vậy nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$.
+\end{proof}
+
+Với các định lý trên, chúng ta đã có đủ cơ sở và công cụ để định nghĩa và chứng minh các tính chất của quan hệ thứ tự trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$: đó là một quan hệ thứ tự toàn phần và tương thích với hai phép toán cộng và nhân trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$.
+
+\begin{appendixthm}\label{appendixthm:equivalent-cauchy-sequences-and-preorder}
+    Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$, ${(b_{n})}_{n\in\mathbb{N}}$, ${(c_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(c_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$.
+\end{appendixthm}
+
+\begin{proof}
+    Do tính đối xứng trong phát biểu, chúng ta chỉ cần chứng minh ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$ kéo theo ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$.
+
+    \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=2cm]
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(c_{n})}_{n\in\mathbb{N}}$ tương đương.
+
+              Vì quan hệ $\sim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tương đương nên theo tính chất bắc cầu, chúng ta suy ra ${(b_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$. Theo định nghĩa quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ, ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$.
+
+        \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(c_{n})}_{n\in\mathbb{N}}$ không tương đương.
+
+              Cùng với ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} < {(c_{n})}_{n\in\mathbb{N}}$.  Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N_{ac}$ sao cho với mọi số tự nhiên $n\geq N_{ac}$, có $a_{n} - c_{n}\leq -q$.
+
+              Vì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(c_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$ nên theo định nghĩa quan hệ $\sim$ giữa các dãy số hữu tỉ, chúng ta suy ra
+              \begin{itemize}
+                  \item Với số hữu tỉ dương $\dfrac{q}{3}$, tồn tại số tự nhiên $N_{ab}$ sao cho với mọi số tự nhiên $n\geq N_{ab}$, có $\abs{a_{n} - b_{n}} < \dfrac{q}{3}$.
+                  \item Với số hữu tỉ dương $\dfrac{q}{3}$, tồn tại số tự nhiên $N_{cd}$ sao cho với mọi số tự nhiên $n\geq N_{cd}$, có $\abs{c_{n} - d_{n}} < \dfrac{q}{3}$.
+              \end{itemize}
+
+              Chúng ta định nghĩa $N = \max\{ N_{ac}, N_{ab}, N_{cd} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  b_{n} - d_{n} = (b_{n} - a_{n}) + (a_{n} - c_{n}) + (c_{n} - d_{n}) \leq \abs{b_{n} - a_{n}} + (a_{n} - c_{n}) + \abs{c_{n} - d_{n}} \leq \frac{q}{3} + (-q) + \frac{q}{3} = -\frac{q}{3}
+              \]
+
+              Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(b_{n})}_{n\in\mathbb{N}} < {(d_{n})}_{n\in\mathbb{N}}$, kéo theo ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+
+    Như vậy, nếu ${(a_{n})}_{n\in\mathbb{N}}$, ${(b_{n})}_{n\in\mathbb{N}}$, ${(c_{n})}_{n\in\mathbb{N}}$, ${(d_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$ và ${(c_{n})}_{n\in\mathbb{N}}\sim {(d_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$ kéo theo ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$. Tương tự, theo chiều ngược lại, chúng ta cũng có ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(d_{n})}_{n\in\mathbb{N}}$ kéo theo ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$.
+\end{proof}
+
+Định lý trên được sử dụng làm cơ sở cho định nghĩa sau.
+\begin{definition}
+    Hai phần tử $\alpha, \beta$ của tập thương $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ được gọi là có quan hệ $\leq$ nếu và chỉ nếu với mỗi dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ trong $\alpha$ và dãy Cauchy hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ trong $\beta$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+\end{definition}
+
+\begin{appendixthm}\label{appendixthm:preorder-to-order}
+    Nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ thì $\clsseq{a_{n}}{n}\leq \clsseq{b_{n}}{n}$.
+\end{appendixthm}
+
+\begin{proof}
+    Giả sử ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ tương đương với ${(a_{n})}_{n\in\mathbb{N}}$, và ${(y_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ tương đương với ${(b_{n})}_{n\in\mathbb{N}}$.
+
+    Theo Định lý~\ref{appendixthm:equivalent-cauchy-sequences-and-preorder}, ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ kéo theo ${(x_{n})}_{n\in\mathbb{N}}\lesssim {(y_{n})}_{n\in\mathbb{N}}$.
+
+    Vì chúng ta đang xét các dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ và ${(y_{n})}_{n\in\mathbb{N}}$ bất kì từ hai lớp tương đương $\clsseq{a_{n}}{n}$ và $\clsseq{b_{n}}{n}$ nên theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta suy ra $\clsseq{a_{n}}{n}\leq \clsseq{b_{n}}{n}$.
+\end{proof}
+
+\begin{appendixthm}
+    Quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một quan hệ thứ tự toàn phần.
+\end{appendixthm}
+
+\begin{proof}
+    Với mỗi phần tử $\alpha$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có $\alpha\leq\alpha$ vì hai phần tử bất kì của lớp tương đương $\alpha$ đều tương đương với nhau (và vì vậy có quan hệ $\lesssim$). Do đó quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất phản xạ.
+
+    Nếu các phần tử $\alpha, \beta$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ thỏa mãn $\alpha\leq \beta$ và $\beta\leq \alpha$ thì với mỗi phần tử ${(a_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\alpha$ và phần tử ${(b_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\beta$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:cauchy-sequences-pre-antisymmetric}, ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$, kéo theo $\alpha = \beta$. Do đó quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất phản đối xứng.
+
+    Nếu các phần tử $\alpha, \beta, \gamma$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ thỏa mãn $\alpha\leq \beta$ và $\beta\leq \gamma$ thì với mỗi phần tử ${(a_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\alpha$, phần tử ${(b_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\beta$, phần tử ${(c_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\gamma$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$. Vì quan hệ $\lesssim$ trong tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất bắc cầu nên ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(c_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:preorder-to-order}, chúng ta suy ra $\alpha\leq \gamma$. Do đó quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ có tính chất bắc cầu.
+
+    Như vậy quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một quan hệ thứ tự.
+
+    Xét hai phần tử bất kì $\alpha$ và $\beta$ trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Với mỗi phần tử ${(a_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\alpha$, phần tử ${(b_{n})}_{n\in\mathbb{N}}$ trong lớp tương đương $\beta$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ hoặc ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ vì quan hệ $\lesssim$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một quan hệ thứ tự toàn phần. Theo Định lý~\ref{appendixthm:preorder-to-order}, chúng ta suy ra $\alpha\leq \beta$ hoặc $\beta\leq \alpha$.
+
+    Vậy quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một quan hệ thứ tự toàn phần.
+\end{proof}
+
+\begin{appendixthm}\label{appendixthm:addition-multiplication-and-preorder-of-cauchy-sequences}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ thì với mọi dãy Cauchy hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$.
+        \item  Nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ thì chúng ta có ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chúng ta xét đủ hai trường hợp sau.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1cm]
+                  \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương.
+
+                        Cùng với ${(c_{n})}_{n\in\mathbb{N}}\sim {(c_{n})}_{n\in\mathbb{N}}$, theo Định lý~\ref{appendixthm:basis-of-equivalence-class-of-rational-cauchy-sequences-addition}, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$. Điều này kéo theo ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$.
+                  \item ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ không tương đương.
+
+                        Vì ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}$, ${(b_{n})}_{n\in\mathbb{N}}$ không tương đương nên ${(a_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n} - b_{n}\leq -q$. Từ điều này, chúng ta suy ra rằng: với số hữu tỉ dương $q$, với số tự nhiên $N$ thì với mọi số tự nhiên $n\geq N$, chúng ta có $(a_{n} + c_{n}) - (b_{n} + c_{n}) = a_{n} - b_{n}\leq -q$. Một lần nữa, cũng theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(a_{n} + c_{n})}_{n\in\mathbb{N}} < {(b_{n} + c_{n})}_{n\in\mathbb{N}}$.
+
+                        Mặt khác, theo định nghĩa phép cộng dãy Cauchy hữu tỉ trong Định lý~\ref{appendixthm:addition-and-multiplication-of-cauchy-sequences}, chúng ta có
+                        \[
+                            {(a_{n} + c_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}},\qquad  {(b_{n} + c_{n})}_{n\in\mathbb{N}} = {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}.
+                        \]
+
+                        Do đó ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$, kéo theo ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$.
+              \end{enumerate}
+        \item Chúng ta xét đủ hai trường hợp sau.
+              \begin{enumerate}[label={\textbf{Trường hợp \arabic*.}},itemindent=1cm]
+                  \item ${(0)}_{n\in\mathbb{N}}\sim {(a_{n})}_{n\in\mathbb{N}}$ hoặc ${(0)}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ (ít nhất một trong hai mệnh đề này đúng).
+
+                        Không mất tính tổng quát, giả sử ${(0)}_{n\in\mathbb{N}}\sim {(a_{n})}_{n\in\mathbb{N}}$. Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+                        Vì ${(b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ nên theo Định lý~\ref{appendixthm:cauchy-sequences-are-bounded}, tồn tại một số hữu tỉ dương $B$ sao cho $\abs{b_{n}}\leq B$ với mọi số tự nhiên $n$. Mặt khác, ${(0)}_{n\in\mathbb{N}}\sim {(a_{n})}_{n\in\mathbb{N}}$, do đó, theo định nghĩa quan hệ $\sim$ giữa các dãy số hữu tỉ, với số hữu tỉ dương $\dfrac{\varepsilon}{B}$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n}} < \dfrac{\varepsilon}{B}$. Do đó, với mọi số tự nhiên $n\geq N$, chúng ta có
+                        \[
+                            \abs{a_{n}b_{n} - 0} = \abs{a_{n}b_{n}} = \abs{a_{n}}\cdot\abs{b_{n}} < \dfrac{\varepsilon}{B}\cdot B = \varepsilon.
+                        \]
+
+                        Theo định nghĩa quan hệ $\sim$ giữa các dãy số hữu tỉ, chúng ta suy ra ${(a_{n}b_{n})}_{n\in\mathbb{N}}\sim {(0)}_{n\in\mathbb{N}}$. Bên cạnh đó, theo định nghĩa phép nhân dãy Cauchy hữu tỉ trong Định lý~\ref{appendixthm:addition-and-multiplication-of-cauchy-sequences}, ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$. Do vậy ${(0)}_{n\in\mathbb{N}}\sim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$, kéo theo ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+                  \item ${(0)}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}} < {(b_{n})}_{n\in\mathbb{N}}$.
+
+                        Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, chúng ta suy ra
+                        \begin{itemize}
+                            \item tồn tại số hữu tỉ dương $a$ sao cho tồn tại số tự nhiên $N_{a}$ sao cho với mọi số tự nhiên $n\geq N_{a}$, có $-a_{n}\leq -a$,
+                            \item tồn tại số hữu tỉ dương $a$ sao cho tồn tại số tự nhiên $N_{b}$ sao cho với mọi số tự nhiên $n\geq N_{b}$, có $-b_{n}\leq -b$.
+                        \end{itemize}
+
+                        Chúng ta định nghĩa $q = ab$ và $N = \max\{ N_{a}, N_{b} \}$. Với mọi số tự nhiên $n\geq N$, chúng ta có $a_{n}\geq 0, b_{n}\geq 0$ và $a_{n}b_{n}\geq a_{n}b \geq ab$, kéo theo $-a_{n}b_{n}\leq -ab = -q$. Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, chúng ta suy ra ${(0)}_{n\in\mathbb{N}} < {(a_{n}b_{n})}_{n\in\mathbb{N}}$. Theo định nghĩa phép nhân dãy Cauchy hữu tỉ trong Định lý~\ref{appendixthm:addition-and-multiplication-of-cauchy-sequences}, ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$. Do vậy ${(0)}_{n\in\mathbb{N}} < {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$, kéo theo ${(0)}_{n\in\mathbb{N}} \lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+              \end{enumerate}
+
+              Như vậy, nếu các dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ thì ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{appendixthm}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu các phần tử $\alpha, \beta$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ thỏa mãn $\alpha\leq \beta$ thì với mọi phần tử $\gamma$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có $\alpha + \gamma\leq \beta + \gamma$.
+        \item Nếu các phần tử $\alpha, \beta$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ thỏa mãn $\clsseq{0}{n} \leq \alpha$ và $\clsseq{0}{n}\leq \beta$ thì chúng ta có $\clsseq{0}{n}\leq \alpha\cdot\beta$.
+    \end{enumerate}
+\end{appendixthm}
+
+\begin{proof}
+    \begin{enumerate}[label={(\roman*)}]
+        \item ${(x_{n})}_{n\in\mathbb{N}}$ và ${(y_{n})}_{n\in\mathbb{N}}$ lần lượt là hai phần tử của hai lớp tương đương $\alpha + \gamma$ và $\beta + \gamma$.
+
+              ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}, {(c_{n})}_{n\in\mathbb{N}}$ lần lượt là các phần tử của các lớp tương đương $\alpha, \beta, \gamma$. Khi đó
+              \[
+                  \begin{split}
+                      \alpha + \gamma = \clsseq{a_{n}}{n} + \clsseq{c_{n}}{n} = \clsseq{a_{n} + c_{n}}{n}, \\
+                      \beta + \gamma = \clsseq{b_{n}}{n} + \clsseq{c_{n}}{n} = \clsseq{b_{n} + c_{n}}{n}.
+                  \end{split}
+              \]
+
+              Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}} \lesssim {(b_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:addition-multiplication-and-preorder-of-cauchy-sequences}, chúng ta suy ra ${(a_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}} + {(c_{n})}_{n\in\mathbb{N}}$. Với những điều trên, theo Định lý~\ref{appendixthm:preorder-to-order}, chúng ta suy ra $\alpha + \gamma \leq \beta + \gamma$.
+
+              Như vậy, với hai phần tử ${(x_{n})}_{n\in\mathbb{N}}$ và ${(y_{n})}_{n\in\mathbb{N}}$ bất kì của hai lớp tương đương $\alpha + \gamma$ và $\beta + \gamma$, chúng ta có ${(x_{n})}_{n\in\mathbb{N}}\lesssim {(y_{n})}_{n\in\mathbb{N}}$, điều này có nghĩa là $\alpha + \gamma \leq \beta + \gamma$.
+        \item  ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ lần lượt là các phần tử của các lớp tương đương $\alpha, \beta$. Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có ${(0)}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ và ${(0)}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:addition-multiplication-and-preorder-of-cauchy-sequences} và định nghĩa phép nhân dãy Cauchy hữu tỉ, chúng ta suy ra ${(0)}_{n\in\mathbb{N}} \lesssim {(a_{n})}_{n\in\mathbb{N}}\cdot{(b_{n})}_{n\in\mathbb{N}} = {(a_{n}b_{n})}_{n\in\mathbb{N}}$.
+
+              Mặt khác, theo Định lý~\ref{appendixthm:preorder-to-order} và định nghĩa phép nhân dãy Cauchy hữu tỉ và phép nhân trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta có
+              \begin{align*}
+                  \clsseq{0}{n} \leq \clsseq{a_{n}b_{n}}{n} = \clsseq{a_{n}}{n}\cdot\clsseq{b_{n}}{n} = \alpha\cdot\beta.
+              \end{align*}
+
+              Vậy nếu các phần tử $\alpha, \beta$ của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ thỏa mãn $\clsseq{0}{n} \leq \alpha$ và $\clsseq{0}{n}\leq \beta$ thì chúng ta có $\clsseq{0}{n}\leq \alpha\cdot\beta$.
+    \end{enumerate}
+\end{proof}
+
+\section{Dãy Cauchy hữu tỉ và tiên đề về cận trên}
+
+Chúng ta chứng minh $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ cùng các phép toán và quan hệ thứ tự đã chỉ ra trên đây thỏa mãn tiên đề về cận trên. Để kiểm chứng sự thỏa mãn tiên đề về cận trên, chúng ta cũng thực hiện theo hai bước giống như với các tiên đề về trường và các tiên đề về thứ tự: Chứng minh phát biểu dành cho dãy Cauchy hữu tỉ trước, sau đó chứng minh cho lớp tương đương của các các Cauchy hữu tỉ. Tuy nhiên, chúng tôi phát biểu định lý cho lớp tương đương của các các Cauchy hữu tỉ trước.
+
+\begin{appendixthm}\label{appendixthm:equivalence-class-cauchy-sequence-and-the-axioms-of-completeness}
+    $S$ là một tập hợp con khác rỗng của tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và $S$ bị chặn trên thì $S$ có cận trên nhỏ nhất.
+\end{appendixthm}
+
+\begin{appendixthm}\label{appendixthm:cauchy-sequence-and-the-axioms-of-completeness}
+    $S$ là một tập hợp khác rỗng với các phần tử là các dãy Cauchy hữu tỉ. $S$ có cận trên là một dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$. Khi đó, tồn tại một dãy Cauchy hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ sao cho
+    \begin{itemize}
+        \item ${(u_{n})}_{n\in\mathbb{N}}$ là một cận trên của $S$.
+        \item Nếu dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$ thì ${(x_{n})}_{n\in\mathbb{N}}$ không phải một cận trên của $S$.
+    \end{itemize}
+\end{appendixthm}
+
+\noindent Chứng minh dưới đây cho định lý trên mang tư tưởng xây dựng. Đây là một chứng minh dài, bạn đọc có thể tạm gác lại phần chứng minh cho các tính chất của hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ trong chứng minh dưới đây.
+
+\begin{proof}
+    Chúng ta chọn ${(b_{n})}_{n\in\mathbb{N}}$ là một phần tử của $S$. Vì các dãy Cauchy hữu tỉ bị chặn nên tồn tại các số hữu tỉ dương $A$ và $A'$ sao cho với mọi số tự nhiên $n$, có $\abs{a_{n}}\leq A$ và $\abs{b_{n}}\leq A'$. Chúng ta chọn số hữu tỉ dương $B$ sao cho $A' < B$.
+
+    Chúng ta định nghĩa \textit{đồng thời} hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ bằng quy nạp như sau
+    \begin{itemize}
+        \item $u_{0} = A, \ell_{0} = -B$.
+        \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$.
+        \item Còn nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$.
+    \end{itemize}
+
+    Mục tiêu của chúng ta là chỉ ra ${(u_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ thỏa mãn. Trước đó, chúng ta chứng minh một số tính chất của hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$.
+
+    \begin{enumerate}[label={\textbf{Tính chất \arabic*.}},itemindent=1.7cm]
+        \item Với mỗi số tự nhiên $m$ cố định, dãy số hữu tỉ dừng ${(u_{m})}_{n\in\mathbb{N}}$ là một cận trên của $S$, dãy số hữu tỉ dừng ${(\ell_{m})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+
+              Khi $m = 0$, ${(u_{0})}_{n\in\mathbb{N}}$ là một cận trên của $S$, vì $u_{0} = A$ và $\abs{a_{n}}\leq A$ (với mọi số tự nhiên $n$) trong khi ${(a_{n})}_{n\in\mathbb{N}}$ là một cận trên của $S$. ${(\ell_{0})}_{n\in\mathbb{N}}$ không phải một cận trên của $S$, vì $\ell_{0} = -B$ và ${(-B)}_{n\in\mathbb{N}} < {(-A')}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+
+              Giả sử khi $m = k\geq 0$, ${(u_{k})}_{n\in\mathbb{N}}$ là một cận trên của $S$ và ${(\ell_{k})}_{n\in\mathbb{N}}$ không là cận trên của $S$. Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$, $\ell_{k+1} = \ell_{k}$.
+
+                        Điều này có nghĩa là ${(u_{k+1})}_{n\in\mathbb{N}}$ là cận trên của $S$. Mặt khác, theo giả thiết quy nạp, ${(\ell_{k})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$, $\ell_{k+1} = \dfrac{u_{k}+\ell_{k}}{2}$.
+
+                        Điều này có nghĩa là ${(\ell_{k+1})}_{n\in\mathbb{N}}$ không là cận trên của $S$. Mặt khác, theo giả thiết quy nạp, ${(u_{k+1})}_{n\in\mathbb{N}}$ là một cận trên của $S$.
+              \end{itemize}
+
+              Theo nguyên lý quy nạp toán học, với mỗi số tự nhiên $m$ cố định, dãy số hữu tỉ dừng ${(u_{m})}_{n\in\mathbb{N}}$ là một cận trên của $S$, dãy số hữu tỉ dừng ${(\ell_{m})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+        \item Với mọi số tự nhiên $n$, có $\ell_{n}\leq u_{n}$.
+
+              Với $n = 0$, vì $u_{0} = A$ (một số hữu tỉ dương) và $\ell_{0} = -B$ (một số hữu tỉ âm) nên $\ell_{0}\leq u_{0}$.
+
+              Giả sử với $n = k\geq 0$, $\ell_{k}\leq u_{k}$. Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$. Theo giả thiết quy nạp, chúng ta suy ra $\ell_{k+1}\leq u_{k+1}$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$. Theo giả thiết quy nạp, chúng ta suy ra $\ell_{k+1}\leq u_{k+1}$.
+              \end{itemize}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $n$, có $\ell_{n}\leq u_{n}$.
+        \item ${(u_{n})}_{n\in\mathbb{N}}$ là dãy không tăng và ${(\ell_{n})}_{n\in\mathbb{N}}$ là dãy không giảm.
+
+              Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$.
+
+                        Vì $\ell_{k+1} = \ell_{k}$ nên $\ell_{k}\leq \ell_{k+1}$. Mặt khác, theo \textbf{Tính chất 2}, $\ell_{k}\leq u_{k}$, kéo theo $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}\leq u_{k}$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$.
+
+                        Vì $u_{k+1} = u_{k}$ nên $u_{k+1}\leq u_{k}$. Mặt khác, theo \textbf{Tính chất 2}, $\ell_{k}\leq u_{k}$, kéo theo $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}\geq \ell_{k}$.
+              \end{itemize}
+
+              Vậy với mọi số tự nhiên $n$, có $u_{n+1}\leq u_{n}$ và $\ell_{n+1}\geq \ell_{n}$, kéo theo ${(u_{n})}_{n\in\mathbb{N}}$ là dãy không tăng và ${(\ell_{n})}_{n\in\mathbb{N}}$ là dãy không giảm.
+        \item Với mọi số tự nhiên $m, n$, có $\ell_{m}\leq u_{n}$.
+
+              Theo \textbf{Tính chất 2 và 3}, nếu $m\leq n$ thì $\ell_{m}\leq \ell_{n}\leq u_{n}$, còn nếu $m > n$ thì $\ell_{m}\leq u_{m}\leq u_{n}$.
+
+              Vậy với mọi số tự nhiên $m, n$, có $\ell_{m}\leq u_{n}$.
+        \item Với mọi số tự nhiên $n$, có $u_{n} - \ell_{n} = \dfrac{u_{0} - \ell_{0}}{2^{n}}$.
+
+              Khi $n = 0$, $u_{0} - \ell_{0} = u_{0} - \ell_{0}$.
+
+              Giả sử với $n = k\geq 0$, $u_{k} - \ell_{k} = \dfrac{u_{0} - \ell_{0}}{2^{k}}$. Theo định nghĩa hai dãy số hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta có
+              \begin{itemize}
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ là cận trên của $S$ thì $u_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$ và $\ell_{k+1} = \ell_{k}$.
+
+                        Cùng với giả thiết quy nạp, chúng ta suy ra $u_{k+1} - \ell_{k+1} = \dfrac{u_{k} - \ell_{k}}{2} = \dfrac{u_{0} - \ell_{0}}{2^{k+1}}$.
+                  \item Nếu dãy số hữu tỉ dừng ${\left(\dfrac{u_{k}+\ell_{k}}{2}\right)}_{n\in\mathbb{N}}$ không là cận trên của $S$ thì $u_{k+1} = u_{k}$ và $\ell_{k+1} = \dfrac{u_{k} + \ell_{k}}{2}$.
+
+                        Cùng với giả thiết quy nạp, chúng ta suy ra $u_{k+1} - \ell_{k+1} = \dfrac{u_{k} - \ell_{k}}{2} = \dfrac{u_{0} - \ell_{0}}{2^{k+1}}$.
+              \end{itemize}
+
+              Theo nguyên lý quy nạp toán học, với mọi số tự nhiên $n$, $u_{n} - \ell_{n} = \dfrac{u_{0} - \ell_{0}}{2^{n}}$.
+        \item ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ tương đương.
+
+              Theo \textbf{Tính chất 5} và bất đẳng thức $n+1\leq 2^{n}$, chúng ta suy ra $u_{n} - \ell_{n}\leq \dfrac{u_{0} - \ell_{0}}{n+1} = \dfrac{A+B}{N+1}$ với mọi số tự nhiên $n$. Chúng ta chọn số hữu tỉ dương $\varepsilon$ bất kì.
+
+              Chúng ta định nghĩa $N = \floor{\dfrac{A+B}{\varepsilon}}$. Với mọi số tự nhiên $n\geq N$, chúng ta có
+              \[
+                  \abs{u_{n} - \ell_{n}}\leq \frac{A + B}{n+1}\leq \frac{A+B}{\floor{\dfrac{A+B}{\varepsilon}} + 1} < \frac{A+B}{\dfrac{A+B}{\varepsilon}} = \varepsilon.
+              \]
+
+              Theo định nghĩa quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ, chúng ta suy ra ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy số hữu tỉ tương đương.
+
+              Vẫn là với số tự nhiên $N$ được định nghĩa trên, khi đó với mọi số tự nhiên $n\geq N$, với mọi số tự nhiên $p$, và theo \textbf{Tính chất 4}, chúng ta có
+              \begin{align*}
+                  \abs{u_{n+p} - u_{n}}       & = u_{n} - u_{n+p}\leq u_{n} - \ell_{n} < \varepsilon,       \\
+                  \abs{\ell_{n+p} - \ell_{n}} & = \ell_{n+p} - \ell_{n}\leq u_{n} - \ell_{n} < \varepsilon.
+              \end{align*}
+
+              Do đó ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ.
+
+              Như vậy ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ tương đương.
+    \end{enumerate}
+
+    Tiếp theo, chúng ta chứng minh ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là các cận trên của $S$.
+
+    Giả sử phản chứng rằng ${(u_{n})}_{n\in\mathbb{N}}$ không phải cận trên của $S$. Khi đó, tồn tại dãy Cauchy hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ thuộc $S$ sao cho ${(s_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q$ sao cho tồn tại số tự nhiên $N_{0}$ sao cho với mọi số tự nhiên $n\geq N_{0}$, có $u_{n} - s_{n}\leq -q$. Mặt khác, vì ${(s_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ nên với số hữu tỉ dương $\dfrac{q}{2}$, tồn tại số tự nhiên $N_{s}$ sao cho với mọi số tự nhiên $n, m\geq N_{s}$, có $\abs{s_{m} - s_{n}} < \dfrac{-q}{2}$. Chúng ta định nghĩa $N = \max\{ N_{0}, N_{s} \}$, khi đó với mọi số tự nhiên $n\geq N$, chúng ta có
+    \[
+        u_{N} - s_{n} = (u_{N} - s_{N}) + (s_{N} - s_{n}) \leq (-q) + \abs{s_{N} - s_{n}} \leq (-q) + \frac{q}{2} = \frac{-q}{2}
+    \]
+
+    Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, dãy số hữu tỉ dừng ${(u_{N})}_{n\in\mathbb{N}} < {(s_{n})}_{n\in\mathbb{N}}$. Tuy nhiên, điều này mâu thuẫn với \textbf{Tính chất 1} nên giả sử phản chứng là sai. Do đó ${(u_{n})}_{n\in\mathbb{N}}$ là một cận trên của $S$. Mặt khác, vì ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ tương đương nên ${(u_{n})}_{n\in\mathbb{N}}$ và ${(\ell_{n})}_{n\in\mathbb{N}}$ là các cận trên của $S$.
+
+    Giả sử dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$. Cùng với việc ${(u_{n})}_{n\in\mathbb{N}}\sim {(\ell_{n})}_{n\in\mathbb{N}}$, chúng ta suy ra ${(x_{n})}_{n\in\mathbb{N}} < {(\ell_{n})}_{n\in\mathbb{N}}$. Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, tồn tại số hữu tỉ dương $q'$ sao cho tồn tại số tự nhiên $N_{1}$ sao cho với mọi số tự nhiên $n\geq N_{1}$, có $x_{n} - \ell_{n}\leq -q'$. Mặt khác, vì ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ nên với số hữu tỉ dương $\dfrac{q'}{2}$, tồn tại số tự nhiên $N_{x}$ sao cho với mọi số tự nhiên $n, m\geq N_{x}$, có $\abs{x_{m} - x_{n}} < \dfrac{-q'}{2}$. Chúng ta định nghĩa $N' = \max\{ N_{1}, N_{x} \}$, khi đó với mọi số tự nhiên $n\geq N'$, chúng ta có
+    \[
+        x_{n} - \ell_{N'} = (x_{n} - x_{N'}) + (x_{N'} - \ell_{N'})\leq \abs{x_{n} - x_{N'}} + (-q')\leq \frac{q'}{2} + (-q') = \frac{-q'}{2}
+    \]
+
+    Theo Định lý~\ref{appendixthm:strictly-precedence-cauchy-sequence}, dãy số hữu tỉ dừng ${(\ell_{N'})}_{n\in\mathbb{N}} > {(x_{n})}_{n\in\mathbb{N}}$. Theo \textbf{Tính chất 1}, ${(\ell_{N'})}_{n\in\mathbb{N}}$ không là cận trên của $S$. Do đó ${(x_{n})}_{n\in\mathbb{N}}$ không là cận trên của $S$.
+
+    Như vậy, ${(u_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ và là cận trên của $S$, và với mọi dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$ thì ${(x_{n})}_{n\in\mathbb{N}}$ không phải một cận trên của $S$.
+\end{proof}
+
+\begin{proof}[Chứng minh Định lý~\ref{appendixthm:equivalence-class-cauchy-sequence-and-the-axioms-of-completeness}]
+    Chúng ta định nghĩa tập hợp $S'$ như sau
+    \[
+        S' = \bigcup_{\xi\in S} \xi
+    \]
+
+    Các phần tử của $S$ là các lớp tương đương trên tập hợp $\mathscr{C}_{\mathbb{Q}}$ theo quan hệ $\sim$, các phần tử của các lớp tương đương này là các dãy Cauchy hữu tỉ. Do đó $\xi$ trong định nghĩa trên là phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, và tất cả các phần tử của $S'$ là các dãy Cauchy hữu tỉ.
+
+    Giả sử $\alpha$ là một cận trên của $S$ và ${(a_{n})}_{n\in\mathbb{N}}$ là một phần tử của lớp tương đương $\alpha$. Vì $\alpha$ là cận trên của $S$ nên theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, mỗi phần tử ${(s_{n})}_{n\in\mathbb{N}}$ của $S'$ đều thỏa mãn ${(s_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$. Do đó $S'$ bị chặn trên. Theo Định lý~\ref{appendixthm:cauchy-sequence-and-the-axioms-of-completeness}, tồn tại dãy Cauchy hữu tỉ ${(u_{n})}_{n\in\mathbb{N}}$ sao cho ${(u_{n})}_{n\in\mathbb{N}}$ là cận trên của $S'$, và với mọi dãy Cauchy hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(x_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$ thì ${(x_{n})}_{n\in\mathbb{N}}$ không phải một cận trên của $S'$. Theo Định lý~\ref{appendixthm:preorder-to-order}, $\clsseq{u_{n}}{n}$ là một cận trên của $S$.
+
+    Giả sử $\beta$ là một cận trên của $S$, khi đó mỗi phần tử ${(y_{n})}_{n\in\mathbb{N}}$ của lớp tương đương $\beta$ là một cận trên của $S'$. Theo Định lý~\ref{appendixthm:cauchy-sequence-and-the-axioms-of-completeness}, không thể có ${(y_{n})}_{n\in\mathbb{N}} < {(u_{n})}_{n\in\mathbb{N}}$. Do đó ${(u_{n})}_{n\in\mathbb{N}}\lesssim {(y_{n})}_{n\in\mathbb{N}}$.  Theo Định lý~\ref{appendixthm:preorder-to-order}, $\clsseq{u_{n}}{n}\leq \clsseq{y_{n}}{n}$. Như vậy $\clsseq{u_{n}}{n}$ là cận trên nhỏ nhất của $S$.
+
+    Vậy $S$ có cận trên nhỏ nhất.
+\end{proof}
+
+\section{Liên hệ lớp tương đương các dãy Cauchy hữu tỉ với số hữu tỉ}
+
+\begin{appendixthm}\label{appendixthm:embed-Q-into-quotient-set-of-rational-cauchy-sequences}
+    Ánh xạ $\iota: \mathbb{Q}\to \mathscr{C}_{\mathbb{Q}}/_{\sim}$ được định nghĩa bởi $\iota(q) = \clsseq{q}{n}$ là một đơn ánh nhưng không phải một song ánh. Bên cạnh đó, với mọi số hữu tỉ $q_{1}, q_{2}$, chúng ta có
+    \[
+        \begin{split}
+            \iota(q_{1} + q_{2}) = \iota(q_{1}) + \iota(q_{2}), \\
+            \iota(q_{1}q_{2}) = \iota(q_{1})\iota(q_{2}), \\
+            q_{1}\leq q_{2} \implies \iota(q_{1})\leq \iota(q_{2}).
+        \end{split}
+    \]
+\end{appendixthm}
+
+\begin{proof}
+    Nếu $\iota(q_{1}) = \iota(q_{2})$ thì $\clsseq{q_{1}}{n} = \clsseq{q_{2}}{n}$, kéo theo ${(q_{1})}_{n\in\mathbb{N}}\sim {(q_{2})}_{n\in\mathbb{N}}$, dẫn đến $q_{1} = q_{2}$. Do đó $\iota$ là một đơn ánh. Mặt khác, $\iota$ không phải toàn ánh vì không tồn tại số hữu tỉ $q$ nào để lớp tương đương $\iota(q)$ chứa dãy Cauchy hữu tỉ trong Mệnh đề~\ref{appendixthm:irrational-cauchy-sequence}, kéo theo $\iota$ không phải một toàn ánh. Vì vậy $\iota$ là một đơn ánh nhưng không phải song ánh.
+
+    Theo định nghĩa phép cộng, phép nhân trên $\mathscr{C}_{\mathbb{Q}}$ và $\mathscr{C}_{\mathbb{Q}}/_{\sim}$
+    \begin{align*}
+         & \iota(q_{1} + q_{2}) = \clsseq{q_{1} + q_{2}}{n} = \clsseq{q_{1}}{n} + \clsseq{q_{2}}{n} = \iota(q_{1}) + \iota(q_{2}), \\
+         & \iota(q_{1}q_{2}) = \clsseq{q_{1}q_{2}}{n} = \clsseq{q_{1}}{n}\cdot\clsseq{q_{2}}{n} = \iota(q_{1})\iota(q_{2}).
+    \end{align*}
+
+    Theo định nghĩa quan hệ $\lesssim$ trên $\mathscr{C}_{\mathbb{Q}}$, quan hệ $\leq$ trên $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ và Định lý~\ref{appendixthm:preorder-to-order}, chúng ta có
+    \[
+        q_{1}\leq q_{2} \implies {(q_{1})}_{n\in\mathbb{N}}\lesssim {(q_{2})}_{n\in\mathbb{N}} \implies \clsseq{q_{1}}{n} \leq \clsseq{q_{2}}{n} \implies \iota(q_{1}) \leq \iota(q_{2}).
+    \]
+\end{proof}
+
+Định lý trên được hiểu là đơn ánh $\iota$ bảo toàn phép cộng, phép nhân, và quan hệ thứ tự. Vì điều này, chúng ta có thể đồng nhất số hữu tỉ $q$ với lớp tương đương $\clsseq{q}{n}$.

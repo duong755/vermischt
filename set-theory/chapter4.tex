@@ -1,3 +1,5 @@
+% chktex-file 9
+% chktex-file 17
 \chapter{Số thực và số phức}\label{chapter:real-and-complex-numbers}
 
 \section{Xây dựng tập hợp số thực}
@@ -11,60 +13,60 @@ Chúng tôi đưa ra một câu trả lời trực giác cho cách hiểu thứ 
 Câu trả lời trực giác hình học cho cách hiểu thứ hai có thể làm hài lòng nhiều người nhưng là không đủ tốt đối với một định nghĩa toán học. Với định nghĩa trực giác như vậy, chúng ta khó lòng nói về các phép toán với các số thực như cộng, trừ, nhân, chia. Đối với những người học và làm toán, việc biết các số thực và các phép toán với số thực, quan hệ giữa các số thực có những tính chất gì quan trọng hơn việc biết số thực là gì trong thực tế. Trong chương này, chúng ta định nghĩa số thực bằng một hệ tiên đề (hay tính chất). Chúng ta coi những đối tượng thỏa mãn hệ tiên đề (hay tính chất) này là các số thực.
 
 \begin{axiom}
-    Tập hợp số thực được kí hiệu là $\mathbb{R}$. Các phần tử của $\mathbb{R}$ thỏa mãn ba nhóm tiên đề sau.
+	Tập hợp số thực\index{Số thực} được kí hiệu là $\mathbb{R}$. Các phần tử của $\mathbb{R}$ thỏa mãn ba nhóm tiên đề sau.
 
-    \textbf{Các tiên đề về trường.} $\mathbb{R}$ có hai phép toán hai ngôi là phép cộng (được kí hiệu là $+$) và phép nhân (được kí hiệu là $\cdot$) và các phép toán này thỏa mãn các tính chất sau:
-    \begin{enumerate}[label={(\roman*)}]
-        \item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
-              \[
-                  (x + y) + z = x + (y + z).
-              \]
-        \item Phép cộng có phần tử đồng nhất. Nói cách khác, tồn tại số thực $0$ sao cho với mọi số thực $x$, chúng ta có
-              \[
-                  x + 0 = 0 + x = x.
-              \]
-        \item Mỗi số thực có phần tử đối. Nói cách khác, với mỗi số thực $x$, tồn tại số thực $(-x)$ thỏa mãn
-              \[
-                  x + (-x) = (-x) + x = 0.
-              \]
-        \item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
-              \[
-                  x + y = y + x.
-              \]
-        \item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
-              \[
-                  (x \cdot y) \cdot z = x \cdot (y \cdot z).
-              \]
-        \item Phép nhân có tính chất phân phối với phép cộng. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
-              \[
-                  \begin{split}
-                      (x + y)\cdot z = x\cdot z + y\cdot z, \\
-                      z\cdot (x + y) = z\cdot x + z\cdot y.
-                  \end{split}
-              \]
+	\textbf{Các tiên đề về trường.} $\mathbb{R}$ có hai phép toán hai ngôi là phép cộng (được kí hiệu là $+$) và phép nhân (được kí hiệu là $\cdot$) và các phép toán này thỏa mãn các tính chất sau:
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+		      \[
+			      (x + y) + z = x + (y + z).
+		      \]
+		\item Phép cộng có phần tử đồng nhất. Nói cách khác, tồn tại số thực $0$ sao cho với mọi số thực $x$, chúng ta có
+		      \[
+			      x + 0 = 0 + x = x.
+		      \]
+		\item Mỗi số thực có phần tử đối. Nói cách khác, với mỗi số thực $x$, tồn tại số thực $(-x)$ thỏa mãn
+		      \[
+			      x + (-x) = (-x) + x = 0.
+		      \]
+		\item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
+		      \[
+			      x + y = y + x.
+		      \]
+		\item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+		      \[
+			      (x \cdot y) \cdot z = x \cdot (y \cdot z).
+		      \]
+		\item Phép nhân có tính chất phân phối với phép cộng. Nói cách khác, với mọi số thực $x, y, z$, chúng ta có
+		      \[
+			      \begin{split}
+				      (x + y)\cdot z = x\cdot z + y\cdot z, \\
+				      z\cdot (x + y) = z\cdot x + z\cdot y.
+			      \end{split}
+		      \]
 
-        \item Phép nhân có phần tử đồng nhất, phần tử này khác $0$. Nói cách khác, tồn tại số thực $1\ne 0$ sao cho với mọi số thực $x$, chúng ta có
-              \[
-                  x + 1 = 1 + x = x.
-              \]
-        \item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
-              \[
-                  x\cdot y = y\cdot x.
-              \]
-        \item Mỗi số thực khác $0$ có phần tử nghịch đảo. Nói cách khác, với mỗi số thực $x\ne 0$, tồn tại số thực $x^{-1}$ sao cho
-              \[
-                  x\cdot x^{-1} = x^{-1}\cdot x = 1.
-              \]
-    \end{enumerate}
+		\item Phép nhân có phần tử đồng nhất, phần tử này khác $0$. Nói cách khác, tồn tại số thực $1\ne 0$ sao cho với mọi số thực $x$, chúng ta có
+		      \[
+			      x \cdot 1 = 1 \cdot x = x.
+		      \]
+		\item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số thực $x, y$, chúng ta có
+		      \[
+			      x\cdot y = y\cdot x.
+		      \]
+		\item Mỗi số thực khác $0$ có phần tử nghịch đảo. Nói cách khác, với mỗi số thực $x\ne 0$, tồn tại số thực $x^{-1}$ sao cho
+		      \[
+			      x\cdot x^{-1} = x^{-1}\cdot x = 1.
+		      \]
+	\end{enumerate}
 
-    \textbf{Các tiên đề về thứ tự.} $\mathbb{R}$ có quan hệ $\leq$ thỏa mãn các tính chất sau:
-    \begin{enumerate}[label={(\roman*)}]
-        \item $\leq$ là một quan hệ thứ tự toàn phần.
-        \item Với mọi số thực $x, y$, nếu $x\leq y$ thì với mọi số thực $z$, chúng ta có $x + z\leq y + z$.
-        \item Với mọi số thực $x, y$, nếu $0\leq x$ và $0\leq y$ thì $0\leq x\cdot y$.
-    \end{enumerate}
+	\textbf{Các tiên đề về thứ tự.} $\mathbb{R}$ có quan hệ $\leq$ thỏa mãn các tính chất sau:
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\leq$ là một quan hệ thứ tự toàn phần.
+		\item Với mọi số thực $x, y$, nếu $x\leq y$ thì với mọi số thực $z$, chúng ta có $x + z\leq y + z$.
+		\item Với mọi số thực $x, y$, nếu $0\leq x$ và $0\leq y$ thì $0\leq x\cdot y$.
+	\end{enumerate}
 
-    \textbf{Tiên đề về cận trên (hay tiên đề về tính đầy đủ).} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
+	\textbf{Tiên đề về cận trên (hay tiên đề về tính đầy đủ).} Nếu một tập hợp con khác rỗng của $\mathbb{R}$ có cận trên thì cũng có cận trên nhỏ nhất.
 \end{axiom}
 
 Chúng ta bình luận và làm rõ thêm hệ tiên đề vừa nêu. Các tiên đề về trường và các tiên đề về thứ tự có lẽ không có gì xa lạ với bạn đọc. Chúng tôi chỉ lưu ý thêm ba điều về hai nhóm tiên đề này: (1) Các phần tử $0$, $1$, $(-x)$, và $x^{-1}$ được hiểu như các kí hiệu đơn thuần, ở thời điểm này chúng ta \textit{chưa} coi đó như những số hay phép toán quen thuộc; (2) Tiên đề về sự tồn tại của hai phần tử $0$ và $1$ không khẳng định tính duy nhất của những phần tử như vậy.
@@ -72,57 +74,57 @@ Chúng ta bình luận và làm rõ thêm hệ tiên đề vừa nêu. Các tiê
 Quay lại với hệ tiên đề về số thực. Trong chương trước, chúng ta đã chỉ ra được tập hợp số hữu tỉ $\mathbb{Q}$ cùng với hai phép toán cộng, nhân, và quan hệ $\leq$ thỏa mãn các tiên đề về trường và các tiên đề về thứ tự. Mệnh đề dưới đây (xem~\cite{spivak}) cho thấy tập hợp số hữu tỉ không thỏa mãn tiên đề về cận trên, hay chúng ta còn nói rằng tập hợp số hữu tỉ không đầy đủ theo quan hệ thứ tự $\leq$.
 
 \begin{proposition}\label{proposition:irrational-cut}
-    Trong tập hợp số hữu tỉ
-    \begin{enumerate}[label={(\roman*)}]
-        \item Chứng minh rằng không tồn tại số hữu tỉ $x$ nào thỏa mãn $x^{2} = 2$.
-        \item Chứng minh rằng tập hợp
-              \[
-                  S = \{ x \mid x\in\mathbb{Q}, 0 < x \text{ và } x^{2} < 2 \}
-              \]
+	Trong tập hợp số hữu tỉ
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chứng minh rằng không tồn tại số hữu tỉ $x$ nào thỏa mãn $x^{2} = 2$.
+		\item Chứng minh rằng tập hợp
+		      \[
+			      S = \{ x \mid x\in\mathbb{Q}, 0 < x \text{ và } x^{2} < 2 \}
+		      \]
 
-              không có phần tử lớn nhất.
-        \item Chứng minh rằng tập hợp $S$ ở phần (ii) không có cận trên nhỏ nhất.
-    \end{enumerate}
+		      không có phần tử lớn nhất.
+		\item Chứng minh rằng tập hợp $S$ ở phần (ii) không có cận trên nhỏ nhất.
+	\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-    \begin{enumerate}[label={(\roman*)}]
-        \item Giả sử phản chứng rằng tồn tại số hữu tỉ $x$ sao cho $x^{2} = 2$. Chúng ta kí hiệu phân số tối giản của $x$ là $\frac{p}{q}$. Vì ${\left(\frac{p}{q}\right)}^{2} = 2$ nên $p^{2} = 2q^{2}$. Vì $2$ là ước của $2q^{2}$ nên $2$ cũng là ước của $p^{2}$. Theo bổ đề Euclid, chúng ta suy ra $2$ là ước của $p$, do đó tồn tại số tự nhiên $a$ sao cho $p = 2a$. Cùng với việc $p^{2} = 2q^{2}$, chúng ta suy ra $4a^{2} = 2q^{2}$, kéo theo $2a^{2} = q^{2}$. Một lần nữa, theo bổ đề Euclid, chúng ta suy ra $2$ là ước của $q$. Như vậy $2$ là ước chung của $p$ và $q$, điều này mâu thuẫn với việc $\frac{p}{q}$ là một phân số tối giản.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Giả sử phản chứng rằng tồn tại số hữu tỉ $x$ sao cho $x^{2} = 2$. Chúng ta kí hiệu phân số tối giản của $x$ là $\frac{p}{q}$. Vì ${\left(\frac{p}{q}\right)}^{2} = 2$ nên $p^{2} = 2q^{2}$. Vì $2$ là ước của $2q^{2}$ nên $2$ cũng là ước của $p^{2}$. Theo bổ đề Euclid, chúng ta suy ra $2$ là ước của $p$, do đó tồn tại số tự nhiên $a$ sao cho $p = 2a$. Cùng với việc $p^{2} = 2q^{2}$, chúng ta suy ra $4a^{2} = 2q^{2}$, kéo theo $2a^{2} = q^{2}$. Một lần nữa, theo bổ đề Euclid, chúng ta suy ra $2$ là ước của $q$. Như vậy $2$ là ước chung của $p$ và $q$, điều này mâu thuẫn với việc $\frac{p}{q}$ là một phân số tối giản.
 
-              Vậy không tồn tại số hữu tỉ $x$ nào thỏa mãn $x^{2} = 2$.
-        \item Chúng ta chọn một số hữu tỉ $\frac{a}{b}$ thuộc $S$ (trong đó $a, b$ là các số nguyên dương). Theo định nghĩa của $S$, chúng ta suy ra $a^{2} < 2b^{2}$. Xét số hữu tỉ $\frac{2a + 2b}{a + 2b}$.
-              \begin{align*}
-                  {(2a + 2b)}^{2} & = 4a^{2} + 8ab + 4b^{2}   \\
-                                  & < 2a^{2} + 8ab + 8b^{2}   \\
-                                  & = 2(a^{2} + 4ab + 4b^{2}) \\
-                                  & = 2{(a + 2b)}^{2}
-              \end{align*}
+		      Vậy không tồn tại số hữu tỉ $x$ nào thỏa mãn $x^{2} = 2$.
+		\item Chúng ta chọn một số hữu tỉ $\frac{a}{b}$ thuộc $S$ (trong đó $a, b$ là các số nguyên dương). Theo định nghĩa của $S$, chúng ta suy ra $a^{2} < 2b^{2}$. Xét số hữu tỉ $\frac{2a + 2b}{a + 2b}$.
+		      \begin{align*}
+			      {(2a + 2b)}^{2} & = 4a^{2} + 8ab + 4b^{2}   \\
+			                      & < 2a^{2} + 8ab + 8b^{2}   \\
+			                      & = 2(a^{2} + 4ab + 4b^{2}) \\
+			                      & = 2{(a + 2b)}^{2}
+		      \end{align*}
 
-              Do đó $\frac{2a + 2b}{a + b}$ là một phần tử của $S$. Bên cạnh đó, $\frac{a}{b} < \frac{2a + 2b}{a + 2b}$, vì
-              \begin{align*}
-                  a(a + 2b) & = a^{2} + 2ab < 2ab + 2b^{2} = b(2a + 2b)
-              \end{align*}
+		      Do đó $\frac{2a + 2b}{a + b}$ là một phần tử của $S$. Bên cạnh đó, $\frac{a}{b} < \frac{2a + 2b}{a + 2b}$, vì
+		      \begin{align*}
+			      a(a + 2b) & = a^{2} + 2ab < 2ab + 2b^{2} = b(2a + 2b)
+		      \end{align*}
 
-              Như vậy, với mỗi phần tử $x$ thuộc $S$, chúng ta luôn tìm được được một phần tử khác của $S$ nhưng lớn hơn $x$. Do đó tập hợp $S$ không có phần tử lớn nhất.
-        \item Tập hợp $S$ có cận trên. Chẳng hạn, $2$ là một cận trên của $S$, bởi vì với mọi $x$ thuộc $S$, $x^{2} < 2 < 4$, kéo theo $(x - 2)(x + 2) < 0$, và $x < 2$. Mặt khác, nếu $y$ là một cận trên của $S$ thì $y > 0$.
+		      Như vậy, với mỗi phần tử $x$ thuộc $S$, chúng ta luôn tìm được được một phần tử khác của $S$ nhưng lớn hơn $x$. Do đó tập hợp $S$ không có phần tử lớn nhất.
+		\item Tập hợp $S$ có cận trên. Chẳng hạn, $2$ là một cận trên của $S$, bởi vì với mọi $x$ thuộc $S$, $x^{2} < 2 < 4$, kéo theo $(x - 2)(x + 2) < 0$, và $x < 2$. Mặt khác, nếu $y$ là một cận trên của $S$ thì $y > 0$.
 
-              Tiếp theo, chúng ta chứng minh rằng nếu số hữu tỉ $y$ là một cận trên của $S$ thì $y^{2} > 2$. Giả sử phản chứng rằng $y^{2}\leq 2$. Theo phần (i), chúng ta suy ra $y^{2} < 2$, kéo theo $y$ là một phần tử của $S$. $y$ là một cận trên của $S$ và là một phần tử của $S$ thì $y$ cũng là phần tử lớn nhất của $S$. Điều này mâu thuẫn với kết quả đã chứng minh ở phần (ii). Do đó giả sử phản chứng là sai, và chúng ta suy ra $y^{2} > 2$.
+		      Tiếp theo, chúng ta chứng minh rằng nếu số hữu tỉ $y$ là một cận trên của $S$ thì $y^{2} > 2$. Giả sử phản chứng rằng $y^{2}\leq 2$. Theo phần (i), chúng ta suy ra $y^{2} < 2$, kéo theo $y$ là một phần tử của $S$. $y$ là một cận trên của $S$ và là một phần tử của $S$ thì $y$ cũng là phần tử lớn nhất của $S$. Điều này mâu thuẫn với kết quả đã chứng minh ở phần (ii). Do đó giả sử phản chứng là sai, và chúng ta suy ra $y^{2} > 2$.
 
-              Chọn $y$ là một cận trên của $S$. Chúng ta kí hiệu $\frac{a}{b}$ là phân số của $y$ ($a, b$ là các số nguyên dương). Vì $y^{2} > 2$ nên $a^{2} > 2b^{2}$. Chúng ta tiếp tục xét số hữu tỉ $\frac{2a + 2b}{a + 2b}$.
-              \begin{align*}
-                  {(2a + 2b)}^{2} & = 4a^{2} + 8ab + 4b^{2}   \\
-                                  & > 2a^{2} + 8ab + 8b^{2}   \\
-                                  & = 2(a^{2} + 4ab + 4b^{2}) \\
-                                  & = 2{(a + 2b)}^{2}
-              \end{align*}
+		      Chọn $y$ là một cận trên của $S$. Chúng ta kí hiệu $\frac{a}{b}$ là phân số của $y$ ($a, b$ là các số nguyên dương). Vì $y^{2} > 2$ nên $a^{2} > 2b^{2}$. Chúng ta tiếp tục xét số hữu tỉ $\frac{2a + 2b}{a + 2b}$.
+		      \begin{align*}
+			      {(2a + 2b)}^{2} & = 4a^{2} + 8ab + 4b^{2}   \\
+			                      & > 2a^{2} + 8ab + 8b^{2}   \\
+			                      & = 2(a^{2} + 4ab + 4b^{2}) \\
+			                      & = 2{(a + 2b)}^{2}
+		      \end{align*}
 
-              Do đó $\frac{2a + 2b}{a + b}$ là một cận trên của $S$. Ngoài ra, $\frac{2a + 2b}{a + 2b} < \frac{a}{b}$, vì
-              \begin{align*}
-                  b(2a + 2b) = 2ab + 2b^{2} < 2ab + a^{2} = a(a + 2b)
-              \end{align*}
+		      Do đó $\frac{2a + 2b}{a + b}$ là một cận trên của $S$. Ngoài ra, $\frac{2a + 2b}{a + 2b} < \frac{a}{b}$, vì
+		      \begin{align*}
+			      b(2a + 2b) = 2ab + 2b^{2} < 2ab + a^{2} = a(a + 2b)
+		      \end{align*}
 
-              Như vậy với mỗi cận trên $y$ của $S$, chúng ta luôn tìm được một cận trên khác của $S$ và nhỏ hơn $y$. Do đó tập hợp $S$ không có cận trên nhỏ nhất.
-    \end{enumerate}
+		      Như vậy với mỗi cận trên $y$ của $S$, chúng ta luôn tìm được một cận trên khác của $S$ và nhỏ hơn $y$. Do đó tập hợp $S$ không có cận trên nhỏ nhất.
+	\end{enumerate}
 \end{proof}
 
 Trong hai mục tiếp theo, chúng tôi trình bày về hai mô hình số thực (hai cách xây dựng tập hợp số thực) từ tập hợp số hữu tỉ. Xây dựng tập hợp số thực là gì? Xây dựng tập hợp số thực là việc tạo ra một đối tượng toán học thỏa mãn hệ tiên đề về số thực. Chúng ta so sánh hệ tiên đề về số thực với một bản thiết kế, khi đó việc xây dựng tập hợp số thực chính là tạo ra một tác phẩm giống như bản thiết kế đó. Xây dựng được tập hợp số thực đồng nghĩa với việc \textit{chứng minh được} bản thiết kế là khả thi. Trong logic toán học, chúng ta có thuật ngữ riêng để gọi một công trình tương ứng với một bản thiết kế, đó là \textit{mô hình}. Mô hình là một đối tượng, hay cấu trúc toán học thỏa mãn một hệ tiên đề nào đó.
@@ -132,17 +134,17 @@ Trong hai mục tiếp theo, chúng tôi trình bày về hai mô hình số th�
 Trước khi đưa ra định nghĩa tổng quát của lát cắt Dedekind, chúng tôi muốn nói về cách hiểu trực giác của ý tưởng lát cắt. Một lần nữa, chúng ta sử dụng mô tả trực quan \textit{đường thẳng thực}: Chúng ta đánh dấu một điểm trên đường thẳng thực, khi đó chúng ta đã phân hoạch đường thẳng thực làm hai phần --- phần bên trái không bao gồm điểm đánh dấu và phần bên phải bao gồm điểm đánh dấu.
 
 \begin{definition}[Lát cắt Dedekind]
-    Một lát cắt Dedekind\index{Lát cắt Dedekind} trong một tập hợp $S$ được sắp thứ tự toàn phần là một phân hoạch gồm hai tập hợp $A, B$ sao cho
-    \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
-        \item $A$ khác rỗng và $A$ không phải toàn bộ tập hợp $S$.
-        \item Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$.
-        \item $A$ không có phần tử lớn nhất.
-        \item Nếu $x$ thuộc $A$ thì bất cứ phần tử nào nhỏ hơn $x$ và thuộc $S$ cũng thuộc $A$ (đặc điểm này còn được phát biểu là $A$ đóng dưới).
-    \end{enumerate}
+	Một lát cắt Dedekind\index{Lát cắt Dedekind} trong một tập hợp $S$ được sắp thứ tự toàn phần là một phân hoạch gồm hai tập hợp $A, B$ sao cho
+	\begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
+		\item $A$ khác rỗng và $A$ không phải toàn bộ tập hợp $S$.
+		\item Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$.
+		\item $A$ không có phần tử lớn nhất.
+		\item Nếu $x$ thuộc $A$ thì bất cứ phần tử nào nhỏ hơn $x$ và thuộc $S$ cũng thuộc $A$ (đặc điểm này còn được phát biểu là $A$ đóng dưới).
+	\end{enumerate}
 
-    Một lát cắt như vậy được kí hiệu là $(A, B)$, hoặc chỉ là $A$, bởi vì $B = S\setminus A$ ($B$ hoàn toàn được xác định khi biết $A$).
+	Một lát cắt như vậy được kí hiệu là $(A, B)$, hoặc chỉ là $A$, bởi vì $B = S\setminus A$ ($B$ hoàn toàn được xác định khi biết $A$).
 
-    Chúng ta kí hiệu tập hợp các lát cắt Dedekind trong tập hợp $S$ là $\mathscr{D}_{S}$.
+	Chúng ta kí hiệu tập hợp các lát cắt Dedekind trong tập hợp $S$ là $\mathscr{D}_{S}$.
 \end{definition}
 
 Để xây dựng tập hợp số thực bằng lát cắt Dedekind, chúng ta sử dụng các lát cắt trong tập hợp số hữu tỉ. Tập hợp các lát cắt Dedekind trong tập hợp số hữu tỉ được kí hiệu là $\mathscr{D}_{\mathbb{Q}}$. Chúng ta cũng dùng cách gọi vắn tắt là lát cắt để chỉ lát cắt Dedekind trên tập hợp số hữu tỉ, trừ khi ngữ cảnh phát biểu khác đi.
@@ -151,127 +153,127 @@ Trước khi đưa ra định nghĩa tổng quát của lát cắt Dedekind, ch�
 
 Để hiểu rõ hơn định nghĩa lát cắt, chúng ta theo dõi các ví dụ và phản ví dụ sau.
 \begin{example}
-    Tập hợp
-    \[
-        A = \{ x \mid x\in\mathbb{Q} \wedge x < q \}
-    \]
+	Tập hợp
+	\[
+		A = \{ x \mid x\in\mathbb{Q} \wedge x < q \}
+	\]
 
-    trong đó $q$ là một số hữu tỉ, là một lát cắt. Chúng ta kiểm tra điều này qua từng điều trong định nghĩa lát cắt.
-    \begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
-        \item $A$ khác rỗng vì $q - 1$ là một phần tử của $A$. Bên cạnh đó, $A$ cũng không phải toàn bộ tập hợp số hữu tỉ vì $q$ không phải một phần tử của $A$.
-        \item $B = \mathbb{Q} - A = \{ x \mid x\in\mathbb{Q} \wedge q\leq x \}$. Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ theo tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
-        \item $A$ không có phần tử lớn nhất vì với mỗi phần tử $x$ của $A$, chúng ta luôn tìm được một phần tử khác lớn hơn, chẳng hạn như $\frac{q + x}{2}$.
-        \item Nếu một số hữu tỉ $x$ thuộc $A$ thì mọi số hữu tỉ nhỏ hơn $x$ cũng thuộc $A$. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
-    \end{enumerate}
+	trong đó $q$ là một số hữu tỉ, là một lát cắt. Chúng ta kiểm tra điều này qua từng điều trong định nghĩa lát cắt.
+	\begin{enumerate}[label={(DC\arabic*)},itemindent=0.5cm]
+		\item $A$ khác rỗng vì $q - 1$ là một phần tử của $A$. Bên cạnh đó, $A$ cũng không phải toàn bộ tập hợp số hữu tỉ vì $q$ không phải một phần tử của $A$.
+		\item $B = \mathbb{Q} - A = \{ x \mid x\in\mathbb{Q} \wedge q\leq x \}$. Mọi phần tử của $A$ nhỏ hơn mọi phần tử của $B$ theo tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
+		\item $A$ không có phần tử lớn nhất vì với mỗi phần tử $x$ của $A$, chúng ta luôn tìm được một phần tử khác lớn hơn, chẳng hạn như $\frac{q + x}{2}$.
+		\item Nếu một số hữu tỉ $x$ thuộc $A$ thì mọi số hữu tỉ nhỏ hơn $x$ cũng thuộc $A$. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ.
+	\end{enumerate}
 \end{example}
 
 \begin{example}
-    Tập hợp
-    \[
-        A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x < 0$ hoặc $x^{2} < 2$} \}
-    \]
+	Tập hợp
+	\[
+		A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x < 0$ hoặc $x^{2} < 2$} \}
+	\]
 
-    là một lát cắt. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ và Mệnh đề~\ref{proposition:irrational-cut}.
+	là một lát cắt. Điều này được suy ra từ tính chất bắc cầu của quan hệ $\leq$ trên tập hợp số hữu tỉ và Mệnh đề~\ref{proposition:irrational-cut}.
 \end{example}
 
 \begin{counterexample}
-    Tập hợp
-    \[
-        A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x > 0$ và $x^{2} < 2$} \}
-    \]
+	Tập hợp
+	\[
+		A = \{ x \mid \text{$x$ là số hữu tỉ thỏa mãn $x > 0$ và $x^{2} < 2$} \}
+	\]
 
-    \textbf{không phải} một lát cắt. Bởi vì $1$ là phần tử của $A$ nhưng $0 < 1$ lại không phải một phần tử của $A$.
+	\textbf{không phải} một lát cắt. Bởi vì $1$ là phần tử của $A$ nhưng $0 < 1$ lại không phải một phần tử của $A$.
 \end{counterexample}
 
 \begin{counterexample}
-    Tập hợp
-    \[
-        A = \left\{ \frac{-1}{n} \mid \text{$n$ là một số nguyên dương} \right\}
-    \]
+	Tập hợp
+	\[
+		A = \left\{ \frac{-1}{n} \mid \text{$n$ là một số nguyên dương} \right\}
+	\]
 
-    \textbf{không phải} một lát cắt. Bởi vì $-1$ là phần tử của $A$ nhưng $-2 < -1$ lại không phải một phần tử của $A$.
+	\textbf{không phải} một lát cắt. Bởi vì $-1$ là phần tử của $A$ nhưng $-2 < -1$ lại không phải một phần tử của $A$.
 \end{counterexample}
 
 Chúng ta định nghĩa các phép toán và quan hệ giữa các lát cắt như sau.
 
 \begin{definition}\label{definition:order-relation-between-dedekind-cuts}
-    $A$ và $B$ là hai lát cắt. Chúng ta nói lát cắt $A$ có quan hệ $\leq$ với lát cắt $B$ và kí hiệu là $A\leq B$ nếu và chỉ nếu $A\subseteq B$.
+	$A$ và $B$ là hai lát cắt. Chúng ta nói lát cắt $A$ có quan hệ $\leq$ với lát cắt $B$ và kí hiệu là $A\leq B$ nếu và chỉ nếu $A\subseteq B$.
 \end{definition}
 
 \begin{theorem}
-    Quan hệ $\leq$ trên tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$ ở Định nghĩa~\ref{definition:order-relation-between-dedekind-cuts} là một quan hệ thứ tự toàn phần.
+	Quan hệ $\leq$ trên tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$ ở Định nghĩa~\ref{definition:order-relation-between-dedekind-cuts} là một quan hệ thứ tự toàn phần.
 \end{theorem}
 
 Quan hệ $\leq$ về bản chất chính là quan hệ bao hàm giữa các tập hợp (các lát cắt là các tập hợp).
 
 Để nói về các phép toán với lát cắt, chúng ta lưu ý hai lát cắt đặc biệt sau đây.
 \[
-    \begin{split}
-        O = \{ x \mid x\in\mathbb{Q} \wedge x < 0 \}, \\
-        I = \{ x \mid x\in\mathbb{Q} \wedge x < 1 \}.
-    \end{split}
+	\begin{split}
+		O = \{ x \mid x\in\mathbb{Q} \wedge x < 0 \}, \\
+		I = \{ x \mid x\in\mathbb{Q} \wedge x < 1 \}.
+	\end{split}
 \]
 
 Với cơ sở là quan hệ thứ tự toàn phần trên tập hợp các lát cắt $\mathscr{D}_{\mathbb{Q}}$, chúng ta đưa ra định nghĩa sau.
 \begin{definition}
-    \begin{enumerate}[label={(\roman*)}]
-        \item Một lát cắt $A$ được gọi là lát cắt dương nếu và chỉ nếu $O < A$.
-        \item Một lát cắt $A$ được gọi là lát cắt âm nếu và chỉ nếu $A < O$.
-    \end{enumerate}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Một lát cắt $A$ được gọi là lát cắt dương nếu và chỉ nếu $O < A$.
+		\item Một lát cắt $A$ được gọi là lát cắt âm nếu và chỉ nếu $A < O$.
+	\end{enumerate}
 \end{definition}
 
 Như vậy, một lát cắt $A$ là không âm nếu và chỉ nếu $O\leq A$, là không dương nếu $A\leq O$.
 
 Phép cộng hai lát cắt được thực hiện bằng cách cộng từng cặp phần tử của hai lát cắt.
 \begin{theorem}[Phép toán cộng lát cắt]
-    Cho hai lát cắt $A$ và $B$. Khi đó tập hợp sau
-    \[
-        A + B = \{ a + b \mid a\in A\wedge b\in B \}
-    \]
+	Cho hai lát cắt $A$ và $B$. Khi đó tập hợp sau
+	\[
+		A + B = \{ a + b \mid a\in A\wedge b\in B \}
+	\]
 
-    là một lát cắt.
+	là một lát cắt.
 \end{theorem}
 
 Để định nghĩa phép nhân hai lát cắt, chúng ta cần dùng đến khái niệm lát cắt dương, âm, không âm, và định nghĩa cho từng trường hợp.
 \begin{theorem}[Phép nhân hai lát cắt]
-    Cho hai lát cắt $A$ và $B$.
-    \begin{enumerate}[label={(\roman*)}]
-        \item Nếu $A\geq O$ và $B\geq O$ thì tập hợp sau
-              \[
-                  A\cdot B = \{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \} \cup O
-              \]
+	Cho hai lát cắt $A$ và $B$.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Nếu $A\geq O$ và $B\geq O$ thì tập hợp sau
+		      \[
+			      A\cdot B = \{ ab \mid a\in A\wedge b\in B\wedge a\geq 0\wedge b\geq 0 \} \cup O
+		      \]
 
-              là một lát cắt.
-        \item Nếu $A\geq O$ và $B < O$ thì tập hợp $A\cdot B = -A\cdot (-B)$ là một lát cắt.
-        \item Nếu $A < O$ và $B\geq O$ thì tập hợp $A\cdot B = -(-A)\cdot B$ là một lát cắt.
-        \item Nếu $A < O$ và $B < O$ thì tập hợp $A\cdot B = (-A)\cdot (-B)$ là một lát cắt.
-    \end{enumerate}
+		      là một lát cắt.
+		\item Nếu $A\geq O$ và $B < O$ thì tập hợp $A\cdot B = -A\cdot (-B)$ là một lát cắt.
+		\item Nếu $A < O$ và $B\geq O$ thì tập hợp $A\cdot B = -(-A)\cdot B$ là một lát cắt.
+		\item Nếu $A < O$ và $B < O$ thì tập hợp $A\cdot B = (-A)\cdot (-B)$ là một lát cắt.
+	\end{enumerate}
 \end{theorem}
 
 Kiểm tra phép cộng, phép nhân, quan hệ $\leq$ trên tập hợp các lát cắt có thỏa mãn hệ tiên đề về số thực hay không là một công việc cần nhiều thời gian, sự cẩn thận và tỉ mỉ mặc dù không khó. Để biết chi tiết hơn, bạn đọc có thể tham khảo về cách xây dựng tập hợp số thực trong~\cite{spivak} hoặc~\cite{abbott}. Trong tài liệu này, chúng tôi chỉ kiểm tra tiên đề về cân trên.
 
 \begin{theorem}
-    Cho tập hợp $\mathscr{D}$ là một tập hợp con khác rỗng của tập hợp các lát cắt Dedekind hữu tỉ $\mathscr{D}_{\mathbb{Q}}$ và $\mathscr{D}$ có cận trên. Khi đó $\mathscr{D}$ có cận trên nhỏ nhất.
+	Cho tập hợp $\mathscr{D}$ là một tập hợp con khác rỗng của tập hợp các lát cắt Dedekind hữu tỉ $\mathscr{D}_{\mathbb{Q}}$ và $\mathscr{D}$ có cận trên. Khi đó $\mathscr{D}$ có cận trên nhỏ nhất.
 \end{theorem}
 
 \begin{proof}
-    Chúng ta xét tập hợp $S = \bigcup\limits_{A\in\mathscr{D}} A$, trong đó $A$ là các phần tử (là các lát cắt) của $\mathscr{D}$. Tập hợp $S$ bao gồm các số hữu tỉ.
+	Chúng ta xét tập hợp $S = \bigcup\limits_{A\in\mathscr{D}} A$, trong đó $A$ là các phần tử (là các lát cắt) của $\mathscr{D}$. Tập hợp $S$ bao gồm các số hữu tỉ.
 
-    Đầu tiên, chúng ta chứng minh $S$ là một lát cắt.
-    \begin{enumerate}[label={(DC\arabic*)}, itemindent=0.2cm]
-        \item $S$ là hợp thành của các lát cắt nên $S$ khác rỗng.
-        \item Vì $\mathscr{D}$ có cận trên nên mọi phần tử $A$ của $\mathscr{D}$ đều nhỏ hơn hoặc bằng một lát cắt $B$ nào đó. Do đó $S\leq B$, kéo theo $S$ không phải toàn bộ tập hợp số hữu tỉ.
-        \item Giả sử $x$ là một phần tử của $S$. Theo định nghĩa của $S$ và phép toán hợp của các tập hợp, tồn tại một lát cắt $A$ (là phần tử của $S$) sao cho $x$ thuộc $A$. Vì lát cắt $A$ không có phần tử lớn nhất nên tồn tại phần tử $y$ của $A$ sao cho $x < y$. Do $y$ thuộc $A$ nên $y$ cũng thuộc $S$. Do đó $S$ không có phần tử lớn nhất.
-        \item Giả sử $x$ là một phần tử của $S$ và $y$ là một số hữu tỉ nhỏ hơn $x$.  Theo định nghĩa của $S$ và phép toán hợp của các tập hợp, tồn tại một lát cắt $A$ (là phần tử của $S$) sao cho $x$ thuộc $A$. Vì lát cắt $A$ đóng dưới nên $y$ thuộc $A$, kéo theo $y$ cũng thuộc $S$. Do đó $S$ đóng dưới.
-    \end{enumerate}
+	Đầu tiên, chúng ta chứng minh $S$ là một lát cắt.
+	\begin{enumerate}[label={(DC\arabic*)}, itemindent=0.2cm]
+		\item $S$ là hợp thành của các lát cắt nên $S$ khác rỗng.
+		\item Vì $\mathscr{D}$ có cận trên nên mọi phần tử $A$ của $\mathscr{D}$ đều nhỏ hơn hoặc bằng một lát cắt $B$ nào đó. Do đó $S\leq B$, kéo theo $S$ không phải toàn bộ tập hợp số hữu tỉ.
+		\item Giả sử $x$ là một phần tử của $S$. Theo định nghĩa của $S$ và phép toán hợp của các tập hợp, tồn tại một lát cắt $A$ (là phần tử của $S$) sao cho $x$ thuộc $A$. Vì lát cắt $A$ không có phần tử lớn nhất nên tồn tại phần tử $y$ của $A$ sao cho $x < y$. Do $y$ thuộc $A$ nên $y$ cũng thuộc $S$. Do đó $S$ không có phần tử lớn nhất.
+		\item Giả sử $x$ là một phần tử của $S$ và $y$ là một số hữu tỉ nhỏ hơn $x$.  Theo định nghĩa của $S$ và phép toán hợp của các tập hợp, tồn tại một lát cắt $A$ (là phần tử của $S$) sao cho $x$ thuộc $A$. Vì lát cắt $A$ đóng dưới nên $y$ thuộc $A$, kéo theo $y$ cũng thuộc $S$. Do đó $S$ đóng dưới.
+	\end{enumerate}
 
-    Như vậy $S$ là một lát cắt.
+	Như vậy $S$ là một lát cắt.
 
-    Tiếp theo, chúng ta chứng minh $S$ là cận trên nhỏ nhất của $\mathscr{D}$.
+	Tiếp theo, chúng ta chứng minh $S$ là cận trên nhỏ nhất của $\mathscr{D}$.
 
-    Giả sử $X$ là một cận trên của $\mathscr{D}$. Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$, mọi phần tử $A$ (cũng là các lát cắt) của $\mathscr{D}$ thỏa mãn $A\leq X$ ($A\subseteq X$). Do đó, hợp của tất cả các phần tử của $\mathscr{D}$, hay $S = \bigcup\limits_{A\in\mathscr{D}} A$ thỏa mãn $S\subseteq X$ ($S\leq X$). Do đó $S$ nhỏ hơn hoặc bằng của mọi cận trên của $\mathscr{D}$, điều này có nghĩa là $S$ là cận trên nhỏ nhất của $\mathscr{D}$.
+	Giả sử $X$ là một cận trên của $\mathscr{D}$. Theo định nghĩa quan hệ $\leq$ trên tập hợp $\mathscr{D}_{\mathbb{Q}}$, mọi phần tử $A$ (cũng là các lát cắt) của $\mathscr{D}$ thỏa mãn $A\leq X$ ($A\subseteq X$). Do đó, hợp của tất cả các phần tử của $\mathscr{D}$, hay $S = \bigcup\limits_{A\in\mathscr{D}} A$ thỏa mãn $S\subseteq X$ ($S\leq X$). Do đó $S$ nhỏ hơn hoặc bằng của mọi cận trên của $\mathscr{D}$, điều này có nghĩa là $S$ là cận trên nhỏ nhất của $\mathscr{D}$.
 
-    Vậy $\mathscr{D}$ có cận trên nhỏ nhất.
+	Vậy $\mathscr{D}$ có cận trên nhỏ nhất.
 \end{proof}
 
 \subsection{Tóm lược về mô hình số thực bằng dãy Cauchy hữu tỉ}
@@ -281,132 +283,132 @@ Mô hình số thực bằng dãy Cauchy hữu tỉ được đề xuất bởi 
 Nhiều định nghĩa và kết quả liên quan đến dãy số trong mục này có thể quen thuộc với nhiều bạn đọc. Tuy nhiên, chúng tôi vẫn sẽ nêu lại một cách sơ lược. Trước khi đi đến định nghĩa dãy Cauchy hữu tỉ, chúng ta cần định nghĩa về dãy số hữu tỉ và tính hội tụ.
 
 \begin{definition}[Dãy số hữu tỉ\index{Dãy số hữu tỉ}]
-    Một \textbf{dãy số hữu tỉ} là một ánh xạ với tập nguồn là tập hợp số tự nhiên và tập đích là tập hợp số hữu tỉ.
+	Một \textbf{dãy số hữu tỉ} là một ánh xạ với tập nguồn là tập hợp số tự nhiên và tập đích là tập hợp số hữu tỉ.
 
-    \noindent Một dãy số hữu tỉ $f: \mathbb{N}\to\mathbb{Q}$ được kí hiệu là ${(f_{n})}_{n\in\mathbb{N}}$, và $f_{n}$ là giá trị được gán với số tự nhiên $n$ bởi $f$. Ngoài cách kí hiệu trên, nhiều tác giả còn dùng các kí hiệu khác cho dãy số, chẳng hạn
-    \[
-        {(f_{n})}, \quad {(f_{n})}_{n=0}, \quad {(f_{n})}^{\infty}_{n=0}
-    \]
+	\noindent Một dãy số hữu tỉ $f: \mathbb{N}\to\mathbb{Q}$ được kí hiệu là ${(f_{n})}_{n\in\mathbb{N}}$, và $f_{n}$ là giá trị được gán với số tự nhiên $n$ bởi $f$. Ngoài cách kí hiệu trên, nhiều tác giả còn dùng các kí hiệu khác cho dãy số, chẳng hạn
+	\[
+		{(f_{n})}, \quad {(f_{n})}_{n=0}, \quad {(f_{n})}^{\infty}_{n=0}
+	\]
 
-    \noindent Trong dãy số hữu tỉ ${(f_{n})}_{n\in\mathbb{N}}$, một số tự nhiên $n$ cụ thể được gọi là một \textbf{chỉ số\index{Chỉ số}}.
+	\noindent Trong dãy số hữu tỉ ${(f_{n})}_{n\in\mathbb{N}}$, một số tự nhiên $n$ cụ thể được gọi là một \textbf{chỉ số\index{Chỉ số}}.
 \end{definition}
 
 Khi có một dãy số, người ta thường quan tâm đến việc giá trị của dãy số sẽ như thế nào với chỉ số $n$ rất lớn, hay dãy số đó có hội tụ không. Để phát biểu một cách chặt chẽ về đặc điểm này của dãy số, các nhà toán học đã đúc kết lại thành định nghĩa dãy số hội tụ.
 
 \begin{definition}
-    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là
-    \textbf{hội tụ đến số hữu tỉ $a$} nếu và chỉ nếu
-    \[
-        \forall \varepsilon > 0 \Biggl(\exists N(\varepsilon)\Bigl(\forall n\geq N(\varepsilon)(\abs{a_{n} - a} < \varepsilon)\bigr)\biggr).
-    \]
+	Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là
+	\textbf{hội tụ đến số hữu tỉ $a$} nếu và chỉ nếu
+	\[
+		\forall \varepsilon > 0 \Biggl(\exists N(\varepsilon)\Bigl(\forall n\geq N(\varepsilon)(\abs{a_{n} - a} < \varepsilon)\bigr)\biggr).
+	\]
 
-    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{hội tụ\index{Hội tụ}} nếu tồn tại số hữu tỉ $a$ sao cho dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$. Số hữu tỉ $a$ khi đó được gọi là một \textbf{điểm giới hạn\index{Điểm giới hạn}}, hay \textbf{giới hạn\index{Giới hạn}} của dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$.
+	Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là \textbf{hội tụ\index{Hội tụ}} nếu tồn tại số hữu tỉ $a$ sao cho dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến $a$. Số hữu tỉ $a$ khi đó được gọi là một \textbf{điểm giới hạn\index{Điểm giới hạn}}, hay \textbf{giới hạn\index{Giới hạn}} của dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$.
 
-    Bằng kí hiệu, chúng ta viết điều kiện cần và đủ để dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không hội tụ đến số hữu tỉ $a$} như sau
-    \[
-        \exists\varepsilon_{0} > 0 \Biggl(\forall N\Bigl(\exists n\geq N (\abs{a_{n} - a}\geq\varepsilon_{0} )\Bigr)\Biggr).
-    \]
+	Bằng kí hiệu, chúng ta viết điều kiện cần và đủ để dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không hội tụ đến số hữu tỉ $a$} như sau
+	\[
+		\exists\varepsilon_{0} > 0 \Biggl(\forall N\Bigl(\exists n\geq N (\abs{a_{n} - a}\geq\varepsilon_{0} )\Bigr)\Biggr).
+	\]
 \end{definition}
 
 Trên đây là một định nghĩa hình thức cho khái niệm dãy số hữu tỉ hội tụ. Chúng tôi thừa nhận rằng cách định nghĩa này khó hiểu với những người mới học. Nếu bạn đọc cảm thấy đây là một cách định nghĩa phức tạp, thì chúng tôi cho rằng việc nên làm đầu tiên là đọc về vị từ và lượng từ trong Chương~\ref{chapter:logic-and-set-theory}. Thay cho (nhưng không hoàn toàn thay thế) cách định nghĩa trên, định nghĩa cho dãy số hữu tỉ hội tụ có thể được phát biểu bớt hình thức hơn như sau:
 \begin{itemize}
-    \item (Thông dịch trực tiếp logic hình thức thành câu văn) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$, tồn tại số tự nhiên $N(\varepsilon)$ chỉ phụ thuộc vào $\varepsilon$ sao cho với mọi chỉ số $n\geq N(\varepsilon)$, chúng ta có $\abs{a_{n} - a} < \varepsilon$.
-    \item (Phát biểu không hình thức) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$ nhỏ tùy ý, luôn tồn tại một chỉ số mà từ chỉ số đó trở đi, khoảng cách từ $a_{n}$ đến $a$ nhỏ hơn $\varepsilon$.
+	\item (Thông dịch trực tiếp logic hình thức thành câu văn) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$, tồn tại số tự nhiên $N(\varepsilon)$ chỉ phụ thuộc vào $\varepsilon$ sao cho với mọi chỉ số $n\geq N(\varepsilon)$, chúng ta có $\abs{a_{n} - a} < \varepsilon$.
+	\item (Phát biểu không hình thức) Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là hội tụ đến số hữu tỉ $a$ nếu và chỉ nếu: với mỗi (số hữu tỉ) $\varepsilon > 0$ nhỏ tùy ý, luôn tồn tại một chỉ số mà từ chỉ số đó trở đi, khoảng cách từ $a_{n}$ đến $a$ nhỏ hơn $\varepsilon$.
 \end{itemize}
 
 \begin{theorem}\label{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}
-    Nếu một dãy số hữu tỉ hội tụ thì dãy số hữu tỉ đó chỉ có một điểm giới hạn.
+	Nếu một dãy số hữu tỉ hội tụ thì dãy số hữu tỉ đó chỉ có một điểm giới hạn.
 \end{theorem}
 
 Việc tính toán giới hạn của một số dãy số có thể được đơn giản hóa nhờ kết quả sau và những giới hạn đã biết.
 \begin{proposition}\label{proposition:limits-of-sum-and-product}
-    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}$ là các dãy số hữu tỉ.
-    \begin{enumerate}[label={(\roman*)}]
-        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim s_{n} = a + b$, trong đó dãy số hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $s_{n} = a_{n} + b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(s_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$).
-        \item Nếu $\lim a_{n} = a$ thì $\lim c_{n} = ca$, trong đó dãy số hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $c_{n} = c\cdot a_{n}$ với mọi số tự nhiên $n$, trong đó $c$ là một hằng số hữu tỉ (Chúng ta còn kí hiệu ${(c_{n})}_{n\in\mathbb{N}}$ bởi ${(ca_{n})}_{n\in\mathbb{N}}$).
-        \item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim p_{n} = ab$, trong đó dãy số hữu tỉ ${(p_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $p_{n} = a_{n}b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(p_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n}b_{n})}_{n\in\mathbb{N}}$).
-    \end{enumerate}
+	${(a_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}$ là các dãy số hữu tỉ.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim s_{n} = a + b$, trong đó dãy số hữu tỉ ${(s_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $s_{n} = a_{n} + b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(s_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$).
+		\item Nếu $\lim a_{n} = a$ thì $\lim c_{n} = ca$, trong đó dãy số hữu tỉ ${(c_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $c_{n} = c\cdot a_{n}$ với mọi số tự nhiên $n$, trong đó $c$ là một hằng số hữu tỉ (Chúng ta còn kí hiệu ${(c_{n})}_{n\in\mathbb{N}}$ bởi ${(ca_{n})}_{n\in\mathbb{N}}$).
+		\item Nếu $\lim a_{n} = a$ và $\lim b_{n} = b$ thì $\lim p_{n} = ab$, trong đó dãy số hữu tỉ ${(p_{n})}_{n\in\mathbb{N}}$ được định nghĩa bởi $p_{n} = a_{n}b_{n}$ với mọi số tự nhiên $n$ (Chúng ta còn kí hiệu ${(p_{n})}_{n\in\mathbb{N}}$ bởi ${(a_{n}b_{n})}_{n\in\mathbb{N}}$).
+	\end{enumerate}
 \end{proposition}
 
 \begin{definition}[Dãy Cauchy hữu tỉ]
-    Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một \textbf{dãy Cauchy hữu tỉ\index{Dãy Cauchy hữu tỉ}} nếu và chỉ nếu
-    \[
-        \forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall m\geq N(\varepsilon) (\abs{a_{m} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
-    \]
+	Dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ được gọi là một \textbf{dãy Cauchy hữu tỉ\index{Dãy Cauchy hữu tỉ}} nếu và chỉ nếu
+	\[
+		\forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall m\geq N(\varepsilon) (\abs{a_{m} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
+	\]
 
-    \noindent Điều kiện trên có thể phát biểu dưới dạng tương đương là
-    \[
-        \forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall p > 0 (\abs{a_{n+p} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
-    \]
+	\noindent Điều kiện trên có thể phát biểu dưới dạng tương đương là
+	\[
+		\forall\varepsilon > 0 \Biggl( \exists N(\varepsilon) \Bigl( \forall n\geq N(\varepsilon) \bigl(\forall p > 0 (\abs{a_{n+p} - a_{n}} < \varepsilon)\bigr) \Bigr) \Biggr).
+	\]
 
-    \noindent Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}$.
+	\noindent Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}$.
 \end{definition}
 
 Dãy Cauchy hữu tỉ và tính hội tụ có liên hệ sau.
 \begin{theorem}
-    Nếu một dãy số hữu tỉ hội tụ thì đó cũng là một dãy Cauchy hữu tỉ.
+	Nếu một dãy số hữu tỉ hội tụ thì đó cũng là một dãy Cauchy hữu tỉ.
 \end{theorem}
 
 Dãy số hữu tỉ hội tụ thì cũng là dãy Cauchy hữu tỉ, nhưng dãy Cauchy hữu tỉ thì có thể không hội tụ đến số hữu tỉ nào.
 
 \begin{proposition}
-    Dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng đệ quy như sau
-    \[
-        x_{n} = \begin{cases}
-            1                                 & \text{khi $n = 0$}   \\
-            \dfrac{2x_{n-1} + 2}{x_{n-1} + 2} & \text{khi $n\geq 1$}
-        \end{cases}
-    \]
+	Dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ được định nghĩa bằng đệ quy như sau
+	\[
+		x_{n} = \begin{cases}
+			1                                 & \text{khi $n = 0$}   \\
+			\dfrac{2x_{n-1} + 2}{x_{n-1} + 2} & \text{khi $n\geq 1$}
+		\end{cases}
+	\]
 
-    Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy và không hội tụ đến bất kì số hữu tỉ nào.
+	Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy và không hội tụ đến bất kì số hữu tỉ nào.
 \end{proposition}
 
 \begin{proof}[Chứng minh sơ lược]
-    Chúng ta chứng minh mệnh đề này bằng phản chứng, lần lượt qua các bước sau.
-    \begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
-        \item $x_{n}\geq 1$ với mọi số tự nhiên $n$.
-        \item Với mọi số tự nhiên $n$, $\abs{{x_{n}}^{2} - 2}\leq \dfrac{1}{n+1}$.
-        \item Chứng minh rằng ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+	Chúng ta chứng minh mệnh đề này bằng phản chứng, lần lượt qua các bước sau.
+	\begin{enumerate}[label={\textbf{Bước \arabic*.}},itemindent=1cm]
+		\item $x_{n}\geq 1$ với mọi số tự nhiên $n$.
+		\item Với mọi số tự nhiên $n$, $\abs{{x_{n}}^{2} - 2}\leq \dfrac{1}{n+1}$.
+		\item Chứng minh rằng ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
 
-              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì với mọi số tự nhiên $p$, chúng ta có
-              \begin{align*}
-                  \abs{x_{n+p} - x_{n}} & = \frac{\abs{{x_{n+p}}^{2} - {x_{n}}^{2}}}{\abs{x_{n+p} + x_{n}}} = \frac{\abs{({x_{n+p}}^{2} - 2) + (2 - {x_{n}}^{2})}}{\abs{x_{n+p} + x_{n}}}                                                    \\
-                                        & \leq \frac{\abs{{x_{n+p}}^{2} - 2} + \abs{{x_{n}}^{2} - 2}}{\abs{x_{n+p} + x_{n}}}                                                                                                                 \\
-                                        & \leq \frac{1}{2}\left(\frac{1}{n+1} + \frac{1}{n+p+1}\right)                                                                                    & \text{(theo \textbf{Bước 1} và \textbf{Bước 2})} \\
-                                        & \leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} = \varepsilon.
-              \end{align*}
+		      Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì với mọi số tự nhiên $p$, chúng ta có
+		      \begin{align*}
+			      \abs{x_{n+p} - x_{n}} & = \frac{\abs{{x_{n+p}}^{2} - {x_{n}}^{2}}}{\abs{x_{n+p} + x_{n}}} = \frac{\abs{({x_{n+p}}^{2} - 2) + (2 - {x_{n}}^{2})}}{\abs{x_{n+p} + x_{n}}}                                                    \\
+			                            & \leq \frac{\abs{{x_{n+p}}^{2} - 2} + \abs{{x_{n}}^{2} - 2}}{\abs{x_{n+p} + x_{n}}}                                                                                                                 \\
+			                            & \leq \frac{1}{2}\left(\frac{1}{n+1} + \frac{1}{n+p+1}\right)                                                                                    & \text{(theo \textbf{Bước 1} và \textbf{Bước 2})} \\
+			                            & \leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} = \varepsilon.
+		      \end{align*}
 
-              Do đó với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$ và với mọi số tự nhiên $p$, chúng ta có $\abs{x_{n+p} - x_{n}} < \varepsilon$. Theo định nghĩa dãy Cauchy hữu tỉ, ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
-        \item Dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ (được định nghĩa bởi $y_{n} = {x_{n}}^{2}$ với mọi số tự nhiên $n$) hội tụ đến $2$.
+		      Do đó với mỗi số hữu tỉ dương $\varepsilon$, tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$ và với mọi số tự nhiên $p$, chúng ta có $\abs{x_{n+p} - x_{n}} < \varepsilon$. Theo định nghĩa dãy Cauchy hữu tỉ, ${(x_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ.
+		\item Dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ (được định nghĩa bởi $y_{n} = {x_{n}}^{2}$ với mọi số tự nhiên $n$) hội tụ đến $2$.
 
-              Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì
-              \[
-                  \abs{{x_{n}}^{2} - 2}\leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} < \varepsilon.
-              \]
+		      Chúng ta chọn $\varepsilon$ là một số hữu tỉ dương, $N = \floor{\frac{1}{\varepsilon}}$, nếu số tự nhiên $n\geq N$ thì
+		      \[
+			      \abs{{x_{n}}^{2} - 2}\leq \frac{1}{n+1} < \frac{1}{\frac{1}{\varepsilon}} < \varepsilon.
+		      \]
 
-              Theo định nghĩa dãy số hội tụ, dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến $2$.
-        \item Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến bất kì số hữu tỉ nào.
+		      Theo định nghĩa dãy số hội tụ, dãy số hữu tỉ ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến $2$.
+		\item Chứng minh rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến bất kì số hữu tỉ nào.
 
-              Giả sử phản chứng rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ hội tụ    đến số hữu tỉ $x$.
+		      Giả sử phản chứng rằng dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ hội tụ    đến số hữu tỉ $x$.
 
-              Theo phần (iii) của Mệnh đề~\ref{proposition:limits-of-sum-and-product}, chúng ta suy ra dãy số ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $x^{2}$. Theo Định lý~\ref{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}, chúng ta suy ra $x^{2} = 2$.
+		      Theo phần (iii) của Mệnh đề~\ref{proposition:limits-of-sum-and-product}, chúng ta suy ra dãy số ${(y_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $x^{2}$. Theo Định lý~\ref{theorem:uniqueness-of-limit-points-of-convergence-rational-sequences}, chúng ta suy ra $x^{2} = 2$.
 
-              Theo Mệnh đề~\ref{proposition:irrational-cut}, không có số hữu tỉ nào có bình phương bằng $2$. Do đó $x^{2} = 2$ (với $x$ là số hữu tỉ) là một kết quả vô lý. Như vậy giả sử phản chứng là sai, kéo theo dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến số hữu tỉ nào.
-    \end{enumerate}
+		      Theo Mệnh đề~\ref{proposition:irrational-cut}, không có số hữu tỉ nào có bình phương bằng $2$. Do đó $x^{2} = 2$ (với $x$ là số hữu tỉ) là một kết quả vô lý. Như vậy giả sử phản chứng là sai, kéo theo dãy số hữu tỉ ${(x_{n})}_{n\in\mathbb{N}}$ không hội tụ đến số hữu tỉ nào.
+	\end{enumerate}
 \end{proof}
 
 Khi sử dụng dãy Cauchy hữu tỉ để xây dựng tập hợp số thực, chúng ta gặp một vấn đề: \textit{có nhiều dãy Cauchy hữu tỉ hội tụ đến cùng một số hữu tỉ}. Điều này sẽ được giải quyết bằng quan hệ tương đương trong định lý sau.
 
 \begin{theorem}
-    Hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ được gọi là có quan hệ $\sim$, và được kí hiệu là ${(a_{n})}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$, nói cách khác
-    \[
-        \forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
-    \]
-    \begin{enumerate}[label={(\roman*)},itemsep=0pt]
-        \item Quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ là một quan hệ tương đương. Nói riêng, quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là một quan hệ tương đương.
-        \item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
-        \item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
-    \end{enumerate}
+	Hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ được gọi là có quan hệ $\sim$, và được kí hiệu là ${(a_{n})}_{n\in\mathbb{N}} \sim {(b_{n})}_{n\in\mathbb{N}}$ khi và chỉ khi dãy số hữu tỉ ${(a_{n} - b_{n})}_{n\in\mathbb{N}}$ hội tụ đến $0$, nói cách khác
+	\[
+		\forall\varepsilon > 0\Biggl( \exists N \Bigl( \forall n\geq N ( \abs{a_{n} - b_{n}} < \varepsilon ) \Bigr) \Biggr).
+	\]
+	\begin{enumerate}[label={(\roman*)},itemsep=0pt]
+		\item Quan hệ $\sim$ trên tập hợp các dãy số hữu tỉ là một quan hệ tương đương. Nói riêng, quan hệ $\sim$ trên tập hợp các dãy Cauchy hữu tỉ là một quan hệ tương đương.
+		\item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ hội tụ đến số hữu tỉ $q$.
+		\item Nếu hai dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ tương đương theo quan hệ $\sim$ thì ${(a_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ khi và chỉ khi ${(b_{n})}_{n\in\mathbb{N}}$ là dãy Cauchy hữu tỉ.
+	\end{enumerate}
 \end{theorem}
 
 Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\mathbb{Q}}$.
@@ -414,30 +416,30 @@ Chúng ta kí hiệu tập hợp các dãy Cauchy hữu tỉ là $\mathscr{C}_{\
 Phép cộng và phép nhân dãy Cauchy hữu tỉ được thực hiện bằng cách cộng và nhân các giá trị của hai dãy Cauchy hữu tỉ tại các chỉ số bằng nhau.
 
 \begin{theorem}[Phép cộng và phép nhân dãy Cauchy hữu tỉ]\label{theorem:addition-and-multiplication-of-rational-cauchy-sequences}
-    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì
-    \begin{enumerate}[label={(\roman*)}]
-        \item ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép cộng dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n} + b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}} + {(b_{n})}_{n\in\mathbb{N}}$.
-        \item ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép nhân dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
-    \end{enumerate}
+	${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ thì
+	\begin{enumerate}[label={(\roman*)}]
+		\item ${(a_{n} + b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép cộng dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n} + b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}} + {(b_{n})}_{n\in\mathbb{N}}$.
+		\item ${(a_{n}b_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy hữu tỉ\index{Phép nhân dãy Cauchy hữu tỉ}. Chúng ta cũng kí hiệu ${(a_{n}b_{n})}_{n\in\mathbb{N}} = {(a_{n})}_{n\in\mathbb{N}}\cdot {(b_{n})}_{n\in\mathbb{N}}$.
+	\end{enumerate}
 \end{theorem}
 
 \begin{definition}
-    Chúng ta kí hiệu lớp tương đương gồm các \textit{dãy số hữu tỉ} tương đương với dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ là $\clsseq{a_{n}}{n}$.
+	Chúng ta kí hiệu lớp tương đương gồm các \textit{dãy số hữu tỉ} tương đương với dãy số hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ là $\clsseq{a_{n}}{n}$.
 
-    \begin{enumerate}[label={(\roman*)}]
-        \item Phép cộng hai phần tử\index{Phép cộng hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $+$ và được xác định như sau
-              \[
-                  \clsseq{a_{n}}{n} + \clsseq{b_{n}}{n} = \clsseq{a_{n} + b_{n}}{n}
-              \]
+	\begin{enumerate}[label={(\roman*)}]
+		\item Phép cộng hai phần tử\index{Phép cộng hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $+$ và được xác định như sau
+		      \[
+			      \clsseq{a_{n}}{n} + \clsseq{b_{n}}{n} = \clsseq{a_{n} + b_{n}}{n}
+		      \]
 
-              trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
-        \item Phép nhân hai phần tử\index{Phép nhân hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $\cdot$ và được xác định như sau
-              \[
-                  \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n} = \clsseq{a_{n}b_{n}}{n}
-              \]
+		      trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+		\item Phép nhân hai phần tử\index{Phép nhân hai lớp tương đương dãy Cauchy hữu tỉ} của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một phép toán hai ngôi trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, được kí hiệu là $\cdot$ và được xác định như sau
+		      \[
+			      \clsseq{a_{n}}{n} \cdot \clsseq{b_{n}}{n} = \clsseq{a_{n}b_{n}}{n}
+		      \]
 
-              trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
-    \end{enumerate}
+		      trong đó ${(a_{n})}_{n\in\mathbb{N}}, {(b_{n})}_{n\in\mathbb{N}}$ là các dãy Cauchy hữu tỉ.
+	\end{enumerate}
 \end{definition}
 
 Một cách không hình thức, chúng ta có thể diễn đạt định nghĩa trên thành: tổng (tích) của hai lớp tương đương là lớp tương đương của tổng (tích) hai dãy Cauchy. Với định nghĩa trên, phép cộng và phép nhân của hai phần tử trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương. Định nghĩa này cũng cho phép chúng ta kiểm tra các tiên đề về trường một cách thuận lợi.
@@ -445,27 +447,27 @@ Một cách không hình thức, chúng ta có thể diễn đạt định nghĩ
 Để định nghĩa quan hệ thứ tự như mong muốn trong $\mathscr{C}_{\mathbb{Q}}/_{\sim}$, chúng ta sử dụng một quan hệ tiền thứ tự trong $\mathscr{C}_{\mathbb{Q}}$.
 
 \begin{definition}
-    ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ.
-    \begin{enumerate}[label={(\roman*)}]
-        \item Chúng ta nói ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ có quan hệ $\lesssim$ nếu và chỉ nếu\index{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ} ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{tương đương} với ${(b_{n})}_{n\in\mathbb{N}}$ hoặc tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n}\leq b_{n}$.
-        \item Chúng ta nói ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ có quan hệ $<$ nếu và chỉ nếu ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không tương đương} với ${(b_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}\leq {(b_{n})}_{n\in\mathbb{N}}$.
-    \end{enumerate}
+	${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ là hai dãy Cauchy hữu tỉ.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chúng ta nói ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ có quan hệ $\lesssim$ nếu và chỉ nếu\index{Quan hệ tiền thứ tự giữa các dãy Cauchy hữu tỉ} ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{tương đương} với ${(b_{n})}_{n\in\mathbb{N}}$ hoặc tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $a_{n}\leq b_{n}$.
+		\item Chúng ta nói ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ có quan hệ $<$ nếu và chỉ nếu ${(a_{n})}_{n\in\mathbb{N}}$ \textbf{không tương đương} với ${(b_{n})}_{n\in\mathbb{N}}$ và ${(a_{n})}_{n\in\mathbb{N}}\leq {(b_{n})}_{n\in\mathbb{N}}$.
+	\end{enumerate}
 \end{definition}
 
 \begin{theorem}
-    Quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tiền thứ tự toàn phần.
+	Quan hệ $\lesssim$ giữa các dãy Cauchy hữu tỉ là một quan hệ tiền thứ tự toàn phần.
 \end{theorem}
 
 \begin{theorem}\label{theorem:preorder-and-equivalence-relation-between-rational-cauchy-sequences}
-    Nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$.
+	Nếu hai dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}$ thỏa mãn ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$ và ${(b_{n})}_{n\in\mathbb{N}}\lesssim {(a_{n})}_{n\in\mathbb{N}}$ thì ${(a_{n})}_{n\in\mathbb{N}}\sim {(b_{n})}_{n\in\mathbb{N}}$.
 \end{theorem}
 
 \begin{definition}
-    Hai phần tử $\alpha, \beta$ của tập thương $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ được gọi là có quan hệ $\leq$ nếu và chỉ nếu với mỗi dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ trong $\alpha$ và dãy Cauchy hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ trong $\beta$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
+	Hai phần tử $\alpha, \beta$ của tập thương $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ được gọi là có quan hệ $\leq$ nếu và chỉ nếu với mỗi dãy Cauchy hữu tỉ ${(a_{n})}_{n\in\mathbb{N}}$ trong $\alpha$ và dãy Cauchy hữu tỉ ${(b_{n})}_{n\in\mathbb{N}}$ trong $\beta$, chúng ta có ${(a_{n})}_{n\in\mathbb{N}}\lesssim {(b_{n})}_{n\in\mathbb{N}}$.
 \end{definition}
 
 \begin{theorem}
-    Quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một quan hệ thứ tự toàn phần.
+	Quan hệ $\leq$ trên tập hợp $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là một quan hệ thứ tự toàn phần.
 \end{theorem}
 
 Với mô hình số thực bằng dãy Cauchy hữu tỉ, việc kiểm tra các tiên đề về trường, các tiên đề về thứ tự có thể được thực hiện rất tự nhiên. Nhưng với tiên đề về cận trên, chứng minh đòi hỏi việc xây dựng một phần tử của $\mathscr{C}_{\mathbb{Q}}/_{\sim}$ là cận trên nhỏ nhất. Chi tiết nội dung về việc xây dựng tập hợp số thực, chúng tôi đặt tại phần phụ lục của tài liệu này.
@@ -473,19 +475,19 @@ Với mô hình số thực bằng dãy Cauchy hữu tỉ, việc kiểm tra cá
 \subsection{Tính duy nhất của tập hợp số thực}
 
 \begin{definition}
-    Số thực là một lát cắt trên tập hợp số hữu tỉ. Tập hợp số thực được kí hiệu là $\mathbb{R}$.
+	Số thực là một lát cắt trên tập hợp số hữu tỉ. Tập hợp số thực được kí hiệu là $\mathbb{R}$.
 \end{definition}
 
 Với việc có nhiều cách xây dựng tập hợp số thực, trong đó, tiêu biểu là mô hình lát cắt Dedekind và mô hình dãy Cauchy hữu tỉ, chúng ta có ít nhất hai cách để định nghĩa số thực --- Số thực có thể được định nghĩa là một lát cắt trên tập hợp số hữu tỉ, hoặc một phần tử của tập thương $\mathscr{C}_{\mathbb{Q}}/_{\sim}$. Tuy nhiên, các nhà toán học đã chứng minh được rằng mọi mô hình số thực là đẳng cấu với nhau.
 
 \begin{theorem}\label{theorem:uniqueness-of-complete-ordered-field}
-    Nếu tập hợp $R$ với phép cộng (${+}_{R}$) với phần tử đồng nhất của phép cộng ($0_{R}$), phép nhân (${\times}_{R}$) với phần tử đồng nhất của phép nhân ($1_{R}$), và quan hệ thứ tự ($\leq_{R}$) thỏa mãn hệ tiên đề về số thực thì tồn tại một song ánh $f: \mathscr{D}_{\mathbb{Q}}\to R$ sao cho
-    \begin{itemize}[topsep=0pt,itemsep=0pt]
-        \item $f(0) = 0_{R}$, $f(1) = 1_{R}$.
-        \item $f(x + y) = f(x) +_{R} f(y)$ với mọi số thực $x, y$.
-        \item $f(xy) = f(x) \times_{R} f(y)$ với mọi số thực $x, y$.
-        \item $x\leq y$ kéo theo $f(x)\leq_{R} f(y)$ với mọi số thực $x, y$.
-    \end{itemize}
+	Nếu tập hợp $R$ với phép cộng (${+}_{R}$) với phần tử đồng nhất của phép cộng ($0_{R}$), phép nhân (${\times}_{R}$) với phần tử đồng nhất của phép nhân ($1_{R}$), và quan hệ thứ tự ($\leq_{R}$) thỏa mãn hệ tiên đề về số thực thì tồn tại một song ánh $f: \mathscr{D}_{\mathbb{Q}}\to R$ sao cho
+	\begin{itemize}[topsep=0pt,itemsep=0pt]
+		\item $f(0) = 0_{R}$, $f(1) = 1_{R}$.
+		\item $f(x + y) = f(x) +_{R} f(y)$ với mọi số thực $x, y$.
+		\item $f(xy) = f(x) \times_{R} f(y)$ với mọi số thực $x, y$.
+		\item $x\leq y$ kéo theo $f(x)\leq_{R} f(y)$ với mọi số thực $x, y$.
+	\end{itemize}
 \end{theorem}
 
 Một chứng minh cho Định lý~\ref{theorem:uniqueness-of-complete-ordered-field} được phác thảo trong~\cite{spivak}. Với định lý này, chúng ta có thể sử dụng khái niệm số thực mà không cần biết rõ là số thực được định nghĩa theo mô hình nào, tương tự với việc có thể sử dụng bất kì phần tử nào của một lớp tương đương để làm phần tử đại diện của lớp tương đương đó.
@@ -497,223 +499,627 @@ Mục này nói về thuộc tính Archimedes trong tập hợp số thực và 
 Trong chương trình phổ thông, thuộc tính Archimedes thường được thừa nhận. Chứng minh dưới đây cho thuộc tính Archimedes sử dụng tiên đề về cận trên.
 
 \begin{theorem}[Thuộc tính Archimedes\index{Thuộc tính Archimedes}]
-    Với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
+	Với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
 \end{theorem}
 
 \begin{proof}
-    Giả sử phản chứng rằng tồn tại số thực $x$ sao cho với mọi số nguyên $n$, có $n\leq x$. Theo giả sử phản chứng, $x$ là một cận trên của tập hợp số nguyên. Theo tiên đề về cận trên, tập hợp số nguyên có cận trên nhỏ nhất, chúng ta kí hiệu cận trên nhỏ nhất đó là $s$. Do đó $n\leq s$ với mọi số nguyên $n$. Vì $s$ là cận trên nhỏ nhất của tập hợp số nguyên nên $s - 1$ không phải một cận trên của tập hợp số nguyên, do đó tồn tại số nguyên $m$ sao cho $s - 1 < m$, kéo theo $s < m + 1$. Điều này mâu thuẫn với việc $s$ là cận trên của tập hợp số nguyên, nên giả sử phản chứng là sai.
+	Giả sử phản chứng rằng tồn tại số thực $x$ sao cho với mọi số nguyên $n$, có $n\leq x$. Theo giả sử phản chứng, $x$ là một cận trên của tập hợp số nguyên. Theo tiên đề về cận trên, tập hợp số nguyên có cận trên nhỏ nhất, chúng ta kí hiệu cận trên nhỏ nhất đó là $s$. Do đó $n\leq s$ với mọi số nguyên $n$. Vì $s$ là cận trên nhỏ nhất của tập hợp số nguyên nên $s - 1$ không phải một cận trên của tập hợp số nguyên, do đó tồn tại số nguyên $m$ sao cho $s - 1 < m$, kéo theo $s < m + 1$. Điều này mâu thuẫn với việc $s$ là cận trên của tập hợp số nguyên, nên giả sử phản chứng là sai.
 
-    Vậy với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
+	Vậy với mỗi số thực $x$, tồn tại số nguyên $n$ sao cho $x < n$.
 \end{proof}
 
 \begin{corollary}
-    Với mọi số thực $x, y$, nếu $y > 0$ thì tồn tại số nguyên $n$ sao cho $x < ny$.
+	Với mọi số thực $x, y$, nếu $y > 0$ thì tồn tại số nguyên $n$ sao cho $x < ny$.
 \end{corollary}
 
 Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimedes cho số thực $\frac{x}{y}$. Trong nhiều tài liệu khác, hệ quả trên được coi là thuộc tính Archimedes.
 
 \begin{figure}[htp]
-    \centering
-    \begin{tikzpicture}[scale=2.0]
-        \coordinate (O) at (0,0);
-        \coordinate (I) at (1,0);
-        \coordinate (II) at (2,0);
-        \coordinate (III) at (3,0);
-        \coordinate (IV) at (4,0);
-        \coordinate (V) at (5,0);
+	\centering
+	\begin{tikzpicture}[scale=2.0]
+		\coordinate (O) at (0,0);
+		\coordinate (I) at (1,0);
+		\coordinate (II) at (2,0);
+		\coordinate (III) at (3,0);
+		\coordinate (IV) at (4,0);
+		\coordinate (V) at (5,0);
 
-        \coordinate (PI) at (3.1415926,0);
+		\coordinate (PI) at (3.1415926,0);
 
-        \node [label={below:$0$}] at (O) {};
-        \node [label={below:$1$}] at (I) {};
-        \node [label={below:$2$}] at (II) {};
-        \node [label={below:$\mathbf{3}$}] at (III) {};
-        \node [label={above:$\mathbf{3.14}$}] at (PI) {};
-        \node [label={below:$\mathbf{4}$}] at (IV) {};
-        \node [label={below:$5$}] at (V) {};
+		\node [label={below:$0$}] at (O) {};
+		\node [label={below:$1$}] at (I) {};
+		\node [label={below:$2$}] at (II) {};
+		\node [label={below:$\mathbf{3}$}] at (III) {};
+		\node [label={above:$\mathbf{3.14}$}] at (PI) {};
+		\node [label={below:$\mathbf{4}$}] at (IV) {};
+		\node [label={below:$5$}] at (V) {};
 
-        \draw (O) -- (I) -- (II) -- (III) -- (IV) -- (V);
-        \draw (O) -- ++(0,0.1);
-        \draw (I) -- ++(0,0.1);
-        \draw (II) -- ++(0,0.1);
-        \draw (III) -- ++(0,0.1);
-        \draw (PI) -- ++(0,0.1);
-        \draw (IV) -- ++(0,0.1);
-        \draw (V) -- ++(0,0.1);
+		\draw (O) -- (I) -- (II) -- (III) -- (IV) -- (V);
+		\draw (O) -- ++(0,0.1);
+		\draw (I) -- ++(0,0.1);
+		\draw (II) -- ++(0,0.1);
+		\draw (III) -- ++(0,0.1);
+		\draw (PI) -- ++(0,0.1);
+		\draw (IV) -- ++(0,0.1);
+		\draw (V) -- ++(0,0.1);
 
-        \draw (O) arc (120:60:1);
-        \draw (I) arc (120:60:1);
-        \draw (II) arc (120:60:1);
-        \draw (III) arc (120:60:1);
-        \draw (IV) arc (120:60:1);
-    \end{tikzpicture}
-    \caption{Minh họa thuộc tính Archimedes với $x = 3.14$.}
+		\draw (O) arc (120:60:1);
+		\draw (I) arc (120:60:1);
+		\draw (II) arc (120:60:1);
+		\draw (III) arc (120:60:1);
+		\draw (IV) arc (120:60:1);
+	\end{tikzpicture}
+	\caption{Minh họa thuộc tính Archimedes với $x = 3.14$.}
 \end{figure}
 
 \begin{theorem}[Phần nguyên của số thực\index{Phần nguyên của số thực}]
-    Với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$.
+	Với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$.
 
-    \noindent Nói riêng, số nguyên $n$ như vậy được gọi là \textbf{phần nguyên của số thực $x$} và được kí hiệu là $\floor{x}$.
+	\noindent Nói riêng, số nguyên $n$ như vậy được gọi là \textbf{phần nguyên của số thực $x$} và được kí hiệu là $\floor{x}$.
 \end{theorem}
 
 \begin{proof}
-    Theo thuộc tính Archimedes, tồn tại số nguyên $a$ và $b$ sao cho $x < b$ và $-x < a$, kéo theo $-a < x < b$.
+	Theo thuộc tính Archimedes, tồn tại số nguyên $a$ và $b$ sao cho $x < b$ và $-x < a$, kéo theo $-a < x < b$.
 
-    Theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số thực, nếu một số nguyên $c$ thỏa mãn $c\leq x$ thì $c\leq b$. Theo nguyên lý thứ tự tốt, tập hợp các số nguyên nhỏ hơn hoặc bằng $x$ có phần tử lớn nhất, chúng ta kí hiệu phần tử đó là $n$. Vì $n < n + 1$ và $n + 1$ là một số nguyên nên theo định nghĩa của $n$, chúng ta có $n\leq x < n + 1$.
+	Theo tính chất bắc cầu của quan hệ thứ tự trên tập hợp số thực, nếu một số nguyên $c$ thỏa mãn $c\leq x$ thì $c\leq b$. Theo nguyên lý thứ tự tốt, tập hợp các số nguyên nhỏ hơn hoặc bằng $x$ có phần tử lớn nhất, chúng ta kí hiệu phần tử đó là $n$. Vì $n < n + 1$ và $n + 1$ là một số nguyên nên theo định nghĩa của $n$, chúng ta có $n\leq x < n + 1$.
 
-    Giả sử số nguyên $m$ thỏa mãn $m\leq x < m + 1$. Giả sử phản chứng rằng $m < n$, khi đó $m + 1\leq n$, kéo theo $m + 1\leq x$, mâu thuẫn với $x < m + 1$. Giả sử phản chứng rằng $n < m$, khi đó $n + 1\leq m$, kéo theo $n + 1\leq x$, mâu thuẫn với $x < n + 1$. Do đó $m = n$.
+	Giả sử số nguyên $m$ thỏa mãn $m\leq x < m + 1$. Giả sử phản chứng rằng $m < n$, khi đó $m + 1\leq n$, kéo theo $m + 1\leq x$, mâu thuẫn với $x < m + 1$. Giả sử phản chứng rằng $n < m$, khi đó $n + 1\leq m$, kéo theo $n + 1\leq x$, mâu thuẫn với $x < n + 1$. Do đó $m = n$.
 
-    Vậy với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$.
+	Vậy với mọi số thực $x$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq x < n+1$.
 \end{proof}
 
 \begin{theorem}[Tính trù mật của tập hợp số hữu tỉ\index{Tính trù mật của tập hợp số hữu tỉ}]
-    Với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
+	Với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
 \end{theorem}
 
 \begin{proof}
-    Theo thuộc tính Archimedes, tồn tại số nguyên $n$ sao cho $1 < n(y - x)$. Do đó $1 + nx < ny$. Theo định nghĩa phần nguyên của số thực, chúng ta có $nx < \floor{nx} + 1 \leq nx + 1 < ny$.
+	Theo thuộc tính Archimedes, tồn tại số nguyên $n$ sao cho $1 < n(y - x)$. Do đó $1 + nx < ny$. Theo định nghĩa phần nguyên của số thực, chúng ta có $nx < \floor{nx} + 1 \leq nx + 1 < ny$.
 
-    Do đó, với số nguyên $m = \floor{nx} + 1$, chúng ta có $nx < m < ny$. Bên cạnh đó, vì $y - x > 0$ và $n > 0$ nên  $1 < n(y - x)$ kéo theo $n > 0$. Do đó $x < \frac{m}{n} < y$.
+	Do đó, với số nguyên $m = \floor{nx} + 1$, chúng ta có $nx < m < ny$. Bên cạnh đó, vì $y - x > 0$ và $n > 0$ nên  $1 < n(y - x)$ kéo theo $n > 0$. Do đó $x < \frac{m}{n} < y$.
 
-    Vậy, với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
+	Vậy, với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
 \end{proof}
 
 \subsection{Bài tập}
 
 \begin{exercise}
-    $A$ là một lát cắt trên $\mathbb{Q}$. Chứng minh rằng $\mathbb{Q}\setminus A$ chỉ gồm tất cả các cận trên hữu tỉ của $A$.
+	$A$ là một lát cắt trên $\mathbb{Q}$. Chứng minh rằng $\mathbb{Q}\setminus A$ chỉ gồm tất cả các cận trên hữu tỉ của $A$.
 \end{exercise}
 
 \begin{exercise}
-    $A$ là một lát cắt trên $\mathbb{R}$. Chứng minh rằng $\mathbb{R}\setminus A$ có phần tử nhỏ nhất. Các lát cắt trên tập hợp số hữu tỉ có gì khác với các lát cắt trên tập hợp số thực?
+	$A$ là một lát cắt trên $\mathbb{R}$. Chứng minh rằng $\mathbb{R}\setminus A$ có phần tử nhỏ nhất. Các lát cắt trên tập hợp số hữu tỉ có gì khác với các lát cắt trên tập hợp số thực?
 \end{exercise}
 
 \begin{exercise}
-    Chứng minh rằng nếu một tập hợp con khác rỗng của tập hợp số thực bị chặn dưới thì có cận dưới lớn nhất.
+	Chứng minh rằng nếu một tập hợp con khác rỗng của tập hợp số thực bị chặn dưới thì có cận dưới lớn nhất.
 \end{exercise}
 
 \begin{exercise}
-    $A$ là tập hợp con khác rỗng của tập hợp số thực. Tập hợp $-A$ được định nghĩa như sau
-    \[
-        -A = \{ -x \mid x\in A \}.
-    \]
-    \begin{enumerate}[label={(\roman*)}]
-        \item Chứng minh rằng nếu $A$ có cận trên nhỏ nhất thì $-A$ có cận dưới lớn nhất, và khi đó $\sup A = -\inf (-A)$.
-        \item Chứng minh rằng nếu $A$ có cận dưới lớn nhất thì $-A$ có cận trên nhỏ nhất, và khi đó $\inf A = -\sup (-A)$.
-    \end{enumerate}
+	$A$ là tập hợp con khác rỗng của tập hợp số thực. Tập hợp $-A$ được định nghĩa như sau
+	\[
+		-A = \{ -x \mid x\in A \}.
+	\]
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chứng minh rằng nếu $A$ có cận trên nhỏ nhất thì $-A$ có cận dưới lớn nhất, và khi đó $\sup A = -\inf (-A)$.
+		\item Chứng minh rằng nếu $A$ có cận dưới lớn nhất thì $-A$ có cận trên nhỏ nhất, và khi đó $\inf A = -\sup (-A)$.
+	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-    ${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy. Chứng minh rằng
-    \begin{enumerate}[label={(\roman*)}]
-        \item Tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a_{N}} < 1$.
-        \item ${(a_{n})}_{n\in\mathbb{N}}$ bị chặn. Nói cách khác, tồn tại số thực dương $A$ sao cho $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$.
-    \end{enumerate}
+	${(a_{n})}_{n\in\mathbb{N}}$ là một dãy Cauchy. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tồn tại số tự nhiên $N$ sao cho với mọi số tự nhiên $n\geq N$, có $\abs{a_{n} - a_{N}} < 1$.
+		\item ${(a_{n})}_{n\in\mathbb{N}}$ bị chặn. Nói cách khác, tồn tại số thực dương $A$ sao cho $\abs{a_{n}}\leq A$ với mọi số tự nhiên $n$.
+	\end{enumerate}
 \end{exercise}
 
 Kết quả trong bài tập trên vẫn đúng với dãy Cauchy hữu tỉ và là cần thiết để chứng minh phần (ii) của Định lý~\ref{theorem:addition-and-multiplication-of-rational-cauchy-sequences}.
 
 \begin{exercise}
-    Chứng minh rằng với mỗi số thực $a$, $b$ thỏa mãn $a < b$, tồn tại số vô tỉ $x$ sao cho $a < x < b$. [Gợi ý: Tồn tại số hữu tỉ nằm giữa $a - \sqrt{2}$ và $b - \sqrt{2}$.]
+	Chứng minh rằng với mỗi số thực $a$, $b$ thỏa mãn $a < b$, tồn tại số vô tỉ $x$ sao cho $a < x < b$. [Gợi ý: Tồn tại số hữu tỉ nằm giữa $a - \sqrt{2}$ và $b - \sqrt{2}$.]
 \end{exercise}
 
 \begin{exercise}
-    Chứng minh rằng với mỗi số thực $x$ và số thực dương $\varepsilon$, tồn tại số hữu tỉ $q$ sao cho $\abs{q - x} < \varepsilon$.
+	Chứng minh rằng với mỗi số thực $x$ và số thực dương $\varepsilon$, tồn tại số hữu tỉ $q$ sao cho $\abs{q - x} < \varepsilon$.
 \end{exercise}
 
 \begin{exercise}
-    Chứng minh rằng với hai số thực $x$, $y$ thỏa mãn $x < y$, tồn tại số nguyên $m$ và số tự nhiên $n$ sao cho $x < \dfrac{m}{2^{n}} < y$. [Gợi ý: Áp dụng cách lập luận của chứng minh tính trù mật của tập hợp số hữu tỉ.]
+	Chứng minh rằng với hai số thực $x$, $y$ thỏa mãn $x < y$, tồn tại số nguyên $m$ và số tự nhiên $n$ sao cho $x < \dfrac{m}{2^{n}} < y$. [Gợi ý: Áp dụng cách lập luận của chứng minh tính trù mật của tập hợp số hữu tỉ.]
 \end{exercise}
 
 \begin{exercise}
-    Cho các số thực $a$, $b$ thỏa mãn $a < b$. Chứng minh rằng
-    \begin{enumerate}[label={(\roman*)}]
-        \item Tồn tại song ánh từ khoảng mở $(0, 1)$ đến khoảng mở $(a, b)$.
-        \item Tồn tại song ánh từ khoảng đóng $[0, 1]$ đến khoảng đóng $[a, b]$.
-    \end{enumerate}
+	Cho các số thực $a$, $b$ thỏa mãn $a < b$. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item Tồn tại song ánh từ khoảng mở $(0, 1)$ đến khoảng mở $(a, b)$.
+		\item Tồn tại song ánh từ khoảng đóng $[0, 1]$ đến khoảng đóng $[a, b]$.
+	\end{enumerate}
 
-    Trong đó $(a, b)$ là tập hợp $\{ x\in\mathbb{R} \mid a < x < b \}$, $[a, b]$ là tập hợp $\{ x\in\mathbb{R} \mid a\leq x \leq b \}$.
+	Trong đó $(a, b)$ là tập hợp $\{ x\in\mathbb{R} \mid a < x < b \}$, $[a, b]$ là tập hợp $\{ x\in\mathbb{R} \mid a\leq x \leq b \}$.
 \end{exercise}
 
 \begin{exercise}
-    Cho $c$ là một số thực dương. Hai số thực $x$ và $y$ được gọi là có quan hệ $\sim$ nếu và chỉ nếu tồn tại số nguyên $n$ sao cho $x - y = nc$. Chứng minh rằng
-    \begin{enumerate}[label={(\roman*)}]
-        \item $\sim$ là một quan hệ tương đương.
-        \item Tồn tại một song ánh từ $\mathbb{R}/_{\sim}$ đến tập hợp $[0, c)$.
-    \end{enumerate}
+	Cho $c$ là một số thực dương. Hai số thực $x$ và $y$ được gọi là có quan hệ $\sim$ nếu và chỉ nếu tồn tại số nguyên $n$ sao cho $x - y = nc$. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\sim$ là một quan hệ tương đương.
+		\item Tồn tại một song ánh từ $\mathbb{R}/_{\sim}$ đến tập hợp $[0, c)$.
+	\end{enumerate}
 
-    Trong đó $[a, b)$ là tập hợp $\{ x\in\mathbb{R} \mid a\leq x < b \}$,$(a, b]$ là tập hợp $\{ x\in\mathbb{R} \mid a < x \leq b \}$.
+	Trong đó $[a, b)$ là tập hợp $\{ x\in\mathbb{R} \mid a\leq x < b \}$,$(a, b]$ là tập hợp $\{ x\in\mathbb{R} \mid a < x \leq b \}$.
 \end{exercise}
 
 \begin{exercise}
-    Chứng minh rằng
-    \begin{enumerate}[label={(\roman*)}]
-        \item Hợp của hai khoảng mở có phải một khoảng mở không? Tương tự, hợp của hai khoảng đóng có phải một khoảng đóng không? Hãy đưa ra ví dụ và phản ví dụ.
-        \item Giao của hai khoảng mở hoặc là tập hợp rỗng, hoặc là một khoảng mở.
-        \item Giao của hai khoảng đóng hoặc là tập hợp rỗng, hoặc gồm đúng một phần tử, hoặc là một khoảng đóng.
-    \end{enumerate}
+	Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item Hợp của hai khoảng mở có phải một khoảng mở không? Tương tự, hợp của hai khoảng đóng có phải một khoảng đóng không? Hãy đưa ra ví dụ và phản ví dụ.
+		\item Giao của hai khoảng mở hoặc là tập hợp rỗng, hoặc là một khoảng mở.
+		\item Giao của hai khoảng đóng hoặc là tập hợp rỗng, hoặc gồm đúng một phần tử, hoặc là một khoảng đóng.
+	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[Nguyên lý Cantor về các khoảng đóng lồng nhau]
-    Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
-    \begin{enumerate}[label={(\roman*)}]
-        \item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
-        \item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
-        \item Chứng minh rằng nếu $a = b$ thì giao của tất cả các khoảng đóng $I_{n}$ chỉ gồm đúng một phần tử.
-    \end{enumerate}
+	Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
+		\item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
+		\item Chứng minh rằng nếu $a = b$ thì giao của tất cả các khoảng đóng $I_{n}$ chỉ gồm đúng một phần tử.
+	\end{enumerate}
 \end{exercise}
 
 Thực tế, trong nguyên lý Cantor, điều kiện $a = b$ được thay bởi điều kiện tương đương là $\lim (a_{n} - b_{n}) = 0$. Nguyên lý Cantor cho thấy giao của dãy các khoảng đóng lồng nhau khác rỗng, tuy nhiên điều này không còn đúng nếu chúng ta thay khoảng đóng bởi khoảng mở. Hai bài tập dưới đây cung cấp ví dụ và phản ví dụ cho nhận định này.
 
 \begin{exercise}
-    Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
-    \begin{enumerate}[label={(\roman*)}]
-        \item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
-        \item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
-    \end{enumerate}
+	Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
+		\item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
+	\end{enumerate}
 \end{exercise}\begin{exercise}[Nguyên lý Cantor về các khoảng đóng lồng nhau]
-    Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
-    \begin{enumerate}[label={(\roman*)}]
-        \item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
-        \item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
-        \item Chứng minh rằng nếu $a = b$ thì giao của tất cả các khoảng đóng $I_{n}$ chỉ gồm đúng một phần tử.
-    \end{enumerate}
+	Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
+		\item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
+		\item Chứng minh rằng nếu $a = b$ thì giao của tất cả các khoảng đóng $I_{n}$ chỉ gồm đúng một phần tử.
+	\end{enumerate}
 \end{exercise}
 
 Thực tế, trong nguyên lý Cantor, điều kiện $a = b$ được thay bởi điều kiện tương đương là $\lim (a_{n} - b_{n}) = 0$. Nguyên lý Cantor cho thấy giao của dãy các khoảng đóng lồng nhau khác rỗng, tuy nhiên điều này không còn đúng nếu chúng ta thay khoảng đóng bởi khoảng mở. Hai bài tập dưới đây cung cấp ví dụ và phản ví dụ cho nhận định này.
 
 \begin{exercise}
-    Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
-    \begin{enumerate}[label={(\roman*)}]
-        \item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
-        \item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
-    \end{enumerate}
+	Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
+		\item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
+	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-    Cho khoảng đóng $[a, b]$. Với mỗi số nguyên dương $n$, chúng ta định nghĩa $a_{n} = a - \dfrac{1}{n}$ và $b_{n} = b + \dfrac{1}{n}$. Chứng minh rằng 
-    \begin{enumerate}[label={(\roman*)}]
-        \item $a_{n}\leq b_{n}$ với mọi số nguyên dương $n$.
-        \item $a$ là cận trên đúng của tập hợp các số thực $a_{n}$, và $b$ là cận dưới đúng của tập hợp các số thực $b_{n}$.
-        \item $[a, b]$ là giao của tất cả các khoảng mở $(a_{n}, b_{n})$, với $n$ là số nguyên dương.
-    \end{enumerate}
+	Cho khoảng đóng $[a, b]$. Với mỗi số nguyên dương $n$, chúng ta định nghĩa $a_{n} = a - \dfrac{1}{n}$ và $b_{n} = b + \dfrac{1}{n}$. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item $a_{n}\leq b_{n}$ với mọi số nguyên dương $n$.
+		\item $a$ là cận trên đúng của tập hợp các số thực $a_{n}$, và $b$ là cận dưới đúng của tập hợp các số thực $b_{n}$.
+		\item $[a, b]$ là giao của tất cả các khoảng mở $(a_{n}, b_{n})$, với $n$ là số nguyên dương.
+	\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-    Cho khoảng mở $(a, b)$. Với mỗi số nguyên dương $n > 1$, chúng ta định nghĩa $a_{n} = a + \dfrac{b-a}{n}$ và $b_{n} = b - \dfrac{b-a}{n}$. Chứng minh rằng 
-    \begin{enumerate}[label={(\roman*)}]
-        \item $a_{n}\leq b_{n}$ với mọi số nguyên dương $n > 1$.
-        \item $a$ là cận dưới đúng của tập hợp các số thực $a_{n}$, và $b$ là cận trên đúng của tập hợp các số thực $b_{n}$.
-        \item $(a, b)$ là hợp của tất cả các khoảng đóng $[a_{n}, b_{n}]$, với các số nguyên dương $n > 1$.
-    \end{enumerate}
+	Cho khoảng mở $(a, b)$. Với mỗi số nguyên dương $n > 1$, chúng ta định nghĩa $a_{n} = a + \dfrac{b-a}{n}$ và $b_{n} = b - \dfrac{b-a}{n}$. Chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item $a_{n}\leq b_{n}$ với mọi số nguyên dương $n > 1$.
+		\item $a$ là cận dưới đúng của tập hợp các số thực $a_{n}$, và $b$ là cận trên đúng của tập hợp các số thực $b_{n}$.
+		\item $(a, b)$ là hợp của tất cả các khoảng đóng $[a_{n}, b_{n}]$, với các số nguyên dương $n > 1$.
+	\end{enumerate}
 \end{exercise}
 
 \section{Số phức}
 
 \subsection{Xây dựng tập hợp số phức}
 
-\subsection{Phần thực, phần ảo, liên hợp của số phức}
+Không tồn tại số thực nào có bình phương bằng $-1$. Trong chương trình phổ thông, chúng ta đã được giới thiệu khái niệm đơn vị ảo $\imath$ (thỏa mãn $\imath^{2} = -1$) và tập hợp số phức. Tuy nhiên cách tiếp cận đó không thỏa đáng. Bởi nếu tiếp cận như vậy. $\imath$ có nguồn gốc không rõ ràng, hay chúng ta không trả lời được $\imath$ với cách tiếp cận đó. Để khắc phục điều này, số phức và tập hợp số phức được định nghĩa như sau.
+\begin{definition}
+	Tập hợp số phức\index{Số phức} là tập hợp gồm tất cả các cặp (có thứ tự) số thực. Tập hợp số phức được kí hiệu là $\mathbb{C}$.
+\end{definition}
 
-\subsection{Biểu diễn hình học và dạng lượng giác của số phức}
+Theo định nghĩa trên, $\mathbb{C} = \mathbb{R}\times\mathbb{R} = \mathbb{R}^{2}$ và mỗi số phức đều có dạng $(a, b)$, trong đó $a$ và $b$ là các số thực.
+
+\begin{definition}[Phép cộng và phép nhân số phức]
+	Với mỗi số phức $(a, b)$, $(c, d)$, chúng ta định nghĩa tổng và tích hai số phức $(a, b)$, $(c, d)$ như sau
+	\begin{align*}
+		(a, b) + (c, d)    & = (a + c, b + d),     \\
+		(a, b)\cdot (c, d) & = (ac - db, da + bc).
+	\end{align*}
+\end{definition}
+
+Với định nghĩa trên, chúng ta chứng minh được kết quả sau.
+\begin{proposition}
+	Ánh xạ $\iota: \mathbb{R}\to \mathbb{C}$, với $\iota(x) = (x, 0)$ là một đơn ánh. Đơn ánh này bảo toàn phép cộng và phép nhân, nói cách khác, $\iota(x, y) = \iota(x) + \iota(y)$ và $\iota(xy) = \iota(x)\iota(y)$.
+\end{proposition}
+
+Phép nhân số phức được định nghĩa như trên sẽ đảm bảo\footnote{Có thể đây không phải cách duy nhất, nhưng chúng ta chỉ quan tâm đến phép nhân số phức theo định nghĩa này.} rằng phép nhân số phức có tính chất phân phối với phép cộng số phức. Thay cho kí hiệu $(a, b)$, chúng ta viết $a + b\imath$ hoặc $a + \imath b$ và \textit{đồng nhất} số thực $a$ với $(a, 0)$ (Mệnh đề trên là cơ sở cho việc đồng nhất này). Áp dụng kí hiệu này và định nghĩa phép nhân số phức, chúng ta thu được
+\[
+	\begin{split}
+		a + b\imath & = (a, b) \\
+		& = (a, 0) + (0, b), \\
+		{(0 + 1\imath)}^{2} & = {(0, 1)}^{2} \\
+		& = (0\cdot 0 - 1\cdot 1, 1\cdot 0 + 1\cdot 0) \\
+		& = (-1, 0) \\
+		& = -1.
+	\end{split}
+\]
+
+Bên cạnh đó, thay cho cách viết $0 + b\imath$, chúng ta viết $b\imath$. Cùng với các đẳng thức trên, chúng ta suy ra $\imath^{2} = -1$.
+
+\begin{theorem}
+	Hai số phức $a + b\imath$ và $c + d\imath$ bằng nhau khi và chỉ khi $a = c$, $b = d$.
+\end{theorem}
+
+Đến hiện tại, chúng ta đã xây dựng nhiều tập hợp số: $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$.
+\begin{itemize}
+	\item Việc mở rộng tập hợp số tự nhiên thành tập hợp số nguyên bắt nguồn từ mong muốn thực hiện được phép trừ hai số tự nhiên bất kì.
+	\item Việc mở rộng tập hợp số nguyên thành tập hợp số hữu tỉ bắt nguồn từ mong muốn thực hiện được phép chia một số nguyên cho một số nguyên khác $0$
+	\item Việc mở rộng tập hợp số hữu tỉ thành tập hợp số thực là một quá trình đầy đủ hóa, để cho mọi tập hợp con khác rỗng và bị chặn trên đều có cận trên nhỏ nhất.
+\end{itemize}
+
+Song hành với mỗi tập hợp số là các phép toán và quan hệ. Những hạn chế của các phép toán hay quan hệ là động lực để mở rộng tập hợp số đã có thành tập hợp số rộng hơn, khắc phục hạn chế của tập hợp số trước. Qua định nghĩa của các tập hợp số, cũng như các phép toán, quan hệ trên chúng, có thể đưa ra nhận định rằng: Chính các phép toán, quan hệ và các tính chất của chúng là những điều quyết định chúng ta nên định nghĩa các tập hợp số như thế nào.
+
+\begin{theorem}[Trường số phức]
+	Tập hợp số phức với phép toán cộng và nhân là một trường. Nói cách khác
+	\begin{enumerate}[label={(F\arabic*)}]
+		\item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số phức $z_{1}, z_{2}, z_{3}$, chúng ta có
+		      \[
+			      (z_{1} + z_{2}) + z_{3} = z_{1} + (z_{2} + z_{3}).
+		      \]
+		\item Phép cộng có phần tử đồng nhất. Nói cách khác, với mọi số phức $z$, chúng ta có
+		      \[
+			      z + 0 = 0 + z = z.
+		      \]
+		\item Mỗi số thực có phần tử đối. Nói cách khác, với mỗi số phức $z$, tồn tại số phức $(-z)$ thỏa mãn
+		      \[
+			      z + (-z) = (-z) + z = 0.
+		      \]
+		\item Phép cộng có tính chất giao hoán. Nói cách khác, với mọi số phức $z_{1}, z_{2}$, chúng ta có
+		      \[
+			      z_{1} + z_{2} = z_{2} + z_{1}.
+		      \]
+		\item Phép nhân có tính chất kết hợp. Nói cách khác, với mọi số phức $z_{1}, z_{2}, z_{3}$, chúng ta có
+		      \[
+			      (z_{1} \cdot z_{2}) \cdot z_{3} = z_{1} \cdot (z_{2} \cdot z_{3}).
+		      \]
+		\item Phép nhân có tính chất phân phối với phép cộng. Nói cách khác, với mọi số phức $z_{1}, z_{2}, z_{3}$, chúng ta có
+		      \[
+			      \begin{split}
+				      (z_{1} + z_{2})\cdot z_{3} = z_{1}\cdot z_{3} + z_{2}\cdot z_{3}, \\
+				      z_{3}\cdot (z_{1} + z_{2}) = z_{3}\cdot z_{1} + z_{3}\cdot z_{2}.
+			      \end{split}
+		      \]
+
+		\item Phép nhân có phần tử đồng nhất. Nói cách khác, với mọi số phức $z$, chúng ta có
+		      \[
+			      z \cdot 1 = 1 \cdot z = z.
+		      \]
+		\item Phép nhân có tính chất giao hoán. Nói cách khác, với mọi số phức $z_{1}, z_{2}$, chúng ta có
+		      \[
+			      z_{1}\cdot z_{2} = z_{2}\cdot z_{1}.
+		      \]
+		\item Mỗi số thực khác $0$ có phần tử nghịch đảo. Nói cách khác, với mỗi số thực $z\ne 0$, tồn tại số thực $x^{-1}$ sao cho
+		      \[
+			      z\cdot z^{-1} = z^{-1}\cdot z = 1.
+		      \]
+	\end{enumerate}
+\end{theorem}
+
+Chúng tôi để bạn đọc tự kiểm tra các tính chất (F1) $-$ (F8). Còn với tính chất (F9), chúng ta có
+\[
+	(a + b\imath)\left(\frac{a}{a^{2}+b^{2}} + \frac{-b}{a^{2}+b^{2}}\imath\right) = 1.
+\]
+
+Với tính chất (F8), chúng ta có thể thực hiện phép nhân hai số phức mà không cần ghi nhớ định nghĩa ban đầu của phép nhân số phức.
+
+\subsection{Phần thực, phần ảo, liên hợp và dạng lượng giác của số phức}
+
+\begin{definition}
+	Với mỗi số phức $z = a + b\imath$, $a$ được gọi là \textbf{phần thực\index{Phần thực của số phức}} của $z$, $b$ được gọi là \textbf{phần ảo\index{Phần ảo của số phức}} của $z$, và $a - b\imath$ được gọi là \textbf{liên hợp\index{Liên hợp của số phức}} của $z$.
+
+\end{definition}
+
+Phần thực, phần ảo, liên hợp của số phức $z$ lần lượt được kí hiệu là $\Re{(z)}$ (hoặc $\text{Re}(z)$), $\Im{(z)}$ (hoặc $\text{Im}(z)$), $\overline{z}$. Ba khái niệm này có liên hệ như sau.
+
+\begin{theorem}
+	Với mỗi số phức $z$,
+	\[
+		\Re{(z)} = \frac{1}{2}(z + \overline{z}),\qquad \Im{(z)} = \frac{1}{2i}(z - \overline{z}).
+	\]
+\end{theorem}
+
+Phép lấy liên hợp của số phức có tính chất đối hợp.
+\begin{theorem}
+	Với mỗi số phức $z$, $\overline{\overline{z}} = z$.
+\end{theorem}
+
+Phép lấy liên hợp của số phức tương thích với phép cộng và phép nhân số phức.
+\begin{theorem}
+	Với mọi số phức $z_{1}$, $z_{2}$,
+	\[
+		\overline{z_{1} + z_{2}} = \overline{z_{1}} + \overline{z_{2}},\qquad \overline{z_{1}z_{2}} = \overline{z_{1}}\cdot\overline{z_{2}}
+	\]
+\end{theorem}
+
+\begin{definition}
+	\textbf{Giá trị tuyệt đối}, \textbf{modulus}, hay \textbf{độ lớn\index{Độ lớn của số phức}} của số phức $z = a + b\imath$ là số thực không âm $\sqrt{a^{2} + b^{2}}$. Độ lớn của số phức $z$ được kí hiệu là $\abs{z}$.
+\end{definition}
+
+Từ định nghĩa trên, chúng ta rút ra kết quả sau.
+\begin{theorem}\label{theorem:modulus-real-imaginary-parts-of-a-complex-number}
+	Với mỗi số phức $z = a + b\imath$
+	\begin{enumerate}[label={(\roman*)}]
+		\item ${\abs{z}}^{2} = {(\Re{(z)})}^{2} + {(\Im{(z)})}^{2} = a^{2} + b^{2}$.
+		\item ${\abs{z}}^{2} = z\overline{z}$.
+	\end{enumerate}
+\end{theorem}
+
+Trong trường hợp số phức $z\ne 0$, chúng ta có nhận xét sau
+\[
+	\frac{z}{\abs{z}} = \frac{\Re{(z)}}{\abs{z}} + \frac{\Im{(z)}}{\abs{z}}\imath.
+\]
+
+và theo Định lý~\ref{theorem:modulus-real-imaginary-parts-of-a-complex-number}
+\[
+	{\left(\frac{\Re{(z)}}{\abs{z}}\right)}^{2} + {\left( \frac{\Im{(z)}}{\abs{z}}\right)}^{2} = 1.
+\]
+
+Như vậy, tồn tại số thực $\phi$ sao cho
+\[
+	\cos{(\phi)} = \frac{\Re{(z)}}{\abs{z}},\qquad \sin{(\phi)} = \frac{\Im{(z)}}{\abs{z}}.
+\]
+
+Khi đó, chúng ta thu được dạng lượng giác của số phức\index{Dạng lượng giác của số phức} $z$.
+\[
+	z = \abs{z}(\cos{(\phi)} + \imath\sin{(\phi)}).
+\]
+\begin{theorem}
+	Với mỗi số phức $z\ne 0$, tồn tại duy nhất số thực $\phi$ thuộc $(-\pi, \pi]$ sao cho
+	\[
+		z = \abs{z}(\cos{(\phi)} + \imath\sin{(\phi)}).
+	\]
+
+	Trong đó, $\phi$ được gọi là \textbf{argument\index{Argument của số phức}} của số phức $z\ne 0$, và được kí hiệu là $\arg{(z)}$.
+\end{theorem}
+
+Hoàn toàn có thể đưa ra một công thức để xác định $\arg{(z)}$. Tuy nhiên một công thức như vậy đòi hỏi phải xem xét nhiều trường hợp khác nhau của $\Re{(z)}$ và $\Im{(z)}$. Trong thực tế, để được linh hoạt hơn, thay vì sử dụng $\arg{(z)}$, chúng ta dùng các giá trị trong tập hợp sau
+\[
+	\Bigl\{ \arg{(z)} + 2k\pi \mid k\in\mathbb{Z} \Bigr\}.
+\]
+
+hay nói cách khác là bất cứ số thực nào đồng dư modulo $2\pi$ với $\arg{(z)}$.
+
+Với dạng lượng giác của số phức, việc thực hiện phép nhân, và lũy thừa trở nên dễ dàng bằng định lý sau.
+\begin{theorem}
+	\begin{enumerate}[label={(\roman*)}]
+		\item Với mỗi số phức $z_{1} = \abs{z_{1}}(\cos(\phi_{1}) + \imath\sin(\phi_{1}))$ và $z_{2} = \abs{z_{2}}(\cos(\phi_{2}) + \imath\sin(\phi_{2}))$, chúng ta có
+		      \[
+			      z_{1}z_{2} = \abs{z_{1}}\abs{z_{2}}(\cos(\phi_{1}+\phi_{2}) + \imath\sin(\phi_{1} + \phi_{2})).
+		      \]
+		\item Với mỗi số phúc $z = \abs{z}(\cos(\phi) + \imath\sin(\phi))$ khác $0$, chúng ta có
+		      \[
+			      z^{-1} = \frac{1}{\abs{z}}(\cos(-\phi) + \imath\sin(-\phi)).
+		      \]
+		\item (Công thức Moivre) Với mỗi số phức $z = \abs{z}(\cos(\phi) + \imath\sin(\phi))$, với mọi số nguyên $n$, chúng ta có
+		      \[
+			      z^{n} = \abs{z}^{n}(\cos(n\phi) + \imath\sin(n\phi)).
+		      \]
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Căn bậc $n$ của số phức]
+	Tồn tại đúng $n$ số phức có lũy thừa bậc $n$ bằng một số phức $z_{0}$ khác $0$ cho trước.
+\end{theorem}
+
+\begin{proof}
+	Nếu số phức $z$ thỏa mãn $z^{n} = z_{0}$ thì $z\ne 0$. Bằng dạng lượng giác của số phức $z$, $z_{0}$ và công thức Moivre, chúng ta thu được
+	\[
+		\abs{z}^{n}(\cos(n\phi) + \imath\sin(n\phi)) = \abs{z_{0}}(\cos(\phi_{0}) + \imath\sin(\phi_{0})).
+	\]
+
+	Do đó
+	\[
+		\begin{cases}
+			\abs{z} = \sqrt[n]{\abs{z_{0}}}, \\
+			\cos(n\phi) = \cos(\phi_{0}),    \\
+			\sin(n\phi) = \sin(\phi_{0}).
+		\end{cases}
+	\]
+
+	$\cos(n\phi) = \cos(\phi_{0})$ kéo theo $n\phi \equiv \phi_{0} \pmod{2\pi}$ hoặc $n\phi\equiv -\phi_{0}\pmod{2\pi}$. $\sin(n\phi) = \sin(\phi_{0})$ kéo theo $n\phi \equiv \phi_{0} \pmod{2\pi}$ hoặc $n\phi\equiv \pi-\phi_{0}\pmod{2\pi}$. Vì $\cos(n\phi) = \cos(\phi_{0})$ và $\sin(n\phi) = \sin(\phi_{0})$ nên $n\phi \equiv \phi_{0}\pmod{2\pi}$.
+
+	Từ đồng dư thức $n\phi \equiv \phi_{0}\pmod{2\pi}$, chúng ta suy ra $n$ khả năng: $\phi\equiv \frac{\phi_{0}}{n} + \frac{2k\pi}{n} \pmod{2\pi}$ với $k = 0, 1,\ldots, n-1$.
+
+	Vậy mỗi số phức khác $0$ có đúng $n$ cặn bậc $n$, đó là
+	\[
+		\sqrt[n]{\abs{z_{0}}}\left(\cos\left(\frac{\phi_{0} + 2k\pi}{n}\right) + \imath\sin\left(\frac{\phi_{0} + 2k\pi}{n}\right)\right)\qquad k = 0, 1, \ldots, n-1.
+	\]
+\end{proof}
+
+Nói riêng, số $1$ có $n$ căn bậc $n$ là
+\[
+	\zeta_{k} = \cos\left(\frac{2k\pi}{n}\right) + \imath\sin\left(\frac{2k\pi}{n}\right).
+\]
+
+Trong nội dung tiếp theo về biểu diễn hình học của số phức, chúng ta sẽ chỉ ra ý nghĩa hình học của từng khái niệm về số phức đã được đề cập đến giờ trong tài liệu này.
+
+\subsection{Biểu diễn hình học của số phức}
+
+Tập hợp số thực có thể được trực quan hóa bằng một đường thẳng (trục số thực). Tập hợp số phức được trực quan hóa thành một mặt phẳng tọa độ (mặt phẳng phức\index{Mặt phẳng phức}\footnote{Các nhà toán học Caspar Wessel, Jean-Robert Argand, Carl Friedrich Gau{\ss} là những người đầu tiên đề xuất biểu diễn số phức lên mặt phẳng tọa độ theo cách này. Trong đó, Argand là người đưa ra chứng minh chặt chẽ đầu tiên cho định lý cơ bản của đại số, định lý đó được phát biểu rằng ``Mọi đa thức khác hằng số với hệ số phức có ít nhất một nghiệm phức''.}), trong đó mỗi số phức tương ứng với một điểm trong mặt phẳng tọa độ (Xem Hình~\ref{fig:complex-plane}). Trong mặt phẳng phức, trục $Ox$ được gọi là trục thực\index{Trục thực}, trục $Oy$ được gọi là trục ảo\index{Trục ảo}.
+
+\begin{figure}[htp]
+	\centering
+	\begin{tikzpicture}[>=Stealth,scale=2.0]
+		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.9,-1.9) grid (1.9,1.9);
+
+		\node[label={[label distance=-2mm]135:$O$}] at (0,0) {};
+		\node[label={[label distance=0mm]45:$z$},fill,inner sep=1pt] at ({1.5*cos(56)}, {1.5*sin(56)}) {};
+		\node[label={[label distance=0mm]-45:$\overline{z}$},fill,inner sep=1pt] at ({1.5*cos(-56)}, {1.5*sin(-56)}) {};
+
+		\node[label={below:$\Re{(z)}$},fill,inner sep=1pt] at ({1.5*cos(56)}, 0) {};
+		\node[label={left:$\Im{(z)}$},fill,inner sep=1pt] at (0, {1.5*sin(56)}) {};
+
+		\draw (0,0) circle (1.5);
+		\draw[->,very thick] (0,0) -- ({1.5*cos(56)}, {1.5*sin(56)});
+		\draw[->,very thick] (0,0) -- ({1.5*cos(-56)}, {1.5*sin(-56)});
+		\draw[dashed] ({1.5*cos(56)}, {1.5*sin(56)}) -- ({1.5*cos(-56)}, {1.5*sin(-56)});
+		\draw[dashed] ({1.5*cos(56)}, {1.5*sin(56)}) -- (0, {1.5*sin(56)});
+
+		\draw[->] (0,0)+(0:0.3cm) arc (0:56:0.3cm);
+		\node at ($(0,0)+(28:0.45cm)$) {$\phi$};
+
+		\draw[->] (-2,0)--(2,0) node[right]{$x$};
+		\draw[->] (0,-2)--(0,2) node[above]{$y\imath$};
+	\end{tikzpicture}
+	\caption{Mặt phẳng phức.}\label{fig:complex-plane}
+\end{figure}
+
+Để được súc tích trong diễn đạt, thay vì nói ``điểm biểu diễn số phức $z$ trong mặt phẳng phức'', chúng ta nói ``điểm $z$''. Gốc tọa độ tương ứng với số phức $0$.
+
+Với mỗi số phức $z\ne 0$, chúng ta viết $z$ dưới dạng lượng giác
+\[
+	z = \abs{z}(\cos{(\phi)} + \imath\sin{(\phi)})
+\]
+
+trong đó $\phi = \arg{(z)}$.
+
+Với mặt phẳng phức, các thuộc tính của số phức $z$ mang các ý nghĩa hình học. Độ lớn của số phức $z$ chính là khoảng cách từ điểm $z$ đến gốc tọa độ $O$. Phần thực của $z$ là hoành độ của điểm $z$, phần ảo của $z$ là tung độ của điểm $z$. Điểm $\overline{z}$ biểu diễn cho số phức liên hợp của $z$ là điểm đối xứng với $z$ qua trục thực. Argument của $z$ là số đo của góc định hướng $(Ox, Oz)$ với tia đầu là tia $Ox$, tia cuối là tia $Oz$.
+
+Phép cộng hai số phức tương ứng với phép cộng vector (Xem Hình~\ref{fig:complex-addition}.)
+\begin{figure}[htp]
+	\centering
+	\begin{tikzpicture}[>=Stealth,scale=2.0]
+		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
+
+		\coordinate (Z1) at (1,0.8);
+		\coordinate (Z2) at (-0.25,-1);
+		\coordinate (Z) at (0.75,-0.2);
+
+		\node[label={[label distance=-2mm]135:$O$}] at (0,0) {};
+		\node[label={[label distance=0mm]45:$z_{1}$},fill,inner sep=1pt] at (Z1) {};
+		\node[label={[label distance=0mm]180:$z_{2}$},fill,inner sep=1pt] at (Z2) {};
+
+		\node[label={[label distance=0mm]-45:$z_{1}+z_{2}$},fill,inner sep=1pt] at (Z) {};
+
+		\draw[->,thick] (0,0) -- (Z1);
+		\draw[->,thick] (0,0) -- (Z2);
+		\draw[->,thick] (0,0) -- (Z);
+		\draw[dashed] (Z1) -- (Z) -- (Z2);
+
+		\draw[->] (-1.5,0)--(1.5,0) node[right]{$x$};
+		\draw[->] (0,-1.5)--(0,1.5) node[above]{$y\imath$};
+	\end{tikzpicture}
+	\caption{Phép cộng hai số phức.}\label{fig:complex-addition}
+\end{figure}
+
+Phép nhân một số phức $z_{0}$ với số phức $z\ne 0$ tương ứng với một phép vị tự-quay (Xem Hình~\ref{fig:complex-multiplication})
+
+\begin{figure}[htp]
+	\centering
+	\begin{tikzpicture}[>=Stealth,scale=2.0]
+		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.5,-1.5) grid (2.0,2.0);
+
+		\coordinate (X) at (1,0);
+		\coordinate (Z1) at ({1.2*cos(50)},{1.2*sin(50)});
+		\coordinate (Z2) at ({1.5*cos(70)},{1.5*sin(70)});
+		\coordinate (Z) at ({1.8*cos(120)},{1.8*sin(120)});
+
+		\node[label={[label distance=-2mm]-135:$O$}] at (0,0) {};
+		\node[label={[label distance=0mm]45:$z_{0}$},fill,inner sep=1pt] at (Z1) {};
+		\node[label={[label distance=0mm]45:$z$},fill,inner sep=1pt] at (Z2) {};
+
+		\node[label={[label distance=0mm]135:$z_{0}z$},fill,inner sep=1pt] at (Z) {};
+
+		\draw[->,thick] (0,0) -- (Z1);
+		\draw[->,thick] (0,0) -- (Z2);
+		\draw[->,thick] (0,0) -- (Z);
+
+		\tkzMarkAngle[size=0.30cm,->,mark=|,mkpos=0.5](X,O,Z1);
+		\tkzMarkAngle[size=0.45cm,->,mark=||,mkpos=0.5](X,O,Z2);
+		\tkzMarkAngle[size=0.30cm,->,mark=|,mkpos=0.5](Z2,O,Z);
+		\tkzMarkAngle[size=0.65cm,->](X,O,Z);
+
+		\draw[->] (-2,0)--(2,0) node[right]{$x$};
+		\draw[->] (0,-2)--(0,2) node[above]{$y\imath$};
+	\end{tikzpicture}
+	\caption{Phép nhân hai số phức.}\label{fig:complex-multiplication}
+\end{figure}
+
+Biểu diễn hình học của các căn bậc $n$ của một số phức khác không cho trước là $n$ điểm. $n$ điểm này thuộc đường tròn đơn vị và là $n$ đỉnh của một $n$-giác đều với tâm là gốc tọa độ (Xem Hình~\ref{fig:5throot-of-unity}.)
+
+\begin{figure}[htp]
+	\centering
+	\begin{tikzpicture}[>=Stealth,scale=2.0]
+		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
+
+		\node[label={[label distance=-2mm]35:$O$}] at (0,0) {};
+
+		\foreach\k in {0,1,2,3,4} {
+				\coordinate (P) at ({cos(\k*360/5)}, {sin(\k*360/5)});
+				\node[fill,inner sep=1pt,circle] at (P) {};
+				\draw[->,thick] (0,0) -- (P);
+			}
+
+		\draw (0,0) circle (1.0);
+
+		\draw[->] (-1.5,0)--(1.5,0) node[right]{$x$};
+		\draw[->] (0,-1.5)--(0,1.5) node[above]{$y\imath$};
+	\end{tikzpicture}
+	\caption{Các căn bậc $5$ của $1$.}\label{fig:5throot-of-unity}
+\end{figure}
 
 \subsection{Bài tập}
+
+\begin{exercise}
+	Chứng minh rằng không tồn tại một quan hệ thứ tự toàn phần $\leq$ trên tập hợp số phức $\mathbb{C}$ mà tương thích với phép cộng và phép nhân số phức. [Gợi ý: Chứng minh bằng phản chứng, xem xét 6 thứ tự có thể có của ba số phức $0$, $1$, $\imath$.]
+\end{exercise}
+
+\begin{exercise}
+    \begin{enumerate}[label={(\roman*)}]
+        \item Cho một ví dụ về quan hệ thứ tự không toàn phần trên tập hợp số phức [Gợi ý: Chỉ định nghĩa quan hệ thứ tự trên một tập con của $\mathbb{C}$].
+        \item Cho một ví dụ về quan hệ tiền thứ tự toàn phần trên tập hợp số phức.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Với mọi số phức $z_{1}$, $z_{2}$, chứng minh rằng
+	\begin{enumerate}[label={(\roman*)}]
+		\item $\abs{z_{1}z_{2}} = \abs{z_{1}}\abs{z_{2}}$.
+		\item $\abs{z_{1} + z_{2}}\leq \abs{z_{1}} + \abs{z_{2}}$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Chúng ta kí hiệu $U$ là tập hợp các số phức có độ lớn bằng $1$.
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chứng minh rằng tồn tại một song ánh giữa $U$ và $[0, 2\pi)$.
+		\item Chỉ ra một quan hệ tương đương $\sim$ trên tập hợp số thực $\mathbb{R}$ sao cho tồn tại một song ánh $f: \mathbb{R}/_{\sim} \to U$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng tồn tại một song ánh giữa $U\setminus\{ 1 \}$ và $\mathbb{R}$.
+\end{exercise}
+
+\begin{exercise}[Căn nguyên thủy]
+	$n$ là một số nguyên dương. Chứng minh rằng trong $U_{n}$, tồn tại phần tử mà mọi phần tử khác đều là lũy thừa của phần tử đó.
+
+	Phần tử như vậy được gọi là căn bậc $n$ nguyên thủy. Chứng minh rằng với mỗi số nguyên tố $p$, có đúng $p-1$ căn bậc $p$ nguyên thủy.
+\end{exercise}
+
+\begin{exercise}
+    $n$ là một số nguyên dương. $U_{n}$ là tập hợp tất cả các căn bậc $n$ của $1$. $\mathbb{Z}_{n}$ là tập hợp gồm $n$ số nguyên $0$, $1$, \ldots $n-1$. Phép cộng $+_{n}$ trên tập hợp $\mathbb{Z}_{n}$ được định nghĩa như sau
+	\[
+		a +_{n} b = \begin{cases}
+			a + b     & \text{nếu $a + b < n$},   \\
+			a + b - n & \text{nếu $n\leq a + b$}.
+		\end{cases}
+	\]
+
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng ánh xạ $\tau: U_{n}\to \mathbb{Z}_{n}$, với $\tau(\zeta_{k}) = k$ là một song ánh và $\tau(\zeta_{k}\zeta_{\ell}) = \tau(\zeta_{k}) +_{n} \tau(\zeta_{\ell})$ với mọi $k, \ell\in \mathbb{Z}_{n}$.
+        \item Với $n > 2$, chứng minh rằng tồn tại ít nhất một song ánh khác từ $U_{n}$ đến $\mathbb{Z}_{n}$ cũng có tính chất như $\tau$.
+    \end{enumerate}
+\end{exercise}
