@@ -940,7 +940,7 @@ Với dạng lượng giác của số phức, việc thực hiện phép nhân,
 
 Nói riêng, số $1$ có $n$ căn bậc $n$ là
 \[
-	\zeta_{k} = \cos\left(\frac{2k\pi}{n}\right) + \imath\sin\left(\frac{2k\pi}{n}\right).
+	\zeta_{k} = \cos\left(\frac{2k\pi}{n}\right) + \imath\sin\left(\frac{2k\pi}{n}\right)\qquad k = 0, 1, \ldots, n-1.
 \]
 
 Trong nội dung tiếp theo về biểu diễn hình học của số phức, chúng ta sẽ chỉ ra ý nghĩa hình học của từng khái niệm về số phức đã được đề cập đến giờ trong tài liệu này.
@@ -1028,18 +1028,16 @@ Phép nhân một số phức $z_{0}$ với số phức $z\ne 0$ tương ứng v
 
 		\node[label={[label distance=-2mm]-135:$O$}] at (0,0) {};
 		\node[label={[label distance=0mm]45:$z_{0}$},fill,inner sep=1pt] at (Z1) {};
+		\draw (X) -- (O) -- (Z1) pic [draw=black, angle radius=4mm] {angle = X--O--Z1};
 		\node[label={[label distance=0mm]45:$z$},fill,inner sep=1pt] at (Z2) {};
+		\draw (X) -- (O) -- (Z2) pic [double, double distance=0.5mm, draw=black, angle radius=8mm] {angle = X--O--Z2};
 
 		\node[label={[label distance=0mm]135:$z_{0}z$},fill,inner sep=1pt] at (Z) {};
+		\draw (Z2) -- (O) -- (Z) pic [draw=black, angle radius=4mm] {angle = Z2--O--Z};
 
 		\draw[->,thick] (0,0) -- (Z1);
 		\draw[->,thick] (0,0) -- (Z2);
 		\draw[->,thick] (0,0) -- (Z);
-
-		\tkzMarkAngle[size=0.30cm,->,mark=|,mkpos=0.5](X,O,Z1);
-		\tkzMarkAngle[size=0.45cm,->,mark=||,mkpos=0.5](X,O,Z2);
-		\tkzMarkAngle[size=0.30cm,->,mark=|,mkpos=0.5](Z2,O,Z);
-		\tkzMarkAngle[size=0.65cm,->](X,O,Z);
 
 		\draw[->] (-2,0)--(2,0) node[right]{$x$};
 		\draw[->] (0,-2)--(0,2) node[above]{$y\imath$};
@@ -1058,7 +1056,7 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 
 		\foreach\k in {0,1,2,3,4} {
 				\coordinate (P) at ({cos(\k*360/5)}, {sin(\k*360/5)});
-				\node[fill,inner sep=1pt,circle] at (P) {};
+				\node[label={{\k*360/5}:$\zeta_{\k}$},fill,inner sep=1pt,circle] at (P) {};
 				\draw[->,thick] (0,0) -- (P);
 			}
 
@@ -1067,19 +1065,23 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 		\draw[->] (-1.5,0)--(1.5,0) node[right]{$x$};
 		\draw[->] (0,-1.5)--(0,1.5) node[above]{$y\imath$};
 	\end{tikzpicture}
-	\caption{Các căn bậc $5$ của $1$.}\label{fig:5throot-of-unity}
+	\caption{Biểu diễn hình học cho các căn bậc $5$ của $1$.}\label{fig:5throot-of-unity}
 \end{figure}
 
 \subsection{Bài tập}
 
 \begin{exercise}
+	Cho $z$ là một số phức nhưng không phải số thực. Chứng minh rằng $\mathbb{C} = \{ a + bz \mid a\in\mathbb{R}, b\in\mathbb{R} \}$.
+\end{exercise}
+
+\begin{exercise}\label{example:lost-of-total-ordering-on-C}
 	Chứng minh rằng không tồn tại một quan hệ thứ tự toàn phần $\leq$ trên tập hợp số phức $\mathbb{C}$ mà tương thích với phép cộng và phép nhân số phức. [Gợi ý: Chứng minh bằng phản chứng, xem xét 6 thứ tự có thể có của ba số phức $0$, $1$, $\imath$.]
 \end{exercise}
 
 \begin{exercise}
     \begin{enumerate}[label={(\roman*)}]
-        \item Cho một ví dụ về quan hệ thứ tự không toàn phần trên tập hợp số phức [Gợi ý: Chỉ định nghĩa quan hệ thứ tự trên một tập con của $\mathbb{C}$].
-        \item Cho một ví dụ về quan hệ tiền thứ tự toàn phần trên tập hợp số phức.
+        \item Hãy đưa ra một ví dụ về quan hệ thứ tự không toàn phần trên tập hợp số phức [Gợi ý: Chỉ định nghĩa quan hệ thứ tự trên một tập con của $\mathbb{C}$.]
+        \item Hãy đưa ra một ví dụ về quan hệ tiền thứ tự toàn phần trên tập hợp số phức.
     \end{enumerate}
 \end{exercise}
 
@@ -1088,6 +1090,7 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 	\begin{enumerate}[label={(\roman*)}]
 		\item $\abs{z_{1}z_{2}} = \abs{z_{1}}\abs{z_{2}}$.
 		\item $\abs{z_{1} + z_{2}}\leq \abs{z_{1}} + \abs{z_{2}}$.
+		\item nếu $z_{1}\ne 0$ và $z_{2}\ne 0$ thì $\arg{(z_{1}z_{2})}\equiv \arg{(z_{1})} + \arg{(z_{2})} \pmod{2\pi}$.
 	\end{enumerate}
 \end{exercise}
 
@@ -1095,7 +1098,7 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 	Chúng ta kí hiệu $U$ là tập hợp các số phức có độ lớn bằng $1$.
 	\begin{enumerate}[label={(\roman*)}]
 		\item Chứng minh rằng tồn tại một song ánh giữa $U$ và $[0, 2\pi)$.
-		\item Chỉ ra một quan hệ tương đương $\sim$ trên tập hợp số thực $\mathbb{R}$ sao cho tồn tại một song ánh $f: \mathbb{R}/_{\sim} \to U$.
+		\item Hãy đưa ra một quan hệ tương đương $\sim$ trên tập hợp số thực $\mathbb{R}$ sao cho tồn tại một song ánh $f: \mathbb{R}/_{\sim} \to U$.
 	\end{enumerate}
 \end{exercise}
 
@@ -1106,7 +1109,7 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 \begin{exercise}[Căn nguyên thủy]
 	$n$ là một số nguyên dương. Chứng minh rằng trong $U_{n}$, tồn tại phần tử mà mọi phần tử khác đều là lũy thừa của phần tử đó.
 
-	Phần tử như vậy được gọi là căn bậc $n$ nguyên thủy. Chứng minh rằng với mỗi số nguyên tố $p$, có đúng $p-1$ căn bậc $p$ nguyên thủy.
+	Phần tử như vậy được gọi là căn bậc $n$ nguyên thủy. Chứng minh rằng $\zeta_{k}$ là một căn bậc $n$ nguyên thủy khi và chỉ khi $n$ và $k$ nguyên tố cùng nhau.
 \end{exercise}
 
 \begin{exercise}
@@ -1123,3 +1126,30 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
         \item Với $n > 2$, chứng minh rằng tồn tại ít nhất một song ánh khác từ $U_{n}$ đến $\mathbb{Z}_{n}$ cũng có tính chất như $\tau$.
     \end{enumerate}
 \end{exercise}
+
+\begin{exercise}[Quaternion]
+	Tập hợp số bộ bốn (quaternion) được định nghĩa là $\mathbb{H} = \mathbb{C}\times\mathbb{C}$. Nói cách khác, đây là tập hợp gồm tất cả các cặp (có thứ tự) số phức. Trong bài tập này, chúng ta kí hiệu quaternion bởi các chữ cái in đậm, kí hiệu số phức bởi các chữ cái in thường.
+
+	Liên hợp của quaternion $\mathbf{z} = (a, b)$ được kí hiệu là ${\mathbf{z}}^{*}$ và được xác định như sau
+	\[
+		{\mathbf{z}}^{*} = (\overline{a}, -b)
+	\]
+
+	Phép cộng quaternion và phép nhân quaternion được định nghĩa như sau
+	\begin{align*}
+		(a, b) + (c, d) & = (a+c, b+d), \\
+		(a,b)(c,d) & = (ac - \overline{d}b, da + b\overline{c}).
+	\end{align*}
+
+	Tương tự như khi định nghĩa số phức như một cặp số thực, chúng ta \textit{đồng nhất} số phức $a$ với quaternion $(a, 0)$. Như vậy $\mathbb{R}\subset \mathbb{C}\subset \mathbb{H}$.
+
+	\begin{enumerate}[label={(\roman*)}]
+		\item Chứng minh rằng phép nhân quaternion có tính chất kết hợp.
+		\item Hãy đưa ra một ví dụ để cho thấy rằng phép nhân quaternion không có tính chất giao hoán.
+		\item Chứng minh rằng với mọi quaternion $\mathbf{z_{1}}$, $\mathbf{z_{2}}$, ${(\mathbf{z_{1}}{\mathbf{z_{2}}})}^{*} = {\mathbf{z_{2}}}^{*}{\mathbf{z_{1}}}^{*}$ và $\mathbf{z_{1}}\mathbf{z_{1}}^{*} = \mathbf{z_{1}}^{*}\mathbf{z_{1}}$.
+		\item Chứng minh rằng với mọi quaternion $\mathbf{z}$, $\mathbf{z}^{*}\mathbf{z}$ là một số thực không âm.
+		\item $\mathcal{N}: \mathbb{H}\to \mathbb{R}$ là ánh xạ cho bởi biểu thức $\mathcal{N}(\mathbf{z}) = \sqrt{\mathbf{z}^{*}\mathbf{z}}$. Chứng minh rằng với mọi quaternion $\mathbf{z_{1}}$, $\mathbf{z_{2}}$, có $\mathcal{N}(\mathbf{z_{1}}\mathbf{z_{2}}) = \mathcal{N}(\mathbf{z_{1}})\mathcal{N}(\mathbf{z_{2}})$.
+	\end{enumerate}
+\end{exercise}
+
+Trong chương này, cách định nghĩa số phức như một cặp số thực, và định nghĩa quaternion như một cặp số phức là một phần của \textbf{phép dựng Cayley-Dickson}. Phép dựng này được sử dụng để tạo ra các tập hợp số rộng hơn, chẳng hặn như octonion (số bộ 8), sedenion (số bộ 16), trigintaduonion (số bộ 32), \ldots Nói chung, càng tiếp tục mở rộng với phép dựng Cayley-Dickson, tập hợp số mới sẽ mất đi tính chất nào đó: tập hợp số phức không được sắp thứ tự hoàn toàn (xem Bài tập~\ref{example:lost-of-total-ordering-on-C}), phép nhân quaternion không có tính chất giao hoán, phép nhân octonion không có tính chất kết hợp, \ldots
