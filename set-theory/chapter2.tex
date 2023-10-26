@@ -390,7 +390,7 @@ Chúng tôi nhường lại chứng minh định lý trên cho bạn đọc tron
 
 \subsection{Tích Descartes}
 
-Ngoại trừ mục hiện tại và Mục~\ref{section5:axiomatic-set-theory}, trong tài liệu này, chúng ta chỉ làm việc với tích Descartes của hai tập hợp. Mục tiêu của mục này là đưa ra một định nghĩa cho tích Descartes của một họ các tập hợp (có thể gồm vô hạn tập hợp).
+Mục tiêu của mục này là đưa ra một định nghĩa cho tích Descartes của một họ các tập hợp (gồm hữu hạn hoặc vô hạn tập hợp).
 
 Tuy ngay bây giờ có thể định nghĩa tích Descartes của một họ các tập hợp, nhưng chúng ta bắt đầu với tích Descartes của hữu hạn tập hợp trước. Trước tiên, chúng ta định nghĩa bộ-$n$ có thứ tự. Một cách trực giác, chúng ta hiểu bộ-$n$ có thứ tự là một danh sách gồm $n$ đối tượng, và hai bộ-$n$ có thứ tự bằng nhau khi và chỉ khi các đối tượng thứ $i$ của chúng bằng nhau ($i$ là số tự nhiên không vượt quá $n$). Thực tế, đó là tất cả những gì chúng ta cần biết và dùng đến về bộ-$n$ có thứ tự trong tài liệu này.
 
@@ -464,11 +464,19 @@ Tích Descartes của hữu hạn tập hợp là khác rỗng nếu từng tậ
 \end{exercise}
 
 \begin{exercise}
-    Cho ánh xạ $f: X\to Y$. $A, B$ là hai tập hợp con của $X$. Chứng minh rằng
+    Cho hai ánh xạ khả nghịch $g: Y\to Z$ và $f: X\to Y$. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Nếu $g\circ f$ là đơn ánh thì $f$ là đơn ánh.
+        \item Nếu $g\circ f$ là toàn ánh thì $g$ là toàn ánh.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Cho ánh xạ $f: X\to Y$. $A$, $B$ là hai tập hợp con của $X$. Chứng minh rằng
     \begin{enumerate}[label={(\roman*)}]
         \item $f[A\cup B] = f[A]\cup f[B]$.
         \item $f[A\cap B] \subseteq f[A]\cap f[B]$.
-        \item $f[A - B] \supseteq f[A] - f[B]$.
+        \item $f[A \setminus B] \supseteq f[A] \setminus f[B]$.
     \end{enumerate}
 
     Hãy tìm một ví dụ mà $f[A\cap B]\ne f[A]\cap f[B]$ và một ví dụ mà $f[A - B]\ne f[A] - f[B]$. [Gợi ý: Với ví dụ thứ nhất, chọn $A, B$ sao cho $A$ và $B$ là hai tập rời nhau. Với ví dụ thứ hai, chọn $A, B$ sao cho ảnh của $A$ và ảnh của $B$ bằng nhau.]
@@ -481,12 +489,12 @@ Nghịch ảnh là một khái niệm quan trọng trong topology. Một vài tr
     \begin{enumerate}[label={(\roman*)}]
         \item $f^{-1}[A\cup B] = f^{-1}[A]\cup f^{-1}[B]$.
         \item $f^{-1}[A\cap B] = f^{-1}[A]\cap f^{-1}[B]$.
-        \item $f^{-1}[A - B] = f^{-1}[A] - f^{-1}[B]$.
+        \item $f^{-1}[A \setminus B] = f^{-1}[A] \setminus f^{-1}[B]$.
     \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-    Cho ánh xạ $f: X\to Y$. $A_{i}$ (với $i\in I$, tập hợp $I$ khác rỗng) là một họ tập hợp và đều là tập con của $Y$. Chứng minh rằng
+    Cho ánh xạ $f: X\to Y$. ${(A_{i})}_{i\in I}$ (tập hợp $I$ khác rỗng) là một họ tập hợp và mỗi tập hợp là tập con của $Y$. Chứng minh rằng
     \begin{enumerate}[label={(\roman*)}]
         \item $f^{-1}[\bigcup_{i\in I}A_{i}] = \bigcup_{i\in I} f^{-1}[A_{i}]$.
         \item $f^{-1}[\bigcap_{i\in I}A_{i}] = \bigcap_{i\in I} f^{-1}[A_{i}]$.
@@ -533,8 +541,8 @@ Trong tài liệu này, chúng ta chỉ định nghĩa và quan tâm đến quan
     \end{itemize}
 \end{example}
 
-\begin{example}
-    Trên tập hợp số nguyên, chúng ta có quan hệ đồng dư modulo $n$ với $n$ là một số nguyên khác không (nghĩa là hai số nguyên có hiệu chia hết cho $n$). Để biểu thị hai số nguyên $a$ và $b$ đồng dư modulo $n$, chúng ta viết $a\equiv b\pmod{n}$.
+\begin{example}\label{example:congruence}
+    Trên tập hợp số nguyên, chúng ta có quan hệ đồng dư modulo $n$ với $n$ là một số nguyên khác không (nghĩa là hai số nguyên có hiệu chia hết cho $n$). Để biểu thị hai số nguyên $a$ và $b$ đồng dư modulo $n$, chúng ta viết $a\equiv b\pmod{n}$ hoặc $a\equiv_{n} b$.
 
     \noindent Quan hệ đồng dư modulo $n$ trên tập hợp số nguyên có các tính chất
     \begin{itemize}
@@ -728,8 +736,58 @@ Trong một tập hợp con $A$ của một tập hợp $S$ với một quan h�
 \begin{itemize}
     \item Nếu $A$ có phần tử lớn nhất thì phần tử đó cũng là cận trên đúng.
     \item Nếu $A$ có phần tử nhỏ nhất thì phần tử đó cũng là cận dưới đúng.
-    \item Nếu $A$ có cận trên đúng thì cận trên đúng không nhất thiết thuộc $A$.
-    \item Nếu $A$ có cận dưới đúng thì cận dưới đúng không nhất thiết thuộc $A$.
+    \item Nếu $A$ có cận trên đúng thì cận trên đúng không nhất thiết thuộc $A$, và không nhất thiết là phần tử lớn nhất của $A$.
+    \item Nếu $A$ có cận dưới đúng thì cận dưới đúng không nhất thiết thuộc $A$, và không nhất thiết là phần tử nhỏ nhất của $A$.
 \end{itemize}
 
 \subsection{Bài tập}
+
+\begin{exercise}
+    Chứng minh quan hệ đồng dư modulo $n$ trong Ví dụ~\ref{example:congruence} là một quan hệ tương đương.
+\end{exercise}
+
+\begin{exercise}\label{exercise:sum-and-product-and-congruence}
+    Với mỗi số nguyên $a$, chúng ta kí hiệu lớp tương đương theo quan hệ đồng dư modulo $n$ và chứa $a$ là ${[a]}_{n}$, hoặc $[a]$ nếu $n$ đã rõ.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng với mọi số nguyên $a$, $b$, $c$, $d$. Nếu $a\equiv_{n} c$ và $b\equiv_{n} d$ thì $a + c \equiv_{n} b + d$.
+        \item Chứng minh rằng với mọi số nguyên $a$, $b$, $c$, $d$. Nếu $a\equiv_{n} c$ và $b\equiv_{n} d$ thì $ac \equiv_{n} bd$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Tập thương của quan hệ đồng dư modulo $n$ trên tập hợp số nguyên $\mathbb{Z}$ được kí hiệu là $\mathbb{Z}/n\mathbb{Z}$. Phần (i) và (ii) của bài tập trước là cơ sở để chúng ta định nghĩa phép cộng và phép nhân trên $\mathbb{Z}/n\mathbb{Z}$ như sau
+    \[
+        {[a]}_{n} + {[b]}_{n} = {[a+b]}_{n}\qquad {[a]}_{n}\cdot {[b]}_{n} = {[ab]}_{n}.    
+    \]
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng phép cộng trên $\mathbb{Z}/n\mathbb{Z}$ có tính chất kết hợp và giao hoán.
+        \item Chứng minh rằng phép nhân trên $\mathbb{Z}/n\mathbb{Z}$ có tính chất kết hợp, giao hoán, và tính chất phân phối với phép cộng.
+        \item Giả sử thêm $n$ là một số nguyên tố. Chứng minh rằng nếu ${[a]}_{n}\ne {[0]}_{n}$ thì tồn tại số nguyên $x$ sao cho ${[a]}_{n}\cdot {[x]}_{n} = {[1]}_{n}$. [Gợi ý: Sử dụng đồng nhất thức B\'{e}zout.]
+    \end{enumerate}
+\end{exercise}
+
+Nhờ kết quả của Bài tập~\ref{exercise:sum-and-product-and-congruence} phép cộng và phép nhân trên $\mathbb{Z}/n\mathbb{Z}$ trong bài tập vừa rồi \textit{không phụ thuộc vào việc chọn phần tử đại diện của lớp tương đương}.
+
+\begin{exercise}
+    Cho tập hợp $S$ và một quan hệ tương đương $\sim$ trên $S$. Chứng minh rằng tồn tại một toàn ánh $f: S\to S/_{\sim}$.
+\end{exercise}
+
+\begin{exercise}
+    Cho tập hợp $S$ và một quan hệ tiền thứ tự $\lesssim$ toàn phần trên $S$. Hai phần tử $a$ và $b$ của $S$ được gọi là có quan hệ $\sim$ nếu và chỉ nếu $a\lesssim b$ và $b\lesssim a$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng $\sim$ là một quan hệ tương đương trên $S$.
+        \item Nếu $\lesssim$ là một quan hệ tiền thứ tự \textit{không toàn phần} trên $S$ thì kết luận ở phần (i) có còn đúng không?
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Chúng ta đã biết rằng trong tập hợp số thực $\mathbb{R}$, với mọi số thực $x$, $y$, $z$, nếu $x\leq y$ thì $x + z\leq y + z$. Nói cách khác, phép cộng trên tập hợp số thực \textit{tương thích} với quan hệ thứ tự $\leq$ trên tập hợp số thực. Chứng minh rằng với mỗi số nguyên dương $n > 1$, trên tập hợp $\mathbb{Z}/n\mathbb{Z}$, không tồn tại quan hệ thứ tự toàn phần nào tương thích với phép cộng trên $\mathbb{Z}/n\mathbb{Z}$.
+\end{exercise}
+
+\begin{exercise}
+    Cho $A$ là tập hợp con khác rỗng của tập hợp $S$ với một quan hệ thứ tự một phần.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Giả sử $A$ có cận trên nhỏ nhất. Chứng minh rằng $A$ có phần tử lớn nhất khi và chỉ khi $\sup A$ là một phần tử của $A$.
+        \item Giả sử $A$ có cận dưới lớn nhất. Chứng minh rằng $A$ có phần tử nhỏ nhất khi và chỉ khi $\inf A$ là một phần tử của $A$.
+    \end{enumerate}
+\end{exercise}

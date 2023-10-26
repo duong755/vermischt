@@ -1,3 +1,4 @@
+% chktex-file 44
 \chapter{Logic và Tập hợp}\label{chapter:logic-and-set-theory}
 
 \section{Mệnh đề và các phép toán logic}
@@ -73,6 +74,7 @@ Một biểu thức logic thực ra cũng chính là một mệnh đề, chúng 
 Theo Bảng~\ref{section1:truth-table-of-not-and-or}, hai biểu thức $P\wedge Q$ và $P\vee Q$ tương đương trong hai trường hợp (1) $P, Q$ cùng đúng và (2) $P, Q$ cùng sai. Còn khi $P, Q$ khác tính đúng-sai thì $P\wedge Q$ và $P\vee Q$ không tương đương. Chúng ta xét hai biểu thức $P\implies Q$ và $\neg P \vee Q$ (lưu ý thứ tự thực hiện phép toán). Để kiểm tra sự tương đương của hai biểu thức trong tất cả các trường hợp, chúng ta lập bảng chân trị (Bảng~\ref{section1:truth-table-of-implication-and-neg-vee}).
 \begin{table}[htp]
     \centering
+    % chktex-file 44
     \[
         \begin{array}{cc|cc}
             P           & Q           & P\implies Q & \neg P\vee Q \\
@@ -158,7 +160,7 @@ Thứ tự thực hiện phép toán cho phép người sử dụng lược bỏ
 
 \section{Tập hợp}
 
-\subsection{Định nghĩa tập hợp}
+\subsection{Tập hợp}
 
 Tập hợp là một khái niệm nguyên thủy, không được định nghĩa về mặt toán học. Chúng ta chấp nhận và hiểu về tập hợp bằng định nghĩa trực giác ``Tập hợp là một bộ các đối tượng'' và các ví dụ: \textit{Tập hợp các sinh viên trong một lớp học}, \textit{Tập hợp các câu văn trong một cuốn sách}, \textit{Tập hợp các nghiệm thực của phương trình $x^{2} + 1 = 0$}, \textit{Tập hợp các số nguyên}\ldots Bạn đọc có thể đưa ra thêm nhiều ví dụ khác về tập hợp. Tựu chung lại, chúng ta thống nhất các thuật ngữ và các đặc điểm sau của tập hợp như sau:
 \begin{enumerate}[label={(\arabic*)},itemsep=0pt]
@@ -187,7 +189,7 @@ Bên cạnh đó, để xác định tập hợp, thay vì liệt kê các phầ
     \item $S = \{ n \mid \text{$n$ là một số tự nhiên rất lớn} \}$ không phải một tập hợp, vì khái niệm \textit{số tự nhiên rất lớn} không được định nghĩa.
 \end{itemize}
 
-Để cho ngắn gọn, chúng ta có thể dùng từ tập thay vì tập hợp. Ở Chương~\ref{chapter:cardinality}, chúng ta sẽ bàn thêm về tập hợp có vô hạn phần tử.
+Để cho ngắn gọn, chúng ta có thể dùng từ tập thay vì tập hợp. Ở Chương~\ref{chapter:cardinality-and-axiomatic-set-theory}, chúng ta sẽ bàn thêm về tập hợp có vô hạn phần tử.
 
 \subsection{Quan hệ bao hàm giữa các tập hợp}
 
@@ -227,7 +229,7 @@ Dưới đây là một số ví dụ và phản ví dụ về quan hệ bao hà
     Cho các tập hợp $A, B, C$. Nếu $A\subseteq B$, $B\subseteq C$ thì $A\subseteq C$.
 \end{theorem}
 
-Chúng ta kết thúc mục này bằng định nghĩa tập hợp lũy thừa, và sẽ quay trở lại với khái niệm này trong Chương~\ref{chapter:cardinality}.
+Chúng ta kết thúc mục này bằng định nghĩa tập hợp lũy thừa, và sẽ quay trở lại với khái niệm này trong Chương~\ref{chapter:cardinality-and-axiomatic-set-theory}.
 
 \begin{definition}[Tập hợp lũy thừa]
     Tập hợp lũy thừa của một tập hợp $S$ là một tập hợp với các phần tử là tất cả các tập hợp con của $S$. Chúng ta kí hiệu tập hợp lũy thừa của $S$ là $\mathcal{P}(S)$.
@@ -292,7 +294,7 @@ Trong hai ví dụ vừa xét, chúng ta có những mệnh đề có cú pháp 
 Quay trở lại với hai ví dụ được xét ở mục trước. Ở ví dụ đầu tiên, vì ngày hôm qua và ngày hôm kia có mưa, nên người hàng xóm có thể trả lời \textit{cả hai ngày vừa qua đều có mưa} thay vì nói về từng ngày một. Ở ví dụ thứ hai, người giáo viên có thể hỏi tiếp người đồng nghiệp của mình rằng: ``Trong lớp có học sinh nào được điểm 10 không?\@'', hay là ``Tất cả học sinh nào đều được điểm trên trung bình chứ?\@''. Người đồng nghiệp có thể trả lời rằng ``Có học sinh được điểm 10'' và ``Mọi học sinh đều được điểm lớn hơn hoặc bằng 5.\@''
 
 Tình huống tương tự cũng xảy ra khi chúng ta cần đưa ra lớp các mệnh đề về một tập hợp các đối tượng: Cho trước tập hợp $S$ và một vị từ $p$ (áp dụng lên các phần tử của $x$), chúng ta muốn biết liệu $p(x)$ đúng hay sai, với $x$ là phần tử của $S$. Khi trả lời câu hỏi đó, chúng ta thường gặp các trường hợp sau đây:
-\begin{enumerate}
+\begin{enumerate}[label={(\roman*)}]
     \item Có ít nhất một phần tử $x$ của $S$ sao cho có $p(x)$. Khi đó chúng ta kí hiệu
           \[
               \exists x\in S (p(x))\qquad\text{hay}\qquad \exists x\in S: p(x)
@@ -314,7 +316,7 @@ Hành động đưa ra các mệnh đề như trên được gọi là \textit{l
 
 Từ định nghĩa của hai lượng hóa, chúng ta rút ra hai nguyên lý sau đây.
 
-\begin{enumerate}
+\begin{enumerate}[label={(\roman*)}]
     \item \textbf{Phủ định của $\exists x\in S : p(x)$} là $\forall x\in S: \neg p(x)$. Viết thành câu, điều này có nghĩa là: \textbf{phủ định của mệnh đề  ``tồn tại $x$ thuộc $S$ sao cho có $p(x)$''} tương đương với \textbf{mệnh đề ``với mọi $x$ thuộc $S$, không có $p(x)$''}.
     \item \textbf{Phủ định của $\forall x\in S : p(x)$} là $\exists x\in S: \neg p(x)$. Viết thành câu, điều này có nghĩa là: phủ định của mệnh đề  ``với mọi $x$ thuộc $S$ sao cho có $p(x)$'' tương đương với mệnh đề ``tồn tại $x$ thuộc $S$ sao cho không có $p(x)$''.
 \end{enumerate}
@@ -622,8 +624,8 @@ Trong Chương~\ref{chapter:relations-and-mappings}, chúng ta sẽ quay trở l
     Cho ba tập hợp $A, B, C$. Chứng minh rằng
     \begin{equation*}
         \begin{split}
-            A - (B\cup C) = (A - B) \cap (A - C), \\
-            A - (B\cap C) = (A - B) \cup (A - C).
+            A \setminus (B\cup C) = (A \setminus B) \cap (A \setminus C), \\
+            A \setminus (B\cap C) = (A \setminus B) \cup (A \setminus C).
         \end{split}
     \end{equation*}
 \end{exercise}
@@ -636,8 +638,8 @@ Trong Chương~\ref{chapter:relations-and-mappings}, chúng ta sẽ quay trở l
     Công thức De Morgan có thể được viết dưới dạng khác, sử dụng phép toán hiệu hai tập hợp thay vì lấy phần bù. Cụ thể là
     \begin{equation*}
         \begin{split}
-            A - \bigcup_{i\in I}A_{i} = \bigcap_{i\in I}{(A - A_{i})}, \\
-            A - \bigcap_{i\in I}A_{i} = \bigcup_{i\in I}{(A - A_{i})}.
+            A \setminus \bigcup_{i\in I}A_{i} = \bigcap_{i\in I}{(A \setminus A_{i})}, \\
+            A \setminus \bigcap_{i\in I}A_{i} = \bigcup_{i\in I}{(A \setminus A_{i})}.
         \end{split}
     \end{equation*}
 
@@ -657,10 +659,3 @@ Kết quả từ Bài tập~\ref{set-operations:exercise6} khá đơn giản, th
 \begin{exercise}\label{set-operations:exercise7}
     Cho tập hợp $S$ khác rỗng được phân hoạch thành họ các tập hợp $A_{i}$ với $i\in I$ (tập hợp $I$ khác rỗng). Chứng minh rằng với mỗi phần tử thuộc $S$, tồn tại duy nhất $i\in I$ sao cho phần tử đó thuộc $A_{i}$. [Gợi ý: Chứng minh bằng phản chứng.]
 \end{exercise}
-
-
-\section{* Lý thuyết tập hợp theo tiên đề}\label{section5:axiomatic-set-theory}
-
-\subsection{Nghịch lý Russell}
-
-\subsection{Lý thuyết tập hợp ZFC}
