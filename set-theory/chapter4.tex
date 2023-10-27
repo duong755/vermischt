@@ -575,7 +575,7 @@ Hệ quả trên được rút ra từ việc áp dụng thuộc tính Archimede
 \begin{proof}
 	Theo thuộc tính Archimedes, tồn tại số nguyên $n$ sao cho $1 < n(y - x)$. Do đó $1 + nx < ny$. Theo định nghĩa phần nguyên của số thực, chúng ta có $nx < \floor{nx} + 1 \leq nx + 1 < ny$.
 
-	Do đó, với số nguyên $m = \floor{nx} + 1$, chúng ta có $nx < m < ny$. Bên cạnh đó, vì $y - x > 0$ và $n > 0$ nên  $1 < n(y - x)$ kéo theo $n > 0$. Do đó $x < \frac{m}{n} < y$.
+	Do đó, với số nguyên $m = \floor{nx} + 1$, chúng ta có $nx < m < ny$. Bên cạnh đó, vì $y - x > 0$ và $n(y - x) > 1 > 0$ nên $n > 0$. Do đó $x < \frac{m}{n} < y$.
 
 	Vậy, với mọi số thực $x, y$ sao cho $x < y$, tồn tại số hữu tỉ $q$ sao cho $x < q < y$.
 \end{proof}
@@ -658,7 +658,7 @@ Trong bài tập trên, quan hệ $\sim$ được gọi là \textbf{quan hệ đ
 \end{exercise}
 
 \begin{exercise}[Nguyên lý Cantor về các khoảng đóng lồng nhau]
-	Với mỗi số nguyên dương $n$, $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
+	Với mỗi số nguyên dương $n$, chúng ta định nghĩa $I_{n} = [a_{n}, b_{n}]$. Giả sử với mỗi số nguyên dương $n$, có $I_{n} \supseteq I_{n+1}$.
 	\begin{enumerate}[label={(\roman*)}]
 		\item Chứng minh rằng tập hợp các số thực $a_{n}$ có cận trên nhỏ nhất (chúng ta sẽ kí hiệu là $a$), và tập hợp các số thực $b_{n}$ có cận dưới lớn nhất (chúng ta sẽ kí hiệu là $b$).
 		\item Chứng minh rằng giao của tất cả các khoảng đóng $I_{n}$ khác rỗng.
@@ -666,18 +666,10 @@ Trong bài tập trên, quan hệ $\sim$ được gọi là \textbf{quan hệ đ
 	\end{enumerate}
 \end{exercise}
 
-Thực tế, trong nguyên lý Cantor, điều kiện $a = b$ được thay bởi điều kiện tương đương là $\lim (a_{n} - b_{n}) = 0$. Nguyên lý Cantor cho thấy giao của dãy các khoảng đóng lồng nhau khác rỗng, tuy nhiên điều này không còn đúng nếu chúng ta thay khoảng đóng bởi khoảng mở. Hai bài tập dưới đây cung cấp ví dụ và phản ví dụ cho nhận định này.
+Thực tế, trong phát biểu của nguyên lý Cantor, điều kiện $a = b$ được thay bởi điều kiện tương đương là $\lim (a_{n} - b_{n}) = 0$. Nguyên lý Cantor cho thấy giao của dãy các khoảng đóng lồng nhau khác rỗng. Tuy nhiên điều này không còn đúng nếu chúng ta thay khoảng đóng bởi khoảng mở. Hai bài tập dưới đây làm rõ nhận định này.
 
 \begin{exercise}
-	Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
-	\begin{enumerate}[label={(\roman*)}]
-		\item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
-		\item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
-	\end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-	Với mỗi số nguyên dương $n$, $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
+	Với mỗi số nguyên dương $n$, chúng ta định nghĩa $I_{n} = (0, \frac{1}{n})$. Chứng minh rằng
 	\begin{enumerate}[label={(\roman*)}]
 		\item Với mỗi số nguyên dương $n$, $I_{n}\supset I_{n+1}$.
 		\item Giao của tất cả các khoảng mở $I_{n}$ là tập hợp rỗng.
@@ -706,7 +698,7 @@ Thực tế, trong nguyên lý Cantor, điều kiện $a = b$ được thay bở
 
 \subsection{Xây dựng tập hợp số phức}
 
-Không tồn tại số thực nào có bình phương bằng $-1$. Trong chương trình phổ thông, chúng ta đã được giới thiệu khái niệm đơn vị ảo $\imath$ (thỏa mãn $\imath^{2} = -1$) và tập hợp số phức. Tuy nhiên cách tiếp cận đó không thỏa đáng. Bởi nếu tiếp cận như vậy. $\imath$ có nguồn gốc không rõ ràng, hay chúng ta không trả lời được $\imath$ với cách tiếp cận đó. Để khắc phục điều này, số phức và tập hợp số phức được định nghĩa như sau.
+Không tồn tại số thực nào có bình phương bằng $-1$. Trong chương trình phổ thông, chúng ta đã được giới thiệu khái niệm đơn vị ảo $\imath$ (thỏa mãn $\imath^{2} = -1$) và tập hợp số phức. Tuy nhiên cách tiếp cận đó không thỏa đáng. Bởi với cách tiếp cận như vậy, $\imath$ có nguồn gốc không rõ ràng, hay chúng ta không trả lời được $\imath$ là gì, hay số phức là gì với cách tiếp cận đó. Để khắc phục điều này, số phức và tập hợp số phức được định nghĩa như sau.
 \begin{definition}
 	Tập hợp số phức\index{Số phức} là tập hợp gồm tất cả các cặp (có thứ tự) số thực. Tập hợp số phức được kí hiệu là $\mathbb{C}$.
 \end{definition}
@@ -726,19 +718,18 @@ Với định nghĩa trên, chúng ta chứng minh được kết quả sau.
 	Ánh xạ $\iota: \mathbb{R}\to \mathbb{C}$, với $\iota(x) = (x, 0)$ là một đơn ánh. Đơn ánh này bảo toàn phép cộng và phép nhân, nói cách khác, $\iota(x, y) = \iota(x) + \iota(y)$ và $\iota(xy) = \iota(x)\iota(y)$.
 \end{proposition}
 
-Phép nhân số phức được định nghĩa như trên sẽ đảm bảo\footnote{Có thể đây không phải cách duy nhất, nhưng chúng ta chỉ quan tâm đến phép nhân số phức theo định nghĩa này.} rằng phép nhân số phức có tính chất phân phối với phép cộng số phức. Thay cho kí hiệu $(a, b)$, chúng ta viết $a + b\imath$ hoặc $a + \imath b$ và \textit{đồng nhất} số thực $a$ với $(a, 0)$ (Mệnh đề trên là cơ sở cho việc đồng nhất này). Áp dụng kí hiệu này và định nghĩa phép nhân số phức, chúng ta thu được
+Phép nhân số phức được định nghĩa như trên sẽ đảm bảo\footnote{Có thể đây không phải cách duy nhất, nhưng chúng ta chỉ quan tâm đến phép nhân số phức theo định nghĩa này.} rằng phép nhân số phức có tính chất phân phối với phép cộng số phức. Chúng ta \textit{đồng nhất} số thực $a$ với $(a, 0)$ (Mệnh đề trên là cơ sở cho việc đồng nhất này). Áp dụng kí hiệu này và định nghĩa phép nhân số phức, chúng ta thu được
 \[
 	\begin{split}
-		a + b\imath & = (a, b) \\
-		& = (a, 0) + (0, b), \\
-		{(0 + 1\imath)}^{2} & = {(0, 1)}^{2} \\
-		& = (0\cdot 0 - 1\cdot 1, 1\cdot 0 + 1\cdot 0) \\
+		(a, b) & = (a, 0) + (0, b), \\
+		a(b, c) & = (a, 0)(b, c) = (ab, ac), \\
+		{(0, 1)}^{2} & = (0\cdot 0 - 1\cdot 1, 1\cdot 0 + 1\cdot 0) \\
 		& = (-1, 0) \\
 		& = -1.
 	\end{split}
 \]
 
-Bên cạnh đó, thay cho cách viết $0 + b\imath$, chúng ta viết $b\imath$. Cùng với các đẳng thức trên, chúng ta suy ra $\imath^{2} = -1$.
+trong đó $a$, $b$, $c$ là các số thực. Các kết quả trên đây là cơ sở để chúng ta định nghĩa $\imath = (0, 1)$. Cũng từ các kết quả này, thay cho cách viết $(a, b)$, chúng ta viết $a + b\imath$ hoặc $a + \imath b$. Nói riêng, khi $a = 0$, chúng ta viết $b\imath$ hoặc $\imath b$ thay vì $0 + b\imath$.
 
 \begin{theorem}
 	Hai số phức $a + b\imath$ và $c + d\imath$ bằng nhau khi và chỉ khi $a = c$, $b = d$.
@@ -751,9 +742,9 @@ Bên cạnh đó, thay cho cách viết $0 + b\imath$, chúng ta viết $b\imath
 	\item Việc mở rộng tập hợp số hữu tỉ thành tập hợp số thực là một quá trình đầy đủ hóa, để cho mọi tập hợp con khác rỗng và bị chặn trên đều có cận trên nhỏ nhất.
 \end{itemize}
 
-Song hành với mỗi tập hợp số là các phép toán và quan hệ. Những hạn chế của các phép toán hay quan hệ là động lực để mở rộng tập hợp số đã có thành tập hợp số rộng hơn, khắc phục hạn chế của tập hợp số trước. Qua định nghĩa của các tập hợp số, cũng như các phép toán, quan hệ trên chúng, có thể đưa ra nhận định rằng: Chính các phép toán, quan hệ và các tính chất của chúng là những điều quyết định chúng ta nên định nghĩa các tập hợp số như thế nào.
+Song hành với mỗi tập hợp số là các phép toán và quan hệ. Những hạn chế của các phép toán hay quan hệ là động lực để mở rộng tập hợp số đã có thành tập hợp số rộng hơn, khắc phục hạn chế của tập hợp số trước. Trong tài liệu này, bạn đọc có thể thấy việc định nghĩa các tập hợp số, cũng như các phép toán và quan hệ trên chúng có thể không được tự nhiên. Đó là bởi chúng ta đang sử dụng phương pháp tiên đề nhằm tổ chức lại một cách chặt chẽ cho hệ thống lý thuyết với các định nghĩa và định lý, và phương pháp tiên đề được thực hiện sau cùng --- Khi mà hệ thống lý thuyết được xem là đã chín muồi. Bên cạnh đó, với các tập hợp số, điều mà những người học và làm toán quan tâm là các số đó (cùng các phép toán, quan hệ) có những tính chất gì. Qua định nghĩa của các tập hợp số, cũng như các phép toán, quan hệ trên chúng, có thể đưa ra nhận định rằng: Chính các phép toán, quan hệ và các tính chất của chúng là những điều quyết định chúng ta nên định nghĩa các tập hợp số như thế nào.
 
-\begin{theorem}[Trường số phức]
+\begin{theorem}[Trường số phức]\label{theorem:field-of-complex-numbers}
 	Tập hợp số phức với phép toán cộng và nhân là một trường. Nói cách khác
 	\begin{enumerate}[label={(F\arabic*)}]
 		\item Phép cộng có tính chất kết hợp. Nói cách khác, với mọi số phức $z_{1}, z_{2}, z_{3}$, chúng ta có
@@ -883,7 +874,7 @@ Hoàn toàn có thể đưa ra một công thức để xác định $\arg{(z)}$
 
 hay nói cách khác là bất cứ số thực nào đồng dư modulo $2\pi$ với $\arg{(z)}$.
 
-Với dạng lượng giác của số phức, việc thực hiện phép nhân, và lũy thừa trở nên dễ dàng bằng định lý sau.
+Với dạng lượng giác của số phức, việc thực hiện phép nhân, và lũy thừa trở nên dễ dàng.
 \begin{theorem}
 	\begin{enumerate}[label={(\roman*)}]
 		\item Với mỗi số phức $z_{1} = \abs{z_{1}}(\cos(\phi_{1}) + \imath\sin(\phi_{1}))$ và $z_{2} = \abs{z_{2}}(\cos(\phi_{2}) + \imath\sin(\phi_{2}))$, chúng ta có
@@ -943,7 +934,7 @@ Tập hợp số thực có thể được trực quan hóa bằng một đườ
 
 \begin{figure}[htp]
 	\centering
-	\begin{tikzpicture}[>=Stealth,scale=2.0]
+	\begin{tikzpicture}[>=Stealth,scale=1.5]
 		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.9,-1.9) grid (1.9,1.9);
 
 		\node[label={[label distance=-2mm]135:$O$}] at (0,0) {};
@@ -977,12 +968,12 @@ Với mỗi số phức $z\ne 0$, chúng ta viết $z$ dưới dạng lượng g
 
 trong đó $\phi = \arg{(z)}$.
 
-Với mặt phẳng phức, các thuộc tính của số phức $z$ mang các ý nghĩa hình học. Độ lớn của số phức $z$ chính là khoảng cách từ điểm $z$ đến gốc tọa độ $O$. Phần thực của $z$ là hoành độ của điểm $z$, phần ảo của $z$ là tung độ của điểm $z$. Điểm $\overline{z}$ biểu diễn cho số phức liên hợp của $z$ là điểm đối xứng với $z$ qua trục thực. Argument của $z$ là số đo của góc định hướng $(Ox, Oz)$ với tia đầu là tia $Ox$, tia cuối là tia $Oz$.
+Thông qua mặt phẳng phức, các thuộc tính của số phức $z$ được gán cho các ý nghĩa hình học. Độ lớn của số phức $z$ chính là khoảng cách từ điểm $z$ đến gốc tọa độ $O$. Phần thực của $z$ là hoành độ của điểm $z$, phần ảo của $z$ là tung độ của điểm $z$. Điểm $\overline{z}$ biểu diễn cho số phức liên hợp của $z$ là điểm đối xứng với $z$ qua trục thực. Argument của $z$ là số đo của góc định hướng $(Ox, Oz)$ với tia đầu là tia $Ox$, tia cuối là tia $Oz$.
 
 Phép cộng hai số phức tương ứng với phép cộng vector (Xem Hình~\ref{fig:complex-addition}.)
 \begin{figure}[htp]
 	\centering
-	\begin{tikzpicture}[>=Stealth,scale=2.0]
+	\begin{tikzpicture}[>=Stealth,scale=1.5]
 		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
 
 		\coordinate (Z1) at (1,0.8);
@@ -1006,12 +997,18 @@ Phép cộng hai số phức tương ứng với phép cộng vector (Xem Hình~
 	\caption{Phép cộng hai số phức.}\label{fig:complex-addition}
 \end{figure}
 
-Phép nhân một số phức $z_{0}$ với số phức $z\ne 0$ tương ứng với một phép vị tự-quay (Xem Hình~\ref{fig:complex-multiplication})
+Phép nhân một số phức $z_{0}$ với số phức $z\ne 0$ tương ứng với một phép vị tự-quay $f$. Bằng kí hiệu ánh xạ, chúng ta viết
+\begin{align*}
+	f:\quad & \mathbb{C} \to \mathbb{C} \\
+	        & z \mapsto z_{0}z
+\end{align*}
+
+Bạn đọc xem Hình~\ref{fig:complex-multiplication}. Phép vị tự-quay này là hợp thành của phép quay tâm $O$ góc $\theta\equiv \arg{(z_{0})} \pmod{2\pi}$ và phép vị tự tâm $O$ tỉ số $\abs{z_{0}}$.
 
 \begin{figure}[htp]
 	\centering
-	\begin{tikzpicture}[>=Stealth,scale=2.0]
-		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-1.5,-1.5) grid (2.0,2.0);
+	\begin{tikzpicture}[>=Stealth,scale=1.5]
+		\draw[help lines, color=gray!30, dashed,step=0.5cm] (-2.0,-2.0) grid (2.0,2.0);
 
 		\coordinate (X) at (1,0);
 		\coordinate (Z1) at ({1.2*cos(50)},{1.2*sin(50)});
@@ -1037,7 +1034,7 @@ Phép nhân một số phức $z_{0}$ với số phức $z\ne 0$ tương ứng v
 	\caption{Phép nhân hai số phức.}\label{fig:complex-multiplication}
 \end{figure}
 
-Biểu diễn hình học của các căn bậc $n$ của một số phức khác không cho trước là $n$ điểm. $n$ điểm này thuộc đường tròn đơn vị và là $n$ đỉnh của một $n$-giác đều với tâm là gốc tọa độ (Xem Hình~\ref{fig:5throot-of-unity}.)
+Biểu diễn hình học của các căn bậc $n$ của một số phức $z$ khác không cho trước là $n$ điểm. $n$ điểm này thuộc đường tròn với tâm là gốc tọa độ, bán kính $\abs{z}$. Khi $n\geq 3$, $n$ điểm này còn là $n$ đỉnh của một $n$-giác đều với tâm là gốc tọa độ (Xem Hình~\ref{fig:5throot-of-unity}.)
 
 \begin{figure}[htp]
 	\centering
@@ -1061,6 +1058,10 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 \end{figure}
 
 \subsection{Bài tập}
+
+\begin{exercise}
+	Chứng minh Định lý~\ref{theorem:field-of-complex-numbers}.
+\end{exercise}
 
 \begin{exercise}
 	Cho $z$ là một số phức nhưng không phải số thực. Chứng minh rằng $\mathbb{C} = \{ a + bz \mid a\in\mathbb{R}, b\in\mathbb{R} \}$.
@@ -1101,7 +1102,7 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 \begin{exercise}[Căn nguyên thủy]
 	$n$ là một số nguyên dương. Chứng minh rằng trong $U_{n}$, tồn tại phần tử mà mọi phần tử khác đều là lũy thừa của phần tử đó.
 
-	Phần tử như vậy được gọi là căn bậc $n$ nguyên thủy. Chứng minh rằng $\zeta_{k}$ là một căn bậc $n$ nguyên thủy khi và chỉ khi $n$ và $k$ nguyên tố cùng nhau.
+	Phần tử như vậy được gọi là căn bậc $n$ nguyên thủy của đơn vị\index{Căn bậc $n$ nguyên thủy của đơn vị}. Chứng minh rằng $\zeta_{k}$ là một căn bậc $n$ nguyên thủy khi và chỉ khi $n$ và $k$ nguyên tố cùng nhau.
 \end{exercise}
 
 \begin{exercise}
@@ -1144,4 +1145,4 @@ Biểu diễn hình học của các căn bậc $n$ của một số phức khá
 	\end{enumerate}
 \end{exercise}
 
-Trong chương này, cách định nghĩa số phức như một cặp số thực, và định nghĩa quaternion như một cặp số phức là một phần của \textbf{phép dựng Cayley-Dickson}. Phép dựng này được sử dụng để tạo ra các tập hợp số rộng hơn, chẳng hạn như octonion (số bộ 8), sedenion (số bộ 16), trigintaduonion (số bộ 32), \ldots Nói chung, càng tiếp tục mở rộng với phép dựng Cayley-Dickson, tập hợp số mới sẽ mất đi tính chất nào đó: tập hợp số phức không được sắp thứ tự hoàn toàn (xem Bài tập~\ref{example:lost-of-total-ordering-on-C}), phép nhân quaternion không có tính chất giao hoán, phép nhân octonion không có tính chất kết hợp, \ldots
+Trong chương này, cách định nghĩa số phức như một cặp số thực, cách định nghĩa quaternion như một cặp số phức là một phần của \textbf{phép dựng Cayley-Dickson}. Phép dựng này tiếp tục được sử dụng để tạo ra các tập hợp số rộng hơn, chẳng hạn như octonion (số bộ 8), sedenion (số bộ 16), trigintaduonion (số bộ 32), \ldots Nói chung, càng tiếp tục mở rộng với phép dựng Cayley-Dickson, tập hợp số mới sẽ mất đi tính chất nào đó: tập hợp số phức không được sắp thứ tự hoàn toàn (xem Bài tập~\ref{example:lost-of-total-ordering-on-C}), phép nhân quaternion không có tính chất giao hoán, phép nhân octonion không có tính chất kết hợp, \ldots
