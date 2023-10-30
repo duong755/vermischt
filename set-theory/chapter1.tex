@@ -172,13 +172,13 @@ Tập hợp là một khái niệm nguyên thủy, không được định nghĩ
 Một tập hợp có thể không có phần tử nào (tập hợp rỗng), khác rỗng và có hữu hạn phần tử, hoặc có vô hạn phần tử. Để xác định một tập hợp, chúng ta có thể liệt kê tất cả các phần tử nếu tập hợp đó có hữu hạn phần tử hoặc các phần tử đó tuân theo một quy luật dễ đoán nào đó, chẳng hạn
 \begin{itemize}
 	\item Tập hợp $S$ gồm các nghiệm thực của phương trình $x^{2} - 4x + 3 = 0$
-	      \[
-		      S = \{ 1, 3 \}.
-	      \]
+				\[
+					S = \{ 1, 3 \}.
+				\]
 	\item Tập hợp $E$ gồm các số nguyên chia hết cho $3$
-	      \[
-		      E = \{ \ldots, -6, -3, 0, 3, 6, \ldots \}.
-	      \]
+				\[
+					E = \{ \ldots, -6, -3, 0, 3, 6, \ldots \}.
+				\]
 \end{itemize}
 
 Trong toán học, chúng ta thường xuyên làm việc với các tập hợp số. Những tập hợp này được kí hiệu bằng các chữ cái rỗng: $\mathbb{N}$ (tập hợp các số tự nhiên), $\mathbb{Z}$ (tập hợp các số nguyên), $\mathbb{Z}_{\geq 0}$ (tập hợp các số nguyên không âm), $\mathbb{Q}$ (tập hợp các số hữu tỉ), $\mathbb{R}$ (tập hợp các số thực). Trong các chương sau, chúng ta sẽ tìm hiểu chi tiết hơn về các tập hợp này.
@@ -296,20 +296,20 @@ Quay trở lại với hai ví dụ được xét ở mục trước. Ở ví d�
 Tình huống tương tự cũng xảy ra khi chúng ta cần đưa ra lớp các mệnh đề về một tập hợp các đối tượng: Cho trước tập hợp $S$ và một vị từ $p$ (áp dụng lên các phần tử của $x$), chúng ta muốn biết liệu $p(x)$ đúng hay sai, với $x$ là phần tử của $S$. Khi trả lời câu hỏi đó, chúng ta thường gặp các trường hợp sau đây:
 \begin{enumerate}[label={(\roman*)}]
 	\item Có ít nhất một phần tử $x$ của $S$ sao cho có $p(x)$. Khi đó chúng ta kí hiệu
-	      \[
-		      \exists x\in S\; p(x)\qquad\text{hay}\qquad \exists x\in S\; (p(x))\qquad\text{hay}\qquad \exists x\in S: p(x)
-	      \]
+				\[
+					\exists x\in S\; p(x)\qquad\text{hay}\qquad \exists x\in S\; (p(x))\qquad\text{hay}\qquad \exists x\in S: p(x)
+				\]
 
-	      hoặc chỉ ngắn gọn là $\exists x (p(x))$ nếu ngữ cảnh đã nêu rõ $x$ thuộc tập hợp nào. Thay vì kí hiệu trên, chúng ta nói \textbf{tồn tại $x$ thuộc $S$ sao cho có $p(x)$}. Nói riêng, khi tồn tại $x\in S$ thỏa mãn $p(x)$, chúng ta thường đặt ra thêm câu hỏi về tính duy nhất của phần tử như vậy. Nếu đó là phần tử duy nhất thỏa mãn điều kiện đó, chúng ta kí hiệu
-	      \[
-		      \exists! x\in S\; p(x)\qquad\text{hay}\qquad \exists! x\in S\; (p(x))\qquad\text{hay}\qquad \exists! x\in S: p(x)
-	      \]
+				hoặc chỉ ngắn gọn là $\exists x (p(x))$ nếu ngữ cảnh đã nêu rõ $x$ thuộc tập hợp nào. Thay vì kí hiệu trên, chúng ta nói \textbf{tồn tại $x$ thuộc $S$ sao cho có $p(x)$}. Nói riêng, khi tồn tại $x\in S$ thỏa mãn $p(x)$, chúng ta thường đặt ra thêm câu hỏi về tính duy nhất của phần tử như vậy. Nếu đó là phần tử duy nhất thỏa mãn điều kiện đó, chúng ta kí hiệu
+				\[
+					\exists! x\in S\; p(x)\qquad\text{hay}\qquad \exists! x\in S\; (p(x))\qquad\text{hay}\qquad \exists! x\in S: p(x)
+				\]
 	\item Mọi phần tử $x$ của $S$ đều làm cho $p(x)$ đúng. Khi đó chúng ta kí hiệu
-	      \[
-		      \forall x\in S\; p(x)\qquad\text{hay}\qquad \forall x\in S\; (p(x))\qquad\text{hay}\qquad \forall x\in S: p(x)
-	      \]
+				\[
+					\forall x\in S\; p(x)\qquad\text{hay}\qquad \forall x\in S\; (p(x))\qquad\text{hay}\qquad \forall x\in S: p(x)
+				\]
 
-	      hoặc chỉ ngắn gọn là $\forall x (p(x))$ nếu ngữ cảnh đã nêu rõ $x$ thuộc tập hợp nào. Thay cho kí hiệu, chúng ta còn nói \textbf{với mọi $x$ thuộc $S$, có $p(x)$}, hay \textbf{với mỗi $x$ thuộc $S$, có $p(x)$}.
+				hoặc chỉ ngắn gọn là $\forall x (p(x))$ nếu ngữ cảnh đã nêu rõ $x$ thuộc tập hợp nào. Thay cho kí hiệu, chúng ta còn nói \textbf{với mọi $x$ thuộc $S$, có $p(x)$}, hay \textbf{với mỗi $x$ thuộc $S$, có $p(x)$}.
 \end{enumerate}
 
 Hành động đưa ra các mệnh đề như trên được gọi là \textbf{lượng hóa\index{Lượng hóa}}. $\exists, \forall$ được gọi là những lượng hóa, hay lượng từ. $\exists$ được gọi là lượng hóa tồn tại\index{Lượng hóa tồn tại}, $\forall$ được gọi là lượng hóa phổ cập\index{Lượng hóa phổ cập}. Về mặt kí hiệu, chúng ta sẽ linh hoạt kí hiệu lượng hóa theo một trong các lối viết là $\exists x\in S\; p(x)$, $\exists x\in S (p(x))$ và $\exists x\in S: p(x)$. Lối viết thứ ba đơn giản nhưng phù hợp hơn với mệnh đề chỉ gồm một lượng từ. Trong khi đó, lối viết thứ hai tuy phức tạp hơn nhưng giúp kí hiệu không nhập nhằng khi mệnh đề có nhiều lượng từ. Trong tài liệu này, trừ chương hiện tại, khi áp dụng lượng hóa, chúng ta ưu tiên dùng các câu văn hoàn chỉnh.
@@ -326,11 +326,11 @@ Từ định nghĩa của hai lượng hóa, chúng ta rút ra hai nguyên lý s
 Thay cho câu ``với mọi $x$, với mọi $y$, có $p(x, y)$'', chúng ta kí hiệu $\forall x\forall y : p(x, y)$. Thay cho câu ``với mọi $x$, tồn tại $y$ sao cho có $p(x, y)$'', chúng ta kí hiệu $\forall x \exists y : p(x,y)$. Thay cho câu ``tồn tại $x$ sao cho với mọi $y$, có $p(x, y)$'', chúng ta kí hiệu $\exists x \forall y : p(x, y)$. Bây giờ, chúng ta quan tâm tới việc phát biểu mệnh đề phủ định ở ba ví dụ trên. Bằng cách áp dụng liên tiếp hai nguyên lý nêu trên hai lần, chúng ta thu được
 \begin{align*}
 	\neg(\forall x \forall y (p(x, y))) & \Leftrightarrow \exists x (\neg(\forall y (p(x, y))))  \\
-	                                    & \Leftrightarrow \exists x (\exists y (\neg p(x, y))),  \\
+																			& \Leftrightarrow \exists x (\exists y (\neg p(x, y))),  \\
 	\neg(\forall x\exists y (p(x, y)))  & \Leftrightarrow \exists x (\neg(\exists y (p(x, y))))  \\
-	                                    & \Leftrightarrow \exists x (\forall y (\neg p(x, y))),  \\
+																			& \Leftrightarrow \exists x (\forall y (\neg p(x, y))),  \\
 	\neg(\exists x\forall y (p(x, y)))  & \Leftrightarrow \forall x (\neg(\forall y( p(x, y))))  \\
-	                                    & \Leftrightarrow \forall x (\exists y (\neg (p(x, y))))
+																			& \Leftrightarrow \forall x (\exists y (\neg (p(x, y))))
 \end{align*}
 
 Qua ba ví dụ trên đây, chúng ta rút ra quy tắc khi viết phủ định của một mệnh đề gồm nhiều lượng hóa: đổi lượng hóa phổ cập sang lượng hóa tồn tại và ngược lại, rồi phủ định điều kiện giữa các biến.
@@ -361,7 +361,7 @@ Khi chứng minh có $p(n)$ với mọi $n$ là số tự nhiên bằng phương
 
 Từ tổng kết trên của phương pháp chứng minh bằng quy nạp toán học, bạn đọc có thể kiểm tra nhận xét sau: phương pháp trên vẫn áp dụng được cho trường hợp $n$ là số nguyên lớn hơn hoặc bằng một số nguyên $n_{0}$ cho trước, hoặc trường hợp $n$ là số nguyên lớn hơn hoặc bằng một số nguyên cho trước bằng cách thay đổi một chút ở Bước cơ sở.
 
-Chúng ta đưa ra hai ví dụ về chứng minh bằng phương pháp quy nạp toán học.
+Chúng ta đưa ra ví dụ về chứng minh bằng phương pháp quy nạp toán học.
 
 \begin{example}
 	Chứng minh rằng tổng của các số tự nhiên lẻ liên tiếp bắt đầu từ $1$ là bình phương của một số tự nhiên.
@@ -397,22 +397,6 @@ Từ khảo sát trên, chúng ta dự đoán (cuối mục này, chúng ta sẽ
 	\]
 
 	Theo nguyên lý quy nạp toán học, với mọi số nguyên dương $n$, có $\sum^{n}_{i=1}(2i - 1) = n^{2}$. Do đó, tổng của các số tự nhiên lẻ liên tiếp bắt đầu từ $1$ là bình phương của một số tự nhiên.
-\end{proof}
-
-\begin{example}
-	Chứng minh rằng mỗi đa thức bậc $n$ với hệ số thực có không quá $n$ nghiệm.
-\end{example}
-
-\begin{proof}
-	Với trường hợp $n = 1$, chúng ta xét đa thức $aX + b$ (trong đó $a\ne 0$). Phương trình $aX + b = 0$ chỉ có một nghiệm là $X = \frac{-b}{a}$. Do đó, mệnh đề đúng với $n = 1$.
-
-	Giả sử rằng đa thức bậc $k$ có không quá $k$ nghiệm ($k\geq 1$). Chúng ta xét đa thức $f(X)$ có bậc $(k + 1)$.
-
-	Nếu $f(X)$ không có nghiệm, chúng ta kết luận $f(X)$ có không quá $(k + 1)$ nghiệm (vì $0 \leq k + 1$).
-
-	Nếu $f(X)$ có ít nhất một nghiệm là $X = a$, chúng ta thực hiện phép chia đa thức và lấy dư. Sau khi thực hiện phép chia, chúng ta thu được một đa thức $g(X)$ bậc $k$ (bậc của $g(X)$ = bậc của $f(X)$ trừ $1$) nào đó và số dư là một số thực $r$, chúng ta viết $f(X) = (X - a)g(x) + r$. Vì $f(a) = 0$ nên $r = 0$, dẫn đến $f(X) = (X - a)g(X)$. Theo giả thiết quy nạp, $g(X)$ có không quá $k$ nghiệm. Cùng với đẳng thức vừa thu được, chúng ta kết luận $f(X)$ có không quá $(k + 1)$ nghiệm.
-
-	Theo nguyên lý quy nạp, mỗi đa thức bậc $n$ với hệ số thực có không quá $n$ nghiệm.
 \end{proof}
 
 Khi chứng minh bằng phương pháp quy nạp toán học, bước cơ sở và bước quy nạp đều là bắt buộc. Khi thiếu một trong hai bước, chúng ta gọi đó là \textit{quy nạp không hoàn toàn}. Việc bỏ qua một trong hai bước có thể dẫn đến một kết luận sai. Nhà toán học Fermat khi xem xét các số tự nhiên có dạng $2^{2^{n}} + 1$ đã nhận thấy rằng khi $n = 0, 1, 2, 3, 4$ thì số có dạng như vậy là số nguyên tố, và đi thẳng tới kết luận rằng mọi số tự nhiên có dạng đó là số nguyên tố. Về sau, nhà toán học Euler đã bác bỏ kết luận này sau khi chỉ ra $2^{2^{5}} + 1$ là hợp số với ước số là $641$.
