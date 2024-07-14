@@ -159,11 +159,32 @@ Bằng phương pháp phản chứng, từ định lý trên, chúng ta rút ra 
 \end{corollary}
 
 Định lý sau đây còn được phát biểu rằng ``Giữa hai số tự nhiên liên tiếp, không còn số tự nhiên nào khác.''
-\begin{theorem}
+\begin{theorem}\label{theorem:consecutive-natural-numbers}
     Với mọi số tự nhiên $m, n$, nếu $n\leq m$ và $m \leq S(n)$ thì hoặc $m = n$ hoặc $m = S(n)$.
 \end{theorem}
 
 \subsection{Bài tập}
+
+\begin{exercise}
+    Sử dụng các kết quả phía trước Định lý~\ref{theorem:consecutive-natural-numbers}, hãy chứng minh định lý này.
+\end{exercise}
+
+\begin{exercise}
+    Với mỗi số tự nhiên $n$, $A_{n}$ là tập hợp các số tự nhiên lớn hơn hoặc bằng $n$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng hợp của tất cả các tập hợp $A_{n}$ là tập hợp số tự nhiên $\mathbb{N}$.
+        \item Chứng minh rằng giao của tất cả các tập hợp $A_{n}$ là tập hợp rỗng.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tồn tại hai tập hợp con có vô hạn phần tử của tập hợp số tự nhiên $\mathbb{N}$ sao cho hai tập hợp đó rời nhau.
+        \item Tồn tại hai tập hợp con có vô hạn phần tử của tập hợp số tự nhiên $\mathbb{N}$ sao cho giao của hai tập hợp đó có đúng $n$ phần tử, trong đó $n$ là một số tự nhiên.
+        \item Tồn tại hai tập hợp con $A$, $B$ có vô hạn phần tử của tập hợp số tự nhiên $\mathbb{N}$ sao cho các tập hợp $A\cap B$, $A\setminus B$, $B\setminus A$ có vô hạn phần tử.
+    \end{enumerate}
+\end{exercise}
 
 \section{Số nguyên}
 
@@ -183,7 +204,7 @@ Trước khi đưa ra một định nghĩa như vậy, chúng tôi có một nh�
 \]
 
 Các đẳng thức trên gợi ý một quan hệ tương đương trên tập hợp $\mathbb{N}\times\mathbb{N}$.
-\begin{theorem}[Quan hệ tương đương giữa các cặp số tự nhiên]
+\begin{theorem}[Quan hệ tương đương giữa các cặp số tự nhiên]\label{theorem:equivalence-relation-between-pairs-of-natural-numbers}
     Hai cặp có thứ tự số tự nhiên $(a, b)$ và $(c, d)$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a + d = b + c$. Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{N}\times\mathbb{N}$ là một quan hệ tương đương.
 \end{theorem}
 
@@ -207,7 +228,7 @@ Bằng quan hệ tương đương trong định lý trên, chúng ta định ngh
 \subsection{Các phép toán và quan hệ thứ tự trên tập hợp số nguyên}
 
 Đầu tiên, chúng ta định nghĩa phép cộng số nguyên.
-\begin{definition}[Phép cộng số nguyên\index{Phép cộng số nguyên}]
+\begin{definition}[Phép cộng số nguyên\index{Phép cộng số nguyên}]\label{definition:integer-addition}
     Phép cộng số nguyên\index{Phép cộng số nguyên} là một phép toán hai ngôi trên tập hợp số nguyên, kí hiệu là $+$. Với hai số nguyên $[(a, b)]$ và $[(c, d)]$, chúng ta kí hiệu kết quả của phép cộng hai số nguyên này là $[(a, b)] + [(c, d)]$ và định nghĩa
     \[
         [(a, b)] + [(c, d)] = [(a+c, b+d)].
@@ -308,7 +329,7 @@ Chúng ta bắt đầu định nghĩa phép nhân số nguyên.
     \end{itemize}
 \end{definition}
 
-Trong định nghĩa trên, chúng ta lấy định nghĩa phép nhân hai số nguyên không âm làm cơ sở để định nghĩa phép nhân hai số nguyên trong các trường hợp khác. Có một câu hỏi muôn thuở mà nhiều người học toán luôn đặt ra: ``Tại sao tích của hai số nguyên âm lại là một số nguyên dương?'' Đó là bởi định nghĩa như vậy giúp phép cộng và phép nhân số nguyên có được các tính chất mong muốn --- chẳng hạn tính chất phân phối của phép nhân với phép cộng số nguyên.
+Trong định nghĩa trên, chúng ta lấy định nghĩa phép nhân hai số nguyên không âm làm cơ sở để định nghĩa phép nhân hai số nguyên trong các trường hợp khác. Có một câu hỏi muôn thuở mà nhiều người học toán luôn đặt ra: ``Tại sao tích của hai số nguyên âm lại là một số nguyên dương?\@'' Đó là bởi định nghĩa như vậy giúp phép cộng và phép nhân số nguyên có được các tính chất mong muốn --- chẳng hạn tính chất phân phối của phép nhân với phép cộng số nguyên.
 
 Định lý ngay dưới đây là hệ quả trực tiếp từ định nghĩa phép nhân số nguyên.
 \begin{theorem}
@@ -397,6 +418,20 @@ Phép cộng và phép nhân số nguyên cũng tương thích với quan hệ t
 Đơn ánh $\iota: \mathbb{N}\to \mathbb{Z}$ trong định lý trên bảo toàn phép toán cộng, nhân, và quan hệ thứ tự. Với định lý trên, chúng ta \textbf{đồng nhất} số tự nhiên $n$ với số nguyên $[(n, 0)]$. Với sự đồng nhất đó, tập hợp số tự nhiên là một tập hợp con thực sự của tập hợp số nguyên.
 
 \subsection{Bài tập}
+
+\begin{exercise}
+    Chứng minh Định lý~\ref{theorem:equivalence-relation-between-pairs-of-natural-numbers}.
+\end{exercise}
+
+\begin{exercise}
+    Bình luận ngay sau Định nghĩa~\ref{definition:integer-addition} cho phép cộng số nguyên nêu lên rằng định nghĩa đó không phụ thuộc vào việc chọn phần tử đại diện. Bài tập này sẽ làm rõ nhận định đó.
+
+    Phép cộng trên tập hợp $\mathbb{N}\times\mathbb{N}$ được định nghĩa như sau: $(a, b) + (c, d) = (a+c, b+d)$ với mọi số tự nhiên $a$, $b$, $c$, $d$. Chứng minh rằng nếu $(a_{1}, b_{1})\sim (a_{2}, b_{2})$ và  $(c_{1}, d_{1})\sim (c_{2}, d_{2})$ thì $(a_{1}, b_{1}) + (c_{1}, d_{1}) = (a_{2}, b_{2}) + (c_{2}, d_{2})$.
+\end{exercise}
+
+\begin{exercise}
+    Cho số nguyên $n$ và $m$. Chứng minh rằng nếu $n\leq m$ và $m\leq n+1$ thì $m = n$ hoặc $m = n+1$.
+\end{exercise}
 
 \section{Nguyên lý quy nạp toán học}
 
@@ -504,10 +539,10 @@ Tập hợp con trong phát biểu của nguyên lý thứ tự tốt có thể 
 
     Giả sử với $n = k\geq 1$, tập hợp khác rỗng được sắp thứ tự toàn phần và có $k$ phần tử thì tập hợp đó cũng có phần tử nhỏ nhất và phần tử lớn nhất.
 
-    Chúng ta kí hiệu $S$ là một tập hợp được sắp thứ tự toàn phần và có $(k+1)$ phần tử. Chúng ta chọn ra một phần tử $x$ bất kì của $S$ thì $S - \{x\}$ có $k$ phần tử. Theo giả thiết quy nạp, $S - \{x\}$ có phần tử nhỏ nhất và phần tử lớn nhất.
+    Chúng ta kí hiệu $S$ là một tập hợp được sắp thứ tự toàn phần và có $(k+1)$ phần tử. Chúng ta chọn ra một phần tử $x$ bất kì của $S$ thì $S \setminus \{x\}$ có $k$ phần tử. Theo giả thiết quy nạp, $S \setminus \{x\}$ có phần tử nhỏ nhất và phần tử lớn nhất.
     \begin{itemize}
-        \item Nếu $x$ nhỏ hơn phần tử nhỏ nhất của $S - \{x\}$ thì $x$ là phần tử nhỏ nhất của $S$. Ngược lại, phần tử nhỏ nhất của $S - \{x\}$ cũng là phần tử nhỏ nhất của $S$.
-        \item Nếu $x$ lớn hơn phần tử lớn nhất của $S - \{x\}$ thì $x$ là phần tử lớn nhất của $S$. Ngược lại, phần tử lớn nhất của $S - \{x\}$ cũng là phần tử lớn nhất của $S$.
+        \item Nếu $x$ nhỏ hơn phần tử nhỏ nhất của $S \setminus \{x\}$ thì $x$ là phần tử nhỏ nhất của $S$. Ngược lại, phần tử nhỏ nhất của $S \setminus \{x\}$ cũng là phần tử nhỏ nhất của $S$.
+        \item Nếu $x$ lớn hơn phần tử lớn nhất của $S \setminus \{x\}$ thì $x$ là phần tử lớn nhất của $S$. Ngược lại, phần tử lớn nhất của $S \setminus \{x\}$ cũng là phần tử lớn nhất của $S$.
     \end{itemize}
 
     Theo nguyên lý quy nạp toán học, tập hợp khác rỗng được sắp thứ tự toàn phần và có hữu hạn phần tử thì tập hợp đó có phần tử nhỏ nhất và phần tử lớn nhất.
@@ -516,7 +551,7 @@ Tập hợp con trong phát biểu của nguyên lý thứ tự tốt có thể 
 Khi kết hợp nguyên lý thứ tự tốt với phương pháp chứng minh bằng phản chứng, chúng ta có phương pháp chứng minh giảm vô hạn. Phương pháp này còn được gọi là phương pháp giảm vô hạn của Fermat. Nhà toán học Fermat đã sử dụng phương pháp này để chứng minh rằng không tồn tại các số nguyên dương $a, b, c$ nào thỏa mãn $a^{4} + b^{4} = c^{2}$. Ngược với phương pháp quy nạp toán học, phương pháp giảm vô hạn được sử dụng để chứng minh một mệnh đề $p(n)$ là sai với mọi số tự nhiên $n$.
 
 \begin{theorem}[Giảm vô hạn\index{Giảm vô hạn}]
-    Nếu với mỗi số tự nhiên $n$, mệnh đề $p(n)$ kéo theo tồn tại số tự nhiên $m < n$ sao cho có $p(m)$ thì với mọi số tự nhiên $n$, không có $p(n)$.
+    Nếu với mỗi số tự nhiên $n$, $p(n)$ kéo theo tồn tại số tự nhiên $m < n$ sao cho có $p(m)$ thì với mọi số tự nhiên $n$, không có $p(n)$.
 \end{theorem}
 
 \begin{proof}
@@ -550,12 +585,24 @@ Một nhược điểm của nguyên lý thứ tự tốt và chứng minh của
 
 \subsection{Bài tập}
 
+\begin{exercise}
+    Với mỗi số tự nhiên $n$, $A_{n}$ là tập hợp các số tự nhiên lớn hơn hoặc bằng $n$. $I$ là một tập hợp con khác rỗng của tập hợp số tự nhiên $\mathbb{N}$. Chứng minh rằng tồn tại số tự nhiên $m$ sao cho $A_{m} = \bigcup_{n\in I} A_{n}$.
+\end{exercise}
+
+\begin{exercise}\label{exercise:well-ordered-set}
+    Một tập hợp được sắp thứ tự toàn phần được gọi là \textit{tập hợp được sắp thứ tự tốt\index{Tập hợp được sắp thứ tự tốt}} khi và chỉ khi mỗi tập hợp con khác rỗng của tập hợp đó đều có phần tử nhỏ nhất. Chứng minh rằng
+    \begin{enumerate}[label={(\roman*)}]
+        \item Tập hợp số tự nhiên (với quan hệ thứ tự thông thường) được sắp thứ tự tốt.
+        \item Tập hợp số nguyên (với quan hệ thứ tự thông thường) không phải tập hợp được sắp thứ tự tốt.
+    \end{enumerate}
+\end{exercise}
+
 \section{Số hữu tỉ}
 
 \subsection{Xây dựng tập hợp số hữu tỉ}
 
 Chúng ta định nghĩa tập hợp số hữu tỉ dựa trên tập hợp số nguyên, cũng bằng một quan hệ tương đương.
-\begin{theorem}
+\begin{theorem}\label{theorem:equivalence-relation-in-definition-of-rational-numbers}
     Hai phần tử $(a, b)$ và $(c, d)$ của tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ được gọi là có quan hệ $\sim$ khi và chỉ khi $a d - b c = 0$ (hay $a d = b c$). Khi đó quan hệ $\sim$ trên tập hợp $\mathbb{Z}\times(\mathbb{Z} - \{0\})$ là một quan hệ tương đương.
 \end{theorem}
 
@@ -692,3 +739,31 @@ Tương tự, tập hợp số nguyên có thể được nhúng vào tập hợ
 Đơn ánh $\iota$ trong định lý trên bảo toàn phép cộng, phép nhân, và quan hệ thứ tự, mặc dù ở tập nguồn và tập đích, các phép toán và quan hệ đó khác nhau. Với cơ sở là định lý này, chúng ta \textbf{đồng nhất} số nguyên $x$ với số hữu tỉ $\dfrac{x}{1}$, kéo theo tập hợp số nguyên là một tập hợp con thực sự của tập hợp số hữu tỉ.
 
 \subsection{Bài tập}
+
+\begin{exercise}
+    Chứng minh Định lý~\ref{theorem:equivalence-relation-in-definition-of-rational-numbers}.
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng phép cộng và phép nhân số hữu tỉ được định nghĩa trong chương này không phụ thuộc vào việc chọn phần tử đại diện.
+\end{exercise}
+
+\begin{exercise}
+    Tập hợp các số hữu tỉ dương có là tập hợp được sắp thứ tự tốt hay không? (Xem định nghĩa tập hợp được sắp thứ tự tốt trong Bài tập~\ref{exercise:well-ordered-set}.)
+\end{exercise}
+
+\begin{exercise}
+    Chứng minh rằng với mỗi số hữu tỉ $a$, $b$, nếu $a < b$ thì tồn tại số hữu tỉ $q$ sao cho $a < q < b$.
+\end{exercise}
+
+\begin{exercise}
+    Cho số hữu tỉ $q$ và $A$ là tập hợp tất cả các số hữu tỉ nhỏ hơn $q$.
+    \begin{enumerate}[label={(\roman*)}]
+        \item Chứng minh rằng $A$ không có phần tử nhỏ nhất và cũng không có phần tử lớn nhất.
+        \item Chứng minh rằng $q$ là cận trên nhỏ nhất của $A$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Phần nguyên của số hữu tỉ]
+    Chứng minh rằng với mỗi số hữu tỉ $q$, tồn tại duy nhất số nguyên $n$ sao cho $n\leq q < n + 1$. [Gợi ý: Để chứng minh tính tồn tại, hãy sử dụng thuật toán chia Euclid.]
+\end{exercise}

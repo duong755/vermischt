@@ -88,6 +88,12 @@ updatecls: cleanaux
 %.ps.o: %.tex updatecls
 	@latexmk $(LATEXMK_OPTIONS) -ps -outdir=$(shell dirname $<) $(shell basename $<)
 
+%.clean: %.tex
+	@latexmk -C -outdir=$(shell dirname $<) $(shell basename $<)
+
+%.cleanaux: %.tex
+	@latexmk -c -outdir=$(shell dirname $<) $(shell basename $<)
+
 # lint specific TeX file
 %.lint: %.tex
 	@chktex $(CHKTEX_OPTIONS) $<
